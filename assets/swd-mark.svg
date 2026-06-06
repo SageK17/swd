@@ -10,10 +10,10 @@
     </radialGradient>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;display=swap');
-      .s{font-family:'Syne',sans-serif;font-weight:800;font-size:58px}
+      .m{font-family:'Syne',sans-serif;font-weight:800;font-size:39px;letter-spacing:-1.5px}
     </style>
   </defs>
   <rect x="4" y="4" width="88" height="88" rx="24" fill="url(#g)"/>
   <rect x="4" y="4" width="88" height="88" rx="24" fill="url(#hi)"/>
-  <text x="48" y="68" text-anchor="middle" class="s" fill="#0c0c0f">S</text>
+  <text x="48" y="62" text-anchor="middle" class="m" fill="#0a0a0c">swd</text>
 </svg>
