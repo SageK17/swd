@@ -4,314 +4,237 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- PREVIEW voor Beauty by Soemintra (Enschede) — door Sage Website Design.
-     Echte gegevens: holistische huidspecialist, behandelingen, openingstijden, adres, telefoon, e-mail, Instagram.
-     Geen emoji's; SVG-iconen. -->
+<!-- Bespoke preview voor Beauty by Soemintra (Enschede) — Sage Website Design.
+     Editorial/spa-concept: gecentreerde hero met boog-triptiek, manifest-quote,
+     genummerde behandelingen-index, drop-cap verhaal, ledger-contact. Geen emoji. -->
 
 <title>Beauty by Soemintra — Holistische huidverzorging in Enschede</title>
-<meta name="description" content="Beauty by Soemintra in Enschede: holistische huidcoaching, gezichtsbehandelingen, massage en wellness. Elke huid is uniek. Maak een afspraak: 053 434 0468." />
+<meta name="description" content="Beauty by Soemintra in Enschede: holistische huidcoaching, gezichtsbehandelingen, massage en wellness. Schoonheid van binnenuit. Maak een afspraak: 053 434 0468." />
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%236f7a5e'/><text x='50' y='68' font-size='52' font-family='Georgia,serif' text-anchor='middle' fill='%23f6f1e7'>S</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23faf6f0'/><text x='50' y='70' font-size='62' font-family='Georgia,serif' font-style='italic' text-anchor='middle' fill='%23c0876a'>s</text></svg>" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
 <style>
 :root{
-  --brand:#6f7a5e; --brand-700:#545d45; --brand-300:#9aa487;
-  --accent:#bf8a5c; --accent-600:#a5734a;
-  --ink:#2a2820; --ink-2:#4c483b; --muted:#8c8773;
-  --paper:#f6f1e7; --paper-2:#efe7d8; --card:#fffdf8;
-  --line:#e6ddca; --line-dark:#312e25;
-  --r:14px; --r-lg:24px; --r-xl:34px;
-  --shadow-sm:0 1px 2px rgba(42,40,32,.05),0 6px 18px rgba(42,40,32,.06);
-  --shadow:0 16px 40px -18px rgba(42,40,32,.22),0 6px 14px -8px rgba(42,40,32,.12);
-  --shadow-lg:0 40px 80px -30px rgba(111,122,94,.45),0 14px 30px -16px rgba(42,40,32,.2);
+  --paper:#faf6f0; --paper-2:#f1e8db; --ink:#262019; --ink-2:#5b5347;
+  --muted:#988e7e; --accent:#bf8463; --accent-d:#a66c4c; --olive:#5c6049;
+  --line:#e4d9c8; --hair:#d9ccb9;
   --maxw:1140px; --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Figtree",system-ui,sans-serif;color:var(--ink-2);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;color:var(--ink);line-height:1.1;font-weight:500;letter-spacing:-.01em}
+body{font-family:"Jost",system-ui,sans-serif;font-weight:400;color:var(--ink-2);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;color:var(--ink);font-weight:500;line-height:1.08;letter-spacing:.005em}
 a{color:inherit;text-decoration:none}ul{list-style:none}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.eyebrow{font-family:"Figtree";font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:.6rem}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent)}
-.section{padding:clamp(64px,9vw,118px) 0}
-.lead{font-size:clamp(1.04rem,1.6vw,1.2rem);color:var(--muted);max-width:60ch}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.narrow{max-width:760px;margin-inline:auto}
+.kicker{font-family:"Jost";font-weight:500;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-d)}
+.section{padding:clamp(70px,10vw,140px) 0}
+.rule{height:1px;background:var(--hair);border:0}
 .center{text-align:center}
-.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:"Figtree";font-weight:600;font-size:1rem;padding:.95rem 1.6rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .2s,color .2s}
-.btn svg{width:18px;height:18px}
-.btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 26px -10px rgba(111,122,94,.7)}
-.btn-primary:hover{transform:translateY(-2px);background:var(--brand-700)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:#d8ccb4}
-.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-.btn-light{background:#fff;color:var(--ink)}.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn-lg{padding:1.1rem 1.95rem;font-size:1.05rem}
 
-.topbar{background:var(--ink);color:#d9d2bf;font-size:.82rem}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;gap:1rem}
-.topbar a{color:#fff}
-.topbar span{display:inline-flex;align-items:center;gap:.4rem}.topbar svg{width:14px;height:14px;opacity:.8}
-.tb-right{display:flex;gap:1.4rem;align-items:center}
-@media(max-width:760px){.tb-hide{display:none}.topbar .wrap{justify-content:center}}
+/* link-style CTA (editorial, not a pill) */
+.link-cta{display:inline-flex;align-items:center;gap:.5rem;font-family:"Jost";font-weight:500;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);padding-bottom:5px;border-bottom:1px solid var(--ink);transition:.25s var(--ease)}
+.link-cta:hover{color:var(--accent-d);border-color:var(--accent-d);gap:.85rem}
+.link-cta.alt{color:var(--muted);border-color:var(--hair)}
+.link-cta.alt:hover{color:var(--ink);border-color:var(--ink)}
+.solid-cta{display:inline-block;font-family:"Jost";font-weight:500;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:1.05rem 2.1rem;border-radius:2px;transition:.25s var(--ease)}
+.solid-cta:hover{background:var(--accent-d)}
 
-header.nav{position:sticky;top:0;z-index:60;background:rgba(246,241,231,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
-header.nav.scrolled{box-shadow:var(--shadow-sm);border-bottom-color:var(--line);background:rgba(246,241,231,.95)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand{display:flex;align-items:center;gap:.65rem;font-family:"Fraunces";font-weight:500;font-size:1.24rem;color:var(--ink)}
-.brand .mark{width:40px;height:40px;border-radius:50%;background:var(--brand);color:var(--paper);display:grid;place-items:center;font-family:"Fraunces";font-size:1.15rem;flex:none}
-.navlinks{display:flex;gap:2rem;align-items:center}
-.navlinks a{font-weight:500;font-size:.97rem;color:var(--ink-2);position:relative;padding:.3rem 0}
-.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;background:var(--accent);transition:width .3s var(--ease)}
-.navlinks a:hover::after{width:100%}
-.nav-cta{display:flex;align-items:center;gap:1rem}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{width:25px;height:2px;background:var(--ink);border-radius:2px}
-@media(max-width:900px){.navlinks{display:none}.burger{display:flex}}
-.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:var(--paper);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);padding:90px 30px 30px;display:flex;flex-direction:column;gap:.3rem}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{padding:.95rem 0;font-weight:500;font-size:1.1rem;border-bottom:1px solid var(--line)}
-.mobile-menu .btn{margin-top:1.2rem;justify-content:center}
-.menu-close{position:absolute;top:24px;right:24px;background:none;border:0;font-size:2rem;cursor:pointer;color:var(--ink)}
-.overlay{position:fixed;inset:0;background:rgba(42,40,32,.5);z-index:70;opacity:0;pointer-events:none;transition:.3s}
-.overlay.show{opacity:1;pointer-events:auto}
+/* nav */
+header{position:sticky;top:0;z-index:60;background:rgba(250,246,240,.86);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
+header.scrolled{border-bottom-color:var(--line)}
+header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px}
+.logo{font-family:"Cormorant Garamond";font-size:1.5rem;color:var(--ink);font-weight:600;letter-spacing:.01em}
+.logo i{color:var(--accent-d)}
+.nav-mid{display:flex;gap:2.4rem;justify-content:center}
+.nav-mid a{font-family:"Jost";font-weight:400;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);transition:.2s}
+.nav-mid a:hover{color:var(--accent-d)}
+.nav-end{justify-self:end;display:flex;align-items:center;gap:1.4rem}
+.nav-end .ph{font-family:"Jost";font-size:.82rem;letter-spacing:.08em;color:var(--ink);display:none}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:24px;height:1.5px;background:var(--ink)}
+@media(min-width:1080px){.nav-end .ph{display:inline}}
+@media(max-width:1079px){.nav-mid{display:none}.burger{display:flex}header .wrap{grid-template-columns:1fr auto}.nav-end .solid-cta{display:none}}
+.mm{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:var(--paper-2);z-index:90;transform:translateX(100%);transition:transform .45s var(--ease);box-shadow:-30px 0 60px rgba(38,32,25,.18);padding:96px 34px;display:flex;flex-direction:column;gap:.2rem}
+.mm.open{transform:none}.mm a{font-family:"Cormorant Garamond";font-size:1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.mm .solid-cta{margin-top:1.4rem;text-align:center}
+.mclose{position:absolute;top:28px;right:30px;background:none;border:0;font-size:2rem;color:var(--ink);cursor:pointer}
+.ov{position:fixed;inset:0;background:rgba(38,32,25,.4);z-index:80;opacity:0;pointer-events:none;transition:.3s}.ov.show{opacity:1;pointer-events:auto}
 
-.hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,86px) 0 clamp(66px,9vw,116px)}
-.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(60% 70% at 82% 10%,rgba(191,138,92,.18),transparent 60%),radial-gradient(70% 80% at 6% 96%,rgba(111,122,94,.16),transparent 55%),linear-gradient(180deg,#fffdf8,var(--paper))}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4vw,60px);align-items:center}
-.hero-copy h1{font-size:clamp(2.5rem,5.4vw,4.2rem);margin:1.1rem 0 1.3rem}
-.hero-copy h1 .it{font-style:italic;color:var(--brand)}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin:1.9rem 0 1.6rem}
-.hero-trust{display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center;padding-top:1.4rem;border-top:1px solid var(--line)}
-.trust-item{display:flex;align-items:center;gap:.55rem;font-weight:500;font-size:.92rem;color:var(--ink-2)}
-.trust-item svg{width:20px;height:20px;color:var(--brand);flex:none}
-.hero-visual{position:relative}
-.hero-photo{aspect-ratio:4/4.6;border-radius:50% 50% var(--r-xl) var(--r-xl)/30% 30% var(--r-xl) var(--r-xl);position:relative;overflow:hidden;box-shadow:var(--shadow-lg);background:linear-gradient(165deg,rgba(111,122,94,.95),rgba(84,93,69,.97)),radial-gradient(120% 70% at 25% 0%,rgba(255,255,255,.22),transparent 55%)}
-.hero-photo .art{position:absolute;inset:0;opacity:.5}
-.hero-photo .lbl{position:absolute;left:26px;bottom:26px;color:#fff;z-index:2}
-.hero-photo .lbl small{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85;font-weight:600}
-.hero-photo .lbl h3{color:#fff;font-style:italic;font-size:1.4rem;margin-top:.2rem;font-weight:500}
-.float{position:absolute;background:#fff;border-radius:var(--r);box-shadow:var(--shadow-lg);padding:.9rem 1.1rem;animation:floaty 6s var(--ease) infinite}
-.float.a{top:28px;left:-22px}.float.b{bottom:32px;right:-20px;animation-delay:.8s}
-.float .t{font-family:"Fraunces";color:var(--ink);font-size:1rem}
-.float .s{color:var(--muted);font-size:.76rem;font-weight:500}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-visual{max-width:420px;margin:8px auto 0}.float.a{left:0}.float.b{right:0}}
+/* hero */
+.hero{padding:clamp(48px,8vw,96px) 0 0;text-align:center;position:relative;overflow:hidden}
+.hero .kicker{display:inline-block;margin-bottom:1.8rem}
+.hero h1{font-size:clamp(2.9rem,8vw,6rem);font-weight:500;max-width:14ch;margin:0 auto;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--accent-d)}
+.hero p{font-family:"Jost";font-weight:300;font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-2);max-width:46ch;margin:1.8rem auto 2.4rem}
+.hero-ctas{display:flex;gap:2rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:clamp(48px,7vw,92px)}
+/* arched triptych */
+.triptych{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:18px;align-items:end;max-width:1000px;margin:0 auto;padding:0 8px}
+@media(max-width:760px){.triptych{grid-template-columns:1fr 1fr;gap:12px}.triptych .arch:nth-child(3){display:none}}
+.arch{border-radius:1000px 1000px 6px 6px;overflow:hidden;position:relative;box-shadow:0 30px 60px -34px rgba(92,76,55,.5)}
+.arch.tall{aspect-ratio:3/5}.arch.mid{aspect-ratio:3/5.6}
+.arch i{position:absolute;inset:0}
+.arch:nth-child(1) i{background:linear-gradient(165deg,#cdb79e,#a98c6e)}
+.arch:nth-child(2) i{background:linear-gradient(165deg,#8a9078,#5c6049)}
+.arch:nth-child(3) i{background:linear-gradient(165deg,#d8b9a4,#bf8463)}
+.arch svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5;color:rgba(255,255,255,.55)}
 
-.sec-head{max-width:64ch;margin-bottom:clamp(34px,5vw,56px)}
-.sec-head.center{margin-inline:auto}
-.sec-head h2{font-size:clamp(2rem,4vw,3.05rem);margin:.9rem 0 1rem}
-.grid{display:grid;gap:22px}.cards-3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:880px){.cards-3{grid-template-columns:1fr 1fr}}@media(max-width:600px){.cards-3{grid-template-columns:1fr}}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 30px;transition:transform .35s var(--ease),box-shadow .35s,border-color .3s}
-.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#ddd0b8}
-.svc .ic{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(150deg,rgba(111,122,94,.14),rgba(191,138,92,.12));color:var(--brand);margin-bottom:1.1rem}
-.svc .ic svg{width:26px;height:26px}
-.svc h3{font-size:1.32rem;margin-bottom:.5rem;font-weight:600}
-.svc p{font-size:.96rem;color:var(--muted)}
+/* manifesto */
+.manifesto{text-align:center}
+.manifesto blockquote{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-size:clamp(1.8rem,4vw,3rem);line-height:1.25;color:var(--ink);max-width:20ch;margin:1.6rem auto}
+.manifesto .by{font-family:"Jost";font-weight:500;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 
-.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
-@media(max-width:860px){.about{grid-template-columns:1fr}}
-.about-img{aspect-ratio:1/1;border-radius:var(--r-xl);position:relative;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(155deg,var(--brand),var(--brand-700))}
-.about-img .art{position:absolute;inset:0;opacity:.45}
-.about p{margin-bottom:1.1rem}
-.about .points{margin-top:1.4rem;display:grid;gap:.7rem}
-.about .points li{display:flex;gap:.7rem;align-items:flex-start;font-weight:500;color:var(--ink-2)}
-.about .points svg{width:21px;height:21px;color:var(--brand);flex:none;margin-top:2px}
+/* behandelingen index */
+.idx-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.idx-head h2{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+.idx{border-top:1px solid var(--hair)}
+.row{display:grid;grid-template-columns:auto 1fr 1.1fr;gap:1.5rem;align-items:baseline;padding:1.7rem 0;border-bottom:1px solid var(--hair);transition:padding .3s var(--ease),background .3s}
+.row:hover{padding-left:14px;padding-right:14px;background:var(--paper-2)}
+.row .no{font-family:"Jost";font-weight:500;font-size:.8rem;color:var(--accent-d);letter-spacing:.1em}
+.row .nm{font-family:"Cormorant Garamond";font-size:clamp(1.5rem,2.4vw,2rem);color:var(--ink);font-weight:500;line-height:1.15}
+.row .ds{font-family:"Jost";font-weight:300;font-size:.96rem;color:var(--ink-2);max-width:46ch}
+@media(max-width:720px){.row{grid-template-columns:auto 1fr;gap:.4rem 1.1rem}.row .ds{grid-column:2}}
 
-.stats{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(38px,5vw,60px)}
-.stats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
-@media(max-width:680px){.stats .row{grid-template-columns:1fr;gap:28px}}
-.stats .n{font-family:"Fraunces";font-size:clamp(2rem,4vw,2.8rem);color:var(--accent);line-height:1}
-.stats .l{color:#d9d2bf;margin-top:.4rem;font-size:.95rem}
+/* over (drop cap) */
+.over{background:var(--paper-2)}
+.over .narrow{text-align:center}
+.over .kicker{display:inline-block;margin-bottom:1.4rem}
+.over h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.6rem}
+.over p{font-family:"Jost";font-weight:300;font-size:1.08rem;color:var(--ink-2);margin-bottom:1.2rem}
+.over p.first::first-letter{font-family:"Cormorant Garamond";font-style:italic;font-size:3.6rem;line-height:.8;float:left;margin:.18rem .6rem 0 0;color:var(--accent-d)}
+.over .sign{font-family:"Cormorant Garamond";font-style:italic;font-size:1.5rem;color:var(--ink);margin-top:1.4rem}
 
-.areas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
-@media(max-width:820px){.areas{grid-template-columns:1fr}}
-.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);font-weight:500}
-.hours li b{color:var(--ink);font-weight:600}.hours li.cl{color:var(--muted)}
-.map{aspect-ratio:5/4;border-radius:var(--r-xl);overflow:hidden;position:relative;box-shadow:var(--shadow);background:radial-gradient(circle at 50% 45%,rgba(191,138,92,.22),transparent 42%),linear-gradient(160deg,#ede6d6,#e2d8c4)}
-.map .gl{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(154,164,135,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(154,164,135,.4) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at 50% 45%,#000,transparent 72%)}
-.map .pin{position:absolute;top:42%;left:48%;transform:translate(-50%,-50%);text-align:center}
-.map .pin .d{width:18px;height:18px;border-radius:50%;background:var(--accent);margin:0 auto;box-shadow:0 0 0 8px rgba(191,138,92,.25),0 0 0 16px rgba(191,138,92,.12)}
-.map .pin strong{display:inline-block;margin-top:.7rem;background:var(--ink);color:#fff;padding:.35rem .85rem;border-radius:100px;font-size:.82rem}
+/* praktisch ledger */
+.ledger{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,90px)}
+@media(max-width:780px){.ledger{grid-template-columns:1fr;gap:48px}}
+.ledger h3{font-size:1.9rem;margin-bottom:1.3rem}
+.hours li,.det li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--hair);font-family:"Jost";font-size:.96rem}
+.hours li b,.det li b{font-weight:500;color:var(--ink)}
+.hours li.cl{color:var(--muted)}
+.det li{flex-direction:column;gap:.1rem;align-items:flex-start}
+.det li small{font-family:"Jost";font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.det li b{font-family:"Cormorant Garamond";font-size:1.4rem;font-weight:500}
+.det li b.sm{font-size:1.15rem}
 
-.insta{background:linear-gradient(180deg,var(--paper-2),var(--paper))}
-.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
-@media(max-width:760px){.insta-grid{grid-template-columns:1fr 1fr}}
-.itile{aspect-ratio:1/1;border-radius:var(--r);position:relative;overflow:hidden;background:linear-gradient(155deg,var(--brand),var(--brand-700));display:grid;place-items:center;transition:transform .4s var(--ease)}
-.itile:nth-child(2){background:linear-gradient(155deg,var(--accent),var(--accent-600))}
-.itile:nth-child(3){background:linear-gradient(155deg,#3a3a30,var(--ink))}
-.itile:nth-child(4){background:linear-gradient(155deg,var(--brand-300),var(--brand))}
-.itile:hover{transform:scale(1.04)}.itile svg{width:30px;height:30px;color:rgba(255,255,255,.9)}
+/* afspraak */
+.afspraak{background:var(--ink);color:var(--paper);text-align:center;border-radius:4px;padding:clamp(46px,7vw,86px) 28px;position:relative;overflow:hidden}
+.afspraak h2{color:var(--paper);font-size:clamp(2.2rem,5vw,3.6rem)}
+.afspraak p{font-family:"Jost";font-weight:300;color:rgba(250,246,240,.78);max-width:44ch;margin:1.2rem auto 2.2rem}
+.afspraak .form{max-width:540px;margin:0 auto;text-align:left;display:grid;gap:1.4rem}
+.afspraak .two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}@media(max-width:520px){.afspraak .two{grid-template-columns:1fr}}
+.f label{display:block;font-family:"Jost";font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,240,.6);margin-bottom:.5rem}
+.f input,.f select,.f textarea{width:100%;background:transparent;border:0;border-bottom:1.5px solid rgba(250,246,240,.28);color:var(--paper);font-family:"Jost";font-size:1rem;padding:.5rem 0;transition:.2s}
+.f input::placeholder,.f textarea::placeholder{color:rgba(250,246,240,.4)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--accent)}
+.f select option{color:#000}
+.f textarea{resize:vertical;min-height:64px}
+.afspraak .solid-cta{background:var(--accent);color:var(--ink);justify-self:start;border:0;cursor:pointer}
+.afspraak .solid-cta:hover{background:var(--paper)}
 
-.cta{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--brand),var(--brand-700));color:#fff;border-radius:var(--r-xl);padding:clamp(44px,6vw,80px);text-align:center}
-.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 80% 10%,rgba(191,138,92,.35),transparent 55%);opacity:.7}
-.cta>*{position:relative;z-index:1}
-.cta h2{color:#fff;font-size:clamp(2rem,4.5vw,3.1rem)}
-.cta p{color:rgba(255,255,255,.86);max-width:54ch;margin:1rem auto 2rem;font-size:1.1rem}
-.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;padding:64px 0 40px}
+footer .logo{font-size:1.8rem;display:inline-block;margin-bottom:1rem}
+footer .fl{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin:1.2rem 0;font-family:"Jost";font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+footer .fl a:hover{color:var(--accent-d)}
+footer .cr{font-family:"Jost";font-size:.78rem;color:var(--muted);margin-top:1.4rem}
+footer .cr a{color:var(--accent-d)}
 
-.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px)}
-@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
-.ci{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.ci .ic{width:48px;height:48px;border-radius:50%;flex:none;background:linear-gradient(150deg,rgba(111,122,94,.14),rgba(191,138,92,.1));color:var(--brand);display:grid;place-items:center}
-.ci .ic svg{width:21px;height:21px}
-.ci small{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.73rem}
-.ci strong{display:block;font-family:"Fraunces";font-size:1.12rem;color:var(--ink);font-weight:600}
-form.book{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(26px,3vw,38px);box-shadow:var(--shadow)}
-.field{margin-bottom:16px}.field label{display:block;font-weight:600;font-size:.87rem;margin-bottom:.4rem;color:var(--ink-2)}
-.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--paper);color:var(--ink);transition:.2s}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);background:#fff;box-shadow:0 0 0 4px rgba(111,122,94,.1)}
-.field textarea{resize:vertical;min-height:100px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:520px){.row2{grid-template-columns:1fr}}
-
-footer{background:var(--ink);color:#b8b1a0;padding:clamp(48px,6vw,78px) 0 30px}
-.foot{display:grid;grid-template-columns:1.6fr 1fr 1.2fr;gap:34px}
-@media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}@media(max-width:520px){.foot{grid-template-columns:1fr}}
-footer h4{color:#fff;font-size:1.02rem;margin-bottom:1rem;font-family:"Fraunces";font-weight:600}
-footer a{color:#b8b1a0;transition:.2s;display:block;padding:.26rem 0}footer a:hover{color:var(--accent)}
-.foot .brand{color:#fff;margin-bottom:1rem}.foot p{font-size:.94rem;max-width:34ch}
-.foot-bottom{border-top:1px solid var(--line-dark);margin-top:46px;padding-top:24px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:#857f70}
-.foot-bottom .swd a{color:var(--accent)}
-
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;background:var(--ink);padding:10px 14px;gap:10px}
-.callbar a{flex:1;justify-content:center}
-@media(max-width:680px){.callbar{display:flex}body{padding-bottom:72px}}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<div class="topbar"><div class="wrap">
-  <span class="tb-hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> Oliemolensingel 129, Enschede</span>
-  <div class="tb-right">
-    <span class="tb-hide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Ma–Vr geopend</span>
-    <a href="tel:+31534340468"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;display:inline;vertical-align:-1px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> 053 434 0468</a>
+<header id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo">Beauty by <i>Soemintra</i></a>
+    <nav class="nav-mid">
+      <a href="#behandelingen">Behandelingen</a>
+      <a href="#over">Over</a>
+      <a href="#praktisch">Openingstijden</a>
+      <a href="#afspraak">Contact</a>
+    </nav>
+    <div class="nav-end">
+      <span class="ph">053 434 0468</span>
+      <a href="#afspraak" class="solid-cta">Afspraak</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
-</div></div>
+</header>
 
-<header class="nav" id="nav"><div class="wrap">
-  <a href="#top" class="brand"><span class="mark">S</span> Beauty by Soemintra</a>
-  <nav class="navlinks">
-    <a href="#behandelingen">Behandelingen</a><a href="#over">Over</a><a href="#openingstijden">Openingstijden</a><a href="#contact">Contact</a>
-  </nav>
-  <div class="nav-cta">
-    <a href="#contact" class="btn btn-primary">Afspraak maken</a>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</div></header>
-
-<div class="overlay" id="overlay"></div>
-<aside class="mobile-menu" id="mobileMenu">
-  <button class="menu-close" id="menuClose" aria-label="Sluiten">×</button>
-  <a href="#behandelingen">Behandelingen</a><a href="#over">Over</a><a href="#openingstijden">Openingstijden</a><a href="#contact">Contact</a>
-  <a href="tel:+31534340468" class="btn btn-ghost">053 434 0468</a>
-  <a href="#contact" class="btn btn-primary">Afspraak maken</a>
+<div class="ov" id="ov"></div>
+<aside class="mm" id="mm">
+  <button class="mclose" id="mclose" aria-label="Sluiten">×</button>
+  <a href="#behandelingen">Behandelingen</a><a href="#over">Over</a><a href="#praktisch">Openingstijden</a><a href="#afspraak">Contact</a>
+  <a href="#afspraak" class="solid-cta">Afspraak maken</a>
 </aside>
 
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
   <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow reveal">Holistische huidverzorging · Enschede</span>
-      <h1 class="reveal">Elke huid is uniek — <span class="it">ook die van jou.</span></h1>
-      <p class="lead reveal">Bij Beauty by Soemintra kijken we verder dan alleen je huid. Vakkundige behandelingen en holistische zorg brengen je van binnen én van buiten weer in balans — in alle rust, met persoonlijke aandacht.</p>
-      <div class="hero-actions reveal">
-        <a href="#contact" class="btn btn-primary btn-lg">Maak een afspraak
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="tel:+31534340468" class="btn btn-ghost btn-lg">Bel 053 434 0468</a>
-      </div>
-      <div class="hero-trust reveal">
-        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Persoonlijke aandacht</span>
-        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c4 4 7 7 7 11a7 7 0 1 1-14 0c0-4 3-7 7-11Z"/></svg> Holistische aanpak</span>
-        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/></svg> Behandeling op maat</span>
-      </div>
+    <span class="kicker">Holistische huidverzorging — Enschede</span>
+    <h1>Elke huid is uniek.<br><em>Ook die van jou.</em></h1>
+    <p>Vakkundige behandelingen en holistische zorg, die je van binnen én van buiten weer in balans brengen.</p>
+    <div class="hero-ctas">
+      <a href="#afspraak" class="link-cta">Maak een afspraak
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#behandelingen" class="link-cta alt">Bekijk behandelingen</a>
     </div>
-    <div class="hero-visual reveal">
-      <div class="hero-photo">
-        <svg class="art" viewBox="0 0 400 460" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2">
-          <circle cx="200" cy="150" r="66"/><path d="M120 330c0-46 36-78 80-78s80 32 80 78" stroke-linecap="round"/>
-          <path d="M150 150c12-16 38-16 50 0" stroke-linecap="round"/>
-        </svg>
-        <div class="lbl"><small>Welkom bij</small><h3>Beauty by Soemintra</h3></div>
-      </div>
-      <div class="float a"><div class="t">Rust &amp; balans</div><div class="s">tijd voor jou</div></div>
-      <div class="float b"><div class="t">Huid op maat</div><div class="s">advies &amp; behandeling</div></div>
-    </div>
+  </div>
+  <div class="triptych">
+    <div class="arch tall reveal"><i></i><svg viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M50 30c14 22 24 38 24 56a24 24 0 1 1-48 0c0-18 10-34 24-56Z"/></svg></div>
+    <div class="arch mid reveal"><i></i><svg viewBox="0 0 100 180" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M50 36v90M30 70c10 6 20 6 20 6s10 0 20-6M30 100c10 6 20 6 20 6s10 0 20-6"/></svg></div>
+    <div class="arch tall reveal"><i></i><svg viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="50" cy="64" r="22"/><path d="M50 86v44"/></svg></div>
   </div>
 </section>
 
-<section class="section" id="behandelingen">
+<!-- MANIFESTO -->
+<section class="section manifesto">
+  <div class="wrap narrow reveal">
+    <span class="kicker">De filosofie</span>
+    <blockquote>"Schoonheid begint van binnenuit — daarom kijken we verder dan alleen je huid."</blockquote>
+    <span class="by">Soemintra · Beauty by Soemintra</span>
+  </div>
+</section>
+
+<!-- BEHANDELINGEN INDEX -->
+<section class="section" id="behandelingen" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Behandelingen</span>
-      <h2>Zorg voor je huid &amp; jezelf</h2>
-      <p class="lead" style="margin-inline:auto">Van een verdiepende huidbehandeling tot diepe ontspanning — elke behandeling is afgestemd op wat jouw huid en lichaam nodig hebben.</p>
+    <div class="idx-head reveal">
+      <h2>Behandelingen</h2>
+      <span style="font-family:'Jost';font-weight:300;color:var(--muted);max-width:34ch">Elke behandeling wordt afgestemd op wat jouw huid en lichaam op dat moment nodig hebben.</span>
     </div>
-    <div class="grid cards-3">
-      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c4 4 7 7 7 11a7 7 0 1 1-14 0c0-4 3-7 7-11Z"/></svg></div><h3>Holistische huidcoaching</h3><p>We kijken naar de hele mens — huid, balans en gewoonten — voor een gezonde, stralende huid op lange termijn.</p></article>
-      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18"/></svg></div><h3>Gezichtsbehandelingen &amp; peelings</h3><p>Reinigende en vernieuwende behandelingen die je huid laten herstellen, verfijnen en stralen.</p></article>
-      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14c4-2 6-2 8 0s4 2 8 0M4 9c4-2 6-2 8 0s4 2 8 0"/></svg></div><h3>Bindweefselmassage</h3><p>Een verdiepende massage die de doorbloeding stimuleert en je huid en lichaam helpt herstellen.</p></article>
-      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Energetische facelift</h3><p>Een natuurlijke, ontspannende behandeling voor een zichtbaar verfriste, opgetilde uitstraling.</p></article>
-      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12a9 9 0 0 1 18 0M7 12a5 5 0 0 1 10 0M11 12a1 1 0 0 1 2 0"/></svg></div><h3>Klankschalen &amp; sound healing</h3><p>Diepe ontspanning door klank en trilling — voor meer rust in lichaam en geest.</p></article>
-      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 13c2-6 12-6 14 0M7 13v3a5 5 0 0 0 10 0v-3"/></svg></div><h3>Medische pedicure</h3><p>Vakkundige voetverzorging — ook bij specifieke voetklachten — zodat je weer comfortabel loopt.</p></article>
+    <div class="idx">
+      <div class="row reveal"><span class="no">01</span><span class="nm">Holistische huidcoaching</span><span class="ds">We kijken naar de hele mens — huid, balans en gewoonten — voor een gezonde huid op de lange termijn.</span></div>
+      <div class="row reveal"><span class="no">02</span><span class="nm">Gezichtsbehandelingen &amp; peelings</span><span class="ds">Reinigende en vernieuwende behandelingen die je huid laten herstellen, verfijnen en stralen.</span></div>
+      <div class="row reveal"><span class="no">03</span><span class="nm">Bindweefselmassage</span><span class="ds">Een verdiepende massage die de doorbloeding stimuleert en het herstel van huid en lichaam ondersteunt.</span></div>
+      <div class="row reveal"><span class="no">04</span><span class="nm">Energetische facelift</span><span class="ds">Een natuurlijke, ontspannende behandeling voor een zichtbaar verfriste, opgetilde uitstraling.</span></div>
+      <div class="row reveal"><span class="no">05</span><span class="nm">Klankschalen &amp; sound healing</span><span class="ds">Diepe ontspanning door klank en trilling — voor meer rust in lichaam en geest.</span></div>
+      <div class="row reveal"><span class="no">06</span><span class="nm">Medische pedicure</span><span class="ds">Vakkundige voetverzorging, ook bij specifieke voetklachten, zodat je weer comfortabel loopt.</span></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="over" style="padding-top:0">
-  <div class="wrap about">
+<!-- OVER -->
+<section class="section over" id="over">
+  <div class="wrap narrow reveal">
+    <span class="kicker">Over de salon</span>
+    <h2>Schoonheid van binnenuit</h2>
+    <p class="first">Bij Beauty by Soemintra draait alles om jouw unieke huid. Schoonheidsspecialist Soemintra combineert vakkundige huidverzorging met holistische behandelingen, zodat je je niet alleen mooier, maar vooral ook beter voelt.</p>
+    <p>In een rustige, warme omgeving nemen we de tijd voor je. Geen standaardbehandeling, maar persoonlijke aandacht en advies dat past bij jou — en bij wat jouw huid nodig heeft.</p>
+    <div class="sign">— Soemintra</div>
+  </div>
+</section>
+
+<!-- PRAKTISCH -->
+<section class="section" id="praktisch">
+  <div class="wrap ledger">
     <div class="reveal">
-      <span class="eyebrow">Over de salon</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:.9rem 0 1.3rem">Schoonheid van binnenuit</h2>
-      <p>Bij Beauty by Soemintra draait alles om jouw unieke huid. Schoonheidsspecialist Soemintra combineert vakkundige huidverzorging met holistische behandelingen, zodat je je niet alleen mooier, maar vooral ook beter voelt.</p>
-      <p>In een rustige, warme omgeving nemen we de tijd voor je. Geen standaardbehandeling, maar persoonlijke aandacht en advies dat past bij jou.</p>
-      <ul class="points">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/></svg> Holistische aanpak: huid, balans en ontspanning</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/></svg> Persoonlijk advies, behandeling volledig op maat</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 9 18l-5-5"/></svg> Een rustige, warme sfeer waarin jij centraal staat</li>
-      </ul>
-    </div>
-    <div class="about-img reveal">
-      <svg class="art" viewBox="0 0 400 400" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2">
-        <path d="M200 70c40 50 70 90 70 130a70 70 0 1 1-140 0c0-40 30-80 70-130Z"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0"><div class="wrap"><div class="stats reveal"><div class="row">
-  <div><div class="n">Op maat</div><div class="l">Elke behandeling persoonlijk afgestemd</div></div>
-  <div><div class="n">Holistisch</div><div class="l">Huid, lichaam én ontspanning</div></div>
-  <div><div class="n">Rustig</div><div class="l">Alle tijd en aandacht voor jou</div></div>
-</div></div></div></section>
-
-<section class="section insta">
-  <div class="wrap center">
-    <div class="reveal" style="max-width:58ch;margin-inline:auto">
-      <span class="eyebrow" style="justify-content:center">Volg ons</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:.9rem 0 1rem">Een kijkje in de salon</h2>
-      <p class="lead" style="margin:0 auto 1.8rem">Op Instagram delen we behandelingen, huidtips en de sfeer in de salon. Volg ons voor inspiratie.</p>
-      <a href="https://www.instagram.com/beautysalon_soemintra/" target="_blank" rel="noopener" class="btn btn-primary">@beautysalon_soemintra</a>
-    </div>
-    <div class="insta-grid reveal">
-      <div class="itile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c4 4 7 7 7 11a7 7 0 1 1-14 0c0-4 3-7 7-11Z"/></svg></div>
-      <div class="itile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/></svg></div>
-      <div class="itile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c4-2 6-2 8 0s4 2 8 0"/></svg></div>
-      <div class="itile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="openingstijden">
-  <div class="wrap areas">
-    <div class="reveal">
-      <span class="eyebrow">Openingstijden</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:.8rem 0 1.2rem">Wanneer je terecht kunt</h2>
+      <h3>Openingstijden</h3>
       <ul class="hours">
         <li><b>Maandag</b><span>12:00 – 18:00</span></li>
         <li><b>Dinsdag</b><span>09:00 – 18:00</span></li>
@@ -322,72 +245,59 @@ footer a{color:#b8b1a0;transition:.2s;display:block;padding:.26rem 0}footer a:ho
         <li class="cl"><b>Zondag</b><span>Gesloten</span></li>
       </ul>
     </div>
-    <div class="map reveal"><div class="gl"></div><div class="pin"><div class="d"></div><strong>Oliemolensingel 129, Enschede</strong></div></div>
+    <div class="reveal">
+      <h3>Bezoek &amp; contact</h3>
+      <ul class="det">
+        <li><small>Adres</small><b class="sm">Oliemolensingel 129, Enschede</b></li>
+        <li><small>Telefoon</small><b class="sm">053 434 0468 · 06 17 63 60 93</b></li>
+        <li><small>E-mail</small><b class="sm">info@beautysalonsoemintra.nl</b></li>
+        <li><small>Instagram</small><b class="sm"><a href="https://www.instagram.com/beautysalon_soemintra/" target="_blank" rel="noopener">@beautysalon_soemintra</a></b></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0"><div class="wrap"><div class="cta reveal">
-  <h2>Tijd voor jezelf?</h2>
-  <p>Maak een afspraak bij Beauty by Soemintra en ontdek wat persoonlijke, holistische huidverzorging voor je kan doen.</p>
-  <div class="cta-actions">
-    <a href="tel:+31534340468" class="btn btn-light btn-lg">Bel 053 434 0468</a>
-    <a href="#contact" class="btn btn-primary btn-lg" style="background:#fff;color:var(--brand)">Afspraak aanvragen</a>
-  </div>
-</div></div></section>
-
-<section class="section" id="contact" style="padding-top:0">
-  <div class="wrap contact-grid">
-    <div class="reveal">
-      <span class="eyebrow">Contact</span>
-      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:.8rem 0 1.6rem">Afspraak aanvragen</h2>
-      <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div><div><small>Bel of app</small><strong>053 434 0468 · 06 17 63 60 93</strong></div></div>
-      <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><small>E-mail</small><strong>info@beautysalonsoemintra.nl</strong></div></div>
-      <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><small>Adres</small><strong>Oliemolensingel 129, Enschede</strong></div></div>
+<!-- AFSPRAAK -->
+<section class="section" id="afspraak" style="padding-top:0">
+  <div class="wrap">
+    <div class="afspraak reveal">
+      <span class="kicker" style="color:var(--accent)">Afspraak maken</span>
+      <h2>Tijd voor jezelf?</h2>
+      <p>Laat je gegevens achter, dan nemen we zo snel mogelijk contact met je op om je afspraak in te plannen.</p>
+      <!-- ✏️ formspree endpoint in action="" -->
+      <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="two">
+          <div class="f"><label>Naam</label><input type="text" name="naam" placeholder="Jouw naam" required /></div>
+          <div class="f"><label>Telefoon</label><input type="tel" name="telefoon" placeholder="06 ..." required /></div>
+        </div>
+        <div class="f"><label>Behandeling</label><select name="behandeling"><option>Holistische huidcoaching</option><option>Gezichtsbehandeling / peeling</option><option>Bindweefselmassage</option><option>Energetische facelift</option><option>Sound healing</option><option>Medische pedicure</option><option>Advies</option></select></div>
+        <div class="f"><label>Voorkeursdag of vraag</label><textarea name="bericht" placeholder="Bijv. liefst een ochtend"></textarea></div>
+        <button type="submit" class="solid-cta">Verstuur aanvraag</button>
+      </form>
     </div>
-    <form class="book reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="row2">
-        <div class="field"><label>Naam</label><input type="text" name="naam" placeholder="Jouw naam" required /></div>
-        <div class="field"><label>Telefoon</label><input type="tel" name="telefoon" placeholder="06 ..." required /></div>
-      </div>
-      <div class="field"><label>Behandeling</label><select name="behandeling"><option>Huidcoaching</option><option>Gezichtsbehandeling / peeling</option><option>Bindweefselmassage</option><option>Energetische facelift</option><option>Sound healing</option><option>Medische pedicure</option><option>Anders / advies</option></select></div>
-      <div class="field"><label>Voorkeursdag of vraag</label><textarea name="bericht" placeholder="Bijv. liefst een ochtend, of een vraag over je huid"></textarea></div>
-      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Verstuur aanvraag</button>
-      <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:.9rem">We nemen zo snel mogelijk contact met je op.</p>
-    </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <div class="brand" style="font-family:Fraunces;font-size:1.2rem">Beauty by Soemintra</div>
-        <p>Holistische huidverzorging in Enschede. Vakkundig, persoonlijk en in alle rust.</p>
-      </div>
-      <div><h4>Behandelingen</h4><a href="#behandelingen">Huidcoaching</a><a href="#behandelingen">Gezichtsbehandelingen</a><a href="#behandelingen">Massage</a><a href="#behandelingen">Sound healing</a><a href="#behandelingen">Medische pedicure</a></div>
-      <div><h4>Contact</h4><a href="#contact">Oliemolensingel 129, Enschede</a><a href="tel:+31534340468">053 434 0468</a><a href="#openingstijden">Ma–Vr geopend</a><a href="https://www.instagram.com/beautysalon_soemintra/" target="_blank" rel="noopener">Instagram</a></div>
+    <a href="#top" class="logo">Beauty by <i>Soemintra</i></a>
+    <div class="fl">
+      <a href="#behandelingen">Behandelingen</a><a href="#over">Over</a><a href="#praktisch">Openingstijden</a>
+      <a href="https://www.instagram.com/beautysalon_soemintra/" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 Beauty by Soemintra — Enschede</span>
-      <span class="swd">Website door <a href="#">Sage Website Design</a></span>
-    </div>
+    <div class="cr">© 2026 Beauty by Soemintra — Enschede &nbsp;·&nbsp; Website door <a href="#">Sage Website Design</a></div>
   </div>
 </footer>
 
-<div class="callbar">
-  <a href="tel:+31534340468" class="btn btn-primary">Bel nu</a>
-  <a href="#contact" class="btn btn-light">Afspraak</a>
-</div>
-
 <script>
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
-const mm=document.getElementById('mobileMenu'),ov=document.getElementById('overlay');
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10),{passive:true});
+const mm=document.getElementById('mm'),ov=document.getElementById('ov');
 const op=()=>{mm.classList.add('open');ov.classList.add('show')},cl=()=>{mm.classList.remove('open');ov.classList.remove('show')};
-document.getElementById('burger').onclick=op;document.getElementById('menuClose').onclick=cl;ov.onclick=cl;
+document.getElementById('burger').onclick=op;document.getElementById('mclose').onclick=cl;ov.onclick=cl;
 mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',cl));
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*80)+'ms';io.observe(el)});
 </script>
 </body>
 </html>
