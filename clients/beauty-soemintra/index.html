@@ -27,6 +27,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:"Jost",system-ui,sans-serif;font-weight:400;color:var(--ink-2);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.04;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 h1,h2,h3,h4{font-family:"Cormorant Garamond",Georgia,serif;color:var(--ink);font-weight:500;line-height:1.08;letter-spacing:.005em}
 a{color:inherit;text-decoration:none}ul{list-style:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
@@ -61,12 +62,12 @@ header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 @media(max-width:1079px){.nav-mid{display:none}.burger{display:flex}header .wrap{grid-template-columns:1fr auto}.nav-end .solid-cta{display:none}}
 .mm{position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:var(--paper-2);z-index:90;transform:translateX(100%);transition:transform .45s var(--ease);box-shadow:-30px 0 60px rgba(38,32,25,.18);padding:96px 34px;display:flex;flex-direction:column;gap:.2rem}
 .mm.open{transform:none}.mm a{font-family:"Cormorant Garamond";font-size:1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line);color:var(--ink)}
-.mm .solid-cta{margin-top:1.4rem;text-align:center}
+.mm .solid-cta{margin-top:1.6rem;text-align:center;color:var(--paper);border-bottom:0;padding:1.1rem 2.1rem}
 .mclose{position:absolute;top:28px;right:30px;background:none;border:0;font-size:2rem;color:var(--ink);cursor:pointer}
 .ov{position:fixed;inset:0;background:rgba(38,32,25,.4);z-index:80;opacity:0;pointer-events:none;transition:.3s}.ov.show{opacity:1;pointer-events:auto}
 
 /* hero */
-.hero{padding:clamp(48px,8vw,96px) 0 0;text-align:center;position:relative;overflow:hidden}
+.hero{padding:clamp(48px,8vw,96px) 0 0;text-align:center;position:relative;overflow:hidden;background:radial-gradient(46% 40% at 50% 15%,rgba(191,132,99,.13),transparent 72%)}
 .hero .kicker{display:inline-block;margin-bottom:1.8rem}
 .hero h1{font-size:clamp(2.9rem,8vw,6rem);font-weight:500;max-width:14ch;margin:0 auto;letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:var(--accent-d)}
@@ -74,18 +75,22 @@ header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 .hero-ctas{display:flex;gap:2rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:clamp(48px,7vw,92px)}
 /* arched triptych */
 .triptych{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:18px;align-items:end;max-width:1000px;margin:0 auto;padding:0 8px}
-@media(max-width:760px){.triptych{grid-template-columns:1fr 1fr;gap:12px}.triptych .arch:nth-child(3){display:none}}
-.arch{border-radius:1000px 1000px 6px 6px;overflow:hidden;position:relative;box-shadow:0 30px 60px -34px rgba(92,76,55,.5)}
+@media(max-width:760px){.triptych{grid-template-columns:repeat(3,1fr);gap:9px;padding:0}}
+.arch{border-radius:1000px 1000px 8px 8px;overflow:hidden;position:relative;box-shadow:0 42px 74px -34px rgba(92,76,55,.55);transition:transform .6s var(--ease)}
+.arch:hover{transform:translateY(-8px)}
 .arch.tall{aspect-ratio:3/5}.arch.mid{aspect-ratio:3/5.6}
 .arch i{position:absolute;inset:0}
-.arch:nth-child(1) i{background:linear-gradient(165deg,#cdb79e,#a98c6e)}
-.arch:nth-child(2) i{background:linear-gradient(165deg,#8a9078,#5c6049)}
-.arch:nth-child(3) i{background:linear-gradient(165deg,#d8b9a4,#bf8463)}
-.arch svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5;color:rgba(255,255,255,.55)}
+.arch i::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 55% at 30% 8%,rgba(255,255,255,.42),transparent 55%)}
+.arch::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 2px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(255,255,255,.08);pointer-events:none}
+.arch:nth-child(1) i{background:linear-gradient(155deg,#dac6ad,#bda184 55%,#a1845d)}
+.arch:nth-child(2) i{background:linear-gradient(155deg,#9aa085,#6f7458 55%,#525840)}
+.arch:nth-child(3) i{background:linear-gradient(155deg,#e4c4ad,#cf9a78 55%,#bd8261)}
+.arch svg{position:absolute;inset:0;width:100%;height:100%;opacity:.42;color:rgba(255,255,255,.62);z-index:1}
 
 /* manifesto */
 .manifesto{text-align:center}
-.manifesto blockquote{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-size:clamp(1.8rem,4vw,3rem);line-height:1.25;color:var(--ink);max-width:20ch;margin:1.6rem auto}
+.manifesto .qmark{font-family:"Cormorant Garamond";font-size:5rem;line-height:.5;color:var(--accent);opacity:.45;margin:1rem 0 -.2rem}
+.manifesto blockquote{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-size:clamp(1.85rem,4vw,3.05rem);line-height:1.25;color:var(--ink);max-width:20ch;margin:.5rem auto 1.4rem}
 .manifesto .by{font-family:"Jost";font-weight:500;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 
 /* behandelingen index */
@@ -94,6 +99,7 @@ header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 .idx{border-top:1px solid var(--hair)}
 .row{display:grid;grid-template-columns:auto 1fr 1.1fr;gap:1.5rem;align-items:baseline;padding:1.7rem 0;border-bottom:1px solid var(--hair);transition:padding .3s var(--ease),background .3s}
 .row:hover{padding-left:14px;padding-right:14px;background:var(--paper-2)}
+.row:hover .nm{color:var(--accent-d)}
 .row .no{font-family:"Jost";font-weight:500;font-size:.8rem;color:var(--accent-d);letter-spacing:.1em}
 .row .nm{font-family:"Cormorant Garamond";font-size:clamp(1.5rem,2.4vw,2rem);color:var(--ink);font-weight:500;line-height:1.15}
 .row .ds{font-family:"Jost";font-weight:300;font-size:.96rem;color:var(--ink-2);max-width:46ch}
@@ -121,7 +127,8 @@ header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 .det li b.sm{font-size:1.15rem}
 
 /* afspraak */
-.afspraak{background:var(--ink);color:var(--paper);text-align:center;border-radius:4px;padding:clamp(46px,7vw,86px) 28px;position:relative;overflow:hidden}
+.afspraak{background:radial-gradient(60% 70% at 88% -8%,rgba(191,132,99,.2),transparent 60%),linear-gradient(160deg,#2f2920,#1f1a14);color:var(--paper);text-align:center;border-radius:4px;padding:clamp(48px,7vw,90px) 28px;position:relative;overflow:hidden}
+.afspraak::before{content:"";position:absolute;inset:14px;border:1px solid rgba(191,132,99,.32);border-radius:2px;pointer-events:none}
 .afspraak h2{color:var(--paper);font-size:clamp(2.2rem,5vw,3.6rem)}
 .afspraak p{font-family:"Jost";font-weight:300;color:rgba(250,246,240,.78);max-width:44ch;margin:1.2rem auto 2.2rem}
 .afspraak .form{max-width:540px;margin:0 auto;text-align:left;display:grid;gap:1.4rem}
@@ -196,7 +203,8 @@ footer .cr a{color:var(--accent-d)}
 <section class="section manifesto">
   <div class="wrap narrow reveal">
     <span class="kicker">De filosofie</span>
-    <blockquote>"Schoonheid begint van binnenuit — daarom kijken we verder dan alleen je huid."</blockquote>
+    <div class="qmark">&#8220;</div>
+    <blockquote>Schoonheid begint van binnenuit — daarom kijken we verder dan alleen je huid.</blockquote>
     <span class="by">Soemintra · Beauty by Soemintra</span>
   </div>
 </section>
