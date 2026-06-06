@@ -1,357 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- ============================================================
-     SWD REUSABLE PREVIEW TEMPLATE  ·  by Sage Website Design
-     ------------------------------------------------------------
-     HOW TO CUSTOMISE (5 min):
-     1. Find & replace  Apex Plumbing & Heating  -> client name
-     2. Find & replace  (415) 555-0142  -> client phone  (also +14155550142 in tel: links)
-     3. Find & replace  Oakridge  -> client city
-     4. Find & replace  hello@apexplumbing.com -> client email
-     5. Change the 2 colours in :root below (--brand and --accent) to match their logo
-     6. (Optional) swap service names + the review text for real ones
-     Re-skin per trade: electrician = amber brand, landscaper = green, HVAC = blue.
+     SAGE WEBSITE DESIGN (SWD) — studio / portfolio site
+     ✏️ Sage, vul in:
+        - [JOUW TELEFOON]  (ook in tel: en wa.me links)
+        - je e-mail in het contactformulier (formspree) + onder Contact
+        - je echte foto bij "Over mij" als je wilt
+     Later: koop sagewebsitedesign.nl → koppel gratis aan GitHub Pages.
      ============================================================ -->
 
-<title>Apex Plumbing &amp; Heating — Trusted Plumbers in Oakridge | 24/7 Emergency</title>
-<meta name="description" content="Licensed, insured plumbers serving Oakridge for 15+ years. Fast emergency repairs, water heaters, drains & remodels. Upfront pricing. Call (415) 555-0142 for a free quote." />
+<title>Sage Website Design — Moderne websites voor lokale ondernemers in Enschede</title>
+<meta name="description" content="Sage Website Design ontwerpt snelle, moderne en betaalbare websites voor lokale ondernemers in Enschede en omstreken. Gratis voorbeeld vooraf — je betaalt pas als je tevreden bent." />
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23ff6a3d'/><text x='50' y='72' font-size='62' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%230c0c0f'>S</text></svg>" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* ---------- THEME : change these two to re-skin for any client ---------- */
 :root{
-  --brand:#0b5d63;        /* primary brand colour */
-  --accent:#f2a035;       /* call-to-action / highlight */
-
-  --brand-700:#08484d;
-  --brand-300:#5aa9af;
-  --accent-600:#e08c1f;
-  --ink:#11151c;
-  --ink-2:#2b333d;
-  --muted:#6a7480;
-  --paper:#faf8f4;
-  --paper-2:#f2ede4;
-  --card:#ffffff;
-  --line:#e8e2d6;
-  --line-dark:#222a33;
-
-  --r:14px; --r-lg:26px; --r-xl:34px;
-  --shadow-sm:0 1px 2px rgba(17,21,28,.06), 0 2px 8px rgba(17,21,28,.05);
-  --shadow:0 10px 30px -12px rgba(17,21,28,.18), 0 4px 12px -6px rgba(17,21,28,.10);
-  --shadow-lg:0 30px 60px -24px rgba(11,93,99,.35), 0 10px 24px -12px rgba(17,21,28,.18);
-  --maxw:1180px;
-  --ease:cubic-bezier(.22,1,.36,1);
-  font-synthesis:none;
+  --bg:#0c0c0f; --bg-2:#131318; --panel:#17171d;
+  --paper:#f3f0e8; --paper-2:#e9e4d8; --paper-ink:#16140f;
+  --accent:#ff6a3d; --accent-2:#ffd23f; --accent-600:#e8542a;
+  --text:#ecebe6; --muted:#9a978f; --muted-d:#6f6c65;
+  --line:rgba(255,255,255,.1); --line-l:#ddd6c8;
+  --r:14px; --r-lg:24px; --r-xl:34px;
+  --maxw:1180px; --ease:cubic-bezier(.22,1,.36,1);
+  --shadow:0 30px 60px -24px rgba(0,0,0,.6);
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:"Figtree",system-ui,sans-serif;
-  color:var(--ink-2);
-  background:var(--paper);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-h1,h2,h3,h4{font-family:"Bricolage Grotesque",sans-serif;color:var(--ink);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.02em;color:#fff}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
 ul{list-style:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.eyebrow{font-family:"Figtree";font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:.55rem}
-.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
-.section{padding:clamp(64px,9vw,118px) 0}
+.eyebrow{font-family:"Manrope";font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent)}
+.section{padding:clamp(64px,9vw,124px) 0}
+.lead{font-size:clamp(1.04rem,1.7vw,1.25rem);color:var(--muted);max-width:60ch}
 .center{text-align:center}
-.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--muted);max-width:60ch}
 
-/* ---------- buttons ---------- */
-.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:"Figtree";font-weight:700;font-size:1rem;padding:.95rem 1.55rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:"Manrope";font-weight:700;font-size:1rem;padding:.95rem 1.6rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .2s,color .2s,border-color .2s;white-space:nowrap}
 .btn svg{width:18px;height:18px}
-.btn-primary{background:var(--accent);color:#1a1206;box-shadow:0 8px 20px -8px rgba(242,160,53,.7)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(242,160,53,.85)}
-.btn-dark{background:var(--ink);color:#fff}
-.btn-dark:hover{transform:translateY(-2px);background:#000}
-.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-.btn-light{background:#fff;color:var(--ink)}
-.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn-lg{padding:1.1rem 1.9rem;font-size:1.05rem}
+.btn-primary{background:var(--accent);color:#1a0d06;box-shadow:0 10px 30px -8px rgba(255,106,61,.5)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(255,106,61,.7)}
+.btn-out{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.btn-out:hover{border-color:#fff;transform:translateY(-2px)}
+.btn-dark{background:var(--paper-ink);color:#fff}
+.btn-lg{padding:1.1rem 2rem;font-size:1.05rem}
 
-/* ---------- top utility bar ---------- */
-.topbar{background:var(--ink);color:#cfd6dd;font-size:.83rem;font-weight:500}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:1rem}
-.topbar a{color:#fff}
-.topbar .stars{color:var(--accent);letter-spacing:1px}
-.topbar .tb-right{display:flex;gap:1.4rem;align-items:center}
-@media(max-width:780px){.topbar .tb-hide{display:none}.topbar .wrap{justify-content:center}}
-
-/* ---------- header / nav ---------- */
-header.nav{position:sticky;top:0;z-index:60;background:rgba(250,248,244,.82);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s var(--ease)}
-header.nav.scrolled{box-shadow:var(--shadow-sm);border-bottom-color:var(--line);background:rgba(250,248,244,.94)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:.6rem;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.28rem;color:var(--ink);letter-spacing:-.03em}
-.brand .mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(140deg,var(--brand),var(--brand-300));display:grid;place-items:center;color:#fff;font-size:1.1rem;box-shadow:var(--shadow-sm)}
+/* nav */
+header.nav{position:sticky;top:0;z-index:60;background:rgba(12,12,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+header.nav.scrolled{border-bottom-color:var(--line);background:rgba(12,12,15,.92)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:"Syne";font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.02em}
+.brand .mark{width:38px;height:38px;border-radius:11px;background:var(--accent);color:#0c0c0f;display:grid;place-items:center;font-family:"Syne";font-weight:800;font-size:1.2rem}
 .navlinks{display:flex;gap:2rem;align-items:center}
-.navlinks a{font-weight:600;font-size:.97rem;color:var(--ink-2);position:relative;padding:.3rem 0}
-.navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--accent);transition:width .3s var(--ease)}
-.navlinks a:hover{color:var(--ink)}
-.navlinks a:hover::after{width:100%}
-.nav-cta{display:flex;align-items:center;gap:1rem}
-.nav-phone{display:flex;flex-direction:column;line-height:1.05;text-align:right}
-.nav-phone small{font-size:.68rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
-.nav-phone strong{font-family:"Bricolage Grotesque";font-size:1.05rem;color:var(--ink)}
+.navlinks a{font-weight:600;font-size:.97rem;color:var(--muted);position:relative;transition:.2s}
+.navlinks a:hover{color:#fff}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{width:26px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
-@media(max-width:940px){
-  .navlinks,.nav-phone{display:none}
-  .burger{display:flex}
-}
-/* mobile menu */
-.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(330px,86vw);background:var(--paper);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);padding:90px 30px 30px;display:flex;flex-direction:column;gap:.4rem}
+.burger span{width:26px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:880px){.navlinks{display:none}.burger{display:flex}}
+.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(330px,86vw);background:var(--bg-2);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow);padding:90px 30px 30px;display:flex;flex-direction:column;gap:.3rem}
 .mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{padding:.95rem 0;font-weight:600;font-size:1.1rem;border-bottom:1px solid var(--line)}
+.mobile-menu a{padding:.95rem 0;font-weight:600;font-size:1.1rem;border-bottom:1px solid var(--line);color:#fff}
 .mobile-menu .btn{margin-top:1.2rem;justify-content:center}
-.menu-close{position:absolute;top:24px;right:24px;background:none;border:0;font-size:2rem;cursor:pointer;color:var(--ink);line-height:1}
-.overlay{position:fixed;inset:0;background:rgba(17,21,28,.5);z-index:70;opacity:0;pointer-events:none;transition:.3s}
+.menu-close{position:absolute;top:24px;right:24px;background:none;border:0;font-size:2rem;cursor:pointer;color:#fff}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:70;opacity:0;pointer-events:none;transition:.3s}
 .overlay.show{opacity:1;pointer-events:auto}
 
-/* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,90px) 0 clamp(70px,9vw,120px)}
-.hero-bg{position:absolute;inset:0;z-index:0;
-  background:
-   radial-gradient(60% 70% at 82% 8%, rgba(242,160,53,.20), transparent 60%),
-   radial-gradient(70% 80% at 8% 95%, rgba(11,93,99,.18), transparent 55%),
-   linear-gradient(180deg,#fff 0%,var(--paper) 100%);
-}
-.hero-bg::after{content:"";position:absolute;inset:0;opacity:.5;
-  background-image:radial-gradient(rgba(11,93,99,.10) 1px,transparent 1px);
-  background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 75%)}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4vw,60px);align-items:center}
-.hero-copy h1{font-size:clamp(2.5rem,5.4vw,4.15rem);margin:1.1rem 0 1.3rem}
-.hero-copy h1 .hl{color:var(--brand);position:relative;white-space:nowrap}
-.hero-copy h1 .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.06em;height:.34em;background:var(--accent);opacity:.35;z-index:-1;border-radius:3px}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin:1.9rem 0 1.6rem}
-.hero-trust{display:flex;gap:1.7rem;flex-wrap:wrap;align-items:center;padding-top:1.4rem;border-top:1px solid var(--line)}
-.trust-item{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.92rem;color:var(--ink-2)}
-.trust-item svg{width:20px;height:20px;color:var(--brand);flex:none}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:clamp(56px,9vw,120px) 0}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(60% 60% at 78% 12%, rgba(255,106,61,.22), transparent 60%),radial-gradient(50% 60% at 10% 100%, rgba(255,210,63,.10), transparent 55%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(180deg,#000,transparent 80%)}
+.hero .wrap{position:relative;z-index:1}
+.hero .tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.05);border:1px solid var(--line);padding:.45rem .9rem;border-radius:100px;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:1.6rem}
+.hero .tag b{color:#fff}
+.hero h1{font-size:clamp(2.7rem,7vw,5.4rem);max-width:16ch}
+.hero h1 .hl{color:var(--accent)}
+.hero h1 .out{-webkit-text-stroke:1.5px var(--accent);color:transparent}
+.hero p.lead{margin:1.6rem 0 2.2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2.6rem;padding-top:1.8rem;border-top:1px solid var(--line)}
+.hero-meta div b{font-family:"Syne";font-size:1.7rem;color:#fff;display:block;line-height:1}
+.hero-meta div span{font-size:.86rem;color:var(--muted);font-weight:600}
 
-/* hero visual card */
-.hero-visual{position:relative}
-.hero-photo{aspect-ratio:4/4.4;border-radius:var(--r-xl);position:relative;overflow:hidden;box-shadow:var(--shadow-lg);
-  background:
-    linear-gradient(150deg,rgba(11,93,99,.92),rgba(8,72,77,.96)),
-    radial-gradient(120% 80% at 20% 0%, rgba(255,255,255,.18), transparent 50%);
-}
-.hero-photo .ph-art{position:absolute;inset:0;opacity:.5}
-.hero-photo .ph-label{position:absolute;left:24px;bottom:22px;color:#fff;z-index:2}
-.hero-photo .ph-label small{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;font-weight:700}
-.hero-photo .ph-label h3{color:#fff;font-size:1.45rem;margin-top:.2rem}
-.float-card{position:absolute;background:#fff;border-radius:var(--r);box-shadow:var(--shadow-lg);padding:.95rem 1.15rem;display:flex;align-items:center;gap:.8rem}
-.float-rating{top:26px;left:-26px;animation:floaty 6s var(--ease) infinite}
-.float-rating .num{font-family:"Bricolage Grotesque";font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1}
-.float-rating .stars{color:var(--accent);font-size:.85rem;letter-spacing:1px}
-.float-rating small{color:var(--muted);font-size:.74rem;font-weight:600}
-.float-book{bottom:30px;right:-22px;flex-direction:column;align-items:flex-start;gap:.25rem;animation:floaty 6s var(--ease) infinite .8s}
-.float-book .dot{width:9px;height:9px;border-radius:50%;background:#22c55e;display:inline-block;margin-right:.45rem;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
-.float-book strong{font-family:"Bricolage Grotesque";color:var(--ink);font-size:.98rem}
-.float-book small{color:var(--muted);font-size:.76rem;font-weight:600}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@media(max-width:940px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero-visual{max-width:440px;margin:8px auto 0}
-  .float-rating{left:0}.float-book{right:0}
-}
+/* marquee */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:18px 0}
+.marq-track{display:flex;gap:3rem;white-space:nowrap;animation:scroll 26s linear infinite;font-family:"Syne";font-weight:700;font-size:1.05rem;color:var(--muted)}
+.marq-track span{display:flex;align-items:center;gap:3rem}
+.marq-track span::after{content:"✦";color:var(--accent)}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-/* ---------- marquee / certifications ---------- */
-.cred{background:var(--ink);color:#aeb7c0;padding:26px 0}
-.cred .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
-.cred p{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#7f8a95}
-.cred-logos{display:flex;gap:2.2rem;flex-wrap:wrap;align-items:center;font-family:"Bricolage Grotesque";font-weight:700;font-size:1.1rem;color:#e6ebef;opacity:.92}
-.cred-logos span{display:flex;align-items:center;gap:.5rem}
-.cred-logos svg{width:20px;height:20px;color:var(--accent)}
+/* section heads */
+.sec-head{margin-bottom:clamp(34px,5vw,60px)}
+.sec-head.center{text-align:center;max-width:62ch;margin-left:auto;margin-right:auto}
+.sec-head h2{font-size:clamp(2.1rem,4.6vw,3.4rem);margin:.9rem 0 1rem}
+.sec-head.center .lead{margin:0 auto}
 
-/* ---------- services ---------- */
-.sec-head{max-width:64ch;margin-bottom:clamp(34px,5vw,56px)}
-.sec-head.center{margin-left:auto;margin-right:auto}
-.sec-head h2{font-size:clamp(2rem,4vw,3.05rem);margin:.9rem 0 1rem}
-.grid{display:grid;gap:22px}
-.cards-3{grid-template-columns:repeat(3,1fr)}
-.cards-2{grid-template-columns:repeat(2,1fr)}
-@media(max-width:880px){.cards-3{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.cards-3,.cards-2{grid-template-columns:1fr}}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;position:relative;overflow:hidden}
-.svc::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--brand),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
-.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
-.svc:hover::before{transform:scaleX(1)}
-.svc .ic{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(150deg,rgba(11,93,99,.12),rgba(11,93,99,.05));color:var(--brand);margin-bottom:1.1rem}
-.svc .ic svg{width:27px;height:27px}
-.svc h3{font-size:1.28rem;margin-bottom:.5rem}
-.svc p{font-size:.96rem;color:var(--muted)}
-.svc .more{margin-top:1.1rem;display:inline-flex;align-items:center;gap:.4rem;font-weight:700;color:var(--brand);font-size:.92rem}
-.svc .more svg{width:16px;height:16px;transition:transform .3s}
-.svc:hover .more svg{transform:translateX(4px)}
+/* WORK / portfolio */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:820px){.work-grid{grid-template-columns:1fr}}
+.work{display:block;border-radius:var(--r-lg);overflow:hidden;background:var(--panel);border:1px solid var(--line);transition:transform .4s var(--ease),border-color .3s}
+.work:hover{transform:translateY(-6px);border-color:rgba(255,106,61,.5)}
+.thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-2);border-bottom:1px solid var(--line)}
+.thumb iframe{position:absolute;top:0;left:0;width:340%;height:340%;transform:scale(.294);transform-origin:top left;border:0;pointer-events:none}
+.thumb .browser{position:absolute;top:0;left:0;right:0;height:30px;background:#1c1c22;display:flex;align-items:center;gap:6px;padding:0 12px;z-index:2;border-bottom:1px solid var(--line)}
+.thumb .browser i{width:9px;height:9px;border-radius:50%;background:#3a3a42;display:block}
+.thumb .browser i:first-child{background:#ff5f57}.thumb .browser i:nth-child(2){background:#febc2e}.thumb .browser i:nth-child(3){background:#28c840}
+.thumb .browser .url{margin-left:8px;font-size:.7rem;color:var(--muted-d);background:#111;padding:2px 10px;border-radius:6px;flex:1;overflow:hidden;text-overflow:ellipsis}
+.thumb .live{position:absolute;top:38px;right:10px;z-index:3;background:rgba(40,200,64,.15);color:#36d35f;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:100px;border:1px solid rgba(54,211,95,.4)}
+.work-body{padding:24px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.work-body h3{font-size:1.4rem;margin-bottom:.25rem}
+.work-body p{color:var(--muted);font-size:.92rem}
+.work-body .go{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#1a0d06;display:grid;place-items:center;transition:transform .3s}
+.work:hover .work-body .go{transform:rotate(-45deg)}
+.work-body .go svg{width:20px;height:20px}
 
-/* ---------- stats band ---------- */
-.stats{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(40px,5vw,64px);position:relative;overflow:hidden}
-.stats::before{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(242,160,53,.22),transparent 70%)}
-.stats .wrap2{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
-.stat .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2.4rem,5vw,3.4rem);background:linear-gradient(120deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
-.stat .l{color:#aeb7c0;font-weight:600;margin-top:.4rem;font-size:.95rem}
-@media(max-width:680px){.stats .wrap2{grid-template-columns:1fr 1fr;gap:34px 20px}}
+/* light section */
+.light{background:var(--paper);color:var(--paper-ink)}
+.light h2,.light h3,.light h4{color:var(--paper-ink)}
+.light .eyebrow{color:var(--accent-600)}
+.light .lead{color:#5c574c}
 
-/* ---------- process ---------- */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:#fff;border:1px solid var(--line-l);border-radius:var(--r-lg);padding:32px 30px;transition:transform .35s var(--ease),box-shadow .35s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 24px 50px -22px rgba(0,0,0,.2)}
+.svc .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(150deg,#ffe9df,#fff4dd);color:var(--accent-600);display:grid;place-items:center;margin-bottom:1.1rem}
+.svc .ic svg{width:26px;height:26px}
+.svc h3{font-size:1.3rem;margin-bottom:.4rem}
+.svc p{color:#5c574c;font-size:.96rem}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
 @media(max-width:760px){.steps{grid-template-columns:1fr}}
-.step{position:relative;padding:32px 28px;background:var(--paper-2);border-radius:var(--r-lg);border:1px solid var(--line)}
-.step .num{counter-increment:step;font-family:"Bricolage Grotesque";font-weight:800;font-size:2.4rem;color:transparent;-webkit-text-stroke:1.6px var(--brand-300)}
-.step .num::before{content:"0" counter(step)}
-.step h3{font-size:1.25rem;margin:.4rem 0 .5rem}
+.step{padding:32px 28px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);position:relative}
+.step .n{counter-increment:s;font-family:"Syne";font-weight:800;font-size:2.6rem;color:transparent;-webkit-text-stroke:1.5px var(--accent)}
+.step .n::before{content:"0" counter(s)}
+.step h3{font-size:1.3rem;margin:.3rem 0 .5rem}
 .step p{color:var(--muted);font-size:.96rem}
 
-/* ---------- gallery ---------- */
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media(max-width:860px){.gallery{grid-template-columns:1fr 1fr}}
-.gtile{aspect-ratio:1/1;border-radius:var(--r-lg);position:relative;overflow:hidden;box-shadow:var(--shadow-sm);
-  background:linear-gradient(155deg,var(--brand),var(--brand-700));display:grid;place-items:center;transition:transform .4s var(--ease)}
-.gtile:nth-child(2){background:linear-gradient(155deg,#2b333d,var(--ink))}
-.gtile:nth-child(3){background:linear-gradient(155deg,var(--accent),var(--accent-600))}
-.gtile:nth-child(4){background:linear-gradient(155deg,var(--brand-300),var(--brand))}
-.gtile:hover{transform:scale(1.03)}
-.gtile svg{width:46px;height:46px;color:rgba(255,255,255,.85)}
-.gtile span{position:absolute;left:16px;bottom:14px;color:#fff;font-weight:700;font-size:.92rem;text-shadow:0 1px 6px rgba(0,0,0,.3)}
+/* pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+.tier{background:#fff;border:1px solid var(--line-l);border-radius:var(--r-lg);padding:34px 30px;position:relative;transition:transform .35s var(--ease)}
+.tier.feat{background:var(--paper-ink);color:#fff;border-color:var(--paper-ink);transform:scale(1.02)}
+.tier.feat h3,.tier.feat .amt{color:#fff}
+.tier .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#1a0d06;font-size:.72rem;font-weight:700;padding:4px 14px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em}
+.tier h3{font-family:"Syne";font-size:1.3rem;margin-bottom:.3rem}
+.tier .amt{font-family:"Syne";font-weight:800;font-size:2.4rem;color:var(--paper-ink);line-height:1}
+.tier .amt small{font-family:"Manrope";font-size:.9rem;font-weight:600;color:var(--muted)}
+.tier .desc{font-size:.9rem;color:#7a756a;margin:.5rem 0 1.3rem}
+.tier.feat .desc{color:#b7b3aa}
+.tier ul{display:grid;gap:.7rem;margin-bottom:1.6rem}
+.tier li{display:flex;gap:.6rem;font-size:.94rem;align-items:flex-start}
+.tier li svg{width:19px;height:19px;color:var(--accent);flex:none;margin-top:1px}
+.tier .btn{width:100%;justify-content:center}
 
-/* ---------- testimonials ---------- */
-.reviews{background:linear-gradient(180deg,var(--paper-2),var(--paper))}
-.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:1rem}
-.rev .stars{color:var(--accent);letter-spacing:2px;font-size:1.05rem}
-.rev p{color:var(--ink-2);font-size:1.02rem;font-weight:500}
-.rev .who{display:flex;align-items:center;gap:.8rem;margin-top:auto}
-.rev .av{width:46px;height:46px;border-radius:50%;background:linear-gradient(140deg,var(--brand),var(--brand-300));display:grid;place-items:center;color:#fff;font-weight:800;font-family:"Bricolage Grotesque"}
-.rev .who strong{display:block;color:var(--ink);font-size:.98rem}
-.rev .who small{color:var(--muted)}
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.about-photo{aspect-ratio:1/1;border-radius:var(--r-xl);background:linear-gradient(150deg,var(--accent),var(--accent-600));position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:var(--shadow);max-width:360px}
+.about-photo span{font-family:"Syne";font-weight:800;font-size:6rem;color:rgba(12,12,15,.25)}
+.about-photo .ring{position:absolute;inset:18px;border:2px dashed rgba(12,12,15,.25);border-radius:calc(var(--r-xl) - 10px)}
+.about h2{font-size:clamp(2rem,4vw,3rem);margin:.8rem 0 1.2rem}
+.about p{color:var(--muted);margin-bottom:1rem}
+.about .sig{font-family:"Syne";font-weight:700;color:#fff;font-size:1.2rem;margin-top:.6rem}
 
-/* ---------- service area ---------- */
-.areas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
-@media(max-width:820px){.areas{grid-template-columns:1fr}}
-.area-list{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
-.area-list li{background:#fff;border:1px solid var(--line);padding:.5rem 1rem;border-radius:100px;font-weight:600;font-size:.92rem;color:var(--ink-2);display:flex;align-items:center;gap:.45rem}
-.area-list li::before{content:"📍";font-size:.85rem}
-.map-card{aspect-ratio:5/4;border-radius:var(--r-xl);overflow:hidden;position:relative;box-shadow:var(--shadow);
-  background:
-   radial-gradient(circle at 50% 45%, rgba(242,160,53,.25), transparent 40%),
-   linear-gradient(160deg,#e9f1f0,#d6e6e4);
-}
-.map-card .grid-lines{position:absolute;inset:0;opacity:.5;
-  background-image:linear-gradient(var(--brand-300) 1px,transparent 1px),linear-gradient(90deg,var(--brand-300) 1px,transparent 1px);
-  background-size:46px 46px;mask-image:radial-gradient(circle at 50% 45%,#000,transparent 72%)}
-.map-card .pin{position:absolute;top:42%;left:48%;transform:translate(-50%,-50%);z-index:2;text-align:center}
-.map-card .pin .dot{width:20px;height:20px;border-radius:50%;background:var(--accent);margin:0 auto;box-shadow:0 0 0 8px rgba(242,160,53,.25),0 0 0 18px rgba(242,160,53,.12);animation:pulse 2.4s infinite}
-.map-card .pin strong{display:inline-block;margin-top:.7rem;background:var(--ink);color:#fff;padding:.35rem .8rem;border-radius:100px;font-size:.82rem}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,160,53,.45),0 0 0 0 rgba(242,160,53,.2)}100%{box-shadow:0 0 0 22px rgba(242,160,53,0),0 0 0 40px rgba(242,160,53,0)}}
-
-/* ---------- FAQ ---------- */
-.faq{max-width:780px;margin:0 auto}
-.qa{border-bottom:1px solid var(--line)}
-.qa button{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:1.4rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:"Bricolage Grotesque";font-weight:700;font-size:1.12rem;color:var(--ink)}
-.qa .ico{flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:.3s;font-size:1.1rem;color:var(--brand)}
-.qa.open .ico{background:var(--brand);color:#fff;border-color:var(--brand);transform:rotate(45deg)}
-.qa .ans{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
-.qa .ans p{padding:0 0 1.4rem;color:var(--muted)}
-
-/* ---------- big CTA ---------- */
-.cta{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--brand),var(--brand-700));color:#fff;border-radius:var(--r-xl);padding:clamp(44px,6vw,80px);text-align:center}
-.cta::before{content:"";position:absolute;inset:0;opacity:.5;background:radial-gradient(60% 90% at 80% 10%,rgba(242,160,53,.3),transparent 55%)}
-.cta::after{content:"🔧";position:absolute;font-size:13rem;right:-1rem;bottom:-3rem;opacity:.07;transform:rotate(-18deg)}
+/* CTA */
+.cta{background:var(--accent);color:#1a0d06;border-radius:var(--r-xl);padding:clamp(46px,6vw,84px);text-align:center;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 80% 0%,rgba(255,210,63,.5),transparent 60%);opacity:.7}
 .cta>*{position:relative;z-index:1}
-.cta h2{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem)}
-.cta p{color:rgba(255,255,255,.85);max-width:56ch;margin:1rem auto 2rem;font-size:1.1rem}
-.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta h2{color:#1a0d06;font-size:clamp(2.2rem,5vw,3.6rem)}
+.cta p{color:#3a2114;max-width:52ch;margin:1rem auto 2rem;font-size:1.12rem;font-weight:500}
 
-/* ---------- contact ---------- */
-.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px)}
 @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
-.contact-info .ci{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.contact-info .ci .ic{width:48px;height:48px;border-radius:13px;flex:none;background:linear-gradient(150deg,rgba(11,93,99,.12),rgba(11,93,99,.05));color:var(--brand);display:grid;place-items:center}
-.contact-info .ci .ic svg{width:22px;height:22px}
-.contact-info .ci small{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.74rem}
-.contact-info .ci strong{display:block;font-family:"Bricolage Grotesque";font-size:1.15rem;color:var(--ink)}
-form.quote{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(26px,3vw,38px);box-shadow:var(--shadow)}
-form.quote .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:520px){form.quote .row{grid-template-columns:1fr}}
-.field{margin-bottom:16px}
-.field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:.4rem;color:var(--ink-2)}
-.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--paper);transition:.2s;color:var(--ink)}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand);background:#fff;box-shadow:0 0 0 4px rgba(11,93,99,.1)}
+.ci{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.4rem}
+.ci .ic{width:48px;height:48px;border-radius:13px;flex:none;background:rgba(255,106,61,.12);color:var(--accent);display:grid;place-items:center}
+.ci .ic svg{width:22px;height:22px}
+.ci small{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.74rem}
+.ci strong{display:block;font-family:"Syne";font-size:1.15rem;color:#fff}
+form.cf{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(26px,3vw,36px)}
+.field{margin-bottom:15px}
+.field label{display:block;font-weight:600;font-size:.86rem;margin-bottom:.4rem}
+.field input,.field textarea{width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--bg);color:#fff;transition:.2s}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted-d)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,106,61,.15)}
 .field textarea{resize:vertical;min-height:110px}
 
-/* ---------- footer ---------- */
-footer{background:var(--ink);color:#aeb7c0;padding:clamp(48px,6vw,80px) 0 30px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:34px}
-@media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
-footer h4{color:#fff;font-size:1.05rem;margin-bottom:1.1rem}
-footer a{color:#aeb7c0;transition:.2s;display:block;padding:.28rem 0}
-footer a:hover{color:var(--accent)}
-.foot-brand .brand{color:#fff;margin-bottom:1rem}
-.foot-brand p{font-size:.95rem;max-width:34ch}
-.foot-phone{font-family:"Bricolage Grotesque";font-size:1.5rem;color:#fff;margin-top:.4rem}
-.socials{display:flex;gap:.6rem;margin-top:1.2rem}
-.socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.07);display:grid;place-items:center;padding:0}
-.socials a:hover{background:var(--accent);color:var(--ink)}
-.socials svg{width:19px;height:19px}
-.foot-bottom{border-top:1px solid var(--line-dark);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:#7f8a95}
-.foot-bottom .swd{color:#aeb7c0}
-.foot-bottom .swd a{display:inline;color:var(--accent)}
+footer{background:var(--bg-2);border-top:1px solid var(--line);padding:60px 0 30px}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:center;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.foot-top h3{font-size:clamp(1.5rem,3vw,2.2rem);max-width:18ch}
+.foot-bottom{padding-top:24px;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted-d)}
+.foot-bottom a{color:var(--muted)}
+.foot-bottom a:hover{color:var(--accent)}
 
-/* ---------- sticky mobile call bar ---------- */
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;background:var(--ink);padding:10px 14px;gap:10px;box-shadow:0 -8px 24px rgba(0,0,0,.25)}
-.callbar a{flex:1;justify-content:center}
-@media(max-width:680px){.callbar{display:flex}body{padding-bottom:72px}}
-
-/* ---------- scroll reveal ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<!-- ░░ TOP BAR ░░ -->
-<div class="topbar">
-  <div class="wrap">
-    <span class="tb-hide"><span class="stars">★★★★★</span> &nbsp;4.9 from 327 verified reviews</span>
-    <div class="tb-right">
-      <span class="tb-hide">🕒 Mon–Sat 7am–7pm · Emergency 24/7</span>
-      <a href="tel:+14155550142">📞 (415) 555-0142</a>
-    </div>
-  </div>
-</div>
-
-<!-- ░░ NAV ░░ -->
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="brand"><span class="mark">🔧</span> Apex Plumbing</a>
+    <a href="#top" class="brand"><span class="mark">S</span> Sage Website Design</a>
     <nav class="navlinks">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#work">Our Work</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#areas">Areas</a>
-      <a href="#contact">Contact</a>
+      <a href="#werk">Werk</a><a href="#diensten">Diensten</a><a href="#aanpak">Aanpak</a><a href="#tarieven">Tarieven</a><a href="#contact">Contact</a>
     </nav>
-    <div class="nav-cta">
-      <div class="nav-phone"><small>Call us today</small><strong>(415) 555-0142</strong></div>
-      <a href="#contact" class="btn btn-primary">Free Quote</a>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <a href="#contact" class="btn btn-primary">Gratis voorbeeld</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -359,342 +227,220 @@ footer a:hover{color:var(--accent)}
 
 <div class="overlay" id="overlay"></div>
 <aside class="mobile-menu" id="mobileMenu">
-  <button class="menu-close" id="menuClose" aria-label="Close">×</button>
-  <a href="#services">Services</a>
-  <a href="#why">Why Us</a>
-  <a href="#work">Our Work</a>
-  <a href="#reviews">Reviews</a>
-  <a href="#areas">Service Areas</a>
-  <a href="#contact">Contact</a>
-  <a href="tel:+14155550142" class="btn btn-dark">📞 (415) 555-0142</a>
-  <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+  <button class="menu-close" id="menuClose" aria-label="Sluiten">×</button>
+  <a href="#werk">Werk</a><a href="#diensten">Diensten</a><a href="#aanpak">Aanpak</a><a href="#tarieven">Tarieven</a><a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Gratis voorbeeld aanvragen</a>
 </aside>
 
-<!-- ░░ HERO ░░ -->
+<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow reveal">Oakridge's trusted plumbers since 2009</span>
-      <h1 class="reveal">Fast, honest plumbing <span class="hl">done right</span> the first time.</h1>
-      <p class="lead reveal">Burst pipe? Blocked drain? No hot water? Our licensed plumbers arrive on time, give you an upfront price before we start, and leave your home cleaner than we found it.</p>
-      <div class="hero-actions reveal">
-        <a href="#contact" class="btn btn-primary btn-lg">Get My Free Quote
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="tel:+14155550142" class="btn btn-ghost btn-lg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          Call (415) 555-0142
-        </a>
-      </div>
-      <div class="hero-trust reveal">
-        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Licensed &amp; Insured</span>
-        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> Upfront Pricing</span>
-        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 24/7 Emergency</span>
-      </div>
+    <span class="tag reveal">📍 Gevestigd in <b>Enschede</b> · werkt door heel Nederland</span>
+    <h1 class="reveal">Websites die lokale ondernemers <span class="hl">méér klanten</span> opleveren.</h1>
+    <p class="lead reveal">Ik ben Sage. Ik ontwerp snelle, moderne websites voor kappers, loodgieters, horeca en andere lokale ondernemers — strak op mobiel, vindbaar in Google, en betaalbaar. <b style="color:#fff">Je krijgt eerst een gratis voorbeeld. Pas tevreden? Dan zetten we 'm live.</b></p>
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn btn-primary btn-lg">Vraag je gratis voorbeeld aan
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#werk" class="btn btn-out btn-lg">Bekijk mijn werk</a>
     </div>
-
-    <div class="hero-visual reveal">
-      <div class="hero-photo">
-        <!-- ✏️ swap this block for a real photo: <img src="photo.jpg" alt="..."> -->
-        <svg class="ph-art" viewBox="0 0 400 440" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2">
-          <path d="M70 110h80v60h120v-60h60M150 170v140M270 110V40M70 310h260M120 360h160" stroke-linecap="round"/>
-          <circle cx="150" cy="170" r="14"/><circle cx="270" cy="110" r="14"/>
-          <rect x="60" y="300" width="280" height="20" rx="8"/>
-        </svg>
-        <div class="ph-label"><small>On-site today</small><h3>Trusted by 5,000+ Oakridge homes</h3></div>
-      </div>
-      <div class="float-card float-rating">
-        <div>
-          <div class="num">4.9</div>
-          <div class="stars">★★★★★</div>
-          <small>327 Google reviews</small>
-        </div>
-      </div>
-      <div class="float-card float-book">
-        <strong><span class="dot"></span>12 jobs booked today</strong>
-        <small>Next slot: this afternoon</small>
-      </div>
+    <div class="hero-meta reveal">
+      <div><b>Gratis</b><span>voorbeeld vooraf</span></div>
+      <div><b>± 1 week</b><span>en je staat live</span></div>
+      <div><b>v.a. €300</b><span>eerlijke prijzen</span></div>
+      <div><b>100%</b><span>mobielvriendelijk</span></div>
     </div>
   </div>
 </section>
 
-<!-- ░░ CREDENTIALS ░░ -->
-<div class="cred">
-  <div class="wrap">
-    <p>Certified &amp; backed by</p>
-    <div class="cred-logos">
-      <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/></svg> Master Licensed</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Fully Insured</span>
-      <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg> Google Guaranteed</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 1-Hour Response</span>
-    </div>
+<!-- MARQUEE -->
+<div class="marq">
+  <div class="marq-track">
+    <span>Kapsalons&nbsp;&nbsp;Loodgieters&nbsp;&nbsp;Horeca&nbsp;&nbsp;Hoveniers&nbsp;&nbsp;Nagelstudio's&nbsp;&nbsp;Barbershops&nbsp;&nbsp;Schoonmaak&nbsp;&nbsp;Fietsenmakers</span>
+    <span>Kapsalons&nbsp;&nbsp;Loodgieters&nbsp;&nbsp;Horeca&nbsp;&nbsp;Hoveniers&nbsp;&nbsp;Nagelstudio's&nbsp;&nbsp;Barbershops&nbsp;&nbsp;Schoonmaak&nbsp;&nbsp;Fietsenmakers</span>
   </div>
 </div>
 
-<!-- ░░ SERVICES ░░ -->
-<section class="section" id="services">
+<!-- WERK -->
+<section class="section" id="werk">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">What we do</span>
-      <h2>Plumbing services for every home emergency</h2>
-      <p class="lead" style="margin:0 auto">From a dripping tap to a full bathroom remodel, we handle it all with clean, guaranteed workmanship.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Recent werk</span>
+      <h2>Echte previews, live in je browser</h2>
+      <p class="lead">Hieronder draaien echte, werkende websites die ik heb gebouwd. Klik om ze volledig te bekijken.</p>
     </div>
-    <div class="grid cards-3">
-      <!-- ✏️ edit service names + text -->
-      <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12Z"/><path d="m9 11 2 2 4-4"/></svg></div>
-        <h3>Emergency Repairs</h3>
-        <p>Burst pipes, leaks and floods handled fast — we answer 24/7 and arrive within the hour to stop the damage.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </article>
-      <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 4v6l4 4v6H6v-6l4-4V4M9 4h6"/></svg></div>
-        <h3>Water Heaters</h3>
-        <p>Repair, replacement and tankless upgrades. Get reliable hot water back the same day, fully warrantied.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </article>
-      <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
-        <h3>Drain Cleaning</h3>
-        <p>Slow or blocked drains cleared with camera inspection — we find the real cause, not just a quick patch.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </article>
-      <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M9 21v-4h6v4"/></svg></div>
-        <h3>Bathroom Remodels</h3>
-        <p>Full or partial bathroom renovations — fixtures, fittings and finishes installed by licensed pros.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </article>
-      <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M5 8h14l-1 12H6L5 8ZM9 12v4M15 12v4"/></svg></div>
-        <h3>Leak Detection</h3>
-        <p>Hidden leaks pinpointed with non-invasive tech before they wreck your floors, walls and water bill.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </article>
-      <article class="svc reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h0M9 13h0M9 17h0"/></svg></div>
-        <h3>Repiping &amp; Installs</h3>
-        <p>Whole-home repipes, new fixtures and appliance hook-ups — clean installs built to last decades.</p>
-        <span class="more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </article>
+    <div class="work-grid">
+      <a class="work reveal" href="clients/deters-hairstyling/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <div class="browser"><i></i><i></i><i></i><span class="url">detershairstyling.nl</span></div>
+          <span class="live">● LIVE</span>
+          <iframe src="clients/deters-hairstyling/" loading="lazy" title="Deters Hairstyling preview" scrolling="no"></iframe>
+        </div>
+        <div class="work-body">
+          <div><h3>Deters Hairstyling</h3><p>Kapsalon · Enschede — knippen, kleuren &amp; bruidskapsels</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
+      <a class="work reveal" href="template-demo/" target="_blank" rel="noopener">
+        <div class="thumb">
+          <div class="browser"><i></i><i></i><i></i><span class="url">voorbeeld — servicebedrijf</span></div>
+          <span class="live">● DEMO</span>
+          <iframe src="template-demo/" loading="lazy" title="Servicebedrijf demo" scrolling="no"></iframe>
+        </div>
+        <div class="work-body">
+          <div><h3>Lokaal servicebedrijf</h3><p>Voorbeeld · loodgieter / installatie — 24/7 stijl</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ░░ STATS / WHY ░░ -->
-<section class="section" id="why" style="padding-top:0">
+<!-- DIENSTEN -->
+<section class="section light" id="diensten">
   <div class="wrap">
-    <div class="stats reveal">
-      <div class="wrap2">
-        <div class="stat"><div class="n">15+</div><div class="l">Years in business</div></div>
-        <div class="stat"><div class="n">5,000+</div><div class="l">Homes served</div></div>
-        <div class="stat"><div class="n">60min</div><div class="l">Average arrival</div></div>
-        <div class="stat"><div class="n">100%</div><div class="l">Satisfaction guarantee</div></div>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Wat ik doe</span>
+      <h2>Alles voor een website die werkt</h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Nieuwe website</h3><p>Een complete, professionele website voor jouw bedrijf — van één strakke pagina tot meerdere. Klaar voor klanten.</p></article>
+      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M3 20l1-5 11-11a2.8 2.8 0 0 1 4 4L8 19l-5 1Z"/></svg></div><h3>Redesign</h3><p>Verouderde of trage site? Ik geef 'm een moderne, snelle make-over die wél goed werkt op de telefoon.</p></article>
+      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Vindbaar in Google</h3><p>Lokale SEO zodat klanten in de buurt je vinden — met de juiste teksten, Google-Bedrijfsprofiel en snelle laadtijd.</p></article>
+      <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M5 8h14l-1 12H6L5 8ZM9 12v4M15 12v4"/></svg></div><h3>Onderhoud &amp; updates</h3><p>Geen zin in technisch gedoe? Ik houd je site online, veilig en up-to-date voor een klein bedrag per maand.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- AANPAK -->
+<section class="section" id="aanpak">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow">Zo werkt het</span><h2>Geen risico, geen verrassingen</h2></div>
+    <div class="steps">
+      <div class="step reveal"><div class="n"></div><h3>Gratis voorbeeld</h3><p>Ik maak vooraf een gratis voorbeeld van jouw nieuwe website. Je ziet meteen wat mogelijk is — zonder iets te betalen.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>Jij beslist</h3><p>Vind je het mooi? Dan stemmen we de details af en spreken we een vaste prijs af. Niet tevreden? Dan stopt het hier.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>Live binnen een week</h3><p>Ik zet je site live op je eigen webadres, zorg dat alles werkt en leg uit hoe je 'm gebruikt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIEVEN -->
+<section class="section light" id="tarieven">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Tarieven</span>
+      <h2>Eerlijke prijzen, vooraf duidelijk</h2>
+      <p class="lead">Geen abonnementen die je niet snapt. Eén heldere prijs — en pas betalen als je tevreden bent.</p>
+    </div>
+    <div class="price-grid">
+      <div class="tier reveal">
+        <h3>Starter</h3>
+        <div class="amt">€300<small>+</small></div>
+        <p class="desc">Één strakke pagina. Perfect om snel professioneel online te staan.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Één pagina, mobielvriendelijk</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Klikbaar telefoonnummer</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Contactformulier</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Aanvragen</a>
+      </div>
+      <div class="tier feat reveal">
+        <span class="badge">Populair</span>
+        <h3>Standaard</h3>
+        <div class="amt">€500<small>+</small></div>
+        <p class="desc">Complete website met je eigen foto's, diensten, prijzen en Google-vindbaarheid.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Meerdere secties + jouw foto's</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Lokale SEO + Google Maps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Eigen domeinnaam geregeld</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Aanvragen</a>
+      </div>
+      <div class="tier reveal">
+        <h3>Premium</h3>
+        <div class="amt">€900<small>+</small></div>
+        <p class="desc">Meerdere pagina's, teksten op maat en een maand support na livegang.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Meerdere pagina's</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Teksten op maat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Google-Bedrijfsprofiel + 1 maand support</li>
+        </ul>
+        <a href="#contact" class="btn btn-dark">Aanvragen</a>
       </div>
     </div>
+    <p class="center reveal" style="margin-top:1.8rem;color:#7a756a;font-size:.92rem">🔁 Onderhoud &amp; hosting vanaf <b>€25 / maand</b> — altijd online, veilig en up-to-date.</p>
   </div>
 </section>
 
-<!-- ░░ PROCESS ░░ -->
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Simple &amp; stress-free</span>
-      <h2>Getting help is easy</h2>
+<!-- OVER MIJ -->
+<section class="section" id="over">
+  <div class="wrap about">
+    <div class="about-photo reveal">
+      <div class="ring"></div>
+      <!-- ✏️ vervang door je eigen foto: <img src="sage.jpg" style="width:100%;height:100%;object-fit:cover"> -->
+      <span>S</span>
     </div>
-    <div class="steps">
-      <div class="step reveal"><div class="num"></div><h3>Call or book online</h3><p>Tell us what's wrong. We'll give you a clear arrival time — no all-day waiting windows.</p></div>
-      <div class="step reveal"><div class="num"></div><h3>Upfront, fair price</h3><p>We diagnose the problem and tell you the exact price before any work begins. No surprises.</p></div>
-      <div class="step reveal"><div class="num"></div><h3>Fixed &amp; guaranteed</h3><p>We fix it right, clean up after ourselves, and back the work with our written guarantee.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ GALLERY ░░ -->
-<section class="section" id="work" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Recent work</span>
-      <h2>Quality you can see</h2>
-      <p class="lead" style="margin:0 auto">A few jobs from around Oakridge. <em>(Drop in real before/after photos here — they convert best.)</em></p>
-    </div>
-    <div class="gallery">
-      <!-- ✏️ replace each tile with: <img class="gtile" src="job1.jpg" alt=""> -->
-      <div class="gtile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8"/></svg><span>Bathroom remodel</span></div>
-      <div class="gtile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 4v6l4 4v6H6v-6l4-4V4"/></svg><span>Water heater install</span></div>
-      <div class="gtile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg><span>Drain repair</span></div>
-      <div class="gtile reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l8-4 8 4v14"/></svg><span>Kitchen repipe</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ REVIEWS ░░ -->
-<section class="section reviews" id="reviews">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Don't take our word for it</span>
-      <h2>Loved by Oakridge homeowners</h2>
-    </div>
-    <div class="grid cards-3">
-      <article class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Our water heater died on a Sunday night. Apex answered, came within the hour, and had hot water back before bed. Fair price, super clean. I've found my plumber for life."</p>
-        <div class="who"><div class="av">SM</div><div><strong>Sarah M.</strong><small>Maple Heights</small></div></div>
-      </article>
-      <article class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Quoted me half what a 'big name' company wanted for the same drain job — and explained everything in plain English. Honest, on time, no mess. Can't recommend them enough."</p>
-        <div class="who"><div class="av">DR</div><div><strong>David R.</strong><small>Oakridge Centre</small></div></div>
-      </article>
-      <article class="rev reveal">
-        <div class="stars">★★★★★</div>
-        <p>"They remodelled our whole bathroom in four days. The team was respectful of our home, tidied up every evening, and the finish is stunning. Worth every penny."</p>
-        <div class="who"><div class="av">PT</div><div><strong>Priya T.</strong><small>Riverside</small></div></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ SERVICE AREA ░░ -->
-<section class="section" id="areas">
-  <div class="wrap areas">
     <div class="reveal">
-      <span class="eyebrow">Where we work</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:.8rem 0 1rem">Proudly serving Oakridge &amp; surrounding areas</h2>
-      <p class="lead">Local, family-run and just minutes away. If you're in one of these neighbourhoods, we can usually be at your door the same day.</p>
-      <ul class="area-list">
-        <li>Oakridge Centre</li><li>Maple Heights</li><li>Riverside</li><li>Brookfield</li>
-        <li>Westgate</li><li>Highbury</li><li>Stonecreek</li><li>Elmwood</li>
-      </ul>
-    </div>
-    <div class="map-card reveal">
-      <div class="grid-lines"></div>
-      <div class="pin"><div class="dot"></div><strong>Apex Plumbing HQ — Oakridge</strong></div>
+      <span class="eyebrow">Over mij</span>
+      <h2>Hoi, ik ben Sage 👋</h2>
+      <p>Ik help lokale ondernemers in Enschede en omstreken aan een website waar ze trots op zijn — en die ook écht klanten oplevert. Geen ingewikkelde bureaus, geen vage offertes: gewoon eerlijk werk tegen een eerlijke prijs.</p>
+      <p>Omdat ik klein en persoonlijk werk, krijg jij rechtstreeks contact, snelle oplevering en een site die past bij jouw bedrijf. En het mooiste: je ziet eerst een gratis voorbeeld, zodat je precies weet wat je krijgt.</p>
+      <div class="sig">— Sage, Sage Website Design</div>
     </div>
   </div>
 </section>
 
-<!-- ░░ FAQ ░░ -->
-<section class="section" style="background:var(--paper-2)">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Good to know</span>
-      <h2>Frequently asked questions</h2>
-    </div>
-    <div class="faq">
-      <div class="qa reveal"><button>Do you charge for call-outs or quotes? <span class="ico">+</span></button><div class="ans"><p>No. Quotes are completely free and we give you an upfront, fixed price before any work starts — so you're always in control.</p></div></div>
-      <div class="qa reveal"><button>How fast can you get to me in an emergency? <span class="ico">+</span></button><div class="ans"><p>For genuine emergencies we aim to be on-site within 60 minutes, 24 hours a day, 7 days a week — including weekends and holidays.</p></div></div>
-      <div class="qa reveal"><button>Are you licensed and insured? <span class="ico">+</span></button><div class="ans"><p>Absolutely. We're fully licensed master plumbers and carry full liability insurance, so your home is always protected.</p></div></div>
-      <div class="qa reveal"><button>Do you guarantee your work? <span class="ico">+</span></button><div class="ans"><p>Yes — every job is backed by our written workmanship guarantee. If something isn't right, we come back and make it right at no charge.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ BIG CTA ░░ -->
+<!-- CTA -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="cta reveal">
-      <h2>Got a plumbing problem? Let's fix it today.</h2>
-      <p>Call now for fast, friendly service and an honest upfront price — or request your free quote online and we'll get right back to you.</p>
-      <div class="cta-actions">
-        <a href="tel:+14155550142" class="btn btn-light btn-lg">📞 Call (415) 555-0142</a>
-        <a href="#contact" class="btn btn-primary btn-lg">Request Free Quote</a>
-      </div>
+      <h2>Klaar voor een website die wél werkt?</h2>
+      <p>Vraag je gratis voorbeeld aan. Binnen een paar dagen laat ik je zien hoe jouw nieuwe website eruit kan zien — vrijblijvend.</p>
+      <a href="#contact" class="btn btn-dark btn-lg">Vraag je gratis voorbeeld aan →</a>
     </div>
   </div>
 </section>
 
-<!-- ░░ CONTACT ░░ -->
+<!-- CONTACT -->
 <section class="section" id="contact" style="padding-top:0">
   <div class="wrap contact-grid">
-    <div class="contact-info reveal">
-      <span class="eyebrow">Get in touch</span>
-      <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin:.8rem 0 1.6rem">Request your free quote</h2>
-      <div class="ci">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
-        <div><small>Call or text</small><strong>(415) 555-0142</strong></div>
-      </div>
-      <div class="ci">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
-        <div><small>Email us</small><strong>hello@apexplumbing.com</strong></div>
-      </div>
-      <div class="ci">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <div><small>Hours</small><strong>Mon–Sat 7–7 · 24/7 Emergency</strong></div>
-      </div>
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 style="font-size:clamp(2rem,4vw,2.9rem);margin:.8rem 0 1.6rem">Laten we kennismaken</h2>
+      <p class="lead" style="margin-bottom:2rem">Stuur een berichtje of bel gerust. Ik denk graag vrijblijvend met je mee over wat een website voor jouw bedrijf kan doen.</p>
+      <!-- ✏️ vul je telefoon in (ook in href tel:/wa.me) -->
+      <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div><div><small>Bel of WhatsApp</small><strong>[jouw telefoonnummer]</strong></div></div>
+      <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><small>E-mail</small><strong>[jouw e-mailadres]</strong></div></div>
+      <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><small>Werkgebied</small><strong>Enschede &amp; heel Nederland</strong></div></div>
     </div>
 
-    <!-- ✏️ To make this form actually email you (free): sign up at formspree.io,
-         create a form, and paste your endpoint into action="" below. -->
-    <form class="quote reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="row">
-        <div class="field"><label>Your name</label><input type="text" name="name" placeholder="Jane Smith" required /></div>
-        <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="(415) 555-0142" required /></div>
-      </div>
-      <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@email.com" /></div>
-      <div class="field"><label>What do you need help with?</label>
-        <select name="service">
-          <option>Emergency repair</option><option>Water heater</option><option>Drain cleaning</option>
-          <option>Bathroom remodel</option><option>Leak detection</option><option>Something else</option>
-        </select>
-      </div>
-      <div class="field"><label>Tell us a bit more</label><textarea name="message" placeholder="e.g. My kitchen sink has been leaking since this morning…"></textarea></div>
-      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Send My Request →</button>
-      <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:.9rem">We reply within 1 business hour. No spam, ever.</p>
+    <!-- ✏️ Formulier laten mailen: gratis account op formspree.io, endpoint in action="" -->
+    <form class="cf reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="field"><label>Je naam</label><input type="text" name="naam" placeholder="Voor- en achternaam" required /></div>
+      <div class="field"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Naam van je bedrijf" /></div>
+      <div class="field"><label>E-mail of telefoon</label><input type="text" name="contact" placeholder="Hoe kan ik je bereiken?" required /></div>
+      <div class="field"><label>Waar kan ik mee helpen?</label><textarea name="bericht" placeholder="Bijv. ik heb nog geen website / mijn site is verouderd…"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">Verstuur — ik reageer snel →</button>
     </form>
   </div>
 </section>
 
-<!-- ░░ FOOTER ░░ -->
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <div class="brand" style="color:#fff"><span class="mark">🔧</span> Apex Plumbing</div>
-        <p>Honest, licensed plumbing for Oakridge homes since 2009. Family-run, locally loved.</p>
-        <div class="foot-phone">(415) 555-0142</div>
-        <div class="socials">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-          <a href="#" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <a href="#services">Emergency repairs</a><a href="#services">Water heaters</a>
-        <a href="#services">Drain cleaning</a><a href="#services">Bathroom remodels</a><a href="#services">Leak detection</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="#why">Why choose us</a><a href="#work">Our work</a>
-        <a href="#reviews">Reviews</a><a href="#areas">Service areas</a><a href="#contact">Contact</a>
-      </div>
-      <div>
-        <h4>Service areas</h4>
-        <a href="#areas">Oakridge Centre</a><a href="#areas">Maple Heights</a>
-        <a href="#areas">Riverside</a><a href="#areas">Brookfield &amp; more</a>
-      </div>
+    <div class="foot-top">
+      <h3>Laten we jouw website bouwen.</h3>
+      <a href="#contact" class="btn btn-primary btn-lg">Gratis voorbeeld aanvragen</a>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Apex Plumbing &amp; Heating. Licensed &amp; insured. All rights reserved.</span>
-      <span class="swd">Website by <a href="#">Sage Website Design</a></span>
+      <span>© 2026 Sage Website Design — Enschede, NL</span>
+      <span>Moderne websites voor lokale ondernemers · <a href="#werk">Werk</a> · <a href="#tarieven">Tarieven</a> · <a href="#contact">Contact</a></span>
     </div>
   </div>
 </footer>
 
-<!-- ░░ STICKY MOBILE CALL BAR ░░ -->
-<div class="callbar">
-  <a href="tel:+14155550142" class="btn btn-primary">📞 Call Now</a>
-  <a href="#contact" class="btn btn-dark">Free Quote</a>
-</div>
-
 <script>
-/* sticky header */
 const nav=document.getElementById('nav');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
-
-/* mobile menu */
 const mm=document.getElementById('mobileMenu'),ov=document.getElementById('overlay');
 const openM=()=>{mm.classList.add('open');ov.classList.add('show')};
 const closeM=()=>{mm.classList.remove('open');ov.classList.remove('show')};
@@ -702,19 +448,8 @@ document.getElementById('burger').onclick=openM;
 document.getElementById('menuClose').onclick=closeM;
 ov.onclick=closeM;
 mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeM));
-
-/* FAQ accordion */
-document.querySelectorAll('.qa button').forEach(b=>{
-  b.onclick=()=>{
-    const qa=b.parentElement, ans=qa.querySelector('.ans'), open=qa.classList.contains('open');
-    document.querySelectorAll('.qa').forEach(x=>{x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});
-    if(!open){qa.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
-  };
-});
-
-/* scroll reveal */
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
 </script>
 </body>
 </html>

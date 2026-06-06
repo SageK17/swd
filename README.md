@@ -1,17 +1,24 @@
-# Sage Website Design — Live Sites 🌐
+# Sage Website Design (SWD) 🌐
 
-Premium websites for local businesses, built by **Sage Website Design (SWD)**.
+Studio site + live client previews. Hosted free on GitHub Pages.
 
-🔗 **Live demo:** https://sagek17.github.io/swd/
+🔗 **Studio site (your portfolio):** https://sagek17.github.io/swd/
 
-## How this repo works (your HQ)
-- `index.html` — the master template / portfolio demo (Apex Plumbing example).
-- `clients/<name>/` — one folder per prospect. Each is a live preview link you can send.
+## Structure
+- `index.html` — **Sage Website Design studio site** (your portfolio — use this link in your email signature).
+- `clients/<name>/` — live client previews to send to prospects.
+- `template-demo/` — reusable service-business demo (a portfolio sample).
+
+## Live links
+- Studio: https://sagek17.github.io/swd/
+- Deters Hairstyling: https://sagek17.github.io/swd/clients/deters-hairstyling/
+- Service-business demo: https://sagek17.github.io/swd/template-demo/
 
 ## How a client preview goes live
 1. A new folder is added under `clients/`, e.g. `clients/bakkerij-jansen/`.
-2. It's pushed to GitHub.
-3. It's instantly live at `https://sagek17.github.io/swd/clients/bakkerij-jansen/`.
-4. You send that link to the prospect. They pay → you connect their own domain.
+2. Pushed to GitHub → instantly live at `https://sagek17.github.io/swd/clients/bakkerij-jansen/`.
+3. Send that link to the prospect.
 
-No frameworks, no build step, free hosting via GitHub Pages. Fast and self-contained.
+## Upgrade path (when ready)
+Buy `sagewebsitedesign.nl` → add it as a **custom domain** in repo Settings → Pages (free).
+Then set up `sage@sagewebsitedesign.nl` (Zoho Mail free, or a mailbox included with the domain).
