@@ -9,9 +9,9 @@
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Space+Mono:wght@700&amp;display=swap');
-      .m{font-family:'Syne',sans-serif;font-weight:800;font-size:27px;letter-spacing:-1px}
-      .w{font-family:'Syne',sans-serif;font-weight:800;font-size:37px;letter-spacing:-1px}
+      @import url('https://fonts.googleapis.com/css2?family=Sora:wght@800&amp;family=Space+Mono:wght@700&amp;display=swap');
+      .m{font-family:'Sora',sans-serif;font-weight:800;font-size:27px;letter-spacing:-1px}
+      .w{font-family:'Sora',sans-serif;font-weight:800;font-size:37px;letter-spacing:-1px}
       .t{font-family:'Space Mono',monospace;font-weight:700;font-size:11.5px;letter-spacing:4.5px}
     </style>
   </defs>
