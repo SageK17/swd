@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Schoonheidssalon Elegance — Enschede · Schoonheidssalon sinds 1987</title>
+<meta name="description" content="Schoonheidssalon Elegance in Enschede: al ruim 37 jaar (sinds 1987) uw vertrouwde adres voor schoonheidsbehandelingen, permanente make-up, IPL-ontharing, manicure en pedicure. Rust en pampering in een hectische tijd." />
+<meta name="theme-color" content="#2A2F36" />
+<meta property="og:title" content="Schoonheidssalon Elegance — Enschede" />
+<meta property="og:description" content="Sinds 1987 uw vertrouwde schoonheidssalon in Enschede. Schoonheidsbehandelingen, PMU, IPL, manicure en pedicure in een rustige, spa-achtige sfeer." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="nl_NL" />
+
+<!-- Custom SVG data-URI favicon: brass monogram "E" on slate -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232A2F36'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23B8995B' stroke-width='1.5' opacity='0.55'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' fill='%23B8995B' text-anchor='middle' font-style='italic'%3EE%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     SCHOONHEIDSSALON ELEGANCE — "Timeless heritage elegance"
+     Soft blue-grey + warm brass on ivory. Playfair Display + Lato.
+     Single-file preview by Sage Website Design.
+     ============================================================ */
+
+  :root{
+    --bluegrey-soft:#D9E0E6;
+    --bluegrey:#6F8595;
+    --bluegrey-deep:#56697A;
+    --ivory:#F6F4EF;
+    --ivory-warm:#EFEBE2;
+    --brass:#B8995B;
+    --brass-deep:#9C7E45;
+    --ink:#2A2F36;
+    --ink-soft:#4A525C;
+    --line:rgba(42,47,54,.14);
+    --line-soft:rgba(42,47,54,.08);
+    --white:#FFFFFF;
+
+    --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+    --sans:"Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --maxw:1240px;
+    --gutter:clamp(1.25rem, 4vw, 4rem);
+    --shadow-soft:0 24px 60px -32px rgba(42,47,54,.45);
+    --shadow-card:0 18px 44px -30px rgba(42,47,54,.5);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+
+  body{
+    font-family:var(--sans);
+    font-weight:400;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.75;
+    font-size:clamp(1rem, .96rem + .2vw, 1.075rem);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{ font-family:var(--serif); font-weight:500; line-height:1.12; color:var(--ink); }
+
+  a{ color:inherit; text-decoration:none; }
+  img,svg{ display:block; max-width:100%; }
+
+  ::selection{ background:var(--brass); color:var(--white); }
+
+  :focus-visible{ outline:2px solid var(--brass); outline-offset:3px; border-radius:2px; }
+
+  .wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter); }
+
+  /* ---------- Eyebrow / shared bits ---------- */
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:.85rem;
+  }
+  .eyebrow::before{
+    content:"";
+    width:2.4rem; height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
+  .eyebrow.center{ justify-content:center; }
+  .eyebrow.center::after{
+    content:"";
+    width:2.4rem; height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
+
+  .section-title{
+    font-size:clamp(2rem, 1.5rem + 2.3vw, 3.25rem);
+    letter-spacing:-.01em;
+    margin-top:1.1rem;
+  }
+  .section-title em{ font-style:italic; color:var(--bluegrey-deep); }
+
+  .lead{
+    font-size:clamp(1.05rem, 1rem + .35vw, 1.22rem);
+    color:var(--ink-soft);
+    font-weight:300;
+    line-height:1.85;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    --bg:var(--ink);
+    --fg:var(--ivory);
+    display:inline-flex;
+    align-items:center;
+    gap:.7rem;
+    padding:1.05rem 2.1rem;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:.82rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    border:1px solid var(--bg);
+    border-radius:2px;
+    cursor:pointer;
+    transition:transform .4s var(--ease), background .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
+  }
+  .btn svg{ width:1.05em; height:1.05em; transition:transform .4s var(--ease); }
+  .btn:hover{ background:var(--brass); border-color:var(--brass); color:var(--white); }
+  .btn:hover svg{ transform:translateX(4px); }
+
+  .btn--ghost{
+    --bg:transparent;
+    --fg:var(--ink);
+    border-color:var(--line);
+  }
+  .btn--ghost:hover{ background:var(--ink); border-color:var(--ink); color:var(--ivory); }
+
+  .btn--light{
+    --bg:transparent;
+    --fg:var(--ivory);
+    border-color:rgba(246,244,239,.4);
+  }
+  .btn--light:hover{ background:var(--brass); border-color:var(--brass); color:var(--white); }
+
+  .text-link{
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .3s var(--ease), gap .3s var(--ease);
+  }
+  .text-link svg{ width:1em; height:1em; }
+  .text-link:hover{ border-color:var(--brass); gap:.85rem; }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .site-header{
+    position:fixed;
+    inset:0 0 auto 0;
+    z-index:90;
+    transition:background .45s var(--ease), box-shadow .45s var(--ease), padding .45s var(--ease);
+    padding-block:1.5rem;
+  }
+  .site-header.scrolled{
+    background:rgba(246,244,239,.92);
+    backdrop-filter:blur(14px) saturate(120%);
+    -webkit-backdrop-filter:blur(14px) saturate(120%);
+    box-shadow:0 1px 0 var(--line-soft), 0 14px 30px -28px rgba(42,47,54,.7);
+    padding-block:.95rem;
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2rem;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:.85rem;
+    line-height:1;
+  }
+  .brand__mark{
+    width:46px; height:46px;
+    flex:none;
+    border:1px solid var(--brass);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--brass-deep);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.5rem;
+    background:var(--white);
+    transition:background .4s var(--ease), color .4s var(--ease);
+  }
+  .brand:hover .brand__mark{ background:var(--brass); color:var(--white); }
+  .brand__name{
+    font-family:var(--serif);
+    font-size:1.18rem;
+    letter-spacing:.04em;
+    color:var(--ink);
+    display:block;
+  }
+  .brand__sub{
+    font-family:var(--sans);
+    font-size:.6rem;
+    font-weight:700;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--bluegrey);
+    display:block;
+    margin-top:.3rem;
+  }
+
+  .nav{ display:flex; align-items:center; gap:2.4rem; }
+  .nav__links{ display:flex; align-items:center; gap:2.2rem; list-style:none; }
+  .nav__links a{
+    font-family:var(--sans);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    position:relative;
+    padding-block:.3rem;
+    transition:color .3s var(--ease);
+  }
+  .nav__links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-2px;
+    width:0; height:1px;
+    background:var(--brass);
+    transition:width .35s var(--ease);
+  }
+  .nav__links a:hover{ color:var(--ink); }
+  .nav__links a:hover::after{ width:100%; }
+
+  .header-tel{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    line-height:1.25;
+  }
+  .header-tel span{
+    font-size:.6rem;
+    font-weight:700;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--bluegrey);
+  }
+  .header-tel strong{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.02rem;
+    color:var(--ink);
+    letter-spacing:.02em;
+  }
+
+  /* hamburger */
+  .burger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:44px; height:44px;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:2px;
+    cursor:pointer;
+    transition:border-color .3s var(--ease);
+  }
+  .burger:hover{ border-color:var(--brass); }
+  .burger span{
+    display:block;
+    width:20px; height:1.5px;
+    margin-inline:auto;
+    background:var(--ink);
+    transition:transform .4s var(--ease), opacity .3s var(--ease);
+  }
+  body.menu-open .burger span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+  body.menu-open .burger span:nth-child(2){ opacity:0; }
+  body.menu-open .burger span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
+  /* mobile overlay */
+  .mobile-overlay{
+    position:fixed;
+    inset:0;
+    z-index:85;
+    background:var(--ink);
+    color:var(--ivory);
+    padding:7rem var(--gutter) 3rem;
+    display:flex;
+    flex-direction:column;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-12px);
+    transition:opacity .5s var(--ease), transform .5s var(--ease), visibility .5s;
+  }
+  body.menu-open .mobile-overlay{ opacity:1; visibility:visible; transform:translateY(0); }
+  .mobile-overlay ul{ list-style:none; display:flex; flex-direction:column; gap:.4rem; }
+  .mobile-overlay li{
+    overflow:hidden;
+    border-bottom:1px solid rgba(246,244,239,.12);
+  }
+  .mobile-overlay a{
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
+    font-family:var(--serif);
+    font-size:clamp(1.7rem, 7vw, 2.4rem);
+    color:var(--ivory);
+    padding-block:1rem;
+    transform:translateY(110%);
+    transition:transform .6s var(--ease), color .3s var(--ease);
+  }
+  .mobile-overlay a .num{
+    font-family:var(--sans);
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    color:var(--brass);
+  }
+  body.menu-open .mobile-overlay a{ transform:translateY(0); }
+  .mobile-overlay a:hover{ color:var(--brass); }
+  .mobile-overlay__foot{
+    margin-top:auto;
+    padding-top:2.5rem;
+    display:flex;
+    flex-direction:column;
+    gap:.4rem;
+  }
+  .mobile-overlay__foot .lbl{
+    font-size:.62rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--bluegrey);
+  }
+  .mobile-overlay__foot .val{ font-family:var(--serif); font-size:1.15rem; color:var(--ivory); }
+
+  /* stagger the overlay links */
+  body.menu-open .mobile-overlay li:nth-child(1) a{ transition-delay:.12s; }
+  body.menu-open .mobile-overlay li:nth-child(2) a{ transition-delay:.18s; }
+  body.menu-open .mobile-overlay li:nth-child(3) a{ transition-delay:.24s; }
+  body.menu-open .mobile-overlay li:nth-child(4) a{ transition-delay:.30s; }
+  body.menu-open .mobile-overlay li:nth-child(5) a{ transition-delay:.36s; }
+  body.menu-open .mobile-overlay li:nth-child(6) a{ transition-delay:.42s; }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative;
+    padding-top:clamp(8rem, 14vh, 11rem);
+    padding-bottom:clamp(4rem, 8vh, 7rem);
+    overflow:hidden;
+  }
+  /* soft blue-grey wash background with subtle vertical line texture */
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(120% 80% at 85% 0%, rgba(217,224,230,.85) 0%, rgba(217,224,230,0) 55%),
+      linear-gradient(180deg, var(--ivory) 0%, var(--ivory-warm) 100%);
+    z-index:-2;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:repeating-linear-gradient(90deg, rgba(42,47,54,.03) 0 1px, transparent 1px 80px);
+    z-index:-1;
+    -webkit-mask-image:linear-gradient(180deg, transparent, #000 30%);
+            mask-image:linear-gradient(180deg, transparent, #000 30%);
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:clamp(2rem, 5vw, 5rem);
+    align-items:center;
+  }
+
+  .hero__content{ position:relative; z-index:2; }
+  .hero__title{
+    font-size:clamp(2.7rem, 1.6rem + 5.2vw, 5.5rem);
+    line-height:1.04;
+    letter-spacing:-.018em;
+    margin-top:1.6rem;
+  }
+  .hero__title em{ font-style:italic; color:var(--bluegrey-deep); }
+  .hero__title .thin{ font-weight:400; }
+
+  .hero__desc{
+    max-width:46ch;
+    margin-top:1.8rem;
+  }
+  .hero__cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin-top:2.4rem;
+    align-items:center;
+  }
+
+  /* heritage badge */
+  .heritage-badge{
+    position:relative;
+    flex:none;
+    width:128px; height:128px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 50% 50%, var(--white) 0 62%, transparent 63%),
+      conic-gradient(from 0deg, var(--brass), var(--brass-deep), var(--brass));
+    box-shadow:var(--shadow-card);
+  }
+  .heritage-badge .ring-text{
+    position:absolute;
+    inset:0;
+    width:100%; height:100%;
+    animation:spin 38s linear infinite;
+  }
+  .heritage-badge .ring-text text{
+    font-family:var(--sans);
+    font-size:8.6px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    fill:var(--brass-deep);
+    text-transform:uppercase;
+  }
+  .heritage-badge__core .since{
+    display:block;
+    font-family:var(--sans);
+    font-size:.56rem;
+    font-weight:700;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--bluegrey);
+  }
+  .heritage-badge__core .year{
+    display:block;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:2rem;
+    line-height:1;
+    color:var(--ink);
+    margin-top:.15rem;
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  /* hero composed visual */
+  .hero__visual{
+    position:relative;
+    aspect-ratio:4/5;
+    z-index:1;
+  }
+  .hero__frame{
+    position:absolute;
+    inset:0;
+    border-radius:200px 200px 8px 8px;
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+  }
+  /* ✏️ FOTO: vervang door echte foto van de salon-ruimte / een behandeling */
+  .photo-spa{
+    width:100%; height:100%;
+    background:
+      radial-gradient(80% 55% at 50% 18%, rgba(246,244,239,.55) 0%, transparent 60%),
+      linear-gradient(155deg, var(--bluegrey) 0%, var(--bluegrey-deep) 48%, var(--ink) 100%);
+    position:relative;
+  }
+  /* subtle "steam / calm" rings as decorative SVG-ish via gradients */
+  .photo-spa::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 50% 70%, rgba(184,153,91,.28) 0 2px, transparent 3px),
+      radial-gradient(circle at 32% 40%, rgba(246,244,239,.16) 0 60px, transparent 61px),
+      radial-gradient(circle at 70% 58%, rgba(246,244,239,.1) 0 90px, transparent 91px);
+    opacity:.7;
+  }
+  .photo-spa__label{
+    position:absolute;
+    left:0; right:0; bottom:1.6rem;
+    text-align:center;
+    color:rgba(246,244,239,.85);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.05rem;
+    letter-spacing:.02em;
+  }
+  .hero__frame-accent{
+    position:absolute;
+    inset:14px;
+    border:1px solid rgba(246,244,239,.35);
+    border-radius:188px 188px 4px 4px;
+    pointer-events:none;
+  }
+
+  /* floating credential card on the visual */
+  .hero__cred{
+    position:absolute;
+    left:-1.5rem;
+    bottom:2.2rem;
+    background:var(--ivory);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:1.05rem 1.35rem;
+    box-shadow:var(--shadow-card);
+    display:flex;
+    align-items:center;
+    gap:.95rem;
+    max-width:230px;
+  }
+  .hero__cred svg{ width:26px; height:26px; color:var(--brass-deep); flex:none; }
+  .hero__cred span{
+    font-size:.78rem;
+    line-height:1.45;
+    color:var(--ink-soft);
+  }
+  .hero__cred strong{ color:var(--ink); font-weight:700; display:block; }
+
+  /* hero stats strip */
+  .hero-stats{
+    margin-top:clamp(3rem, 6vh, 5rem);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+  .hero-stats .stat{
+    padding:1.7rem 1.4rem;
+    text-align:center;
+    border-right:1px solid var(--line);
+  }
+  .hero-stats .stat:last-child{ border-right:none; }
+  .hero-stats .stat__num{
+    font-family:var(--serif);
+    font-size:clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
+    color:var(--ink);
+    line-height:1;
+  }
+  .hero-stats .stat__num em{ font-style:italic; color:var(--brass-deep); }
+  .hero-stats .stat__label{
+    margin-top:.6rem;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--bluegrey);
+  }
+
+  /* ============================================================
+     MARQUEE / VALUE BAND
+     ============================================================ */
+  .marquee{
+    background:var(--ink);
+    color:var(--ivory);
+    overflow:hidden;
+    padding-block:1.05rem;
+    white-space:nowrap;
+  }
+  .marquee__track{
+    display:inline-flex;
+    align-items:center;
+    gap:2.6rem;
+    animation:marquee 34s linear infinite;
+  }
+  .marquee__track span{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.15rem;
+    letter-spacing:.02em;
+    color:rgba(246,244,239,.9);
+  }
+  .marquee__track svg{ width:14px; height:14px; color:var(--brass); flex:none; }
+  @keyframes marquee{ to{ transform:translateX(-50%); } }
+
+  /* ============================================================
+     SECTION BASE + REVEAL
+     ============================================================ */
+  section{ position:relative; }
+  .section-pad{ padding-block:clamp(4.5rem, 10vh, 8rem); }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .9s var(--ease), transform .9s var(--ease);
+  }
+  .reveal.in{ opacity:1; transform:none; }
+  .reveal.d1{ transition-delay:.08s; }
+  .reveal.d2{ transition-delay:.16s; }
+  .reveal.d3{ transition-delay:.24s; }
+  .reveal.d4{ transition-delay:.32s; }
+
+  /* ============================================================
+     INTRO / PHILOSOPHY (two-column editorial)
+     ============================================================ */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:clamp(2rem, 6vw, 5.5rem);
+    align-items:start;
+  }
+  .intro__aside{ position:sticky; top:8rem; }
+  .intro__big{
+    font-size:clamp(1.6rem, 1.2rem + 1.8vw, 2.5rem);
+    font-style:italic;
+    line-height:1.3;
+    color:var(--ink);
+    margin-top:1.2rem;
+  }
+  .intro__big::first-letter{
+    initial-letter:2;
+    -webkit-initial-letter:2;
+    font-weight:700;
+    color:var(--brass-deep);
+    margin-right:.12em;
+    font-style:normal;
+  }
+  .intro__body p + p{ margin-top:1.2rem; }
+  .intro__signature{
+    margin-top:2rem;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
+  .intro__signature .sig{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.6rem;
+    color:var(--ink);
+  }
+  .intro__signature .sig-sub{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--bluegrey);
+  }
+
+  /* feature trio */
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:clamp(1.2rem, 3vw, 2.5rem);
+    margin-top:clamp(3rem, 6vh, 4.5rem);
+  }
+  .pillar{
+    padding:1.8rem 0 0;
+    border-top:2px solid var(--ink);
+  }
+  .pillar svg{ width:30px; height:30px; color:var(--brass-deep); }
+  .pillar h3{ font-size:1.25rem; margin-top:1.1rem; }
+  .pillar p{ font-size:.92rem; color:var(--ink-soft); margin-top:.6rem; }
+
+  /* ============================================================
+     SERVICES — refined columns / ledger
+     ============================================================ */
+  .services{
+    background:var(--ink);
+    color:var(--ivory);
+    position:relative;
+    overflow:hidden;
+  }
+  .services::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(90deg, rgba(246,244,239,.035) 0 1px, transparent 1px 92px);
+    pointer-events:none;
+  }
+  .services .eyebrow{ color:var(--brass); }
+  .services .eyebrow::before,.services .eyebrow::after{ background:var(--brass); }
+  .services .section-title{ color:var(--ivory); }
+  .services .section-title em{ color:var(--bluegrey-soft); }
+  .services__intro{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:2rem;
+    margin-bottom:clamp(2.5rem, 5vh, 4rem);
+  }
+  .services__intro .lead{ color:rgba(246,244,239,.72); max-width:42ch; }
+
+  .svc-list{ position:relative; z-index:1; }
+  .svc-row{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:baseline;
+    gap:clamp(1rem, 4vw, 3rem);
+    padding:1.85rem 0;
+    border-top:1px solid rgba(246,244,239,.16);
+    transition:padding-left .45s var(--ease);
+  }
+  .svc-row:last-child{ border-bottom:1px solid rgba(246,244,239,.16); }
+  .svc-row__num{
+    font-family:var(--sans);
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    color:var(--brass);
+  }
+  .svc-row__main{ display:flex; flex-direction:column; gap:.5rem; }
+  .svc-row__name{
+    font-family:var(--serif);
+    font-size:clamp(1.45rem, 1.1rem + 1.4vw, 2.15rem);
+    color:var(--ivory);
+    line-height:1.1;
+    transition:color .4s var(--ease);
+  }
+  .svc-row__desc{
+    font-size:.92rem;
+    color:rgba(246,244,239,.6);
+    max-width:60ch;
+    line-height:1.6;
+  }
+  .svc-row__tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    margin-top:.3rem;
+  }
+  .svc-row__tags span{
+    font-size:.66rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--bluegrey-soft);
+    border:1px solid rgba(246,244,239,.2);
+    padding:.28rem .6rem;
+    border-radius:2px;
+  }
+  .svc-row__price{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1rem;
+    color:rgba(246,244,239,.55);
+    white-space:nowrap;
+  }
+  .svc-row:hover{ padding-left:clamp(.5rem, 2vw, 1.6rem); }
+  .svc-row:hover .svc-row__name{ color:var(--brass); }
+
+  .services__note{
+    margin-top:2.4rem;
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    font-size:.86rem;
+    color:rgba(246,244,239,.6);
+  }
+  .services__note svg{ width:18px; height:18px; color:var(--brass); flex:none; }
+
+  /* ============================================================
+     OVER EUGENIEK — story
+     ============================================================ */
+  .story{ background:var(--ivory-warm); overflow:hidden; }
+  .story-grid{
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+    gap:clamp(2rem, 6vw, 5.5rem);
+    align-items:center;
+  }
+
+  .story__portrait{
+    position:relative;
+    aspect-ratio:5/6;
+  }
+  .story__portrait-frame{
+    position:absolute; inset:0;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:var(--shadow-soft);
+  }
+  /* ✏️ FOTO: vervang door echte foto van Eugeniek van het Hul (de eigenaresse) */
+  .photo-portrait{
+    width:100%; height:100%;
+    background:
+      radial-gradient(70% 50% at 50% 28%, rgba(246,244,239,.4) 0%, transparent 60%),
+      linear-gradient(160deg, var(--bluegrey-soft) 0%, var(--bluegrey) 55%, var(--bluegrey-deep) 100%);
+    position:relative;
+    display:grid;
+    place-items:center;
+  }
+  .photo-portrait svg{ width:34%; height:34%; color:rgba(42,47,54,.22); }
+  .story__portrait-tag{
+    position:absolute;
+    right:-1.2rem;
+    top:2rem;
+    writing-mode:vertical-rl;
+    font-size:.66rem;
+    font-weight:700;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--bluegrey);
+    background:var(--ivory-warm);
+    padding:.7rem .35rem;
+  }
+  /* established stamp on portrait */
+  .story__stamp{
+    position:absolute;
+    left:-1.4rem;
+    bottom:1.8rem;
+    width:104px; height:104px;
+    border-radius:50%;
+    background:var(--ink);
+    color:var(--ivory);
+    display:grid;
+    place-items:center;
+    text-align:center;
+    box-shadow:var(--shadow-card);
+    border:1px solid var(--brass);
+  }
+  .story__stamp .est{ font-size:.5rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--brass); display:block; }
+  .story__stamp .yr{ font-family:var(--serif); font-style:italic; font-size:1.55rem; display:block; line-height:1; margin-top:.1rem; }
+  .story__stamp .ench{ font-size:.46rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(246,244,239,.6); display:block; margin-top:.25rem; }
+
+  .story__body .section-title{ margin-bottom:1.5rem; }
+  .story__body p + p{ margin-top:1.15rem; }
+  .story__quote{
+    margin:2rem 0;
+    padding-left:1.6rem;
+    border-left:2px solid var(--brass);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(1.2rem, 1rem + .9vw, 1.6rem);
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .story__credentials{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem 2rem;
+    margin-top:2rem;
+    padding-top:2rem;
+    border-top:1px solid var(--line);
+  }
+  .story__credentials li{ list-style:none; display:flex; align-items:flex-start; gap:.75rem; }
+  .story__credentials svg{ width:20px; height:20px; color:var(--brass-deep); flex:none; margin-top:.15rem; }
+  .story__credentials span{ font-size:.9rem; color:var(--ink-soft); }
+  .story__credentials strong{ color:var(--ink); }
+
+  /* ============================================================
+     OPENINGSTIJDEN + CONTACT details
+     ============================================================ */
+  .hours-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(1.5rem, 4vw, 3rem);
+  }
+  .panel{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:clamp(1.8rem, 4vw, 2.8rem);
+    box-shadow:var(--shadow-card);
+  }
+  .panel--ink{
+    background:var(--ink);
+    color:var(--ivory);
+    border-color:var(--ink);
+  }
+  .panel__title{
+    font-size:1.6rem;
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    margin-bottom:.4rem;
+  }
+  .panel__title svg{ width:24px; height:24px; color:var(--brass-deep); flex:none; }
+  .panel--ink .panel__title{ color:var(--ivory); }
+  .panel--ink .panel__title svg{ color:var(--brass); }
+  .panel__sub{
+    font-size:.9rem;
+    color:var(--ink-soft);
+    margin-bottom:1.6rem;
+  }
+  .panel--ink .panel__sub{ color:rgba(246,244,239,.65); }
+
+  .hours-list{ list-style:none; }
+  .hours-list li{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.85rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .hours-list li:last-child{ border-bottom:none; }
+  .hours-list .day{
+    font-family:var(--serif);
+    font-size:1.08rem;
+    color:var(--ink);
+  }
+  .hours-list .time{
+    font-size:.9rem;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--bluegrey-deep);
+  }
+  .hours-list .time.accent{ color:var(--brass-deep); }
+  .hours-note{
+    margin-top:1.4rem;
+    font-size:.82rem;
+    color:var(--ink-soft);
+    display:flex;
+    gap:.6rem;
+    align-items:flex-start;
+  }
+  .hours-note svg{ width:17px; height:17px; color:var(--brass-deep); flex:none; margin-top:.15rem; }
+
+  .contact-lines{ list-style:none; display:flex; flex-direction:column; gap:1.35rem; }
+  .contact-lines li{ display:flex; gap:1rem; align-items:flex-start; }
+  .contact-lines svg{ width:22px; height:22px; color:var(--brass); flex:none; margin-top:.2rem; }
+  .contact-lines .lbl{
+    font-size:.64rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase;
+    color:var(--bluegrey-soft); display:block; margin-bottom:.2rem;
+  }
+  .contact-lines .val{
+    font-family:var(--serif); font-size:1.12rem; color:var(--ivory); line-height:1.4;
+  }
+  .contact-lines .val small{ font-family:var(--sans); font-size:.82rem; color:rgba(246,244,239,.6); display:block; font-weight:400; letter-spacing:0; margin-top:.15rem; }
+
+  /* ============================================================
+     AFSPRAAK FORM
+     ============================================================ */
+  .appoint{
+    position:relative;
+    background:
+      radial-gradient(110% 70% at 12% 0%, rgba(217,224,230,.7) 0%, transparent 55%),
+      var(--ivory);
+    overflow:hidden;
+  }
+  .appoint-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:clamp(2rem, 6vw, 5rem);
+    align-items:start;
+  }
+  .appoint__intro .section-title{ margin-bottom:1.4rem; }
+  .appoint__intro .lead{ max-width:40ch; }
+  .appoint__assure{
+    margin-top:2.2rem;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .appoint__assure li{ display:flex; gap:.8rem; align-items:center; font-size:.95rem; color:var(--ink-soft); }
+  .appoint__assure svg{ width:20px; height:20px; color:var(--brass-deep); flex:none; }
+
+  form.afspraak{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:clamp(1.8rem, 4vw, 3rem);
+    box-shadow:var(--shadow-soft);
+  }
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.3rem;
+  }
+  .field{ margin-bottom:1.5rem; display:flex; flex-direction:column; }
+  .field:last-of-type{ margin-bottom:0; }
+  .field label{
+    font-size:.7rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--bluegrey-deep);
+    margin-bottom:.6rem;
+  }
+  .field label .req{ color:var(--brass-deep); }
+  .field input,
+  .field select,
+  .field textarea{
+    font-family:var(--sans);
+    font-size:1rem;
+    color:var(--ink);
+    background:var(--ivory);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:.95rem 1rem;
+    width:100%;
+    transition:border-color .3s var(--ease), background .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .field textarea{ resize:vertical; min-height:120px; }
+  .field input::placeholder,.field textarea::placeholder{ color:rgba(42,47,54,.4); }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--brass);
+    background:var(--white);
+    box-shadow:0 0 0 3px rgba(184,153,91,.14);
+  }
+  .field select{ appearance:none; cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236F8595' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 1rem center;
+  }
+  .form-submit{ margin-top:2rem; }
+  .form-submit .btn{ width:100%; justify-content:center; }
+  .form-note{
+    margin-top:1.1rem;
+    font-size:.78rem;
+    color:var(--ink-soft);
+    text-align:center;
+    line-height:1.5;
+  }
+  .form-status{
+    margin-top:1rem;
+    font-size:.9rem;
+    text-align:center;
+    padding:.85rem;
+    border-radius:3px;
+    display:none;
+  }
+  .form-status.show{ display:block; }
+  .form-status.ok{ background:rgba(111,133,149,.16); color:var(--bluegrey-deep); border:1px solid rgba(111,133,149,.4); }
+  .form-status.err{ background:rgba(184,153,91,.14); color:var(--brass-deep); border:1px solid rgba(184,153,91,.4); }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer{
+    background:var(--ink);
+    color:rgba(246,244,239,.75);
+    padding-block:clamp(3.5rem, 7vh, 5.5rem) 2rem;
+  }
+  .footer-top{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:clamp(2rem, 5vw, 4rem);
+    padding-bottom:3rem;
+    border-bottom:1px solid rgba(246,244,239,.14);
+  }
+  .footer-brand .brand__mark{ background:transparent; }
+  .footer-brand .brand__name{ color:var(--ivory); }
+  .footer-brand p{
+    margin-top:1.3rem;
+    max-width:38ch;
+    font-size:.92rem;
+    line-height:1.7;
+    color:rgba(246,244,239,.65);
+  }
+  .footer-col h4{
+    font-family:var(--sans);
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:1.3rem;
+  }
+  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:.8rem; }
+  .footer-col a,.footer-col span{ font-size:.92rem; color:rgba(246,244,239,.7); transition:color .3s var(--ease); }
+  .footer-col a:hover{ color:var(--brass); }
+  .footer-col .meta{ display:block; font-size:.92rem; color:rgba(246,244,239,.7); }
+  .footer-col .meta + .meta{ margin-top:.55rem; }
+  .footer-social{
+    display:flex;
+    gap:.7rem;
+    margin-top:1.6rem;
+  }
+  .footer-social a{
+    width:40px; height:40px;
+    border:1px solid rgba(246,244,239,.2);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:rgba(246,244,239,.75);
+    transition:border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease);
+  }
+  .footer-social a svg{ width:18px; height:18px; }
+  .footer-social a:hover{ border-color:var(--brass); color:var(--ink); background:var(--brass); }
+
+  .footer-bottom{
+    margin-top:2rem;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    font-size:.82rem;
+    color:rgba(246,244,239,.55);
+  }
+  .footer-bottom a{ color:var(--brass); border-bottom:1px solid transparent; transition:border-color .3s var(--ease); }
+  .footer-bottom a:hover{ border-color:var(--brass); }
+
+  /* back to top */
+  .to-top{
+    position:fixed;
+    right:1.4rem; bottom:1.4rem;
+    width:48px; height:48px;
+    background:var(--ink);
+    color:var(--ivory);
+    border:1px solid var(--brass);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(12px);
+    transition:opacity .4s var(--ease), transform .4s var(--ease), background .3s var(--ease);
+    z-index:80;
+  }
+  .to-top.show{ opacity:1; visibility:visible; transform:none; }
+  .to-top:hover{ background:var(--brass); border-color:var(--brass); }
+  .to-top svg{ width:18px; height:18px; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:1024px){
+    .hero-grid{ grid-template-columns:1fr; gap:3rem; }
+    .hero__visual{ max-width:440px; margin-inline:auto; width:100%; }
+    .intro-grid{ grid-template-columns:1fr; gap:2.5rem; }
+    .intro__aside{ position:static; }
+    .story-grid{ grid-template-columns:1fr; gap:3rem; }
+    .story__portrait{ max-width:420px; margin-inline:auto; width:100%; }
+    .appoint-grid{ grid-template-columns:1fr; gap:2.5rem; }
+    .footer-top{ grid-template-columns:1fr 1fr; }
+    .footer-brand{ grid-column:1 / -1; }
+  }
+
+  @media (max-width:760px){
+    .nav__links, .header-tel{ display:none; }
+    .burger{ display:flex; }
+    .hero-stats{ grid-template-columns:1fr 1fr; }
+    .hero-stats .stat:nth-child(2){ border-right:none; }
+    .hero-stats .stat:nth-child(1),.hero-stats .stat:nth-child(2){ border-bottom:1px solid var(--line); }
+    .pillars{ grid-template-columns:1fr; gap:2rem; }
+    .svc-row{ grid-template-columns:auto 1fr; }
+    .svc-row__price{ grid-column:2; }
+    .hours-grid{ grid-template-columns:1fr; }
+    .story__credentials{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; gap:0; }
+    .footer-top{ grid-template-columns:1fr; }
+    .footer-bottom{ flex-direction:column; align-items:flex-start; }
+    .hero__cred{ left:0; }
+  }
+
+  @media (max-width:420px){
+    .hero-stats{ grid-template-columns:1fr 1fr; }
+    .heritage-badge{ width:108px; height:108px; }
+  }
+
+  /* ============================================================
+     REDUCED MOTION
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+      scroll-behavior:auto !important;
+    }
+    .reveal{ opacity:1 !important; transform:none !important; }
+    .heritage-badge .ring-text{ animation:none !important; }
+    .marquee__track{ animation:none !important; }
+    .mobile-overlay a{ transform:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header" id="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Schoonheidssalon Elegance — naar boven">
+      <span class="brand__mark" aria-hidden="true">E</span>
+      <span>
+        <span class="brand__name">Salon Elegance</span>
+        <span class="brand__sub">Schoonheidssalon · Enschede</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Hoofdmenu">
+      <ul class="nav__links">
+        <li><a href="#filosofie">Filosofie</a></li>
+        <li><a href="#behandelingen">Behandelingen</a></li>
+        <li><a href="#over">Over Eugeniek</a></li>
+        <li><a href="#openingstijden">Openingstijden</a></li>
+        <li><a href="#afspraak">Afspraak</a></li>
+      </ul>
+      <div class="header-tel" aria-hidden="false">
+        <span>Telefoon</span>
+        <strong>053-477 11 39</strong>
+      </div>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================ MOBILE OVERLAY ============================ -->
+<div class="mobile-overlay" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatiemenu">
+  <ul>
+    <li><a href="#filosofie"><span class="num">01</span>Filosofie</a></li>
+    <li><a href="#behandelingen"><span class="num">02</span>Behandelingen</a></li>
+    <li><a href="#over"><span class="num">03</span>Over Eugeniek</a></li>
+    <li><a href="#openingstijden"><span class="num">04</span>Openingstijden</a></li>
+    <li><a href="#afspraak"><span class="num">05</span>Afspraak maken</a></li>
+  </ul>
+  <div class="mobile-overlay__foot">
+    <span class="lbl">Telefoon</span>
+    <span class="val">053-477 11 39 · 06-25263409</span>
+    <span class="lbl" style="margin-top:1rem">Adres</span>
+    <span class="val">Drentestraat 8, 7543 DS Enschede</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero__content">
+          <p class="eyebrow reveal">Schoonheidssalon · Enschede</p>
+          <h1 class="hero__title reveal d1" id="hero-title">
+            Tijd voor <em>uzelf</em>,<br />
+            <span class="thin">in vertrouwde handen</span>
+          </h1>
+          <p class="hero__desc lead reveal d2">
+            Al ruim 37 jaar is Salon Elegance uw rustpunt in een hectische tijd. Verzorging,
+            aandacht en pampering — vakkundig verzorgd door Eugeniek van het Hul, in een
+            kalme, spa-achtige sfeer hartje Enschede.
+          </p>
+          <div class="hero__cta reveal d3">
+            <a class="btn" href="#afspraak">
+              Maak een afspraak
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#behandelingen">Bekijk behandelingen</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal d2">
+          <div class="hero__frame">
+            <!-- ✏️ FOTO: vervang door echte foto van de salon-ruimte of een rustige behandeling -->
+            <div class="photo-spa" role="img" aria-label="Sfeerbeeld van de rustige, spa-achtige behandelruimte van Salon Elegance">
+              <span class="photo-spa__label">rust &amp; verzorging</span>
+            </div>
+            <span class="hero__frame-accent" aria-hidden="true"></span>
+          </div>
+
+          <!-- heritage badge -->
+          <div class="heritage-badge" style="position:absolute; right:-1.4rem; top:-1.4rem;" aria-label="Actief sinds 1987">
+            <svg class="ring-text" viewBox="0 0 100 100" aria-hidden="true">
+              <defs><path id="circlePath" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" /></defs>
+              <text><textPath href="#circlePath" startOffset="0%">SALON ELEGANCE · ENSCHEDE · SINDS 1987 · </textPath></text>
+            </svg>
+            <span class="heritage-badge__core">
+              <span class="since">Sinds</span>
+              <span class="year">'87</span>
+            </span>
+          </div>
+
+          <!-- floating credential card -->
+          <div class="hero__cred">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z" stroke-linejoin="round"/></svg>
+            <span><strong>Ruim 37 jaar</strong>ervaring &amp; vertrouwen</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- stats strip -->
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <div class="stat__num">1987</div>
+          <div class="stat__label">Opgericht</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">37<em>+</em></div>
+          <div class="stat__label">Jaar ervaring</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">9</div>
+          <div class="stat__label">Behandelingen</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">1</div>
+          <div class="stat__label">Vertrouwd adres</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ MARQUEE ============================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Schoonheidsbehandelingen</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>Permanente make-up</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>IPL-ontharing</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>Manicure &amp; Pedicure</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>Wimperextensions</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <!-- duplicate for seamless loop -->
+      <span>Schoonheidsbehandelingen</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>Permanente make-up</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>IPL-ontharing</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>Manicure &amp; Pedicure</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+      <span>Wimperextensions</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <!-- ============================ FILOSOFIE / INTRO ============================ -->
+  <section class="section-pad" id="filosofie" aria-labelledby="filosofie-title">
+    <div class="wrap">
+      <div class="intro-grid">
+        <div class="intro__aside reveal">
+          <p class="eyebrow">Onze filosofie</p>
+          <h2 class="section-title" id="filosofie-title">Verzorging<br /><em>met aandacht</em></h2>
+        </div>
+        <div class="intro__body reveal d1">
+          <p class="intro__big">
+            In een wereld die steeds sneller draait, gunnen wij u even pas op de plaats.
+          </p>
+          <p>
+            Bij Salon Elegance draait alles om rust, ruimte en oprechte aandacht. Geen haast,
+            geen drukte — maar een moment dat helemaal van u is. U wordt ontvangen in een warme,
+            verzorgde omgeving waar tijd lijkt stil te staan en u zich volledig kunt laten
+            verwennen.
+          </p>
+          <p>
+            Die persoonlijke benadering is sinds 1987 onveranderd gebleven. Elke behandeling
+            begint met een rustig gesprek en een eerlijk advies, afgestemd op uw huid, uw wensen
+            en uw tempo. Vakmanschap dat is opgebouwd in ruim 37 jaar — en dat u voelt zodra u
+            binnenstapt.
+          </p>
+          <div class="intro__signature">
+            <span class="sig">Eugeniek van het Hul</span>
+            <span class="sig-sub">Eigenaresse &amp; schoonheidsspecialiste</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- three pillars -->
+      <div class="pillars">
+        <div class="pillar reveal d1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke-linejoin="round"/></svg>
+          <h3>Rust &amp; pampering</h3>
+          <p>Een spa-achtige sfeer waarin u tot rust komt. Wij nemen de tijd, zodat u dat ook kunt.</p>
+        </div>
+        <div class="pillar reveal d2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z" stroke-linejoin="round"/></svg>
+          <h3>Ruim 37 jaar ervaring</h3>
+          <p>Sinds 1987 een vertrouwd adres in Enschede. Vakmanschap dat zich keer op keer bewijst.</p>
+        </div>
+        <div class="pillar reveal d3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 7H4M20 12H4M20 17H10" stroke-linecap="round"/><circle cx="6" cy="17" r="1.4"/></svg>
+          <h3>Persoonlijk advies</h3>
+          <p>Elke huid is anders. Daarom krijgt u altijd een eerlijk advies, afgestemd op u.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ BEHANDELINGEN ============================ -->
+  <section class="services section-pad" id="behandelingen" aria-labelledby="behandelingen-title">
+    <div class="wrap">
+      <div class="services__intro">
+        <div class="reveal">
+          <p class="eyebrow">Behandelingen</p>
+          <h2 class="section-title" id="behandelingen-title">Onze <em>specialiteiten</em></h2>
+        </div>
+        <p class="lead reveal d1">
+          Een compleet aanbod voor gezicht, huid en verzorging — vakkundig uitgevoerd
+          en altijd op maat van uw wensen.
+        </p>
+      </div>
+
+      <div class="svc-list">
+        <article class="svc-row reveal">
+          <span class="svc-row__num">01</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Schoonheidsbehandelingen</h3>
+            <p class="svc-row__desc">Een complete gezichtsbehandeling die reinigt, verzorgt en verwent — afgestemd op uw huidtype, met blijvend zichtbaar resultaat en een diep gevoel van ontspanning.</p>
+            <div class="svc-row__tags"><span>Gezicht</span><span>Huidverzorging</span><span>Ontspanning</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">02</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Permanente make-up (PMU)</h3>
+            <p class="svc-row__desc">Subtiel en natuurlijk: wenkbrauwen, eyeliner of lipcontour die elke dag perfect zitten. Vakkundig aangebracht, met een resultaat dat bij u past.</p>
+            <div class="svc-row__tags"><span>Wenkbrauwen</span><span>Eyeliner</span><span>Lippen</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">03</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">IPL-ontharing</h3>
+            <p class="svc-row__desc">Een blijvend gladde huid met professionele IPL-techniek. Comfortabel, effectief en duurzaam — voor wie klaar is met scheren en harsen.</p>
+            <div class="svc-row__tags"><span>Ontharing</span><span>Duurzaam</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">04</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Manicure</h3>
+            <p class="svc-row__desc">Verzorgde handen en nagels, helemaal in balans. Van een nette basisbehandeling tot een verwennende manicure — alles met oog voor detail.</p>
+            <div class="svc-row__tags"><span>Handen</span><span>Nagels</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">05</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Pedicure</h3>
+            <p class="svc-row__desc">Gezonde, verzorgde voeten waarop u weer comfortabel loopt. Een rustgevende behandeling met aandacht voor huid en nagels.</p>
+            <div class="svc-row__tags"><span>Voeten</span><span>Verzorging</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">06</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Ontharing</h3>
+            <p class="svc-row__desc">Zorgvuldige ontharing van gezicht en lichaam, voor een egale en verzorgde huid. Snel, hygiënisch en met aandacht voor uw comfort.</p>
+            <div class="svc-row__tags"><span>Harsen</span><span>Gezicht &amp; lichaam</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">07</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Wenkbrauwen verven</h3>
+            <p class="svc-row__desc">Mooi gevormde, perfect gekleurde wenkbrauwen die uw blik openen en uw gezicht ten volle tot zijn recht laten komen.</p>
+            <div class="svc-row__tags"><span>Wenkbrauwen</span><span>Verven &amp; vormen</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">08</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Visagie &amp; make-up</h3>
+            <p class="svc-row__desc">Een professionele make-up voor een bijzondere gelegenheid — bruiloft, feest of fotoshoot. Stijlvol, verzorgd en helemaal naar uw smaak.</p>
+            <div class="svc-row__tags"><span>Make-up</span><span>Gelegenheid</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+
+        <article class="svc-row reveal">
+          <span class="svc-row__num">09</span>
+          <div class="svc-row__main">
+            <h3 class="svc-row__name">Wimperextensions</h3>
+            <p class="svc-row__desc">Vollere, langere wimpers met een natuurlijke uitstraling. Wakker wakker worden met een verzorgde blik — elke dag, zonder mascara.</p>
+            <div class="svc-row__tags"><span>Wimpers</span><span>Natuurlijk volume</span></div>
+          </div>
+          <span class="svc-row__price">prijs op aanvraag</span>
+        </article>
+      </div>
+
+      <p class="services__note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v4h1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Voor alle behandelingen is een actuele prijslijst beschikbaar. Vraag gerust naar de mogelijkheden bij het maken van uw afspraak.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ OVER EUGENIEK ============================ -->
+  <section class="story section-pad" id="over" aria-labelledby="over-title">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story__portrait reveal">
+          <div class="story__portrait-frame">
+            <!-- ✏️ FOTO: vervang door echte foto van Eugeniek van het Hul (eigenaresse) -->
+            <div class="photo-portrait" role="img" aria-label="Portret van Eugeniek van het Hul, eigenaresse van Salon Elegance">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <span class="story__portrait-tag">Eigenaresse sinds 1987</span>
+          <div class="story__stamp" aria-hidden="true">
+            <span class="est">Est.</span>
+            <span class="yr">1987</span>
+            <span class="ench">Enschede</span>
+          </div>
+        </div>
+
+        <div class="story__body">
+          <p class="eyebrow reveal">Over Eugeniek</p>
+          <h2 class="section-title reveal d1" id="over-title">Ruim 37 jaar<br /><em>vakmanschap</em></h2>
+
+          <div class="reveal d2">
+            <p>
+              In 1987 opende Eugeniek van het Hul de deuren van Salon Elegance. Wat begon als een
+              droom om mensen écht te verzorgen, groeide uit tot een vertrouwd adres dat al ruim
+              37 jaar generaties klanten uit Enschede en omstreken mag verwelkomen.
+            </p>
+            <p>
+              In al die jaren is de techniek meegegroeid — van permanente make-up tot moderne
+              IPL-ontharing — maar de kern bleef hetzelfde: oprechte aandacht, een eerlijk advies
+              en de tijd nemen voor iedere klant. Veel van haar klanten komen al jaren terug, en
+              dat vertrouwen is haar grootste trots.
+            </p>
+          </div>
+
+          <blockquote class="story__quote reveal d2">
+            &ldquo;Schoonheid begint bij rust en aandacht. Daar neem ik al ruim 37 jaar de tijd voor.&rdquo;
+          </blockquote>
+
+          <ul class="story__credentials reveal d3">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Sinds 1987</strong> actief als schoonheidsspecialiste</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Breed gespecialiseerd</strong> in gezicht, PMU &amp; IPL</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Persoonlijke aanpak</strong> met eerlijk advies</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Vertrouwd</strong> door generaties klanten</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ OPENINGSTIJDEN + CONTACT ============================ -->
+  <section class="section-pad" id="openingstijden" aria-labelledby="hours-title">
+    <div class="wrap">
+      <div style="text-align:center; max-width:620px; margin:0 auto clamp(2.5rem,5vh,3.5rem);">
+        <p class="eyebrow center reveal">Bezoek &amp; openingstijden</p>
+        <h2 class="section-title reveal d1" id="hours-title">Wanneer u <em>welkom</em> bent</h2>
+      </div>
+
+      <div class="hours-grid">
+        <!-- hours -->
+        <div class="panel reveal d1">
+          <h3 class="panel__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Openingstijden
+          </h3>
+          <p class="panel__sub">Onze deuren staan voor u open op de volgende momenten.</p>
+          <ul class="hours-list">
+            <li><span class="day">Maandag</span><span class="time">09:00 — 21:00</span></li>
+            <li><span class="day">Dinsdag</span><span class="time">09:00 — 21:00</span></li>
+            <li><span class="day">Woensdag</span><span class="time">09:00 — 21:00</span></li>
+            <li><span class="day">Donderdag</span><span class="time">09:00 — 21:00</span></li>
+            <li><span class="day">Vrijdag</span><span class="time accent">Op afspraak</span></li>
+            <li><span class="day">Zaterdag</span><span class="time accent">Op afspraak</span></li>
+            <li><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+          </ul>
+          <p class="hours-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v4h1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Ook op vrijdag en zaterdag bent u van harte welkom — neem gerust contact op om samen een geschikt moment te plannen.
+          </p>
+        </div>
+
+        <!-- contact -->
+        <div class="panel panel--ink reveal d2">
+          <h3 class="panel__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+            Contact &amp; route
+          </h3>
+          <p class="panel__sub">U vindt ons in Enschede. Bel of mail gerust voor een afspraak of advies.</p>
+          <ul class="contact-lines">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><span class="lbl">Adres</span><span class="val">Drentestraat 8<br />7543 DS Enschede</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.8 2z" stroke-linejoin="round"/></svg>
+              <div><span class="lbl">Telefoon</span><span class="val">053-477 11 39<small>Of mobiel: 06-25263409</small></span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linejoin="round"/></svg>
+              <div><span class="lbl">E-mail</span><span class="val">info@salon-elegance.net</span></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linejoin="round"/></svg>
+              <div><span class="lbl">Facebook</span><span class="val">@saloneleganceenschede</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ AFSPRAAK ============================ -->
+  <section class="appoint section-pad" id="afspraak" aria-labelledby="afspraak-title">
+    <div class="wrap">
+      <div class="appoint-grid">
+        <div class="appoint__intro">
+          <p class="eyebrow reveal">Afspraak maken</p>
+          <h2 class="section-title reveal d1" id="afspraak-title">Gun uzelf<br /><em>een moment</em></h2>
+          <p class="lead reveal d2">
+            Laat hieronder uw gegevens en wens achter. Wij nemen persoonlijk contact met u op
+            om samen een rustig moment te plannen dat u het beste uitkomt.
+          </p>
+          <ul class="appoint__assure reveal d3">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Persoonlijk contact, geen verplichtingen
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Eerlijk advies, afgestemd op uw huid
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Ook 's avonds (ma t/m do tot 21:00) terecht
+            </li>
+          </ul>
+        </div>
+
+        <!-- ✏️ vul Formspree endpoint in -->
+        <form class="afspraak reveal d1" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="naam">Naam <span class="req">*</span></label>
+              <input type="text" id="naam" name="naam" placeholder="Uw naam" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="telefoon">Telefoon <span class="req">*</span></label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Uw telefoonnummer" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="naam@voorbeeld.nl" autocomplete="email" />
+          </div>
+
+          <div class="field">
+            <label for="behandeling">Gewenste behandeling</label>
+            <select id="behandeling" name="behandeling">
+              <option value="" disabled selected>Kies een behandeling</option>
+              <option>Schoonheidsbehandeling</option>
+              <option>Permanente make-up (PMU)</option>
+              <option>IPL-ontharing</option>
+              <option>Manicure</option>
+              <option>Pedicure</option>
+              <option>Ontharing</option>
+              <option>Wenkbrauwen verven</option>
+              <option>Visagie &amp; make-up</option>
+              <option>Wimperextensions</option>
+              <option>Anders / advies op maat</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="bericht">Uw wens of vraag</label>
+            <textarea id="bericht" name="bericht" placeholder="Vertel ons waar u naar op zoek bent, of welke dagen u het beste uitkomen."></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn">
+              Verstuur aanvraag
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="form-note">Wij behandelen uw gegevens vertrouwelijk en nemen zo snel mogelijk contact met u op.</p>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Naar boven">
+          <span class="brand__mark" aria-hidden="true">E</span>
+          <span><span class="brand__name">Salon Elegance</span></span>
+        </a>
+        <p>
+          Uw vertrouwde schoonheidssalon in Enschede sinds 1987. Rust, verzorging en pampering
+          in een hectische tijd — met ruim 37 jaar ervaring en oprechte aandacht voor u.
+        </p>
+        <div class="footer-social">
+          <a href="#afspraak" aria-label="Maak een afspraak">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 9h18" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#openingstijden" aria-label="Bekijk locatie en route">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg>
+          </a>
+          <a href="#behandelingen" aria-label="Bekijk Facebook @saloneleganceenschede">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Behandelingen</h4>
+        <ul>
+          <li><a href="#behandelingen">Schoonheidsbehandelingen</a></li>
+          <li><a href="#behandelingen">Permanente make-up</a></li>
+          <li><a href="#behandelingen">IPL-ontharing</a></li>
+          <li><a href="#behandelingen">Manicure &amp; pedicure</a></li>
+          <li><a href="#behandelingen">Wimperextensions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><span class="meta">Drentestraat 8</span><span class="meta">7543 DS Enschede</span></li>
+          <li><span class="meta">053-477 11 39</span><span class="meta">06-25263409</span></li>
+          <li><span class="meta">info@salon-elegance.net</span></li>
+          <li><span class="meta">@saloneleganceenschede</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Salon Elegance — Enschede · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Schoonheidssalon · Sinds 1987</span>
+    </div>
+  </div>
+</footer>
+
+<!-- back to top -->
+<button class="to-top" id="toTop" aria-label="Terug naar boven">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+  (function(){
+    "use strict";
+    var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* ---------- Sticky header on scroll ---------- */
+    var header = document.getElementById("header");
+    var toTop = document.getElementById("toTop");
+    function onScroll(){
+      var y = window.scrollY || window.pageYOffset;
+      header.classList.toggle("scrolled", y > 24);
+      toTop.classList.toggle("show", y > 640);
+    }
+    window.addEventListener("scroll", onScroll, { passive:true });
+    onScroll();
+
+    /* ---------- Mobile menu ---------- */
+    var burger = document.getElementById("burger");
+    var menu = document.getElementById("mobileMenu");
+    function setMenu(open){
+      document.body.classList.toggle("menu-open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+      document.body.style.overflow = open ? "hidden" : "";
+    }
+    burger.addEventListener("click", function(){
+      setMenu(!document.body.classList.contains("menu-open"));
+    });
+    menu.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){ setMenu(false); });
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape" && document.body.classList.contains("menu-open")) setMenu(false);
+    });
+
+    /* ---------- Back to top ---------- */
+    toTop.addEventListener("click", function(){
+      window.scrollTo({ top:0, behavior: prefersReduced ? "auto" : "smooth" });
+    });
+
+    /* ---------- IntersectionObserver reveal ---------- */
+    var reveals = document.querySelectorAll(".reveal");
+    if(prefersReduced || !("IntersectionObserver" in window)){
+      reveals.forEach(function(el){ el.classList.add("in"); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.12, rootMargin:"0px 0px -8% 0px" });
+      reveals.forEach(function(el){ io.observe(el); });
+    }
+
+    /* ---------- Form (Formspree AJAX, graceful) ---------- */
+    var form = document.querySelector("form.afspraak");
+    var status = document.getElementById("formStatus");
+    if(form){
+      form.addEventListener("submit", function(e){
+        var action = form.getAttribute("action") || "";
+        // If endpoint not yet configured, prevent a broken submit and inform the user.
+        if(action.indexOf("YOUR_FORM_ID") !== -1){
+          e.preventDefault();
+          showStatus("Dit is een voorbeeldpagina — het formulier wordt actief zodra de salon live gaat. Bel of mail ons gerust direct.", "err");
+          return;
+        }
+        e.preventDefault();
+        var data = new FormData(form);
+        var btn = form.querySelector("button[type=submit]");
+        if(btn){ btn.disabled = true; }
+        fetch(action, { method:"POST", body:data, headers:{ "Accept":"application/json" } })
+          .then(function(res){
+            if(res.ok){
+              form.reset();
+              showStatus("Hartelijk dank! Uw aanvraag is verstuurd — wij nemen zo snel mogelijk contact met u op.", "ok");
+            } else {
+              showStatus("Er ging iets mis bij het verzenden. Probeer het later opnieuw of neem gerust contact met ons op.", "err");
+            }
+          })
+          .catch(function(){
+            showStatus("Er ging iets mis bij het verzenden. Probeer het later opnieuw of neem gerust contact met ons op.", "err");
+          })
+          .finally(function(){ if(btn){ btn.disabled = false; } });
+      });
+    }
+    function showStatus(msg, type){
+      status.textContent = msg;
+      status.className = "form-status show " + type;
+    }
+
+    /* ---------- Smooth-scroll for in-page anchors (respect reduced motion) ---------- */
+    document.querySelectorAll('a[href^="#"]').forEach(function(link){
+      link.addEventListener("click", function(e){
+        var id = link.getAttribute("href");
+        if(id.length < 2) return;
+        var target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block:"start" });
+        }
+      });
+    });
+
+    /* ---------- Current year in footer (keeps © correct over time) ---------- */
+    // Brief fixes © 2026 per spec, so we leave the static year as authored.
+  })();
+</script>
+
+</body>
+</html>

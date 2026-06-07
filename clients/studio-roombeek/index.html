@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studio Roombeek — Zonne- &amp; beautystudio in Enschede</title>
+<meta name="description" content="Studio Roombeek in Enschede: jouw complete beauty- &amp; wellnesservaring onder één dak. Gezichtsbehandelingen, wimpers, brows, ontharing, laser, nagels, massage en zonnebank. Werken op afspraak." />
+<meta name="theme-color" content="#1E1B18" />
+<meta property="og:title" content="Studio Roombeek — Zonne- &amp; beautystudio in Enschede" />
+<meta property="og:description" content="Een complete beauty- &amp; wellnesservaring onder één dak in Enschede. Zorg, innovatie en comfort." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="nl_NL" />
+<!-- Custom SVG data-URI favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231E1B18'/%3E%3Ctext x='32' y='43' font-family='Space Grotesk, sans-serif' font-size='30' font-weight='700' fill='%23C99A6A' text-anchor='middle'%3ESR%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bronze: #C99A6A;
+    --bronze-deep: #B07E4E;
+    --tan: #E8D8C4;
+    --charcoal: #1E1B18;
+    --charcoal-soft: #2A2622;
+    --cream: #F5EFE7;
+    --cream-2: #FBF7F1;
+    --ink: #221F1B;
+    --muted: #6B625A;
+    --line: rgba(30, 27, 24, 0.10);
+    --line-light: rgba(245, 239, 231, 0.14);
+    --shadow: 0 18px 50px -24px rgba(30, 27, 24, 0.35);
+    --shadow-sm: 0 8px 26px -18px rgba(30, 27, 24, 0.4);
+    --r-lg: 26px;
+    --r-md: 18px;
+    --r-sm: 12px;
+    --display: 'Space Grotesk', system-ui, sans-serif;
+    --body: 'Be Vietnam Pro', system-ui, sans-serif;
+    --maxw: 1200px;
+    --header-h: 76px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; color: var(--charcoal); }
+
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  ul { list-style: none; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(1.15rem, 4vw, 2.5rem); }
+
+  .eyebrow {
+    font-family: var(--display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--bronze-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--bronze);
+    display: inline-block;
+  }
+  .eyebrow.center { justify-content: center; }
+  .eyebrow.on-dark { color: var(--bronze); }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    padding: 0.95rem 1.7rem;
+    border-radius: 100px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+    will-change: transform;
+  }
+  .btn svg { width: 18px; height: 18px; }
+  .btn-primary { background: var(--charcoal); color: var(--cream); }
+  .btn-primary:hover { background: var(--bronze-deep); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+  .btn-ghost { background: transparent; color: var(--charcoal); border-color: rgba(30,27,24,0.2); }
+  .btn-ghost:hover { border-color: var(--charcoal); transform: translateY(-2px); }
+  .btn-light { background: var(--bronze); color: var(--charcoal); }
+  .btn-light:hover { background: var(--tan); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+  .btn-outline-light { background: transparent; color: var(--cream); border-color: var(--line-light); }
+  .btn-outline-light:hover { border-color: var(--bronze); color: var(--bronze); transform: translateY(-2px); }
+
+  /* ---------- HEADER ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245, 239, 231, 0.82);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease, background .3s ease, box-shadow .3s ease;
+  }
+  header.scrolled { border-bottom-color: var(--line); box-shadow: 0 6px 24px -20px rgba(30,27,24,0.5); }
+
+  .nav {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.7rem; }
+  .brand-mark {
+    width: 40px; height: 40px;
+    border-radius: 11px;
+    background: var(--charcoal);
+    color: var(--bronze);
+    display: grid; place-items: center;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.02rem;
+    letter-spacing: -0.03em;
+    flex-shrink: 0;
+  }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand-name { font-family: var(--display); font-weight: 600; font-size: 1.06rem; color: var(--charcoal); letter-spacing: -0.01em; }
+  .brand-sub { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    position: relative;
+    padding-block: 0.3rem;
+    transition: color .2s ease;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 0; height: 2px;
+    background: var(--bronze-deep);
+    transition: width .28s ease;
+  }
+  .nav-links a:hover { color: var(--bronze-deep); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta { display: flex; align-items: center; gap: 0.9rem; }
+
+  .hamburger {
+    display: none;
+    width: 46px; height: 46px;
+    border: 1.5px solid rgba(30,27,24,0.18);
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+  }
+  .hamburger span {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 19px; height: 2px;
+    background: var(--charcoal);
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+    transition: transform .3s ease, opacity .2s ease, top .3s ease;
+  }
+  .hamburger span:nth-child(1) { top: calc(50% - 6px); }
+  .hamburger span:nth-child(3) { top: calc(50% + 6px); }
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 95;
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: calc(var(--header-h) + 2rem) clamp(1.5rem, 7vw, 3rem) 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transform: translateX(100%);
+    transition: transform .42s cubic-bezier(.7,0,.2,1);
+    visibility: hidden;
+    overflow-y: auto;
+  }
+  .overlay.open { transform: translateX(0); visibility: visible; }
+  .overlay a.m-link {
+    font-family: var(--display);
+    font-size: clamp(1.7rem, 7vw, 2.3rem);
+    font-weight: 500;
+    color: var(--cream);
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--line-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color .2s ease, padding-left .25s ease;
+  }
+  .overlay a.m-link:hover { color: var(--bronze); padding-left: 0.5rem; }
+  .overlay a.m-link svg { width: 22px; height: 22px; opacity: 0.5; }
+  .overlay .m-foot { margin-top: auto; padding-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .overlay .m-contact { font-size: 0.95rem; color: var(--tan); line-height: 1.9; }
+  .overlay .m-contact strong { color: var(--cream); font-weight: 500; }
+
+  body.no-scroll { overflow: hidden; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: clamp(3rem, 8vw, 6rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -30%; right: -10%;
+    width: 60vw; height: 60vw;
+    max-width: 760px; max-height: 760px;
+    background: radial-gradient(circle, rgba(201,154,106,0.30), rgba(201,154,106,0) 65%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: rgba(201,154,106,0.14);
+    border: 1px solid rgba(201,154,106,0.3);
+    color: var(--bronze-deep);
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 0.95rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge svg { width: 15px; height: 15px; }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6.4vw, 4.4rem);
+    font-weight: 600;
+    margin-bottom: 1.4rem;
+  }
+  .hero h1 .accent { color: var(--bronze-deep); font-style: italic; font-weight: 500; font-family: var(--body); }
+  .hero p.lead {
+    font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+    color: var(--muted);
+    max-width: 42ch;
+    margin-bottom: 2.2rem;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 2.6rem; }
+  .hero-stats { display: flex; gap: clamp(1.5rem, 4vw, 2.8rem); flex-wrap: wrap; }
+  .hero-stat .num { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; color: var(--charcoal); line-height: 1; }
+  .hero-stat .lbl { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+
+  /* Hero visual collage */
+  .hero-visual { position: relative; }
+  .hero-card {
+    position: relative;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    box-shadow: var(--shadow);
+    /* ✏️ FOTO: vervang door echte foto van het interieur / een behandeling bij Studio Roombeek */
+    background:
+      linear-gradient(150deg, rgba(30,27,24,0.06), rgba(30,27,24,0.45)),
+      linear-gradient(135deg, #C99A6A 0%, #E8D8C4 48%, #B07E4E 100%);
+  }
+  .hero-card .hc-pattern {
+    position: absolute; inset: 0;
+    opacity: 0.5;
+    background-image:
+      radial-gradient(circle at 22% 28%, rgba(245,239,231,0.35) 0, transparent 30%),
+      radial-gradient(circle at 78% 75%, rgba(30,27,24,0.18) 0, transparent 34%);
+  }
+  .hero-card .hc-label {
+    position: absolute;
+    left: 1.4rem; bottom: 1.4rem; right: 1.4rem;
+    color: var(--cream);
+    z-index: 2;
+  }
+  .hero-card .hc-label .t { font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+  .hero-card .hc-label .s { font-size: 0.85rem; opacity: 0.9; }
+  .hero-float {
+    position: absolute;
+    left: -1.4rem; top: 1.8rem;
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: 0.85rem 1.1rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    z-index: 3;
+  }
+  .hero-float svg { width: 22px; height: 22px; color: var(--bronze-deep); flex-shrink: 0; }
+  .hero-float .hf-t { font-family: var(--display); font-weight: 600; font-size: 0.92rem; color: var(--charcoal); }
+  .hero-float .hf-s { font-size: 0.74rem; color: var(--muted); }
+  .hero-float.two { left: auto; right: -1rem; top: auto; bottom: 2.2rem; }
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip {
+    background: var(--charcoal);
+    color: var(--tan);
+    padding: 1.1rem 0;
+    overflow: hidden;
+    border-block: 1px solid var(--charcoal-soft);
+  }
+  .strip-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee 34s linear infinite;
+  }
+  .strip-track span {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+    white-space: nowrap;
+    color: var(--tan);
+  }
+  .strip-track span svg { width: 9px; height: 9px; color: var(--bronze); flex-shrink: 0; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* ---------- SECTION BASICS ---------- */
+  section { position: relative; }
+  .sec-pad { padding: clamp(4rem, 9vw, 7rem) 0; }
+  .sec-head { max-width: 640px; margin-bottom: clamp(2.4rem, 5vw, 3.5rem); }
+  .sec-head.center { margin-inline: auto; text-align: center; }
+  .sec-head h2 { font-size: clamp(2rem, 4.6vw, 3.1rem); margin: 1rem 0 1.1rem; }
+  .sec-head p { color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.1rem); }
+
+  /* ---------- INTRO / ALLES ONDER ÉÉN DAK ---------- */
+  .intro { background: var(--cream-2); }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .intro-visual {
+    border-radius: var(--r-lg);
+    aspect-ratio: 5 / 4;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    /* ✏️ FOTO: vervang door echte sfeerfoto van de studio in Enschede */
+    background:
+      linear-gradient(180deg, rgba(30,27,24,0) 40%, rgba(30,27,24,0.4)),
+      conic-gradient(from 210deg at 70% 30%, #E8D8C4, #C99A6A, #B07E4E, #E8D8C4);
+  }
+  .intro-visual .iv-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(245,239,231,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(245,239,231,0.12) 1px, transparent 1px);
+    background-size: 46px 46px;
+    opacity: 0.5;
+  }
+  .intro-visual .iv-tag {
+    position: absolute; bottom: 1.3rem; left: 1.3rem;
+    background: rgba(30,27,24,0.55);
+    backdrop-filter: blur(6px);
+    color: var(--cream);
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.5rem 0.95rem;
+    border-radius: 100px;
+  }
+  .intro h2 { font-size: clamp(1.9rem, 4.4vw, 2.9rem); margin: 1rem 0 1.2rem; }
+  .intro p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1.04rem; }
+  .intro .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+  .chip {
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 0.5rem 0.95rem;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .chip svg { width: 15px; height: 15px; color: var(--bronze-deep); }
+
+  /* ---------- SERVICES ---------- */
+  .svc-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }
+  .svc-card {
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    padding: 1.8rem 1.7rem;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .svc-card::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--bronze), var(--tan));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .svc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: transparent; }
+  .svc-card:hover::after { transform: scaleX(1); }
+  .svc-icon {
+    width: 50px; height: 50px;
+    border-radius: 14px;
+    background: var(--charcoal);
+    color: var(--bronze);
+    display: grid; place-items: center;
+    margin-bottom: 1.25rem;
+  }
+  .svc-icon svg { width: 25px; height: 25px; }
+  .svc-card h3 { font-size: 1.28rem; margin-bottom: 0.85rem; }
+  .svc-card .svc-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .svc-card .svc-list li {
+    font-size: 0.93rem;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    line-height: 1.5;
+  }
+  .svc-card .svc-list li svg { width: 16px; height: 16px; color: var(--bronze-deep); flex-shrink: 0; margin-top: 0.18rem; }
+  .svc-price {
+    margin-top: 1.3rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line);
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--bronze-deep);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- WHY / TRIO ---------- */
+  .why { background: var(--charcoal); color: var(--cream); }
+  .why .sec-head h2 { color: var(--cream); }
+  .why .sec-head p { color: var(--tan); }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.2rem, 2.5vw, 2rem); }
+  .trio-card {
+    border: 1px solid var(--line-light);
+    border-radius: var(--r-md);
+    padding: 2.2rem 1.9rem;
+    background: linear-gradient(180deg, rgba(245,239,231,0.04), rgba(245,239,231,0.01));
+    transition: transform .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .trio-card:hover { transform: translateY(-5px); border-color: rgba(201,154,106,0.5); background: linear-gradient(180deg, rgba(201,154,106,0.10), rgba(245,239,231,0.01)); }
+  .trio-num { font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.2em; color: var(--bronze); margin-bottom: 1.4rem; }
+  .trio-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(201,154,106,0.16); color: var(--bronze); display: grid; place-items: center; margin-bottom: 1.3rem; }
+  .trio-icon svg { width: 26px; height: 26px; }
+  .trio-card h3 { color: var(--cream); font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .trio-card p { color: var(--tan); font-size: 0.98rem; }
+
+  /* ---------- AFSPRAAK / OP AFSPRAAK BLOCK ---------- */
+  .visit { background: var(--cream-2); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: stretch; }
+  .visit-info { display: flex; flex-direction: column; }
+  .visit-info h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin: 1rem 0 1.2rem; }
+  .visit-info > p { color: var(--muted); margin-bottom: 2rem; font-size: 1.04rem; }
+  .info-list { display: flex; flex-direction: column; gap: 1.3rem; }
+  .info-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .info-item .ii-ico {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    color: var(--bronze-deep);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .info-item .ii-ico svg { width: 22px; height: 22px; }
+  .info-item .ii-t { font-family: var(--display); font-weight: 600; font-size: 1.02rem; color: var(--charcoal); margin-bottom: 0.15rem; }
+  .info-item .ii-s { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+  .info-item .ii-s a { color: var(--bronze-deep); }
+
+  /* Map stand-in */
+  .visit-map {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    min-height: 320px;
+    position: relative;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+    /* ✏️ FOTO: vervang door echte kaart / Google Maps embed of straatfoto Roomweg 89 */
+    background:
+      linear-gradient(180deg, rgba(30,27,24,0) 55%, rgba(30,27,24,0.35)),
+      linear-gradient(135deg, #E8D8C4, #F5EFE7 60%, #C99A6A);
+  }
+  .visit-map .vm-lines {
+    position: absolute; inset: 0; opacity: 0.45;
+    background-image:
+      linear-gradient(rgba(30,27,24,0.10) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(30,27,24,0.10) 2px, transparent 2px),
+      linear-gradient(rgba(30,27,24,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,27,24,0.06) 1px, transparent 1px);
+    background-size: 90px 90px, 90px 90px, 30px 30px, 30px 30px;
+  }
+  .visit-map .vm-road {
+    position: absolute;
+    width: 140%;
+    height: 26px;
+    background: var(--cream-2);
+    top: 45%; left: -20%;
+    transform: rotate(-18deg);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+  .visit-map .vm-pin {
+    position: absolute;
+    top: 44%; left: 52%;
+    transform: translate(-50%, -100%);
+    color: var(--charcoal);
+    z-index: 2;
+    text-align: center;
+  }
+  .visit-map .vm-pin svg { width: 40px; height: 40px; color: var(--bronze-deep); filter: drop-shadow(0 6px 10px rgba(30,27,24,0.3)); }
+  .visit-map .vm-pin .vm-name {
+    background: var(--charcoal);
+    color: var(--cream);
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 100px;
+    margin-top: 0.3rem;
+    white-space: nowrap;
+  }
+
+  /* ---------- FORM ---------- */
+  .form-wrap { background: var(--charcoal); color: var(--cream); }
+  .form-card-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .form-intro h2 { color: var(--cream); font-size: clamp(1.9rem, 4.4vw, 2.9rem); margin: 1rem 0 1.2rem; }
+  .form-intro p { color: var(--tan); margin-bottom: 1.6rem; }
+  .form-intro .fi-points { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.8rem; }
+  .form-intro .fi-points li { display: flex; gap: 0.7rem; align-items: flex-start; color: var(--tan); font-size: 0.96rem; }
+  .form-intro .fi-points li svg { width: 20px; height: 20px; color: var(--bronze); flex-shrink: 0; margin-top: 0.1rem; }
+
+  form {
+    background: var(--cream);
+    border-radius: var(--r-lg);
+    padding: clamp(1.6rem, 3.5vw, 2.6rem);
+    box-shadow: var(--shadow);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .field { margin-bottom: 1.1rem; display: flex; flex-direction: column; }
+  .field.full { grid-column: 1 / -1; }
+  label {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.84rem;
+    color: var(--charcoal);
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.01em;
+  }
+  label .req { color: var(--bronze-deep); }
+  input, select, textarea {
+    font-family: var(--body);
+    font-size: 0.98rem;
+    color: var(--ink);
+    background: var(--cream-2);
+    border: 1.5px solid var(--line);
+    border-radius: var(--r-sm);
+    padding: 0.85rem 1rem;
+    width: 100%;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  textarea { resize: vertical; min-height: 110px; }
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--bronze);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(201,154,106,0.16);
+  }
+  select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B625A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.6rem; }
+  .form-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.5; }
+  form .btn-primary { width: 100%; justify-content: center; margin-top: 0.4rem; }
+  .form-success {
+    display: none;
+    background: rgba(201,154,106,0.14);
+    border: 1px solid rgba(201,154,106,0.4);
+    color: var(--charcoal);
+    border-radius: var(--r-sm);
+    padding: 1rem 1.2rem;
+    font-size: 0.92rem;
+    margin-bottom: 1.2rem;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .form-success svg { width: 20px; height: 20px; color: var(--bronze-deep); flex-shrink: 0; }
+  .form-success.show { display: flex; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--charcoal); color: var(--tan); padding: clamp(3rem, 6vw, 4.5rem) 0 2rem; border-top: 1px solid var(--charcoal-soft); }
+  .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); margin-bottom: 3rem; }
+  .foot-brand .brand-mark { width: 44px; height: 44px; }
+  .foot-brand p { color: var(--tan); font-size: 0.95rem; max-width: 34ch; margin-top: 1.2rem; }
+  .foot-social { display: flex; gap: 0.7rem; margin-top: 1.5rem; }
+  .foot-social a {
+    width: 42px; height: 42px;
+    border: 1px solid var(--line-light);
+    border-radius: 11px;
+    display: grid; place-items: center;
+    color: var(--tan);
+    transition: color .2s ease, border-color .2s ease, transform .2s ease, background .2s ease;
+  }
+  .foot-social a:hover { color: var(--charcoal); background: var(--bronze); border-color: var(--bronze); transform: translateY(-3px); }
+  .foot-social a svg { width: 19px; height: 19px; }
+  .foot-col h4 { color: var(--cream); font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.2rem; font-weight: 600; }
+  .foot-col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+  .foot-col ul li a, .foot-col ul li span { color: var(--tan); font-size: 0.94rem; transition: color .2s ease; }
+  .foot-col ul li a:hover { color: var(--bronze); }
+  .foot-bottom {
+    border-top: 1px solid var(--charcoal-soft);
+    padding-top: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .foot-bottom a { color: var(--bronze); }
+  .foot-bottom a:hover { text-decoration: underline; }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .08s; }
+  .reveal.d2 { transition-delay: .16s; }
+  .reveal.d3 { transition-delay: .24s; }
+  .reveal.d4 { transition-delay: .32s; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-visual { max-width: 460px; margin-inline: auto; width: 100%; }
+    .intro-grid, .visit-grid, .form-card-grid { grid-template-columns: 1fr; }
+    .intro-visual { order: -1; }
+    .svc-cats { grid-template-columns: repeat(2, 1fr); }
+    .trio { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .foot-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 760px) {
+    .nav-links, .nav-cta .btn { display: none; }
+    .hamburger { display: block; }
+  }
+  @media (max-width: 600px) {
+    .svc-cats { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+    .foot-top { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+    .hero-float { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+    .strip-track { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Studio Roombeek home">
+      <span class="brand-mark">SR</span>
+      <span class="brand-text">
+        <span class="brand-name">Studio Roombeek</span>
+        <span class="brand-sub">Beauty &amp; Wellness · Enschede</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#diensten">Diensten</a>
+      <a href="#waarom">Waarom wij</a>
+      <a href="#bezoek">Bezoek</a>
+      <a href="#afspraak">Afspraak</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#afspraak" class="btn btn-primary">
+        Afspraak maken
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#diensten" class="m-link">Diensten <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <a href="#waarom" class="m-link">Waarom wij <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <a href="#bezoek" class="m-link">Bezoek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <a href="#afspraak" class="m-link">Afspraak <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <div class="m-foot">
+    <a href="#afspraak" class="btn btn-light" style="justify-content:center;">Afspraak maken</a>
+    <div class="m-contact">
+      <strong>Studio Roombeek</strong><br />
+      Roomweg 89, 7523 BM Enschede<br />
+      Telefoon: 053 434 0297<br />
+      E-mail: zonnestudio-roombeek@hotmail.com
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="hero-badge reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 5.4L20 8l-4 4 1 6-5-2.8L7 18l1-6-4-4 5.6-.6z"/></svg>
+          Alles onder één dak in Enschede
+        </span>
+        <h1 class="reveal d1">Jouw complete <span class="accent">beauty &amp; wellness</span> ervaring</h1>
+        <p class="lead reveal d2">Bij Studio Roombeek vind je gezicht, huid, wimpers, brows, ontharing, laser, nagels, massage en zonnebank — allemaal op één plek. Met zorg, innovatie en comfort als uitgangspunt.</p>
+        <div class="hero-actions reveal d3">
+          <a href="#afspraak" class="btn btn-primary">
+            Maak een afspraak
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#diensten" class="btn btn-ghost">Bekijk diensten</a>
+        </div>
+        <div class="hero-stats reveal d4">
+          <div class="hero-stat">
+            <div class="num">15+</div>
+            <div class="lbl">Behandelingen</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">1 dak</div>
+            <div class="lbl">Alles op één plek</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">Op afspraak</div>
+            <div class="lbl">Rustig &amp; persoonlijk</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal d2">
+        <!-- ✏️ FOTO: vervang door echte foto van het interieur / een behandeling bij Studio Roombeek -->
+        <div class="hero-card">
+          <div class="hc-pattern"></div>
+          <div class="hc-label">
+            <div class="t">Studio Roombeek</div>
+            <div class="s">Zonne- &amp; beautystudio · Roomweg 89</div>
+          </div>
+        </div>
+        <div class="hero-float">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div>
+            <div class="hf-t">Roomweg 89</div>
+            <div class="hf-s">7523 BM Enschede</div>
+          </div>
+        </div>
+        <div class="hero-float two">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div>
+            <div class="hf-t">Op afspraak</div>
+            <div class="hf-s">Alle aandacht voor jou</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE STRIP ============ -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track" id="stripTrack">
+      <span>Gezichtsbehandelingen<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>Wimpers &amp; brows<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>Permanente ontharing<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>HIFU-facelift<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>Laserbehandelingen<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>Nagelstudio<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>Massages<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span><span>Zonnebank<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 10-3 10-3-10z"/></svg></span>
+    </div>
+  </div>
+
+  <!-- ============ INTRO / ALLES ONDER ÉÉN DAK ============ -->
+  <section class="intro sec-pad" id="studio">
+    <div class="wrap intro-grid">
+      <div class="intro-text reveal">
+        <span class="eyebrow">Welkom bij Studio Roombeek</span>
+        <h2>Eén studio voor al je beauty &amp; wellness</h2>
+        <p>Wij geloven dat je je het best voelt als alles klopt — van een verzorgde huid tot perfecte brows en een moment van echte ontspanning. Daarom brengen we een breed aanbod aan behandelingen samen onder één dak, midden in Enschede.</p>
+        <p>Of je nu komt voor een gezichtsbehandeling, je wimpers, ontharing, een laserbehandeling, je nagels, een massage of de zonnebank: je krijgt persoonlijke aandacht en een rustige, comfortabele ervaring. Wij denken graag met je mee over wat het beste bij jouw huid en wensen past.</p>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Persoonlijk advies</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Moderne technieken</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Rustige sfeer</span>
+        </div>
+      </div>
+      <div class="intro-visual reveal d2">
+        <!-- ✏️ FOTO: vervang door echte sfeerfoto van de studio in Enschede -->
+        <div class="iv-grid"></div>
+        <span class="iv-tag">Beauty &amp; wellness · Enschede</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIENSTEN ============ -->
+  <section class="sec-pad" id="diensten">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Onze diensten</span>
+        <h2>Behandelingen, overzichtelijk gerangschikt</h2>
+        <p>Een breed aanbod, helder ingedeeld in zes categorieën. Prijzen verschillen per behandeling en wens — vraag ze gerust bij ons op.</p>
+      </div>
+
+      <div class="svc-cats">
+
+        <!-- 1. Gezicht & huid -->
+        <article class="svc-card reveal">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.5 2 3.5 2 3.5-2 3.5-2"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>
+          </div>
+          <h3>Gezicht &amp; huid</h3>
+          <ul class="svc-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Gezichtsbehandelingen</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>HIFU-facelift</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mesotherapie</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Injectables</li>
+          </ul>
+          <div class="svc-price">Prijs op aanvraag</div>
+        </article>
+
+        <!-- 2. Wimpers & brows -->
+        <article class="svc-card reveal d1">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-6 10-6 10 6 10 6"/><circle cx="12" cy="12" r="2.5"/><path d="M5 16l-1 2M9 18l-.5 2M15 18l.5 2M19 16l1 2"/></svg>
+          </div>
+          <h3>Wimpers &amp; brows</h3>
+          <ul class="svc-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Wimperbehandelingen</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Wenkbrauwen &amp; threading</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Semi-permanente make-up</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Make-up &amp; hairstyling</li>
+          </ul>
+          <div class="svc-price">Prijs op aanvraag</div>
+        </article>
+
+        <!-- 3. Ontharing & laser -->
+        <article class="svc-card reveal d2">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4.5 12.5a1 1 0 0 0 .8 1.6H11l-1 8 8.5-10.7a1 1 0 0 0-.8-1.6H12l1-7.8z"/></svg>
+          </div>
+          <h3>Ontharing &amp; laser</h3>
+          <ul class="svc-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Permanente ontharing</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Laserbehandelingen</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Harsen (waxing)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>SPMU-correcties</li>
+          </ul>
+          <div class="svc-price">Prijs op aanvraag</div>
+        </article>
+
+        <!-- 4. Nagelstudio -->
+        <article class="svc-card reveal">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3.5C8 2.7 8.7 2 9.5 2h5C15.3 2 16 2.7 16 3.5V14a4 4 0 0 1-8 0z"/><path d="M8 9c0-2 1-3.5 4-3.5S16 7 16 9"/></svg>
+          </div>
+          <h3>Nagelstudio</h3>
+          <ul class="svc-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Manicure &amp; nagelverzorging</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Gellak &amp; gelnagels</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Nailart op maat</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Teeth whitening</li>
+          </ul>
+          <div class="svc-price">Prijs op aanvraag</div>
+        </article>
+
+        <!-- 5. Massage & wellness -->
+        <article class="svc-card reveal d1">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18c2-3 5-4.5 9-4.5s7 1.5 9 4.5"/><circle cx="12" cy="7" r="3"/><path d="M3 21h18"/></svg>
+          </div>
+          <h3>Massage &amp; wellness</h3>
+          <ul class="svc-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Ontspannende massages</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Moment voor jezelf</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Persoonlijke aandacht</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Rustige behandelruimte</li>
+          </ul>
+          <div class="svc-price">Prijs op aanvraag</div>
+        </article>
+
+        <!-- 6. Zonnebank -->
+        <article class="svc-card reveal d2">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+          </div>
+          <h3>Zonnestudio</h3>
+          <ul class="svc-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Zonnebank</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Een gezonde gloed</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Comfortabel &amp; verzorgd</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Op een rustig moment</li>
+          </ul>
+          <div class="svc-price">Prijs op aanvraag</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WAAROM / TRIO ============ -->
+  <section class="why sec-pad" id="waarom">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center on-dark">Waarom Studio Roombeek</span>
+        <h2>Zorg, innovatie en comfort</h2>
+        <p>Drie waarden die je bij elke behandeling terugvindt — van je eerste afspraak tot het moment dat je weer naar buiten loopt.</p>
+      </div>
+      <div class="trio">
+        <article class="trio-card reveal">
+          <div class="trio-num">01</div>
+          <div class="trio-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6.5 5 5 0 0 1 21.5 12C19 16.5 12 21 12 21z"/></svg>
+          </div>
+          <h3>Zorg</h3>
+          <p>We nemen de tijd voor je en luisteren naar je wensen. Persoonlijk advies en aandacht voor jouw huid en behoeften staan altijd voorop.</p>
+        </article>
+        <article class="trio-card reveal d1">
+          <div class="trio-num">02</div>
+          <div class="trio-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+          </div>
+          <h3>Innovatie</h3>
+          <p>Van HIFU en laser tot semi-permanente technieken: we werken met moderne behandelingen, zodat je kunt rekenen op mooie, blijvende resultaten.</p>
+        </article>
+        <article class="trio-card reveal d2">
+          <div class="trio-num">03</div>
+          <div class="trio-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M3 12v3a3 3 0 0 0 3 3h0a1.5 1.5 0 0 0 1.5-1.5V14A1.5 1.5 0 0 0 6 12.5H3z"/><path d="M21 12v3a3 3 0 0 1-3 3h0a1.5 1.5 0 0 1-1.5-1.5V14A1.5 1.5 0 0 1 18 12.5h3z"/></svg>
+          </div>
+          <h3>Comfort</h3>
+          <p>Een rustige, warme sfeer waarin je je meteen op je gemak voelt. Je komt binnen voor een behandeling en gaat weer naar buiten met een goed gevoel.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEZOEK / OP AFSPRAAK ============ -->
+  <section class="visit sec-pad" id="bezoek">
+    <div class="wrap visit-grid">
+      <div class="visit-info reveal">
+        <span class="eyebrow">Bezoek de studio</span>
+        <h2>Welkom op de Roomweg</h2>
+        <p>Je vindt Studio Roombeek aan de Roomweg in Enschede. We werken op afspraak, zodat we alle tijd en aandacht voor je hebben en je niet hoeft te wachten.</p>
+        <div class="info-list">
+          <div class="info-item">
+            <div class="ii-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div>
+              <div class="ii-t">Adres</div>
+              <div class="ii-s">Roomweg 89, 7523 BM Enschede</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <div>
+              <div class="ii-t">Openingstijden</div>
+              <!-- ✏️ vul openingstijden in -->
+              <div class="ii-s">We werken op afspraak. Plan je bezoek eenvoudig in via het afsprakenformulier hieronder.</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div>
+              <div class="ii-t">Telefoon</div>
+              <div class="ii-s">053 434 0297</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ii-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m3 6 9 6 9-6"/></svg></div>
+            <div>
+              <div class="ii-t">E-mail &amp; Instagram</div>
+              <div class="ii-s">zonnestudio-roombeek@hotmail.com<br />Instagram: @studioroombeek</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-map reveal d2" role="img" aria-label="Indicatieve kaart van de locatie van Studio Roombeek aan de Roomweg 89 in Enschede">
+        <!-- ✏️ FOTO: vervang door echte kaart / Google Maps embed of straatfoto Roomweg 89 -->
+        <div class="vm-lines"></div>
+        <div class="vm-road"></div>
+        <div class="vm-pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div class="vm-name">Studio Roombeek</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AFSPRAAK / FORM ============ -->
+  <section class="form-wrap sec-pad" id="afspraak">
+    <div class="wrap form-card-grid">
+      <div class="form-intro reveal">
+        <span class="eyebrow on-dark">Afspraak maken</span>
+        <h2>Plan je bezoek</h2>
+        <p>Laat hieronder je gegevens en wens achter. We nemen contact met je op om samen een moment te plannen dat jou uitkomt. Nog niet zeker welke behandeling het beste past? Geen probleem — we adviseren je graag.</p>
+        <ul class="fi-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Vrijblijvend een afspraak aanvragen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Persoonlijk advies over de juiste behandeling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>We reageren zo snel mogelijk</li>
+        </ul>
+      </div>
+
+      <!-- ✏️ vul Formspree endpoint in -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="afspraakForm">
+        <div class="form-success" id="formSuccess" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Bedankt! Je aanvraag is verzonden. We nemen snel contact met je op.</span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="naam">Naam <span class="req">*</span></label>
+            <input type="text" id="naam" name="naam" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="telefoon">Telefoon <span class="req">*</span></label>
+            <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" required />
+          </div>
+        </div>
+        <div class="field full">
+          <label for="email">E-mail <span class="req">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+        <div class="field full">
+          <label for="dienst">Welke behandeling?</label>
+          <select id="dienst" name="dienst">
+            <option value="" selected>Maak een keuze (optioneel)</option>
+            <option>Gezicht &amp; huid</option>
+            <option>Wimpers &amp; brows</option>
+            <option>Ontharing &amp; laser</option>
+            <option>Nagelstudio</option>
+            <option>Massage &amp; wellness</option>
+            <option>Zonnestudio</option>
+            <option>Weet ik nog niet / advies</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="bericht">Je bericht of voorkeursmoment</label>
+          <textarea id="bericht" name="bericht" placeholder="Vertel kort wat je zoekt en wanneer je het liefst langskomt."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Aanvraag versturen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+        <p class="form-note">Dit is een vrijblijvende aanvraag, nog geen bevestigde afspraak. We nemen contact met je op om je bezoek definitief in te plannen.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-mark">SR</span>
+          <span class="brand-text">
+            <span class="brand-name" style="color:var(--cream)">Studio Roombeek</span>
+            <span class="brand-sub">Beauty &amp; Wellness · Enschede</span>
+          </span>
+        </div>
+        <p>Een complete beauty- &amp; wellnesservaring onder één dak. Zorg, innovatie en comfort — midden in Enschede.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/studioroombeek" target="_blank" rel="noopener" aria-label="Studio Roombeek op Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Diensten</h4>
+        <ul>
+          <li><a href="#diensten">Gezicht &amp; huid</a></li>
+          <li><a href="#diensten">Wimpers &amp; brows</a></li>
+          <li><a href="#diensten">Ontharing &amp; laser</a></li>
+          <li><a href="#diensten">Nagelstudio</a></li>
+          <li><a href="#diensten">Massage &amp; wellness</a></li>
+          <li><a href="#diensten">Zonnestudio</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><span>Roomweg 89</span></li>
+          <li><span>7523 BM Enschede</span></li>
+          <li><span>053 434 0297</span></li>
+          <li><span>zonnestudio-roombeek@hotmail.com</span></li>
+          <li><span>Instagram: @studioroombeek</span></li>
+          <li><a href="#afspraak">Afspraak maken</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Studio Roombeek — Enschede · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Werken op afspraak · Zorg · Innovatie · Comfort</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    // ---- Marquee: duplicate content for a seamless -50% loop ----
+    var track = document.getElementById("stripTrack");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (track && !reduce) {
+      track.innerHTML += track.innerHTML;
+    }
+
+    // ---- Sticky header shadow ----
+    var header = document.getElementById("header");
+    var onScroll = function () {
+      if (window.scrollY > 12) header.classList.add("scrolled");
+      else header.classList.remove("scrolled");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // ---- Mobile menu ----
+    var burger = document.getElementById("hamburger");
+    var overlay = document.getElementById("overlay");
+    var body = document.body;
+
+    function setMenu(open) {
+      overlay.classList.toggle("open", open);
+      body.classList.toggle("no-scroll", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+      overlay.setAttribute("aria-hidden", open ? "false" : "true");
+      // animate hamburger into an X
+      var spans = burger.querySelectorAll("span");
+      if (open) {
+        spans[0].style.top = "50%";
+        spans[0].style.transform = "translate(-50%, -50%) rotate(45deg)";
+        spans[1].style.opacity = "0";
+        spans[2].style.top = "50%";
+        spans[2].style.transform = "translate(-50%, -50%) rotate(-45deg)";
+      } else {
+        spans[0].style.top = "calc(50% - 6px)";
+        spans[0].style.transform = "translate(-50%, -50%)";
+        spans[1].style.opacity = "1";
+        spans[2].style.top = "calc(50% + 6px)";
+        spans[2].style.transform = "translate(-50%, -50%)";
+      }
+    }
+
+    burger.addEventListener("click", function () {
+      setMenu(!overlay.classList.contains("open"));
+    });
+
+    overlay.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setMenu(false); });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("open")) setMenu(false);
+    });
+
+    // ---- IntersectionObserver reveal ----
+    var revealEls = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add("in"); });
+    }
+
+    // ---- Form: graceful AJAX submit to Formspree ----
+    var form = document.getElementById("afspraakForm");
+    var success = document.getElementById("formSuccess");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        // Only intercept when a real endpoint is configured.
+        if (form.action.indexOf("YOUR_FORM_ID") !== -1) return; // let it behave normally until endpoint is set
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        }).then(function (res) {
+          if (res.ok) {
+            form.reset();
+            success.classList.add("show");
+            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          } else {
+            alert("Er ging iets mis bij het versturen. Probeer het later opnieuw of neem even contact met ons op.");
+          }
+        }).catch(function () {
+          alert("Er ging iets mis bij het versturen. Probeer het later opnieuw of neem even contact met ons op.");
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bella Cilia — Wimperextensions & wenkbrauwen in Enschede</title>
+<meta name="description" content="Bella Cilia in Enschede: specialist in wimperextensions, wenkbrauwen stylen & verven, teeth whitening en gezichtsbehandelingen. Een verzorgde, natuurlijke uitstraling rond je ogen — persoonlijk en precies. Maak een afspraak." />
+<meta name="theme-color" content="#241A1E" />
+<!-- Custom SVG data-URI favicon: lash motif on aubergine -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23241A1E'/%3E%3Cpath d='M12 40c8 8 32 8 40 0' fill='none' stroke='%23C7A87C' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M18 38l-3 7M26 41l-1 8M34 42v8M42 41l1 8M50 38l3 7' fill='none' stroke='%23B07C84' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --mauve-light:#E7D3D6;
+    --mauve:#B07C84;
+    --mauve-deep:#8E5F67;
+    --aubergine:#241A1E;
+    --aubergine-2:#2E2228;
+    --aubergine-3:#3A2C32;
+    --gold:#C7A87C;
+    --gold-soft:#D8C0A0;
+    --ivory:#F4ECEC;
+    --ivory-dim:#D9CACD;
+    --ivory-faint:#A99097;
+    --line:rgba(199,168,124,.22);
+    --line-soft:rgba(231,211,214,.14);
+    --shadow:0 24px 60px -28px rgba(0,0,0,.7);
+    --radius:22px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"DM Sans",system-ui,sans-serif;
+    background:var(--aubergine);
+    color:var(--ivory);
+    line-height:1.7;
+    font-weight:400;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--mauve);color:var(--aubergine)}
+
+  h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;line-height:1.06;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.15rem,5vw,3rem)}
+  section{position:relative}
+
+  /* eyebrow / kicker */
+  .kicker{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-size:.72rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);
+  }
+  .kicker svg{width:16px;height:16px;flex:none;color:var(--mauve)}
+  .kicker--center{justify-content:center}
+
+  /* buttons */
+  .btn{
+    --bg:var(--gold);--fg:var(--aubergine);
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--bg);color:var(--fg);
+    font-family:"Syne",sans-serif;font-weight:600;font-size:.94rem;letter-spacing:.01em;
+    padding:.95rem 1.7rem;border-radius:999px;border:1px solid transparent;cursor:pointer;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease);
+    will-change:transform;
+  }
+  .btn svg{width:17px;height:17px}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 16px 30px -14px rgba(199,168,124,.7)}
+  .btn--ghost{--bg:transparent;--fg:var(--ivory);border-color:var(--line);}
+  .btn--ghost:hover{background:rgba(231,211,214,.06);box-shadow:none}
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(36,26,30,.55);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:background .4s var(--ease),border-color .4s var(--ease);
+  }
+  header.scrolled{background:rgba(36,26,30,.92);border-bottom-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.05rem}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:"Syne",sans-serif;font-weight:700;font-size:1.18rem;letter-spacing:.02em}
+  .brand .mark{width:38px;height:38px;flex:none}
+  .brand b{color:var(--gold);font-weight:700}
+  .brand span{display:block;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ivory-faint);font-family:"DM Sans",sans-serif;font-weight:500;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-size:.93rem;color:var(--ivory-dim);position:relative;padding-block:.2rem;transition:color .3s var(--ease)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:width .35s var(--ease)}
+  .nav-links a:hover{color:var(--ivory)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{margin-left:.4rem}
+
+  .burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:1px solid var(--line);border-radius:12px;cursor:pointer;z-index:80}
+  .burger span{display:block;width:22px;height:2px;background:var(--ivory);border-radius:2px;transition:transform .35s var(--ease),opacity .25s var(--ease)}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* mobile overlay */
+  .overlay{
+    position:fixed;inset:0;z-index:70;
+    background:linear-gradient(160deg,var(--aubergine),#1b1216);
+    display:flex;flex-direction:column;justify-content:center;gap:.4rem;
+    padding:2rem clamp(1.15rem,6vw,3rem);
+    transform:translateX(100%);transition:transform .5s var(--ease);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{font-family:"Syne",sans-serif;font-size:clamp(1.6rem,7vw,2.4rem);font-weight:600;color:var(--ivory);padding-block:.55rem;border-bottom:1px solid var(--line-soft);display:flex;align-items:center;justify-content:space-between}
+  .overlay a .idx{font-family:"DM Sans",sans-serif;font-size:.8rem;color:var(--gold);font-weight:500}
+  .overlay a:hover{color:var(--gold)}
+  .overlay .ov-foot{margin-top:1.6rem;color:var(--ivory-faint);font-size:.9rem;line-height:1.9}
+  .overlay .ov-foot b{color:var(--mauve-light);font-weight:500}
+
+  /* ============ HERO ============ */
+  .hero{padding-top:clamp(3rem,7vw,5.5rem);padding-bottom:clamp(3.5rem,8vw,6rem);overflow:hidden}
+  .hero-glow{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-glow::before,.hero-glow::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+  .hero-glow::before{width:46vw;height:46vw;max-width:560px;max-height:560px;top:-14%;right:-8%;background:radial-gradient(circle,rgba(176,124,132,.6),transparent 68%)}
+  .hero-glow::after{width:40vw;height:40vw;max-width:480px;max-height:480px;bottom:-22%;left:-12%;background:radial-gradient(circle,rgba(199,168,124,.34),transparent 70%)}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero-copy{max-width:620px}
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,4.7rem);font-weight:800;margin:1.4rem 0 0;
+    letter-spacing:-.02em;
+  }
+  .hero h1 em{font-style:normal;color:var(--mauve-light);position:relative;white-space:nowrap}
+  .hero h1 .ul{
+    background:linear-gradient(transparent 78%,rgba(199,168,124,.45) 0);
+  }
+  .hero p.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--ivory-dim);margin-top:1.5rem;max-width:50ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.1rem}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:2.4rem;padding-top:1.7rem;border-top:1px solid var(--line)}
+  .hero-meta div{min-width:0}
+  .hero-meta .n{font-family:"Syne",sans-serif;font-weight:700;font-size:1.05rem;color:var(--gold)}
+  .hero-meta .l{font-size:.82rem;color:var(--ivory-faint);letter-spacing:.02em}
+
+  /* hero visual: eye / lash motif card */
+  .hero-art{position:relative;aspect-ratio:4/5;border-radius:calc(var(--radius) + 8px);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);
+    background:
+      radial-gradient(120% 90% at 70% 10%,rgba(176,124,132,.55),transparent 55%),
+      linear-gradient(165deg,#3a2b31,#241a1e 70%);
+  }
+  /* ✏️ FOTO: vervang door echte foto van een close-up wimperbehandeling / het oog van een klant -->*/
+  .hero-art .pattern{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(231,211,214,.18) 1px,transparent 1.4px);background-size:18px 18px}
+  .hero-art svg.eye{position:absolute;inset:0;margin:auto;width:78%;height:auto;color:var(--ivory)}
+  .hero-art .tag{position:absolute;left:18px;bottom:18px;right:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+  .hero-art .tag .chip{background:rgba(36,26,30,.62);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;padding:.6rem .9rem;font-size:.78rem;color:var(--ivory-dim)}
+  .hero-art .tag .chip b{display:block;font-family:"Syne",sans-serif;color:var(--ivory);font-size:.92rem;font-weight:600}
+  .photo-note{position:absolute;top:14px;left:14px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,236,236,.5);background:rgba(36,26,30,.5);padding:.3rem .55rem;border-radius:8px;border:1px solid var(--line-soft)}
+
+  /* marquee strip */
+  .strip{border-block:1px solid var(--line);background:var(--aubergine-2);overflow:hidden}
+  .strip .track{display:flex;gap:3.5rem;white-space:nowrap;padding-block:.95rem;width:max-content;animation:slide 28s linear infinite}
+  .strip .track span{display:inline-flex;align-items:center;gap:1.4rem;font-family:"Syne",sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-dim)}
+  .strip .track span svg{width:14px;height:14px;color:var(--gold)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ============ section heading ============ */
+  .sec{padding-block:clamp(3.5rem,8vw,6.5rem)}
+  .sec-head{max-width:640px}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.9rem,4.4vw,3.1rem);margin-top:1rem}
+  .sec-head p{color:var(--ivory-dim);margin-top:1.1rem;font-size:1.04rem}
+
+  /* ============ WIMPERS feature ============ */
+  .feature{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .feature.flip{grid-template-columns:1.05fr .95fr}
+  .feature.flip .feat-art{order:-1}
+  .feat-art{position:relative;aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .feat-art.a{background:linear-gradient(150deg,#4a353c,#241a1e 72%)}
+  .feat-art.b{background:linear-gradient(150deg,#3a2b31,#1f1519 72%)}
+  .feat-art .pattern{position:absolute;inset:0;opacity:.4;background-image:radial-gradient(rgba(231,211,214,.16) 1px,transparent 1.4px);background-size:16px 16px}
+  .feat-art svg.motif{position:absolute;inset:0;margin:auto;width:72%;color:var(--mauve-light)}
+  .feat-list{list-style:none;margin-top:1.8rem;display:grid;gap:1.05rem}
+  .feat-list li{display:flex;gap:.95rem;align-items:flex-start;color:var(--ivory-dim)}
+  .feat-list svg{width:22px;height:22px;flex:none;color:var(--gold);margin-top:2px}
+  .feat-list b{color:var(--ivory);font-family:"Syne",sans-serif;font-weight:600;display:block;font-size:1rem}
+  .price-line{margin-top:1.9rem;display:inline-flex;align-items:center;gap:.7rem;font-size:.9rem;color:var(--ivory-faint);border:1px dashed var(--line);border-radius:999px;padding:.55rem 1.1rem}
+  .price-line b{color:var(--gold-soft);font-family:"Syne",sans-serif;font-weight:600;letter-spacing:.02em}
+
+  /* ============ small services (huid / teeth) ============ */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:3rem}
+  .card{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);
+    padding:clamp(1.6rem,3vw,2.4rem);background:linear-gradient(165deg,var(--aubergine-3),var(--aubergine-2));
+    overflow:hidden;transition:transform .45s var(--ease),border-color .45s var(--ease)
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(199,168,124,.5)}
+  .card .ic{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:rgba(199,168,124,.12);border:1px solid var(--line);color:var(--gold);margin-bottom:1.3rem}
+  .card .ic svg{width:26px;height:26px}
+  .card h3{font-size:1.4rem}
+  .card p{color:var(--ivory-dim);margin-top:.7rem;font-size:.98rem}
+  .card .op{margin-top:1.2rem;font-size:.82rem;letter-spacing:.04em;color:var(--gold-soft);font-weight:500}
+  .card .blob{position:absolute;width:160px;height:160px;border-radius:50%;filter:blur(50px);background:rgba(176,124,132,.4);top:-50px;right:-50px;opacity:.7}
+
+  /* ============ WAAROM (mauve band) ============ */
+  .why{background:linear-gradient(155deg,var(--mauve-deep),#5e3d44 90%);color:var(--ivory);border-block:1px solid rgba(199,168,124,.3)}
+  .why .wrap{position:relative;z-index:1}
+  .why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .why h2{font-size:clamp(1.9rem,4.4vw,3rem)}
+  .why .kicker{color:var(--gold-soft)}
+  .why .kicker svg{color:var(--ivory)}
+  .why blockquote{font-family:"Syne",sans-serif;font-weight:500;font-size:clamp(1.15rem,2.4vw,1.6rem);line-height:1.4;color:#fff;letter-spacing:-.01em}
+  .why blockquote span{color:var(--gold-soft)}
+  .why .sig{margin-top:1.5rem;display:flex;align-items:center;gap:.9rem}
+  .why .sig .av{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--mauve-light),var(--mauve-deep));border:1px solid rgba(244,236,236,.4);display:grid;place-items:center;font-family:"Syne",sans-serif;font-weight:700;color:var(--aubergine)}
+  .why .sig .who b{display:block;font-family:"Syne",sans-serif;font-weight:600}
+  .why .sig .who span{font-size:.85rem;color:rgba(244,236,236,.8)}
+  .why-points{display:grid;gap:1.3rem}
+  .why-points .pt{display:flex;gap:1rem;align-items:flex-start}
+  .why-points .num{font-family:"Syne",sans-serif;font-weight:700;font-size:1.05rem;color:var(--gold-soft);border:1px solid rgba(244,236,236,.35);border-radius:50%;width:42px;height:42px;flex:none;display:grid;place-items:center}
+  .why-points b{font-family:"Syne",sans-serif;font-weight:600;font-size:1.08rem;display:block}
+  .why-points p{color:rgba(244,236,236,.86);margin-top:.2rem;font-size:.96rem}
+
+  /* ============ OPENINGSTIJDEN + CONTACT ============ */
+  .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.5rem);align-items:start}
+  .hours{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:linear-gradient(165deg,var(--aubergine-3),var(--aubergine-2))}
+  .hours .head{padding:1.5rem clamp(1.4rem,3vw,2rem);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.8rem}
+  .hours .head svg{width:24px;height:24px;color:var(--gold)}
+  .hours .head h3{font-size:1.3rem}
+  .hours ul{list-style:none}
+  .hours li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem clamp(1.4rem,3vw,2rem);font-size:.98rem;border-bottom:1px solid var(--line-soft)}
+  .hours li:last-child{border-bottom:0}
+  .hours li .day{color:var(--ivory-dim)}
+  .hours li .time{font-family:"Syne",sans-serif;font-weight:600;color:var(--ivory);letter-spacing:.01em}
+  .hours li.closed{background:rgba(36,26,30,.4)}
+  .hours li.closed .time{color:var(--ivory-faint);font-weight:500}
+  .hours li.now{background:rgba(199,168,124,.1)}
+  .hours li.now .day{color:var(--gold-soft)}
+  .hours li.now .day::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-right:.5rem;vertical-align:middle;box-shadow:0 0 0 0 rgba(199,168,124,.6);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(199,168,124,.6)}70%{box-shadow:0 0 0 8px rgba(199,168,124,0)}100%{box-shadow:0 0 0 0 rgba(199,168,124,0)}}
+
+  .contact-info{display:grid;gap:1.1rem;margin-top:.4rem}
+  .ci-row{display:flex;gap:1rem;align-items:flex-start;padding:1.05rem 1.2rem;border:1px solid var(--line);border-radius:16px;background:var(--aubergine-2)}
+  .ci-row .ic{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(176,124,132,.16);color:var(--mauve-light)}
+  .ci-row .ic svg{width:20px;height:20px}
+  .ci-row .t b{font-family:"Syne",sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.2rem}
+  .ci-row .t p{color:var(--ivory);font-size:1rem;line-height:1.5}
+  .ci-row .t p.muted{color:var(--ivory-faint);font-size:.88rem}
+
+  /* ============ FORM (afspraak) ============ */
+  .booking{background:var(--aubergine-2);border-block:1px solid var(--line)}
+  .form-shell{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .form-aside h2{font-size:clamp(1.9rem,4.4vw,3rem);margin-top:1rem}
+  .form-aside p{color:var(--ivory-dim);margin-top:1.1rem}
+  .form-aside . assured{margin-top:2rem}
+  .assure{list-style:none;margin-top:1.8rem;display:grid;gap:.9rem}
+  .assure li{display:flex;gap:.7rem;align-items:center;color:var(--ivory-dim);font-size:.95rem}
+  .assure svg{width:20px;height:20px;color:var(--gold);flex:none}
+
+  form{background:linear-gradient(165deg,var(--aubergine-3),var(--aubergine));border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.5rem,3.5vw,2.6rem)}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  .field{margin-bottom:1.15rem;display:flex;flex-direction:column}
+  .field.full{grid-column:1/-1}
+  label{font-size:.82rem;font-weight:500;letter-spacing:.04em;color:var(--ivory-dim);margin-bottom:.5rem}
+  label .req{color:var(--mauve-light)}
+  input,select,textarea{
+    font-family:inherit;font-size:.98rem;color:var(--ivory);
+    background:rgba(36,26,30,.55);border:1px solid var(--line);border-radius:12px;
+    padding:.85rem 1rem;transition:border-color .3s var(--ease),box-shadow .3s var(--ease);width:100%;
+  }
+  textarea{resize:vertical;min-height:110px}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23C7A87C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+  input::placeholder,textarea::placeholder{color:var(--ivory-faint)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(199,168,124,.18)}
+  .form-submit{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:.6rem}
+  .form-note{font-size:.82rem;color:var(--ivory-faint);max-width:34ch}
+
+  /* ============ FOOTER ============ */
+  footer{background:linear-gradient(180deg,var(--aubergine),#170f12);border-top:1px solid var(--line);padding-block:clamp(2.8rem,6vw,4rem) 2rem}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start}
+  .foot-brand{max-width:340px}
+  .foot-brand .brand{margin-bottom:1rem}
+  .foot-brand p{color:var(--ivory-faint);font-size:.95rem}
+  .foot-cols{display:flex;flex-wrap:wrap;gap:clamp(2rem,6vw,4.5rem)}
+  .foot-col h4{font-family:"Syne",sans-serif;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:var(--ivory-dim);font-size:.93rem;margin-bottom:.55rem;transition:color .3s var(--ease)}
+  .foot-col a:hover{color:var(--ivory)}
+  .foot-social{display:flex;gap:.7rem;margin-top:.3rem}
+  .foot-social a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--ivory-dim);margin:0;transition:transform .35s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+  .foot-social a:hover{transform:translateY(-3px);color:var(--gold);border-color:var(--gold)}
+  .foot-social svg{width:18px;height:18px}
+  .foot-bottom{margin-top:clamp(2rem,5vw,3rem);padding-top:1.6rem;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:center;font-size:.85rem;color:var(--ivory-faint)}
+  .foot-bottom a{color:var(--mauve-light)}
+  .foot-bottom a:hover{color:var(--gold)}
+
+  /* ============ reveal ============ */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ============ responsive ============ */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+    .hero-art{max-width:440px;width:100%;margin-inline:auto;order:-1;aspect-ratio:16/13}
+    .feature,.feature.flip{grid-template-columns:1fr;gap:2.2rem}
+    .feature.flip .feat-art{order:0}
+    .feat-art{max-width:460px;width:100%}
+    .why-grid,.hours-grid,.form-shell{grid-template-columns:1fr}
+    .why-grid .why-points{order:0}
+  }
+  @media (max-width:680px){
+    .nav-links{display:none}
+    .nav-cta{display:none}
+    .burger{display:flex}
+    .duo{grid-template-columns:1fr}
+    .frow{grid-template-columns:1fr}
+    .hero-meta{gap:1.1rem 1.6rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Bella Cilia — home">
+      <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#2E2228"/>
+        <path d="M12 40c8 8 32 8 40 0" stroke="#C7A87C" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M18 38l-3 7M26 41l-1 8M34 42v8M42 41l1 8M50 38l3 7" stroke="#B07C84" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span style="display:block">
+        Bella <b>Cilia</b>
+        <span>Wimpers &amp; wenkbrauwen</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#wimpers">Wimpers</a>
+      <a href="#wenkbrauwen">Wenkbrauwen</a>
+      <a href="#meer">Huid &amp; meer</a>
+      <a href="#openingstijden">Openingstijden</a>
+      <a href="#afspraak" class="btn btn--ghost nav-cta">Afspraak maken</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu openen" aria-controls="overlay" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile overlay -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Navigatiemenu">
+  <a href="#wimpers"><span>Wimperextensions</span><span class="idx">01</span></a>
+  <a href="#wenkbrauwen"><span>Wenkbrauwen</span><span class="idx">02</span></a>
+  <a href="#meer"><span>Huid &amp; teeth whitening</span><span class="idx">03</span></a>
+  <a href="#waarom"><span>Waarom Bella Cilia</span><span class="idx">04</span></a>
+  <a href="#openingstijden"><span>Openingstijden</span><span class="idx">05</span></a>
+  <a href="#afspraak"><span>Afspraak maken</span><span class="idx">06</span></a>
+  <div class="ov-foot">
+    <b>Bella Cilia</b> · schoonheidssalon<br />
+    Enschede centrum, 7521 DS<br />
+    06 22148960 · info@bella-cilia.nl
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg>
+        Schoonheidssalon · Enschede
+      </span>
+      <h1 class="reveal d1">Alle aandacht voor <em class="ul">jouw ogen</em>.</h1>
+      <p class="lead reveal d2">Bij Bella Cilia ben je specialist-handen rijk. Ik werk precies en persoonlijk aan een verzorgde, natuurlijke uitstraling — van wimperextensions tot perfect gestylede wenkbrauwen. Zodat jij iedere ochtend wakker wordt en je meteen klaar voelt.</p>
+      <div class="hero-actions reveal d3">
+        <a href="#afspraak" class="btn">
+          Maak een afspraak
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#wimpers" class="btn btn--ghost">Bekijk behandelingen</a>
+      </div>
+      <div class="hero-meta reveal d4">
+        <div><div class="n">Wimpers &amp; brows</div><div class="l">Onze specialisatie</div></div>
+        <div><div class="n">Persoonlijk</div><div class="l">Advies op jouw gezicht</div></div>
+        <div><div class="n">Centrum</div><div class="l">Enschede, 7521 DS</div></div>
+      </div>
+    </div>
+
+    <!-- ✏️ FOTO: vervang door echte foto van een close-up wimperbehandeling of het resultaat bij een klant -->
+    <div class="hero-art reveal d2" aria-hidden="true">
+      <span class="photo-note">Foto volgt</span>
+      <div class="pattern"></div>
+      <svg class="eye" viewBox="0 0 320 200" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M20 120C70 60 250 60 300 120" stroke-width="3"/>
+        <path d="M20 120C70 175 250 175 300 120" stroke-width="3" opacity=".7"/>
+        <circle cx="160" cy="124" r="34" stroke-width="3"/>
+        <circle cx="160" cy="124" r="14" fill="currentColor" opacity=".9" stroke="none"/>
+        <circle cx="151" cy="117" r="4.5" fill="#241A1E" stroke="none"/>
+        <!-- upper lashes -->
+        <g stroke="#C7A87C" stroke-width="3.4">
+          <path d="M40 104l-13 -22"/><path d="M70 88l-9 -25"/><path d="M104 76l-6 -27"/>
+          <path d="M140 70l-2 -28"/><path d="M180 70l2 -28"/><path d="M216 76l6 -27"/>
+          <path d="M250 88l9 -25"/><path d="M280 104l13 -22"/>
+        </g>
+        <g stroke="#B07C84" stroke-width="2.4" opacity=".85">
+          <path d="M55 96l-7 -16"/><path d="M87 81l-5 -18"/><path d="M122 73l-3 -19"/>
+          <path d="M160 70v-20"/><path d="M198 73l3 -19"/><path d="M233 81l5 -18"/><path d="M265 96l7 -16"/>
+        </g>
+      </svg>
+      <div class="tag">
+        <div class="chip"><b>Wimperextensions</b>natuurlijk &amp; vol</div>
+        <div class="chip"><b>Wenkbrauwen</b>gestyled op maat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- marquee -->
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>Wimperextensions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Wenkbrauwen stylen &amp; verven <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Teeth whitening <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Gezichtsbehandelingen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Precisie &amp; persoonlijk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Wimperextensions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Wenkbrauwen stylen &amp; verven <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Teeth whitening <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Gezichtsbehandelingen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+    <span>Precisie &amp; persoonlijk <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></span>
+  </div>
+</div>
+
+<!-- ============ WIMPERS (specialism) ============ -->
+<section class="sec" id="wimpers">
+  <div class="wrap feature">
+    <!-- ✏️ FOTO: vervang door echte foto van een wimperextensions-behandeling / resultaat -->
+    <div class="feat-art a reveal" aria-hidden="true">
+      <div class="pattern"></div>
+      <svg class="motif" viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M30 150C70 100 170 100 210 150" stroke-width="3.2"/>
+        <g stroke="#C7A87C" stroke-width="3.4">
+          <path d="M44 136l-10 -26"/><path d="M70 120l-7 -30"/><path d="M100 110l-4 -32"/>
+          <path d="M120 107v-34"/><path d="M140 110l4 -32"/><path d="M170 120l7 -30"/><path d="M196 136l10 -26"/>
+        </g>
+        <g stroke="currentColor" stroke-width="2.2" opacity=".75">
+          <path d="M57 127l-6 -18"/><path d="M85 114l-4 -20"/><path d="M120 105v-22"/><path d="M155 114l4 -20"/><path d="M183 127l6 -18"/>
+        </g>
+      </svg>
+    </div>
+    <div class="feat-copy">
+      <span class="kicker reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/></svg>
+        Mijn specialisatie
+      </span>
+      <h2 class="reveal d1" style="font-size:clamp(1.9rem,4.4vw,3.1rem);margin-top:1rem">Wimperextensions die bij jóu passen</h2>
+      <p class="reveal d2" style="color:var(--ivory-dim);margin-top:1.1rem;font-size:1.04rem">Volle wimpers zonder mascara, elke dag. Ik kies samen met jou de juiste lengte, dikte en krul — voor een look die natuurlijk oogt of juist wat meer drama geeft. Altijd afgestemd op je eigen wimpers en oogvorm, zodat het resultaat klopt en comfortabel blijft.</p>
+      <ul class="feat-list">
+        <li class="reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Op maat geadviseerd</b>Van natuurlijk &amp; subtiel tot vol en uitgesproken — passend bij jouw gezicht.</span></li>
+        <li class="reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Precies aangebracht</b>Haar voor haar, met aandacht en geduld voor een mooi en comfortabel resultaat.</span></li>
+        <li class="reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Refill mogelijk</b>Houd je wimpers vol en verzorgd met een onderhoudsbehandeling.</span></li>
+      </ul>
+      <div class="price-line reveal d4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--gold)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Prijs <b>op aanvraag</b> · vraag gerust naar de mogelijkheden
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WENKBRAUWEN ============ -->
+<section class="sec" id="wenkbrauwen" style="padding-top:0">
+  <div class="wrap feature flip">
+    <!-- ✏️ FOTO: vervang door echte foto van een wenkbrauwbehandeling / resultaat -->
+    <div class="feat-art b reveal" aria-hidden="true">
+      <div class="pattern"></div>
+      <svg class="motif" viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-linecap="round">
+        <path d="M40 120C80 96 150 92 200 110" stroke-width="9" opacity=".25"/>
+        <g stroke="#C7A87C" stroke-width="3.2">
+          <path d="M48 118l8 -16"/><path d="M70 110l7 -17"/><path d="M94 104l6 -17"/>
+          <path d="M118 101l5 -17"/><path d="M142 101l4 -16"/><path d="M166 104l3 -15"/><path d="M188 110l3 -14"/>
+        </g>
+        <path d="M40 120C80 96 150 92 200 110" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M120 150c30 0 55 22 55 22" stroke="currentColor" stroke-width="2" opacity=".5"/>
+        <circle cx="120" cy="156" r="3" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+    <div class="feat-copy">
+      <span class="kicker reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+        Wenkbrauwen
+      </span>
+      <h2 class="reveal d1" style="font-size:clamp(1.9rem,4.4vw,3.1rem);margin-top:1rem">Wenkbrauwen die je gezicht laten spreken</h2>
+      <p class="reveal d2" style="color:var(--ivory-dim);margin-top:1.1rem;font-size:1.04rem">Je wenkbrauwen bepalen meer dan je denkt. Ik style en verf ze in de vorm die jouw gezicht in balans brengt — strak waar het mooi is, zacht waar het natuurlijk moet blijven. Het resultaat: een opgeruimde, verzorgde blik die helemaal van jou is.</p>
+      <ul class="feat-list">
+        <li class="reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Stylen op maat</b>De vorm afgestemd op jouw gezicht en wensen.</span></li>
+        <li class="reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Verven voor meer definitie</b>Een mooie, natuurlijke kleur die je blik direct opfrist.</span></li>
+        <li class="reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Perfecte aanvulling op je wimpers</b>Samen met je wimperextensions een complete, harmonieuze look.</span></li>
+      </ul>
+      <div class="price-line reveal d4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--gold)"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Prijs <b>op aanvraag</b> · ook te combineren met een wimperbehandeling
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HUID & TEETH WHITENING ============ -->
+<section class="sec" id="meer" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker kicker--center">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.2 5.3L20 9l-4 3.8L17 19l-5-3-5 3 1-6.2L4 9l5.8-.7Z"/></svg>
+        Ook bij Bella Cilia
+      </span>
+      <h2>Verzorgd van top tot teen<br />— én een stralende lach</h2>
+      <p>Naast wimpers en wenkbrauwen kun je bij mij terecht voor een verzorgde huid en een witter gebit. Klein van opzet, groot in aandacht.</p>
+    </div>
+    <div class="duo">
+      <div class="card reveal d1">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18M16 9a3 3 0 0 1 0 6"/></svg>
+        </div>
+        <h3>Gezichtsbehandelingen &amp; huidverzorging</h3>
+        <p>Een moment voor jezelf en je huid. Een reinigende, verzorgende behandeling die je gezicht laat ademen en stralen — afgestemd op wat jouw huid op dat moment nodig heeft.</p>
+        <div class="op">Prijs op aanvraag</div>
+      </div>
+      <div class="card reveal d2">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c-2.5-2-6-2-7 1-1 3 0 9 2 12 1 1.5 2 .5 2.5-1 .4-1.3.8-2 2.5-2s2.1.7 2.5 2c.5 1.5 1.5 2.5 2.5 1 2-3 3-9 2-12-1-3-4.5-3-7-1Z"/></svg>
+        </div>
+        <h3>Teeth whitening</h3>
+        <p>Een frisse, witte lach maakt je hele uitstraling lichter. Een veilige, verzorgende whitening-behandeling voor zichtbaar stralender tanden — perfect bij je verzorgde blik.</p>
+        <div class="op">Prijs op aanvraag</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAAROM ============ -->
+<section class="why sec" id="waarom">
+  <div class="wrap why-grid">
+    <div class="why-aside reveal">
+      <span class="kicker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        Waarom Bella Cilia
+      </span>
+      <blockquote style="margin-top:1.2rem">Voor mij draait het om <span>precisie en aandacht</span> — jouw gezicht verdient maatwerk, geen standaard.</blockquote>
+      <div class="sig">
+        <div class="av" aria-hidden="true">SL</div>
+        <div class="who">
+          <b>Susan Lublinkhof</b>
+          <span>Eigenaresse &amp; specialist</span>
+        </div>
+      </div>
+    </div>
+    <div class="why-points">
+      <div class="pt reveal d1">
+        <div class="num" aria-hidden="true">1</div>
+        <div><b>Specialist in ogen</b><p>Wimpers en wenkbrauwen zijn mijn vak. Daar ligt mijn focus, daar zie je het verschil.</p></div>
+      </div>
+      <div class="pt reveal d2">
+        <div class="num" aria-hidden="true">2</div>
+        <div><b>Persoonlijk &amp; rustig</b><p>Geen lopende band. Ik neem de tijd voor jou en kijk goed naar wat bij jouw gezicht past.</p></div>
+      </div>
+      <div class="pt reveal d3">
+        <div class="num" aria-hidden="true">3</div>
+        <div><b>Precies werk</b><p>Een verzorgde, natuurlijke uitstraling ontstaat in de details. Daar zit mijn aandacht.</p></div>
+      </div>
+      <div class="pt reveal d4">
+        <div class="num" aria-hidden="true">4</div>
+        <div><b>Centraal in Enschede</b><p>Makkelijk te bereiken in het centrum (7521 DS) — even tijd voor jezelf, dichtbij.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPENINGSTIJDEN + CONTACT ============ -->
+<section class="sec" id="openingstijden">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:2.6rem">
+      <span class="kicker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Openingstijden &amp; contact
+      </span>
+      <h2>Wanneer je langs kunt komen</h2>
+      <p>Ook ’s avonds open op woensdag en donderdag — handig na werk of school. Bel of mail gerust om je afspraak in te plannen.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours reveal d1">
+        <div class="head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <h3>Openingstijden</h3>
+        </div>
+        <ul>
+          <li class="closed" data-day="1"><span class="day">Maandag</span><span class="time">Gesloten</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">10:00 – 17:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">12:30 – 21:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">12:30 – 21:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">10:00 – 17:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">10:00 – 15:00</span></li>
+          <li class="closed" data-day="0"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+      </div>
+      <div class="contact-info">
+        <div class="ci-row reveal d2">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="t">
+            <b>Adres</b>
+            <p>Enschede (centrum), 7521 DS</p>
+            <p class="muted"><!-- ✏️ vul straat + huisnummer in -->Straat + huisnummer volgt</p>
+          </div>
+        </div>
+        <div class="ci-row reveal d2">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div class="t">
+            <b>Telefoon</b>
+            <p>06 22148960</p>
+            <p class="muted">Bel of stuur een appje voor je afspraak</p>
+          </div>
+        </div>
+        <div class="ci-row reveal d3">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div class="t">
+            <b>E-mail</b>
+            <p>info@bella-cilia.nl</p>
+            <p class="muted">Liever schriftelijk? Mail me gerust je vraag</p>
+          </div>
+        </div>
+        <div class="ci-row reveal d3">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></div>
+          <div class="t">
+            <b>Facebook</b>
+            <p><a href="https://facebook.com/susanlublinkhof" target="_blank" rel="noopener" style="color:var(--mauve-light)">facebook.com/susanlublinkhof</a></p>
+            <p class="muted">Volg mee voor werk &amp; nieuws</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFSPRAAK FORM ============ -->
+<section class="booking sec" id="afspraak">
+  <div class="wrap form-shell">
+    <div class="form-aside">
+      <span class="kicker reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+        Afspraak maken
+      </span>
+      <h2 class="reveal d1">Klaar voor een verzorgde blik?</h2>
+      <p class="reveal d2">Laat hieronder je gegevens achter en vertel kort wat je zoekt. Ik neem contact met je op om samen een moment te plannen dat jou uitkomt. Geen prijs ingevuld? Vraag gerust — dat bespreken we persoonlijk.</p>
+      <ul class="assure">
+        <li class="reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Persoonlijk advies, geen verplichtingen</li>
+        <li class="reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Je kunt ook bellen of appen: 06 22148960</li>
+        <li class="reveal d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Avondafspraken mogelijk op wo &amp; do</li>
+      </ul>
+    </div>
+
+    <!-- ✏️ vul Formspree endpoint in -->
+    <form class="reveal d2" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="frow">
+        <div class="field">
+          <label for="naam">Naam <span class="req">*</span></label>
+          <input id="naam" name="naam" type="text" required autocomplete="name" placeholder="Je naam" />
+        </div>
+        <div class="field">
+          <label for="tel">Telefoon</label>
+          <input id="tel" name="telefoon" type="tel" autocomplete="tel" placeholder="06 …" />
+        </div>
+      </div>
+      <div class="field full">
+        <label for="email">E-mail <span class="req">*</span></label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="jij@voorbeeld.nl" />
+      </div>
+      <div class="field full">
+        <label for="dienst">Waarvoor wil je komen?</label>
+        <select id="dienst" name="dienst">
+          <option value="Wimperextensions">Wimperextensions</option>
+          <option value="Wimper refill">Wimper refill / onderhoud</option>
+          <option value="Wenkbrauwen stylen">Wenkbrauwen stylen</option>
+          <option value="Wenkbrauwen verven">Wenkbrauwen verven</option>
+          <option value="Gezichtsbehandeling">Gezichtsbehandeling / huidverzorging</option>
+          <option value="Teeth whitening">Teeth whitening</option>
+          <option value="Combinatie / weet ik nog niet">Combinatie / weet ik nog niet</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="bericht">Bericht <span style="color:var(--ivory-faint);font-weight:400">(optioneel)</span></label>
+        <textarea id="bericht" name="bericht" placeholder="Vertel kort wat je zoekt of wanneer je het liefst langskomt…"></textarea>
+      </div>
+      <div class="form-submit">
+        <button class="btn" type="submit">
+          Verstuur aanvraag
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        </button>
+        <span class="form-note">Je gegevens gebruik ik alleen om contact met je op te nemen over je afspraak.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="Bella Cilia — home">
+          <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#2E2228"/>
+            <path d="M12 40c8 8 32 8 40 0" stroke="#C7A87C" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 38l-3 7M26 41l-1 8M34 42v8M42 41l1 8M50 38l3 7" stroke="#B07C84" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span style="display:block">Bella <b>Cilia</b><span>Wimpers &amp; wenkbrauwen</span></span>
+        </a>
+        <p>Schoonheidssalon in het centrum van Enschede. Specialist in een verzorgde, natuurlijke uitstraling rond je ogen — persoonlijk en precies.</p>
+        <div class="foot-social">
+          <a href="https://facebook.com/susanlublinkhof" target="_blank" rel="noopener" aria-label="Bella Cilia op Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Behandelingen</h4>
+          <a href="#wimpers">Wimperextensions</a>
+          <a href="#wenkbrauwen">Wenkbrauwen</a>
+          <a href="#meer">Gezichtsbehandelingen</a>
+          <a href="#meer">Teeth whitening</a>
+        </div>
+        <div class="foot-col">
+          <h4>Contact</h4>
+          <p>Enschede centrum, 7521 DS</p>
+          <p>06 22148960</p>
+          <p>info@bella-cilia.nl</p>
+          <a href="#afspraak">Afspraak maken</a>
+        </div>
+        <div class="foot-col">
+          <h4>Openingstijden</h4>
+          <p>Ma · gesloten</p>
+          <p>Di &amp; Vr · 10:00–17:00</p>
+          <p>Wo &amp; Do · 12:30–21:00</p>
+          <p>Za · 10:00–15:00 · Zo gesloten</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>&copy; 2026 Bella Cilia — Enschede · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></p>
+      <p>Eigenaresse: Susan Lublinkhof</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    // ---- sticky header shadow ----
+    var header = document.getElementById("top");
+    var onScroll = function () {
+      if (window.scrollY > 12) header.classList.add("scrolled");
+      else header.classList.remove("scrolled");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // ---- mobile menu ----
+    var burger = document.getElementById("burger");
+    var overlay = document.getElementById("overlay");
+    var setMenu = function (open) {
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+      overlay.classList.toggle("open", open);
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+    burger.addEventListener("click", function () {
+      setMenu(burger.getAttribute("aria-expanded") !== "true");
+    });
+    overlay.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { setMenu(false); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("open")) setMenu(false);
+    });
+
+    // ---- highlight today's opening hours ----
+    try {
+      var today = new Date().getDay(); // 0 = Sun .. 6 = Sat
+      var row = document.querySelector('.hours li[data-day="' + today + '"]');
+      if (row && !row.classList.contains("closed")) row.classList.add("now");
+    } catch (e) {}
+
+    // ---- reveal on scroll ----
+    var reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add("in"); });
+    }
+  })();
+</script>
+</body>
+</html>
