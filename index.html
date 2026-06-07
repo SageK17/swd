@@ -437,13 +437,18 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
       <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><small>E-mail</small><strong>swd.enschede@gmail.com</strong></div></div>
       <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><small>Werkgebied</small><strong>Enschede &amp; heel Nederland</strong></div></div>
     </div>
-    <!-- ✏️ formspree endpoint in action="" -->
-    <form class="cf reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <!-- Contactformulier -> FormSubmit (gratis, geen account). Mailt naar swd.enschede@gmail.com.
+         EENMALIG ACTIVEREN: verstuur 't formulier 1x op de live site -> klik de "Activate"-link die FormSubmit mailt. Daarna komt elke aanvraag binnen. -->
+    <form id="swdContact" class="cf reveal" action="https://formsubmit.co/swd.enschede@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nieuwe aanvraag via Sage Website Design" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
       <div class="field"><label>Je naam</label><input type="text" name="naam" placeholder="Voor- en achternaam" required /></div>
       <div class="field"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Naam van je bedrijf" /></div>
       <div class="field"><label>E-mailadres</label><input type="email" name="email" placeholder="jij@bedrijf.nl" required /></div>
       <div class="field"><label>Waar kunnen we mee helpen?</label><textarea name="bericht" placeholder="Bijv. ik heb nog geen website / mijn site is verouderd…"></textarea></div>
       <button type="submit" class="btn btn-primary btn-lg magnetic" style="width:100%;justify-content:center">Verstuur — we reageren snel →</button>
+      <p id="swdFormMsg" role="status" style="display:none;margin-top:14px;font-weight:600"></p>
     </form>
   </div>
 </section>
@@ -520,6 +525,20 @@ if(matchMedia('(pointer:fine)').matches){
     el.addEventListener('pointerleave',()=>el.style.transform='');
   });
 }
+/* Contactformulier -> FormSubmit via AJAX (inline bedankt; valt terug op gewone POST zonder JS) */
+(function(){
+  var f=document.getElementById('swdContact'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var msg=document.getElementById('swdFormMsg'), btn=f.querySelector('button[type="submit"]'), label=btn?btn.textContent:'';
+    if(btn){btn.disabled=true;btn.textContent='Versturen…';}
+    fetch('https://formsubmit.co/ajax/swd.enschede@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){return r.json();})
+      .then(function(){f.reset();if(msg){msg.style.display='block';msg.style.color='var(--accent)';msg.textContent='Bedankt! Je aanvraag is verzonden — we reageren snel.';}})
+      .catch(function(){if(msg){msg.style.display='block';msg.style.color='#ff6b6b';msg.textContent='Er ging iets mis. Mail ons gerust direct op swd.enschede@gmail.com.';}})
+      .then(function(){if(btn){btn.disabled=false;btn.textContent=label;}});
+  });
+})();
 </script>
 </body>
 </html>
