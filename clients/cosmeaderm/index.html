@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Bespoke preview voor Cosmeaderm (Enschede) — Sage Website Design.
+     Concept: klinisch-redactioneel, als een rustig dermatologie-tijdschrift.
+     Tweekoloms-opzet: LINKS een sticky "Huidconcern-index" (ankerlijst) die
+     scroll-linkt naar RECHTS, waar elk concern een toegankelijk accordeon is.
+     Motief: dunne lijnen, kleine voetnoot-cijfers, fijne SVG-lijn van huidlagen,
+     terughoudendheid. Geen kaarten, geen statistiek-band, geen emoji. -->
+
+<title>Cosmeaderm — Huidverbetering &amp; huidverzorging in Enschede</title>
+<meta name="description" content="Cosmeaderm in Enschede: gediplomeerd schoonheidsspecialiste sinds 1989. Passend advies bij acne, rosacea, pigment, couperose, huidveroudering en permanente make-up. Samenwerking met arts. Op afspraak: 053 432 46 43." />
+<meta name="theme-color" content="#0d6b68" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ffffff'/><circle cx='50' cy='50' r='30' fill='none' stroke='%230d6b68' stroke-width='6'/><line x1='50' y1='20' x2='50' y2='80' stroke='%230d6b68' stroke-width='6'/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --white:#ffffff;
+  --teal:#0d6b68;
+  --teal-d:#0a514f;
+  --teal-700:#094744;
+  --slate:#2b3640;
+  --slate-2:#55636e;
+  --muted:#8493a0;
+  --mint:#e6f1ef;
+  --mint-2:#f3f8f7;
+  --line:#d8e3e1;
+  --hair:#e7eeec;
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+body{
+  font-family:"Work Sans",system-ui,-apple-system,sans-serif;
+  font-weight:400;
+  color:var(--slate);
+  background:var(--white);
+  line-height:1.72;
+  font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Newsreader",Georgia,"Times New Roman",serif;font-weight:500;color:var(--slate);line-height:1.14;letter-spacing:-.01em}
+a{color:var(--teal);text-decoration:none}
+a:hover{color:var(--teal-d)}
+::selection{background:var(--teal);color:#fff}
+:focus-visible{outline:2.5px solid var(--teal);outline-offset:3px;border-radius:2px}
+
+/* ---- shared bits ---- */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:"Work Sans",sans-serif;font-weight:500;font-size:.72rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--teal);
+  display:flex;align-items:center;gap:.7em;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--teal);display:inline-block;opacity:.8}
+.num{
+  font-family:"Work Sans",sans-serif;font-weight:500;font-size:.68rem;
+  letter-spacing:.14em;color:var(--muted);font-variant-numeric:tabular-nums;
+}
+.rule{height:1px;background:var(--hair);border:0;width:100%}
+
+/* ---- skip link ---- */
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--teal);color:#fff;padding:.7em 1.2em;border-radius:0 0 6px 0;font-weight:500;font-size:.9rem}
+.skip:focus{left:0;color:#fff}
+
+/* =========================================================
+   MASTHEAD — like a journal nameplate
+   ========================================================= */
+.masthead{border-bottom:1px solid var(--line);background:var(--white);position:relative;z-index:30}
+.masthead .wrap{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-top:18px;padding-bottom:18px;
+}
+.brand{display:flex;align-items:baseline;gap:.6em;text-decoration:none}
+.brand-mark{
+  width:30px;height:30px;flex:none;align-self:center;
+}
+.brand-name{font-family:"Newsreader",serif;font-weight:600;font-size:1.5rem;color:var(--slate);letter-spacing:-.01em}
+.brand-name .acc{color:var(--teal)}
+.masthead-meta{
+  display:flex;align-items:center;gap:22px;
+  font-size:.82rem;color:var(--slate-2);letter-spacing:.01em;
+}
+.masthead-meta .sep{width:1px;height:14px;background:var(--line)}
+.masthead-meta a{color:var(--slate-2);font-weight:500}
+.masthead-meta a:hover{color:var(--teal)}
+.masthead-cta{
+  font-size:.82rem;font-weight:500;color:var(--teal);
+  border:1px solid var(--line);padding:.5em 1.05em;border-radius:999px;
+  transition:border-color .25s var(--ease),color .25s var(--ease),background .25s var(--ease);
+  white-space:nowrap;
+}
+.masthead-cta:hover{border-color:var(--teal);background:var(--mint);color:var(--teal-d)}
+@media (max-width:760px){
+  .masthead-meta .phone-inline,.masthead-meta .sep{display:none}
+}
+
+/* =========================================================
+   HERO — restrained, editorial, with skin-layers line art
+   ========================================================= */
+.hero{padding:68px 0 56px;border-bottom:1px solid var(--line);position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.45fr .85fr;gap:56px;align-items:center}
+.hero-kicker{margin-bottom:26px}
+.hero h1{
+  font-size:clamp(2.5rem,5.6vw,4.25rem);
+  font-weight:400;letter-spacing:-.022em;color:var(--slate);
+}
+.hero h1 em{font-style:italic;color:var(--teal);font-weight:400}
+.hero-lede{
+  margin-top:24px;max-width:34ch;font-size:1.12rem;color:var(--slate-2);
+  font-weight:300;line-height:1.66;
+}
+.cred{
+  margin-top:30px;display:inline-flex;align-items:center;gap:.7em;
+  font-size:.82rem;letter-spacing:.04em;color:var(--teal-700);
+  background:var(--mint);border:1px solid var(--line);
+  padding:.6em 1.1em;border-radius:999px;font-weight:500;
+}
+.cred svg{width:15px;height:15px;flex:none}
+.hero-actions{margin-top:34px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.6em;
+  background:var(--teal);color:#fff;font-weight:500;font-size:.95rem;
+  padding:.86em 1.5em;border-radius:6px;letter-spacing:.01em;
+  transition:background .25s var(--ease),transform .25s var(--ease);
+  border:1px solid var(--teal);
+}
+.btn-primary:hover{background:var(--teal-d);color:#fff;transform:translateY(-1px)}
+.btn-primary svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-text{
+  font-size:.9rem;font-weight:500;color:var(--slate);
+  border-bottom:1px solid var(--line);padding-bottom:3px;
+  transition:border-color .25s var(--ease),color .25s var(--ease);
+}
+.btn-text:hover{border-color:var(--teal);color:var(--teal)}
+
+/* skin-layers illustration block */
+.hero-figure{position:relative}
+.skinfig{
+  width:100%;display:block;
+}
+.skinfig-cap{
+  margin-top:14px;display:flex;gap:10px;align-items:flex-start;
+  font-size:.74rem;color:var(--muted);line-height:1.5;letter-spacing:.01em;
+  border-top:1px solid var(--hair);padding-top:12px;
+}
+.skinfig-cap .num{flex:none}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-figure{max-width:420px}
+}
+
+/* =========================================================
+   TWO-COLUMN: sticky index (L) + accordions (R)
+   ========================================================= */
+.atlas{padding:64px 0 30px}
+.atlas-head{max-width:60ch;margin-bottom:44px}
+.atlas-head .eyebrow{margin-bottom:18px}
+.atlas-head h2{font-size:clamp(1.85rem,3.4vw,2.6rem);font-weight:400;letter-spacing:-.018em}
+.atlas-head p{margin-top:16px;color:var(--slate-2);font-weight:300;font-size:1.05rem;max-width:54ch}
+
+.atlas-grid{
+  display:grid;grid-template-columns:248px 1fr;gap:56px;align-items:start;
+}
+
+/* --- left sticky index --- */
+.index{position:sticky;top:28px}
+.index-title{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:18px;
+  padding-bottom:14px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.index-title .of{font-variant-numeric:tabular-nums}
+.index ol{list-style:none}
+.index li{border-bottom:1px solid var(--hair)}
+.index a{
+  display:flex;align-items:baseline;gap:.85em;
+  padding:.85em 0;color:var(--slate-2);font-size:.96rem;font-weight:400;
+  transition:color .2s var(--ease),padding .25s var(--ease);
+  position:relative;
+}
+.index a .ix-num{
+  font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums;
+  width:1.4em;flex:none;font-weight:500;transition:color .2s var(--ease);
+}
+.index a .ix-label{transition:transform .25s var(--ease)}
+.index a::after{
+  content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;
+  background:var(--teal);transition:width .35s var(--ease);
+}
+.index a:hover{color:var(--teal)}
+.index a:hover .ix-label{transform:translateX(3px)}
+.index a:hover .ix-num{color:var(--teal)}
+.index a.is-active{color:var(--teal);font-weight:500}
+.index a.is-active .ix-num{color:var(--teal)}
+.index a.is-active::after{width:100%}
+.index-foot{
+  margin-top:24px;font-size:.78rem;color:var(--muted);line-height:1.55;
+  display:flex;gap:9px;align-items:flex-start;
+}
+.index-foot svg{width:14px;height:14px;flex:none;margin-top:3px;color:var(--teal)}
+
+/* --- right accordions --- */
+.concerns{border-top:1px solid var(--slate)}
+.concern{border-bottom:1px solid var(--line)}
+.concern-btn{
+  width:100%;background:none;border:0;cursor:pointer;text-align:left;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:18px;
+  padding:30px 4px 30px 0;font-family:inherit;color:var(--slate);
+  transition:color .2s var(--ease);
+}
+.concern-btn:hover{color:var(--teal)}
+.concern-btn .c-num{
+  font-family:"Work Sans",sans-serif;font-size:.74rem;font-weight:500;
+  color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.08em;
+  align-self:flex-start;padding-top:.55em;transition:color .2s var(--ease);
+}
+.concern-btn:hover .c-num,.concern[data-open="true"] .c-num{color:var(--teal)}
+.concern-title{
+  font-family:"Newsreader",serif;font-weight:500;font-size:clamp(1.4rem,2.5vw,1.85rem);
+  letter-spacing:-.012em;line-height:1.18;
+}
+.concern-sub{
+  display:block;font-family:"Work Sans",sans-serif;font-weight:400;
+  font-size:.86rem;color:var(--slate-2);margin-top:7px;letter-spacing:.005em;line-height:1.5;
+}
+.c-toggle{
+  width:30px;height:30px;flex:none;border:1px solid var(--line);border-radius:50%;
+  position:relative;align-self:flex-start;margin-top:.35em;
+  transition:border-color .25s var(--ease),background .25s var(--ease);
+}
+.concern-btn:hover .c-toggle{border-color:var(--teal)}
+.c-toggle::before,.c-toggle::after{
+  content:"";position:absolute;background:var(--teal);left:50%;top:50%;
+  transition:transform .3s var(--ease),opacity .3s var(--ease);
+}
+.c-toggle::before{width:11px;height:1.5px;transform:translate(-50%,-50%)}
+.c-toggle::after{width:1.5px;height:11px;transform:translate(-50%,-50%)}
+.concern[data-open="true"] .c-toggle{background:var(--mint);border-color:var(--teal)}
+.concern[data-open="true"] .c-toggle::after{transform:translate(-50%,-50%) scaleY(0);opacity:0}
+
+.concern-panel{
+  overflow:hidden;height:0;
+  transition:height .42s var(--ease);
+}
+.concern-inner{
+  padding:2px 4px 38px 0;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;
+}
+.concern-body p{color:var(--slate-2);font-weight:300;font-size:1.02rem;line-height:1.7}
+.concern-body p + p{margin-top:14px}
+.approach{
+  border-left:1px solid var(--line);padding-left:26px;
+}
+.approach-label{
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:16px;
+}
+.approach ul{list-style:none}
+.approach li{
+  display:flex;gap:.75em;align-items:baseline;
+  padding:.5em 0;font-size:.92rem;color:var(--slate);border-bottom:1px solid var(--hair);
+}
+.approach li:last-child{border-bottom:0}
+.approach li .tick{
+  width:13px;height:13px;flex:none;color:var(--teal);align-self:flex-start;margin-top:.4em;
+}
+.concern-note{
+  margin-top:22px;display:flex;gap:10px;align-items:flex-start;
+  font-size:.82rem;color:var(--slate-2);line-height:1.55;
+  background:var(--mint-2);border:1px solid var(--hair);border-radius:7px;
+  padding:14px 16px;
+}
+.concern-note svg{width:15px;height:15px;flex:none;color:var(--teal);margin-top:2px}
+@media (max-width:680px){
+  .concern-inner{grid-template-columns:1fr;gap:24px}
+  .approach{border-left:0;padding-left:0;border-top:1px solid var(--hair);padding-top:22px}
+}
+
+@media (max-width:880px){
+  .atlas-grid{grid-template-columns:1fr;gap:34px}
+  .index{position:relative;top:0}
+  .index ol{
+    display:grid;grid-template-columns:1fr 1fr;gap:0 28px;
+  }
+  .index-foot{margin-top:18px}
+}
+
+/* =========================================================
+   METHODS strip — quiet enumerated line (not cards)
+   ========================================================= */
+.methods{padding:30px 0 64px}
+.methods-head{display:flex;align-items:baseline;gap:.8em;margin-bottom:26px}
+.methods-head h3{font-size:1.5rem;font-weight:500}
+.methods-head .num{color:var(--muted)}
+.methods-lede{color:var(--slate-2);font-weight:300;max-width:60ch;margin-bottom:30px;font-size:1.02rem}
+.methods-list{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;
+  border-top:1px solid var(--slate);
+}
+.method{
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid var(--line);
+}
+.method .m-num{
+  font-size:.72rem;font-weight:500;color:var(--teal);
+  font-variant-numeric:tabular-nums;letter-spacing:.1em;padding-top:.2em;
+}
+.method h4{font-family:"Newsreader",serif;font-weight:500;font-size:1.2rem;margin-bottom:5px}
+.method p{font-size:.9rem;color:var(--slate-2);font-weight:300;line-height:1.6}
+@media (max-width:680px){
+  .methods-list{grid-template-columns:1fr;gap:0}
+}
+
+/* =========================================================
+   ABOUT — Corry's story, editorial column
+   ========================================================= */
+.about{padding:74px 0;border-top:1px solid var(--line);background:var(--mint-2)}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.portrait{
+  position:relative;
+}
+.portrait-frame{
+  aspect-ratio:4/5;width:100%;border:1px solid var(--line);background:var(--white);
+  position:relative;overflow:hidden;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+}
+/* CSS-only portrait placeholder: soft concentric "skin" rings + monogram */
+.portrait-frame::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(120% 120% at 50% 12%, var(--mint) 0%, transparent 55%),
+    repeating-radial-gradient(circle at 50% 118%, transparent 0 26px, rgba(13,107,104,.05) 26px 27px);
+}
+.portrait-mono{
+  position:relative;font-family:"Newsreader",serif;font-style:italic;
+  font-size:4.4rem;color:var(--teal);opacity:.85;font-weight:500;
+}
+.portrait-tag{
+  position:absolute;left:14px;bottom:14px;right:14px;
+  font-size:.72rem;color:var(--muted);letter-spacing:.04em;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.portrait cite{
+  display:block;margin-top:16px;font-style:normal;font-size:.82rem;color:var(--slate-2);
+  line-height:1.55;
+}
+.portrait cite b{color:var(--slate);font-weight:600;display:block;font-size:.92rem;font-family:"Newsreader",serif}
+
+.about-body .eyebrow{margin-bottom:20px}
+.about-body h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:400;letter-spacing:-.018em;margin-bottom:26px}
+.about-body .lead{
+  font-family:"Newsreader",serif;font-size:1.5rem;line-height:1.42;color:var(--slate);
+  font-weight:400;margin-bottom:24px;letter-spacing:-.01em;
+}
+.about-body .lead em{font-style:italic;color:var(--teal)}
+.about-body p{color:var(--slate-2);font-weight:300;font-size:1.05rem;line-height:1.74}
+.about-body p + p{margin-top:16px}
+.about-body p strong{color:var(--slate);font-weight:600}
+.collab{
+  margin-top:30px;display:flex;gap:16px;align-items:flex-start;
+  border-top:1px solid var(--line);padding-top:24px;
+}
+.collab svg{width:24px;height:24px;flex:none;color:var(--teal)}
+.collab-txt b{display:block;font-family:"Newsreader",serif;font-weight:500;font-size:1.1rem;color:var(--slate);margin-bottom:4px}
+.collab-txt span{font-size:.92rem;color:var(--slate-2);font-weight:300;line-height:1.6}
+@media (max-width:860px){
+  .about .wrap{grid-template-columns:1fr;gap:40px}
+  .portrait{max-width:360px}
+}
+
+/* =========================================================
+   CONTACT — quiet practical block, ledger feel
+   ========================================================= */
+.contact{padding:78px 0 30px}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-intro .eyebrow{margin-bottom:20px}
+.contact-intro h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:400;letter-spacing:-.018em}
+.contact-intro p{margin-top:18px;color:var(--slate-2);font-weight:300;font-size:1.06rem;max-width:42ch;line-height:1.7}
+.contact-intro .btn-primary{margin-top:30px}
+
+.coords{margin-top:0}
+.coord-row{
+  display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:baseline;
+  padding:18px 0;border-bottom:1px solid var(--line);
+}
+.coord-row:first-child{border-top:1px solid var(--slate)}
+.coord-k{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;padding-top:.15em;
+}
+.coord-v{font-size:1rem;color:var(--slate);line-height:1.6}
+.coord-v a{color:var(--slate);font-weight:500;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+.coord-v a:hover{color:var(--teal);border-color:var(--teal)}
+.coord-v .small{display:block;font-size:.84rem;color:var(--slate-2);margin-top:3px;font-weight:300}
+.socials{display:flex;gap:12px;margin-top:6px}
+.socials a{
+  display:inline-flex;align-items:center;gap:.5em;
+  font-size:.86rem;color:var(--slate);font-weight:500;
+  border:1px solid var(--line);border-radius:999px;padding:.45em 1em;
+  transition:border-color .2s var(--ease),color .2s var(--ease),background .2s var(--ease);
+}
+.socials a:hover{border-color:var(--teal);color:var(--teal);background:var(--mint)}
+.socials svg{width:15px;height:15px}
+@media (max-width:780px){
+  .contact .wrap{grid-template-columns:1fr;gap:38px}
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.foot{border-top:1px solid var(--line);padding:40px 0 48px;margin-top:40px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+.foot-brand{font-family:"Newsreader",serif;font-size:1.15rem;color:var(--slate);font-weight:500}
+.foot-brand .acc{color:var(--teal)}
+.foot-addr{font-size:.84rem;color:var(--slate-2);line-height:1.7;font-weight:300;margin-top:6px;max-width:30ch}
+.foot-addr a{color:var(--slate-2)}
+.foot-addr a:hover{color:var(--teal)}
+.swd{
+  font-size:.78rem;color:var(--muted);line-height:1.65;max-width:34ch;text-align:right;
+}
+.swd a{color:var(--slate-2);font-weight:500}
+.swd a:hover{color:var(--teal)}
+.swd .swd-line{display:block;margin-bottom:7px;color:var(--slate-2)}
+@media (max-width:680px){
+  .swd{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<a href="#concern-index" class="skip">Direct naar de huidconcern-index</a>
+
+<!-- ============== MASTHEAD ============== -->
+<header class="masthead">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Cosmeaderm — home">
+      <!-- Logo-placeholder: cirkel met meridiaan (huid/precisie). -->
+      <!-- ✏️ LOGO: hier komt het echte Cosmeaderm-logo. -->
+      <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="34" fill="none" stroke="#0d6b68" stroke-width="5"/>
+        <line x1="50" y1="16" x2="50" y2="84" stroke="#0d6b68" stroke-width="5"/>
+        <circle cx="50" cy="50" r="6" fill="#0d6b68"/>
+      </svg>
+      <span class="brand-name">Cosme<span class="acc">derm</span></span>
+    </a>
+    <nav class="masthead-meta" aria-label="Snelle informatie">
+      <span class="phone-inline">Op afspraak</span>
+      <span class="sep" aria-hidden="true"></span>
+      <a class="phone-inline" href="tel:+31534324643">053 432 46 43</a>
+      <a href="#contact" class="masthead-cta">Afspraak aanvragen</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============== HERO ============== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow hero-kicker">Cosmeaderm · Enschede</p>
+      <h1 id="hero-title">Huid die u <em>begrijpt</em>,<br>verzorging die past.</h1>
+      <p class="hero-lede">Een rustige, deskundige benadering van huidverbetering — gericht op wat úw huid nodig heeft, met hoogwaardige, natuurlijke producten.</p>
+
+      <span class="cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>
+        Schoonheidsspecialiste sinds 1989 · samenwerking met arts
+      </span>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Afspraak aanvragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#concern-index" class="btn-text">Bekijk de huidconcern-index</a>
+      </div>
+    </div>
+
+    <!-- skin-layers line illustration -->
+    <figure class="hero-figure">
+      <!-- ✏️ FOTO (optioneel): hier kan later een rustige praktijk- of behandelfoto komen; nu een lijntekening van de huidlagen. -->
+      <svg class="skinfig" viewBox="0 0 320 300" role="img" aria-labelledby="skinfig-title skinfig-desc">
+        <title id="skinfig-title">Doorsnede van de huidlagen</title>
+        <desc id="skinfig-desc">Een fijne lijntekening die de opperhuid, lederhuid en onderhuid schematisch weergeeft.</desc>
+        <g fill="none" stroke="#0d6b68" stroke-width="1.1">
+          <!-- top wavy surface -->
+          <path d="M8 40 Q 48 28 88 40 T 168 40 T 248 40 T 312 40" stroke-width="1.4"/>
+          <!-- epidermis hatch -->
+          <path d="M8 40 L8 86 M40 40 L40 86 M72 40 L72 86 M104 40 L104 86 M136 40 L136 86 M168 40 L168 86 M200 40 L200 86 M232 40 L232 86 M264 40 L264 86 M296 40 L296 86" stroke="#0d6b68" stroke-width=".7" opacity=".5"/>
+          <line x1="8" y1="86" x2="312" y2="86"/>
+          <!-- dermis with little follicle curves -->
+          <path d="M40 86 C 36 120 52 150 44 196" opacity=".75"/>
+          <path d="M132 86 C 128 124 144 156 136 200" opacity=".75"/>
+          <path d="M236 86 C 232 122 248 152 240 198" opacity=".75"/>
+          <circle cx="44" cy="196" r="6" opacity=".75"/>
+          <circle cx="136" cy="200" r="6" opacity=".75"/>
+          <circle cx="240" cy="198" r="6" opacity=".75"/>
+          <line x1="8" y1="218" x2="312" y2="218"/>
+          <!-- hypodermis cells -->
+          <circle cx="44" cy="252" r="15" opacity=".4"/>
+          <circle cx="92" cy="262" r="12" opacity=".4"/>
+          <circle cx="140" cy="250" r="16" opacity=".4"/>
+          <circle cx="192" cy="262" r="13" opacity=".4"/>
+          <circle cx="244" cy="251" r="15" opacity=".4"/>
+          <circle cx="290" cy="262" r="11" opacity=".4"/>
+        </g>
+        <g font-family="Work Sans, sans-serif" font-size="8.5" fill="#8493a0" letter-spacing="1.2">
+          <text x="6" y="22">OPPERHUID</text>
+          <text x="6" y="108">LEDERHUID</text>
+          <text x="6" y="240">ONDERHUID</text>
+        </g>
+        <g font-family="Work Sans, sans-serif" font-size="8" fill="#0d6b68" font-weight="500">
+          <text x="296" y="22" text-anchor="end">01</text>
+          <text x="296" y="108" text-anchor="end">02</text>
+          <text x="296" y="240" text-anchor="end">03</text>
+        </g>
+      </svg>
+      <figcaption class="skinfig-cap">
+        <span class="num">Fig. 1</span>
+        <span>Elke behandeling begint met begrijpen op welke laag de huid aandacht vraagt — en daarop afstemmen.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============== ATLAS: index + accordions ============== -->
+<section class="atlas" aria-labelledby="atlas-title" id="concern-index">
+  <div class="wrap">
+    <div class="atlas-head">
+      <p class="eyebrow">Wat brengt u hier?</p>
+      <h2 id="atlas-title">Huidconcern-index</h2>
+      <p>Kies links uw concern. Rechts opent de bijbehorende benadering en de behandelingen die daar passend bij zijn — zonder ruis, in begrijpelijke taal.</p>
+    </div>
+
+    <div class="atlas-grid">
+      <!-- LEFT: sticky index -->
+      <nav class="index" aria-label="Huidconcern-index">
+        <div class="index-title"><span>Index</span><span class="of">01&ndash;06</span></div>
+        <ol>
+          <li><a href="#c-acne" data-target="c-acne"><span class="ix-num">01</span><span class="ix-label">Acne</span></a></li>
+          <li><a href="#c-rosacea" data-target="c-rosacea"><span class="ix-num">02</span><span class="ix-label">Rosacea</span></a></li>
+          <li><a href="#c-pigment" data-target="c-pigment"><span class="ix-num">03</span><span class="ix-label">Pigment</span></a></li>
+          <li><a href="#c-couperose" data-target="c-couperose"><span class="ix-num">04</span><span class="ix-label">Couperose &amp; steeltjes</span></a></li>
+          <li><a href="#c-aging" data-target="c-aging"><span class="ix-num">05</span><span class="ix-label">Huidveroudering</span></a></li>
+          <li><a href="#c-pmu" data-target="c-pmu"><span class="ix-num">06</span><span class="ix-label">Permanente make-up</span></a></li>
+        </ol>
+        <p class="index-foot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+          Niet zeker welk concern past? Vraag gerust een vrijblijvend adviesgesprek aan.
+        </p>
+      </nav>
+
+      <!-- RIGHT: accordions -->
+      <div class="concerns" role="list">
+
+        <!-- 01 Acne -->
+        <article class="concern" id="c-acne" data-open="false" role="listitem">
+          <h3 style="margin:0">
+            <button class="concern-btn" aria-expanded="false" aria-controls="p-acne" id="b-acne">
+              <span class="c-num">01</span>
+              <span>
+                <span class="concern-title">Acne</span>
+                <span class="concern-sub">Onzuiverheden, verstopte poriën en een onrustige huid tot rust brengen.</span>
+              </span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="concern-panel" id="p-acne" role="region" aria-labelledby="b-acne">
+            <div class="concern-inner">
+              <div class="concern-body">
+                <p>Een onzuivere huid vraagt om kalmeren in plaats van forceren. We kijken eerst naar de oorzaak — talg, verhoorning, gewoontes — en bouwen daarna een rustige, opbouwende aanpak die de huidbarrière herstelt in plaats van uitdroogt.</p>
+                <p>Daarbij hoort persoonlijk advies over een verzorging die thuis vol te houden is, zodat het resultaat blijvend is.</p>
+                <div class="concern-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                  Behandelplan en frequentie worden tijdens de intake op uw huid afgestemd.
+                </div>
+              </div>
+              <div class="approach">
+                <p class="approach-label">Passende behandelingen</p>
+                <ul>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Reinigende gezichtsbehandeling op maat</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Medische peelings</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Hoogwaardige, natuurlijke producten voor thuis</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Persoonlijk huidadvies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 Rosacea -->
+        <article class="concern" id="c-rosacea" data-open="false" role="listitem">
+          <h3 style="margin:0">
+            <button class="concern-btn" aria-expanded="false" aria-controls="p-rosacea" id="b-rosacea">
+              <span class="c-num">02</span>
+              <span>
+                <span class="concern-title">Rosacea</span>
+                <span class="concern-sub">Roodheid, gevoeligheid en opvliegers verzachten met een milde benadering.</span>
+              </span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="concern-panel" id="p-rosacea" role="region" aria-labelledby="b-rosacea">
+            <div class="concern-inner">
+              <div class="concern-body">
+                <p>Rosacea is een gevoelige huid die snel reageert. De nadruk ligt op kalmeren, de huidbarrière versterken en prikkels vermijden — met zachte, goed verdragen producten en behandelingen die de roodheid niet verergeren.</p>
+                <p>Waar een cosmetische ingreep wenselijk is, gebeurt dat in overleg en in samenwerking met de arts.</p>
+                <div class="concern-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                  Bij twijfel over de juiste aanpak kijken we samen tijdens een adviesgesprek.
+                </div>
+              </div>
+              <div class="approach">
+                <p class="approach-label">Passende behandelingen</p>
+                <ul>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kalmerende gezichtsbehandeling</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Huidversterkende, natuurlijke producten</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Behandeling van zichtbare bloedvaatjes — in overleg</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Persoonlijk advies over prikkels en verzorging</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 Pigment -->
+        <article class="concern" id="c-pigment" data-open="false" role="listitem">
+          <h3 style="margin:0">
+            <button class="concern-btn" aria-expanded="false" aria-controls="p-pigment" id="b-pigment">
+              <span class="c-num">03</span>
+              <span>
+                <span class="concern-title">Pigment</span>
+                <span class="concern-sub">Pigmentvlekken en een ongelijkmatige teint zichtbaar egaliseren.</span>
+              </span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="concern-panel" id="p-pigment" role="region" aria-labelledby="b-pigment">
+            <div class="concern-inner">
+              <div class="concern-body">
+                <p>Pigment ontstaat door zon, hormonen of de jaren. We werken aan een egalere teint met een opbouwende aanpak — peelings en gerichte verzorging — en altijd met aandacht voor een goede bescherming, want dat is bij pigment het halve werk.</p>
+                <p>Het doel is een rustiger, gelijkmatiger huidbeeld, stap voor stap.</p>
+                <div class="concern-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                  Welke combinatie passend is, hangt af van het type pigment — dat bekijken we samen.
+                </div>
+              </div>
+              <div class="approach">
+                <p class="approach-label">Passende behandelingen</p>
+                <ul>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Medische peelings</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Collageentherapie</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Egaliserende, natuurlijke verzorging</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Advies over bescherming en onderhoud</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 Couperose & steeltjes -->
+        <article class="concern" id="c-couperose" data-open="false" role="listitem">
+          <h3 style="margin:0">
+            <button class="concern-btn" aria-expanded="false" aria-controls="p-couperose" id="b-couperose">
+              <span class="c-num">04</span>
+              <span>
+                <span class="concern-title">Couperose &amp; steeltjes</span>
+                <span class="concern-sub">Zichtbare adertjes en huidsteeltjes nauwkeurig behandelen.</span>
+              </span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="concern-panel" id="p-couperose" role="region" aria-labelledby="b-couperose">
+            <div class="concern-inner">
+              <div class="concern-body">
+                <p>Couperose (kleine, verwijde bloedvaatjes) en huidsteeltjes zijn met coagulatietherapie gericht en nauwkeurig te behandelen. Het is precisiewerk: kleine plekjes worden één voor één aangepakt voor een rustiger, egaler huidbeeld.</p>
+                <p>U krijgt vooraf duidelijke uitleg over wat de behandeling inhoudt en wat u kunt verwachten.</p>
+                <div class="concern-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                  Geschiktheid wordt vooraf beoordeeld; waar nodig in overleg met de arts.
+                </div>
+              </div>
+              <div class="approach">
+                <p class="approach-label">Passende behandelingen</p>
+                <ul>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Coagulatietherapie</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Behandeling van huidsteeltjes</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Kalmerende nazorg met natuurlijke producten</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 Huidveroudering -->
+        <article class="concern" id="c-aging" data-open="false" role="listitem">
+          <h3 style="margin:0">
+            <button class="concern-btn" aria-expanded="false" aria-controls="p-aging" id="b-aging">
+              <span class="c-num">05</span>
+              <span>
+                <span class="concern-title">Huidveroudering</span>
+                <span class="concern-sub">Anti-aging &amp; huidverjonging — verstevigen en herstellen, natuurlijk.</span>
+              </span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="concern-panel" id="p-aging" role="region" aria-labelledby="b-aging">
+            <div class="concern-inner">
+              <div class="concern-body">
+                <p>Voor een huid die wat steviger en voller mag, werken we aan herstel van binnenuit: collageen stimuleren, de huid verstevigen en de structuur verbeteren — met technieken die de eigen huid aanzetten, niet maskeren.</p>
+                <p>We combineren wat passend is, van peelings tot radiofrequentie, altijd afgestemd op uw huid en wensen.</p>
+                <div class="concern-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                  Voor cosmetische ingrepen is er samenwerking met Dr. John Krant.
+                </div>
+              </div>
+              <div class="approach">
+                <p class="approach-label">Passende behandelingen</p>
+                <ul>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Venus Swan — radiofrequentie &amp; magnetische pulstherapie</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Plasma ProLift</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Medische peelings &amp; collageentherapie</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Cosmetische ingrepen — in samenwerking met de arts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 Permanente make-up -->
+        <article class="concern" id="c-pmu" data-open="false" role="listitem">
+          <h3 style="margin:0">
+            <button class="concern-btn" aria-expanded="false" aria-controls="p-pmu" id="b-pmu">
+              <span class="c-num">06</span>
+              <span>
+                <span class="concern-title">Permanente make-up</span>
+                <span class="concern-sub">Een natuurlijk, verzorgd resultaat dat bij uw gezicht past.</span>
+              </span>
+              <span class="c-toggle" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="concern-panel" id="p-pmu" role="region" aria-labelledby="b-pmu">
+            <div class="concern-inner">
+              <div class="concern-body">
+                <p>Permanente make-up draait om subtiliteit: een resultaat dat natuurlijk oogt en uw gelaatstrekken volgt. We bespreken vorm, kleur en wat bij u past, en werken zorgvuldig en hygiënisch toe naar een uitkomst waar u zich prettig bij voelt.</p>
+                <p>Vooraf nemen we rustig de tijd voor uitleg, verwachtingen en een passend ontwerp.</p>
+                <div class="concern-note">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+                  Vorm, kleur en techniek worden tijdens een intake samen bepaald.
+                </div>
+              </div>
+              <div class="approach">
+                <p class="approach-label">Passende behandelingen</p>
+                <ul>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Permanente make-up — natuurlijk afgestemd</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Persoonlijk vorm- en kleuradvies</li>
+                  <li><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Zorgvuldige nazorg</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== METHODS strip ============== -->
+<section class="methods" aria-labelledby="methods-title">
+  <div class="wrap">
+    <div class="methods-head">
+      <h3 id="methods-title">Methoden &amp; technieken</h3>
+      <span class="num">— die we, waar passend, combineren</span>
+    </div>
+    <p class="methods-lede">Geen losse trucs, maar middelen die we gericht inzetten binnen een behandelplan. Wat wordt gekozen, hangt altijd af van uw huid.</p>
+    <div class="methods-list">
+      <div class="method">
+        <span class="m-num">M.01</span>
+        <div><h4>Elektrisch ontharen</h4><p>Definitieve ontharing, haartje voor haartje, voor een blijvend resultaat.</p></div>
+      </div>
+      <div class="method">
+        <span class="m-num">M.02</span>
+        <div><h4>Plasma ProLift</h4><p>Huidverstrakking en -verbetering met plasmatechnologie.</p></div>
+      </div>
+      <div class="method">
+        <span class="m-num">M.03</span>
+        <div><h4>Venus Swan</h4><p>Radiofrequentie &amp; magnetische pulstherapie voor verstevigen en verjongen.</p></div>
+      </div>
+      <div class="method">
+        <span class="m-num">M.04</span>
+        <div><h4>Coagulatietherapie</h4><p>Gerichte behandeling van couperose en huidsteeltjes.</p></div>
+      </div>
+      <div class="method">
+        <span class="m-num">M.05</span>
+        <div><h4>Medische peelings &amp; collageentherapie</h4><p>De huid vernieuwen en de aanmaak van collageen stimuleren.</p></div>
+      </div>
+      <div class="method">
+        <span class="m-num">M.06</span>
+        <div><h4>Hoogwaardige, natuurlijke producten</h4><p>Zorgvuldig gekozen verzorging — in de praktijk én voor thuis.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section class="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="portrait">
+      <!-- ✏️ FOTO: portret van Corry Bloemendaal (of praktijkfoto). Nu een CSS-placeholder. -->
+      <div class="portrait-frame" role="img" aria-label="Plek voor een portretfoto van Corry Bloemendaal">
+        <span class="portrait-mono" aria-hidden="true">CB</span>
+        <span class="portrait-tag"><span>Cosmeaderm</span><span class="num">Enschede · sinds 1989</span></span>
+      </div>
+      <cite><b>Corry Bloemendaal</b>Gediplomeerd schoonheidsspecialiste</cite>
+    </div>
+
+    <div class="about-body">
+      <p class="eyebrow">Over Cosmeaderm</p>
+      <h2 id="about-title">Deskundigheid met een persoonlijke maat.</h2>
+      <p class="lead">&ldquo;Sinds 1989 ben ik gediplomeerd schoonheidsspecialiste. Mijn passie is mensen <em>passend advies</em> geven over huidverzorging en huidverbetering.&rdquo;</p>
+      <p>Bij Cosmeaderm staat de huid van de cliënt centraal — geen standaardpakketten, maar een aanpak die past bij wie voor u zit. Er wordt gewerkt met <strong>hoogwaardige, natuurlijke producten</strong> en met technieken die de huid ondersteunen in plaats van overbelasten.</p>
+      <p>Voor cosmetische ingrepen die meer vragen dan de schoonheidsspecialist mag of kan bieden, is er een vaste <strong>samenwerking met Dr. John Krant</strong>. Zo blijft elke stap zorgvuldig en verantwoord.</p>
+
+      <div class="collab">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+        <div class="collab-txt">
+          <b>Samenwerking met de arts</b>
+          <span>Voor cosmetische ingrepen werkt Cosmeaderm samen met Dr. John Krant.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section class="contact" aria-labelledby="contact-title" id="contact">
+  <div class="wrap">
+    <div class="contact-intro">
+      <p class="eyebrow">Afspraak &amp; contact</p>
+      <h2 id="contact-title">Een rustig begin: het adviesgesprek.</h2>
+      <p>Vertel kort wat u graag wilt verbeteren of bespreken. U ontvangt persoonlijk antwoord en we plannen een moment dat u uitkomt. Behandelingen vinden plaats op afspraak.</p>
+      <a class="btn-primary" href="mailto:info@cosmeaderm.nl?subject=Afspraak%20aanvragen%20%E2%80%93%20Cosmeaderm&amp;body=Beste%20Corry%2C%0A%0AIk%20zou%20graag%20een%20afspraak%20of%20adviesgesprek%20willen%20aanvragen.%0A%0AMijn%20huidconcern%2Fwens%3A%20%0AVoorkeur%20voor%20dag%2Ftijd%3A%20%0ATelefoonnummer%3A%20%0A%0AMet%20vriendelijke%20groet%2C%0A">
+        Afspraak aanvragen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="coords">
+      <div class="coord-row">
+        <span class="coord-k">Adres</span>
+        <span class="coord-v">
+          <a href="https://maps.google.com/?q=Kuipersdijk+183,+7512+CE+Enschede" target="_blank" rel="noopener">Kuipersdijk 183, 7512 CE Enschede</a>
+        </span>
+      </div>
+      <div class="coord-row">
+        <span class="coord-k">Openingstijden</span>
+        <span class="coord-v">Op afspraak<span class="small">Bel of mail gerust voor de mogelijkheden.</span></span>
+      </div>
+      <div class="coord-row">
+        <span class="coord-k">Telefoon</span>
+        <span class="coord-v">
+          <a href="tel:+31534324643">053 432 46 43</a><span class="small"><a href="tel:+31613512037">06 13 51 20 37</a></span>
+        </span>
+      </div>
+      <div class="coord-row">
+        <span class="coord-k">E-mail</span>
+        <span class="coord-v"><a href="mailto:info@cosmeaderm.nl">info@cosmeaderm.nl</a></span>
+      </div>
+      <div class="coord-row">
+        <span class="coord-k">Volg ons</span>
+        <span class="coord-v">
+          <span class="socials">
+            <a href="https://instagram.com/cosmeaderm" target="_blank" rel="noopener" aria-label="Cosmeaderm op Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a href="https://facebook.com/Cosmeaderm" target="_blank" rel="noopener" aria-label="Cosmeaderm op Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M15 8h-2a2 2 0 0 0-2 2v11M8 12h6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+              Facebook
+            </a>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">Cosme<span class="acc">derm</span></div>
+      <p class="foot-addr">
+        Kuipersdijk 183, 7512 CE Enschede · Op afspraak<br>
+        <a href="tel:+31534324643">053 432 46 43</a> · <a href="mailto:info@cosmeaderm.nl">info@cosmeaderm.nl</a>
+      </p>
+    </div>
+    <div class="swd">
+      <span class="swd-line">Voorbeeldontwerp door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design · sagek17.github.io/swd</a></span>
+      Dit is een vrijblijvend concept; teksten en foto&rsquo;s worden in overleg ingevuld.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Accessible accordion ---------- */
+  var concerns = Array.prototype.slice.call(document.querySelectorAll(".concern"));
+
+  function setOpen(concern, open){
+    var btn = concern.querySelector(".concern-btn");
+    var panel = concern.querySelector(".concern-panel");
+    concern.setAttribute("data-open", open ? "true" : "false");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if(open){
+      panel.style.height = panel.scrollHeight + "px";
+      // settle to auto so it reflows if window resizes
+      var onEnd = function(){
+        if(concern.getAttribute("data-open") === "true"){ panel.style.height = "auto"; }
+        panel.removeEventListener("transitionend", onEnd);
+      };
+      if(reduce){ panel.style.height = "auto"; }
+      else { panel.addEventListener("transitionend", onEnd); }
+    } else {
+      // from auto -> fixed -> 0 so it can animate closed
+      panel.style.height = panel.scrollHeight + "px";
+      // force reflow
+      void panel.offsetHeight;
+      panel.style.height = "0px";
+    }
+  }
+
+  concerns.forEach(function(concern){
+    var btn = concern.querySelector(".concern-btn");
+    btn.addEventListener("click", function(){
+      var isOpen = concern.getAttribute("data-open") === "true";
+      setOpen(concern, !isOpen);
+    });
+  });
+
+  // keep open panels correct on resize
+  var rt;
+  window.addEventListener("resize", function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){
+      concerns.forEach(function(c){
+        if(c.getAttribute("data-open") === "true"){
+          var p = c.querySelector(".concern-panel");
+          p.style.height = "auto";
+        }
+      });
+    }, 150);
+  });
+
+  /* ---------- Open accordion when its index link / hash is used ---------- */
+  function openById(id){
+    var concern = document.getElementById(id);
+    if(concern && concern.classList.contains("concern") && concern.getAttribute("data-open") !== "true"){
+      setOpen(concern, true);
+    }
+  }
+  document.querySelectorAll('.index a[data-target]').forEach(function(a){
+    a.addEventListener("click", function(){
+      openById(a.getAttribute("data-target"));
+    });
+  });
+  if(location.hash){
+    var h = location.hash.replace("#","");
+    // slight delay so layout is ready before measuring height
+    window.requestAnimationFrame(function(){ openById(h); });
+  }
+
+  /* ---------- Scrollspy: highlight active concern in the index ----------
+     Computed directly from scroll position so exactly one link is active at
+     any time, including after programmatic scrolling or opening a panel. */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".index a[data-target]"));
+  var byId = {};
+  links.forEach(function(l){ byId[l.getAttribute("data-target")] = l; });
+  var lastActive = null;
+
+  function setActive(id){
+    if(id === lastActive) return;
+    lastActive = id;
+    links.forEach(function(l){
+      l.classList.toggle("is-active", l.getAttribute("data-target") === id);
+    });
+  }
+
+  function updateSpy(){
+    var line = window.innerHeight * 0.30; // reference line near top of viewport
+    var current = concerns[0] ? concerns[0].id : null;
+    for(var i = 0; i < concerns.length; i++){
+      var top = concerns[i].getBoundingClientRect().top;
+      if(top - line <= 1){ current = concerns[i].id; }
+      else { break; }
+    }
+    // If the whole atlas is below the line (not reached yet), clear highlight.
+    var firstTop = concerns[0] ? concerns[0].getBoundingClientRect().top : 0;
+    if(firstTop > line + 4){ setActive(null); return; }
+    if(current) setActive(current);
+  }
+
+  var ticking = false;
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function(){ updateSpy(); ticking = false; });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  updateSpy();
+})();
+</script>
+</body>
+</html>

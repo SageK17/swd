@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mir &amp; Mooi — Schoonheidsspecialist in Buurse, voor Enschede &amp; Haaksbergen</title>
+<meta name="description" content="Mir &amp; Mooi is een schoonheidsspecialist in Buurse voor Enschede, Haaksbergen en omgeving. Een gezellige sfeer en persoonlijke aandacht, met rustig de tijd voor elke klant. Alleen op afspraak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Mir & Mooi — bespoke voorbeeldontwerp door Sage Website Design
+     Motief: zachte warmte, organische handgetekende lijnen,
+     rond maar elegant. Geen service-cards, geen statistiekenbalk.
+     ============================================================ */
+
+  :root{
+    --cream:#f4efe6;
+    --cream-deep:#ece4d6;
+    --paper:#faf7f0;
+    --olive:#6f7a52;
+    --olive-deep:#5a6342;
+    --terra:#bf6a4a;
+    --terra-deep:#a8573a;
+    --ink:#3a312a;
+    --ink-soft:#6a5e52;
+    --line:rgba(58,49,42,.14);
+    --shadow:0 18px 50px -28px rgba(58,49,42,.45);
+    --shadow-soft:0 10px 30px -20px rgba(58,49,42,.4);
+    --radius:22px;
+    --radius-lg:34px;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Karla',system-ui,-apple-system,sans-serif;
+    font-size:18px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{
+    font-family:'Petrona',Georgia,serif;
+    font-weight:600;
+    line-height:1.12;
+    letter-spacing:-.01em;
+    color:var(--ink);
+  }
+
+  a{color:inherit}
+
+  img{max-width:100%;display:block}
+
+  /* visible focus for accessibility */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible{
+    outline:3px solid var(--terra);
+    outline-offset:3px;
+    border-radius:6px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:var(--maxw);
+    margin-inline:auto;
+    padding-inline:clamp(20px,5vw,40px);
+  }
+
+  .skip-link{
+    position:absolute;
+    left:-999px;
+    top:0;
+    background:var(--ink);
+    color:var(--cream);
+    padding:12px 20px;
+    border-radius:0 0 12px 0;
+    z-index:200;
+    font-weight:600;
+  }
+  .skip-link:focus{left:0}
+
+  /* ---------- Hand-drawn dividers ---------- */
+  .divider{
+    display:block;
+    width:100%;
+    height:34px;
+    color:var(--olive);
+    opacity:.7;
+  }
+  .divider svg{display:block;width:100%;height:100%}
+  .divider--terra{color:var(--terra)}
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  header.site{
+    position:relative;
+    z-index:50;
+  }
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding-block:22px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    text-decoration:none;
+  }
+  .brand-mark{
+    width:46px;height:46px;
+    flex:0 0 auto;
+    border-radius:50%;
+    background:radial-gradient(circle at 32% 30%,#cf7a59,var(--terra) 58%,var(--terra-deep));
+    display:grid;place-items:center;
+    color:var(--paper);
+    font-family:'Petrona',serif;
+    font-weight:600;
+    font-size:22px;
+    box-shadow:var(--shadow-soft);
+  }
+  .brand-name{
+    font-family:'Petrona',serif;
+    font-weight:600;
+    font-size:24px;
+    letter-spacing:.005em;
+    line-height:1;
+  }
+  .brand-name small{
+    display:block;
+    font-family:'Karla',sans-serif;
+    font-weight:500;
+    font-size:11.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--olive-deep);
+    margin-top:4px;
+  }
+  .nav-desktop{
+    display:flex;
+    align-items:center;
+    gap:30px;
+  }
+  .nav-desktop a{
+    text-decoration:none;
+    font-weight:600;
+    font-size:15.5px;
+    color:var(--ink-soft);
+    transition:color .2s;
+    position:relative;
+  }
+  .nav-desktop a:not(.btn-nav):hover{color:var(--terra)}
+  .nav-desktop a:not(.btn-nav)::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-6px;
+    width:0;height:2px;
+    background:var(--terra);
+    border-radius:2px;
+    transition:width .25s ease;
+  }
+  .nav-desktop a:not(.btn-nav):hover::after{width:100%}
+  .btn-nav{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--olive);
+    color:var(--paper)!important;
+    padding:11px 20px;
+    border-radius:999px;
+    box-shadow:var(--shadow-soft);
+    transition:transform .2s, background .2s;
+  }
+  .btn-nav:hover{background:var(--olive-deep);transform:translateY(-2px)}
+  .btn-nav svg{width:16px;height:16px}
+
+  /* ============================================================
+     HERO — warm, welcoming, asymmetric
+     ============================================================ */
+  .hero{
+    position:relative;
+    padding-block:clamp(30px,5vw,52px) clamp(20px,4vw,40px);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:clamp(32px,5vw,64px);
+    align-items:center;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    font-size:13.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--olive-deep);
+    margin-bottom:22px;
+  }
+  .hero-eyebrow .sprig{width:22px;height:22px;color:var(--olive)}
+  .hero h1{
+    font-size:clamp(2.6rem,6vw,4.3rem);
+    margin-bottom:24px;
+  }
+  .hero h1 .accent{
+    color:var(--terra);
+    font-style:italic;
+    font-weight:500;
+    position:relative;
+    white-space:nowrap;
+  }
+  /* hand-drawn underline under the accent words */
+  .hero h1 .accent::after{
+    content:"";
+    position:absolute;
+    left:-2%;right:-2%;
+    bottom:-.12em;
+    height:.5em;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M2 11 C40 4 70 14 100 9 C135 3 165 13 198 7' fill='none' stroke='%23bf6a4a' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+    z-index:-1;
+    opacity:.85;
+  }
+  .hero p.lead{
+    font-size:1.18rem;
+    color:var(--ink-soft);
+    max-width:38ch;
+    margin-bottom:30px;
+  }
+  .hero-cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:16px;
+    padding:15px 26px;
+    border-radius:999px;
+    transition:transform .2s, box-shadow .2s, background .2s, color .2s;
+    cursor:pointer;
+    border:none;
+    font-family:inherit;
+  }
+  .btn svg{width:18px;height:18px;flex:0 0 auto}
+  .btn-primary{
+    background:var(--terra);
+    color:var(--paper);
+    box-shadow:var(--shadow);
+  }
+  .btn-primary:hover{background:var(--terra-deep);transform:translateY(-3px)}
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border:1.6px solid var(--ink);
+  }
+  .btn-ghost:hover{background:var(--ink);color:var(--cream);transform:translateY(-3px)}
+
+  .hero-meta{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 26px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .hero-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .hero-meta svg{width:16px;height:16px;color:var(--olive)}
+
+  /* hero image — CSS-only warm placeholder */
+  .hero-figure{
+    position:relative;
+  }
+  .hero-photo{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:160px 160px 28px 28px; /* arched top, organic */
+    background:
+      radial-gradient(120% 80% at 30% 12%, #d8c7ab 0%, transparent 55%),
+      linear-gradient(160deg,#cdb796 0%,#b79a78 48%,#9d8261 100%);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.35);
+  }
+  .hero-photo::before{ /* subtle linen texture */
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 5px);
+    opacity:.5;
+  }
+  .hero-photo .ph-icon{
+    width:88px;height:88px;
+    color:rgba(58,49,42,.42);
+    z-index:1;
+  }
+  .hero-photo .ph-label{
+    position:absolute;
+    bottom:18px;left:0;right:0;
+    text-align:center;
+    font-size:12.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:rgba(58,49,42,.5);
+    font-weight:600;
+    z-index:1;
+  }
+  /* little terracotta tag floating on the figure */
+  .hero-tag{
+    position:absolute;
+    left:-14px;bottom:46px;
+    background:var(--paper);
+    color:var(--ink);
+    padding:14px 18px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    max-width:200px;
+    transform:rotate(-2.5deg);
+  }
+  .hero-tag strong{
+    font-family:'Petrona',serif;
+    font-weight:600;
+    display:block;
+    font-size:15px;
+    line-height:1.3;
+  }
+  .hero-tag span{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    display:block;
+    margin-top:2px;
+  }
+  .hero-tag .sprig{width:18px;height:18px;color:var(--olive);margin-bottom:6px}
+
+  /* ============================================================
+     WELCOME / persoonlijke aandacht
+     ============================================================ */
+  .welcome{
+    background:var(--paper);
+    padding-block:clamp(46px,7vw,84px);
+    position:relative;
+  }
+  .welcome-grid{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:clamp(28px,5vw,60px);
+    align-items:start;
+  }
+  .welcome-label{
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--olive-deep);
+    white-space:nowrap;
+    padding-top:6px;
+  }
+  .welcome h2{
+    font-size:clamp(1.8rem,3.6vw,2.7rem);
+    margin-bottom:22px;
+    max-width:18ch;
+  }
+  .welcome p{
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin-bottom:18px;
+  }
+  .welcome p:last-of-type{margin-bottom:0}
+  .welcome p strong{color:var(--ink);font-weight:700}
+  .welcome .pull{
+    font-family:'Petrona',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.45rem;
+    line-height:1.4;
+    color:var(--terra-deep);
+    border-left:3px solid var(--terra);
+    padding-left:22px;
+    margin:30px 0;
+    max-width:46ch;
+  }
+
+  /* ============================================================
+     BEHANDELINGEN — friendly readable lists, no cards
+     ============================================================ */
+  .treatments{
+    padding-block:clamp(46px,7vw,80px);
+  }
+  .section-head{
+    text-align:center;
+    max-width:56ch;
+    margin:0 auto clamp(36px,5vw,56px);
+  }
+  .section-head .eyebrow{
+    display:inline-block;
+    font-weight:600;
+    font-size:13.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--terra-deep);
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    font-size:clamp(2rem,4.4vw,3.1rem);
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.08rem;
+  }
+
+  .treat-groups{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(28px,4vw,48px) clamp(40px,6vw,80px);
+  }
+  .treat-group{
+    position:relative;
+  }
+  .treat-group-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+    padding-bottom:16px;
+    border-bottom:2px dotted var(--line);
+  }
+  .treat-ico{
+    width:52px;height:52px;
+    flex:0 0 auto;
+    border-radius:50%;
+    display:grid;place-items:center;
+    background:var(--cream-deep);
+    color:var(--olive-deep);
+    box-shadow:inset 0 0 0 1.5px rgba(111,122,82,.25);
+  }
+  .treat-ico svg{width:26px;height:26px}
+  .treat-group h3{
+    font-size:1.5rem;
+    line-height:1.15;
+  }
+  .treat-group h3 small{
+    display:block;
+    font-family:'Karla',sans-serif;
+    font-weight:500;
+    font-size:12.5px;
+    letter-spacing:.04em;
+    color:var(--ink-soft);
+    margin-top:4px;
+    text-transform:none;
+    letter-spacing:.02em;
+  }
+  .treat-list{
+    list-style:none;
+    display:grid;
+    gap:2px;
+  }
+  .treat-list li{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    padding:9px 0;
+    font-size:1.05rem;
+    color:var(--ink);
+    border-bottom:1px solid rgba(58,49,42,.06);
+  }
+  .treat-list li:last-child{border-bottom:none}
+  .treat-list li .leaf{
+    flex:0 0 auto;
+    width:15px;height:15px;
+    color:var(--terra);
+    transform:translateY(3px);
+  }
+  .treat-note{
+    text-align:center;
+    margin-top:clamp(30px,4vw,46px);
+    font-size:1rem;
+    color:var(--ink-soft);
+  }
+  .treat-note a{
+    color:var(--terra-deep);
+    font-weight:700;
+    text-decoration:underline;
+    text-underline-offset:3px;
+    text-decoration-thickness:1.5px;
+  }
+
+  /* ============================================================
+     SFEER STRIP — warm full-width band with placeholder duo
+     ============================================================ */
+  .sfeer{
+    background:linear-gradient(165deg,var(--olive) 0%,var(--olive-deep) 100%);
+    color:var(--paper);
+    padding-block:clamp(48px,7vw,84px);
+    position:relative;
+    overflow:hidden;
+  }
+  .sfeer::before{ /* soft organic glow */
+    content:"";
+    position:absolute;
+    width:520px;height:520px;
+    right:-160px;top:-160px;
+    background:radial-gradient(circle,rgba(191,106,74,.5),transparent 65%);
+    pointer-events:none;
+  }
+  .sfeer-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(30px,5vw,64px);
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  .sfeer h2{
+    color:var(--paper);
+    font-size:clamp(1.9rem,4vw,2.9rem);
+    margin-bottom:20px;
+  }
+  .sfeer h2 .em{color:#e9c9b6;font-style:italic;font-weight:500}
+  .sfeer p{
+    color:rgba(250,247,240,.86);
+    font-size:1.1rem;
+    max-width:46ch;
+    margin-bottom:26px;
+  }
+  .sfeer .btn-primary{background:var(--terra)}
+  .sfeer .btn-primary:hover{background:var(--terra-deep)}
+
+  .sfeer-photos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .sf-photo{
+    position:relative;
+    border-radius:20px;
+    background:
+      radial-gradient(120% 90% at 30% 20%,rgba(255,255,255,.14),transparent 60%),
+      linear-gradient(150deg,#7d885f,#5a6342);
+    box-shadow:0 16px 40px -24px rgba(0,0,0,.6);
+    display:grid;place-items:center;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.16);
+  }
+  .sf-photo:first-child{aspect-ratio:3/4;margin-top:24px;border-radius:20px 20px 20px 60px}
+  .sf-photo:last-child{aspect-ratio:3/4;margin-bottom:24px;border-radius:20px 20px 60px 20px}
+  .sf-photo svg{width:54px;height:54px;color:rgba(250,247,240,.55)}
+  .sf-photo .ph-label{
+    position:absolute;bottom:12px;left:0;right:0;
+    text-align:center;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:rgba(250,247,240,.6);font-weight:600;
+  }
+
+  /* ============================================================
+     CONTACT / AFSPRAAK
+     ============================================================ */
+  .contact{
+    padding-block:clamp(48px,7vw,88px);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:clamp(32px,5vw,64px);
+    align-items:start;
+  }
+  .contact-intro .eyebrow{
+    display:inline-block;
+    font-weight:600;font-size:13.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--terra-deep);margin-bottom:14px;
+  }
+  .contact-intro h2{
+    font-size:clamp(2rem,4.2vw,3rem);
+    margin-bottom:18px;
+  }
+  .contact-intro p{
+    color:var(--ink-soft);
+    font-size:1.08rem;
+    margin-bottom:30px;
+    max-width:42ch;
+  }
+  .contact-lines{
+    display:grid;
+    gap:6px;
+  }
+  .contact-line{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    text-decoration:none;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    transition:color .2s;
+  }
+  a.contact-line:hover{color:var(--terra-deep)}
+  a.contact-line:hover .cl-ico{background:var(--terra);color:var(--paper);border-color:var(--terra)}
+  .cl-ico{
+    width:48px;height:48px;flex:0 0 auto;
+    border-radius:50%;
+    display:grid;place-items:center;
+    background:var(--cream-deep);
+    color:var(--olive-deep);
+    border:1.5px solid rgba(111,122,82,.2);
+    transition:.2s;
+  }
+  .cl-ico svg{width:22px;height:22px}
+  .cl-text .lbl{
+    display:block;
+    font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;margin-bottom:2px;
+  }
+  .cl-text .val{
+    display:block;
+    font-family:'Petrona',serif;
+    font-weight:600;
+    font-size:1.22rem;
+    line-height:1.25;
+  }
+  .cl-text .sub{
+    display:block;font-size:13.5px;color:var(--ink-soft);margin-top:2px;
+  }
+
+  /* form card */
+  .form-card{
+    background:var(--paper);
+    border-radius:var(--radius-lg);
+    padding:clamp(26px,4vw,44px);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(58,49,42,.06);
+    position:relative;
+  }
+  .form-card h3{
+    font-size:1.55rem;
+    margin-bottom:6px;
+  }
+  .form-card .form-sub{
+    color:var(--ink-soft);
+    font-size:.98rem;
+    margin-bottom:26px;
+  }
+  .field{margin-bottom:18px}
+  .field label{
+    display:block;
+    font-weight:600;
+    font-size:14px;
+    margin-bottom:7px;
+    color:var(--ink);
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    font-family:inherit;
+    font-size:16px;
+    color:var(--ink);
+    background:var(--cream);
+    border:1.5px solid var(--line);
+    border-radius:14px;
+    padding:13px 15px;
+    transition:border-color .2s, background .2s;
+  }
+  .field textarea{resize:vertical;min-height:110px}
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--olive);
+    background:var(--paper);
+  }
+  .field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .form-card .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .form-foot{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer.site{
+    background:var(--ink);
+    color:var(--cream);
+    padding-block:clamp(40px,5vw,60px) 30px;
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:clamp(26px,4vw,52px);
+    align-items:start;
+    margin-bottom:36px;
+  }
+  .foot-brand .brand-mark{box-shadow:none}
+  .foot-brand .brand-name{color:var(--cream)}
+  .foot-brand .brand-name small{color:rgba(244,239,230,.6)}
+  .foot-brand p{
+    margin-top:18px;
+    color:rgba(244,239,230,.72);
+    font-size:.98rem;
+    max-width:34ch;
+  }
+  .foot-col h4{
+    font-family:'Karla',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:rgba(244,239,230,.55);
+    margin-bottom:16px;
+  }
+  .foot-col a,
+  .foot-col p{
+    display:block;
+    color:var(--cream);
+    text-decoration:none;
+    font-size:1rem;
+    line-height:1.6;
+    margin-bottom:8px;
+  }
+  .foot-col a:hover{color:#e9c9b6}
+  .foot-col .muted{color:rgba(244,239,230,.65);font-size:.95rem}
+  .foot-bottom{
+    border-top:1px solid rgba(244,239,230,.15);
+    padding-top:24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 24px;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .foot-bottom p{
+    font-size:13.5px;
+    color:rgba(244,239,230,.6);
+    line-height:1.6;
+  }
+  .swd-credit{
+    font-size:13px;
+    color:rgba(244,239,230,.7);
+  }
+  .swd-credit a{
+    color:#e9c9b6;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+  .swd-note{
+    flex-basis:100%;
+    font-size:12.5px;
+    color:rgba(244,239,230,.5);
+    font-style:italic;
+    line-height:1.6;
+    max-width:70ch;
+  }
+
+  /* ============================================================
+     STICKY MOBILE CALL/MAIL BAR
+     ============================================================ */
+  .mobile-bar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:120;
+    display:none;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:11px 14px calc(11px + env(safe-area-inset-bottom));
+    background:rgba(244,239,230,.92);
+    backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);
+    box-shadow:0 -10px 30px -20px rgba(58,49,42,.5);
+  }
+  .mobile-bar a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:14px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15.5px;
+  }
+  .mobile-bar a svg{width:19px;height:19px}
+  .mobile-bar .mb-call{background:var(--olive);color:var(--paper)}
+  .mobile-bar .mb-mail{background:var(--terra);color:var(--paper)}
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:38px}
+    .hero-figure{max-width:420px;margin-inline:auto;width:100%}
+    .welcome-grid{grid-template-columns:1fr}
+    .welcome-label{writing-mode:horizontal-tb;transform:none;padding-top:0}
+    .treat-groups{grid-template-columns:1fr;gap:34px}
+    .sfeer-grid{grid-template-columns:1fr;gap:36px}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1 / -1}
+  }
+
+  @media (max-width:680px){
+    .nav-desktop{display:none}
+    .mobile-bar{display:grid}
+    body{padding-bottom:78px} /* room for sticky bar */
+    .hero-tag{left:8px;bottom:14px}
+  }
+
+  @media (max-width:480px){
+    body{font-size:17px}
+    .field-row{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-bottom{flex-direction:column;align-items:flex-start}
+    .hero-meta{gap:8px 18px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Direct naar de inhoud</a>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Mir &amp; Mooi — naar boven">
+      <!-- ✏️ LOGO: hier komt later het echte logo van Mir & Mooi; nu een warme initiaal-cirkel -->
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span class="brand-name">Mir &amp; Mooi
+        <small>Schoonheidsspecialist · Buurse</small>
+      </span>
+    </a>
+    <nav class="nav-desktop" aria-label="Hoofdmenu">
+      <a href="#welkom">Welkom</a>
+      <a href="#behandelingen">Behandelingen</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-nav" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+        Afspraak aanvragen
+      </a>
+    </nav>
+  </div>
+</header>
+
+<span id="top"></span>
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">
+          <svg class="sprig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c0-6 0-9 0-14"/><path d="M12 9c-3 0-5-2-5-5 3 0 5 2 5 5z"/><path d="M12 13c3 0 5-2 5-5-3 0-5 2-5 5z"/></svg>
+          Schoonheidssalon in Buurse
+        </span>
+        <h1 id="hero-title">Een momentje voor uzelf, met <span class="accent">persoonlijke aandacht</span></h1>
+        <p class="lead">Mir &amp; Mooi is een schoonheidsspecialist voor Enschede, Haaksbergen en omgeving. In een gezellige sfeer neem ik rustig de tijd voor elke klant.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+            Afspraak aanvragen
+          </a>
+          <a class="btn btn-ghost" href="#behandelingen">Bekijk behandelingen</a>
+        </div>
+        <div class="hero-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Esstraat 14, Buurse
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Alleen op afspraak
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-figure">
+        <!-- ✏️ FOTO: warme sfeerfoto van de salon of een behandeling (staand, ±4:5). Nu een nette CSS-placeholder. -->
+        <figure class="hero-photo" role="img" aria-label="Sfeerfoto van de salon volgt">
+          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">Sfeerfoto salon</span>
+        </figure>
+        <div class="hero-tag" aria-hidden="true">
+          <svg class="sprig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <strong>Rustig de tijd</strong>
+          <span>voor elke klant, geen haast</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- hand-drawn divider -->
+  <div class="wrap"><span class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1080 34" preserveAspectRatio="none"><path d="M0 17 C90 6 180 28 270 17 C360 6 450 28 540 17 C630 6 720 28 810 17 C900 6 990 28 1080 17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </span></div>
+
+  <!-- ============================ WELKOM ============================ -->
+  <section class="welcome" id="welkom" aria-labelledby="welkom-title">
+    <div class="wrap welcome-grid">
+      <p class="welcome-label">Welkom</p>
+      <div>
+        <h2 id="welkom-title">Fijn dat u er bent — voelt u zich thuis</h2>
+        <p>Bij Mir &amp; Mooi draait alles om een ontspannen, gezellige sfeer en oprechte, persoonlijke aandacht. Geen lopende band, maar rust: ik luister naar wat uw huid nodig heeft en stem de behandeling daarop af.</p>
+        <p class="pull">Hier krijgt u de tijd. We doen het op uw tempo, met aandacht voor wie u bent en wat bij u past.</p>
+        <p>De salon ligt rustig in <strong>Buurse</strong>, in de gemeente Haaksbergen, op een steenworp van Enschede. Een vertrouwd adres in de regio waar u even helemaal tot rust kunt komen. U wordt altijd persoonlijk ontvangen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- hand-drawn divider (terra) -->
+  <div class="wrap"><span class="divider divider--terra" aria-hidden="true">
+    <svg viewBox="0 0 1080 34" preserveAspectRatio="none"><path d="M0 20 C120 8 200 26 320 16 C440 7 520 27 640 18 C760 9 840 27 960 17 C1010 13 1050 18 1080 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </span></div>
+
+  <!-- ========================= BEHANDELINGEN ========================= -->
+  <section class="treatments" id="behandelingen" aria-labelledby="beh-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Behandelingen</span>
+        <h2 id="beh-title">Met zorg en aandacht, van top tot teen</h2>
+        <p>Een overzicht van wat er mogelijk is. Twijfelt u wat het beste bij u past? Vraag het gerust — we kijken samen wat fijn voelt.</p>
+      </div>
+
+      <div class="treat-groups">
+
+        <!-- Gezicht & huid -->
+        <div class="treat-group">
+          <div class="treat-group-head">
+            <span class="treat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01"/><path d="M9 15c.8.7 1.9 1 3 1s2.2-.3 3-1"/></svg>
+            </span>
+            <h3>Gezicht &amp; huid
+              <small>Verzorging op maat voor uw huid</small>
+            </h3>
+          </div>
+          <ul class="treat-list">
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Huidanalyse</li>
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Dieptereiniging</li>
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Gezichtsbehandelingen</li>
+          </ul>
+        </div>
+
+        <!-- Harsen & verven -->
+        <div class="treat-group">
+          <div class="treat-group-head">
+            <span class="treat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c4-3 12-3 16 0"/><path d="M5 10c.5-1.5 2-2.5 3.5-2.5M19 10c-.5-1.5-2-2.5-3.5-2.5"/></svg>
+            </span>
+            <h3>Harsen &amp; verven
+              <small>Wenkbrauwen, wimpers en ontharen</small>
+            </h3>
+          </div>
+          <ul class="treat-list">
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Epileren</li>
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Wenkbrauwen &amp; wimpers verven</li>
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Harsen &amp; waxen</li>
+          </ul>
+        </div>
+
+        <!-- Handen & voeten -->
+        <div class="treat-group">
+          <div class="treat-group-head">
+            <span class="treat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V5a1.5 1.5 0 0 1 3 0v5M10 10V4a1.5 1.5 0 0 1 3 0v6M13 10V5.5a1.5 1.5 0 0 1 3 0V12"/><path d="M16 9.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-1a6 6 0 0 1-5.2-3L4 12.5a1.6 1.6 0 0 1 2.8-1.5L7 11"/></svg>
+            </span>
+            <h3>Handen &amp; voeten
+              <small>Verzorgde handen, nagels en voeten</small>
+            </h3>
+          </div>
+          <ul class="treat-list">
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Hand- en nagelverzorging</li>
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Voet- en nagelverzorging</li>
+          </ul>
+        </div>
+
+        <!-- Massage -->
+        <div class="treat-group">
+          <div class="treat-group-head">
+            <span class="treat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-3 5-3 7 0M14 12c2-3 5-3 7 0"/><path d="M3 17c2-3 5-3 7 0M14 17c2-3 5-3 7 0"/></svg>
+            </span>
+            <h3>Massage
+              <small>Even helemaal ontspannen</small>
+            </h3>
+          </div>
+          <ul class="treat-list">
+            <li><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9 6c4-2 9-2 11 1-1 6-5 11-9 13z"/></svg> Ontspanningsmassage</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="treat-note">Prijzen op aanvraag — elke behandeling stem ik graag persoonlijk op u af. <a href="#contact">Vraag naar de mogelijkheden</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============================ SFEER ============================ -->
+  <section class="sfeer" aria-labelledby="sfeer-title">
+    <div class="wrap sfeer-grid">
+      <div>
+        <h2 id="sfeer-title">Een plek waar u zich <span class="em">welkom</span> voelt</h2>
+        <p>Geen drukte of haast, maar een warme en vertrouwde omgeving. Bij Mir &amp; Mooi mag u even helemaal tot rust komen — met aandacht voor u en voor wat uw huid nodig heeft.</p>
+        <a class="btn btn-primary" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+          Plan uw afspraak
+        </a>
+      </div>
+      <div class="sfeer-photos" aria-hidden="false">
+        <!-- ✏️ FOTO: twee sfeerbeelden (bijv. behandelruimte + detail/handen). Nu CSS-placeholders. -->
+        <figure class="sf-photo" role="img" aria-label="Sfeerbeeld behandelruimte volgt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">Behandelruimte</span>
+        </figure>
+        <figure class="sf-photo" role="img" aria-label="Sfeerbeeld detail volgt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">Detail / sfeer</span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- hand-drawn divider -->
+  <div class="wrap"><span class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1080 34" preserveAspectRatio="none"><path d="M0 17 C90 28 180 6 270 17 C360 28 450 6 540 17 C630 28 720 6 810 17 C900 28 990 6 1080 17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </span></div>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <span class="eyebrow">Contact &amp; afspraak</span>
+        <h2 id="contact-title">Maak gerust een afspraak</h2>
+        <p>Mir &amp; Mooi werkt alleen op afspraak, zodat u altijd de volledige aandacht krijgt. Bellen, appen of mailen — wat u het prettigst vindt.</p>
+
+        <div class="contact-lines">
+          <a class="contact-line" href="tel:+31640546774">
+            <span class="cl-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            </span>
+            <span class="cl-text">
+              <span class="lbl">Bellen</span>
+              <span class="val">06 40 546 774</span>
+              <span class="sub">Persoonlijk te woord, op afspraak</span>
+            </span>
+          </a>
+
+          <a class="contact-line" href="https://wa.me/31640546774" target="_blank" rel="noopener">
+            <span class="cl-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.2-5.5A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 9.2c0 .3.1.7.3 1.1a8 8 0 0 0 3.6 3.6c.7.3 1.4.5 1.9.3.3-.1.7-.5.9-.9.1-.3 0-.5-.2-.7l-1.3-.8c-.2-.1-.5-.1-.7.1l-.4.4a5.5 5.5 0 0 1-2-2l.4-.4c.2-.2.2-.5.1-.7l-.8-1.3c-.2-.3-.6-.3-.9-.2-.4.2-.8.5-.9.9 0 .1-.1.2-.1.4z"/></svg>
+            </span>
+            <span class="cl-text">
+              <span class="lbl">WhatsApp</span>
+              <span class="val">06 40 546 774</span>
+              <span class="sub">Stuur gerust een bericht</span>
+            </span>
+          </a>
+
+          <a class="contact-line" href="mailto:info@mirenmooi.nl">
+            <span class="cl-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <span class="cl-text">
+              <span class="lbl">E-mail</span>
+              <span class="val">info@mirenmooi.nl</span>
+              <span class="sub">We reageren zo snel mogelijk</span>
+            </span>
+          </a>
+
+          <div class="contact-line" style="cursor:default">
+            <span class="cl-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="cl-text">
+              <span class="lbl">Adres</span>
+              <span class="val">Esstraat 14, Buurse</span>
+              <span class="sub">Gemeente Haaksbergen · Alleen op afspraak</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- mailto formulier (statische preview, geen server) -->
+      <div class="form-card">
+        <h3>Afspraak aanvragen</h3>
+        <p class="form-sub">Vul kort in wat u zoekt — uw mailprogramma opent met het bericht klaar om te versturen naar info@mirenmooi.nl.</p>
+        <form id="afspraak-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="tel">Telefoon</label>
+              <input type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel">
+            </div>
+          </div>
+          <div class="field">
+            <label for="behandeling">Welke behandeling?</label>
+            <select id="behandeling" name="behandeling">
+              <option value="">Maak een keuze (optioneel)</option>
+              <option>Gezicht &amp; huid</option>
+              <option>Harsen &amp; verven</option>
+              <option>Handen &amp; voeten</option>
+              <option>Massage</option>
+              <option>Ik weet het nog niet — graag advies</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bericht">Uw bericht of voorkeursdag</label>
+            <textarea id="bericht" name="bericht" placeholder="Bijvoorbeeld: graag een gezichtsbehandeling, het liefst op een donderdag."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            Verstuur aanvraag
+          </button>
+          <p class="form-foot">Of mail direct naar <a href="mailto:info@mirenmooi.nl" style="color:var(--terra-deep);font-weight:700">info@mirenmooi.nl</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span class="brand-name">Mir &amp; Mooi
+            <small>Schoonheidsspecialist · Buurse</small>
+          </span>
+        </div>
+        <p>Schoonheidsspecialist voor Enschede, Haaksbergen en omgeving. Een gezellige sfeer en persoonlijke aandacht, met rustig de tijd voor elke klant.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Bezoek</h4>
+        <p>Esstraat 14<br>Buurse (gem. Haaksbergen)</p>
+        <p class="muted">Alleen op afspraak</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+31640546774">06 40 546 774</a>
+        <a href="https://wa.me/31640546774" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:info@mirenmooi.nl">info@mirenmooi.nl</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <p>&copy; <span id="jaar">2026</span> Mir &amp; Mooi · Schoonheidsspecialist in Buurse</p>
+      <p class="swd-credit">Voorbeeldontwerp door Sage Website Design · <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">sagek17.github.io/swd</a></p>
+      <p class="swd-note">Dit is een vrijblijvend concept; teksten en foto's worden in overleg met Mir &amp; Mooi ingevuld.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STICKY MOBILE BAR ===================== -->
+<nav class="mobile-bar" aria-label="Snel contact">
+  <a class="mb-call" href="tel:+31640546774">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    Bellen
+  </a>
+  <a class="mb-mail" href="mailto:info@mirenmooi.nl">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    Mailen
+  </a>
+</nav>
+
+<script>
+  // huidig jaar in footer
+  document.getElementById('jaar').textContent = new Date().getFullYear();
+
+  // mailto-formulier — statische preview, geen server-side verzending
+  (function(){
+    var form = document.getElementById('afspraak-form');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var naam = (document.getElementById('naam').value || '').trim();
+      var tel = (document.getElementById('tel').value || '').trim();
+      var beh = document.getElementById('behandeling').value || '';
+      var bericht = (document.getElementById('bericht').value || '').trim();
+
+      if(!naam){
+        document.getElementById('naam').focus();
+        return;
+      }
+
+      var onderwerp = 'Afspraak aanvraag' + (beh ? ' — ' + beh : '');
+      var regels = [];
+      regels.push('Beste Mir & Mooi,');
+      regels.push('');
+      regels.push('Ik wil graag een afspraak aanvragen.');
+      regels.push('');
+      regels.push('Naam: ' + naam);
+      if(tel) regels.push('Telefoon: ' + tel);
+      if(beh) regels.push('Behandeling: ' + beh);
+      if(bericht){
+        regels.push('');
+        regels.push(bericht);
+      }
+      regels.push('');
+      regels.push('Met vriendelijke groet,');
+      regels.push(naam);
+
+      var href = 'mailto:info@mirenmooi.nl'
+        + '?subject=' + encodeURIComponent(onderwerp)
+        + '&body=' + encodeURIComponent(regels.join('\n'));
+      window.location.href = href;
+    });
+  })();
+</script>
+
+</body>
+</html>

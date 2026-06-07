@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Bespoke preview voor BE Aesthetic — Laserkliniek & Schoonheidssalon (Enschede) — Sage Website Design.
+     Concept: premium tech-clinic. Diep navy + ijsblauw, dunne haarlijnen, navy-blokken met ijsaccenten.
+     Hero met kliniek-statement, een gestructureerde behandelingen-INDEX (uitgelijnde rijen) die bij
+     hover/uitklappen een one-liner toont (toegankelijke JS), een rule-gescheiden trust-band, en een
+     warme menselijke regel. Geen emoji — alleen dunne inline SVG-iconen. -->
+
+<title>BE Aesthetic — Laserkliniek &amp; Schoonheidssalon in Enschede</title>
+<meta name="description" content="BE Aesthetic in Enschede: resultaatgerichte laser- en huidbehandelingen met hoogwaardige apparatuur, hoogstaande producten en goede voorlichting, in een huiselijke, persoonlijke sfeer. Maak een afspraak: 053 211 03 25." />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='14' fill='%230f1b2d'/><text x='50' y='69' font-size='52' font-family='Georgia,serif' text-anchor='middle' fill='%23cfe0ef'>BE</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --navy:#0f1b2d;        /* deep navy section bg */
+  --navy-2:#13233a;      /* slightly lifted navy */
+  --navy-3:#1a2e49;      /* hover / card lift */
+  --ice:#cfe0ef;         /* ice blue accent */
+  --ice-soft:#e6eff6;    /* softer ice */
+  --white:#ffffff;
+  --paper:#f6f8fb;       /* light section bg */
+  --ink:#16202c;         /* dark ink text on light */
+  --ink-2:#475264;       /* secondary ink */
+  --muted:#8a93a3;       /* muted captions */
+  --silver:#c7ccd1;      /* silver hairline on light */
+  --hair-d:rgba(207,224,239,.18);  /* hairline on navy */
+  --hair-d2:rgba(207,224,239,.32);
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"DM Sans",system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.04;letter-spacing:.002em}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+::selection{background:var(--ice);color:var(--navy)}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.section{padding:clamp(72px,10vw,132px) 0}
+.kicker{font-family:"DM Sans";font-weight:600;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase}
+.eyebrow{display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow .tick{width:26px;height:1px;background:currentColor;display:inline-block;opacity:.55}
+
+/* skip link */
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:var(--navy);color:var(--ice);padding:.7rem 1.1rem;font-size:.85rem;border-radius:0 0 6px 0}
+.skip:focus{left:0}
+
+/* focus visibility (accessible) */
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--ice);outline-offset:3px;border-radius:2px}
+.on-light a:focus-visible,.on-light button:focus-visible,.on-light summary:focus-visible{outline-color:#1f4f7a}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:"DM Sans";font-weight:600;font-size:.82rem;letter-spacing:.04em;padding:1rem 1.6rem;border-radius:2px;border:1px solid transparent;transition:.28s var(--ease);cursor:pointer}
+.btn svg{transition:transform .28s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-ice{background:var(--ice);color:var(--navy)}
+.btn-ice:hover{background:var(--white)}
+.btn-line{background:transparent;color:var(--ice);border-color:var(--hair-d2)}
+.btn-line:hover{border-color:var(--ice);background:rgba(207,224,239,.06)}
+.btn-dark{background:var(--navy);color:var(--ice)}
+.btn-dark:hover{background:var(--navy-3)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--silver)}
+.btn-ghost:hover{border-color:var(--ink);background:#fff}
+
+/* ===================== HEADER ===================== */
+header{position:sticky;top:0;z-index:90;background:rgba(15,27,45,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair-d)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.7rem;color:var(--white)}
+.brand .mark{width:38px;height:38px;border:1px solid var(--hair-d2);border-radius:7px;display:grid;place-items:center;font-family:"DM Serif Display",serif;font-size:1.02rem;color:var(--ice);letter-spacing:.02em;background:linear-gradient(150deg,#14253c,#0d1825)}
+.brand .bt{display:flex;flex-direction:column;line-height:1.05}
+.brand .bt b{font-family:"DM Serif Display",serif;font-weight:400;font-size:1.16rem;letter-spacing:.02em}
+.brand .bt span{font-family:"DM Sans";font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ice);opacity:.72}
+.nav-links{display:flex;align-items:center;gap:2.1rem}
+.nav-links a{font-size:.82rem;letter-spacing:.06em;color:rgba(255,255,255,.78);transition:.2s;position:relative;padding:.2rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--ice);transition:width .26s var(--ease)}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+.nav-links .nav-cta{margin-left:.4rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:1.6px;background:var(--ice);transition:.25s}
+.mnav{display:none}
+
+/* ===================== HERO ===================== */
+.hero{position:relative;background:var(--navy);color:var(--white);overflow:hidden;border-bottom:1px solid var(--hair-d)}
+/* precise grid motif */
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair-d) 1px,transparent 1px),linear-gradient(90deg,var(--hair-d) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 78% 8%,#000 0%,transparent 72%);opacity:.6;pointer-events:none}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(60px,9vw,118px) 0 clamp(56px,8vw,104px)}
+.hero .eyebrow{color:var(--ice)}
+.hero .kicker{opacity:.92}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5.1rem);color:#fff;margin:1.5rem 0 0;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--ice)}
+.hero .lead{max-width:46ch;margin-top:1.6rem;color:rgba(255,255,255,.8);font-size:1.06rem;line-height:1.72}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.3rem}
+/* tiny location/hours strip under cta */
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.4rem 2rem;margin-top:2.6rem;padding-top:1.7rem;border-top:1px solid var(--hair-d)}
+.hero-meta .hm{display:flex;align-items:flex-start;gap:.6rem}
+.hero-meta svg{flex:0 0 auto;color:var(--ice);margin-top:2px}
+.hero-meta .hm b{display:block;font-family:"DM Sans";font-weight:600;font-size:.92rem;color:#fff;letter-spacing:.01em}
+.hero-meta .hm span{font-size:.8rem;color:rgba(255,255,255,.62)}
+
+/* hero side panel = framed "clinic plate" placeholder */
+.plate{position:relative;border:1px solid var(--hair-d2);border-radius:10px;background:linear-gradient(160deg,#13233b 0%,#0c1626 100%);padding:1.4rem;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.plate::after{content:"";position:absolute;inset:14px;border:1px solid var(--hair-d);border-radius:6px;pointer-events:none}
+.plate .corner{position:absolute;width:14px;height:14px;border:1px solid var(--ice);opacity:.85}
+.plate .c1{top:8px;left:8px;border-right:0;border-bottom:0}
+.plate .c2{top:8px;right:8px;border-left:0;border-bottom:0}
+.plate .c3{bottom:8px;left:8px;border-right:0;border-top:0}
+.plate .c4{bottom:8px;right:8px;border-left:0;border-top:0}
+.plate-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.plate-tag{font-family:"DM Sans";font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ice);opacity:.8}
+.plate-dot{display:flex;align-items:center;gap:.45rem;font-size:.66rem;letter-spacing:.12em;color:rgba(255,255,255,.6);text-transform:uppercase}
+.plate-dot i{width:7px;height:7px;border-radius:50%;background:var(--ice);box-shadow:0 0 0 4px rgba(207,224,239,.14)}
+.plate-center{position:relative;z-index:2;text-align:center;padding:1rem}
+.plate-center svg{color:var(--ice);opacity:.92;margin-bottom:1rem}
+.plate-center .pc-h{font-family:"DM Serif Display",serif;font-size:1.5rem;color:#fff;line-height:1.1}
+.plate-center .pc-s{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.5rem;letter-spacing:.02em}
+.plate-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end}
+.plate-bottom .pb-l{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.plate-bottom .pb-r{font-family:"DM Serif Display",serif;font-size:1.05rem;color:var(--ice)}
+
+/* ===================== TRUST BAND (rule-separated inline list) ===================== */
+.trust{background:var(--navy-2);color:#fff;border-bottom:1px solid var(--hair-d)}
+.trust .wrap{padding-top:clamp(40px,5vw,58px);padding-bottom:clamp(40px,5vw,58px)}
+.trust h2{font-size:clamp(1.5rem,3vw,2.1rem);color:#fff;text-align:center}
+.trust h2 em{font-style:italic;color:var(--ice)}
+.trust .tl{margin:1.8rem auto 0;max-width:880px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0}
+.trust .tl li{display:flex;align-items:center;gap:.7rem;padding:.55rem 1.5rem;font-size:.98rem;color:rgba(255,255,255,.88);letter-spacing:.01em}
+.trust .tl li svg{color:var(--ice);flex:0 0 auto}
+.trust .tl li:not(:last-child){border-right:1px solid var(--hair-d2)}
+.trust .coffee{margin:2rem auto 0;text-align:center;max-width:620px}
+.trust .coffee p{font-family:"DM Serif Display",serif;font-style:italic;font-size:clamp(1.15rem,2.3vw,1.5rem);color:var(--ice)}
+.trust .coffee .cf-ic{display:inline-flex;margin-bottom:.6rem;color:var(--ice);opacity:.9}
+
+/* ===================== TREATMENT INDEX ===================== */
+.index{background:var(--paper);color:var(--ink)}
+.index .head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.index .head .kicker{color:#1f4f7a}
+.index .head h2{font-size:clamp(2rem,4.6vw,3.3rem);color:var(--ink);margin-top:.8rem;max-width:14ch}
+.index .head .hint{font-size:.84rem;color:var(--muted);display:flex;align-items:center;gap:.5rem;max-width:30ch}
+.index .head .hint svg{flex:0 0 auto;color:#1f4f7a}
+
+.idx-list{border-top:1px solid var(--silver)}
+.idx-row{border-bottom:1px solid var(--silver)}
+.idx-btn{width:100%;background:none;border:0;cursor:pointer;text-align:left;font-family:inherit;color:inherit;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.2rem;padding:1.25rem .4rem;transition:background .25s var(--ease),padding-left .25s var(--ease)}
+.idx-btn:hover,.idx-row.open .idx-btn{background:#fff;padding-left:1.1rem}
+.idx-num{font-family:"DM Sans";font-weight:500;font-size:.78rem;letter-spacing:.08em;color:var(--muted);font-variant-numeric:tabular-nums;min-width:2.4ch}
+.idx-row.open .idx-num,.idx-btn:hover .idx-num{color:#1f4f7a}
+.idx-name{font-family:"DM Serif Display",serif;font-size:clamp(1.3rem,2.7vw,1.85rem);color:var(--ink);letter-spacing:.005em;transition:color .2s}
+.idx-row.open .idx-name{color:#16344f}
+.idx-tag{font-family:"DM Sans";font-weight:500;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#1f4f7a;background:var(--ice-soft);border:1px solid #d2e2f0;padding:.28rem .6rem;border-radius:30px;white-space:nowrap;justify-self:start}
+.idx-plus{position:relative;width:22px;height:22px;flex:0 0 auto;justify-self:end}
+.idx-plus::before,.idx-plus::after{content:"";position:absolute;background:#1f4f7a;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.idx-plus::before{left:0;top:50%;width:100%;height:1.5px;transform:translateY(-50%)}
+.idx-plus::after{top:0;left:50%;height:100%;width:1.5px;transform:translateX(-50%)}
+.idx-row.open .idx-plus::after{transform:translateX(-50%) scaleY(0);opacity:0}
+.idx-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s var(--ease)}
+.idx-row.open .idx-panel{grid-template-rows:1fr}
+.idx-panel-inner{overflow:hidden}
+.idx-desc{padding:0 .4rem 1.4rem calc(2.4ch + 1.2rem);max-width:60ch;color:var(--ink-2);font-size:1rem;line-height:1.7}
+.idx-foot{margin-top:2.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.6rem}
+.idx-foot p{font-size:.92rem;color:var(--ink-2);max-width:46ch}
+
+/* ===================== APPROACH / SPLIT ===================== */
+.approach{background:var(--navy);color:#fff;border-top:1px solid var(--hair-d);border-bottom:1px solid var(--hair-d)}
+.approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,84px);align-items:center}
+.approach .kicker{color:var(--ice)}
+.approach h2{font-size:clamp(2rem,4.4vw,3.1rem);color:#fff;margin-top:.9rem}
+.approach h2 em{font-style:italic;color:var(--ice)}
+.approach .body p{color:rgba(255,255,255,.8);font-size:1.04rem;line-height:1.78;margin-top:1.3rem;max-width:52ch}
+.app-points{margin-top:2rem;display:grid;gap:0;border-top:1px solid var(--hair-d)}
+.app-points .ap{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:flex-start;padding:1.25rem 0;border-bottom:1px solid var(--hair-d)}
+.app-points .ap .ic{width:40px;height:40px;border:1px solid var(--hair-d2);border-radius:8px;display:grid;place-items:center;color:var(--ice)}
+.app-points .ap h3{font-family:"DM Sans";font-weight:600;font-size:1rem;color:#fff;letter-spacing:.01em}
+.app-points .ap p{margin-top:.25rem;font-size:.9rem;color:rgba(255,255,255,.66);line-height:1.6}
+
+/* ===================== PRACTICAL / CONTACT ===================== */
+.contact{background:var(--paper);color:var(--ink)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:start}
+.contact .kicker{color:#1f4f7a}
+.contact h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--ink);margin-top:.8rem;letter-spacing:-.005em}
+.contact .sub{color:var(--ink-2);font-size:1.04rem;margin-top:1.2rem;max-width:44ch}
+
+/* info ledger */
+.ledger{margin-top:2rem;border-top:1px solid var(--silver)}
+.ledger .lr{display:grid;grid-template-columns:140px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--silver);align-items:start}
+.ledger .lr .k{font-family:"DM Sans";font-weight:600;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.ledger .lr .v{color:var(--ink);font-size:1rem;line-height:1.6}
+.ledger .lr .v a{transition:color .2s;border-bottom:1px solid transparent}
+.ledger .lr .v a:hover{color:#1f4f7a;border-bottom-color:#1f4f7a}
+.ledger .lr .v .line2{display:block;color:var(--ink-2);font-size:.92rem}
+.hours-grid{display:grid;grid-template-columns:auto auto;gap:.2rem 1.4rem;font-variant-numeric:tabular-nums}
+.hours-grid dt{color:var(--ink-2);font-size:.95rem}
+.hours-grid dd{color:var(--ink);font-size:.95rem;font-weight:500}
+
+/* appointment card */
+.appt{background:var(--navy);color:#fff;border-radius:12px;padding:clamp(28px,4vw,42px);position:relative;overflow:hidden}
+.appt::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hair-d) 1px,transparent 1px),linear-gradient(90deg,var(--hair-d) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(120% 100% at 90% 0%,#000,transparent 70%);opacity:.55;pointer-events:none}
+.appt > *{position:relative;z-index:2}
+.appt .kicker{color:var(--ice)}
+.appt h3{font-family:"DM Serif Display",serif;font-size:clamp(1.6rem,3vw,2.1rem);color:#fff;margin-top:.7rem}
+.appt p{color:rgba(255,255,255,.74);margin-top:.8rem;font-size:.98rem;max-width:40ch}
+.appt form{margin-top:1.7rem;display:grid;gap:1.1rem}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field label{font-family:"DM Sans";font-weight:500;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ice);opacity:.85}
+.field input,.field select,.field textarea{font-family:inherit;font-size:.96rem;color:#fff;background:rgba(255,255,255,.04);border:1px solid var(--hair-d2);border-radius:6px;padding:.8rem .9rem;transition:.22s}
+.field textarea{resize:vertical;min-height:88px}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ice);background:rgba(207,224,239,.07)}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23cfe0ef' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;padding-right:2.4rem}
+.field select option{color:#16202c}
+.appt .formnote{font-size:.76rem;color:rgba(255,255,255,.5);line-height:1.55;margin-top:.2rem}
+.appt .or{display:flex;align-items:center;gap:.6rem;margin-top:.4rem;font-size:.82rem;color:rgba(255,255,255,.6)}
+.appt .or .qline{display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+.appt .or a{color:var(--ice);border-bottom:1px solid transparent}
+.appt .or a:hover{border-bottom-color:var(--ice)}
+
+/* map-ish address plate */
+.geo{margin-top:1.6rem;border:1px solid var(--silver);border-radius:10px;overflow:hidden;background:#fff}
+.geo-vis{position:relative;height:120px;background:
+  linear-gradient(90deg,rgba(31,79,122,.06) 1px,transparent 1px),
+  linear-gradient(rgba(31,79,122,.06) 1px,transparent 1px),
+  linear-gradient(160deg,#eef3f8,#e3ecf4);
+  background-size:26px 26px,26px 26px,100% 100%}
+.geo-vis .pin{position:absolute;left:50%;top:52%;transform:translate(-50%,-100%);color:#1f4f7a}
+.geo-vis .ring{position:absolute;left:50%;top:52%;width:54px;height:54px;border:1px solid rgba(31,79,122,.4);border-radius:50%;transform:translate(-50%,-50%);animation:ping 2.6s var(--ease) infinite}
+@keyframes ping{0%{transform:translate(-50%,-50%) scale(.4);opacity:.8}100%{transform:translate(-50%,-50%) scale(1.4);opacity:0}}
+.geo-cap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.1rem}
+.geo-cap .ga{font-size:.92rem;color:var(--ink)}
+.geo-cap .ga span{display:block;font-size:.82rem;color:var(--ink-2)}
+.geo-cap a{font-size:.82rem;font-weight:600;color:#1f4f7a;white-space:nowrap;display:inline-flex;align-items:center;gap:.35rem;border-bottom:1px solid transparent}
+.geo-cap a:hover{border-bottom-color:#1f4f7a}
+
+/* ===================== FOOTER ===================== */
+footer{background:var(--navy);color:rgba(255,255,255,.7);border-top:1px solid var(--hair-d)}
+footer .ftop{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;padding:clamp(48px,6vw,72px) 0 clamp(34px,4vw,48px)}
+footer .brand{margin-bottom:1.1rem}
+footer .fcol h4{font-family:"DM Sans";font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);margin-bottom:1rem}
+footer .fcol p,footer .fcol a{font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.85}
+footer .fcol a{transition:color .2s}
+footer .fcol a:hover{color:var(--ice)}
+footer .fdesc{font-size:.92rem;color:rgba(255,255,255,.6);max-width:34ch;line-height:1.75}
+footer .ig{display:inline-flex;align-items:center;gap:.5rem;margin-top:.4rem}
+footer .ig svg{color:var(--ice)}
+.fbar{border-top:1px solid var(--hair-d);padding:1.4rem 0 2.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.5rem;align-items:center;justify-content:space-between}
+.fbar .swd{font-size:.82rem;color:rgba(255,255,255,.62)}
+.fbar .swd a{color:var(--ice);border-bottom:1px solid transparent}
+.fbar .swd a:hover{border-bottom-color:var(--ice)}
+.fbar .concept{font-size:.78rem;color:rgba(255,255,255,.42);max-width:62ch;line-height:1.6}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .plate{max-width:380px}
+  .approach-grid{grid-template-columns:1fr;gap:40px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  footer .ftop{grid-template-columns:1fr 1fr;gap:2rem}
+  footer .fcol.f-brand{grid-column:1 / -1}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .mnav{display:block;position:fixed;inset:74px 0 auto;background:var(--navy-2);border-bottom:1px solid var(--hair-d2);transform:translateY(-130%);transition:transform .34s var(--ease);z-index:80;padding:1rem 0 1.4rem}
+  .mnav.open{transform:translateY(0)}
+  .mnav a{display:block;padding:.95rem 28px;font-size:1rem;color:#fff;border-bottom:1px solid var(--hair-d)}
+  .mnav a:last-child{border-bottom:0}
+  .mnav .nav-cta{margin:1rem 28px 0;justify-content:center}
+  .trust .tl{flex-direction:column;align-items:stretch;gap:0}
+  .trust .tl li{justify-content:center;padding:.85rem 0;border-right:0 !important}
+  .trust .tl li:not(:last-child){border-bottom:1px solid var(--hair-d2)}
+  .idx-btn{grid-template-columns:auto 1fr auto;gap:.8rem;padding:1.1rem .2rem}
+  .idx-tag{display:none}
+  .idx-desc{padding-left:calc(2.4ch + .8rem);padding-right:1.5rem}
+  footer .ftop{grid-template-columns:1fr;gap:1.8rem}
+  footer .fcol.f-brand{grid-column:auto}
+}
+@media (max-width:420px){
+  .wrap{padding:0 20px}
+  .hero h1{font-size:clamp(2.3rem,9vw,3rem)}
+  .hero-meta{gap:1.1rem}
+  .btn{width:100%;justify-content:center}
+  .hero .cta-row{gap:.7rem}
+  .ledger .lr{grid-template-columns:1fr;gap:.3rem}
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .idx-panel{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#index">Direct naar behandelingen</a>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="BE Aesthetic — home">
+      <span class="mark" aria-hidden="true">BE</span>
+      <span class="bt"><b>BE Aesthetic</b><span>Laserkliniek &amp; Salon</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#index">Behandelingen</a>
+      <a href="#waarom">Waarom BE</a>
+      <a href="#aanpak">Aanpak</a>
+      <a href="#contact">Praktisch</a>
+      <a class="btn btn-ice nav-cta" href="#afspraak">Afspraak aanvragen</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false" aria-controls="mnav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobiel menu">
+    <a href="#index">Behandelingen</a>
+    <a href="#waarom">Waarom BE</a>
+    <a href="#aanpak">Aanpak</a>
+    <a href="#contact">Praktisch</a>
+    <a class="btn btn-ice nav-cta" href="#afspraak">Afspraak aanvragen</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow kicker">Laserkliniek &amp; Schoonheidssalon &middot; Enschede</span>
+        <h1 id="hero-h">Resultaatgerichte huidzorg, met een <em>persoonlijke</em> hand.</h1>
+        <p class="lead">Bij BE Aesthetic combineren we hoogwaardige apparatuur en hoogstaande producten met eerlijke, goede voorlichting — in een huiselijke, persoonlijke sfeer. Geen massawerk, maar een behandeling die bij u past.</p>
+        <div class="cta-row">
+          <a class="btn btn-ice" href="#afspraak">
+            Afspraak aanvragen
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="btn btn-line" href="#index">Bekijk behandelingen</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hm">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><b>Kuipersdijk 390</b><span>7541 WK Enschede</span></div>
+          </div>
+          <div class="hm">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>
+            <div><b>Ma&ndash;Vr 09:30&ndash;18:00</b><span>Za &amp; Zo 10:00&ndash;17:00</span></div>
+          </div>
+          <div class="hm">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+            <div><b>053 211 03 25</b><span>of 06 25 16 95 99</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✏️ FOTO: sfeerbeeld van de kliniek/behandelruimte (of close-up van een apparaat) komt hier — nu een nette CSS-plaat -->
+      <aside class="plate" aria-hidden="true">
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="plate-top">
+          <span class="plate-tag">BE Aesthetic Clinic</span>
+          <span class="plate-dot"><i></i>Enschede</span>
+        </div>
+        <div class="plate-center">
+          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M5 12H2"/><path d="M22 12h-3"/><circle cx="12" cy="12" r="4"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+          <div class="pc-h">Huidverbetering<br>met precisie</div>
+          <div class="pc-s">Laser &middot; huidverjonging &middot; bodycare</div>
+        </div>
+        <div class="plate-bottom">
+          <span class="pb-l">Sinds dag &eacute;&eacute;n</span>
+          <span class="pb-r">de koffie staat klaar</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BAND ===================== -->
+  <section class="trust" id="waarom" aria-labelledby="trust-h">
+    <div class="wrap">
+      <h2 id="trust-h">Waarom <em>BE Aesthetic</em></h2>
+      <ul class="tl">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/><circle cx="12" cy="11" r="3"/></svg>
+          Hoogwaardige apparatuur
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          Goede voorlichting
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+          Huiselijke, persoonlijke sfeer
+        </li>
+      </ul>
+      <div class="coffee">
+        <span class="cf-ic" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8z"/><path d="M17 9h2.5a2.5 2.5 0 0 1 0 5H17"/><path d="M7 2v2.5"/><path d="M11 2v2.5"/></svg>
+        </span>
+        <p>En de koffie staat altijd klaar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TREATMENT INDEX ===================== -->
+  <section class="section index" id="index" aria-labelledby="index-h">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="eyebrow kicker">Behandelingen</span>
+          <h2 id="index-h">Een overzicht van wat wij doen</h2>
+        </div>
+        <p class="hint">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          Klik op een behandeling voor een korte toelichting.
+        </p>
+      </div>
+
+      <ul class="idx-list" id="idxList">
+        <!-- rows injected/enhanced by JS; written here for no-JS fallback -->
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">01</span>
+            <span class="idx-name">AquaGlo</span>
+            <span class="idx-tag">Huidverzorging</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een verfrissende gelaatsbehandeling die de huid diep reinigt, hydrateert en laat stralen — ideaal voor een zichtbaar fris en egaal resultaat.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">02</span>
+            <span class="idx-name">Cosmelan</span>
+            <span class="idx-tag">Pigment</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een professionele behandeling gericht op het verminderen van pigmentvlekken en een egalere, gelijkmatiger huidtint.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">03</span>
+            <span class="idx-name">Microneedling</span>
+            <span class="idx-tag">Huidverjonging</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Stimuleert de natuurlijke aanmaak van collageen voor een steviger, gladder huidbeeld en een verfijnde porie&euml;n- en littekenstructuur.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">04</span>
+            <span class="idx-name">Mesotherapie</span>
+            <span class="idx-tag">Huidverjonging</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Brengt actieve, voedende stoffen direct in de huid om hydratatie, veerkracht en een gezonde uitstraling te ondersteunen.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">05</span>
+            <span class="idx-name">Peelings</span>
+            <span class="idx-tag">Huidverzorging</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Vernieuwen de huid door dode huidcellen los te maken, voor een frissere, gladdere en meer egale teint.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">06</span>
+            <span class="idx-name">Impress Lite</span>
+            <span class="idx-tag">Apparatuur</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een huidverbeterende apparaatbehandeling, afgestemd op uw huidwens voor een verzorgd en verfijnd resultaat.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">07</span>
+            <span class="idx-name">Body Wizard Duo</span>
+            <span class="idx-tag">Bodycare</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een lichaamsbehandeling gericht op het verstevigen en verfraaien van de contouren, voor een verzorgd lichaamsbeeld.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">08</span>
+            <span class="idx-name">Bodyter Premium</span>
+            <span class="idx-tag">Bodycare</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een premium body-behandeling die de huid van het lichaam steviger, gladder en zichtbaar verzorgd maakt.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">09</span>
+            <span class="idx-name">Lutronic Clarity II</span>
+            <span class="idx-tag">Ontharing</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Geavanceerde laserontharing met een vooraanstaand apparaat — comfortabel, effici&euml;nt en geschikt voor diverse huidtypen.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">10</span>
+            <span class="idx-name">Intimate whitening</span>
+            <span class="idx-tag">Specialistisch</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een discrete, zorgvuldige behandeling gericht op het lichter en egaler maken van de intieme huidzones.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">11</span>
+            <span class="idx-name">STRIAOFF</span>
+            <span class="idx-tag">Huidverbetering</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een gerichte behandeling om de zichtbaarheid van striae (zwangerschaps- en groeistrepen) te verminderen.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">12</span>
+            <span class="idx-name">TeslaMed</span>
+            <span class="idx-tag">Apparatuur</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Een apparaatbehandeling die spieren en huid stimuleert ter ondersteuning van versteviging en lichaamsverzorging.</p></div></div>
+        </li>
+        <li class="idx-row">
+          <button type="button" class="idx-btn" aria-expanded="false">
+            <span class="idx-num">13</span>
+            <span class="idx-name">Injectables</span>
+            <span class="idx-tag">Cosmetisch</span>
+            <span class="idx-plus" aria-hidden="true"></span>
+          </button>
+          <div class="idx-panel"><div class="idx-panel-inner"><p class="idx-desc">Cosmetische injectables voor een natuurlijke, verzorgde uitstraling — altijd na een persoonlijk adviesgesprek.</p></div></div>
+        </li>
+      </ul>
+
+      <div class="idx-foot">
+        <p>Niet zeker welke behandeling bij u past? We denken graag met u mee tijdens een vrijblijvend adviesgesprek.</p>
+        <a class="btn btn-ghost" href="#afspraak">Plan een adviesgesprek</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== APPROACH ===================== -->
+  <section class="section approach" id="aanpak" aria-labelledby="appr-h">
+    <div class="wrap approach-grid">
+      <div class="intro">
+        <span class="eyebrow kicker">Onze aanpak</span>
+        <h2 id="appr-h">Eerst <em>luisteren</em>, dan behandelen.</h2>
+        <div class="body">
+          <p>Mooie resultaten beginnen met een goed gesprek. We nemen de tijd om uw huid en uw wensen te begrijpen, leggen eerlijk uit wat wel en niet kan, en stellen samen een plan op dat bij u past.</p>
+          <p>Zo weet u altijd wat u kunt verwachten — en voelt u zich op uw gemak, van het eerste kopje koffie tot het eindresultaat.</p>
+        </div>
+      </div>
+      <div class="app-points" role="list">
+        <div class="ap" role="listitem">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <div><h3>Persoonlijk adviesgesprek</h3><p>We brengen uw huid en wensen in kaart en bespreken wat haalbaar en verstandig is.</p></div>
+        </div>
+        <div class="ap" role="listitem">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <div><h3>Hoogwaardige apparatuur</h3><p>We werken met vooraanstaande apparaten en hoogstaande producten voor een betrouwbaar resultaat.</p></div>
+        </div>
+        <div class="ap" role="listitem">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><h3>Eerlijke voorlichting</h3><p>Heldere uitleg en realistische verwachtingen — geen loze beloften, wel zorgvuldige begeleiding.</p></div>
+        </div>
+        <div class="ap" role="listitem">
+          <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></span>
+          <div><h3>Huiselijke sfeer</h3><p>Een warme, persoonlijke omgeving waar u zich welkom voelt. En ja — de koffie staat klaar.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRACTICAL / CONTACT ===================== -->
+  <section class="section contact on-light" id="contact" aria-labelledby="contact-h">
+    <div class="wrap contact-grid">
+      <!-- left: practical info -->
+      <div class="practical">
+        <span class="eyebrow kicker">Praktische informatie</span>
+        <h2 id="contact-h">Langskomen &amp; contact</h2>
+        <p class="sub">U bent van harte welkom in onze kliniek aan de Kuipersdijk. Een vraag of een afspraak? We helpen u graag verder.</p>
+
+        <dl class="ledger">
+          <div class="lr">
+            <dt class="k">Adres</dt>
+            <dd class="v">
+              Kuipersdijk 390
+              <span class="line2">7541 WK Enschede</span>
+            </dd>
+          </div>
+          <div class="lr">
+            <dt class="k">Telefoon</dt>
+            <dd class="v">
+              <a href="tel:+31532110325">053 211 03 25</a>
+              <span class="line2">of <a href="tel:+31625169599">06 25 16 95 99</a></span>
+            </dd>
+          </div>
+          <div class="lr">
+            <dt class="k">E-mail</dt>
+            <dd class="v"><a href="mailto:info@beaesthetic.nl">info@beaesthetic.nl</a></dd>
+          </div>
+          <div class="lr">
+            <dt class="k">Instagram</dt>
+            <dd class="v"><a href="https://www.instagram.com/be.aesthetic.clinic/" target="_blank" rel="noopener">@be.aesthetic.clinic</a></dd>
+          </div>
+          <div class="lr">
+            <dt class="k">Openingstijden</dt>
+            <dd class="v">
+              <dl class="hours-grid">
+                <dt>Maandag&ndash;Vrijdag</dt><dd>09:30&ndash;18:00</dd>
+                <dt>Zaterdag</dt><dd>10:00&ndash;17:00</dd>
+                <dt>Zondag</dt><dd>10:00&ndash;17:00</dd>
+              </dl>
+            </dd>
+          </div>
+        </dl>
+
+        <!-- ✏️ FOTO/KAART: hier kan een echte Google Maps-embed of buitenfoto van de kliniek komen — nu een nette plaats-indicatie -->
+        <div class="geo">
+          <div class="geo-vis" aria-hidden="true">
+            <span class="ring"></span>
+            <span class="pin"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          </div>
+          <div class="geo-cap">
+            <div class="ga">BE Aesthetic<span>Kuipersdijk 390, 7541 WK Enschede</span></div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Kuipersdijk+390+7541+WK+Enschede" target="_blank" rel="noopener">
+              Route
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: appointment card -->
+      <div class="appt" id="afspraak">
+        <span class="eyebrow kicker">Afspraak aanvragen</span>
+        <h3>Vraag vrijblijvend een afspraak aan</h3>
+        <p>Vul kort in wat u wenst. Uw bericht opent in uw eigen e-mailprogramma en komt rechtstreeks bij ons binnen — we nemen zo snel mogelijk contact met u op.</p>
+
+        <form id="apptForm" novalidate>
+          <div class="field">
+            <label for="f-name">Naam</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Uw naam" required />
+          </div>
+          <div class="field">
+            <label for="f-contact">Telefoon of e-mail</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="tel" placeholder="Zodat wij u kunnen bereiken" required />
+          </div>
+          <div class="field">
+            <label for="f-treat">Behandeling</label>
+            <select id="f-treat" name="treatment">
+              <option value="" selected>Maak een keuze (optioneel)</option>
+              <option>Adviesgesprek</option>
+              <option>AquaGlo</option>
+              <option>Cosmelan</option>
+              <option>Microneedling</option>
+              <option>Mesotherapie</option>
+              <option>Peelings</option>
+              <option>Impress Lite</option>
+              <option>Body Wizard Duo</option>
+              <option>Bodyter Premium</option>
+              <option>Lutronic Clarity II (ontharing)</option>
+              <option>Intimate whitening</option>
+              <option>STRIAOFF</option>
+              <option>TeslaMed</option>
+              <option>Injectables</option>
+              <option>Anders / weet ik nog niet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Uw bericht</label>
+            <textarea id="f-msg" name="message" placeholder="Bijvoorbeeld uw voorkeursdag of een korte vraag"></textarea>
+          </div>
+          <button class="btn btn-ice" type="submit" style="width:100%;justify-content:center">
+            Verstuur aanvraag
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="formnote">Dit formulier opent uw eigen e-mailprogramma met een ingevuld bericht aan info@beaesthetic.nl. Er worden geen gegevens op deze website opgeslagen.</p>
+          <div class="or">
+            <span class="qline">Liever direct?
+              <a href="tel:+31532110325">053 211 03 25</a>
+              <a href="mailto:info@beaesthetic.nl">info@beaesthetic.nl</a>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <div class="fcol f-brand">
+        <a class="brand" href="#top" aria-label="BE Aesthetic — naar boven">
+          <span class="mark" aria-hidden="true">BE</span>
+          <span class="bt"><b>BE Aesthetic</b><span>Laserkliniek &amp; Salon</span></span>
+        </a>
+        <p class="fdesc">Resultaatgerichte laser- en huidbehandelingen in Enschede — met hoogwaardige apparatuur, eerlijke voorlichting en een huiselijke, persoonlijke sfeer.</p>
+        <a class="ig" href="https://www.instagram.com/be.aesthetic.clinic/" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          @be.aesthetic.clinic
+        </a>
+      </div>
+      <div class="fcol">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+31532110325">053 211 03 25</a><br>
+          <a href="tel:+31625169599">06 25 16 95 99</a><br>
+          <a href="mailto:info@beaesthetic.nl">info@beaesthetic.nl</a>
+        </p>
+      </div>
+      <div class="fcol">
+        <h4>Bezoek</h4>
+        <p>
+          Kuipersdijk 390<br>
+          7541 WK Enschede<br>
+          <br>
+          Ma&ndash;Vr 09:30&ndash;18:00<br>
+          Za &amp; Zo 10:00&ndash;17:00
+        </p>
+      </div>
+    </div>
+    <div class="fbar">
+      <span class="swd">Voorbeeldontwerp door Sage Website Design &middot; <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">sagek17.github.io/swd</a></span>
+      <span class="concept">Dit is een vrijblijvend concept; teksten en foto&rsquo;s worden in overleg ingevuld.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- mobile nav ---------- */
+  var burger = document.getElementById("burger");
+  var mnav = document.getElementById("mnav");
+  if (burger && mnav){
+    burger.addEventListener("click", function(){
+      var open = mnav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+    });
+    mnav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        mnav.classList.remove("open");
+        burger.setAttribute("aria-expanded","false");
+        burger.setAttribute("aria-label","Menu openen");
+      });
+    });
+  }
+
+  /* ---------- accessible treatment index (expand/collapse) ---------- */
+  var rows = document.querySelectorAll("#idxList .idx-row");
+  rows.forEach(function(row){
+    var btn = row.querySelector(".idx-btn");
+    var panel = row.querySelector(".idx-panel");
+    if(!btn || !panel) return;
+
+    // link button to its panel for screen readers
+    var pid = panel.id || ("idxp-" + Math.random().toString(36).slice(2,8));
+    panel.id = pid;
+    btn.setAttribute("aria-controls", pid);
+
+    function setOpen(open){
+      row.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    btn.addEventListener("click", function(){
+      var willOpen = !row.classList.contains("open");
+      // accordion behaviour: close others
+      rows.forEach(function(r){
+        if(r !== row){
+          r.classList.remove("open");
+          var b = r.querySelector(".idx-btn");
+          if(b) b.setAttribute("aria-expanded","false");
+        }
+      });
+      setOpen(willOpen);
+    });
+
+    // pointer hover = preview open on fine pointers only (still click-toggle on touch)
+    if (window.matchMedia && window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+      row.addEventListener("mouseenter", function(){
+        rows.forEach(function(r){
+          if(r !== row){ r.classList.remove("open"); var b=r.querySelector(".idx-btn"); if(b) b.setAttribute("aria-expanded","false"); }
+        });
+        setOpen(true);
+      });
+    }
+  });
+
+  /* keyboard arrow navigation between rows (roving) */
+  var btns = Array.prototype.slice.call(document.querySelectorAll("#idxList .idx-btn"));
+  btns.forEach(function(btn, i){
+    btn.addEventListener("keydown", function(e){
+      if(e.key === "ArrowDown"){ e.preventDefault(); (btns[i+1]||btns[0]).focus(); }
+      else if(e.key === "ArrowUp"){ e.preventDefault(); (btns[i-1]||btns[btns.length-1]).focus(); }
+      else if(e.key === "Home"){ e.preventDefault(); btns[0].focus(); }
+      else if(e.key === "End"){ e.preventDefault(); btns[btns.length-1].focus(); }
+    });
+  });
+
+  /* ---------- appointment form -> mailto ---------- */
+  var form = document.getElementById("apptForm");
+  if (form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = (form.name.value || "").trim();
+      var contact = (form.contact.value || "").trim();
+      var treat = (form.treatment.value || "").trim();
+      var msg = (form.message.value || "").trim();
+
+      // light validation with accessible focus
+      if(!name){ form["name"].focus(); return; }
+      if(!contact){ form["contact"].focus(); return; }
+
+      var subject = "Afspraakaanvraag" + (treat ? " — " + treat : "") + " (via website)";
+      var lines = [
+        "Beste BE Aesthetic,",
+        "",
+        "Ik wil graag een afspraak aanvragen.",
+        "",
+        "Naam: " + name,
+        "Bereikbaar via: " + contact,
+        "Behandeling: " + (treat || "Nog niet bekend"),
+        "",
+        "Bericht:",
+        (msg || "—"),
+        "",
+        "Met vriendelijke groet,",
+        name
+      ];
+      var body = lines.join("\r\n");
+      var href = "mailto:info@beaesthetic.nl"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+      window.location.href = href;
+    });
+  }
+
+  /* ---------- header hairline on scroll (subtle) ---------- */
+  var header = document.querySelector("header");
+  if (header){
+    var onScroll = function(){
+      if(window.scrollY > 8){ header.style.boxShadow = "0 1px 0 rgba(207,224,239,.10)"; }
+      else { header.style.boxShadow = "none"; }
+    };
+    window.addEventListener("scroll", onScroll, {passive:true});
+    onScroll();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Bespoke voorbeeldontwerp voor LOES. schoonheidsstudio (Enschede) — Sage Website Design.
+     Concept: Parijs' erfgoed-atelier. Vaste linker zijbalk met waxzegel-monogram "L.",
+     studionaam, dunne verticale anker-navigatie (scroll-spy) en compacte contactgegevens;
+     rechts de scrollende inhoud. Behandelingen als geprijsde carte met stippellijnen
+     (geen kaarten). Goudkleurige haarlijnen, kapitaaltjes-labels, klassieke serif-elegantie.
+     Geen emoji. Inline SVG-iconen. Eén bestand: inline CSS + JS, fonts via Google Fonts. -->
+
+<title>LOES. schoonheidsstudio — Frans atelier voor huidverzorging in Enschede</title>
+<meta name="description" content="LOES. schoonheidsstudio in Enschede: verfijnde gezichtsbehandelingen met SOTHYS, Frans instituutmerk. Marloes Berkien, ruim 31 jaar schoonheidsspecialiste, Guerlain-praktijkvakdiploma Parijs. Voor vrouwen én mannen. Afspraak: 06 83 200 395." />
+<meta name="theme-color" content="#5a1f25" />
+
+<!-- Favicon: waxzegel-monogram L. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f8f3ec'/><circle cx='50' cy='50' r='38' fill='%235a1f25'/><text x='50' y='66' font-size='44' font-family='Georgia,serif' text-anchor='middle' fill='%23f8f3ec'>L.</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --ivory:#f8f3ec;       /* achtergrond */
+  --ivory-2:#f1e9dd;     /* warm accentvlak */
+  --oxblood:#5a1f25;     /* bordeaux */
+  --oxblood-d:#481a1f;   /* donkerder bordeaux */
+  --gold:#b08d57;        /* antiek goud */
+  --gold-soft:#c9ad82;   /* zacht goud */
+  --ink:#241d1a;         /* tekst */
+  --ink-2:#4f463f;       /* zachtere tekst */
+  --muted:#8a7e72;       /* gedempt */
+  --hair:#d8c6a8;        /* goud-haarlijn op ivoor */
+  --hair-soft:#e6dbc8;   /* zachte scheidslijn */
+  --sidebar:268px;
+  --maxw:760px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  font-weight:400;color:var(--ink-2);background:var(--ivory);
+  line-height:1.85;font-size:1.02rem;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;overflow-x:hidden;
+}
+/* subtiele papiertextuur over de hele pagina */
+body::before{
+  content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  opacity:.035;mix-blend-mode:multiply;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+h1,h2,h3,h4{font-family:"Playfair Display",Georgia,serif;color:var(--ink);font-weight:500;line-height:1.12;letter-spacing:.002em}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+
+/* ---------- gedeelde bouwstenen ---------- */
+.label{
+  font-family:"Inter";font-weight:600;font-size:.7rem;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+  display:inline-flex;align-items:center;gap:.7rem;
+}
+.label::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.85}
+.hair{height:1px;border:0;background:var(--hair);opacity:.7}
+
+/* knoppen */
+.btn-solid{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:"Inter";font-weight:500;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--oxblood);color:var(--ivory);
+  padding:1.05rem 2rem;border-radius:1px;border:1px solid var(--oxblood);
+  transition:background .3s var(--ease),transform .3s var(--ease);
+}
+.btn-solid:hover{background:var(--oxblood-d)}
+.btn-solid:active{transform:translateY(1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:"Inter";font-weight:500;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);padding-bottom:5px;border-bottom:1px solid var(--ink);
+  transition:.28s var(--ease);
+}
+.btn-ghost:hover{color:var(--oxblood);border-color:var(--oxblood);gap:.85rem}
+.btn-solid svg,.btn-ghost svg{width:15px;height:15px;flex:none}
+
+/* zichtbare focus voor toetsenbordgebruik */
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--oxblood);outline-offset:3px;border-radius:1px;
+}
+.skip{
+  position:absolute;left:-999px;top:0;z-index:200;background:var(--oxblood);color:var(--ivory);
+  padding:.7rem 1.1rem;font-size:.85rem;letter-spacing:.04em;
+}
+.skip:focus{left:12px;top:12px}
+
+/* ============================================================
+   LINKER ZIJBALK (vast op desktop)
+   ============================================================ */
+.sidebar{
+  position:fixed;top:0;left:0;width:var(--sidebar);height:100vh;
+  background:var(--oxblood);color:var(--ivory);
+  display:flex;flex-direction:column;
+  padding:2.6rem 1.9rem 1.9rem;z-index:80;
+  border-right:1px solid rgba(176,141,87,.4);
+}
+/* dunne gouden binnenlijn als kader */
+.sidebar::after{
+  content:"";position:absolute;inset:14px;pointer-events:none;
+  border:1px solid rgba(201,173,130,.22);
+}
+.brandmark{display:flex;flex-direction:column;align-items:flex-start;gap:1.15rem;position:relative;z-index:1}
+/* waxzegel-monogram */
+.seal{
+  width:70px;height:70px;border-radius:50%;
+  display:grid;place-items:center;flex:none;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,.18), transparent 42%),
+    radial-gradient(circle at 50% 55%, #6a2730, #4a181d 78%);
+  box-shadow:inset 0 0 0 1px rgba(201,173,130,.55), inset 0 2px 9px rgba(0,0,0,.4);
+  position:relative;
+}
+.seal::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(201,173,130,.5);border-radius:50%}
+.seal span{font-family:"Playfair Display",serif;font-size:1.85rem;color:var(--gold-soft);line-height:1;letter-spacing:.01em}
+.brand-name{font-family:"Playfair Display",serif;font-size:1.5rem;line-height:1.12;color:var(--ivory);letter-spacing:.01em}
+.brand-name b{font-weight:600}
+.brand-sub{font-family:"Inter";font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-soft)}
+
+/* verticale anker-navigatie */
+.anchor-nav{margin-top:3rem;position:relative;z-index:1}
+.anchor-nav ul{display:flex;flex-direction:column;gap:.15rem}
+.anchor-nav a{
+  display:flex;align-items:center;gap:.85rem;
+  font-family:"Inter";font-size:.82rem;letter-spacing:.05em;
+  color:rgba(248,243,236,.62);
+  padding:.5rem 0;transition:color .25s var(--ease);
+}
+.anchor-nav .tick{width:18px;height:1px;background:rgba(201,173,130,.5);transition:width .3s var(--ease),background .3s var(--ease);flex:none}
+.anchor-nav .num{font-size:.64rem;letter-spacing:.12em;color:rgba(201,173,130,.7);font-variant-numeric:tabular-nums;width:1.4em}
+.anchor-nav a:hover{color:var(--ivory)}
+.anchor-nav a:hover .tick{width:30px;background:var(--gold-soft)}
+.anchor-nav a.active{color:var(--ivory)}
+.anchor-nav a.active .tick{width:34px;background:var(--gold-soft);height:2px}
+.anchor-nav a.active .num{color:var(--gold-soft)}
+
+/* compacte contact onderaan zijbalk */
+.side-contact{margin-top:auto;position:relative;z-index:1;padding-top:1.6rem}
+.side-contact .div{height:1px;background:rgba(201,173,130,.28);margin-bottom:1.2rem}
+.side-contact a,.side-contact p{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.82rem;line-height:1.5;color:rgba(248,243,236,.78);
+  margin-bottom:.55rem;
+}
+.side-contact a:hover{color:var(--ivory)}
+.side-contact svg{width:14px;height:14px;flex:none;color:var(--gold-soft);stroke:currentColor}
+.side-contact .note{font-size:.7rem;letter-spacing:.04em;color:rgba(201,173,130,.65);margin-top:.4rem;line-height:1.5}
+
+/* ============================================================
+   MOBIELE BOVENBALK (verborgen op desktop)
+   ============================================================ */
+.topbar{
+  display:none;position:sticky;top:0;z-index:90;
+  background:var(--oxblood);color:var(--ivory);
+  align-items:center;justify-content:space-between;
+  padding:.85rem 1.1rem;border-bottom:1px solid rgba(201,173,130,.35);
+}
+.topbar .tb-brand{display:flex;align-items:center;gap:.7rem}
+.topbar .tb-seal{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:radial-gradient(circle at 40% 35%, #6a2730, #4a181d 80%);
+  box-shadow:inset 0 0 0 1px rgba(201,173,130,.5);
+}
+.topbar .tb-seal span{font-family:"Playfair Display",serif;color:var(--gold-soft);font-size:1.05rem}
+.topbar .tb-name{font-family:"Playfair Display",serif;font-size:1.12rem;color:var(--ivory)}
+.menu-toggle{
+  background:transparent;border:1px solid rgba(201,173,130,.5);color:var(--ivory);
+  width:42px;height:38px;border-radius:1px;cursor:pointer;display:grid;place-items:center;
+}
+.menu-toggle svg{width:20px;height:20px;stroke:currentColor}
+/* uitklapbaar mobiel menu */
+.mobile-nav{
+  display:none;position:sticky;top:60px;z-index:85;
+  background:var(--oxblood-d);border-bottom:1px solid rgba(201,173,130,.3);
+  padding:.4rem 1.1rem 1rem;
+}
+.mobile-nav.open{display:block}
+.mobile-nav a{
+  display:flex;align-items:center;gap:.7rem;
+  font-family:"Inter";font-size:.92rem;color:rgba(248,243,236,.8);
+  padding:.7rem .2rem;border-bottom:1px solid rgba(201,173,130,.15);
+}
+.mobile-nav a:last-child{border-bottom:0}
+.mobile-nav .num{font-size:.66rem;color:var(--gold-soft);letter-spacing:.1em}
+
+/* ============================================================
+   RECHTER INHOUDSKOLOM
+   ============================================================ */
+.content{margin-left:var(--sidebar);position:relative;z-index:2}
+.shell{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.4rem,5vw,3.4rem)}
+section{padding:clamp(4rem,8vw,7rem) 0;scroll-margin-top:80px;position:relative}
+section + section{border-top:1px solid var(--hair-soft)}
+
+/* ---------- HERO / INTRO ---------- */
+.hero{padding-top:clamp(4.5rem,9vw,8rem)}
+.hero .label{margin-bottom:2rem}
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4.3rem);line-height:1.07;font-weight:500;
+  letter-spacing:-.01em;color:var(--ink);margin-bottom:1.6rem;
+}
+.hero h1 em{font-style:italic;color:var(--oxblood);font-weight:500}
+.hero .lede{
+  font-size:clamp(1.08rem,1.6vw,1.28rem);line-height:1.7;color:var(--ink-2);
+  max-width:46ch;margin-bottom:2.4rem;font-weight:300;
+}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;align-items:center;
+  margin-top:2.8rem;padding-top:1.8rem;border-top:1px solid var(--hair);
+}
+.hero-meta .stat{display:flex;flex-direction:column;gap:.15rem}
+.hero-meta .stat b{font-family:"Playfair Display",serif;font-size:1.55rem;color:var(--oxblood);font-weight:500;line-height:1}
+.hero-meta .stat span{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:1.2rem 1.8rem;align-items:center}
+
+/* ---------- visueel FOTO-vlak (CSS-placeholder) ---------- */
+.atelier-strip{
+  margin-top:3.4rem;height:clamp(180px,26vw,300px);border-radius:2px;position:relative;overflow:hidden;
+  border:1px solid var(--hair);
+  background:
+    linear-gradient(135deg, rgba(90,31,37,.92), rgba(72,26,31,.86)),
+    radial-gradient(circle at 80% 20%, rgba(176,141,87,.35), transparent 55%);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding:1.4rem 1.6rem;color:var(--ivory);
+}
+.atelier-strip::before{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background:repeating-linear-gradient(90deg, transparent 0 38px, rgba(201,173,130,.07) 38px 39px);
+}
+.atelier-strip .ph-mono{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:"Playfair Display",serif;font-size:clamp(4rem,12vw,8rem);
+  color:rgba(201,173,130,.16);line-height:1;letter-spacing:.02em;user-select:none;
+}
+.atelier-strip .cap{position:relative;z-index:1;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+.atelier-strip .cap.r{text-align:right}
+
+/* ---------- OVER LOES. + TIJDLIJN ---------- */
+.sec-head{margin-bottom:2.6rem}
+.sec-head .label{margin-bottom:1.1rem}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:500;letter-spacing:-.005em}
+.prose p{margin-bottom:1.15rem;max-width:60ch}
+.prose p:last-child{margin-bottom:0}
+.prose .lead{font-size:1.12rem;color:var(--ink);font-weight:400}
+.prose .lead::first-letter{
+  font-family:"Playfair Display",serif;font-size:3.3rem;line-height:.78;float:left;
+  margin:.18rem .7rem 0 0;color:var(--oxblood);font-weight:600;
+}
+
+.timeline{margin-top:3.2rem;border-top:1px solid var(--hair);padding-top:2.4rem}
+.timeline ol{display:flex;flex-direction:column;gap:0}
+.timeline li{
+  display:grid;grid-template-columns:auto 1fr;gap:1.6rem;
+  padding:1.5rem 0;border-bottom:1px solid var(--hair-soft);position:relative;
+}
+.timeline li:last-child{border-bottom:0}
+.tl-year{
+  font-family:"Playfair Display",serif;font-size:1.05rem;color:var(--oxblood);
+  letter-spacing:.04em;white-space:nowrap;padding-top:.1rem;position:relative;
+}
+.tl-year .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:.7rem;vertical-align:middle}
+.tl-body h3{font-family:"Playfair Display",serif;font-size:1.18rem;font-weight:500;margin-bottom:.3rem;color:var(--ink)}
+.tl-body p{font-size:.96rem;color:var(--ink-2);max-width:54ch;margin:0}
+
+/* ---------- BEHANDELINGEN — CARTE met stippellijnen ---------- */
+.carte-intro{max-width:56ch;margin-bottom:2.8rem;color:var(--ink-2)}
+.carte{display:flex;flex-direction:column}
+.carte-group + .carte-group{margin-top:2.6rem}
+.carte-group h3{
+  font-family:"Inter";font-weight:600;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;
+}
+.carte-group h3::after{content:"";flex:1;height:1px;background:var(--hair);opacity:.6}
+.carte-item{
+  display:grid;grid-template-columns:1fr auto;align-items:baseline;
+  gap:.4rem;padding:.95rem 0;border-bottom:1px solid var(--hair-soft);
+}
+.carte-item:last-child{border-bottom:0}
+.carte-name{display:flex;flex-direction:column;gap:.18rem;min-width:0}
+.carte-name .nm{
+  font-family:"Playfair Display",serif;font-size:1.18rem;color:var(--ink);font-weight:500;
+  position:relative;display:inline-block;
+}
+/* stippellijn-leader: ankerpunt links, getrokken naar de duur rechts */
+.carte-name .nm::after{
+  content:"";position:absolute;left:100%;bottom:.28em;width:60vw;max-width:520px;
+  border-bottom:1px dotted var(--hair);margin-left:.6rem;
+}
+.carte-name .desc{font-size:.88rem;color:var(--muted);font-style:italic;line-height:1.4;max-width:42ch}
+.carte-dur{
+  font-family:"Inter";font-weight:500;font-size:.92rem;letter-spacing:.04em;
+  color:var(--oxblood);white-space:nowrap;background:var(--ivory);
+  padding-left:.7rem;position:relative;z-index:1;font-variant-numeric:tabular-nums;
+}
+.carte-foot{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--hair);font-size:.9rem;color:var(--muted);font-style:italic;max-width:58ch}
+
+/* ---------- SPECIALISATIES ---------- */
+.spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair-soft);border:1px solid var(--hair-soft);margin-top:.5rem}
+.spec{background:var(--ivory);padding:2rem 1.9rem;position:relative}
+.spec .ic{width:34px;height:34px;color:var(--oxblood);margin-bottom:1.1rem}
+.spec .ic svg{width:100%;height:100%;stroke:currentColor;fill:none}
+.spec h3{font-family:"Playfair Display",serif;font-size:1.35rem;font-weight:500;margin-bottom:.6rem;color:var(--ink)}
+.spec p{font-size:.95rem;color:var(--ink-2);max-width:38ch;margin:0}
+.spec .tag{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;display:block}
+
+.house{margin-top:2.6rem;display:flex;gap:1.4rem;align-items:flex-start;padding:1.7rem 1.8rem;background:var(--ivory-2);border:1px solid var(--hair);border-radius:2px}
+.house .ic{flex:none;width:30px;height:30px;color:var(--oxblood)}
+.house .ic svg{width:100%;height:100%;stroke:currentColor;fill:none}
+.house h3{font-family:"Playfair Display",serif;font-size:1.2rem;font-weight:500;margin-bottom:.35rem;color:var(--ink)}
+.house p{font-size:.94rem;color:var(--ink-2);margin:0;max-width:56ch}
+
+/* ---------- AFSPRAAK ---------- */
+.appt{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.appt .lede2{font-size:1.1rem;color:var(--ink-2);margin-bottom:2rem;max-width:42ch;font-weight:300}
+.appt-actions{display:flex;flex-direction:column;gap:1.3rem;align-items:flex-start}
+.appt-card{
+  background:var(--oxblood);color:var(--ivory);padding:2.2rem 2rem;border-radius:2px;position:relative;
+  border:1px solid var(--oxblood);
+}
+.appt-card::after{content:"";position:absolute;inset:9px;border:1px solid rgba(201,173,130,.25);pointer-events:none}
+.appt-card h3{font-family:"Playfair Display",serif;color:var(--ivory);font-size:1.35rem;font-weight:500;margin-bottom:1.5rem;position:relative;z-index:1}
+.appt-card dl{display:flex;flex-direction:column;gap:1.05rem;position:relative;z-index:1}
+.appt-card .row{display:flex;gap:.85rem;align-items:flex-start}
+.appt-card .row svg{width:16px;height:16px;flex:none;margin-top:.28rem;color:var(--gold-soft);stroke:currentColor}
+.appt-card dt{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.15rem}
+.appt-card dd{font-size:.96rem;color:rgba(248,243,236,.92);line-height:1.5}
+.appt-card dd a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--gold-soft)}
+.appt-card .pay{margin-top:1.6rem;padding-top:1.3rem;border-top:1px solid rgba(201,173,130,.28);font-size:.8rem;letter-spacing:.04em;color:rgba(201,173,130,.85);position:relative;z-index:1;display:flex;align-items:center;gap:.55rem}
+.appt-card .pay svg{width:15px;height:15px;flex:none;stroke:currentColor}
+
+/* ---------- FOOTER ---------- */
+.foot{background:var(--oxblood-d);color:rgba(248,243,236,.8);padding:3rem 0 2.4rem;position:relative;z-index:2;margin-left:var(--sidebar)}
+.foot .shell{display:flex;flex-direction:column;gap:1.3rem}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;align-items:flex-start}
+.foot-brand{font-family:"Playfair Display",serif;font-size:1.4rem;color:var(--ivory)}
+.foot-brand span{color:var(--gold-soft)}
+.foot-cols{display:flex;flex-wrap:wrap;gap:2.4rem}
+.foot-col p,.foot-col a{font-size:.86rem;line-height:1.65;color:rgba(248,243,236,.72);display:block}
+.foot-col a:hover{color:var(--ivory)}
+.foot-col .h{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.5rem}
+.foot-div{height:1px;background:rgba(201,173,130,.22)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.78rem;color:rgba(248,243,236,.6);line-height:1.6}
+.foot-bottom .swd a{color:var(--gold-soft)}
+.foot-bottom .swd a:hover{color:var(--ivory);text-decoration:underline;text-underline-offset:2px}
+.foot-note{font-size:.78rem;color:rgba(248,243,236,.55);font-style:italic;line-height:1.6;max-width:62ch}
+
+/* ============================================================
+   RESPONSIEF
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--sidebar:230px}
+  .anchor-nav a{font-size:.78rem}
+}
+@media (max-width:880px){
+  .sidebar{display:none}
+  .topbar{display:flex}
+  .content{margin-left:0}
+  .foot{margin-left:0}
+  .appt{grid-template-columns:1fr;gap:2.4rem}
+  .spec-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:.99rem;line-height:1.8}
+  .carte-item{grid-template-columns:1fr;gap:.5rem}
+  .carte-name .nm::after{display:none}
+  .carte-dur{padding-left:0;background:transparent;font-size:.84rem;color:var(--gold);letter-spacing:.06em}
+  .carte-name .nm{font-size:1.1rem}
+  .timeline li{grid-template-columns:1fr;gap:.5rem}
+  .tl-year{font-size:.98rem}
+  .hero-meta{gap:1.3rem 2rem}
+  .atelier-strip{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:.4rem}
+  .atelier-strip .cap.r{text-align:left}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<a href="#hero" class="skip">Direct naar de inhoud</a>
+
+<!-- ============== MOBIELE BOVENBALK ============== -->
+<div class="topbar">
+  <div class="tb-brand">
+    <!-- ✏️ FOTO/LOGO: waxzegel-monogram nu als CSS-placeholder; later het echte LOES.-logo -->
+    <span class="tb-seal"><span>L.</span></span>
+    <span class="tb-name">LOES.</span>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileNav">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobiele navigatie">
+  <a href="#hero"><span class="num">01</span> Welkom</a>
+  <a href="#over"><span class="num">02</span> Over LOES.</a>
+  <a href="#behandelingen"><span class="num">03</span> Behandelingen</a>
+  <a href="#specialisaties"><span class="num">04</span> Specialisaties</a>
+  <a href="#afspraak"><span class="num">05</span> Afspraak</a>
+</nav>
+
+<!-- ============== VASTE LINKER ZIJBALK ============== -->
+<aside class="sidebar" aria-label="Studio-navigatie">
+  <div class="brandmark">
+    <!-- ✏️ FOTO/LOGO: waxzegel-monogram is een CSS-placeholder; vervang door het echte LOES.-merkteken -->
+    <div class="seal" aria-hidden="true"><span>L.</span></div>
+    <div>
+      <div class="brand-name"><b>LOES.</b></div>
+      <div class="brand-sub">Schoonheidsstudio</div>
+    </div>
+  </div>
+
+  <nav class="anchor-nav" id="anchorNav" aria-label="Hoofdnavigatie">
+    <ul>
+      <li><a href="#hero" data-spy="hero"><span class="num">01</span><span class="tick"></span>Welkom</a></li>
+      <li><a href="#over" data-spy="over"><span class="num">02</span><span class="tick"></span>Over LOES.</a></li>
+      <li><a href="#behandelingen" data-spy="behandelingen"><span class="num">03</span><span class="tick"></span>Behandelingen</a></li>
+      <li><a href="#specialisaties" data-spy="specialisaties"><span class="num">04</span><span class="tick"></span>Specialisaties</a></li>
+      <li><a href="#afspraak" data-spy="afspraak"><span class="num">05</span><span class="tick"></span>Afspraak</a></li>
+    </ul>
+  </nav>
+
+  <div class="side-contact">
+    <div class="div"></div>
+    <a href="tel:+31683200395">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      06 83 200 395
+    </a>
+    <a href="mailto:info@loespunt.nl">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      info@loespunt.nl
+    </a>
+    <p>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      Cornelia Schefferlaan 14, Enschede
+    </p>
+    <p class="note">Alleen op afspraak — zeven dagen per week bereikbaar</p>
+  </div>
+</aside>
+
+<!-- ============== RECHTER INHOUDSKOLOM ============== -->
+<main class="content" id="top">
+
+  <!-- ---------- HERO / INTRO ---------- -->
+  <section id="hero" class="hero">
+    <div class="shell">
+      <span class="label">Schoonheidsstudio · Enschede</span>
+      <h1>Frans vakmanschap voor uw huid, in alle <em>rust</em> en aandacht.</h1>
+      <p class="lede">LOES. is het persoonlijke atelier van Marloes Berkien — ruim eenendertig jaar schoonheidsspecialiste, opgeleid in de Parijse traditie. Elke behandeling begint met een huidanalyse, zodat de verzorging precies bij u past. Voor vrouwen én mannen.</p>
+      <div class="hero-cta">
+        <a class="btn-solid" href="mailto:info@loespunt.nl?subject=Afspraak%20aanvragen%20%E2%80%94%20LOES.%20schoonheidsstudio&amp;body=Beste%20Marloes%2C%0D%0A%0D%0AGraag%20zou%20ik%20een%20afspraak%20maken%20bij%20LOES.%20schoonheidsstudio.%0D%0A%0D%0AMijn%20voorkeur%20voor%20behandeling%3A%20%0D%0AVoorkeursdag%20en%20tijd%3A%20%0D%0ATelefoonnummer%20waarop%20ik%20bereikbaar%20ben%3A%20%0D%0A%0D%0AMet%20vriendelijke%20groet%2C%0D%0A">
+          Afspraak aanvragen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn-ghost" href="#behandelingen">Bekijk de behandelingen</a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="stat"><b>31+</b><span>Jaar ervaring</span></div>
+        <div class="stat"><b>SOTHYS</b><span>Frans instituutmerk</span></div>
+        <div class="stat"><b>Parijs</b><span>Guerlain-diploma 2000</span></div>
+      </div>
+
+      <!-- ✏️ FOTO: sfeerbeeld van de studio / behandelruimte — nu een CSS-placeholder met monogram -->
+      <div class="atelier-strip" role="img" aria-label="Sfeerbeeld van schoonheidsstudio LOES. (voorbeeld)">
+        <span class="ph-mono" aria-hidden="true">L.</span>
+        <span class="cap">Het atelier</span>
+        <span class="cap r">Cornelia Schefferlaan 14 · Enschede</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- OVER LOES. + TIJDLIJN ---------- -->
+  <section id="over">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="label">Over LOES.</span>
+        <h2>Een vak dat begon in Parijs.</h2>
+      </div>
+
+      <div class="prose">
+        <p class="lead">Marloes Berkien (51) is ruim eenendertig jaar schoonheidsspecialiste. Jarenlang was zij het vertrouwde gezicht van de schoonheidssalon bij parfumerie Anny Kayser, in de binnenstad van Enschede, waar zij werkte met het huis Guerlain.</p>
+        <p>In 2000 behaalde zij in Parijs het Guerlain-praktijkvakdiploma — een opleiding in de Franse traditie van huidverzorging, waar zorgvuldigheid, ritueel en oog voor detail samenkomen. Die school draagt zij vandaag verder in haar eigen studio.</p>
+        <p>Bij LOES. werkt Marloes met SOTHYS, een vooraanstaand Frans instituutmerk. Elke behandeling start met een huidanalyse; in overleg bepaalt u samen de passende behandeling. Tot slot ontvangt u vrijblijvend advies over de juiste producten voor thuis, zodat het resultaat ook tussen de afspraken door behouden blijft.</p>
+      </div>
+
+      <div class="timeline">
+        <ol>
+          <li>
+            <div class="tl-year"><span class="dot" aria-hidden="true"></span>2000</div>
+            <div class="tl-body">
+              <h3>Guerlain-praktijkvakdiploma, Parijs</h3>
+              <p>Opgeleid in de Franse traditie van huidverzorging — de basis voor alles wat volgde.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tl-year"><span class="dot" aria-hidden="true"></span>Jarenlang</div>
+            <div class="tl-body">
+              <h3>Parfumerie Anny Kayser, Enschede</h3>
+              <p>Het vertrouwde gezicht van de schoonheidssalon in de binnenstad, werkend met het huis Guerlain.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tl-year"><span class="dot" aria-hidden="true"></span>Nu</div>
+            <div class="tl-body">
+              <h3>Eigen studio LOES.</h3>
+              <p>Een persoonlijk atelier aan de Cornelia Schefferlaan, met SOTHYS en alle tijd en aandacht voor uw huid.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- BEHANDELINGEN — CARTE ---------- -->
+  <section id="behandelingen">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="label">Behandelingen</span>
+        <h2>De carte.</h2>
+      </div>
+      <p class="carte-intro">Iedere behandeling begint met een huidanalyse. In overleg bepalen we welke verzorging het beste bij uw huid past — onderstaande tijden geven de duur van de behandeling aan.</p>
+
+      <div class="carte">
+        <div class="carte-group">
+          <h3>Gezichtsbehandelingen — SOTHYS</h3>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">SOTHYS basisbehandeling</span>
+              <span class="desc">De klassieke gezichtsbehandeling, afgestemd op uw huid.</span>
+            </div>
+            <span class="carte-dur">60 min</span>
+          </div>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">SOTHYS basisbehandeling</span>
+              <span class="desc">Uitgebreide versie met extra tijd voor reiniging en verzorging.</span>
+            </div>
+            <span class="carte-dur">90 min</span>
+          </div>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Hydradvance</span>
+              <span class="desc">Extra hydraterende behandeling voor een vochtarme huid.</span>
+            </div>
+            <span class="carte-dur">90 min</span>
+          </div>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Collagène Hyaluronique</span>
+              <span class="desc">Cosmetische anti-agingbehandeling.</span>
+            </div>
+            <span class="carte-dur">90 min</span>
+          </div>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Secret de SOTHYS</span>
+              <span class="desc">De meest complete behandeling uit het SOTHYS-ritueel.</span>
+            </div>
+            <span class="carte-dur">120 min</span>
+          </div>
+        </div>
+
+        <div class="carte-group">
+          <h3>Verfijning &amp; vitaliteit</h3>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Peeling Resurfacant</span>
+              <span class="desc">Verfijnende peeling voor een egale, frisse huid.</span>
+            </div>
+            <span class="carte-dur">60 min</span>
+          </div>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Flash Beauty</span>
+              <span class="desc">Vitaminebehandeling voor een directe, stralende boost.</span>
+            </div>
+            <span class="carte-dur">60 min</span>
+          </div>
+        </div>
+
+        <div class="carte-group">
+          <h3>Huidverbetering &amp; acne</h3>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Soin Correcteur</span>
+              <span class="desc">Acnebehandeling, gericht op een rustiger, schoner huidbeeld.</span>
+            </div>
+            <span class="carte-dur">60 min</span>
+          </div>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Acnebehandeling voor jongeren</span>
+              <span class="desc">Een toegankelijke, kortere behandeling voor de jongere huid.</span>
+            </div>
+            <span class="carte-dur">30 min</span>
+          </div>
+        </div>
+
+        <div class="carte-group">
+          <h3>Wenkbrauwen</h3>
+
+          <div class="carte-item">
+            <div class="carte-name">
+              <span class="nm">Wenkbrauwen epileren &amp; verven</span>
+              <span class="desc">Vorm en definitie, met zorg afgestemd op uw gezicht.</span>
+            </div>
+            <span class="carte-dur">op aanvraag</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="carte-foot">Prijzen worden op aanvraag of tijdens uw afspraak besproken. Na elke behandeling ontvangt u vrijblijvend advies over de juiste producten voor thuisgebruik.</p>
+    </div>
+  </section>
+
+  <!-- ---------- SPECIALISATIES ---------- -->
+  <section id="specialisaties">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="label">Specialisaties</span>
+        <h2>Waar LOES. zich in onderscheidt.</h2>
+      </div>
+
+      <div class="spec-grid">
+        <div class="spec">
+          <span class="tag">Vorm &amp; definitie</span>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13c3-5 7.5-5 10-5s7 0 10 5"/><path d="M2 13c3 3 7.5 3 10 3s7 0 10-3"/></svg>
+          </div>
+          <h3>Wenkbrauwen epileren</h3>
+          <p>Een nauwkeurig oog voor de juiste vorm — subtiel, verzorgd en passend bij uw gezicht.</p>
+        </div>
+
+        <div class="spec">
+          <span class="tag">Huidverbetering</span>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 9.5h.01M15 9h.01M9.5 14.5h.01M14 15h.01M12 12h.01"/></svg>
+          </div>
+          <h3>Acnebehandelingen</h3>
+          <p>Gerichte verzorging voor een rustiger, schoner huidbeeld — ook met aandacht voor de jongere huid.</p>
+        </div>
+      </div>
+
+      <div class="house">
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c2.5 3 4 5.2 4 8a4 4 0 0 1-8 0c0-2.8 1.5-5 4-8Z"/><path d="M7 21c1.5-2 3-2.8 5-2.8s3.5.8 5 2.8"/></svg>
+        </div>
+        <div>
+          <h3>Het huis SOTHYS</h3>
+          <p>LOES. werkt met SOTHYS, een vooraanstaand Frans instituutmerk. Elke behandeling start met een huidanalyse en wordt in overleg op maat bepaald — met vrijblijvend productadvies voor thuis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- AFSPRAAK ---------- -->
+  <section id="afspraak">
+    <div class="shell">
+      <div class="appt">
+        <div>
+          <div class="sec-head">
+            <span class="label">Afspraak</span>
+            <h2>Maak kennis met uw huid.</h2>
+          </div>
+          <p class="lede2">LOES. werkt uitsluitend op afspraak en is zeven dagen per week bereikbaar. Bel, mail of stuur uw aanvraag — dan plannen we samen een rustig moment voor uw behandeling.</p>
+          <div class="appt-actions">
+            <a class="btn-solid" href="mailto:info@loespunt.nl?subject=Afspraak%20aanvragen%20%E2%80%94%20LOES.%20schoonheidsstudio&amp;body=Beste%20Marloes%2C%0D%0A%0D%0AGraag%20zou%20ik%20een%20afspraak%20maken%20bij%20LOES.%20schoonheidsstudio.%0D%0A%0D%0AMijn%20voorkeur%20voor%20behandeling%3A%20%0D%0AVoorkeursdag%20en%20tijd%3A%20%0D%0ATelefoonnummer%20waarop%20ik%20bereikbaar%20ben%3A%20%0D%0A%0D%0AMet%20vriendelijke%20groet%2C%0D%0A">
+              Afspraak aanvragen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn-ghost" href="tel:+31683200395">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              Bel 06 83 200 395
+            </a>
+          </div>
+        </div>
+
+        <div class="appt-card">
+          <h3>Bezoek &amp; contact</h3>
+          <dl>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <dt>Adres</dt>
+                <dd>Cornelia Schefferlaan 14<br>7545 RZ Enschede</dd>
+              </div>
+            </div>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div>
+                <dt>Openingstijden</dt>
+                <dd>Alleen op afspraak<br>Zeven dagen per week bereikbaar</dd>
+              </div>
+            </div>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <div>
+                <dt>Telefoon</dt>
+                <dd><a href="tel:+31683200395">06 83 200 395</a></dd>
+              </div>
+            </div>
+            <div class="row">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <div>
+                <dt>E-mail</dt>
+                <dd><a href="mailto:info@loespunt.nl">info@loespunt.nl</a></dd>
+              </div>
+            </div>
+          </dl>
+          <p class="pay">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            Pinnen is mogelijk
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">LOES. <span>schoonheidsstudio</span></div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <p class="h">Bezoek</p>
+          <p>Cornelia Schefferlaan 14<br>7545 RZ Enschede</p>
+          <p>Alleen op afspraak<br>Zeven dagen per week bereikbaar</p>
+        </div>
+        <div class="foot-col">
+          <p class="h">Contact</p>
+          <a href="tel:+31683200395">06 83 200 395</a>
+          <a href="mailto:info@loespunt.nl">info@loespunt.nl</a>
+          <p>Pinnen mogelijk</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-div"></div>
+
+    <p class="foot-note">Dit is een vrijblijvend voorbeeldontwerp; teksten en foto's worden in overleg met LOES. schoonheidsstudio ingevuld.</p>
+
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> LOES. schoonheidsstudio · Enschede</span>
+      <span class="swd">Voorbeeldontwerp door Sage Website Design · <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">sagek17.github.io/swd</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // jaartal in footer
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // ---- mobiel menu ----
+  var toggle = document.getElementById("menuToggle");
+  var mnav = document.getElementById("mobileNav");
+  if (toggle && mnav){
+    toggle.addEventListener("click", function(){
+      var open = mnav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+    });
+    // sluit na klik op een link
+    mnav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        mnav.classList.remove("open");
+        toggle.setAttribute("aria-expanded","false");
+        toggle.setAttribute("aria-label","Menu openen");
+      });
+    });
+  }
+
+  // ---- scroll-spy voor verticale anker-navigatie ----
+  var links = Array.prototype.slice.call(document.querySelectorAll('#anchorNav a[data-spy]'));
+  var sections = links
+    .map(function(a){ return document.getElementById(a.getAttribute("data-spy")); })
+    .filter(Boolean);
+
+  function setActive(id){
+    links.forEach(function(a){
+      a.classList.toggle("active", a.getAttribute("data-spy") === id);
+    });
+  }
+
+  if ("IntersectionObserver" in window && sections.length){
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        visible[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0;
+      });
+      // kies de sectie met de grootste zichtbaarheid
+      var best = null, bestR = 0;
+      sections.forEach(function(s){
+        var r = visible[s.id] || 0;
+        if (r > bestR){ bestR = r; best = s.id; }
+      });
+      if (best) setActive(best);
+    }, { rootMargin:"-45% 0px -45% 0px", threshold:[0,.25,.5,.75,1] });
+
+    sections.forEach(function(s){ io.observe(s); });
+  } else {
+    // eenvoudige fallback
+    setActive("hero");
+  }
+})();
+</script>
+</body>
+</html>
