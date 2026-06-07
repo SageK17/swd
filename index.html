@@ -228,9 +228,26 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 .foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:"Space Mono";font-size:.8rem;color:var(--muted-d)}
 .foot-bottom a{color:var(--muted)}.foot-bottom a:hover{color:var(--accent)}
 
+/* hero headline: line-by-line mask reveal */
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.12em}
+.hero h1 .line>span{display:inline-block;transform:translateY(118%);animation:lineUp .95s var(--ease) forwards}
+.hero h1 .line:nth-child(1)>span{animation-delay:.10s}
+.hero h1 .line:nth-child(2)>span{animation-delay:.22s}
+.hero h1 .line:nth-child(3)>span{animation-delay:.34s}
+@keyframes lineUp{to{transform:none}}
+.hero h1 .rot{min-width:5ch}
+/* nav link underline draw-in */
+.navlinks a{position:relative}
+.navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.navlinks a:hover::after{transform:scaleX(1);transform-origin:left}
+/* primary button sheen on hover */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::before{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
+.btn-primary:hover::before{animation:sheen .75s var(--ease)}
+@keyframes sheen{to{left:140%}}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.up{opacity:1;transform:none}.aurora{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.up,.hero h1 .line>span{opacity:1;transform:none}.aurora{display:none}}
 </style>
 </head>
 <body>
@@ -271,7 +288,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
   <div class="veil"></div>
   <div class="wrap">
     <span class="tagline up d1"><span class="pulse"></span> Webdesignstudio · Enschede, NL</span>
-    <h1 class="up d2">Websites die<br><span class="rot" id="rot">klanten</span><br>opleveren.</h1>
+    <h1>
+      <span class="line"><span>Websites die</span></span>
+      <span class="line"><span><span class="rot" id="rot">klanten</span></span></span>
+      <span class="line"><span>opleveren.</span></span>
+    </h1>
     <p class="lead up d3">Sage Website Design ontwerpt snelle, opvallende websites voor lokale ondernemers — strak op mobiel, vindbaar in Google, en betaalbaar. <b>Je krijgt eerst een gratis voorbeeld. Pas tevreden? Dan gaan we live.</b></p>
     <div class="hero-actions up d4">
       <a href="#contact" class="btn btn-primary btn-lg magnetic">Vraag je gratis voorbeeld aan
@@ -486,12 +507,35 @@ mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeM));
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
 
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const rot=document.getElementById('rot'), words=['klanten','omzet','vertrouwen','aandacht','jou'];
-let wi=0;
-setInterval(()=>{wi=(wi+1)%words.length;rot.style.animation='none';void rot.offsetWidth;rot.textContent=words[wi];rot.style.animation='rotin .6s var(--ease)';},2300);
+const glyphs='ABCDEFGHIJKLMNPQRSTUVWXYZ0123456789#%&@/';
+let wi=0, scr;
+function scrambleTo(next){
+  clearInterval(scr); let f=0;
+  scr=setInterval(()=>{
+    var done=Math.floor(f/2), out='';
+    for(var i=0;i<next.length;i++){ out += i<done ? next[i] : glyphs[Math.floor(Math.random()*glyphs.length)]; }
+    rot.textContent=out; f++;
+    if(done>=next.length){ clearInterval(scr); rot.textContent=next; }
+  },45);
+}
+if(window.__swdRot)clearInterval(window.__swdRot);
+window.__swdRot=setInterval(()=>{wi=(wi+1)%words.length; if(reduceMotion){rot.textContent=words[wi];} else {scrambleTo(words[wi]);}},2600);
 
 const hero=document.getElementById('top');
 hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');hero.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')});
+
+/* subtle hero parallax: content drifts + fades, aurora trails slower */
+const heroWrap=document.querySelector('.hero .wrap'), auroraEl=document.querySelector('.aurora');
+if(!reduceMotion && heroWrap){
+  addEventListener('scroll',()=>{
+    const y=scrollY; if(y>innerHeight) return;
+    heroWrap.style.transform='translateY('+(y*0.15)+'px)';
+    heroWrap.style.opacity=String(Math.max(0,1-y/(innerHeight*0.85)));
+    if(auroraEl) auroraEl.style.transform='translate3d(0,'+(y*0.28)+'px,0)';
+  },{passive:true});
+}
 
 const fmt=(el,v)=>{el.textContent=(el.dataset.prefix||'')+v+(el.dataset.suffix||'')};
 const cio=new IntersectionObserver((es)=>es.forEach(e=>{
