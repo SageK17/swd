@@ -85,16 +85,6 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:250;opacity:0;pointer-events:none;transition:.3s}
 .overlay.show{opacity:1;pointer-events:auto}
 
-/* intro logo-reveal (full-screen) */
-.intro{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;transition:opacity .55s var(--ease)}
-.intro,.intro *{cursor:pointer!important}
-.intro.hide{opacity:0;pointer-events:none}
-.intro video{width:100vw;height:100vh;object-fit:contain;display:block}
-.intro-skip{position:absolute;top:22px;right:22px;display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.45);color:#fff;font:700 .95rem "Manrope",sans-serif;padding:.7rem 1.4rem;border-radius:100px;backdrop-filter:blur(6px);transition:.2s;z-index:1}
-.intro-skip:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:scale(1.04)}
-.intro-skip svg{width:16px;height:16px}
-.intro-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font:600 .78rem "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.7;pointer-events:none}
-
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:"Manrope";font-weight:700;font-size:1rem;padding:1rem 1.7rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s var(--ease),box-shadow .3s,background .2s,color .2s,border-color .2s;will-change:transform}
 .btn svg{width:18px;height:18px}
@@ -115,7 +105,10 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 @keyframes drift{to{transform:translate(6%,10%) scale(1.2)}}
 .hero .veil{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 8%,rgba(10,10,12,.55) 48%,transparent 86%),linear-gradient(0deg,var(--bg),transparent 40%)}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(420px circle at var(--mx,72%) var(--my,32%), rgba(255,255,255,.07), transparent 60%);pointer-events:none}
-.hero .wrap{position:relative;z-index:2}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.92fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-media{display:flex;justify-content:center}
+.hero-vid{width:100%;max-width:460px;aspect-ratio:1/1;height:auto;border-radius:26px;display:block;background:var(--bg);box-shadow:0 30px 80px -30px rgba(255,46,126,.45)}
+@media(max-width:880px){.hero .wrap{grid-template-columns:1fr}.hero-media{display:none}}
 .hero .tagline{display:inline-flex;align-items:center;gap:.6rem;font-family:"Space Mono";font-size:.74rem;letter-spacing:.1em;color:var(--text-soft);background:rgba(255,255,255,.05);border:1px solid var(--line);padding:.5rem 1rem;border-radius:100px;margin-bottom:1.9rem}
 .hero .tagline .pulse{width:8px;height:8px;border-radius:50%;background:#36d17a;box-shadow:0 0 0 0 rgba(54,209,122,.6);animation:pp 2s infinite}
 @keyframes pp{70%{box-shadow:0 0 0 8px rgba(54,209,122,0)}100%{box-shadow:0 0 0 0 rgba(54,209,122,0)}}
@@ -264,16 +257,6 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 </head>
 <body>
 
-<div class="intro" id="intro" style="display:none" aria-hidden="true">
-  <video id="introVid" muted playsinline preload="auto">
-    <source src="assets/swd-logo-reveal.mp4" type="video/mp4" />
-  </video>
-  <button class="intro-skip" id="introSkip" type="button">Overslaan
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
-  </button>
-  <div class="intro-hint">Klik ergens om over te slaan</div>
-</div>
-
 <div class="grain"></div>
 <div class="progress" id="progress"></div>
 
@@ -308,6 +291,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
   <div class="aurora"><i></i><i></i><i></i></div>
   <div class="veil"></div>
   <div class="wrap">
+    <div class="hero-copy">
     <span class="tagline up d1"><span class="pulse"></span> Webdesignstudio · Enschede, NL</span>
     <h1>
       <span class="line"><span>Websites die</span></span>
@@ -321,6 +305,12 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
       <a href="#werk" class="btn btn-out btn-lg">Bekijk ons werk</a>
     </div>
     <div class="scrolldown up d5"><span class="ln"></span> scroll</div>
+    </div>
+    <div class="hero-media" aria-hidden="true">
+      <video id="heroVid" class="hero-vid" muted playsinline preload="auto">
+        <source src="assets/swd-logo-reveal.mp4" type="video/mp4" />
+      </video>
+    </div>
   </div>
 </section>
 
@@ -605,30 +595,12 @@ if(matchMedia('(pointer:fine)').matches){
   });
 })();
 
-/* one-time logo-reveal intro (muted, skippable, reduced-motion-safe) */
+/* hero brand reveal: autoplay once muted (reduced-motion: hold last frame) */
 (function(){
-  var intro=document.getElementById('intro'); if(!intro) return;
-  var seen=null; try{seen=sessionStorage.getItem('swd_intro_seen')}catch(e){}
-  if(reduceMotion||seen){ intro.remove(); return; }
-  var vid=document.getElementById('introVid'), skip=document.getElementById('introSkip'), done=false;
-  function end(){
-    if(done) return; done=true;
-    try{sessionStorage.setItem('swd_intro_seen','1')}catch(e){}
-    intro.classList.add('hide');
-    document.documentElement.style.overflow='';
-    setTimeout(function(){ if(intro&&intro.parentNode) intro.remove(); },650);
-  }
-  document.documentElement.style.overflow='hidden';
-  intro.style.display='grid';
-  if(vid){
-    vid.muted=true;
-    var pr=vid.play(); if(pr&&pr.catch) pr.catch(function(){});
-    vid.addEventListener('ended',end);
-  }
-  if(skip) skip.addEventListener('click',function(e){ e.stopPropagation(); end(); });
-  intro.addEventListener('click',end);
-  addEventListener('keydown',end);
-  setTimeout(end,6500);
+  var hv=document.getElementById('heroVid'); if(!hv) return;
+  hv.muted=true;
+  if(reduceMotion){ hv.addEventListener('loadeddata',function(){try{hv.currentTime=Math.max(0,(hv.duration||5)-0.05)}catch(e){}}); hv.load(); return; }
+  var p=hv.play(); if(p&&p.catch)p.catch(function(){});
 })();
 </script>
 </body>
