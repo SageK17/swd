@@ -116,9 +116,9 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 .credit a:hover{color:#fff}
 
 /* reveal */
-.up{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.up.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.up{opacity:1;transform:none}.strip .run{animation:none}}
+.up.in{animation:rise .7s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.up.in{animation:none}.strip .run{animation:none}}
 </style>
 </head>
 <body>
