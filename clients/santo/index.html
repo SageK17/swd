@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SANTO — Drop 001 · Signature Longsleeves</title>
+<meta name="description" content="SANTO — contemporary streetwear uit Nederland. Signature longsleeves, 180 GSM 100% organic cotton, oversized fit. Drop 001 nu live." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#0b0b0c; --ink-2:#121214; --paper:#f4f2ec; --grey:#8d8d92; --grey-d:#5d5d62;
+  --line:rgba(255,255,255,.13); --line-2:rgba(255,255,255,.22);
+  --maxw:1280px; --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Archivo",system-ui,sans-serif;background:var(--ink);color:#ece9e3;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.mono{font-family:"Space Mono",monospace}
+h1,h2,h3{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:-.02em;line-height:.95;text-transform:uppercase;color:#fff}
+.label{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--grey)}
+
+/* announce */
+.announce{background:#fff;color:#0b0b0c;text-align:center;font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;padding:9px 12px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(11,11,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{font-family:"Archivo";font-weight:900;font-size:1.5rem;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em;color:#fff}
+.navlinks{display:flex;gap:2.2rem;align-items:center}
+.navlinks a{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);transition:color .2s}
+.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:.85rem 1.5rem;border:1px solid var(--line-2);border-radius:2px;transition:.25s var(--ease);background:transparent;color:#fff;cursor:pointer}
+.btn:hover{background:#fff;color:#0b0b0c;border-color:#fff}
+.btn-solid{background:#fff;color:#0b0b0c;border-color:#fff}
+.btn-solid:hover{background:transparent;color:#fff;border-color:#fff}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;filter:grayscale(.15) contrast(1.05)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.1) 35%,rgba(11,11,12,.85) 100%)}
+.hero .inner{position:relative;z-index:2;width:100%;padding-bottom:6vh}
+.hero .label{color:#d9d6d0;margin-bottom:1.4rem}
+.hero h1{font-size:clamp(4.2rem,17vw,15rem);letter-spacing:-.04em}
+.hero p{max-width:46ch;color:#d6d3cd;margin:1.6rem 0 2.2rem;font-size:1.05rem;letter-spacing:.01em}
+.hero .cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* marquee */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0;background:var(--ink-2)}
+.strip .run{display:inline-block;animation:run 26s linear infinite;font-family:"Archivo";font-weight:900;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em;color:#fff}
+.strip .run span{opacity:.32;margin:0 .5em}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* section */
+.section{padding:clamp(70px,9vw,130px) 0}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:48px;flex-wrap:wrap}
+.shead h2{font-size:clamp(2.4rem,6vw,4.6rem)}
+
+/* products */
+.drop{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.card{position:relative;background:var(--ink-2);border:1px solid var(--line);overflow:hidden}
+.card .ph{position:relative;aspect-ratio:4/5;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease);filter:grayscale(.1)}
+.card:hover .ph img{transform:scale(1.04)}
+.card .tag{position:absolute;top:16px;left:16px;z-index:2;background:#fff;color:#0b0b0c;font-family:"Space Mono";font-size:.62rem;font-weight:700;letter-spacing:.14em;padding:5px 10px}
+.card .body{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;gap:1rem}
+.card .body h3{font-size:1.4rem;letter-spacing:-.01em}
+.card .price{font-family:"Space Mono";font-size:1rem;color:#fff;white-space:nowrap}
+.card .price s{color:var(--grey-d);margin-right:.5em}
+.card .body .buy{font-family:"Space Mono";font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--line-2);padding-bottom:3px;transition:.2s}
+.card:hover .body .buy{border-color:#fff}
+@media(max-width:760px){.drop{grid-template-columns:1fr}}
+
+/* specs */
+.specs{background:var(--paper);color:#0b0b0c}
+.specs .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.specs h2{color:#0b0b0c;font-size:clamp(2.2rem,5vw,3.8rem)}
+.specs .label{color:var(--grey-d)}
+.specs ul{list-style:none;margin-top:32px;border-top:1px solid rgba(0,0,0,.14)}
+.specs li{display:flex;justify-content:space-between;gap:1rem;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.14);font-family:"Space Mono";font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+.specs li span:last-child{color:#0b0b0c;font-weight:700}
+.specs .pic{aspect-ratio:4/5;overflow:hidden}
+.specs .pic img{width:100%;height:100%;object-fit:cover}
+@media(max-width:760px){.specs .wrap{grid-template-columns:1fr;gap:34px}}
+
+/* lookbook */
+.look{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
+.look a{position:relative;overflow:hidden;background:var(--ink-2)}
+.look img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease);filter:grayscale(.18)}
+.look a:hover img{transform:scale(1.05);filter:grayscale(0)}
+.look .big{grid-column:span 2;grid-row:span 2}
+.look .tall{grid-row:span 2}
+@media(max-width:760px){.look{grid-template-columns:1fr 1fr;grid-auto-rows:200px}.look .big{grid-column:span 2}}
+
+/* statement / cta band */
+.band{text-align:center;padding:clamp(80px,12vw,160px) 0;border-top:1px solid var(--line)}
+.band h2{font-size:clamp(3rem,11vw,9rem);letter-spacing:-.04em}
+.band p{color:var(--grey);max-width:40ch;margin:1.4rem auto 2.4rem}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:60px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+.foot .brand{font-size:1.2rem}
+.foot .col h4{font-family:"Space Mono";font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:14px;font-weight:700}
+.foot .col a{display:block;font-size:.9rem;color:#cfccc6;margin-bottom:8px;transition:.2s}
+.foot .col a:hover{color:#fff}
+.foot-bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:"Space Mono";font-size:.7rem;letter-spacing:.06em;color:var(--grey-d)}
+.foot-bottom a{color:var(--grey)}
+.credit{opacity:.8}
+.credit a:hover{color:#fff}
+
+/* reveal */
+.up{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.up{opacity:1;transform:none}.strip .run{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="announce">DROP 001 — NU LIVE · GRATIS VERZENDING IN NL VANAF €75 · 100% ORGANIC COTTON</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">SANTO</a>
+    <nav class="navlinks">
+      <a href="#drop">Drop 001</a>
+      <a href="#kwaliteit">Kwaliteit</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="https://shopsanto.com/" target="_blank" rel="noopener">Shop</a>
+    </nav>
+    <a href="https://shopsanto.com/" target="_blank" rel="noopener" class="btn btn-solid">Shop nu</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="bg" src="img/zwart-pers.jpg" alt="Model draagt de SANTO Black Signature Longsleeve" />
+  <div class="veil"></div>
+  <div class="wrap inner">
+    <div class="label up">Drop 001 — Signature Series</div>
+    <h1 class="up">SANTO</h1>
+    <p class="up">Signature longsleeves in zwart en wit. 180 GSM, 100% organic cotton, oversized fit. Gemaakt om gedragen te worden, niet om in de kast te liggen.</p>
+    <div class="cta-row up">
+      <a href="https://shopsanto.com/" target="_blank" rel="noopener" class="btn btn-solid">Shop de drop</a>
+      <a href="#drop" class="btn">Bekijk de stukken</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="run">SANTO<span>✶</span>DROP 001<span>✶</span>ORGANIC COTTON<span>✶</span>OVERSIZED FIT<span>✶</span>SANTO<span>✶</span>DROP 001<span>✶</span>ORGANIC COTTON<span>✶</span>OVERSIZED FIT<span>✶</span></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section" id="drop">
+  <div class="wrap">
+    <div class="shead up">
+      <div>
+        <div class="label" style="margin-bottom:14px">De Drop</div>
+        <h2>Twee stuks.<br>Eén statement.</h2>
+      </div>
+      <a href="https://shopsanto.com/" target="_blank" rel="noopener" class="btn">Alles bekijken</a>
+    </div>
+    <div class="drop">
+      <a class="card up" href="https://shopsanto.com/products/santo-black-signature-longsleeve" target="_blank" rel="noopener">
+        <span class="tag">DROP 001</span>
+        <div class="ph"><img src="img/zwart-1.jpg" alt="SANTO Black Signature Longsleeve" /></div>
+        <div class="body">
+          <div><h3>Black Signature Longsleeve</h3><div class="label" style="margin-top:6px">180 GSM · Oversized</div></div>
+          <div style="text-align:right"><div class="price"><s>€70,00</s>€59,95</div><div class="buy" style="margin-top:8px">Shop →</div></div>
+        </div>
+      </a>
+      <a class="card up" href="https://shopsanto.com/products/santo-pink-signature-longsleeve" target="_blank" rel="noopener">
+        <span class="tag">DROP 001</span>
+        <div class="ph"><img src="img/wit-1.jpg" alt="SANTO White Signature Longsleeve" /></div>
+        <div class="body">
+          <div><h3>White Signature Longsleeve</h3><div class="label" style="margin-top:6px">180 GSM · Oversized</div></div>
+          <div style="text-align:right"><div class="price"><s>€70,00</s>€59,95</div><div class="buy" style="margin-top:8px">Shop →</div></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs" id="kwaliteit">
+  <div class="wrap section">
+    <div class="wrap" style="padding:0">
+      <div class="wrap" style="padding:0;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center" >
+        <div class="up">
+          <div class="label">De kwaliteit</div>
+          <h2 style="margin-top:14px">Zwaar katoen.<br>Geen compromis.</h2>
+          <p style="margin-top:18px;color:#3a3a3e;max-width:46ch">Elke longsleeve is gemaakt van stevig 180 GSM 100% organic cotton met een bewust oversized fit. Het SANTO-logo wordt op de mouw gescreenprint, het embleem op de rug. Draagbaar, duurzaam, en gemaakt om te blijven.</p>
+          <ul>
+            <li><span>Materiaal</span><span>180 GSM · 100% Organic Cotton</span></li>
+            <li><span>Fit</span><span>Oversized</span></li>
+            <li><span>Print</span><span>Screenprinted logo &amp; emblem</span></li>
+            <li><span>Model</span><span>182 cm · draagt maat M</span></li>
+          </ul>
+        </div>
+        <div class="pic up"><img src="img/wit-pers.jpg" alt="Detail van de SANTO longsleeve" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section class="section" id="lookbook">
+  <div class="wrap">
+    <div class="shead up">
+      <div><div class="label" style="margin-bottom:14px">Lookbook</div><h2>Drop 001</h2></div>
+      <a href="https://www.instagram.com/santo_clo/" target="_blank" rel="noopener" class="btn">@santo_clo</a>
+    </div>
+    <div class="look up">
+      <a class="big" href="https://shopsanto.com/" target="_blank" rel="noopener"><img src="img/zwart-pers.jpg" alt="SANTO lookbook" /></a>
+      <a class="tall" href="https://shopsanto.com/" target="_blank" rel="noopener"><img src="img/wit-2.jpg" alt="SANTO lookbook" /></a>
+      <a href="https://shopsanto.com/" target="_blank" rel="noopener"><img src="img/zwart-2.jpg" alt="SANTO lookbook" /></a>
+      <a href="https://shopsanto.com/" target="_blank" rel="noopener"><img src="img/wit-1.jpg" alt="SANTO lookbook" /></a>
+      <a class="tall" href="https://shopsanto.com/" target="_blank" rel="noopener"><img src="img/zwart-1.jpg" alt="SANTO lookbook" /></a>
+      <a href="https://shopsanto.com/" target="_blank" rel="noopener"><img src="img/wit-pers.jpg" alt="SANTO lookbook" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section class="band">
+  <div class="wrap">
+    <div class="label up" style="margin-bottom:20px">Limited — Drop 001</div>
+    <h2 class="up">Draag de drop.</h2>
+    <p class="up">Wanneer het op is, is het op. Geen restock, geen ruis.</p>
+    <a href="https://shopsanto.com/" target="_blank" rel="noopener" class="btn btn-solid up">Shop nu</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="brand">SANTO</div>
+        <p style="color:var(--grey);max-width:30ch;margin-top:14px;font-size:.9rem">Contemporary streetwear. Drop 001 — signature longsleeves, 100% organic cotton.</p>
+      </div>
+      <div class="col">
+        <h4>Shop</h4>
+        <a href="https://shopsanto.com/products/santo-black-signature-longsleeve" target="_blank" rel="noopener">Black Longsleeve</a>
+        <a href="https://shopsanto.com/products/santo-pink-signature-longsleeve" target="_blank" rel="noopener">White Longsleeve</a>
+        <a href="https://shopsanto.com/" target="_blank" rel="noopener">Alle producten</a>
+      </div>
+      <div class="col">
+        <h4>Volg</h4>
+        <a href="https://www.instagram.com/santo_clo/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@santo_clothing" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 SANTO — Alle rechten voorbehouden</span>
+      <span class="credit">Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.up').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
