@@ -13,7 +13,8 @@
 <title>Sage Website Design — Studio voor moderne websites · Enschede</title>
 <meta name="description" content="Sage Website Design is een onafhankelijke webdesignstudio in Enschede. Snelle, opvallende websites voor lokale ondernemers. Gratis voorbeeld vooraf — je betaalt pas als je tevreden bent." />
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ff7a3c'/><stop offset='1' stop-color='%23ff2e7e'/></linearGradient></defs><rect width='100' height='100' rx='26' fill='url(%23g)'/><text x='50' y='66' font-size='40' font-family='Arial' font-weight='bold' letter-spacing='-2' text-anchor='middle' fill='%230a0a0c'>swd</text></svg>" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/swd-icon-180.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,6 +58,7 @@ body.has-cursor input,body.has-cursor textarea{cursor:text}
 
 /* logo */
 .brand{display:flex;align-items:center;gap:.7rem}
+.brand-logo{height:32px;width:auto;display:block}
 .brand .mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(140deg,#ff7a3c,#ff2e7e);display:grid;place-items:center;font-family:"Sora";font-weight:800;font-size:.78rem;letter-spacing:-.2px;color:#0a0a0c;position:relative;overflow:hidden;flex:none;box-shadow:0 6px 20px -6px rgba(255,90,44,.6)}
 .brand .mark::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 30% 18%,rgba(255,255,255,.5),transparent 60%)}
 .brand .mark span{position:relative;z-index:1}
@@ -82,6 +84,13 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 .menu-close{position:absolute;top:26px;right:26px;background:none;border:0;font-size:2rem;color:#fff}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:250;opacity:0;pointer-events:none;transition:.3s}
 .overlay.show{opacity:1;pointer-events:auto}
+
+/* intro logo-reveal */
+.intro{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;transition:opacity .55s var(--ease)}
+.intro.hide{opacity:0;pointer-events:none}
+.intro video{width:min(56vmin,400px);height:auto;border-radius:20px;display:block}
+.intro-skip{position:absolute;bottom:26px;right:26px;background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--text-soft);font:600 .82rem "Manrope",sans-serif;padding:.5rem 1.05rem;border-radius:100px;cursor:pointer;transition:.2s}
+.intro-skip:hover{color:#fff;border-color:#fff}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:"Manrope";font-weight:700;font-size:1rem;padding:1rem 1.7rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s var(--ease),box-shadow .3s,background .2s,color .2s,border-color .2s;will-change:transform}
@@ -252,14 +261,20 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 </head>
 <body>
 
+<div class="intro" id="intro" style="display:none" aria-hidden="true">
+  <video id="introVid" muted playsinline preload="auto">
+    <source src="assets/swd-logo-reveal.mp4" type="video/mp4" />
+  </video>
+  <button class="intro-skip" id="introSkip" type="button">Overslaan</button>
+</div>
+
 <div class="grain"></div>
 <div class="progress" id="progress"></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="brand">
-      <span class="mark"><span>swd</span></span>
-      <span class="wm"><b>Sage</b><i>Website Design</i></span>
+    <a href="#top" class="brand" aria-label="Sage Website Design — home">
+      <img src="assets/swd-logo.svg" alt="Sage Website Design" class="brand-logo" width="89" height="32" />
     </a>
     <nav class="navlinks">
       <a href="#werk"><span class="i">01</span>Werk</a>
@@ -582,6 +597,32 @@ if(matchMedia('(pointer:fine)').matches){
       .catch(function(){if(msg){msg.style.display='block';msg.style.color='#ff6b6b';msg.textContent='Er ging iets mis. Mail ons gerust direct op swd.enschede@gmail.com.';}})
       .then(function(){if(btn){btn.disabled=false;btn.textContent=label;}});
   });
+})();
+
+/* one-time logo-reveal intro (muted, skippable, reduced-motion-safe) */
+(function(){
+  var intro=document.getElementById('intro'); if(!intro) return;
+  var seen=null; try{seen=sessionStorage.getItem('swd_intro_seen')}catch(e){}
+  if(reduceMotion||seen){ intro.remove(); return; }
+  var vid=document.getElementById('introVid'), skip=document.getElementById('introSkip'), done=false;
+  function end(){
+    if(done) return; done=true;
+    try{sessionStorage.setItem('swd_intro_seen','1')}catch(e){}
+    intro.classList.add('hide');
+    document.documentElement.style.overflow='';
+    setTimeout(function(){ if(intro&&intro.parentNode) intro.remove(); },650);
+  }
+  document.documentElement.style.overflow='hidden';
+  intro.style.display='grid';
+  if(vid){
+    vid.muted=true;
+    var pr=vid.play(); if(pr&&pr.catch) pr.catch(function(){});
+    vid.addEventListener('ended',end);
+  }
+  if(skip) skip.addEventListener('click',end);
+  intro.addEventListener('click',function(e){ if(e.target===intro) end(); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') end(); });
+  setTimeout(end,6500);
 })();
 </script>
 </body>
