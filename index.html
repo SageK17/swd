@@ -85,12 +85,15 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:250;opacity:0;pointer-events:none;transition:.3s}
 .overlay.show{opacity:1;pointer-events:auto}
 
-/* intro logo-reveal */
+/* intro logo-reveal (full-screen) */
 .intro{position:fixed;inset:0;z-index:9999;background:var(--bg);display:grid;place-items:center;transition:opacity .55s var(--ease)}
+.intro,.intro *{cursor:pointer!important}
 .intro.hide{opacity:0;pointer-events:none}
-.intro video{width:min(56vmin,400px);height:auto;border-radius:20px;display:block}
-.intro-skip{position:absolute;bottom:26px;right:26px;background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--text-soft);font:600 .82rem "Manrope",sans-serif;padding:.5rem 1.05rem;border-radius:100px;cursor:pointer;transition:.2s}
-.intro-skip:hover{color:#fff;border-color:#fff}
+.intro video{width:100vw;height:100vh;object-fit:contain;display:block}
+.intro-skip{position:absolute;top:22px;right:22px;display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.45);color:#fff;font:700 .95rem "Manrope",sans-serif;padding:.7rem 1.4rem;border-radius:100px;backdrop-filter:blur(6px);transition:.2s;z-index:1}
+.intro-skip:hover{background:rgba(255,255,255,.2);border-color:#fff;transform:scale(1.04)}
+.intro-skip svg{width:16px;height:16px}
+.intro-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font:600 .78rem "Space Mono",monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.7;pointer-events:none}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:"Manrope";font-weight:700;font-size:1rem;padding:1rem 1.7rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s var(--ease),box-shadow .3s,background .2s,color .2s,border-color .2s;will-change:transform}
@@ -265,7 +268,10 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
   <video id="introVid" muted playsinline preload="auto">
     <source src="assets/swd-logo-reveal.mp4" type="video/mp4" />
   </video>
-  <button class="intro-skip" id="introSkip" type="button">Overslaan</button>
+  <button class="intro-skip" id="introSkip" type="button">Overslaan
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="intro-hint">Klik ergens om over te slaan</div>
 </div>
 
 <div class="grain"></div>
@@ -619,9 +625,9 @@ if(matchMedia('(pointer:fine)').matches){
     var pr=vid.play(); if(pr&&pr.catch) pr.catch(function(){});
     vid.addEventListener('ended',end);
   }
-  if(skip) skip.addEventListener('click',end);
-  intro.addEventListener('click',function(e){ if(e.target===intro) end(); });
-  addEventListener('keydown',function(e){ if(e.key==='Escape') end(); });
+  if(skip) skip.addEventListener('click',function(e){ e.stopPropagation(); end(); });
+  intro.addEventListener('click',end);
+  addEventListener('keydown',end);
   setTimeout(end,6500);
 })();
 </script>
