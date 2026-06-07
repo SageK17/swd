@@ -162,6 +162,10 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 .thumb .bar i:first-child{background:#ff5f57}.thumb .bar i:nth-child(2){background:#febc2e}.thumb .bar i:nth-child(3){background:#28c840}
 .thumb .bar .url{margin-left:8px;font-family:"Space Mono";font-size:.66rem;color:var(--muted-d);background:#0a0a0c;padding:3px 12px;border-radius:6px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .thumb .tag2{position:absolute;top:42px;right:10px;z-index:3;font-family:"Space Mono";background:rgba(40,200,64,.16);color:#3fe06d;font-size:.64rem;font-weight:700;padding:3px 10px;border-radius:100px;border:1px solid rgba(63,224,109,.4)}
+.thumb .tag2.dev{background:rgba(255,176,48,.15);color:var(--accent-3);border-color:rgba(255,176,48,.42)}
+.thumb .soon{position:absolute;inset:32px 0 0 0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:radial-gradient(120% 90% at 50% 0,rgba(255,90,44,.14),transparent 60%),var(--bg-2);text-align:center;padding:1rem}
+.thumb .soon .soon-name{font-family:"Sora";font-weight:800;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+.thumb .soon .soon-label{font-family:"Space Mono";font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-3)}
 .work-body{padding:24px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
 .work-body h3{font-size:1.4rem;margin-bottom:.3rem}
 .work-body p{color:var(--muted);font-size:.9rem;line-height:1.5}
@@ -348,8 +352,8 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Geselecteerd werk</span>
-      <h2>Echte sites, live in je browser.</h2>
-      <p class="lead">Een greep uit projecten die we hebben ontworpen en gebouwd — van een internationaal B2B-merk tot lokale ondernemers. Klik om ze volledig te bekijken.</p>
+      <h2>Echt werk, in je browser.</h2>
+      <p class="lead">Een greep uit projecten die we hebben ontworpen en gebouwd, van een internationaal B2B-merk tot lokale ondernemers.</p>
     </div>
     <div class="work-grid">
       <a class="work tilt reveal" href="https://archidec.netlify.app/" target="_blank" rel="noopener" data-cursor="Live site">
@@ -358,18 +362,16 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
         <div class="work-body"><div><h3>Archi &amp; Dec Ghana</h3><p>B2B · HVAC-ductsystemen · officiële DEC-vertegenwoordiger in West-Afrika</p></div>
           <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
       </a>
-      <a class="work tilt reveal" href="https://ghanahouse.nl/" target="_blank" rel="noopener" data-cursor="Live site">
-        <div class="thumb"><div class="bar"><i></i><i></i><i></i><span class="url">ghanahouse.nl</span></div><span class="tag2">LIVE</span>
-          <iframe src="https://ghanahouse.nl/" loading="lazy" title="Ghana House" scrolling="no"></iframe></div>
-        <div class="work-body"><div><h3>Ghana House</h3><p>Extensions &amp; Barber Shop — diensten, branding &amp; boekingen</p></div>
-          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-      </a>
-      <a class="work tilt reveal" href="https://shopspecta.com/" target="_blank" rel="noopener" data-cursor="Live site">
-        <div class="thumb"><div class="bar"><i></i><i></i><i></i><span class="url">shopspecta.com</span></div><span class="tag2">LIVE</span>
+      <div class="work tilt reveal" data-cursor="In ontwikkeling">
+        <div class="thumb"><div class="bar"><i></i><i></i><i></i><span class="url">ghanahouse.nl</span></div><span class="tag2 dev">In ontwikkeling</span>
+          <div class="soon"><span class="soon-name">Ghana House</span><span class="soon-label">Binnenkort live</span></div></div>
+        <div class="work-body"><div><h3>Ghana House</h3><p>Extensions &amp; Barber Shop — diensten, branding &amp; boekingen</p></div></div>
+      </div>
+      <div class="work tilt reveal" data-cursor="In ontwikkeling">
+        <div class="thumb"><div class="bar"><i></i><i></i><i></i><span class="url">shopspecta.com</span></div><span class="tag2 dev">In ontwikkeling</span>
           <iframe src="work/specta/" loading="lazy" title="Specta" scrolling="no"></iframe></div>
-        <div class="work-body"><div><h3>Specta</h3><p>Merk &amp; webshop — "Simply Spectacular", strak en eigentijds</p></div>
-          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-      </a>
+        <div class="work-body"><div><h3>Specta</h3><p>Merk &amp; webshop — "Simply Spectacular", strak en eigentijds</p></div></div>
+      </div>
     </div>
   </div>
 </section>
