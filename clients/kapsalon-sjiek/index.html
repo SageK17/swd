@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kapsalon Sjiek — Kapper voor dames & heren in Enschede</title>
+<meta name="description" content="Kapsalon Sjiek in Enschede: een vertrouwd adres sinds 2007 voor knippen, kleuren, balayage en highlights. Kapper voor dames & heren aan de Deurningerstraat, met gratis parkeren. Maak je afspraak." />
+<meta name="theme-color" content="#B5683C" />
+
+<!-- Custom SVG data-URI favicon: copper scissors mark on cream -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F8F2E9'/%3E%3Cg fill='none' stroke='%23B5683C' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='18' cy='44' r='7'/%3E%3Ccircle cx='18' cy='20' r='7'/%3E%3Cline x1='24' y1='40' x2='50' y2='16'/%3E%3Cline x1='24' y1='24' x2='50' y2='48'/%3E%3C/g%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --cream:#F8F2E9;
+    --cream-deep:#F0E5D4;
+    --copper:#B5683C;
+    --copper-dark:#8F4E2A;
+    --copper-deep:#6E3A1E;
+    --gold:#C8A24A;
+    --gold-soft:#D9BD7B;
+    --charcoal:#2B2620;
+    --charcoal-soft:#4A4239;
+    --ink:#322C25;
+    --line:rgba(43,38,32,.14);
+    --shadow-sm:0 2px 10px rgba(60,38,20,.08);
+    --shadow-md:0 18px 44px -20px rgba(60,38,20,.42);
+    --shadow-lg:0 40px 90px -40px rgba(60,38,20,.55);
+    --serif:"DM Serif Display", Georgia, "Times New Roman", serif;
+    --sans:"Work Sans", system-ui, -apple-system, sans-serif;
+    --maxw:1180px;
+    --r:18px;
+    --r-lg:26px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  html:focus-within{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    font-family:var(--sans);
+    font-weight:400;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.65;
+    font-size:clamp(1rem,.96rem + .25vw,1.075rem);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+
+  /* warm grain/texture atmosphere */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    opacity:.5;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(200,162,74,.10), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(181,104,60,.08), transparent 46%);
+  }
+
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:.002em;color:var(--charcoal);margin:0;}
+  p{margin:0 0 1rem;}
+  a{color:var(--copper-dark);text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.1rem,5vw,2.75rem);}
+  .section{position:relative;z-index:1;padding-block:clamp(4rem,9vw,7.5rem);}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:var(--sans);
+    font-size:.74rem;font-weight:600;
+    letter-spacing:.28em;text-transform:uppercase;
+    color:var(--copper-dark);
+    margin:0 0 1.1rem;
+  }
+  .eyebrow::before{content:"";width:30px;height:1.5px;background:var(--copper);display:inline-block;border-radius:2px;}
+  .eyebrow.center{justify-content:center;}
+
+  .lead{font-size:clamp(1.08rem,1rem + .55vw,1.3rem);color:var(--charcoal-soft);max-width:54ch;}
+
+  /* ============ BUTTONS ============ */
+  .btn{
+    --bg:var(--charcoal);--fg:var(--cream);
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:var(--sans);font-weight:600;font-size:.95rem;letter-spacing:.01em;
+    padding:.92em 1.65em;
+    border-radius:100px;
+    background:var(--bg);color:var(--fg);
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s, color .3s;
+    box-shadow:var(--shadow-sm);
+    will-change:transform;
+  }
+  .btn svg{width:18px;height:18px;transition:transform .35s var(--ease);}
+  .btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+  .btn:hover svg{transform:translateX(3px);}
+  .btn.copper{--bg:var(--copper);--fg:#fff;}
+  .btn.copper:hover{background:var(--copper-dark);}
+  .btn.ghost{--bg:transparent;--fg:var(--charcoal);border-color:var(--line);box-shadow:none;}
+  .btn.ghost:hover{border-color:var(--copper);color:var(--copper-dark);}
+  .btn.light{--bg:var(--cream);--fg:var(--copper-deep);}
+
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px;}
+
+  /* ============ HEADER ============ */
+  header.site{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    transition:background .4s var(--ease), box-shadow .4s var(--ease), padding .4s var(--ease);
+    padding-block:1.15rem;
+  }
+  header.site.scrolled{
+    background:rgba(248,242,233,.86);
+    backdrop-filter:saturate(150%) blur(14px);
+    -webkit-backdrop-filter:saturate(150%) blur(14px);
+    box-shadow:0 1px 0 var(--line);
+    padding-block:.7rem;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--serif);font-size:1.4rem;color:var(--charcoal);letter-spacing:.01em;}
+  .brand .mark{
+    width:38px;height:38px;flex:none;border-radius:11px;
+    background:linear-gradient(140deg,var(--copper),var(--copper-deep));
+    display:grid;place-items:center;color:#fff;box-shadow:var(--shadow-sm);
+  }
+  .brand .mark svg{width:21px;height:21px;}
+  .brand b{font-weight:400;}
+  .brand .sub{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--copper-dark);margin-top:-2px;}
+
+  .nav-links{display:flex;align-items:center;gap:.4rem;}
+  .nav-links a.link{
+    font-family:var(--sans);font-weight:500;font-size:.94rem;color:var(--charcoal-soft);
+    padding:.5rem .85rem;border-radius:100px;position:relative;transition:color .25s;
+  }
+  .nav-links a.link::after{
+    content:"";position:absolute;left:.85rem;right:.85rem;bottom:.34rem;height:1.5px;
+    background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);border-radius:2px;
+  }
+  .nav-links a.link:hover{color:var(--charcoal);}
+  .nav-links a.link:hover::after{transform:scaleX(1);}
+  .nav-cta{margin-left:.5rem;}
+
+  .hamburger{
+    display:none;flex-direction:column;gap:5px;justify-content:center;
+    width:46px;height:46px;border:1.5px solid var(--line);border-radius:13px;
+    background:rgba(248,242,233,.6);cursor:pointer;padding:0;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--charcoal);margin-inline:auto;border-radius:2px;transition:transform .35s var(--ease),opacity .25s;}
+
+  /* mobile overlay */
+  .mobile-menu{
+    position:fixed;inset:0;z-index:55;
+    background:linear-gradient(160deg,var(--cream),var(--cream-deep));
+    display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(1.5rem,8vw,4rem);
+    transform:translateX(100%);
+    transition:transform .5s var(--ease);
+    visibility:hidden;
+  }
+  .mobile-menu.open{transform:translateX(0);visibility:visible;}
+  .mobile-menu a{
+    font-family:var(--serif);font-size:clamp(2rem,9vw,3rem);color:var(--charcoal);
+    padding:.35rem 0;border-bottom:1px solid var(--line);
+    display:flex;align-items:baseline;gap:1rem;
+    opacity:0;transform:translateY(18px);
+  }
+  .mobile-menu.open a{animation:slideUp .55s var(--ease) forwards;}
+  .mobile-menu.open a:nth-child(1){animation-delay:.08s;}
+  .mobile-menu.open a:nth-child(2){animation-delay:.15s;}
+  .mobile-menu.open a:nth-child(3){animation-delay:.22s;}
+  .mobile-menu.open a:nth-child(4){animation-delay:.29s;}
+  .mobile-menu.open a:nth-child(5){animation-delay:.36s;}
+  .mobile-menu a .n{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--copper);letter-spacing:.1em;}
+  .mobile-foot{margin-top:2.2rem;font-size:.9rem;color:var(--charcoal-soft);opacity:0;}
+  .mobile-menu.open .mobile-foot{animation:slideUp .55s var(--ease) .44s forwards;}
+  @keyframes slideUp{to{opacity:1;transform:translateY(0);}}
+
+  body.menu-open{overflow:hidden;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;align-items:flex-end;
+    padding-top:7rem;
+    color:var(--cream);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:-2;
+    background:
+      radial-gradient(120% 120% at 78% 12%, rgba(200,162,74,.42), transparent 50%),
+      radial-gradient(130% 110% at 10% 100%, rgba(110,58,30,.85), transparent 60%),
+      linear-gradient(150deg, var(--copper) 0%, var(--copper-dark) 42%, var(--copper-deep) 100%);
+  }
+  /* subtle texture lines over hero */
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;opacity:.16;
+    background-image:repeating-linear-gradient(120deg, rgba(255,255,255,.5) 0 1px, transparent 1px 26px);
+    mask-image:linear-gradient(160deg, black, transparent 70%);
+  }
+  /* big decorative scissors watermark */
+  .hero-glyph{
+    position:absolute;z-index:-1;right:-6vw;top:8%;
+    width:min(58vw,640px);color:rgba(248,242,233,.10);
+    pointer-events:none;
+  }
+  .hero-inner{width:100%;padding-bottom:clamp(3rem,7vw,5.5rem);position:relative;}
+  .hero .eyebrow{color:var(--gold-soft);}
+  .hero .eyebrow::before{background:var(--gold-soft);}
+  .hero h1{
+    color:var(--cream);
+    font-size:clamp(3.1rem,2rem + 9.5vw,8.2rem);
+    line-height:.92;
+    letter-spacing:-.01em;
+    margin:.2rem 0 1.3rem;
+    max-width:14ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft);}
+  .hero p.lead{color:rgba(248,242,233,.9);max-width:46ch;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem;}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;margin-top:2.8rem;
+    padding-top:1.8rem;border-top:1px solid rgba(248,242,233,.22);
+  }
+  .hero-meta div{max-width:22ch;}
+  .hero-meta dt{font-family:var(--sans);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.3rem;}
+  .hero-meta dd{margin:0;font-size:.98rem;color:rgba(248,242,233,.92);line-height:1.45;}
+
+  .hero-anim > *{opacity:0;transform:translateY(26px);animation:heroUp .9s var(--ease) forwards;}
+  .hero-anim > *:nth-child(1){animation-delay:.15s;}
+  .hero-anim > *:nth-child(2){animation-delay:.3s;}
+  .hero-anim > *:nth-child(3){animation-delay:.45s;}
+  .hero-anim > *:nth-child(4){animation-delay:.6s;}
+  .hero-anim > *:nth-child(5){animation-delay:.75s;}
+  @keyframes heroUp{to{opacity:1;transform:translateY(0);}}
+
+  .scroll-hint{
+    position:absolute;bottom:1.6rem;right:clamp(1.1rem,5vw,2.75rem);
+    display:flex;align-items:center;gap:.6rem;
+    font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,242,233,.7);
+  }
+  .scroll-hint .dot{width:26px;height:42px;border:1.5px solid rgba(248,242,233,.5);border-radius:14px;position:relative;}
+  .scroll-hint .dot::after{content:"";position:absolute;left:50%;top:8px;width:3px;height:8px;background:var(--gold-soft);border-radius:2px;transform:translateX(-50%);animation:scrolly 1.8s var(--ease) infinite;}
+  @keyframes scrolly{0%{opacity:0;transform:translate(-50%,0);}40%{opacity:1;}80%{opacity:0;transform:translate(-50%,14px);}100%{opacity:0;}}
+
+  /* ============ MARQUEE STRIP ============ */
+  .strip{background:var(--charcoal);color:var(--cream);overflow:hidden;border-block:1px solid rgba(248,242,233,.08);}
+  .strip .track{display:flex;gap:3.5rem;white-space:nowrap;padding-block:1.05rem;width:max-content;animation:marquee 32s linear infinite;}
+  .strip span{font-family:var(--serif);font-size:1.15rem;letter-spacing:.02em;color:var(--cream);display:inline-flex;align-items:center;gap:3.5rem;}
+  .strip span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;}
+  @keyframes marquee{to{transform:translateX(-50%);}}
+
+  /* ============ HERITAGE BAND ============ */
+  .heritage{background:linear-gradient(165deg,var(--charcoal) 0%, #211d18 100%);color:var(--cream);position:relative;overflow:hidden;}
+  .heritage::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(90% 120% at 85% 10%, rgba(181,104,60,.4), transparent 55%);
+  }
+  .heritage .wrap{position:relative;z-index:1;}
+  .heritage-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2.5rem,6vw,5.5rem);align-items:center;}
+  .stat-block{position:relative;}
+  .stat-num{
+    font-family:var(--serif);
+    font-size:clamp(6rem,18vw,12rem);
+    line-height:.82;
+    color:var(--gold-soft);
+    letter-spacing:-.02em;
+    background:linear-gradient(180deg,var(--gold-soft),var(--copper));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .stat-label{font-family:var(--sans);font-size:.8rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-soft);margin-top:.8rem;}
+  .stat-rule{width:62px;height:2px;background:var(--copper);margin:1.4rem 0 0;border-radius:2px;}
+  .heritage h2{color:var(--cream);font-size:clamp(2rem,1.3rem + 3.2vw,3.4rem);margin-bottom:1.3rem;}
+  .heritage h2 em{font-style:italic;color:var(--gold-soft);}
+  .heritage p{color:rgba(248,242,233,.82);max-width:52ch;}
+  .signature{margin-top:1.8rem;display:flex;align-items:center;gap:.9rem;}
+  .signature .name{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--gold-soft);}
+  .signature .role{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,242,233,.6);}
+
+  /* ============ SECTION HEADINGS ============ */
+  .sec-head{max-width:62ch;}
+  .sec-head.center{margin-inline:auto;text-align:center;}
+  .sec-head h2{font-size:clamp(2.2rem,1.4rem + 3.6vw,3.8rem);margin-bottom:1rem;}
+  .sec-head h2 em{font-style:italic;color:var(--copper);}
+  .sec-head p{color:var(--charcoal-soft);}
+
+  /* ============ SERVICES (alternating rows) ============ */
+  .services{background:var(--cream);}
+  .svc-row{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;
+    margin-top:clamp(3rem,7vw,5.5rem);
+  }
+  .svc-row:first-of-type{margin-top:clamp(2.5rem,5vw,3.5rem);}
+  .svc-row.flip .svc-visual{order:2;}
+  .svc-text{max-width:50ch;}
+  .svc-index{font-family:var(--serif);font-size:1.05rem;color:var(--copper);letter-spacing:.08em;display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem;}
+  .svc-index::before{content:"";width:34px;height:1.5px;background:var(--gold);display:inline-block;}
+  .svc-text h3{font-size:clamp(1.7rem,1.2rem + 1.9vw,2.6rem);margin-bottom:.85rem;}
+  .svc-text p{color:var(--charcoal-soft);}
+  .svc-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.3rem;}
+  .tag{
+    font-family:var(--sans);font-size:.82rem;font-weight:500;color:var(--copper-deep);
+    padding:.4em .95em;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,.5);
+  }
+
+  .svc-visual{position:relative;aspect-ratio:5/4;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);isolation:isolate;}
+  .svc-visual .ph-icon{position:absolute;z-index:2;right:1.3rem;bottom:1.3rem;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(248,242,233,.9);color:var(--copper-deep);box-shadow:var(--shadow-sm);}
+  .svc-visual .ph-icon svg{width:24px;height:24px;}
+  .svc-visual .ph-num{position:absolute;z-index:2;left:1.4rem;top:1.1rem;font-family:var(--serif);font-size:3.4rem;color:rgba(248,242,233,.4);line-height:1;}
+
+  /* gradient image stand-ins */
+  .g1{background:
+      radial-gradient(120% 120% at 20% 15%, rgba(248,242,233,.35), transparent 55%),
+      linear-gradient(150deg,var(--copper) 0%, var(--copper-deep) 100%);}
+  .g2{background:
+      radial-gradient(110% 120% at 85% 20%, rgba(217,189,123,.6), transparent 55%),
+      linear-gradient(145deg,var(--gold) 0%, var(--copper-dark) 100%);}
+  .g3{background:
+      radial-gradient(120% 120% at 15% 85%, rgba(248,242,233,.4), transparent 50%),
+      linear-gradient(160deg,var(--charcoal-soft) 0%, var(--copper-deep) 90%);}
+  .g4{background:
+      radial-gradient(120% 110% at 80% 80%, rgba(200,162,74,.5), transparent 55%),
+      linear-gradient(135deg,var(--copper-dark) 0%, var(--charcoal) 100%);}
+  /* soft diagonal sheen across stand-ins */
+  .svc-visual::before{content:"";position:absolute;inset:0;z-index:1;background-image:repeating-linear-gradient(125deg, rgba(255,255,255,.06) 0 2px, transparent 2px 30px);mask-image:linear-gradient(150deg,black,transparent 75%);}
+
+  /* ============ EXPERIENCE / 3 promises ============ */
+  .promise{background:linear-gradient(180deg,var(--cream) 0%, var(--cream-deep) 100%);}
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:clamp(2.5rem,5vw,3.5rem);}
+  .promise-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.6rem,3vw,2.2rem);
+    box-shadow:var(--shadow-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease);position:relative;overflow:hidden;
+  }
+  .promise-card::after{content:"";position:absolute;left:0;top:0;height:100%;width:4px;background:linear-gradient(var(--copper),var(--gold));transform:scaleY(0);transform-origin:top;transition:transform .45s var(--ease);}
+  .promise-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+  .promise-card:hover::after{transform:scaleY(1);}
+  .promise-card .ic{width:50px;height:50px;border-radius:14px;background:var(--cream);color:var(--copper-dark);display:grid;place-items:center;margin-bottom:1.2rem;border:1px solid var(--line);}
+  .promise-card .ic svg{width:26px;height:26px;}
+  .promise-card h3{font-size:1.5rem;margin-bottom:.55rem;}
+  .promise-card p{color:var(--charcoal-soft);font-size:.97rem;margin:0;}
+
+  /* ============ HOURS (feature) ============ */
+  .hours{background:var(--cream);}
+  .hours-shell{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(2rem,5vw,4rem);align-items:stretch;
+  }
+  .hours-aside{display:flex;flex-direction:column;justify-content:center;}
+  .hours-aside h2{font-size:clamp(2.1rem,1.4rem + 3.2vw,3.4rem);margin-bottom:1.1rem;}
+  .hours-aside h2 em{font-style:italic;color:var(--copper);}
+  .hours-aside p{color:var(--charcoal-soft);max-width:42ch;}
+  .park{
+    display:flex;align-items:center;gap:.9rem;margin-top:1.6rem;padding:1rem 1.2rem;
+    background:rgba(200,162,74,.13);border:1px solid rgba(200,162,74,.4);border-radius:14px;max-width:24rem;
+  }
+  .park svg{width:30px;height:30px;color:var(--copper-dark);flex:none;}
+  .park b{font-weight:600;color:var(--charcoal);}
+  .park span{font-size:.92rem;color:var(--charcoal-soft);display:block;}
+
+  .hours-card{
+    background:linear-gradient(160deg,var(--charcoal) 0%, #221e18 100%);
+    color:var(--cream);border-radius:var(--r-lg);padding:clamp(1.6rem,3.5vw,2.6rem);
+    box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+  }
+  .hours-card::before{content:"";position:absolute;right:-30%;top:-30%;width:70%;height:70%;background:radial-gradient(circle,rgba(181,104,60,.5),transparent 70%);}
+  .hours-card .hc-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;position:relative;z-index:1;margin-bottom:.4rem;}
+  .hours-card h3{color:var(--cream);font-size:1.6rem;}
+  .hours-card .badge{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--charcoal);background:var(--gold-soft);padding:.4em .9em;border-radius:100px;white-space:nowrap;}
+  .hours-list{position:relative;z-index:1;margin-top:1.3rem;}
+  .hours-list li{
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:.85rem 0;border-bottom:1px solid rgba(248,242,233,.13);
+  }
+  .hours-list li:last-child{border-bottom:none;}
+  .hours-list .day{font-family:var(--sans);font-weight:500;font-size:1rem;color:var(--cream);}
+  .hours-list .time{font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:1rem;color:var(--gold-soft);letter-spacing:.02em;}
+  .hours-list li.closed .day{color:rgba(248,242,233,.55);}
+  .hours-list li.closed .time{color:rgba(248,242,233,.4);font-style:italic;}
+  .hours-list li.today{position:relative;}
+  .hours-list li.today .day::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:.6rem;vertical-align:middle;box-shadow:0 0 0 3px rgba(200,162,74,.25);}
+  .hours-list li.today .time{color:#fff;font-weight:600;}
+  .hc-note{position:relative;z-index:1;margin-top:1.4rem;font-size:.88rem;color:rgba(248,242,233,.7);display:flex;gap:.6rem;align-items:flex-start;}
+  .hc-note svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--gold-soft);}
+
+  /* ============ CONTACT / FORM ============ */
+  .contact{background:linear-gradient(175deg,var(--cream-deep) 0%, var(--cream) 100%);}
+  .contact-shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:start;}
+  .contact-info h2{font-size:clamp(2.1rem,1.4rem + 3.2vw,3.4rem);margin-bottom:1rem;}
+  .contact-info h2 em{font-style:italic;color:var(--copper);}
+  .contact-info > p{color:var(--charcoal-soft);max-width:40ch;}
+  .info-list{margin-top:2rem;display:grid;gap:1.1rem;}
+  .info-item{display:flex;gap:1rem;align-items:flex-start;}
+  .info-item .ic{width:44px;height:44px;flex:none;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--copper-dark);box-shadow:var(--shadow-sm);}
+  .info-item .ic svg{width:22px;height:22px;}
+  .info-item .lbl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-dark);margin-bottom:.15rem;font-weight:600;}
+  .info-item .val{font-size:1.05rem;color:var(--charcoal);line-height:1.4;}
+  .info-item .val span{display:block;color:var(--charcoal-soft);font-size:.95rem;}
+
+  .form-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);
+    padding:clamp(1.6rem,4vw,2.8rem);box-shadow:var(--shadow-md);
+  }
+  .form-card h3{font-size:1.7rem;margin-bottom:.4rem;}
+  .form-card .fsub{color:var(--charcoal-soft);font-size:.95rem;margin-bottom:1.6rem;}
+  .field{margin-bottom:1.1rem;}
+  .field label{display:block;font-family:var(--sans);font-weight:500;font-size:.85rem;color:var(--charcoal);margin-bottom:.45rem;}
+  .field label .req{color:var(--copper);}
+  .field input,.field select,.field textarea{
+    width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);
+    padding:.85em 1em;border:1.5px solid var(--line);border-radius:13px;background:var(--cream);
+    transition:border-color .25s, box-shadow .25s, background .25s;
+  }
+  .field textarea{resize:vertical;min-height:110px;}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--copper);background:#fff;box-shadow:0 0 0 4px rgba(181,104,60,.13);
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+  .form-card button[type=submit]{width:100%;justify-content:center;margin-top:.4rem;}
+  .form-note{margin-top:1rem;font-size:.8rem;color:var(--charcoal-soft);text-align:center;}
+  .form-status{display:none;margin-top:1rem;padding:.85rem 1.1rem;border-radius:13px;font-size:.92rem;background:rgba(200,162,74,.16);border:1px solid rgba(200,162,74,.45);color:var(--copper-deep);}
+  .form-status.show{display:block;}
+
+  /* ============ FOOTER ============ */
+  footer.site{background:var(--charcoal);color:rgba(248,242,233,.8);position:relative;z-index:1;}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-block:clamp(3rem,6vw,4.5rem);border-bottom:1px solid rgba(248,242,233,.12);}
+  .foot-brand .brand{color:var(--cream);}
+  .foot-brand .brand .sub{color:var(--gold-soft);}
+  .foot-brand p{margin-top:1.1rem;max-width:34ch;color:rgba(248,242,233,.62);font-size:.95rem;}
+  .foot-col h4{font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1.1rem;}
+  .foot-col ul{display:grid;gap:.6rem;}
+  .foot-col a{color:rgba(248,242,233,.72);font-size:.96rem;transition:color .25s;}
+  .foot-col a:hover{color:var(--cream);}
+  .foot-col .ln{font-size:.96rem;color:rgba(248,242,233,.72);line-height:1.5;}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:.8rem 1.5rem;justify-content:space-between;align-items:center;padding-block:1.6rem;font-size:.86rem;color:rgba(248,242,233,.55);}
+  .foot-bottom a{color:var(--gold-soft);}
+  .foot-bottom a:hover{text-decoration:underline;}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.08s;}
+  .reveal.d2{transition-delay:.16s;}
+  .reveal.d3{transition-delay:.24s;}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:900px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .heritage-grid{grid-template-columns:1fr;gap:2.4rem;}
+    .hours-shell{grid-template-columns:1fr;}
+    .contact-shell{grid-template-columns:1fr;}
+    .promise-grid{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+    .foot-brand{grid-column:1/-1;}
+  }
+  @media (max-width:680px){
+    .svc-row{grid-template-columns:1fr;gap:1.6rem;}
+    .svc-row.flip .svc-visual{order:0;}
+    .svc-visual{aspect-ratio:4/3;}
+    .field-row{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr;}
+    .hero-meta{gap:1.2rem 1.8rem;}
+    .scroll-hint{display:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+    .reveal{opacity:1 !important;transform:none !important;}
+    .hero-anim > *{opacity:1 !important;transform:none !important;}
+    .strip .track{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Kapsalon Sjiek — naar boven">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+      </span>
+      <span><b>Kapsalon Sjiek</b><span class="sub">Enschede · sinds 2007</span></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="link" href="#verhaal">Het verhaal</a>
+      <a class="link" href="#diensten">Diensten</a>
+      <a class="link" href="#openingstijden">Openingstijden</a>
+      <a class="link" href="#contact">Contact</a>
+      <a class="btn copper nav-cta" href="#afspraak">Afspraak maken</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobiel menu">
+  <nav aria-label="Mobiel hoofdmenu">
+    <a href="#verhaal"><span class="n">01</span>Het verhaal</a>
+    <a href="#diensten"><span class="n">02</span>Diensten</a>
+    <a href="#openingstijden"><span class="n">03</span>Openingstijden</a>
+    <a href="#contact"><span class="n">04</span>Contact</a>
+    <a href="#afspraak"><span class="n">05</span>Afspraak maken</a>
+  </nav>
+  <div class="mobile-foot">
+    Deurningerstraat 242, Enschede<br>053 430 5513
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Welkom bij Kapsalon Sjiek">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <!-- decorative scissors watermark -->
+    <svg class="hero-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+
+    <div class="wrap hero-inner">
+      <div class="hero-anim">
+        <p class="eyebrow">Kapsalon voor dames &amp; heren</p>
+        <h1>Geknipt tot in&nbsp;de <em>puntjes.</em></h1>
+        <p class="lead">Een vertrouwd adres in Enschede sinds 2007. Bij Kapsalon Sjiek nemen we de tijd voor jou — van een frisse coupe tot warme balayage, persoonlijk en met aandacht.</p>
+        <div class="hero-actions">
+          <a class="btn light" href="#afspraak">Maak een afspraak
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="btn ghost" href="#diensten" style="--fg:var(--cream);border-color:rgba(248,242,233,.4);">Bekijk onze diensten</a>
+        </div>
+        <dl class="hero-meta">
+          <div>
+            <dt>Waar je ons vindt</dt>
+            <dd>Deurningerstraat 242, Enschede · gratis parkeren</dd>
+          </div>
+          <div>
+            <dt>Voor wie</dt>
+            <dd>Dames &amp; heren — knippen, kleuren &amp; verzorging</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE STRIP ============ -->
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Knippen</span><span>Kleuren</span><span>Balayage</span><span>Highlights &amp; folies</span><span>Toning</span><span>Fades</span><span>Persoonlijk productadvies</span>
+      <span>Knippen</span><span>Kleuren</span><span>Balayage</span><span>Highlights &amp; folies</span><span>Toning</span><span>Fades</span><span>Persoonlijk productadvies</span>
+    </div>
+  </div>
+
+  <!-- ============ HERITAGE BAND ============ -->
+  <section class="section heritage" id="verhaal">
+    <div class="wrap">
+      <div class="heritage-grid">
+        <div class="stat-block reveal">
+          <div class="stat-num">2007</div>
+          <div class="stat-label">Vertrouwd sinds</div>
+          <div class="stat-rule"></div>
+        </div>
+        <div class="reveal d1">
+          <p class="eyebrow" style="color:var(--gold-soft);">Het verhaal achter de stoel</p>
+          <h2>Al jaren een <em>vertrouwd</em> gezicht aan de Deurningerstraat.</h2>
+          <p>Kapsalon Sjiek werd in 2007 geopend door eigenaresse Tesja — en is sindsdien uitgegroeid tot een warm, persoonlijk adres waar dames én heren zich thuis voelen. Geen lopende band, maar echte aandacht: we luisteren naar wat jij wilt en denken met je mee.</p>
+          <p>Of je nu komt voor een vertrouwde coupe die je al jaren draagt of klaar bent voor iets nieuws — bij ons word je geknipt, gekleurd en verzorgd tot in de puntjes.</p>
+          <div class="signature">
+            <span class="name">Tesja</span>
+            <span class="role">Eigenaresse &amp; kapper</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES (alternating) ============ -->
+  <section class="section services" id="diensten">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Onze diensten</p>
+        <h2>Vakwerk voor <em>elk</em> type haar.</h2>
+        <p>Van een strakke fade tot een zachte, natuurlijke balayage. Alles met persoonlijk advies — ook voor de verzorging thuis. Prijzen op aanvraag, afgestemd op jouw haar en wens.</p>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="svc-row">
+        <!-- ✏️ FOTO: vervang door echte foto van een knipbeurt / coupe in de salon -->
+        <div class="svc-visual g1" role="img" aria-label="Sfeerbeeld knippen dames en heren">
+          <span class="ph-num" aria-hidden="true">01</span>
+          <span class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
+        </div>
+        <div class="svc-text reveal d1">
+          <div class="svc-index">Dienst 01</div>
+          <h3>Knippen voor dames &amp; heren</h3>
+          <p>Een coupe die bij je past en die je zelf makkelijk goed houdt. We kijken naar je haar, je gezicht en je dagelijks ritme — en knippen met aandacht. Heren? Ook voor een nette fade ben je bij ons aan het juiste adres.</p>
+          <div class="svc-tags">
+            <span class="tag">Dameskapsels</span>
+            <span class="tag">Herenkapsels</span>
+            <span class="tag">Fades</span>
+            <span class="tag">Stylingadvies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 (flip) -->
+      <div class="svc-row flip">
+        <!-- ✏️ FOTO: vervang door echte foto van een kleurresultaat / kleurbehandeling -->
+        <div class="svc-visual g2" role="img" aria-label="Sfeerbeeld kleuren en toning">
+          <span class="ph-num" aria-hidden="true">02</span>
+          <span class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+        </div>
+        <div class="svc-text reveal d1">
+          <div class="svc-index">Dienst 02</div>
+          <h3>Kleuren &amp; toning</h3>
+          <p>Een warme nieuwe kleur, je grijs verzorgd weggewerkt of net die perfecte tint erbij. We kiezen samen een kleur die natuurlijk staat en mooi uitgroeit — en met een toning houden we het resultaat fris en verzorgd.</p>
+          <div class="svc-tags">
+            <span class="tag">Volledige kleuring</span>
+            <span class="tag">Uitgroei bijwerken</span>
+            <span class="tag">Toning</span>
+            <span class="tag">Kleuradvies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="svc-row">
+        <!-- ✏️ FOTO: vervang door echte foto van balayage / highlights resultaat -->
+        <div class="svc-visual g3" role="img" aria-label="Sfeerbeeld balayage en highlights">
+          <span class="ph-num" aria-hidden="true">03</span>
+          <span class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l-1.5-1.5M18 18l1.5 1.5M6 18l-1.5 1.5M18 6l1.5-1.5"/><circle cx="12" cy="12" r="4"/></svg></span>
+        </div>
+        <div class="svc-text reveal d1">
+          <div class="svc-index">Dienst 03</div>
+          <h3>Balayage, highlights &amp; folies</h3>
+          <p>Zachte, zonnige overgangen of juist sprekende accenten — met balayage, highlights en folies brengen we diepte en glans in je haar. Subtiel en natuurlijk, of opvallend en stoer: jij kiest, wij toveren.</p>
+          <div class="svc-tags">
+            <span class="tag">Balayage</span>
+            <span class="tag">Highlights</span>
+            <span class="tag">Folies</span>
+            <span class="tag">Natuurlijke overgang</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4 (flip) -->
+      <div class="svc-row flip">
+        <!-- ✏️ FOTO: vervang door echte foto van haarverzorgingsproducten / advies -->
+        <div class="svc-visual g4" role="img" aria-label="Sfeerbeeld haarverzorging en productadvies">
+          <span class="ph-num" aria-hidden="true">04</span>
+          <span class="ph-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4M9 7h6l1 13a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z"/><path d="M9 7V4a2 2 0 0 1 2-2"/><line x1="9" y1="13" x2="15" y2="13"/></svg></span>
+        </div>
+        <div class="svc-text reveal d1">
+          <div class="svc-index">Dienst 04</div>
+          <h3>Haarverzorging &amp; persoonlijk advies</h3>
+          <p>Mooi haar begint bij goede verzorging. We vertellen je eerlijk wat jouw haar nodig heeft en welke producten écht het verschil maken — zodat je resultaat ook thuis blijft stralen, zonder onnodige flesjes in de kast.</p>
+          <div class="svc-tags">
+            <span class="tag">Productadvies op maat</span>
+            <span class="tag">Verzorgingstips</span>
+            <span class="tag">Routine thuis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROMISES ============ -->
+  <section class="section promise">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <p class="eyebrow center">Waarom Sjiek</p>
+        <h2>Waarom klanten <em>blijven</em> komen.</h2>
+      </div>
+      <div class="promise-grid">
+        <article class="promise-card reveal">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>Persoonlijke aandacht</h3>
+          <p>Geen haastwerk. We nemen de tijd, luisteren naar je wens en denken met je mee — bezoek na bezoek.</p>
+        </article>
+        <article class="promise-card reveal d1">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg></div>
+          <h3>Vakmanschap sinds 2007</h3>
+          <p>Jarenlange ervaring met knippen, kleuren en kleurtechnieken voor zowel dames als heren.</p>
+        </article>
+        <article class="promise-card reveal d2">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h6"/></svg></div>
+          <h3>Vertrouwd in Enschede</h3>
+          <p>Een vast adres aan de Deurningerstraat, met gratis parkeren voor de deur. Even zo binnengelopen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOURS (feature) ============ -->
+  <section class="section hours" id="openingstijden">
+    <div class="wrap">
+      <div class="hours-shell">
+        <div class="hours-aside reveal">
+          <p class="eyebrow">Openingstijden</p>
+          <h2>Wanneer je <em>welkom</em> bent.</h2>
+          <p>We werken op afspraak, zodat je nooit lang hoeft te wachten. Op dinsdag en donderdag zijn we ook 's avonds open — handig na werk of school.</p>
+          <div class="park">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+            <span><b>Gratis parkeren</b> direct bij de salon — geen gedoe met betaalautomaten.</span>
+          </div>
+        </div>
+
+        <div class="hours-card reveal d1">
+          <div class="hc-top">
+            <h3>Deurningerstraat 242</h3>
+            <span class="badge" id="open-badge">Op afspraak</span>
+          </div>
+          <ul class="hours-list" id="hours-list">
+            <li data-day="1" class="closed"><span class="day">Maandag</span><span class="time">Gesloten</span></li>
+            <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 20:00</span></li>
+            <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 18:00</span></li>
+            <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 20:00</span></li>
+            <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 18:00</span></li>
+            <li data-day="6" class="closed"><span class="day">Zaterdag</span><span class="time">Gesloten</span></li>
+            <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+          </ul>
+          <p class="hc-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Liever een avondafspraak? Plan dan op dinsdag of donderdag — dan zijn we tot 20:00 open.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT + FORM ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div class="contact-shell">
+        <div class="contact-info reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Tot ziens bij <em>Sjiek.</em></h2>
+          <p>Een vraag, of klaar voor een nieuwe coupe? Laat hieronder je gegevens achter, of bel ons gerust tijdens openingstijden.</p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <div class="lbl">Adres</div>
+                <div class="val">Deurningerstraat 242<span>7522 CL Enschede · gratis parkeren</span></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <div>
+                <div class="lbl">Telefoon</div>
+                <div class="val">053 430 5513<span>Tijdens openingstijden</span></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div>
+                <div class="lbl">E-mail</div>
+                <div class="val">info@sjiekenschede.nl</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+              <div>
+                <div class="lbl">Instagram</div>
+                <div class="val">@sjiekenschede</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AFSPRAAK FORM -->
+        <div class="form-card reveal d1" id="afspraak">
+          <h3>Afspraak aanvragen</h3>
+          <p class="fsub">Vul je gegevens in — we bellen of mailen je terug om je afspraak te bevestigen.</p>
+
+          <!-- ✏️ vul Formspree endpoint in -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="afspraak-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="naam">Naam <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="naam" name="naam" autocomplete="name" required placeholder="Je naam" />
+              </div>
+              <div class="field">
+                <label for="tel">Telefoon <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="tel" name="telefoon" autocomplete="tel" required placeholder="06 ..." />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="naam@voorbeeld.nl" />
+            </div>
+
+            <div class="field">
+              <label for="dienst">Waarvoor kom je?</label>
+              <select id="dienst" name="dienst">
+                <option value="">Maak een keuze…</option>
+                <option>Knippen — dames</option>
+                <option>Knippen — heren</option>
+                <option>Kleuren / toning</option>
+                <option>Balayage / highlights / folies</option>
+                <option>Haarverzorging &amp; advies</option>
+                <option>Anders / weet ik nog niet</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="voorkeur">Voorkeur dag of tijd</label>
+              <input type="text" id="voorkeur" name="voorkeur" placeholder="Bijv. donderdagavond of vrijdagochtend" />
+            </div>
+
+            <div class="field">
+              <label for="bericht">Bericht</label>
+              <textarea id="bericht" name="bericht" placeholder="Vertel kort wat je in gedachten hebt…"></textarea>
+            </div>
+
+            <button type="submit" class="btn copper">
+              Verstuur aanvraag
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <p class="form-note">We nemen zo snel mogelijk contact met je op. Geen verplichtingen.</p>
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          </span>
+          <span><b>Kapsalon Sjiek</b><span class="sub">Enschede · sinds 2007</span></span>
+        </span>
+        <p>Kapper voor dames &amp; heren aan de Deurningerstraat. Geknipt, gekleurd en verzorgd tot in de puntjes — persoonlijk en vertrouwd.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#verhaal">Het verhaal</a></li>
+          <li><a href="#diensten">Diensten</a></li>
+          <li><a href="#openingstijden">Openingstijden</a></li>
+          <li><a href="#afspraak">Afspraak maken</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><span class="ln">Deurningerstraat 242<br>7522 CL Enschede</span></li>
+          <li><span class="ln">053 430 5513</span></li>
+          <li><span class="ln">info@sjiekenschede.nl</span></li>
+          <li><span class="ln">Instagram: @sjiekenschede</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Kapsalon Sjiek — Enschede · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Ma gesloten · Di &amp; Do tot 20:00 · Wo &amp; Vr tot 18:00</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Sticky header on scroll ---------- */
+  var header = document.getElementById('site-header');
+  var onScroll = function(){
+    if(window.scrollY > 24){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('hamburger');
+  var menu = document.getElementById('mobile-menu');
+  var body = document.body;
+
+  function setMenu(open){
+    menu.classList.toggle('open', open);
+    body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    // morph hamburger to X
+    var spans = burger.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  }
+
+  burger.addEventListener('click', function(){
+    setMenu(!menu.classList.contains('open'));
+  });
+
+  // close on link click inside overlay
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+
+  // close on Escape
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && menu.classList.contains('open')){ setMenu(false); }
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- Highlight today's hours + open/closed badge ---------- */
+  (function(){
+    var now = new Date();
+    var day = now.getDay(); // 0=Sun ... 6=Sat
+    var li = document.querySelector('.hours-list li[data-day="'+day+'"]');
+    if(li){ li.classList.add('today'); }
+
+    // open hours map: day -> [openHour, closeHour] (24h)
+    var sched = {2:[9,20],3:[9,18],4:[9,20],5:[9,18]};
+    var badge = document.getElementById('open-badge');
+    if(badge && sched[day]){
+      var h = now.getHours() + now.getMinutes()/60;
+      if(h >= sched[day][0] && h < sched[day][1]){
+        badge.textContent = 'Nu geopend';
+        badge.style.background = '#7FAE6B';
+        badge.style.color = '#11210C';
+      } else {
+        badge.textContent = 'Nu gesloten';
+      }
+    } else if(badge){
+      badge.textContent = 'Vandaag gesloten';
+    }
+  })();
+
+  /* ---------- Afspraak form (Formspree) with graceful AJAX ---------- */
+  var form = document.getElementById('afspraak-form');
+  var status = document.getElementById('form-status');
+
+  form.addEventListener('submit', function(e){
+    // basic client validation feedback
+    if(!form.checkValidity()){
+      return; // let browser show native messages
+    }
+
+    var action = form.getAttribute('action') || '';
+    // If endpoint not yet configured, prevent a broken POST and inform.
+    if(action.indexOf('YOUR_FORM_ID') !== -1){
+      e.preventDefault();
+      status.textContent = 'Bedankt! Deze previewversie verstuurt nog niet — koppel het formulier aan een Formspree-endpoint om aanvragen te ontvangen.';
+      status.classList.add('show');
+      return;
+    }
+
+    // Configured: submit via fetch for a smooth in-page confirmation.
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    var original = btn.innerHTML;
+    btn.disabled = true;
+    btn.textContent = 'Versturen…';
+
+    fetch(action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if(res.ok){
+        form.reset();
+        status.textContent = 'Bedankt voor je aanvraag! We nemen zo snel mogelijk contact met je op om je afspraak te bevestigen.';
+      } else {
+        status.textContent = 'Er ging iets mis bij het versturen. Bel ons gerust op 053 430 5513.';
+      }
+    }).catch(function(){
+      status.textContent = 'Er ging iets mis bij het versturen. Bel ons gerust op 053 430 5513.';
+    }).then(function(){
+      status.classList.add('show');
+      btn.disabled = false;
+      btn.innerHTML = original;
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

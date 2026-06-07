@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Bespoke preview voor Schoonheidssalon Elles (Enschede) — Sage Website Design.
+     Concept: "Nocturnal sterrenhemel spa" — donker, sereen, met een CSS-only
+     twinkelende sterrenhemel, warm-gouden serif-accenten en zacht gloeiende cards.
+     Volledig zelfstandig: alle CSS in één <style>, alle JS inline vanilla.
+     Geen emoji. Geen tel:/mailto links. Geen verzonnen behandelingen of prijzen. -->
+
+<title>Schoonheidssalon Elles — Sfeervolle schoonheidssalon in Enschede</title>
+<meta name="description" content="Schoonheidssalon Elles in Enschede: een rustgevende schoonheidssalon waar ontspanning centraal staat. Sfeerverlichting met sterrenhemel-effect, relaxmuziek en persoonlijke aandacht. Behandeling op afspraak." />
+
+<!-- Custom SVG data-URI favicon: gouden ster op nachtblauw -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2310131C'/><path d='M50 20 L55 44 L78 50 L55 56 L50 80 L45 56 L22 50 L45 44 Z' fill='%23D9B36A'/><circle cx='74' cy='28' r='2.4' fill='%23EDE7DA'/><circle cx='26' cy='70' r='1.8' fill='%23EDE7DA'/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --night:#10131C;        /* deep night */
+  --night-2:#161B28;       /* panel */
+  --night-3:#1E2740;       /* raised panel / hairline glow base */
+  --gold:#D9B36A;          /* warm star gold */
+  --gold-soft:#e7cd9b;     /* lighter gold for hover */
+  --ivory:#EDE7DA;         /* primary text */
+  --ivory-dim:#b9b3a6;     /* secondary text */
+  --ivory-faint:#8b8576;   /* faint labels */
+  --line:rgba(217,179,106,.16);
+  --line-2:rgba(237,231,218,.10);
+  --maxw:1160px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Mulish",system-ui,-apple-system,sans-serif;
+  font-weight:400;
+  color:var(--ivory-dim);
+  background:var(--night);
+  line-height:1.75;
+  letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:"Marcellus",Georgia,serif;
+  font-weight:400;
+  color:var(--ivory);
+  line-height:1.12;
+  letter-spacing:.01em;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img,svg{display:block;max-width:100%}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.narrow{max-width:780px;margin-inline:auto}
+.section{padding:clamp(72px,11vw,140px) 0;position:relative}
+
+.kicker{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-family:"Mulish";font-weight:600;
+  font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);
+}
+.kicker::before{
+  content:"";width:26px;height:1px;background:var(--gold);opacity:.6;
+}
+.kicker.centered{justify-content:center}
+.kicker.centered::after{
+  content:"";width:26px;height:1px;background:var(--gold);opacity:.6;
+}
+
+.eyebrow-star{
+  display:inline-block;width:7px;height:7px;margin:0 .15rem;
+  background:var(--gold);
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+}
+
+h2.title{
+  font-size:clamp(1.9rem,4.4vw,3.1rem);
+  margin:1.1rem 0 0;
+}
+.lede{
+  color:var(--ivory-dim);
+  font-size:clamp(1rem,1.6vw,1.12rem);
+  line-height:1.85;
+  max-width:62ch;
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:"Mulish";font-weight:600;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:1.02rem 2.05rem;border-radius:999px;
+  transition:.32s var(--ease);cursor:pointer;border:1px solid transparent;
+  white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold),#c79a52);
+  color:#1a1408!important;
+  box-shadow:0 0 0 1px rgba(217,179,106,.3), 0 14px 36px -16px rgba(217,179,106,.6);
+}
+.btn-gold:hover{
+  background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+  transform:translateY(-2px);
+  box-shadow:0 0 0 1px rgba(217,179,106,.5), 0 20px 44px -16px rgba(217,179,106,.75);
+}
+.btn-ghost{
+  color:var(--ivory);
+  border-color:var(--line-2);
+  background:rgba(237,231,218,.02);
+}
+.btn-ghost:hover{
+  border-color:var(--gold);color:var(--gold-soft);
+  background:rgba(217,179,106,.06);transform:translateY(-2px);
+}
+.btn svg{width:16px;height:16px}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:90;
+  background:rgba(16,19,28,.55);
+  backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border-bottom:1px solid transparent;
+  transition:.35s var(--ease);
+}
+header.scrolled{
+  background:rgba(16,19,28,.9);
+  border-bottom-color:var(--line);
+}
+header .bar{
+  display:flex;align-items:center;justify-content:space-between;
+  height:78px;
+}
+.brand{display:flex;align-items:center;gap:.72rem;z-index:2}
+.brand .mark{
+  width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+  background:radial-gradient(120% 120% at 30% 20%,#28324f,#141a29);
+  border:1px solid var(--line);
+  display:grid;place-items:center;position:relative;
+  box-shadow:inset 0 0 18px rgba(217,179,106,.12);
+}
+.brand .mark svg{width:22px;height:22px}
+.brand .name{display:flex;flex-direction:column;line-height:1.05}
+.brand .name b{
+  font-family:"Marcellus",serif;font-weight:400;
+  font-size:1.12rem;color:var(--ivory);letter-spacing:.04em;
+}
+.brand .name span{
+  font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-top:2px;
+}
+
+nav.desktop{display:flex;align-items:center;gap:2.3rem}
+nav.desktop a{
+  font-size:.82rem;letter-spacing:.08em;color:var(--ivory-dim);
+  font-weight:500;position:relative;padding:.2rem 0;transition:color .25s;
+}
+nav.desktop a::after{
+  content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;
+  background:var(--gold);transition:width .3s var(--ease);
+}
+nav.desktop a:hover{color:var(--ivory)}
+nav.desktop a:hover::after{width:100%}
+.nav-cta{margin-left:.4rem}
+
+.burger{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:0;cursor:pointer;padding:9px;z-index:120;
+}
+.burger span{
+  width:25px;height:1.6px;background:var(--ivory);border-radius:2px;
+  transition:.33s var(--ease);
+}
+.burger.open span:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+
+/* mobile overlay menu */
+.mobile-menu{
+  position:fixed;inset:0;z-index:110;
+  background:rgba(13,16,24,.97);
+  backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:1.6rem;
+  opacity:0;visibility:hidden;transform:translateY(-12px);
+  transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s;
+}
+.mobile-menu.open{opacity:1;visibility:visible;transform:none}
+.mobile-menu a{
+  font-family:"Marcellus",serif;font-size:1.7rem;color:var(--ivory);
+  letter-spacing:.02em;transition:color .25s;
+}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu .mm-star{
+  width:9px;height:9px;background:var(--gold);
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+  margin:.2rem 0;
+}
+.mobile-menu .btn{margin-top:.8rem}
+
+/* ---------- starfield ---------- */
+.stars{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.star-layer{position:absolute;top:0;left:0;width:2px;height:2px;border-radius:50%;background:transparent}
+/* the box-shadows are generated inline via JS for performance & spread */
+@keyframes twinkle{
+  0%,100%{opacity:.25}
+  50%{opacity:.9}
+}
+.star-layer.l1{animation:twinkle 4.5s ease-in-out infinite}
+.star-layer.l2{animation:twinkle 6.5s ease-in-out infinite .8s}
+.star-layer.l3{animation:twinkle 9s ease-in-out infinite 1.6s}
+
+/* a couple of larger hero "feature" stars */
+.big-star{
+  position:absolute;background:var(--gold);border-radius:50%;
+  box-shadow:0 0 10px 2px rgba(217,179,106,.7);
+  animation:twinkle 5s ease-in-out infinite;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  min-height:clamp(620px,92vh,860px);
+  display:flex;align-items:center;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(30,39,64,.85), transparent 60%),
+    radial-gradient(80% 70% at 80% 110%, rgba(217,179,106,.10), transparent 60%),
+    linear-gradient(180deg,#0c0f17 0%, #10131C 55%, #0e1119 100%);
+  overflow:hidden;
+}
+/* horizon glow at the bottom of the hero */
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:-40%;height:80%;
+  background:radial-gradient(60% 100% at 50% 0,rgba(217,179,106,.14),transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:3;text-align:center;width:100%;padding:80px 0}
+.hero .moon{
+  position:absolute;top:14%;right:11%;width:clamp(90px,14vw,170px);
+  height:clamp(90px,14vw,170px);border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #f4ecd8, #d9c79c 55%, #b9a878 100%);
+  box-shadow:0 0 60px 14px rgba(231,205,155,.28), inset -10px -12px 26px rgba(120,104,68,.45);
+  z-index:2;opacity:.92;
+  animation:floaty 11s ease-in-out infinite;
+}
+.hero .moon::before{
+  content:"";position:absolute;width:26%;height:26%;border-radius:50%;
+  top:30%;left:24%;background:rgba(150,134,96,.25);box-shadow:38px 22px 0 -3px rgba(150,134,96,.18), 20px 50px 0 -6px rgba(150,134,96,.16);
+}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.hero-tag{
+  font-family:"Mulish";font-weight:600;font-size:.7rem;
+  letter-spacing:.38em;text-transform:uppercase;color:var(--gold);
+  display:inline-flex;align-items:center;gap:.7rem;
+}
+.hero-tag::before,.hero-tag::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.7}
+.hero-tag::after{background:linear-gradient(90deg,var(--gold),transparent)}
+
+.hero h1{
+  font-size:clamp(2.7rem,8vw,5.6rem);
+  margin:1.5rem 0 .2rem;
+  color:var(--ivory);
+  letter-spacing:.015em;
+  line-height:1.02;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold) 70%,#bf9347);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .sub{
+  font-family:"Marcellus",serif;
+  font-size:clamp(1.05rem,2.4vw,1.5rem);
+  color:var(--ivory);letter-spacing:.16em;text-transform:uppercase;
+  opacity:.85;margin-bottom:1.6rem;
+}
+.hero p.lede{margin:0 auto 2.3rem;color:var(--ivory-dim);text-align:center}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+.hero-meta{
+  margin-top:3.2rem;display:flex;gap:2.4rem;justify-content:center;
+  flex-wrap:wrap;color:var(--ivory-faint);
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+}
+.hero-meta span{display:inline-flex;align-items:center;gap:.55rem}
+.hero-meta svg{width:15px;height:15px;color:var(--gold)}
+
+.scroll-hint{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:var(--ivory-faint);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;
+}
+.scroll-hint .line{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:drop 2.2s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(.3);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(.3);transform-origin:bottom;opacity:.4}}
+
+/* ---------- generic reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+
+/* divider with star */
+.starline{display:flex;align-items:center;justify-content:center;gap:1rem;color:var(--gold);opacity:.7;margin:0 auto}
+.starline::before,.starline::after{content:"";height:1px;width:min(120px,22vw);background:linear-gradient(90deg,transparent,var(--line))}
+.starline::after{background:linear-gradient(90deg,var(--line),transparent)}
+.starline .s{width:8px;height:8px;background:var(--gold);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+
+/* ---------- ambiance ---------- */
+#ambiance{background:linear-gradient(180deg,#0e1119,#11151f)}
+.amb-grid{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,4.5rem);
+  align-items:center;
+}
+.amb-copy h2.title{margin-bottom:1.3rem}
+.amb-copy .lede + .lede{margin-top:1.1rem}
+.amb-points{margin-top:2rem;display:flex;flex-direction:column;gap:1.1rem}
+.amb-point{display:flex;gap:1rem;align-items:flex-start}
+.amb-point .ic{
+  flex:0 0 42px;width:42px;height:42px;border-radius:12px;
+  display:grid;place-items:center;color:var(--gold);
+  background:radial-gradient(120% 120% at 30% 20%,rgba(217,179,106,.16),rgba(30,39,64,.4));
+  border:1px solid var(--line);
+}
+.amb-point .ic svg{width:20px;height:20px}
+.amb-point h4{font-size:1.05rem;color:var(--ivory);margin-bottom:.2rem;letter-spacing:.02em}
+.amb-point p{font-size:.95rem;line-height:1.7}
+
+/* glowing visual panel (foto stand-in) */
+.amb-visual{
+  position:relative;border-radius:22px;overflow:hidden;min-height:430px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(90% 70% at 70% 10%, rgba(217,179,106,.16), transparent 55%),
+    radial-gradient(70% 60% at 20% 90%, rgba(46,58,92,.6), transparent 60%),
+    linear-gradient(160deg,#1a2236,#11141d 75%);
+  box-shadow:0 30px 80px -40px rgba(0,0,0,.9), inset 0 0 0 1px rgba(217,179,106,.05);
+  display:flex;align-items:flex-end;padding:1.6rem;
+}
+.amb-visual .mini-stars{position:absolute;inset:0;pointer-events:none}
+.amb-visual .panel-label{
+  position:relative;z-index:2;display:flex;align-items:center;gap:.6rem;
+  font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ivory);
+  background:rgba(13,16,24,.5);backdrop-filter:blur(6px);
+  padding:.55rem .9rem;border-radius:999px;border:1px solid var(--line-2);
+}
+.amb-visual .panel-label svg{width:14px;height:14px;color:var(--gold)}
+.amb-visual .glow-orb{
+  position:absolute;top:18%;right:16%;width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,rgba(231,205,155,.55),rgba(217,179,106,.06) 70%);
+  filter:blur(2px);animation:floaty 9s ease-in-out infinite;
+}
+
+/* ---------- experience strip (3 sensory cards) ---------- */
+#sfeer{background:var(--night)}
+.sense-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.6vw,1.8rem);margin-top:3rem}
+.sense-card{
+  position:relative;border-radius:18px;padding:2.2rem 1.8rem;
+  background:linear-gradient(165deg,rgba(30,39,64,.55),rgba(22,27,40,.6));
+  border:1px solid var(--line-2);
+  overflow:hidden;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s;
+}
+.sense-card::before{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  background:radial-gradient(80% 80% at 50% -10%,rgba(217,179,106,.14),transparent 60%);
+  opacity:0;transition:opacity .45s;
+}
+.sense-card:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:0 30px 60px -34px rgba(0,0,0,.85)}
+.sense-card:hover::before{opacity:1}
+.sense-card .ic{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+  color:var(--gold);margin-bottom:1.3rem;position:relative;z-index:2;
+  background:radial-gradient(120% 120% at 30% 20%,rgba(217,179,106,.18),rgba(16,19,28,.5));
+  border:1px solid var(--line);
+}
+.sense-card .ic svg{width:24px;height:24px}
+.sense-card h3{font-size:1.22rem;margin-bottom:.55rem;position:relative;z-index:2;letter-spacing:.02em}
+.sense-card p{font-size:.95rem;line-height:1.72;position:relative;z-index:2}
+
+/* ---------- treatments (constellation placeholders) ---------- */
+#behandelingen{background:linear-gradient(180deg,#11151f,#0e1119)}
+.treat-head{text-align:center;max-width:640px;margin:0 auto}
+.treat-head .lede{margin-inline:auto;text-align:center}
+.treat-list{margin-top:3.4rem;display:flex;flex-direction:column;gap:1.1rem;max-width:980px;margin-inline:auto}
+.treat-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:1.6rem;align-items:center;
+  padding:1.9rem clamp(1.3rem,3vw,2.3rem);border-radius:16px;
+  background:linear-gradient(120deg,rgba(30,39,64,.4),rgba(22,27,40,.5));
+  border:1px solid var(--line-2);
+  transition:border-color .4s var(--ease),transform .4s var(--ease),background .4s;
+}
+.treat-row:hover{border-color:var(--line);transform:translateX(4px);background:linear-gradient(120deg,rgba(34,44,72,.55),rgba(24,30,46,.6))}
+.treat-num{
+  font-family:"Marcellus",serif;font-size:1.5rem;color:var(--gold);
+  display:flex;align-items:center;gap:.7rem;letter-spacing:.05em;
+}
+.treat-num .s{width:7px;height:7px;background:var(--gold);clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);opacity:.8}
+.treat-main h3{font-size:1.35rem;color:var(--ivory);margin-bottom:.35rem;letter-spacing:.02em}
+.treat-main p{font-size:.92rem;line-height:1.65;color:var(--ivory-dim);max-width:52ch}
+.treat-placeholder{
+  margin-top:.7rem;display:inline-flex;align-items:center;gap:.55rem;
+  font-size:.8rem;color:var(--gold-soft);
+  background:rgba(217,179,106,.08);border:1px dashed var(--line);
+  padding:.4rem .8rem;border-radius:8px;letter-spacing:.02em;
+}
+.treat-placeholder svg{width:14px;height:14px;flex:0 0 14px}
+.treat-aside{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory-faint);
+  text-align:right;white-space:nowrap;
+}
+.treat-note{
+  text-align:center;margin-top:2.6rem;font-size:.92rem;color:var(--ivory-faint);
+  max-width:60ch;margin-inline:auto;
+}
+
+/* ---------- afspraak / contact ---------- */
+#afspraak{
+  background:
+    radial-gradient(70% 60% at 85% 0,rgba(217,179,106,.08),transparent 55%),
+    radial-gradient(60% 60% at 0% 100%,rgba(30,39,64,.6),transparent 60%),
+    var(--night);
+  position:relative;overflow:hidden;
+}
+.afspraak-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+
+.contact-card h2.title{margin-bottom:1.2rem}
+.contact-list{margin-top:2.2rem;display:flex;flex-direction:column;gap:0}
+.contact-item{
+  display:flex;gap:1.1rem;align-items:flex-start;
+  padding:1.4rem 0;border-bottom:1px solid var(--line-2);
+}
+.contact-item:first-of-type{border-top:1px solid var(--line-2)}
+.contact-item .ic{
+  flex:0 0 40px;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+  color:var(--gold);background:rgba(217,179,106,.08);border:1px solid var(--line);
+}
+.contact-item .ic svg{width:19px;height:19px}
+.contact-item .ci-label{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ivory-faint);margin-bottom:.25rem}
+.contact-item .ci-value{color:var(--ivory);font-size:1.02rem;line-height:1.5}
+.contact-item .ci-value span{display:block;color:var(--ivory-dim);font-size:.92rem}
+
+.hours-badge{
+  margin-top:2rem;display:inline-flex;align-items:center;gap:.7rem;
+  padding:.7rem 1.1rem;border-radius:999px;
+  background:rgba(217,179,106,.07);border:1px solid var(--line);
+  color:var(--gold-soft);font-size:.82rem;letter-spacing:.04em;
+}
+.hours-badge svg{width:16px;height:16px}
+
+/* form */
+.form-card{
+  background:linear-gradient(160deg,rgba(30,39,64,.5),rgba(20,25,38,.65));
+  border:1px solid var(--line);border-radius:22px;
+  padding:clamp(1.8rem,4vw,2.8rem);
+  box-shadow:0 40px 90px -50px rgba(0,0,0,.95), inset 0 0 0 1px rgba(217,179,106,.04);
+  position:relative;overflow:hidden;
+}
+.form-card::before{
+  content:"";position:absolute;top:-40%;right:-20%;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,179,106,.12),transparent 70%);pointer-events:none;
+}
+.form-card h3{font-size:1.5rem;margin-bottom:.4rem;position:relative;z-index:2}
+.form-card .form-intro{font-size:.92rem;margin-bottom:1.8rem;position:relative;z-index:2}
+.field{margin-bottom:1.2rem;position:relative;z-index:2}
+.field.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0}
+.field.row > div{margin-bottom:1.2rem}
+label{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory-faint);margin-bottom:.5rem}
+input,select,textarea{
+  width:100%;font-family:"Mulish",sans-serif;font-size:.98rem;color:var(--ivory);
+  background:rgba(13,16,24,.55);
+  border:1px solid var(--line-2);border-radius:11px;
+  padding:.9rem 1rem;transition:border-color .25s,box-shadow .25s,background .25s;
+}
+input::placeholder,textarea::placeholder{color:var(--ivory-faint);opacity:.7}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(217,179,106,.14);
+  background:rgba(13,16,24,.8);
+}
+select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23D9B36A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.6rem;}
+textarea{resize:vertical;min-height:110px}
+.form-card .btn{width:100%;justify-content:center;margin-top:.4rem;position:relative;z-index:2}
+.form-foot{margin-top:1rem;font-size:.78rem;color:var(--ivory-faint);text-align:center;position:relative;z-index:2;line-height:1.6}
+.form-status{
+  display:none;margin-top:1.1rem;padding:.9rem 1.1rem;border-radius:11px;
+  font-size:.9rem;position:relative;z-index:2;
+  background:rgba(217,179,106,.12);border:1px solid var(--line);color:var(--gold-soft);
+}
+.form-status.show{display:block}
+
+/* ---------- footer ---------- */
+footer{
+  background:#0b0e15;border-top:1px solid var(--line);
+  padding:clamp(48px,7vw,72px) 0 2.4rem;
+}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{max-width:340px}
+.foot-brand .brand{margin-bottom:1rem}
+.foot-brand p{font-size:.9rem;line-height:1.7;color:var(--ivory-dim)}
+.foot-cols{display:flex;gap:clamp(2rem,6vw,4.5rem);flex-wrap:wrap}
+.foot-col h5{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;font-family:"Mulish";font-weight:700}
+.foot-col a,.foot-col p{display:block;font-size:.9rem;color:var(--ivory-dim);margin-bottom:.6rem;transition:color .25s}
+.foot-col a:hover{color:var(--ivory)}
+.foot-bottom{
+  margin-top:clamp(2.4rem,5vw,3.4rem);padding-top:1.8rem;border-top:1px solid var(--line-2);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;
+  font-size:.82rem;color:var(--ivory-faint);
+}
+.foot-bottom a{color:var(--gold-soft);transition:color .25s}
+.foot-bottom a:hover{color:var(--gold)}
+.foot-bottom .credit{letter-spacing:.02em}
+
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .amb-grid{grid-template-columns:1fr;gap:2.6rem}
+  .amb-visual{min-height:320px;order:-1}
+  .afspraak-grid{grid-template-columns:1fr;gap:2.8rem}
+  .sense-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+}
+@media (max-width:760px){
+  nav.desktop{display:none}
+  .burger{display:flex}
+  .hero .moon{top:9%;right:7%;opacity:.85}
+  .treat-row{grid-template-columns:auto 1fr;gap:1rem 1.2rem}
+  .treat-aside{grid-column:2;text-align:left;margin-top:.2rem}
+  .treat-num{font-size:1.25rem}
+  .hero-meta{gap:1.2rem 1.6rem}
+}
+@media (max-width:480px){
+  .field.row{grid-template-columns:1fr;gap:0}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .foot-top{flex-direction:column}
+}
+
+/* ---------- reduced motion: kill ALL motion incl. starfield ---------- */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .reveal{opacity:1 !important;transform:none !important}
+  .star-layer,.big-star,.scroll-hint .line,.hero .moon,.amb-visual .glow-orb{animation:none !important}
+  .star-layer{opacity:.55 !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Schoonheidssalon Elles — naar boven">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#D9B36A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 6.4L20 11l-6.4 1.6L12 19l-1.6-6.4L4 11l6.4-1.6z"/></svg>
+      </span>
+      <span class="name">
+        <b>Elles</b>
+        <span>Schoonheidssalon</span>
+      </span>
+    </a>
+
+    <nav class="desktop" aria-label="Hoofdmenu">
+      <a href="#sfeer">Ervaring</a>
+      <a href="#ambiance">Ambiance</a>
+      <a href="#behandelingen">Behandelingen</a>
+      <a href="#afspraak">Contact</a>
+      <a class="btn btn-gold nav-cta" href="#afspraak">Maak een afspraak</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile overlay -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigatiemenu">
+  <a href="#sfeer">Ervaring</a>
+  <span class="mm-star" aria-hidden="true"></span>
+  <a href="#ambiance">Ambiance</a>
+  <span class="mm-star" aria-hidden="true"></span>
+  <a href="#behandelingen">Behandelingen</a>
+  <span class="mm-star" aria-hidden="true"></span>
+  <a href="#afspraak">Contact</a>
+  <a class="btn btn-gold" href="#afspraak">Maak een afspraak</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <!-- CSS/JS starfield (disabled under prefers-reduced-motion) -->
+  <div class="stars" id="stars" aria-hidden="true">
+    <div class="star-layer l1"></div>
+    <div class="star-layer l2"></div>
+    <div class="star-layer l3"></div>
+  </div>
+  <!-- maan -->
+  <div class="moon" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <span class="hero-tag reveal">Schoonheidssalon · Enschede</span>
+    <h1 class="reveal d1">Schoonheid onder<br><em>een sterrenhemel</em></h1>
+    <p class="sub reveal d2">Elles</p>
+    <p class="lede reveal d2">
+      Een sfeervolle, rustgevende salon waar ontspanning centraal staat.
+      Zachte relaxmuziek, subtiele geuren en sfeerverlichting met een
+      sterrenhemel-effect — alle ruimte om even helemaal tot rust te komen,
+      met persoonlijke aandacht van begin tot eind.
+    </p>
+    <div class="hero-actions reveal d3">
+      <a class="btn btn-gold" href="#afspraak">
+        Maak een afspraak
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#sfeer">Ontdek de sfeer</a>
+    </div>
+
+    <div class="hero-meta reveal d4">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Venderinklanden 26, Enschede
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Behandeling op afspraak
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 6.4L20 11l-6.4 1.6L12 19l-1.6-6.4L4 11l6.4-1.6z"/></svg>
+        Persoonlijke aandacht
+      </span>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span class="line"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- ============ ERVARING / SENSORY ============ -->
+<section class="section" id="sfeer">
+  <div class="wrap">
+    <div class="treat-head reveal">
+      <span class="kicker centered">De ervaring</span>
+      <h2 class="title">Tot rust komen, van top tot teen</h2>
+      <p class="lede" style="margin-top:1.1rem">
+        Vanaf het moment dat je binnenstapt mag de dag van je afglijden.
+        Alles is erop gericht om je zintuigen zacht te laten landen.
+      </p>
+    </div>
+
+    <div class="sense-grid">
+      <article class="sense-card reveal d1">
+        <span class="ic" aria-hidden="true">
+          <!-- sterren / sfeerverlichting -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.4 5.2L18.5 9.6 13.4 11 12 16l-1.4-5L5.5 9.6l5.1-1.4z"/><circle cx="18.5" cy="5.5" r="1"/><circle cx="5.5" cy="17.5" r="1"/><circle cx="19" cy="18" r="1"/></svg>
+        </span>
+        <h3>Sterrenhemel-sfeer</h3>
+        <p>Zachte sfeerverlichting met een fijn sterrenhemel-effect dompelt de ruimte onder in rust — warm, dimbaar en allesbehalve klinisch.</p>
+      </article>
+
+      <article class="sense-card reveal d2">
+        <span class="ic" aria-hidden="true">
+          <!-- muziek -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
+        </span>
+        <h3>Relaxmuziek</h3>
+        <p>Rustgevende muziek op de achtergrond helpt je ademhaling te vertragen en je gedachten tot bedaren te brengen, behandeling na behandeling.</p>
+      </article>
+
+      <article class="sense-card reveal d3">
+        <span class="ic" aria-hidden="true">
+          <!-- geur / druppel -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14a2.5 2.5 0 002.5 2.5"/></svg>
+        </span>
+        <h3>Subtiele geuren</h3>
+        <p>Fijne, ingetogen geuren maken de ervaring compleet — net genoeg om je te omhullen, zonder ooit opdringerig te worden.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AMBIANCE ============ -->
+<section class="section" id="ambiance">
+  <div class="wrap">
+    <div class="amb-grid">
+      <div class="amb-copy reveal">
+        <span class="kicker">Ambiance &amp; aandacht</span>
+        <h2 class="title">Een avond-rustige plek,<br>midden in Enschede</h2>
+        <p class="lede">
+          Bij Schoonheidssalon Elles draait alles om de juiste sfeer. Geen haast,
+          geen drukte — wel een warme, serene omgeving waarin jij centraal staat.
+        </p>
+        <p class="lede">
+          Ik neem rustig de tijd voor je en kijk samen met je naar wat je huid op
+          dat moment nodig heeft. Zo voelt elk bezoek als een echt rustpunt in je week.
+        </p>
+
+        <div class="amb-points">
+          <div class="amb-point">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg>
+            </span>
+            <div>
+              <h4>Persoonlijke aandacht</h4>
+              <p>Jouw wensen en jouw tempo staan voorop — geen lopende band, maar oprechte aandacht.</p>
+            </div>
+          </div>
+          <div class="amb-point">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a7 7 0 0114 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <div>
+              <h4>Rustige, sfeervolle ruimte</h4>
+              <p>Een omgeving die is ingericht op ontspanning, zodat je echt even kunt loskomen van alles.</p>
+            </div>
+          </div>
+          <div class="amb-point">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <h4>Helemaal op afspraak</h4>
+              <p>Zo ben je verzekerd van alle tijd en privacy, zonder wachten of onderbrekingen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✏️ FOTO: vervang door echte foto van de salon-ruimte / sterrenhemel-sfeerverlichting -->
+      <div class="amb-visual reveal d2">
+        <div class="mini-stars" id="ambStars" aria-hidden="true"></div>
+        <div class="glow-orb" aria-hidden="true"></div>
+        <span class="panel-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 6.4L20 11l-6.4 1.6L12 19l-1.6-6.4L4 11l6.4-1.6z"/></svg>
+          Sfeerimpressie van de salon
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- starline divider -->
+<div class="wrap"><div class="starline" aria-hidden="true"><span class="s"></span></div></div>
+
+<!-- ============ BEHANDELINGEN (placeholder categorieën) ============ -->
+<section class="section" id="behandelingen">
+  <div class="wrap">
+    <div class="treat-head reveal">
+      <span class="kicker centered">Behandelingen</span>
+      <h2 class="title">Verzorging op maat</h2>
+      <p class="lede">
+        Hieronder de categorieën waarin Elles je graag verwent. De precieze
+        behandelingen en tarieven vult Elles zelf in, zodat alles klopt met
+        haar aanbod van dit moment.
+      </p>
+    </div>
+
+    <div class="treat-list">
+
+      <!-- Categorie 1 -->
+      <article class="treat-row reveal d1">
+        <div class="treat-num"><span class="s" aria-hidden="true"></span>01</div>
+        <div class="treat-main">
+          <h3>Gezichtsbehandelingen</h3>
+          <p>Verzorgende behandelingen voor het gezicht, helemaal afgestemd op jouw huid en wat die op dat moment nodig heeft.</p>
+          <!-- ✏️ Elles: vul hier je behandelingen en prijzen in. -->
+          <span class="treat-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>
+            Elles: vul hier je behandelingen en prijzen in.
+          </span>
+        </div>
+        <div class="treat-aside">Op afspraak</div>
+      </article>
+
+      <!-- Categorie 2 -->
+      <article class="treat-row reveal d1">
+        <div class="treat-num"><span class="s" aria-hidden="true"></span>02</div>
+        <div class="treat-main">
+          <h3>Huidverzorging op maat</h3>
+          <p>Persoonlijk advies en verzorging die past bij jouw huidtype en doelen — rustig opgebouwd, stap voor stap.</p>
+          <!-- ✏️ Elles: vul hier je behandelingen en prijzen in. -->
+          <span class="treat-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>
+            Elles: vul hier je behandelingen en prijzen in.
+          </span>
+        </div>
+        <div class="treat-aside">Op afspraak</div>
+      </article>
+
+      <!-- Categorie 3 -->
+      <article class="treat-row reveal d2">
+        <div class="treat-num"><span class="s" aria-hidden="true"></span>03</div>
+        <div class="treat-main">
+          <h3>Ontspanning &amp; wellness</h3>
+          <p>Rustgevende behandelingen die draaien om puur tot rust komen, in de serene sfeer waar de salon om bekend staat.</p>
+          <!-- ✏️ Elles: vul hier je behandelingen en prijzen in. -->
+          <span class="treat-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>
+            Elles: vul hier je behandelingen en prijzen in.
+          </span>
+        </div>
+        <div class="treat-aside">Op afspraak</div>
+      </article>
+
+      <!-- Categorie 4 -->
+      <article class="treat-row reveal d2">
+        <div class="treat-num"><span class="s" aria-hidden="true"></span>04</div>
+        <div class="treat-main">
+          <h3>Afrondende verzorging</h3>
+          <p>De kleine, verfijnende details die een behandeling helemaal afmaken en je verzorgd de deur uit laten gaan.</p>
+          <!-- ✏️ Elles: vul hier je behandelingen en prijzen in. -->
+          <span class="treat-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>
+            Elles: vul hier je behandelingen en prijzen in.
+          </span>
+        </div>
+        <div class="treat-aside">Op afspraak</div>
+      </article>
+
+    </div>
+
+    <p class="treat-note reveal">
+      Benieuwd wat het beste bij jou past? Laat het weten via het formulier hieronder,
+      dan denkt Elles graag met je mee.
+    </p>
+  </div>
+</section>
+
+<!-- ============ AFSPRAAK / CONTACT ============ -->
+<section class="section" id="afspraak">
+  <div class="wrap">
+    <div class="afspraak-grid">
+
+      <!-- contact info (PLAIN TEXT — geen tel:/mailto links) -->
+      <div class="contact-card reveal">
+        <span class="kicker">Op afspraak</span>
+        <h2 class="title">Plan jouw moment van rust</h2>
+        <p class="lede" style="margin-top:1.1rem">
+          Behandelingen zijn volledig op afspraak, zodat je verzekerd bent van
+          alle tijd, rust en privacy. Stuur gerust een bericht — Elles neemt
+          contact met je op om samen een moment te plannen.
+        </p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Adres</div>
+              <div class="ci-value">Venderinklanden 26<span>7542 ML Enschede</span></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v2a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 3.2 2 2 0 014.1 1h2a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L7.1 8.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Telefoon</div>
+              <div class="ci-value">06 14499831</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">E-mail</div>
+              <div class="ci-value">info@schoonheidssalonelles.nl</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ vul openingstijden in -->
+        <div class="hours-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Openingstijden: op afspraak
+        </div>
+      </div>
+
+      <!-- formulier -->
+      <div class="form-card reveal d2">
+        <h3>Maak een afspraak</h3>
+        <p class="form-intro">Laat je gegevens achter en jouw voorkeur, dan neemt Elles zo snel mogelijk contact met je op.</p>
+
+        <!-- ✏️ vul Formspree endpoint in -->
+        <form id="afspraakForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="field row">
+            <div>
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" placeholder="Je naam" required />
+            </div>
+            <div>
+              <label for="telefoon">Telefoon</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Je telefoonnummer" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="je@email.nl" required />
+          </div>
+
+          <div class="field">
+            <label for="categorie">Waar gaat je voorkeur naar uit?</label>
+            <select id="categorie" name="categorie">
+              <option value="" disabled selected>Kies een categorie</option>
+              <option>Gezichtsbehandelingen</option>
+              <option>Huidverzorging op maat</option>
+              <option>Ontspanning &amp; wellness</option>
+              <option>Afrondende verzorging</option>
+              <option>Weet ik nog niet — graag advies</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="bericht">Je bericht</label>
+            <textarea id="bericht" name="bericht" placeholder="Vertel kort wat je zoekt of wanneer je graag zou willen komen."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold">
+            Verstuur aanvraag
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+          </button>
+
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+          <p class="form-foot">Je gegevens worden alleen gebruikt om contact met je op te nemen over je afspraak.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="Schoonheidssalon Elles">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D9B36A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 6.4L20 11l-6.4 1.6L12 19l-1.6-6.4L4 11l6.4-1.6z"/></svg>
+          </span>
+          <span class="name"><b>Elles</b><span>Schoonheidssalon</span></span>
+        </a>
+        <p>Een sfeervolle, rustgevende schoonheidssalon in Enschede waar ontspanning en persoonlijke aandacht centraal staan.</p>
+      </div>
+
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Menu</h5>
+          <a href="#sfeer">Ervaring</a>
+          <a href="#ambiance">Ambiance</a>
+          <a href="#behandelingen">Behandelingen</a>
+          <a href="#afspraak">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h5>Salon</h5>
+          <p>Venderinklanden 26</p>
+          <p>7542 ML Enschede</p>
+          <p>06 14499831</p>
+          <p>info@schoonheidssalonelles.nl</p>
+        </div>
+        <div class="foot-col">
+          <h5>Afspraken</h5>
+          <p>Op afspraak</p>
+          <!-- ✏️ vul openingstijden in -->
+          <a href="#afspraak">Maak een afspraak</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span class="credit">&copy; 2026 Schoonheidssalon Elles — Enschede</span>
+      <span>Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- sticky header state ---------- */
+  var header = document.getElementById("top");
+  function onScroll(){
+    if(window.scrollY > 24){ header.classList.add("scrolled"); }
+    else{ header.classList.remove("scrolled"); }
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* ---------- hamburger menu ---------- */
+  var burger = document.getElementById("burger");
+  var menu = document.getElementById("mobileMenu");
+  function setMenu(open){
+    menu.classList.toggle("open", open);
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "Menu sluiten" : "Menu openen");
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+  burger.addEventListener("click", function(){ setMenu(!menu.classList.contains("open")); });
+  menu.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ setMenu(false); });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && menu.classList.contains("open")){ setMenu(false); }
+  });
+
+  /* ---------- starfield generator (box-shadow dots) ---------- */
+  /* Skipped entirely under reduced motion to honor the no-motion rule. */
+  function buildShadows(count, w, h, maxSize, color){
+    var out = [];
+    for(var i=0;i<count;i++){
+      var x = Math.floor(Math.random()*w);
+      var y = Math.floor(Math.random()*h);
+      var size = (Math.random()*maxSize).toFixed(1);
+      out.push(x + "px " + y + "px " + (size>1.2? "1px ":"0 ") + color);
+    }
+    return out.join(",");
+  }
+  function seedStars(container, layers){
+    if(!container) return;
+    var w = Math.max(container.offsetWidth, window.innerWidth);
+    var h = Math.max(container.offsetHeight, 900);
+    layers.forEach(function(cfg){
+      var el = container.querySelector(cfg.sel);
+      if(!el) return;
+      el.style.boxShadow = buildShadows(cfg.count, w, h, cfg.size, cfg.color);
+      el.style.width = cfg.dot + "px";
+      el.style.height = cfg.dot + "px";
+    });
+  }
+
+  var heroStars = document.getElementById("stars");
+  if(heroStars && !reduceMotion){
+    seedStars(heroStars, [
+      {sel:".l1", count:90,  size:1.6, dot:1.6, color:"rgba(237,231,218,.9)"},
+      {sel:".l2", count:55,  size:1.4, dot:1.4, color:"rgba(217,179,106,.85)"},
+      {sel:".l3", count:40,  size:1.2, dot:2,   color:"rgba(237,231,218,.7)"}
+    ]);
+    /* a few larger feature stars */
+    var bigCount = 5;
+    var hw = heroStars.offsetWidth, hh = heroStars.offsetHeight || 760;
+    for(var b=0;b<bigCount;b++){
+      var s = document.createElement("span");
+      s.className = "big-star";
+      s.style.left = (10 + Math.random()*80) + "%";
+      s.style.top = (8 + Math.random()*70) + "%";
+      var sz = 2 + Math.random()*2;
+      s.style.width = sz + "px"; s.style.height = sz + "px";
+      s.style.animationDelay = (Math.random()*5).toFixed(2) + "s";
+      heroStars.appendChild(s);
+    }
+  } else if(heroStars && reduceMotion){
+    /* static, subtle sky so the hero still reads as "night" without motion */
+    seedStars(heroStars, [
+      {sel:".l1", count:60, size:1.4, dot:1.4, color:"rgba(237,231,218,.6)"},
+      {sel:".l2", count:35, size:1.2, dot:1.2, color:"rgba(217,179,106,.55)"},
+      {sel:".l3", count:25, size:1.2, dot:1.6, color:"rgba(237,231,218,.5)"}
+    ]);
+  }
+
+  /* mini starfield inside the ambiance visual panel */
+  var ambStars = document.getElementById("ambStars");
+  if(ambStars){
+    var aw = ambStars.offsetWidth || 480, ah = ambStars.offsetHeight || 430;
+    var dot = document.createElement("span");
+    dot.style.position="absolute"; dot.style.top="0"; dot.style.left="0";
+    dot.style.width="1.4px"; dot.style.height="1.4px"; dot.style.borderRadius="50%";
+    dot.style.boxShadow = buildShadows(50, aw, ah, 1.4, "rgba(237,231,218,.7)");
+    if(!reduceMotion){ dot.style.animation = "twinkle 6s ease-in-out infinite"; }
+    ambStars.appendChild(dot);
+  }
+
+  /* ---------- scroll reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if(reduceMotion || !("IntersectionObserver" in window)){
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    revealEls.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- form (Formspree, graceful AJAX) ---------- */
+  var form = document.getElementById("afspraakForm");
+  var status = document.getElementById("formStatus");
+  if(form){
+    form.addEventListener("submit", function(e){
+      // If the endpoint is still the placeholder, prevent a broken POST and inform the user.
+      var placeholder = form.getAttribute("action").indexOf("YOUR_FORM_ID") !== -1;
+      if(placeholder){
+        e.preventDefault();
+        status.textContent = "Dit formulier is nog niet gekoppeld. Voeg het Formspree-eindpunt toe om aanvragen te ontvangen.";
+        status.classList.add("show");
+        return;
+      }
+      // Otherwise submit via fetch for an inline thank-you (no page jump).
+      e.preventDefault();
+      var data = new FormData(form);
+      status.classList.add("show");
+      status.textContent = "Bezig met versturen…";
+      fetch(form.action, {
+        method:"POST", body:data, headers:{ "Accept":"application/json" }
+      }).then(function(res){
+        if(res.ok){
+          form.reset();
+          status.textContent = "Bedankt voor je aanvraag. Elles neemt zo snel mogelijk contact met je op.";
+        } else {
+          status.textContent = "Er ging iets mis bij het versturen. Probeer het later opnieuw of bel ons.";
+        }
+      }).catch(function(){
+        status.textContent = "Er ging iets mis bij het versturen. Probeer het later opnieuw of bel ons.";
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

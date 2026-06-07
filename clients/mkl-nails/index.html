@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MKL Nails &amp; Beauty — Nagelstudio &amp; Beauty in het centrum van Enschede</title>
+<meta name="description" content="MKL Nails &amp; Beauty in het centrum van Enschede: nagelverzorging, Gel-X tips, nagelverlenging, gezichtsbehandelingen en meer. Huidvriendelijke, low-acid gel. Maak online een afspraak." />
+<meta name="theme-color" content="#F7EEE9" />
+
+<!-- Custom SVG data-URI favicon: blush tile + "M" -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23D98C76'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' font-style='italic' text-anchor='middle' fill='%23F7EEE9'%3EM%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --blush:#F7EEE9;
+    --blush-deep:#ECD3C9;
+    --rose:#D98C76;
+    --rose-soft:#E7A993;
+    --ink:#2A211D;
+    --ink-soft:#6B5A50;
+    --line:rgba(42,33,29,.14);
+    --line-soft:rgba(42,33,29,.08);
+    --white:#FCF8F5;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Manrope",system-ui,-apple-system,sans-serif;
+    --maxw:1280px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:var(--sans);
+    background:var(--blush);
+    color:var(--ink);
+    line-height:1.65;
+    font-weight:400;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  ::selection{background:var(--rose);color:var(--white)}
+
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.04;letter-spacing:-.015em}
+
+  a{color:inherit;text-decoration:none}
+
+  img,svg{display:block;max-width:100%}
+
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.25rem,5vw,4rem)}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--rose);
+    display:inline-flex;
+    align-items:center;
+    gap:.7rem;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(1.4rem,3vw,2.4rem);
+    height:1px;
+    background:var(--rose);
+    display:inline-block;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:60;
+    background:color-mix(in srgb, var(--blush) 88%, transparent);
+    backdrop-filter:blur(14px) saturate(120%);
+    -webkit-backdrop-filter:blur(14px) saturate(120%);
+    border-bottom:1px solid transparent;
+    transition:border-color .4s var(--ease), background .4s var(--ease);
+  }
+  header.scrolled{border-bottom-color:var(--line-soft)}
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:clamp(64px,9vw,84px);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+    font-family:var(--serif);
+    font-size:clamp(1.15rem,2.4vw,1.4rem);
+    letter-spacing:-.01em;
+  }
+  .brand .mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(140deg,var(--rose),var(--rose-soft));
+    display:grid;place-items:center;
+    color:var(--white);
+    font-style:italic;
+    font-size:1.25rem;
+    flex-shrink:0;
+    box-shadow:0 6px 18px -8px rgba(217,140,118,.7);
+  }
+  .brand b{font-weight:400}
+  .brand span{font-size:.62em;letter-spacing:.22em;text-transform:uppercase;font-family:var(--sans);color:var(--ink-soft);display:block;margin-top:1px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(1.4rem,3vw,2.6rem)}
+  .nav-links a{
+    font-size:.92rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    position:relative;
+    transition:color .25s var(--ease);
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--rose);transition:width .3s var(--ease);
+  }
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a:hover::after{width:100%}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-family:var(--sans);font-weight:600;font-size:.92rem;
+    padding:.78rem 1.5rem;
+    border-radius:100px;
+    background:var(--ink);
+    color:var(--white);
+    border:1px solid var(--ink);
+    cursor:pointer;
+    transition:transform .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);background:var(--rose);border-color:var(--rose)}
+  .btn svg{width:16px;height:16px}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+  .nav .btn{display:none}
+
+  .burger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:46px;height:46px;border:1px solid var(--line);border-radius:50%;
+    background:transparent;cursor:pointer;
+    transition:background .25s var(--ease);
+  }
+  .burger:hover{background:var(--white)}
+  .burger span{display:block;height:1.5px;width:20px;margin-inline:auto;background:var(--ink);transition:transform .35s var(--ease),opacity .25s var(--ease)}
+  .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:55;
+    background:var(--blush-deep);
+    padding:clamp(5.5rem,18vw,7rem) clamp(1.5rem,7vw,3rem) 3rem;
+    display:flex;flex-direction:column;
+    transform:translateY(-100%);
+    transition:transform .55s var(--ease);
+    overflow-y:auto;
+  }
+  .overlay.open{transform:translateY(0)}
+  .overlay a{
+    font-family:var(--serif);
+    font-size:clamp(2rem,9vw,3rem);
+    padding:.45rem 0;
+    border-bottom:1px solid var(--line-soft);
+    color:var(--ink);
+    display:flex;align-items:baseline;justify-content:space-between;
+  }
+  .overlay a .idx{font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;color:var(--rose);font-weight:600}
+  .overlay .ov-foot{margin-top:auto;padding-top:2.5rem;font-size:.9rem;color:var(--ink-soft);line-height:1.9}
+  .overlay .ov-foot strong{color:var(--ink);font-weight:600}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding-top:clamp(2rem,5vw,4rem);padding-bottom:clamp(3rem,7vw,6rem)}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:clamp(1.5rem,4vw,3.5rem);
+    align-items:end;
+  }
+  .hero-copy{padding-bottom:clamp(.5rem,2vw,1.5rem)}
+  .hero h1{
+    font-size:clamp(3.1rem,11vw,8.2rem);
+    font-weight:300;
+    margin-top:1.6rem;
+    letter-spacing:-.03em;
+  }
+  .hero h1 .it{font-style:italic;font-weight:300;color:var(--rose)}
+  .hero h1 .blk{display:block}
+  .hero-sub{
+    margin-top:1.8rem;
+    font-size:clamp(1.02rem,1.6vw,1.18rem);
+    color:var(--ink-soft);
+    max-width:46ch;
+    line-height:1.75;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:1.4rem 2.2rem;margin-top:2.6rem;
+    padding-top:1.8rem;border-top:1px solid var(--line-soft);
+  }
+  .hero-meta .m{display:flex;flex-direction:column;gap:.15rem}
+  .hero-meta .m b{font-family:var(--serif);font-size:1.55rem;font-weight:400;line-height:1}
+  .hero-meta .m span{font-size:.78rem;letter-spacing:.06em;color:var(--ink-soft)}
+
+  /* hero visual panel */
+  .hero-panel{
+    position:relative;
+    aspect-ratio:3/4.1;
+    border-radius:200px 200px 22px 22px;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 70% 12%, rgba(255,255,255,.55), transparent 55%),
+      linear-gradient(155deg, var(--rose-soft) 0%, var(--rose) 45%, #C97461 100%);
+    box-shadow:0 40px 80px -40px rgba(217,140,118,.65);
+  }
+  /* ✏️ FOTO: vervang dit blush-paneel door een sfeerfoto van de studio of een mooie nagelset (staand, ~3:4) */
+  .hero-panel::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 22% 78%, rgba(255,255,255,.35) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 62% 40%, rgba(255,255,255,.28) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,.3) 0 2px, transparent 3px);
+    background-size:140px 140px,180px 180px,110px 110px;
+    mix-blend-mode:screen;opacity:.7;
+  }
+  .panel-tag{
+    position:absolute;left:18px;bottom:18px;right:18px;z-index:2;
+    background:color-mix(in srgb, var(--blush) 92%, transparent);
+    backdrop-filter:blur(6px);
+    border-radius:16px;
+    padding:1rem 1.15rem;
+    display:flex;align-items:center;gap:.85rem;
+  }
+  .panel-tag .pt-ic{width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--blush);display:grid;place-items:center;flex-shrink:0}
+  .panel-tag .pt-ic svg{width:18px;height:18px}
+  .panel-tag b{font-family:var(--serif);font-size:1rem;font-weight:500;display:block;line-height:1.2}
+  .panel-tag span{font-size:.76rem;color:var(--ink-soft)}
+
+  .panel-float{
+    position:absolute;top:20px;right:-10px;z-index:2;
+    background:var(--white);
+    border-radius:14px;
+    padding:.7rem 1rem;
+    box-shadow:0 18px 40px -20px rgba(42,33,29,.4);
+    font-size:.78rem;font-weight:600;color:var(--ink);
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .panel-float svg{width:15px;height:15px;color:var(--rose)}
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{
+    border-block:1px solid var(--line-soft);
+    background:var(--blush-deep);
+    overflow:hidden;
+    padding-block:.95rem;
+  }
+  .marquee{display:flex;gap:3rem;width:max-content;animation:slide 32s linear infinite}
+  .marquee span{
+    font-family:var(--serif);font-style:italic;
+    font-size:clamp(1rem,2vw,1.35rem);
+    color:var(--ink);
+    display:inline-flex;align-items:center;gap:3rem;
+    white-space:nowrap;
+  }
+  .marquee span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);display:inline-block}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{position:relative}
+  .sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+  .sec-head h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:300;max-width:16ch}
+  .sec-head h2 .it{font-style:italic;color:var(--rose)}
+  .sec-head p{max-width:34ch;color:var(--ink-soft);font-size:1rem}
+
+  .pad{padding-block:clamp(3.5rem,9vw,7rem)}
+
+  /* ---------- BEHANDELKAART (side-scroll) ---------- */
+  #behandelingen{overflow:hidden}
+  .scroller-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2.4rem}
+  .scroller-head .hint{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:var(--ink-soft);font-weight:500}
+  .scroller-head .hint svg{width:18px;height:18px;color:var(--rose)}
+
+  .scroller{
+    display:flex;
+    gap:clamp(1rem,2vw,1.6rem);
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:1.6rem;
+    padding-inline:clamp(1.25rem,5vw,4rem);
+    margin-inline:calc(-1 * clamp(1.25rem,5vw,4rem));
+    scrollbar-width:thin;
+    scrollbar-color:var(--rose) transparent;
+  }
+  .scroller::-webkit-scrollbar{height:6px}
+  .scroller::-webkit-scrollbar-thumb{background:var(--rose);border-radius:10px}
+  .scroller::-webkit-scrollbar-track{background:var(--line-soft);border-radius:10px}
+
+  .tcard{
+    scroll-snap-align:start;
+    flex:0 0 clamp(258px,72vw,320px);
+    background:var(--white);
+    border:1px solid var(--line-soft);
+    border-radius:22px;
+    padding:1.6rem 1.5rem 1.7rem;
+    display:flex;flex-direction:column;
+    min-height:380px;
+    transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);
+  }
+  .tcard:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(42,33,29,.28);border-color:var(--line)}
+  .tcard .tnum{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--rose)}
+  .tcard .tvis{
+    margin-top:1rem;height:128px;border-radius:14px;position:relative;overflow:hidden;
+  }
+  /* ✏️ FOTO: vervang elke .tvis-tint door een echte behandelingsfoto (≈4:3) */
+  .tvis::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 30% 30%,rgba(255,255,255,.4),transparent 60%);mix-blend-mode:overlay}
+  .t1 .tvis{background:linear-gradient(135deg,#E7A993,#D98C76)}
+  .t2 .tvis{background:linear-gradient(135deg,#E8C4B6,#D98C76)}
+  .t3 .tvis{background:linear-gradient(135deg,#D98C76,#B86B57)}
+  .t4 .tvis{background:linear-gradient(135deg,#EBD0C5,#E7A993)}
+  .t5 .tvis{background:linear-gradient(135deg,#E2B4A2,#C97461)}
+  .t6 .tvis{background:linear-gradient(135deg,#EFD9CF,#D98C76)}
+  .t7 .tvis{background:linear-gradient(135deg,#E7A993,#C97461)}
+  .t8 .tvis{background:linear-gradient(135deg,#E8C9BD,#D98C76)}
+  .tcard h3{font-size:1.4rem;font-weight:400;margin-top:1.2rem}
+  .tcard p{font-size:.9rem;color:var(--ink-soft);margin-top:.55rem;line-height:1.6}
+  .tcard .tfoot{margin-top:auto;padding-top:1.1rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line-soft)}
+  .tcard .tprice{font-size:.82rem;color:var(--ink-soft);font-weight:500}
+  .tcard .tlink{display:inline-flex;align-items:center;gap:.4rem;font-size:.84rem;font-weight:600;color:var(--ink)}
+  .tcard .tlink svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+  .tcard:hover .tlink svg{transform:translateX(4px)}
+
+  /* extra services chips */
+  .more-services{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .more-services .lbl{font-size:.82rem;color:var(--ink-soft);margin-right:.4rem}
+  .chip{
+    font-size:.84rem;font-weight:500;
+    padding:.5rem 1rem;border-radius:100px;
+    background:var(--blush-deep);color:var(--ink);
+    border:1px solid var(--line-soft);
+  }
+
+  /* ---------- PULL QUOTE BAND ---------- */
+  .quoteband{background:var(--ink);color:var(--blush);overflow:hidden;position:relative}
+  .quoteband::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(80% 120% at 85% 0%, rgba(217,140,118,.35), transparent 60%);
+  }
+  .quoteband .wrap{position:relative;padding-block:clamp(4rem,10vw,7.5rem)}
+  .qmark{font-family:var(--serif);font-style:italic;font-size:clamp(4rem,12vw,8rem);line-height:.4;color:var(--rose);display:block;height:.5em}
+  .quoteband blockquote{
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:clamp(1.9rem,5.5vw,4rem);
+    line-height:1.12;
+    letter-spacing:-.02em;
+    max-width:18ch;
+    margin-top:1.5rem;
+  }
+  .quoteband blockquote .it{font-style:italic;color:var(--rose-soft)}
+  .quoteband .qfoot{
+    margin-top:2.4rem;display:flex;align-items:center;gap:1rem;
+    font-family:var(--sans);font-size:.92rem;color:rgba(247,238,233,.7);
+  }
+  .quoteband .qfoot .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(140deg,var(--rose),var(--rose-soft));display:grid;place-items:center;font-family:var(--serif);font-style:italic;color:var(--white);font-size:1.1rem}
+  .quoteband .qfoot b{color:var(--blush);font-weight:600;font-family:var(--sans)}
+
+  /* ---------- WAAROM MKL (2-col) ---------- */
+  .why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+  .why-visual{
+    aspect-ratio:1/1;border-radius:26px;position:relative;overflow:hidden;
+    background:
+      radial-gradient(110% 90% at 25% 20%, rgba(255,255,255,.6), transparent 50%),
+      linear-gradient(160deg,var(--blush-deep),var(--rose-soft));
+    border:1px solid var(--line-soft);
+  }
+  /* ✏️ FOTO: vervang dit vlak door een close-up van een huidvriendelijke gel-behandeling */
+  .why-visual .badge{
+    position:absolute;inset:auto auto 22px 22px;right:22px;
+    background:var(--white);border-radius:18px;padding:1.2rem 1.3rem;
+    box-shadow:0 24px 50px -28px rgba(42,33,29,.45);
+  }
+  .why-visual .badge .bt{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--rose);margin-bottom:.3rem}
+  .why-visual .badge .bd{font-size:.86rem;color:var(--ink-soft);line-height:1.5}
+  .why-seal{
+    position:absolute;top:22px;right:22px;width:96px;height:96px;
+    animation:spin 26s linear infinite;
+  }
+  .why-seal text{font-family:var(--sans);font-size:8.4px;letter-spacing:.18em;fill:var(--ink);font-weight:600;text-transform:uppercase}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .why-copy h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:300;margin:1.2rem 0 1.4rem}
+  .why-copy h2 .it{font-style:italic;color:var(--rose)}
+  .why-copy .lead{color:var(--ink-soft);font-size:1.05rem;line-height:1.75;max-width:48ch}
+  .why-list{margin-top:2rem;display:flex;flex-direction:column;gap:0}
+  .why-item{display:flex;gap:1.1rem;padding:1.25rem 0;border-top:1px solid var(--line-soft)}
+  .why-item:last-child{border-bottom:1px solid var(--line-soft)}
+  .why-item .wi-ic{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:var(--blush-deep);display:grid;place-items:center;color:var(--rose)}
+  .why-item .wi-ic svg{width:22px;height:22px}
+  .why-item h4{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:.25rem}
+  .why-item p{font-size:.92rem;color:var(--ink-soft);line-height:1.6}
+
+  /* ---------- HOURS + VISIT ---------- */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,2.5rem)}
+  .panel-card{
+    background:var(--white);border:1px solid var(--line-soft);border-radius:24px;
+    padding:clamp(1.8rem,4vw,2.6rem);
+  }
+  .panel-card h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:400;margin-bottom:.4rem}
+  .panel-card h3 .it{font-style:italic;color:var(--rose)}
+  .panel-card .pc-sub{color:var(--ink-soft);font-size:.94rem;margin-bottom:1.6rem}
+
+  .hours-row{display:flex;align-items:center;justify-content:space-between;padding:.72rem 0;border-bottom:1px solid var(--line-soft);font-size:.96rem}
+  .hours-row:last-child{border-bottom:0}
+  .hours-row.today{font-weight:600}
+  .hours-row .day{color:var(--ink)}
+  .hours-row .time{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .hours-row.today .time{color:var(--rose)}
+  .hours-row .closed{color:var(--ink-soft);opacity:.6}
+  .today-pill{display:inline-block;margin-left:.6rem;font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);background:var(--blush-deep);padding:.15rem .5rem;border-radius:100px;vertical-align:middle}
+
+  .contact-line{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--line-soft)}
+  .contact-line:last-of-type{border-bottom:0}
+  .contact-line .cl-ic{width:40px;height:40px;flex-shrink:0;border-radius:11px;background:var(--blush-deep);display:grid;place-items:center;color:var(--rose)}
+  .contact-line .cl-ic svg{width:19px;height:19px}
+  .contact-line .cl-lbl{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.15rem}
+  .contact-line .cl-val{font-size:1.02rem;color:var(--ink);font-weight:500}
+  .map-faux{
+    margin-top:1.4rem;height:150px;border-radius:16px;overflow:hidden;position:relative;
+    background:
+      linear-gradient(0deg, rgba(42,33,29,.04), rgba(42,33,29,.04)),
+      repeating-linear-gradient(45deg, var(--blush-deep) 0 14px, var(--blush) 14px 28px);
+    border:1px solid var(--line-soft);
+    display:grid;place-items:center;
+  }
+  /* ✏️ KAART: optioneel vervangen door een echte (statische) kaart-afbeelding van Noorderhagen 1A */
+  .map-faux .pin{display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--ink)}
+  .map-faux .pin svg{width:28px;height:28px;color:var(--rose)}
+  .map-faux .pin span{font-size:.82rem;font-weight:600}
+
+  .socials{display:flex;gap:.7rem;margin-top:1.6rem;flex-wrap:wrap}
+  .soc{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.6rem 1rem;border-radius:100px;
+    border:1px solid var(--line);font-size:.86rem;font-weight:500;
+    transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease);
+  }
+  .soc svg{width:17px;height:17px}
+  .soc:hover{background:var(--ink);color:var(--white);border-color:var(--ink);transform:translateY(-2px)}
+
+  /* ---------- AFSPRAAK FORM ---------- */
+  .afspraak{background:var(--blush-deep);position:relative;overflow:hidden}
+  .afspraak::before{content:"";position:absolute;top:-30%;left:-10%;width:50%;height:140%;background:radial-gradient(circle,rgba(255,255,255,.5),transparent 65%)}
+  .af-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,4.5rem);align-items:start;position:relative}
+  .af-intro h2{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:300;margin:1.2rem 0 1.3rem}
+  .af-intro h2 .it{font-style:italic;color:var(--rose)}
+  .af-intro p{color:var(--ink-soft);font-size:1.02rem;line-height:1.75;max-width:42ch}
+  .af-perks{margin-top:2rem;display:flex;flex-direction:column;gap:.9rem}
+  .af-perk{display:flex;align-items:center;gap:.8rem;font-size:.95rem;color:var(--ink)}
+  .af-perk svg{width:20px;height:20px;color:var(--rose);flex-shrink:0}
+
+  form{background:var(--white);border:1px solid var(--line-soft);border-radius:24px;padding:clamp(1.6rem,4vw,2.6rem)}
+  .field{margin-bottom:1.15rem}
+  .field.row2{display:grid;grid-template-columns:1fr 1fr;gap:1.15rem;margin-bottom:1.15rem}
+  .field.row2 .field{margin-bottom:0}
+  label{display:block;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--ink);margin-bottom:.5rem}
+  input,select,textarea{
+    width:100%;font-family:var(--sans);font-size:.96rem;color:var(--ink);
+    background:var(--blush);
+    border:1px solid var(--line-soft);
+    border-radius:12px;
+    padding:.85rem 1rem;
+    transition:border-color .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);
+  }
+  input::placeholder,textarea::placeholder{color:var(--ink-soft);opacity:.65}
+  input:focus,select:focus,textarea:focus{
+    outline:none;border-color:var(--rose);background:var(--white);
+    box-shadow:0 0 0 3px rgba(217,140,118,.15);
+  }
+  textarea{resize:vertical;min-height:96px}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B5A50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.6rem}
+  form .btn{width:100%;justify-content:center;margin-top:.4rem;padding-block:1rem}
+  .form-note{font-size:.78rem;color:var(--ink-soft);margin-top:1rem;text-align:center;line-height:1.6}
+  .form-msg{display:none;text-align:center;padding:2.2rem 1rem}
+  .form-msg.show{display:block}
+  .form-msg .fm-ic{width:58px;height:58px;border-radius:50%;background:var(--blush-deep);display:grid;place-items:center;margin:0 auto 1.1rem;color:var(--rose)}
+  .form-msg .fm-ic svg{width:28px;height:28px}
+  .form-msg h3{font-size:1.6rem;font-weight:400;margin-bottom:.5rem}
+  .form-msg p{color:var(--ink-soft);font-size:.95rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:var(--blush);padding-top:clamp(3.5rem,8vw,5.5rem)}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(247,238,233,.12)}
+  .foot-brand .brand{color:var(--blush)}
+  .foot-brand .brand span{color:rgba(247,238,233,.6)}
+  .foot-brand p{margin-top:1.2rem;color:rgba(247,238,233,.65);font-size:.95rem;max-width:34ch;line-height:1.7}
+  .foot-col h4{font-family:var(--sans);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:1.1rem;font-weight:600}
+  .foot-col a,.foot-col p{display:block;color:rgba(247,238,233,.75);font-size:.94rem;padding:.32rem 0;line-height:1.5}
+  .foot-col a{transition:color .2s var(--ease)}
+  .foot-col a:hover{color:var(--blush)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;padding-block:1.8rem;font-size:.84rem;color:rgba(247,238,233,.6)}
+  .foot-bottom a{color:var(--rose-soft);text-decoration:underline;text-underline-offset:3px}
+  .foot-bottom a:hover{color:var(--blush)}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}
+  .reveal.d2{transition-delay:.16s}
+  .reveal.d3{transition-delay:.24s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+    .hero-panel{aspect-ratio:4/3.4;border-radius:120px 120px 22px 22px;max-height:480px}
+    .why-grid{grid-template-columns:1fr;gap:2.5rem}
+    .why-visual{max-width:460px}
+    .visit-grid{grid-template-columns:1fr}
+    .af-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:620px){
+    .nav-links{display:none}
+    .field.row2{grid-template-columns:1fr;gap:0}
+    .field.row2 .field{margin-bottom:1.15rem}
+    .foot-top{grid-template-columns:1fr}
+    .hero-meta{gap:1.2rem 1.8rem}
+  }
+  @media(min-width:621px){
+    .burger{display:none}
+    .nav .btn{display:inline-flex}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none}
+    .marquee{animation:none;transform:none}
+    .why-seal{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="MKL Nails &amp; Beauty home">
+      <span class="mark">M</span>
+      <span><b>MKL</b><span>Nails &amp; Beauty</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a href="#behandelingen">Behandelingen</a>
+      <a href="#waarom">Waarom MKL</a>
+      <a href="#bezoek">Openingstijden</a>
+      <a href="#afspraak">Contact</a>
+    </nav>
+    <a href="#afspraak" class="btn">
+      Maak een afspraak
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <nav aria-label="Mobiel menu">
+    <a href="#behandelingen"><span>Behandelingen</span><span class="idx">01</span></a>
+    <a href="#waarom"><span>Waarom MKL</span><span class="idx">02</span></a>
+    <a href="#bezoek"><span>Openingstijden</span><span class="idx">03</span></a>
+    <a href="#afspraak"><span>Contact</span><span class="idx">04</span></a>
+  </nav>
+  <div class="ov-foot">
+    <strong>Noorderhagen 1A</strong><br>7511 EJ Enschede<br>
+    Telefoon 06 39371976<br>info@mkl-nails.nl
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Nagelstudio &amp; Beauty &middot; Centrum Enschede</span>
+      <h1>
+        <span class="blk">Mooie</span>
+        <span class="blk"><span class="it">nagels</span>, een</span>
+        <span class="blk">stralend gevoel.</span>
+      </h1>
+      <p class="hero-sub">
+        Welkom bij MKL Nails &amp; Beauty in het hart van Enschede. We nemen rustig de tijd voor jouw nagels en beauty &mdash; met huidvriendelijke producten, trendy nail art en een warm welkom.
+      </p>
+      <div class="hero-actions">
+        <a href="#afspraak" class="btn">
+          Plan je afspraak
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#behandelingen" class="btn btn-ghost">Bekijk behandelingen</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m"><b>Centrum</b><span>Noorderhagen 1A</span></div>
+        <div class="m"><b>Low-acid</b><span>Huidvriendelijke gel</span></div>
+        <div class="m"><b>Beauty</b><span>Nagels &amp; gezicht</span></div>
+      </div>
+    </div>
+
+    <div class="hero-panel reveal d1">
+      <!-- ✏️ FOTO: vervang door echte foto van de studio of een mooie nagelset (staand) -->
+      <div class="panel-float">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6L5.7 21l2.3-7.2-6-4.4h7.6z"/></svg>
+        Trendy nail art
+      </div>
+      <div class="panel-tag">
+        <div class="pt-ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <b>Iedereen verdient het om zich mooi te voelen</b>
+          <span>Onze belofte aan jou</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="marquee">
+    <span>Natural Nail Treatment</span><span>Gel-X Tips</span><span>Nagelverlenging</span><span>Combi Manicure</span><span>Gezichtsbehandelingen</span><span>Wenkbrauwen</span><span>Lash Lift</span><span>Harsen</span><span>Teeth Whitening</span><span>Opleidingen</span>
+    <span>Natural Nail Treatment</span><span>Gel-X Tips</span><span>Nagelverlenging</span><span>Combi Manicure</span><span>Gezichtsbehandelingen</span><span>Wenkbrauwen</span><span>Lash Lift</span><span>Harsen</span><span>Teeth Whitening</span><span>Opleidingen</span>
+  </div>
+</div>
+
+<!-- ============ BEHANDELINGEN (side-scroll) ============ -->
+<section id="behandelingen" class="pad">
+  <div class="wrap">
+    <div class="scroller-head reveal">
+      <div>
+        <span class="eyebrow">De behandelkaart</span>
+        <h2 style="font-family:var(--serif);font-size:clamp(2.2rem,6vw,4rem);font-weight:300;margin-top:1.2rem;max-width:14ch;">Onze <span style="font-style:italic;color:var(--rose)">behandelingen</span></h2>
+      </div>
+      <div class="hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        Sleep of swipe om alles te zien
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="scroller reveal d1" id="scroller" tabindex="0" role="list" aria-label="Behandelingen, horizontaal scrollbaar">
+      <article class="tcard t1" role="listitem">
+        <span class="tnum">01</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Natural Nail Treatment -->
+        <h3>Natural Nail Treatment</h3>
+        <p>Pure, verzorgende behandeling die je eigen nagels gezond, sterk en mooi houdt &mdash; subtiel en natuurlijk.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t2" role="listitem">
+        <span class="tnum">02</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Combi Manicure -->
+        <h3>Combi Manicure</h3>
+        <p>De perfecte combinatie van verzorging en gellak. Strakke nagelriemen en een langhoudende, glanzende finish.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t3" role="listitem">
+        <span class="tnum">03</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Gel-X Tips -->
+        <h3>Gel-X Tips</h3>
+        <p>Lichtgewicht, soepele tips voor een natuurlijke look en lengte. Zacht voor je nagel, prachtig in elke vorm.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t4" role="listitem">
+        <span class="tnum">04</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Nagelverlenging -->
+        <h3>Nagelverlenging</h3>
+        <p>Van subtiel langer tot een statement-set: stevige, mooi gevormde nagels die helemaal bij jou passen.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t5" role="listitem">
+        <span class="tnum">05</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Gezichtsbehandeling -->
+        <h3>Gezichtsbehandelingen</h3>
+        <p>Even helemaal tot rust komen. Een verzorgende behandeling die je huid reinigt, voedt en laat stralen.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t6" role="listitem">
+        <span class="tnum">06</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Wenkbrauwen -->
+        <h3>Wenkbrauwen</h3>
+        <p>Mooi in model gebracht voor een verzorgde, open blik. Afgestemd op jouw gezicht en stijl.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t7" role="listitem">
+        <span class="tnum">07</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Lash Lift -->
+        <h3>Lash Lift</h3>
+        <p>Een natuurlijke lift voor je eigen wimpers &mdash; meer krul, meer lengte, weken plezier zonder mascara.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+
+      <article class="tcard t8" role="listitem">
+        <span class="tnum">08</span>
+        <div class="tvis"></div>
+        <!-- ✏️ FOTO: Teeth Whitening -->
+        <h3>Teeth Whitening</h3>
+        <p>Een frisse, stralende glimlach met onze tandenbleek-behandeling. Snel, comfortabel en zichtbaar resultaat.</p>
+        <div class="tfoot"><span class="tprice">Prijs op aanvraag</span><a href="#afspraak" class="tlink">Boeken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </article>
+    </div>
+
+    <div class="more-services reveal d2">
+      <span class="lbl">Ook bij ons:</span>
+      <span class="chip">Harsen</span>
+      <span class="chip">Seizoenskleuren</span>
+      <span class="chip">Nail art op maat</span>
+      <span class="chip">Trainingen &amp; opleidingen</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<section class="quoteband">
+  <div class="wrap reveal">
+    <span class="qmark">&ldquo;</span>
+    <blockquote>Iedereen verdient het om zich <span class="it">mooi</span> te voelen.</blockquote>
+    <div class="qfoot">
+      <span class="av">K</span>
+      <span>Kim &mdash; <b>MKL Nails &amp; Beauty</b>, Enschede</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAAROM MKL ============ -->
+<section id="waarom" class="pad">
+  <div class="wrap why-grid">
+    <div class="why-visual reveal">
+      <!-- ✏️ FOTO: close-up van een huidvriendelijke gel-behandeling -->
+      <svg class="why-seal" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+        <text><textPath href="#circ" startOffset="0">&middot; HEMA-vrij &middot; Di-HEMA-vrij &middot; TPO-vrij &middot; Low-acid &middot;</textPath></text>
+        <circle cx="50" cy="50" r="13" fill="none" stroke="#2A211D" stroke-width="1.2"/>
+        <circle cx="50" cy="50" r="3" fill="#D98C76"/>
+      </svg>
+      <div class="badge">
+        <div class="bt">Huidvriendelijke gel</div>
+        <div class="bd">We werken met low-acid gel &mdash; zachter voor je natuurlijke nagel, met een prachtig resultaat.</div>
+      </div>
+    </div>
+
+    <div class="why-copy reveal d1">
+      <span class="eyebrow">Waarom MKL</span>
+      <h2>Kwaliteit die je <span class="it">voelt</span>, niet alleen ziet.</h2>
+      <p class="lead">
+        Bij MKL draait alles om jou. We nemen de tijd, kiezen bewust voor huidvriendelijke producten en houden onze kleuren en technieken altijd up-to-date met de trends en seizoenen.
+      </p>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="wi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Low-acid &amp; huidvriendelijk</h4><p>Onze gel is HEMA-, Di-HEMA- en TPO-vrij. Beter voor je nagels en je huid &mdash; zonder in te leveren op houdbaarheid.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="wi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6L5.7 21l2.3-7.2-6-4.4h7.6z"/></svg></div>
+          <div><h4>Trendy nail art &amp; seizoenskleuren</h4><p>Van clean en natuurlijk tot een opvallende set: we denken met je mee en werken met de nieuwste kleuren en designs.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="wi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></div>
+          <div><h4>Persoonlijke aandacht</h4><p>Geen lopende band. We luisteren naar wat jij wilt en geven advies dat bij jouw nagels en stijl past.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="wi-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div><h4>Trainingen &amp; opleidingen</h4><p>Zelf het vak leren? Wij delen onze kennis en technieken in onze trainingen en opleidingen.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK: HOURS + CONTACT ============ -->
+<section id="bezoek" class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Kom <span class="it">langs</span> in het centrum</h2>
+      <p>Je vindt ons aan de Noorderhagen 1A, midden in Enschede. Loop gerust binnen of plan vooraf je afspraak.</p>
+    </div>
+
+    <div class="visit-grid">
+      <div class="panel-card reveal">
+        <h3>Onze <span class="it">openingstijden</span></h3>
+        <p class="pc-sub">Buiten deze tijden? Stuur ons een bericht, we denken graag mee.</p>
+        <div id="hours">
+          <div class="hours-row" data-day="1"><span class="day">Maandag</span><span class="time">09:00 &ndash; 14:00</span></div>
+          <div class="hours-row" data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 &ndash; 18:00</span></div>
+          <div class="hours-row" data-day="3"><span class="day">Woensdag</span><span class="time">09:00 &ndash; 12:00</span></div>
+          <div class="hours-row" data-day="4"><span class="day">Donderdag</span><span class="time">09:00 &ndash; 18:00</span></div>
+          <div class="hours-row" data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 &ndash; 17:00</span></div>
+          <div class="hours-row" data-day="6"><span class="day">Zaterdag</span><span class="time closed">Gesloten</span></div>
+          <div class="hours-row" data-day="0"><span class="day">Zondag</span><span class="time closed">Gesloten</span></div>
+        </div>
+      </div>
+
+      <div class="panel-card reveal d1">
+        <h3>Waar je ons <span class="it">vindt</span></h3>
+        <p class="pc-sub">Contactgegevens &mdash; gebruik gerust het afspraakformulier hieronder.</p>
+
+        <div class="contact-line">
+          <div class="cl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="cl-lbl">Adres</div><div class="cl-val">Noorderhagen 1A, 7511 EJ Enschede</div></div>
+        </div>
+        <div class="contact-line">
+          <div class="cl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="cl-lbl">Telefoon</div><div class="cl-val">06 39371976</div></div>
+        </div>
+        <div class="contact-line">
+          <div class="cl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><div class="cl-lbl">E-mail</div><div class="cl-val">info@mkl-nails.nl</div></div>
+        </div>
+
+        <div class="map-faux" role="img" aria-label="Locatie: Noorderhagen 1A, Enschede">
+          <!-- ✏️ KAART: optioneel een echte statische kaart-afbeelding plaatsen -->
+          <div class="pin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Noorderhagen 1A &middot; Enschede</span>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a class="soc" href="https://instagram.com/kim.mklnails" target="_blank" rel="noopener" aria-label="Instagram van Kim, kim.mklnails">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+            @kim.mklnails
+          </a>
+          <a class="soc" href="https://instagram.com/mklnails.enschede" target="_blank" rel="noopener" aria-label="Instagram mklnails.enschede">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+            @mklnails.enschede
+          </a>
+          <a class="soc" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook MKL Nails Enschede">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            MKL Nails Enschede
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFSPRAAK FORM ============ -->
+<section id="afspraak" class="afspraak pad">
+  <div class="wrap af-grid">
+    <div class="af-intro reveal">
+      <span class="eyebrow">Maak een afspraak</span>
+      <h2>Klaar voor je <span class="it">moment</span>?</h2>
+      <p>
+        Laat hieronder je gegevens en wens achter, dan nemen we contact met je op om een datum en tijd te plannen. Niet zeker welke behandeling? Vertel het ons gerust &mdash; we adviseren je graag.
+      </p>
+      <div class="af-perks">
+        <div class="af-perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Persoonlijk advies bij elke behandeling</div>
+        <div class="af-perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Huidvriendelijke, low-acid producten</div>
+        <div class="af-perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Midden in het centrum van Enschede</div>
+      </div>
+    </div>
+
+    <div class="reveal d1">
+      <!-- ✏️ vul Formspree endpoint in -->
+      <form id="afspraakForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field row2">
+          <div class="field">
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" name="naam" placeholder="Je naam" required />
+          </div>
+          <div class="field">
+            <label for="tel">Telefoon</label>
+            <input type="tel" id="tel" name="telefoon" placeholder="06 ..." required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">E-mailadres</label>
+          <input type="email" id="email" name="email" placeholder="naam@voorbeeld.nl" required />
+        </div>
+        <div class="field">
+          <label for="behandeling">Welke behandeling?</label>
+          <select id="behandeling" name="behandeling">
+            <option value="">Maak een keuze</option>
+            <option>Natural Nail Treatment</option>
+            <option>Combi Manicure</option>
+            <option>Gel-X Tips</option>
+            <option>Nagelverlenging</option>
+            <option>Gezichtsbehandeling</option>
+            <option>Wenkbrauwen</option>
+            <option>Lash Lift</option>
+            <option>Harsen</option>
+            <option>Teeth Whitening</option>
+            <option>Training / opleiding</option>
+            <option>Weet ik nog niet / advies</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bericht">Jouw voorkeur of vraag</label>
+          <textarea id="bericht" name="bericht" placeholder="Bijv. liefst op donderdag, of een vraag over kleuren..."></textarea>
+        </div>
+        <button type="submit" class="btn">
+          Verstuur aanvraag
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+        <p class="form-note">We reageren zo snel mogelijk &mdash; meestal binnen onze openingstijden.</p>
+      </form>
+
+      <div class="form-msg" id="formMsg" role="status" aria-live="polite">
+        <div class="fm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Bedankt voor je aanvraag</h3>
+        <p>We hebben je bericht ontvangen en nemen snel contact met je op om je afspraak in te plannen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <span class="mark">M</span>
+          <span><b>MKL</b><span>Nails &amp; Beauty</span></span>
+        </a>
+        <p>Nagelstudio &amp; beauty in het centrum van Enschede. Huidvriendelijke gel, trendy nail art en persoonlijke aandacht &mdash; omdat iedereen het verdient om zich mooi te voelen.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Behandelingen</h4>
+        <a href="#behandelingen">Nagelverzorging</a>
+        <a href="#behandelingen">Gel-X &amp; verlenging</a>
+        <a href="#behandelingen">Gezicht &amp; wenkbrauwen</a>
+        <a href="#behandelingen">Lash Lift &amp; harsen</a>
+        <a href="#behandelingen">Teeth Whitening</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Noorderhagen 1A<br>7511 EJ Enschede</p>
+        <p>06 39371976</p>
+        <p>info@mkl-nails.nl</p>
+        <a href="https://instagram.com/kim.mklnails" target="_blank" rel="noopener">@kim.mklnails</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 MKL Nails &amp; Beauty &mdash; Enschede &middot; Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Noorderhagen 1A &middot; Enschede</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ----- sticky header shadow ----- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 8){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ----- mobile menu ----- */
+  var burger = document.getElementById('burger');
+  var overlay = document.getElementById('overlay');
+  var toggleMenu = function(open){
+    var isOpen = open !== undefined ? open : !burger.classList.contains('open');
+    burger.classList.toggle('open', isOpen);
+    overlay.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    burger.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+    overlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
+  burger.addEventListener('click', function(){ toggleMenu(); });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ toggleMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')){ toggleMenu(false); }
+  });
+
+  /* ----- scroll reveal ----- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ----- highlight today's opening hours ----- */
+  var today = new Date().getDay(); // 0 = Sunday
+  var row = document.querySelector('.hours-row[data-day="'+today+'"]');
+  if(row){
+    row.classList.add('today');
+    var pill = document.createElement('span');
+    pill.className = 'today-pill';
+    pill.textContent = 'Vandaag';
+    row.querySelector('.day').appendChild(pill);
+  }
+
+  /* ----- side-scroll: drag to scroll on desktop ----- */
+  var sc = document.getElementById('scroller');
+  if(sc){
+    var down=false, startX=0, startScroll=0, moved=false;
+    sc.addEventListener('mousedown', function(e){
+      down=true; moved=false; startX=e.pageX; startScroll=sc.scrollLeft; sc.style.cursor='grabbing';
+    });
+    window.addEventListener('mouseup', function(){ down=false; sc.style.cursor=''; });
+    sc.addEventListener('mouseleave', function(){ down=false; sc.style.cursor=''; });
+    sc.addEventListener('mousemove', function(e){
+      if(!down) return;
+      var dx = e.pageX - startX;
+      if(Math.abs(dx) > 4) moved=true;
+      sc.scrollLeft = startScroll - dx;
+    });
+    // prevent click navigation right after a drag
+    sc.addEventListener('click', function(e){
+      if(moved){ e.preventDefault(); }
+    }, true);
+  }
+
+  /* ----- afspraak form via Formspree (AJAX, graceful) ----- */
+  var form = document.getElementById('afspraakForm');
+  var msg = document.getElementById('formMsg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      var action = form.getAttribute('action') || '';
+      // Only intercept if a real endpoint is set; otherwise let it submit normally.
+      if(action.indexOf('YOUR_FORM_ID') !== -1){ return; }
+      e.preventDefault();
+      var data = new FormData(form);
+      var btn = form.querySelector('button[type="submit"]');
+      if(btn){ btn.disabled = true; btn.style.opacity = '.6'; }
+      fetch(action, { method:'POST', body:data, headers:{'Accept':'application/json'} })
+        .then(function(res){
+          if(res.ok){
+            form.style.display = 'none';
+            msg.classList.add('show');
+            msg.scrollIntoView({behavior:'smooth', block:'center'});
+          } else {
+            throw new Error('bad response');
+          }
+        })
+        .catch(function(){
+          if(btn){ btn.disabled = false; btn.style.opacity = ''; }
+          alert('Er ging iets mis bij het versturen. Probeer het later opnieuw of bel ons gerust.');
+        });
+    });
+  }
+})();
+</script>
+</body>
+</html>

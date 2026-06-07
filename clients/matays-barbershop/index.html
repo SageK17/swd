@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matay's Barbershop — Herenkapper & Barbershop in Enschede</title>
+<meta name="description" content="Matay's Barbershop in Enschede: dé herenkapper voor scherpe fades, knipbeurten, baard trimmen en scheren. 4,9 sterren uit 650+ reviews. Boek je afspraak aan de Haaksbergerstraat 358.">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:title" content="Matay's Barbershop — Herenkapper in Enschede">
+<meta property="og:description" content="Scherpe fades, vakmanschap en community. 4,9 sterren uit 650+ reviews. Barbershop aan de Haaksbergerstraat in Enschede.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<!-- Custom SVG data-URI favicon: amber razor/comb mark on near-black -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E0E0E'/%3E%3Cpath d='M14 22h36M14 22v8h36v-8' fill='none' stroke='%23E8A33D' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20 30v18M28 30v18M36 30v18M44 30v18' stroke='%23E8A33D' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0E0E0E;
+    --ink:#161616;
+    --panel:#1b1b1b;
+    --cream:#F3F1EC;
+    --cream-dim:#cfcdc6;
+    --muted:#9c9a93;
+    --amber:#E8A33D;
+    --amber-deep:#c9852a;
+    --line:#2a2a2a;
+    --line-cream:#d8d5cc;
+    --maxw:1240px;
+    --pad:clamp(20px,5vw,64px);
+    --display:'Anton',Impact,'Arial Narrow',sans-serif;
+    --body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--black);
+    color:var(--cream);
+    line-height:1.65;
+    font-size:clamp(15px,1.05vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--amber);color:var(--black)}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:400;
+    text-transform:uppercase;
+    line-height:.86;
+    letter-spacing:.01em;
+    font-feature-settings:"kern";
+  }
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.28em;
+    font-size:clamp(11px,1.1vw,13px);
+    color:var(--amber);
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(22px,4vw,40px);
+    height:2px;
+    background:var(--amber);
+    display:inline-block;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--amber);--fg:var(--black);
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--body);font-weight:800;
+    text-transform:uppercase;letter-spacing:.08em;
+    font-size:clamp(13px,1.1vw,15px);
+    padding:1.05em 1.7em;
+    border:2px solid var(--amber);
+    border-radius:0;
+    cursor:pointer;
+    transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease;
+    line-height:1;
+    position:relative;
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:hover{transform:translateY(-3px);box-shadow:6px 6px 0 rgba(232,163,61,.28)}
+  .btn--ghost{
+    --bg:transparent;--fg:var(--cream);
+    border-color:var(--cream);
+  }
+  .btn--ghost:hover{--bg:var(--cream);--fg:var(--black);box-shadow:6px 6px 0 rgba(243,241,236,.18)}
+  .btn--block{width:100%;justify-content:center}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(14,14,14,.82);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid var(--line);
+    transition:border-color .3s ease,background .3s ease;
+  }
+  header.scrolled{background:rgba(14,14,14,.96);border-bottom-color:var(--amber)}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:clamp(64px,9vw,82px);
+  }
+  .brand{display:flex;align-items:center;gap:.65rem;flex:none}
+  .brand .mark{
+    width:38px;height:38px;flex:none;
+    border:2px solid var(--amber);
+    display:grid;place-items:center;
+    color:var(--amber);
+    background:var(--black);
+  }
+  .brand .mark svg{width:22px;height:22px}
+  .brand .name{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(18px,2.4vw,23px);line-height:.9;letter-spacing:.02em;
+  }
+  .brand .name span{color:var(--amber)}
+  .brand .name small{display:block;font-family:var(--body);font-weight:700;font-size:9px;letter-spacing:.34em;color:var(--muted);margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(18px,2.6vw,38px)}
+  .nav-links a.lnk{
+    font-weight:700;font-size:14px;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--cream-dim);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--amber);transition:width .25s ease;
+  }
+  .nav-links a.lnk:hover{color:var(--cream)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:46px;height:46px;
+    border:2px solid var(--line-cream);background:transparent;
+    cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;border-radius:0;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--cream);transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;
+    background:var(--black);
+    transform:translateX(100%);
+    transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:var(--pad);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(34px,9vw,54px);line-height:1.04;letter-spacing:.01em;
+    color:var(--cream);padding:.12em 0;
+    display:flex;align-items:baseline;gap:.4em;
+    border-bottom:1px solid var(--line);
+  }
+  .overlay a .idx{font-family:var(--body);font-size:14px;font-weight:800;color:var(--amber);letter-spacing:.1em}
+  .overlay a:last-of-type{border-bottom:none}
+  .overlay a:active{color:var(--amber)}
+  .overlay .ov-foot{margin-top:clamp(24px,5vw,40px);color:var(--muted);font-size:14px;line-height:1.8}
+  .overlay .ov-foot strong{color:var(--cream);font-weight:700}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    /* CSS image stand-in: dark barbershop ambience */
+    background:
+      radial-gradient(120% 90% at 85% 8%, rgba(232,163,61,.16), transparent 55%),
+      radial-gradient(90% 70% at 5% 100%, rgba(232,163,61,.07), transparent 60%),
+      linear-gradient(180deg,#121212 0%, #0d0d0d 60%, #0E0E0E 100%);
+  }
+  /* barber-pole diagonal texture */
+  .hero-bg::before{
+    content:"";position:absolute;inset:0;opacity:.06;
+    background-image:repeating-linear-gradient(135deg,var(--amber) 0 2px,transparent 2px 26px);
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(140% 120% at 50% 0%,transparent 40%,rgba(0,0,0,.65) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;padding-top:clamp(48px,8vw,96px);padding-bottom:clamp(40px,6vw,72px)}
+  .hero .eyebrow{margin-bottom:clamp(20px,3vw,30px)}
+  .hero h1{
+    font-size:clamp(58px,15.5vw,220px);
+    margin:0;
+    letter-spacing:-.01em;
+  }
+  .hero h1 .ln{display:block;position:relative}
+  .hero h1 .amber{color:var(--amber)}
+  .hero h1 .outline{
+    color:transparent;
+    -webkit-text-stroke:clamp(1px,.35vw,3px) var(--cream);
+    text-stroke:clamp(1px,.35vw,3px) var(--cream);
+  }
+  .rule{height:4px;background:var(--cream);width:100%;margin:clamp(22px,3.4vw,40px) 0;position:relative}
+  .rule::after{content:"";position:absolute;left:0;top:0;height:100%;width:clamp(90px,22vw,260px);background:var(--amber)}
+  .hero-foot{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:clamp(22px,4vw,40px);
+  }
+  .hero-lede{max-width:46ch;color:var(--cream-dim);font-size:clamp(16px,1.5vw,20px);font-weight:400}
+  .hero-lede strong{color:var(--cream);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+
+  /* rotating barber pole accent */
+  .pole{
+    position:absolute;right:var(--pad);top:clamp(90px,12vw,130px);z-index:3;
+    width:clamp(38px,4.6vw,58px);height:clamp(150px,22vw,260px);
+    border:3px solid var(--cream);border-radius:40px;overflow:hidden;
+    background:#fff;display:none;
+    box-shadow:0 18px 50px rgba(0,0,0,.5);
+  }
+  .pole i{
+    position:absolute;inset:-50% -20%;
+    background:repeating-linear-gradient(135deg,#E8A33D 0 14px,#fff 14px 28px,#bf2c2c 28px 42px,#fff 42px 56px);
+    animation:pole 5s linear infinite;
+  }
+  @keyframes pole{to{transform:translateY(56px)}}
+  @media(min-width:1080px){.pole{display:block}}
+
+  /* ---------- STATS / REVIEWS BAND ---------- */
+  .band{
+    background:var(--amber);color:var(--black);
+    border-top:4px solid var(--black);border-bottom:4px solid var(--black);
+    overflow:hidden;
+  }
+  .band-inner{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    align-items:stretch;
+  }
+  .stat{
+    padding:clamp(24px,3.4vw,40px) clamp(16px,2.4vw,32px);
+    border-right:2px solid rgba(14,14,14,.22);
+    display:flex;flex-direction:column;gap:.25rem;
+  }
+  .stat:last-child{border-right:none}
+  .stat .big{
+    font-family:var(--display);font-size:clamp(40px,6.4vw,76px);line-height:.85;
+    display:flex;align-items:center;gap:.12em;letter-spacing:.01em;
+  }
+  .stat .big svg{width:clamp(28px,4vw,48px);height:clamp(28px,4vw,48px);fill:var(--black)}
+  .stat .lbl{font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(11px,1.1vw,13px)}
+  .stat .sub{font-weight:600;font-size:clamp(12px,1.15vw,14px);opacity:.78;line-height:1.4}
+  .stars-row{display:flex;gap:2px;margin-top:2px}
+  .stars-row svg{width:16px;height:16px;fill:var(--black)}
+
+  /* marquee strip */
+  .marquee{background:var(--black);color:var(--cream);overflow:hidden;border-bottom:1px solid var(--line);white-space:nowrap}
+  .marquee-track{display:inline-flex;gap:0;animation:marq 26s linear infinite;will-change:transform}
+  .marquee-track span{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(18px,2.4vw,30px);letter-spacing:.04em;
+    padding:.5em 0;display:inline-flex;align-items:center;
+  }
+  .marquee-track span::after{content:"";width:9px;height:9px;background:var(--amber);border-radius:50%;margin:0 clamp(18px,3vw,40px);display:inline-block}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(64px,9vw,128px)}
+  .sec-head{margin-bottom:clamp(36px,5vw,64px);max-width:900px}
+  .sec-head h2{
+    font-size:clamp(40px,8vw,96px);margin:.32em 0 0;letter-spacing:-.01em;
+  }
+  .sec-head h2 .amber{color:var(--amber)}
+  .sec-head p{margin-top:1.1rem;color:var(--cream-dim);font-size:clamp(16px,1.4vw,19px);max-width:60ch}
+
+  /* ---------- SERVICES ---------- */
+  .services{border-top:1px solid var(--line)}
+  .svc-list{border-top:3px solid var(--cream)}
+  .svc{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:clamp(16px,3vw,40px);
+    padding:clamp(22px,3.4vw,40px) 0;
+    border-bottom:1px solid var(--line);
+    transition:padding-left .3s ease,background .3s ease;
+    position:relative;
+  }
+  .svc::before{
+    content:"";position:absolute;left:0;top:0;height:100%;width:0;background:var(--amber);transition:width .3s ease;
+  }
+  .svc:hover{padding-left:clamp(14px,2.4vw,30px);background:linear-gradient(90deg,rgba(232,163,61,.05),transparent 60%)}
+  .svc:hover::before{width:5px}
+  .svc-no{
+    font-family:var(--display);font-size:clamp(20px,2.4vw,30px);color:var(--amber);
+    line-height:1;min-width:1.6em;
+  }
+  .svc-main h3{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(26px,4.6vw,56px);line-height:.92;letter-spacing:.005em;
+    transition:color .25s ease;
+  }
+  .svc:hover .svc-main h3{color:var(--amber)}
+  .svc-main p{color:var(--muted);font-size:clamp(13px,1.2vw,15px);margin-top:.5em;max-width:54ch}
+  .svc-price{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(14px,1.5vw,19px);color:var(--cream-dim);
+    text-align:right;line-height:1;letter-spacing:.06em;white-space:nowrap;
+  }
+  .svc-price small{display:block;font-family:var(--body);font-weight:700;font-size:11px;letter-spacing:.2em;color:var(--muted);margin-top:.5em}
+  .svc-note{margin-top:clamp(22px,3vw,32px);color:var(--muted);font-size:14px;display:flex;gap:.7em;align-items:flex-start}
+  .svc-note svg{width:18px;height:18px;flex:none;stroke:var(--amber);margin-top:2px}
+
+  /* ---------- OVER MATAY ---------- */
+  .over{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .over-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,5vw,80px);align-items:center}
+  .over-portrait{
+    position:relative;aspect-ratio:4/5;width:100%;
+    border:1px solid var(--line);overflow:hidden;
+    /* CSS image stand-in: master barber portrait */
+    background:
+      radial-gradient(120% 80% at 30% 20%, rgba(232,163,61,.22), transparent 55%),
+      linear-gradient(155deg,#242424 0%, #161616 55%, #0f0f0f 100%);
+  }
+  .over-portrait::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background-image:repeating-linear-gradient(135deg,rgba(232,163,61,.12) 0 1px,transparent 1px 22px);
+  }
+  /* big monogram + scissors mark inside portrait stand-in */
+  .over-portrait .mono{
+    position:absolute;inset:0;display:grid;place-items:center;text-align:center;
+  }
+  .over-portrait .mono .mi{
+    font-family:var(--display);font-size:clamp(96px,18vw,220px);line-height:.8;
+    color:transparent;-webkit-text-stroke:2px rgba(243,241,236,.18);text-stroke:2px rgba(243,241,236,.18);
+  }
+  .over-portrait .tag{
+    position:absolute;left:0;bottom:0;background:var(--amber);color:var(--black);
+    font-family:var(--display);text-transform:uppercase;font-size:clamp(14px,1.7vw,20px);
+    padding:.55em .9em;letter-spacing:.04em;
+  }
+  .over-portrait .scissors{
+    position:absolute;top:clamp(16px,2.4vw,26px);right:clamp(16px,2.4vw,26px);
+    width:clamp(40px,5vw,64px);height:clamp(40px,5vw,64px);color:rgba(243,241,236,.28);
+  }
+  .over-body .eyebrow{margin-bottom:1.2rem}
+  .over-body h2{font-size:clamp(38px,6.4vw,76px);letter-spacing:-.01em}
+  .over-body h2 .amber{color:var(--amber)}
+  .over-body p{margin-top:1.2rem;color:var(--cream-dim);font-size:clamp(15px,1.3vw,18px)}
+  .over-body p strong{color:var(--cream);font-weight:700}
+  .signoff{
+    margin-top:clamp(24px,3vw,34px);display:flex;align-items:center;gap:1rem;
+    border-top:1px solid var(--line);padding-top:clamp(20px,2.6vw,28px);
+  }
+  .signoff .who{font-family:var(--display);text-transform:uppercase;font-size:clamp(20px,2.4vw,28px);line-height:.9}
+  .signoff .who small{display:block;font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.18em;color:var(--amber);margin-top:.4em}
+  .pillz{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,30px)}
+  .pillz span{
+    border:1px solid var(--line);color:var(--cream-dim);
+    font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    padding:.6em 1em;display:inline-flex;align-items:center;gap:.5em;
+  }
+  .pillz span svg{width:15px;height:15px;stroke:var(--amber)}
+
+  /* ---------- HOURS + CONTACT ---------- */
+  .info{border-top:1px solid var(--line)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+  .panel{
+    border:1px solid var(--line);background:var(--panel);
+    padding:clamp(26px,3.4vw,44px);
+  }
+  .panel h3{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(26px,3.4vw,42px);line-height:.92;margin-bottom:1.2rem;letter-spacing:.01em;
+  }
+  .panel h3 .amber{color:var(--amber)}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.85em 0;border-bottom:1px solid var(--line);
+    font-size:clamp(15px,1.3vw,17px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(13px,1.2vw,15px)}
+  .hours .time{font-family:var(--display);font-size:clamp(16px,1.7vw,22px);letter-spacing:.03em;color:var(--cream)}
+  .hours li.today{color:var(--black);background:var(--amber);margin:0 calc(-1*clamp(26px,3.4vw,44px));padding-left:clamp(26px,3.4vw,44px);padding-right:clamp(26px,3.4vw,44px);border-bottom-color:transparent}
+  .hours li.today .day,.hours li.today .time{color:var(--black)}
+  .hours li.closed .time{color:var(--muted)}
+  .now-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.4rem;
+    font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:12px;
+    padding:.5em .85em;border:1px solid var(--line);
+  }
+  .now-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+  .now-pill.open{border-color:var(--amber);color:var(--amber)}
+  .now-pill.open .dot{background:var(--amber);box-shadow:0 0 0 0 rgba(232,163,61,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(232,163,61,0)}100%{box-shadow:0 0 0 0 rgba(232,163,61,0)}}
+
+  .contact-list{display:flex;flex-direction:column;gap:0}
+  .crow{
+    display:flex;gap:1rem;align-items:flex-start;
+    padding:1.05em 0;border-bottom:1px solid var(--line);
+  }
+  .crow:last-child{border-bottom:none}
+  .crow .ico{
+    width:clamp(40px,5vw,50px);height:clamp(40px,5vw,50px);flex:none;
+    border:1px solid var(--amber);display:grid;place-items:center;color:var(--amber);
+  }
+  .crow .ico svg{width:20px;height:20px}
+  .crow .k{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--muted)}
+  .crow .v{font-size:clamp(15px,1.4vw,18px);color:var(--cream);font-weight:600;line-height:1.45;margin-top:2px}
+  .crow .v small{display:block;color:var(--muted);font-weight:500;font-size:13px;margin-top:2px}
+  .socials{display:flex;gap:12px;margin-top:1.4rem}
+  .socials a{
+    width:46px;height:46px;border:1px solid var(--line);display:grid;place-items:center;
+    color:var(--cream-dim);transition:all .2s ease;
+  }
+  .socials a:hover{background:var(--amber);color:var(--black);border-color:var(--amber);transform:translateY(-3px)}
+  .socials a svg{width:20px;height:20px}
+
+  /* map stand-in */
+  .map-standin{
+    margin-top:1.4rem;height:clamp(140px,18vw,180px);border:1px solid var(--line);position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(232,163,61,.05),transparent),
+      repeating-linear-gradient(0deg,#1c1c1c 0 1px,transparent 1px 38px),
+      repeating-linear-gradient(90deg,#1c1c1c 0 1px,transparent 1px 38px),
+      #131313;
+  }
+  .map-standin .pin{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);
+    color:var(--amber);
+  }
+  .map-standin .pin svg{width:34px;height:34px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+  .map-standin .road{position:absolute;background:#262626}
+  .map-standin .r1{left:0;right:0;top:54%;height:8px;transform:rotate(-7deg)}
+  .map-standin .r2{top:0;bottom:0;left:34%;width:6px}
+  .map-standin .lbl{position:absolute;left:12px;bottom:10px;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- AFSPRAAK / FORM ---------- */
+  .booking{
+    background:var(--cream);color:var(--black);
+    border-top:5px solid var(--amber);
+  }
+  .booking .eyebrow{color:var(--amber-deep)}
+  .booking .eyebrow::before{background:var(--amber-deep)}
+  .book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,5vw,72px);align-items:start}
+  .book-left h2{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,6.6vw,84px);line-height:.86;letter-spacing:-.01em;color:var(--black)}
+  .book-left h2 .amber{color:var(--amber-deep)}
+  .book-left p{margin-top:1.2rem;color:#3b3a36;font-size:clamp(15px,1.3vw,18px);max-width:42ch}
+  .book-points{margin-top:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:.9rem}
+  .book-points li{display:flex;gap:.8em;align-items:flex-start;font-weight:600;color:#23221f;font-size:clamp(14px,1.2vw,16px)}
+  .book-points svg{width:22px;height:22px;flex:none;stroke:var(--amber-deep);margin-top:1px}
+
+  form{display:grid;gap:clamp(14px,1.6vw,18px)}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,18px)}
+  .field{display:flex;flex-direction:column;gap:.5em}
+  .field label{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:#4a4843}
+  .field label .req{color:var(--amber-deep)}
+  .field input,.field select,.field textarea{
+    font-family:var(--body);font-size:16px;color:var(--black);
+    background:#fff;border:2px solid #d6d3ca;border-radius:0;
+    padding:.95em 1em;width:100%;transition:border-color .18s ease,box-shadow .18s ease;
+  }
+  .field textarea{resize:vertical;min-height:110px}
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--black);box-shadow:4px 4px 0 var(--amber);
+  }
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E0E0E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1em center;background-size:18px;padding-right:2.8em}
+  .form-note{font-size:12px;color:#6c6a64;line-height:1.5}
+  .form-note a{text-decoration:underline}
+  .form-msg{
+    display:none;padding:1em 1.2em;border:2px solid var(--amber-deep);background:#fff;
+    font-weight:700;font-size:14px;align-items:center;gap:.6em;
+  }
+  .form-msg.show{display:flex}
+  .form-msg svg{width:20px;height:20px;flex:none;stroke:var(--amber-deep)}
+  .btn--dark{--bg:var(--black);--fg:var(--cream);border-color:var(--black)}
+  .btn--dark:hover{--bg:var(--amber);--fg:var(--black);border-color:var(--amber);box-shadow:6px 6px 0 rgba(14,14,14,.18)}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;border-top:1px solid var(--line);text-align:center}
+  .finalcta .hero-bg{opacity:1}
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(64px,10vw,140px);padding-bottom:clamp(80px,11vw,150px)}
+  .finalcta h2{font-size:clamp(46px,11vw,150px);letter-spacing:-.01em}
+  .finalcta h2 .amber{color:var(--amber)}
+  .finalcta h2 .outline{color:transparent;-webkit-text-stroke:2px var(--cream)}
+  .finalcta p{margin:1.4rem auto 2rem;color:var(--cream-dim);max-width:48ch;font-size:clamp(16px,1.5vw,20px)}
+  .finalcta .hero-actions{justify-content:center}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--black);border-top:1px solid var(--line);padding-top:clamp(48px,6vw,80px);padding-bottom:120px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--line)}
+  .foot-brand .name{font-family:var(--display);text-transform:uppercase;font-size:clamp(30px,4.4vw,52px);line-height:.9;letter-spacing:.02em}
+  .foot-brand .name span{color:var(--amber)}
+  .foot-brand p{margin-top:1rem;color:var(--muted);max-width:38ch;font-size:14px}
+  .foot-col h4{font-family:var(--body);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--amber);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--cream-dim);font-size:14px;padding:.32em 0;line-height:1.5}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--amber)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding-top:clamp(24px,3vw,32px);color:var(--muted);font-size:13px}
+  .foot-bottom a{color:var(--cream);font-weight:700}
+  .foot-bottom a:hover{color:var(--amber)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(14,14,14,.94);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:2px solid var(--amber);
+    align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--display);text-transform:uppercase;font-size:16px;line-height:.95;letter-spacing:.02em}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--amber);font-weight:700;font-size:12px;margin-top:3px}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;fill:var(--amber)}
+  .sticky-cta .btn{flex:none;padding:.9em 1.25em}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1024px){
+    .band-inner{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:none}
+    .stat:nth-child(1),.stat:nth-child(2){border-bottom:2px solid rgba(14,14,14,.22)}
+    .over-grid{grid-template-columns:1fr;gap:clamp(28px,5vw,40px)}
+    .over-portrait{max-width:460px}
+    .book-grid{grid-template-columns:1fr;gap:clamp(28px,5vw,44px)}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .info-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    body{padding-bottom:0}
+    footer{padding-bottom:96px}
+    .svc{grid-template-columns:auto 1fr;grid-template-areas:"no main" "price price";row-gap:.6rem}
+    .svc-no{grid-area:no}.svc-main{grid-area:main}.svc-price{grid-area:price;text-align:left}
+    .svc-price small{display:inline;margin:0 0 0 .6em}
+    .f-row{grid-template-columns:1fr}
+    .hero h1{letter-spacing:0}
+  }
+  @media(max-width:420px){
+    .band-inner{grid-template-columns:1fr}
+    .stat{border-right:none!important;border-bottom:2px solid rgba(14,14,14,.22)}
+    .stat:last-child{border-bottom:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+    .pole i{animation:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Matay's Barbershop home">
+      <span class="mark" aria-hidden="true">
+        <!-- razor/comb mark -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 7v3h18V7"/><path d="M6 10v9M10 10v9M14 10v9M18 10v9"/></svg>
+      </span>
+      <span class="name">Matay's<span>.</span><small>Barbershop · ENS</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#over">Over Matay</a>
+      <a class="lnk" href="#bezoek">Bezoek</a>
+      <a class="lnk" href="#afspraak">Afspraak</a>
+      <a class="btn nav-cta" href="#afspraak">
+        Boek je fade
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a href="#over"><span class="idx">02</span> Over Matay</a>
+  <a href="#bezoek"><span class="idx">03</span> Bezoek</a>
+  <a href="#afspraak"><span class="idx">04</span> Afspraak</a>
+  <div class="ov-foot">
+    <strong>Haaksbergerstraat 358, Enschede</strong><br>
+    Tel. 06 36484780<br>
+    Ma 12:00–18:00 · Di–Za 09:00–18:00 · Zo dicht
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <!-- ✏️ FOTO: vervang door echte sfeerfoto van de barbershop interieur / Matay aan het werk -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="pole" aria-hidden="true"><i></i></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Herenkapper · Enschede</span>
+    <h1 class="display reveal d1">
+      <span class="ln">Scherpe</span>
+      <span class="ln amber">fades.</span>
+      <span class="ln outline">Strak werk.</span>
+    </h1>
+    <div class="rule reveal d2" aria-hidden="true"></div>
+    <div class="hero-foot">
+      <p class="hero-lede reveal d2">
+        Welkom bij <strong>Matay's Barbershop</strong> aan de Haaksbergerstraat. Wij knippen niet zomaar even bij — wij zetten je look neer. Vakmanschap, een scherpe fade en een plek waar je je thuis voelt.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn" href="#afspraak">
+          Boek je afspraak
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#diensten">Bekijk diensten</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS / REVIEWS BAND ============ -->
+<section class="band" aria-label="Reviews en cijfers">
+  <div class="band-inner">
+    <div class="stat">
+      <span class="big">4,9
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+      </span>
+      <span class="lbl">Gemiddelde score</span>
+      <div class="stars-row" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+      </div>
+    </div>
+    <div class="stat">
+      <span class="big">650+</span>
+      <span class="lbl">Echte reviews</span>
+      <span class="sub">Honderden tevreden klanten uit Enschede en omgeving.</span>
+    </div>
+    <div class="stat">
+      <span class="big">100%</span>
+      <span class="lbl">Vakmanschap</span>
+      <span class="sub">Elke knipbeurt afgewerkt tot in de details.</span>
+    </div>
+    <div class="stat">
+      <span class="big">6<span style="font-size:.55em">dagen</span></span>
+      <span class="lbl">Open per week</span>
+      <span class="sub">Ma t/m za welkom — zondag rustdag.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Fades</span><span>Herenknippen</span><span>Baard trimmen</span><span>Scheren</span><span>Styling</span><span>Vakmanschap</span><span>Community</span>
+    <span>Fades</span><span>Herenknippen</span><span>Baard trimmen</span><span>Scheren</span><span>Styling</span><span>Vakmanschap</span><span>Community</span>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Wat wij doen</span>
+      <h2 class="display">Het werk op <span class="amber">de stoel.</span></h2>
+      <p>Van een clean fade tot een strak afgewerkte baard — bij Matay's krijg je geen standaard knipbeurt, maar een look die klopt.</p>
+    </div>
+
+    <div class="svc-list">
+      <article class="svc reveal">
+        <span class="svc-no">01</span>
+        <div class="svc-main">
+          <h3>Herenknippen &amp; Styling</h3>
+          <p>Een knipbeurt op maat van jouw kop en stijl, strak afgewerkt en gestyled zoals jij hem wil dragen.</p>
+        </div>
+        <div class="svc-price">Op aanvraag<small>Prijs in de shop</small></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-no">02</span>
+        <div class="svc-main">
+          <h3>Fades</h3>
+          <p>Skin fade, low, mid of high — wij verlopen 'm haarscherp. Het handelsmerk van de shop.</p>
+        </div>
+        <div class="svc-price">Op aanvraag<small>Prijs in de shop</small></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-no">03</span>
+        <div class="svc-main">
+          <h3>Baard Trimmen &amp; Scheren</h3>
+          <p>Baard in model, scherpe lijnen en een gladde scheerbeurt. Afgewerkt zoals het hoort.</p>
+        </div>
+        <div class="svc-price">Op aanvraag<small>Prijs in de shop</small></div>
+      </article>
+
+      <article class="svc reveal">
+        <span class="svc-no">04</span>
+        <div class="svc-main">
+          <h3>Knippen + Baard — Combi</h3>
+          <p>De volledige beurt: knippen, fade en baard in één sessie. Helemaal strak de deur uit.</p>
+        </div>
+        <div class="svc-price">Op aanvraag<small>Prijs in de shop</small></div>
+      </article>
+    </div>
+
+    <p class="svc-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Prijzen vraag je makkelijk na in de shop of via je afspraak — we vertellen je vooraf precies waar je aan toe bent.
+    </p>
+  </div>
+</section>
+
+<!-- ============ OVER MATAY ============ -->
+<section class="over sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-portrait reveal" aria-label="Portret van Matay Ilik, Master Barber">
+      <!-- ✏️ FOTO: vervang door echte foto van Matay Ilik (Master Barber) aan het werk -->
+      <svg class="scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+      <div class="mono" aria-hidden="true"><span class="mi">MI</span></div>
+      <span class="tag">Master Barber</span>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over Matay</span>
+      <h2 class="display reveal d1">Eén barber. <span class="amber">Eén missie.</span></h2>
+      <p class="reveal d2">
+        Achter Matay's Barbershop staat <strong>Matay Ilik</strong>, Master Barber in hart en nieren. Voor Matay is knippen geen routine maar een ambacht: scherpe lijnen, schone fades en een afwerking waar je maanden plezier van hebt.
+      </p>
+      <p class="reveal d2">
+        Maar de shop is meer dan alleen de stoel. Het is een plek met energie — jong, modern en gemoedelijk. Je komt binnen voor een knipbeurt en gaat de deur uit met een frisse look én een goed gesprek. Dat is precies waarom honderden klanten blijven terugkomen.
+      </p>
+
+      <div class="pillz reveal d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vakmanschap</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Community</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Op tijd, strak werk</span>
+      </div>
+
+      <div class="signoff reveal d3">
+        <span class="who">Matay Ilik<small>Eigenaar &amp; Master Barber</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK: HOURS + CONTACT ============ -->
+<section class="info sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kom langs</span>
+      <h2 class="display">Bezoek de <span class="amber">shop.</span></h2>
+      <p>Je vindt ons aan de Haaksbergerstraat in Enschede. Loop binnen of plan vooraf je afspraak — zo zit je nooit te wachten.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="now-pill" id="nowPill"><span class="dot"></span><span id="nowText">Openingstijden</span></span>
+        <h3>Open<span class="amber">ingstijden</span></h3>
+        <ul class="hours" id="hoursList">
+          <li data-day="1"><span class="day">Maandag</span><span class="time">12:00 – 18:00</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" aria-label="Contactgegevens">
+        <h3>Contact <span class="amber">&amp; route</span></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">Haaksbergerstraat 358<small>7513 ER Enschede</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><div class="v">06 36484780<small>Bel of WhatsApp tijdens openingstijden</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <div><div class="k">E-mail</div><div class="v">mataysbarbershop20@gmail.com</div></div>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="https://instagram.com/mataysbarbershop" target="_blank" rel="noopener" aria-label="Volg Matay's Barbershop op Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Bekijk Matay's Barbershop op Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+
+        <!-- ✏️ FOTO: vervang door echte (statische) kaart-screenshot of Google Maps embed van Haaksbergerstraat 358 -->
+        <div class="map-standin" aria-label="Indicatieve locatie aan de Haaksbergerstraat, Enschede" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Haaksbergerstraat · Enschede</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFSPRAAK / FORM ============ -->
+<section class="booking sec" id="afspraak">
+  <div class="wrap book-grid">
+    <div class="book-left">
+      <span class="eyebrow reveal">Maak een afspraak</span>
+      <h2 class="display reveal d1">Boek je <span class="amber">fade.</span></h2>
+      <p class="reveal d2">Laat je gegevens en voorkeur achter — wij nemen contact op om je afspraak te bevestigen. Snel, simpel, geen gedoe.</p>
+      <ul class="book-points reveal d3">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Je krijgt persoonlijk antwoord — geen automatische bevestiging.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vertel ons je voorkeur voor dag en dagdeel, wij doen de rest.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Liever direct? Bel ons op 06 36484780 tijdens openingstijden.</li>
+      </ul>
+    </div>
+
+    <!-- ✏️ vul Formspree endpoint in -->
+    <form class="reveal d2" id="bookForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <div class="form-msg" id="formMsg" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <span>Bedankt! Je aanvraag is verzonden — we nemen snel contact met je op.</span>
+      </div>
+
+      <div class="f-row">
+        <div class="field">
+          <label for="naam">Naam <span class="req">*</span></label>
+          <input type="text" id="naam" name="naam" placeholder="Je naam" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="tel">Telefoon <span class="req">*</span></label>
+          <input type="tel" id="tel" name="telefoon" placeholder="06 ..." required autocomplete="tel" inputmode="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="naam@email.nl" autocomplete="email" inputmode="email">
+      </div>
+
+      <div class="f-row">
+        <div class="field">
+          <label for="dienst">Dienst <span class="req">*</span></label>
+          <select id="dienst" name="dienst" required>
+            <option value="" disabled selected>Kies een dienst</option>
+            <option>Herenknippen &amp; styling</option>
+            <option>Fade</option>
+            <option>Baard trimmen &amp; scheren</option>
+            <option>Knippen + baard (combi)</option>
+            <option>Weet ik nog niet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="dagdeel">Voorkeur dagdeel</label>
+          <select id="dagdeel" name="dagdeel">
+            <option value="" disabled selected>Kies een moment</option>
+            <option>Ochtend (09:00–12:00)</option>
+            <option>Middag (12:00–15:00)</option>
+            <option>Laat (15:00–18:00)</option>
+            <option>Maakt niet uit</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="bericht">Bericht of voorkeursdag</label>
+        <textarea id="bericht" name="bericht" placeholder="Bijv. 'Liefst zaterdag' of een opmerking over je gewenste stijl."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn--dark btn--block">
+        Verstuur aanvraag
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="form-note">Door te versturen ga je akkoord dat wij contact met je opnemen om de afspraak te bevestigen. Je gegevens gebruiken we alleen daarvoor.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap finalcta-inner">
+    <h2 class="display reveal">Klaar voor <span class="amber">strak</span> <span class="outline">werk?</span></h2>
+    <p class="reveal d1">Loop binnen aan de Haaksbergerstraat of boek nu je afspraak. Tot in de shop.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn" href="#afspraak">
+        Boek je afspraak
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#bezoek">Bekijk openingstijden</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Matay's<span>.</span> Barbershop</div>
+        <p>Dé herenkapper van Enschede voor scherpe fades, knipbeurten en strak baardwerk. Vakmanschap én community, aan de Haaksbergerstraat.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#diensten">Diensten</a>
+        <a href="#over">Over Matay</a>
+        <a href="#bezoek">Bezoek &amp; openingstijden</a>
+        <a href="#afspraak">Afspraak maken</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Haaksbergerstraat 358<br>7513 ER Enschede</p>
+        <p>Tel. 06 36484780</p>
+        <p>mataysbarbershop20@gmail.com</p>
+        <p style="margin-top:.6em"><a href="https://instagram.com/mataysbarbershop" target="_blank" rel="noopener">Instagram</a> · <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Matay's Barbershop — Enschede · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Ma 12:00–18:00 · Di–Za 09:00–18:00 · Zo gesloten</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" aria-hidden="false">
+  <div class="sc-meta">
+    <div class="t">Boek je fade</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+      4,9 · 650+ reviews
+    </div>
+  </div>
+  <a class="btn" href="#afspraak">Afspraak</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!overlay.classList.contains('open'));
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Opening hours: highlight today + open/closed status ---- */
+  var openHours = {1:[12,18],2:[9,18],3:[9,18],4:[9,18],5:[9,18],6:[9,18],0:null};
+  var dayNames = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  try{
+    var now = new Date();
+    var d = now.getDay();
+    var h = now.getHours() + now.getMinutes()/60;
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+
+    var rng = openHours[d];
+    var isOpen = rng && h >= rng[0] && h < rng[1];
+    var pill = document.getElementById('nowPill');
+    var txt = document.getElementById('nowText');
+    if(isOpen){
+      pill.classList.add('open');
+      txt.textContent = 'Nu open · tot ' + rng[1] + ':00';
+    } else {
+      // find next opening
+      var msg = 'Nu gesloten';
+      for(var i=1;i<=7;i++){
+        var nd = (d+i)%7;
+        if(openHours[nd]){
+          if(i===1 && rng && h < rng[0]){ msg = 'Vandaag open vanaf ' + rng[0] + ':00'; }
+          else { msg = 'Weer open ' + dayNames[nd] + ' ' + openHours[nd][0] + ':00'; }
+          break;
+        }
+      }
+      // same-day before opening
+      if(rng && h < rng[0]) msg = 'Vandaag open vanaf ' + rng[0] + ':00';
+      txt.textContent = msg;
+    }
+  }catch(e){ /* fail silent — static hours still shown */ }
+
+  /* ---- Booking form: async submit to Formspree ---- */
+  var form = document.getElementById('bookForm');
+  var msg = document.getElementById('formMsg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      // basic native validation
+      if(!form.checkValidity()){ return; }
+      var action = form.getAttribute('action') || '';
+      // If endpoint not yet configured, prevent failed network call and show confirmation
+      if(action.indexOf('YOUR_FORM_ID') !== -1){
+        e.preventDefault();
+        showSuccess();
+        return;
+      }
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var orig = btn.innerHTML;
+      btn.disabled = true; btn.textContent = 'Versturen...';
+      fetch(action, {
+        method:'POST',
+        body:new FormData(form),
+        headers:{'Accept':'application/json'}
+      }).then(function(r){
+        if(r.ok){ showSuccess(); form.reset(); }
+        else { btn.disabled=false; btn.innerHTML=orig; alert('Er ging iets mis. Bel ons gerust op 06 36484780.'); }
+      }).catch(function(){
+        btn.disabled=false; btn.innerHTML=orig;
+        alert('Geen verbinding. Probeer het later opnieuw of bel 06 36484780.');
+      });
+    });
+  }
+  function showSuccess(){
+    msg.classList.add('show');
+    msg.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+  }
+})();
+</script>
+</body>
+</html>
