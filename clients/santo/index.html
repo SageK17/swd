@@ -31,7 +31,9 @@ h1,h2,h3{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:-.02em;
 /* nav */
 header{position:sticky;top:0;z-index:50;background:rgba(11,11,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{font-family:"Archivo";font-weight:900;font-size:1.5rem;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em;color:#fff}
+.brand{font-family:"Archivo";font-weight:900;font-size:1.5rem;letter-spacing:.32em;text-transform:uppercase;padding-left:.32em;color:#fff;display:flex;align-items:center}
+.brand-logo{height:26px;width:auto;display:block}
+.foot .brand-logo{height:34px}
 .navlinks{display:flex;gap:2.2rem;align-items:center}
 .navlinks a{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);transition:color .2s}
 .navlinks a:hover{color:#fff}
@@ -127,7 +129,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="brand">SANTO</a>
+    <a href="#top" class="brand" aria-label="SANTO"><img src="img/santo-logo.png" alt="SANTO" class="brand-logo"></a>
     <nav class="navlinks">
       <a href="#drop">Drop 001</a>
       <a href="#kwaliteit">Kwaliteit</a>
@@ -243,7 +245,8 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
   <div class="wrap">
     <div class="foot">
       <div>
-        <div class="brand">SANTO</div>
+        <img src="img/santo-logo.png" alt="SANTO" class="brand-logo">
+        <div class="brand" style="display:none">SANTO</div>
         <p style="color:var(--grey);max-width:30ch;margin-top:14px;font-size:.9rem">Contemporary streetwear. Drop 001 — signature longsleeves, 100% organic cotton.</p>
       </div>
       <div class="col">
