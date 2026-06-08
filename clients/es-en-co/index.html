@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapsalon Es &amp; Co — Kapper voor dames, heren &amp; kinderen in Enschede</title>
+<meta name="description" content="Kapsalon Es &amp; Co in het centrum van Enschede: knippen, kleuren en styling voor dames, heren en kinderen. Persoonlijk advies en een warm welkom aan de Korte Haaksbergerstraat 42. Bel 053-4315010.">
+<meta name="theme-color" content="#FBF6EF">
+<meta property="og:title" content="Kapsalon Es &amp; Co — Kapper in Enschede centrum">
+<meta property="og:description" content="Knippen, kleuren en styling voor het hele gezin. Persoonlijk advies in het centrum van Enschede. Bel 053-4315010 voor een afspraak.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta name="robots" content="index,follow">
+<!-- Custom inline SVG favicon: clay 'E' + scissors mark on warm cream -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FBF6EF'/%3E%3Cpath d='M22 18h22M22 32h17M22 46h22' fill='none' stroke='%23B5654A' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='44' r='4.5' fill='none' stroke='%238A9A7B' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EF;
+    --cream-2:#F4EBDF;
+    --paper:#FFFFFF;
+    --ink:#2C2622;
+    --ink-soft:#5A5048;
+    --muted:#8B8175;
+    --clay:#B5654A;
+    --clay-deep:#9A5038;
+    --sage:#8A9A7B;
+    --sage-deep:#6E7E60;
+    --rose:#E7C9B8;
+    --line:#E6DACB;
+    --line-soft:#EFE6D8;
+    --dark:#322A24;
+    --maxw:1200px;
+    --pad:clamp(20px,5vw,60px);
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Mulish',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --shadow:0 18px 50px rgba(44,38,34,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:clamp(15px,1.05vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--clay);color:var(--cream)}
+
+  /* ---------- TYPE ---------- */
+  .serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.04}
+  .eyebrow{
+    font-family:var(--sans);font-weight:800;text-transform:uppercase;
+    letter-spacing:.22em;font-size:clamp(11px,1.05vw,12.5px);
+    color:var(--clay);display:inline-flex;align-items:center;gap:.7em;
+  }
+  .eyebrow::before{content:"";width:clamp(18px,3.5vw,34px);height:2px;background:var(--clay);display:inline-block}
+  .eyebrow.sage{color:var(--sage-deep)}
+  .eyebrow.sage::before{background:var(--sage-deep)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--clay);--fg:var(--cream);
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--sans);font-weight:800;
+    letter-spacing:.02em;font-size:clamp(14px,1.05vw,15.5px);
+    padding:1.02em 1.7em;border:2px solid var(--clay);border-radius:50px;
+    cursor:pointer;line-height:1;position:relative;
+    transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease,border-color .2s ease;
+    box-shadow:0 8px 22px rgba(181,101,74,.22);
+  }
+  .btn svg{width:1.1em;height:1.1em;flex:none}
+  .btn:hover{transform:translateY(-3px);background:var(--clay-deep);border-color:var(--clay-deep);box-shadow:0 14px 30px rgba(181,101,74,.3)}
+  .btn--ghost{--bg:transparent;--fg:var(--ink);border-color:var(--ink);box-shadow:none}
+  .btn--ghost:hover{--bg:var(--ink);--fg:var(--cream);border-color:var(--ink);box-shadow:none}
+  .btn--cream{--bg:var(--cream);--fg:var(--clay-deep);border-color:var(--cream);box-shadow:0 10px 26px rgba(0,0,0,.18)}
+  .btn--cream:hover{--bg:var(--paper);--fg:var(--clay-deep);border-color:var(--paper);background:var(--paper)}
+  .btn--block{width:100%;justify-content:center}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(251,246,239,.86);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease,box-shadow .3s ease,background .3s ease;
+  }
+  header.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(44,38,34,.05)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:clamp(66px,8vw,84px)}
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:42px;height:42px;flex:none;border-radius:12px;
+    background:var(--clay);display:grid;place-items:center;color:var(--cream);
+    box-shadow:0 6px 16px rgba(181,101,74,.28);
+  }
+  .brand .mark svg{width:23px;height:23px}
+  .brand .name{font-family:var(--serif);font-weight:600;font-size:clamp(20px,2.5vw,25px);line-height:.95;letter-spacing:-.01em}
+  .brand .name span{color:var(--clay)}
+  .brand .name small{display:block;font-family:var(--sans);font-weight:700;font-size:9.5px;letter-spacing:.26em;color:var(--muted);margin-top:3px;text-transform:uppercase}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+  .nav-links a.lnk{
+    font-weight:700;font-size:14.5px;letter-spacing:.01em;color:var(--ink-soft);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--clay);transition:width .25s ease;border-radius:2px}
+  .nav-links a.lnk:hover{color:var(--ink)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:48px;height:48px;border:1.5px solid var(--line);border-radius:12px;
+    background:var(--paper);cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;background:var(--cream);
+    transform:translateX(100%);transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;padding:var(--pad);visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a.ov-lnk{
+    font-family:var(--serif);font-weight:500;font-size:clamp(30px,8vw,46px);line-height:1.15;
+    color:var(--ink);padding:.2em 0;display:flex;align-items:baseline;gap:.5em;border-bottom:1px solid var(--line);
+  }
+  .overlay a.ov-lnk .idx{font-family:var(--sans);font-size:13px;font-weight:800;color:var(--clay);letter-spacing:.1em}
+  .overlay a.ov-lnk:last-of-type{border-bottom:none}
+  .overlay .ov-foot{margin-top:clamp(22px,5vw,38px);color:var(--ink-soft);font-size:14.5px;line-height:1.8}
+  .overlay .ov-foot strong{color:var(--ink);font-weight:700}
+  .overlay .ov-cta{margin-top:clamp(20px,4vw,28px)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--cream)}
+  .hero::before{
+    content:"";position:absolute;top:-18%;right:-12%;width:46vw;height:46vw;max-width:620px;max-height:620px;
+    background:radial-gradient(circle,var(--rose),transparent 68%);opacity:.5;z-index:0;
+  }
+  .hero-inner{
+    position:relative;z-index:2;display:grid;grid-template-columns:1.04fr .96fr;
+    gap:clamp(34px,5vw,72px);align-items:center;
+    padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(48px,7vw,88px);
+  }
+  .hero-copy .eyebrow{margin-bottom:clamp(18px,2.6vw,24px)}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(42px,7vw,82px);line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--clay);font-weight:400}
+  .hero-lede{margin-top:clamp(20px,2.6vw,28px);max-width:46ch;color:var(--ink-soft);font-size:clamp(16px,1.4vw,19px)}
+  .hero-lede strong{color:var(--ink);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(26px,3.4vw,36px)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,30px);margin-top:clamp(26px,3.4vw,38px);padding-top:clamp(22px,3vw,28px);border-top:1px solid var(--line)}
+  .hero-meta .hm{display:flex;align-items:center;gap:.6em;font-weight:600;color:var(--ink-soft);font-size:14.5px}
+  .hero-meta .hm svg{width:19px;height:19px;flex:none;stroke:var(--sage-deep)}
+
+  /* hero photo */
+  .hero-photo{position:relative}
+  .hero-photo .frame{
+    position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;
+    box-shadow:var(--shadow);background:var(--cream-2);
+  }
+  .hero-photo .frame img{width:100%;height:100%;object-fit:cover}
+  .hero-photo .badge{
+    position:absolute;left:-14px;bottom:26px;z-index:3;
+    background:var(--paper);border-radius:16px;padding:.9em 1.1em;
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:.7em;max-width:240px;
+  }
+  .hero-photo .badge .bi{width:42px;height:42px;border-radius:11px;background:var(--cream-2);display:grid;place-items:center;color:var(--clay);flex:none}
+  .hero-photo .badge .bi svg{width:22px;height:22px}
+  .hero-photo .badge .bt{font-family:var(--serif);font-weight:600;font-size:15px;line-height:1.15;color:var(--ink)}
+  .hero-photo .badge .bs{font-size:12px;color:var(--muted);font-weight:600;margin-top:1px}
+  .hero-photo .dots{
+    position:absolute;top:-16px;right:-10px;width:96px;height:96px;z-index:-1;
+    background-image:radial-gradient(var(--sage) 1.6px,transparent 1.6px);background-size:14px 14px;opacity:.55;
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .strip{background:var(--dark);color:var(--cream)}
+  .strip-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(14px,3vw,44px);padding:clamp(16px,2.2vw,22px) var(--pad)}
+  .strip-inner .si{display:inline-flex;align-items:center;gap:.6em;font-family:var(--serif);font-weight:500;font-size:clamp(15px,1.6vw,21px);font-style:italic}
+  .strip-inner .si svg{width:clamp(16px,2vw,20px);height:clamp(16px,2vw,20px);flex:none;stroke:var(--rose)}
+  .strip-inner .sep{width:6px;height:6px;border-radius:50%;background:var(--clay);flex:none}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(60px,8vw,116px);padding-bottom:clamp(60px,8vw,116px)}
+  .sec-head{margin-bottom:clamp(34px,4.6vw,60px);max-width:760px}
+  .sec-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.6vw,64px);margin:.34em 0 0;color:var(--ink)}
+  .sec-head h2 em{font-style:italic;color:var(--clay);font-weight:400}
+  .sec-head p{margin-top:1rem;color:var(--ink-soft);font-size:clamp(16px,1.35vw,18.5px);max-width:58ch}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+
+  /* ---------- DIENSTEN ---------- */
+  .services{background:var(--cream-2)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,26px)}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:20px;
+    padding:clamp(24px,2.8vw,34px);display:flex;flex-direction:column;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--rose)}
+  .card .ci{width:54px;height:54px;border-radius:14px;background:var(--cream-2);display:grid;place-items:center;color:var(--clay);margin-bottom:1.1rem}
+  .card .ci svg{width:27px;height:27px}
+  .card h3{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.2vw,26px);color:var(--ink)}
+  .card p{margin-top:.6rem;color:var(--ink-soft);font-size:15px;flex:1}
+  .card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.1rem}
+  .card .tags span{
+    font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--sage-deep);
+    background:rgba(138,154,123,.14);border-radius:50px;padding:.4em .85em;
+  }
+  .svc-note{margin-top:clamp(26px,3.2vw,36px);display:flex;gap:.8em;align-items:flex-start;color:var(--ink-soft);font-size:14.5px;max-width:70ch;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.1em 1.3em}
+  .svc-note svg{width:20px;height:20px;flex:none;stroke:var(--clay);margin-top:2px}
+
+  /* ---------- OVER ---------- */
+  .over-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,5vw,76px);align-items:center}
+  .over-photo{position:relative}
+  .over-photo .frame{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:var(--cream-2)}
+  .over-photo .frame img{width:100%;height:100%;object-fit:cover}
+  .over-photo .sticker{
+    position:absolute;right:-12px;top:24px;background:var(--sage);color:var(--cream);
+    border-radius:16px;padding:.85em 1.05em;box-shadow:var(--shadow);max-width:200px;
+  }
+  .over-photo .sticker .st{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.1}
+  .over-photo .sticker .ss{font-size:12.5px;font-weight:600;margin-top:3px;opacity:.92}
+  .over-body h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,58px);color:var(--ink)}
+  .over-body h2 em{font-style:italic;color:var(--clay);font-weight:400}
+  .over-body p{margin-top:1.2rem;color:var(--ink-soft);font-size:clamp(15.5px,1.3vw,18px)}
+  .over-body p strong{color:var(--ink);font-weight:700}
+  .over-list{margin-top:clamp(22px,2.8vw,30px);display:grid;gap:.95rem}
+  .over-list li{display:flex;gap:.85em;align-items:flex-start;color:var(--ink-soft);font-size:15.5px}
+  .over-list li svg{width:24px;height:24px;flex:none;stroke:var(--sage-deep);margin-top:1px}
+  .over-list li strong{color:var(--ink);font-weight:700}
+
+  /* ---------- HOURS + CONTACT ---------- */
+  .info{background:var(--cream-2)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);align-items:start}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(26px,3.2vw,42px)}
+  .panel h3{font-family:var(--serif);font-weight:600;font-size:clamp(23px,2.8vw,32px);margin-bottom:.4rem;color:var(--ink)}
+  .panel h3 em{font-style:italic;color:var(--clay);font-weight:400}
+  .panel .ph-sub{color:var(--muted);font-size:13.5px;font-weight:600;margin-bottom:1.3rem}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.8em 0;border-bottom:1px solid var(--line-soft);font-size:clamp(15px,1.25vw,16.5px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:700;color:var(--ink)}
+  .hours .time{font-weight:600;color:var(--ink-soft)}
+  .hours li.today{background:var(--cream-2);border-radius:12px;margin:0 calc(-.7*clamp(26px,3.2vw,42px));padding-left:clamp(18px,2.2vw,28px);padding-right:clamp(18px,2.2vw,28px);border-bottom-color:transparent}
+  .hours li.today .day,.hours li.today .time{color:var(--clay-deep)}
+  .hours li.closed .time{color:var(--muted)}
+  .now-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.2rem;
+    font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    padding:.45em .85em;border-radius:50px;border:1px solid var(--line);color:var(--muted);
+  }
+  .now-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+  .now-pill.open{border-color:var(--sage);color:var(--sage-deep);background:rgba(138,154,123,.1)}
+  .now-pill.open .dot{background:var(--sage);box-shadow:0 0 0 0 rgba(138,154,123,.6);animation:pulse 2s infinite}
+  .now-pill.dicht{border-color:var(--clay);color:var(--clay-deep);background:rgba(181,101,74,.08)}
+  .now-pill.dicht .dot{background:var(--clay)}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(138,154,123,0)}100%{box-shadow:0 0 0 0 rgba(138,154,123,0)}}
+  .hours-note{margin-top:1.1rem;font-size:13px;color:var(--muted);display:flex;gap:.5em;align-items:flex-start}
+  .hours-note svg{width:15px;height:15px;flex:none;stroke:var(--muted);margin-top:2px}
+
+  .contact-list{display:flex;flex-direction:column}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1em 0;border-bottom:1px solid var(--line-soft)}
+  .crow:last-child{border-bottom:none}
+  .crow .ico{width:48px;height:48px;flex:none;border-radius:13px;background:var(--cream-2);display:grid;place-items:center;color:var(--clay)}
+  .crow .ico svg{width:21px;height:21px}
+  .crow .k{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--muted)}
+  .crow .v{font-size:clamp(15px,1.3vw,17px);color:var(--ink);font-weight:700;line-height:1.4;margin-top:2px}
+  .crow a.v:hover{color:var(--clay)}
+  .crow .v small{display:block;color:var(--ink-soft);font-weight:500;font-size:13px;margin-top:2px}
+  .socials{display:flex;gap:11px;margin-top:1.3rem}
+  .socials a{width:46px;height:46px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:var(--ink-soft);transition:all .2s ease}
+  .socials a:hover{background:var(--clay);color:var(--cream);border-color:var(--clay);transform:translateY(-3px)}
+  .socials a svg{width:20px;height:20px}
+
+  /* map stand-in */
+  .map-standin{
+    margin-top:1.3rem;height:clamp(150px,18vw,180px);border-radius:14px;border:1px solid var(--line);position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(181,101,74,.04),transparent),
+      repeating-linear-gradient(0deg,#EEE3D4 0 1px,transparent 1px 36px),
+      repeating-linear-gradient(90deg,#EEE3D4 0 1px,transparent 1px 36px),
+      var(--cream-2);
+  }
+  .map-standin .road{position:absolute;background:#E2D4C2}
+  .map-standin .r1{left:0;right:0;top:52%;height:9px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:38%;width:7px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--clay)}
+  .map-standin .pin svg{width:34px;height:34px;filter:drop-shadow(0 6px 9px rgba(44,38,34,.22))}
+  .map-standin .lbl{position:absolute;left:12px;bottom:10px;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:rgba(251,246,239,.8);padding:.3em .6em;border-radius:8px}
+
+  /* ---------- CTA BAND ---------- */
+  .cta{position:relative;overflow:hidden;background:var(--clay);color:var(--cream)}
+  .cta::before{content:"";position:absolute;top:-30%;left:-8%;width:40vw;height:40vw;max-width:520px;max-height:520px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 68%);z-index:0}
+  .cta::after{content:"";position:absolute;bottom:-40%;right:-6%;width:42vw;height:42vw;max-width:560px;max-height:560px;background:radial-gradient(circle,rgba(110,126,96,.4),transparent 65%);z-index:0}
+  .cta-inner{position:relative;z-index:2;text-align:center;padding-top:clamp(60px,8vw,110px);padding-bottom:clamp(60px,8vw,110px)}
+  .cta .eyebrow{color:var(--rose);justify-content:center}
+  .cta .eyebrow::before{background:var(--rose)}
+  .cta h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,6vw,68px);margin:.3em auto 0;max-width:16ch}
+  .cta h2 em{font-style:italic;font-weight:400}
+  .cta p{margin:1.2rem auto 0;max-width:46ch;color:rgba(251,246,239,.88);font-size:clamp(16px,1.4vw,19px)}
+  .cta .phone-big{display:inline-flex;align-items:center;gap:.5em;margin-top:clamp(20px,2.6vw,28px);font-family:var(--serif);font-weight:600;font-size:clamp(26px,4vw,44px);color:var(--cream)}
+  .cta .phone-big svg{width:.85em;height:.85em;flex:none}
+  .cta .phone-big:hover{color:var(--paper)}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(24px,3vw,34px)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--dark);color:var(--cream);padding-top:clamp(48px,6vw,76px);padding-bottom:clamp(28px,4vw,40px)}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,52px);padding-bottom:clamp(34px,4.6vw,50px);border-bottom:1px solid rgba(251,246,239,.12)}
+  .foot-brand .name{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.6vw,38px);line-height:.95}
+  .foot-brand .name span{color:var(--rose)}
+  .foot-brand p{margin-top:.9rem;color:rgba(251,246,239,.66);max-width:38ch;font-size:14.5px}
+  .foot-brand .fbtn{margin-top:1.3rem}
+  .foot-col h4{font-family:var(--sans);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--rose);margin-bottom:1rem}
+  .foot-col a,.foot-col p{display:block;color:rgba(251,246,239,.74);font-size:14.5px;padding:.3em 0;line-height:1.5}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--cream)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-top:clamp(22px,3vw,30px);color:rgba(251,246,239,.55);font-size:13px}
+  .foot-bottom a{color:var(--rose);font-weight:700}
+  .foot-bottom a:hover{color:var(--cream)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(251,246,239,.95);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(44,38,34,.08);
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--serif);font-weight:600;font-size:16px;line-height:1.05;color:var(--ink)}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--sage-deep);font-weight:700;font-size:12px;margin-top:2px}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;flex:none;stroke:var(--sage-deep)}
+  .sticky-cta .btn{flex:none;padding:.9em 1.3em}
+
+  /* ---------- REVEAL (JS-gated only) ---------- */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.07s}
+  .js .reveal.d2{transition-delay:.14s}
+  .js .reveal.d3{transition-delay:.21s}
+
+  /* ---------- FOCUS ---------- */
+  a:focus-visible,button:focus-visible{outline:3px solid var(--sage-deep);outline-offset:3px;border-radius:6px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .hero-inner{grid-template-columns:1fr;gap:clamp(30px,6vw,44px)}
+    .hero-photo{max-width:460px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .over-grid{grid-template-columns:1fr;gap:clamp(30px,6vw,44px)}
+    .over-photo{max-width:440px}
+    .info-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:720px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:96px}
+    .svc-grid{grid-template-columns:1fr}
+    .strip-inner .sep{display:none}
+    .hero-photo .badge{left:8px}
+    .over-photo .sticker{right:8px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .js .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Kapsalon Es &amp; Co home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+      </span>
+      <span class="name">Es <span>&amp;</span> Co<small>Kapsalon · Enschede</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#over">Over ons</a>
+      <a class="lnk" href="#bezoek">Openingstijden</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn nav-cta" href="tel:0534315010">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel voor afspraak
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a class="ov-lnk" href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a class="ov-lnk" href="#over"><span class="idx">02</span> Over ons</a>
+  <a class="ov-lnk" href="#bezoek"><span class="idx">03</span> Openingstijden</a>
+  <a class="ov-lnk" href="#contact"><span class="idx">04</span> Contact</a>
+  <div class="ov-foot">
+    <strong>Korte Haaksbergerstraat 42, Enschede</strong><br>
+    Tel. <a href="tel:0534315010" style="color:var(--clay);font-weight:700">053-4315010</a><br>
+    Dames · heren · kinderen — knippen, kleuren &amp; styling
+  </div>
+  <a class="btn ov-cta" href="tel:0534315010">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+    Bel 053-4315010
+  </a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Kapsalon · Centrum Enschede</span>
+      <h1 class="reveal d1">Jouw kapper voor<br>het hele <em>gezin</em>.</h1>
+      <p class="hero-lede reveal d2">
+        Welkom bij <strong>Kapsalon Es &amp; Co</strong> in het centrum van Enschede. Voor dames, heren én kinderen — knippen, kleuren en styling, altijd met persoonlijk advies en een warm welkom.
+      </p>
+      <div class="hero-actions reveal d2">
+        <a class="btn" href="tel:0534315010">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel 053-4315010
+        </a>
+        <a class="btn btn--ghost" href="#diensten">Bekijk diensten</a>
+      </div>
+      <div class="hero-meta reveal d3">
+        <span class="hm"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Dames, heren &amp; kinderen</span>
+        <span class="hm"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Korte Haaksbergerstraat 42</span>
+      </div>
+    </div>
+
+    <div class="hero-photo reveal d2">
+      <span class="dots" aria-hidden="true"></span>
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=80"
+             alt="Kapster föhnt lachend het haar van een klant in een lichte, gezellige kapsalon"
+             width="1200" height="1500" loading="eager" decoding="async">
+      </div>
+      <div class="badge" aria-hidden="true">
+        <span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <span><span class="bt">Persoonlijk advies</span><span class="bs">Een look die bij jóu past</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>Knippen</span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>Kleuren</span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>Styling</span>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="si"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Centrum Enschede</span>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Wat wij doen</span>
+      <h2 class="serif">Knippen, kleuren &amp; <em>styling</em>.</h2>
+      <p>Bij Es &amp; Co is iedereen welkom — van een frisse jongenskop tot een complete kleur- en knipbeurt. We nemen de tijd en denken met je mee.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="card reveal">
+        <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></span>
+        <h3>Knippen</h3>
+        <p>Een knipbeurt op maat van jouw haar en wensen. Strak, fris en afgewerkt zoals jij hem het liefst draagt — voor jong en oud.</p>
+        <div class="tags"><span>Dames</span><span>Heren</span><span>Kinderen</span></div>
+      </article>
+
+      <article class="card reveal d1">
+        <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></span>
+        <h3>Kleuren</h3>
+        <p>Van een warme highlight tot een volledige kleurverandering of het wegwerken van grijs. We adviseren een kleur die mooi bij je past.</p>
+        <div class="tags"><span>Highlights</span><span>Volledige kleur</span><span>Grijsdekking</span></div>
+      </article>
+
+      <article class="card reveal d2">
+        <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>
+        <h3>Styling &amp; advies</h3>
+        <p>Wassen, föhnen en in model brengen voor elke gelegenheid. Plus persoonlijk advies over verzorging en wat thuis goed werkt.</p>
+        <div class="tags"><span>Föhnen</span><span>Stylen</span><span>Haaradvies</span></div>
+      </article>
+    </div>
+
+    <p class="svc-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Prijzen verschillen per behandeling en haarlengte. Bel gerust even — we vertellen je vooraf precies waar je aan toe bent en denken graag met je mee.
+    </p>
+  </div>
+</section>
+
+<!-- ============ OVER ONS ============ -->
+<section class="sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-photo reveal">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1100&q=80"
+             alt="Kapster wast lachend het haar van een tevreden klant bij de wasbak in de salon"
+             width="1100" height="1375" loading="lazy" decoding="async">
+      </div>
+      <div class="sticker" aria-hidden="true">
+        <span class="st">Even bijkomen</span>
+        <span class="ss">Tijd en aandacht voor iedere klant</span>
+      </div>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow sage reveal">Over Es &amp; Co</span>
+      <h2 class="serif reveal d1">Een vertrouwd adres <em>middenin Enschede</em>.</h2>
+      <p class="reveal d2">
+        Kapsalon Es &amp; Co zit op een steenworp van het centrum, aan de <strong>Korte Haaksbergerstraat 42</strong>. Een warme, persoonlijke salon waar je geen nummertje bent maar een vaste klant — of je nu langskomt voor een snelle knipbeurt of een complete metamorfose.
+      </p>
+      <p class="reveal d2">
+        We werken voor <strong>dames, heren en kinderen</strong> en nemen altijd de tijd om te luisteren. Persoonlijk advies staat bij ons voorop: samen kijken we naar wat past bij jouw haar, je gezicht en je dagelijkse routine.
+      </p>
+
+      <ul class="over-list reveal d3">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Voor het hele gezin</strong> — van kinderkapsel tot kleurbehandeling.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Persoonlijk advies</strong> dat past bij jouw haar en wensen.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Centraal in Enschede</strong>, gemakkelijk bereikbaar in het centrum.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPENINGSTIJDEN + CONTACT ============ -->
+<section class="info sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kom langs</span>
+      <h2 class="serif">Openingstijden &amp; <em>contact</em>.</h2>
+      <p>Je vindt ons aan de Korte Haaksbergerstraat 42 in Enschede. Bel even voor een afspraak, dan zit je nooit te wachten.</p>
+    </div>
+
+    <div class="info-grid" id="contact">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="now-pill" id="nowPill"><span class="dot"></span><span id="nowText">Openingstijden</span></span>
+        <h3 class="serif">Open<em>ingstijden</em></h3>
+        <p class="ph-sub">Indicatief — bel even voor de actuele tijden</p>
+        <ul class="hours" id="hoursList">
+          <li data-day="1"><span class="day">Maandag</span><span class="time">Op afspraak</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">09:00 – 16:00</span></li>
+          <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+        <p class="hours-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Deze tijden zijn een indicatie voor dit voorbeeld. De echte openingstijden vullen we samen met u in.
+        </p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" aria-label="Contactgegevens en route">
+        <h3 class="serif">Contact <em>&amp; route</em></h3>
+        <p class="ph-sub">We helpen u graag verder</p>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">Korte Haaksbergerstraat 42<small>Centrum, Enschede</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><a class="v" href="tel:0534315010">053-4315010<small>Bel voor een afspraak of vraag</small></a></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <div><div class="k">Afspraak</div><div class="v">Op afspraak &amp; vrije inloop<small>Bel even vooraf voor de zekerheid</small></div></div>
+          </div>
+        </div>
+
+        <div class="socials" aria-label="Volg Es &amp; Co">
+          <a href="https://www.google.com/maps/search/Korte+Haaksbergerstraat+42+Enschede" target="_blank" rel="noopener" aria-label="Bekijk de route naar Es &amp; Co op Google Maps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Volg Es &amp; Co op Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Bekijk Es &amp; Co op Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+
+        <div class="map-standin" aria-label="Indicatieve locatie aan de Korte Haaksbergerstraat 42 in het centrum van Enschede" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Korte Haaksbergerstraat · Enschede</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="cta">
+  <div class="wrap cta-inner">
+    <span class="eyebrow reveal">Tot snel bij Es &amp; Co</span>
+    <h2 class="serif reveal d1">Klaar voor een <em>frisse look</em>?</h2>
+    <p class="reveal d2">Bel ons even en we plannen samen een moment dat jou uitkomt. Voor dames, heren en kinderen — met alle tijd en aandacht.</p>
+    <a class="phone-big reveal d2" href="tel:0534315010">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+      053-4315010
+    </a>
+    <div class="cta-actions reveal d3">
+      <a class="btn btn--cream" href="tel:0534315010">Bel voor een afspraak</a>
+      <a class="btn btn--cream" style="background:transparent;border-color:rgba(251,246,239,.7);color:var(--cream)" href="#diensten">Bekijk diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Es <span>&amp;</span> Co</div>
+        <p>Kapsalon voor dames, heren en kinderen in het centrum van Enschede. Knippen, kleuren en styling met persoonlijk advies en een warm welkom.</p>
+        <a class="btn fbtn" href="tel:0534315010">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          053-4315010
+        </a>
+      </div>
+      <div class="foot-col">
+        <h4>Diensten</h4>
+        <a href="#diensten">Knippen</a>
+        <a href="#diensten">Kleuren</a>
+        <a href="#diensten">Styling &amp; advies</a>
+        <a href="#over">Over ons</a>
+      </div>
+      <div class="foot-col">
+        <h4>Bezoek</h4>
+        <p>Korte Haaksbergerstraat 42<br>Enschede</p>
+        <a href="tel:0534315010">053-4315010</a>
+        <a href="#bezoek">Openingstijden</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="jaar">2025</span> Kapsalon Es &amp; Co · Enschede</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <div class="sc-meta">
+    <div class="t">Kapsalon Es &amp; Co</div>
+    <div class="s"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Centrum Enschede</div>
+  </div>
+  <a class="btn" href="tel:0534315010">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+    Bel nu
+  </a>
+</div>
+
+<script>
+  // Progressive enhancement only — all content is visible without JS.
+  document.documentElement.classList.add('js');
+
+  // Mobile menu
+  var ham=document.getElementById('hamburger'),ov=document.getElementById('overlay');
+  function setMenu(open){
+    ham.setAttribute('aria-expanded',open);
+    ham.setAttribute('aria-label',open?'Menu sluiten':'Menu openen');
+    ov.classList.toggle('open',open);
+    ov.setAttribute('aria-hidden',!open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  ham.addEventListener('click',function(){setMenu(ham.getAttribute('aria-expanded')!=='true')});
+  ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  // Header shadow on scroll
+  var hd=document.getElementById('top');
+  function onScroll(){hd.classList.toggle('scrolled',window.scrollY>8)}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Reveal on scroll
+  var rev=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    rev.forEach(function(el){io.observe(el)});
+  }else{rev.forEach(function(el){el.classList.add('in')})}
+
+  // Year
+  document.getElementById('jaar').textContent=new Date().getFullYear();
+
+  // Indicative open/closed status (indicatief)
+  (function(){
+    var hours={2:[9,18],3:[9,18],4:[9,18],5:[9,18],6:[9,16]}; // ma=op afspraak, zo dicht
+    var now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+    var pill=document.getElementById('nowPill'),txt=document.getElementById('nowText');
+    var open=hours[d]&&h>=hours[d][0]&&h<hours[d][1];
+    if(open){pill.classList.add('open');txt.textContent='Nu geopend (indicatief)';}
+    else{pill.classList.add('dicht');txt.textContent='Nu gesloten (indicatief)';}
+    var li=document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(li)li.classList.add('today');
+  })();
+</script>
+</body>
+</html>

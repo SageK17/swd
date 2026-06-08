@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnifique — Haar- &amp; Schoonheidssalon in Hengelo</title>
+<meta name="description" content="Magnifique Haar- &amp; Schoonheidssalon in Hengelo (Ov): haar én beauty onder één dak. Knippen, kleuren, styling, gezichtsbehandelingen en wimpers in de Hengelose Es. Bel 074-2914771.">
+<meta name="theme-color" content="#2A1C26">
+<meta property="og:title" content="Magnifique — Haar- & Schoonheidssalon in Hengelo">
+<meta property="og:description" content="Haar én beauty onder één dak. Eén vertrouwd adres in de Hengelose Es voor knippen, kleuren, styling en schoonheidsbehandelingen. Bel 074-2914771.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<!-- Custom SVG data-URI favicon: rosé monogram 'M' with beauty mirror arc on aubergine -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232A1C26'/%3E%3Cpath d='M16 44V20l8 13 8-13 8 13 8-13v24' fill='none' stroke='%23D9A7A0' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='50' r='2.4' fill='%23C99A4E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --aubergine:#2A1C26;     /* deep plum base */
+    --aubergine-2:#33232f;
+    --plum:#3d2a38;
+    --ink:#241620;
+    --shell:#F7F1EC;          /* warm shell white */
+    --shell-dim:#efe6df;
+    --cream:#FBF7F3;
+    --rose:#D9A7A0;           /* dusty rosé accent */
+    --rose-deep:#bd8079;
+    --gold:#C99A4E;           /* champagne gold */
+    --gold-deep:#a87d36;
+    --muted:#a89aa2;          /* muted mauve-grey on dark */
+    --muted-2:#8a7c84;
+    --line:#43313d;           /* hairline on dark */
+    --line-shell:#e3d6cc;     /* hairline on light */
+    --txt-dark:#3a2a34;       /* body text on light */
+    --txt-dim:#6b5a64;
+    --maxw:1220px;
+    --pad:clamp(20px,5vw,64px);
+    --display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --body:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--shell);
+    color:var(--txt-dark);
+    line-height:1.7;
+    font-size:clamp(15px,1.02vw,17px);
+    font-weight:400;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--rose);color:var(--aubergine)}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:500;
+    line-height:1.02;
+    letter-spacing:.005em;
+    font-feature-settings:"liga","kern";
+  }
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.34em;
+    font-size:clamp(10.5px,1vw,12.5px);
+    color:var(--gold-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:.9em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(24px,4vw,42px);
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .on-dark .eyebrow,.eyebrow.light{color:var(--gold)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--aubergine);--fg:var(--cream);--bd:var(--aubergine);
+    display:inline-flex;align-items:center;gap:.65em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--body);font-weight:500;
+    text-transform:uppercase;letter-spacing:.16em;
+    font-size:clamp(12px,1vw,13.5px);
+    padding:1.08em 1.9em;
+    border:1px solid var(--bd);
+    border-radius:2px;
+    cursor:pointer;
+    transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease,border-color .22s ease;
+    line-height:1;
+    position:relative;
+  }
+  .btn svg{width:1.1em;height:1.1em;flex:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(42,28,38,.22)}
+  .btn--gold{--bg:var(--gold);--fg:var(--aubergine);--bd:var(--gold)}
+  .btn--gold:hover{--bg:var(--gold-deep);--bd:var(--gold-deep)}
+  .btn--ghost{--bg:transparent;--fg:var(--cream);--bd:rgba(251,247,243,.5)}
+  .btn--ghost:hover{--bg:var(--cream);--fg:var(--aubergine);--bd:var(--cream)}
+  .btn--ghost-dark{--bg:transparent;--fg:var(--aubergine);--bd:rgba(42,28,38,.32)}
+  .btn--ghost-dark:hover{--bg:var(--aubergine);--fg:var(--cream);--bd:var(--aubergine)}
+  .btn--block{width:100%;justify-content:center}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(247,241,236,.86);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid var(--line-shell);
+    transition:border-color .3s ease,background .3s ease,box-shadow .3s ease;
+  }
+  header.scrolled{background:rgba(247,241,236,.97);box-shadow:0 6px 24px rgba(42,28,38,.07)}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:clamp(66px,9vw,86px);
+  }
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:42px;height:42px;flex:none;
+    border:1px solid var(--gold);
+    display:grid;place-items:center;
+    color:var(--gold-deep);
+    background:transparent;border-radius:50%;
+  }
+  .brand .mark svg{width:23px;height:23px}
+  .brand .name{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(22px,2.6vw,28px);line-height:.92;letter-spacing:.01em;color:var(--aubergine);
+  }
+  .brand .name small{display:block;font-family:var(--body);font-weight:400;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--txt-dim);margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(18px,2.6vw,40px)}
+  .nav-links a.lnk{
+    font-weight:500;font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--txt-dim);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{
+    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .25s ease;
+  }
+  .nav-links a.lnk:hover{color:var(--aubergine)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:48px;height:48px;
+    border:1px solid var(--line-shell);background:transparent;
+    cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;border-radius:50%;
+  }
+  .hamburger span{display:block;width:20px;height:1.5px;background:var(--aubergine);transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;
+    background:var(--aubergine);color:var(--cream);
+    transform:translateX(100%);
+    transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:var(--pad);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(38px,10vw,60px);line-height:1.18;letter-spacing:.01em;
+    color:var(--cream);padding:.1em 0;
+    display:flex;align-items:baseline;gap:.5em;
+    border-bottom:1px solid var(--line);
+  }
+  .overlay a .idx{font-family:var(--body);font-size:13px;font-weight:400;color:var(--gold);letter-spacing:.1em}
+  .overlay a:last-of-type{border-bottom:none}
+  .overlay a:active{color:var(--rose)}
+  .overlay .ov-foot{margin-top:clamp(26px,5vw,42px);color:var(--muted);font-size:14px;line-height:1.9}
+  .overlay .ov-foot strong{color:var(--cream);font-weight:500}
+  .overlay .ov-foot a{font-family:var(--body);font-size:14px;color:var(--rose);display:inline;border:none;padding:0}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--aubergine);color:var(--cream)}
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;
+    min-height:min(88vh,820px);
+  }
+  .hero-copy{
+    position:relative;z-index:2;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:clamp(48px,7vw,96px) clamp(24px,5vw,72px) clamp(48px,7vw,96px) var(--pad);
+  }
+  .hero-copy::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      radial-gradient(120% 90% at 0% 0%, rgba(217,167,160,.14), transparent 55%),
+      radial-gradient(90% 80% at 10% 100%, rgba(201,154,78,.10), transparent 60%);
+  }
+  .hero h1{
+    font-size:clamp(52px,8.5vw,108px);
+    margin:clamp(22px,3vw,34px) 0 0;
+    letter-spacing:-.005em;font-weight:500;
+  }
+  .hero h1 .ln{display:block}
+  .hero h1 em{font-style:italic;color:var(--rose);font-weight:400}
+  .hero h1 .amp{color:var(--gold)}
+  .hero-tag{
+    font-family:var(--display);font-style:italic;font-weight:400;
+    font-size:clamp(20px,2.4vw,30px);color:var(--rose);
+    margin-top:clamp(18px,2.4vw,26px);line-height:1.3;
+  }
+  .hero-lede{max-width:46ch;color:var(--shell-dim);font-size:clamp(15px,1.3vw,18px);margin-top:clamp(16px,2vw,22px);font-weight:300}
+  .hero-lede strong{color:var(--cream);font-weight:500}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,3.4vw,40px)}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:clamp(18px,2.4vw,30px);
+    margin-top:clamp(28px,3.6vw,40px);padding-top:clamp(22px,2.6vw,28px);
+    border-top:1px solid var(--line);
+  }
+  .hero-meta div{display:flex;align-items:center;gap:.6em;color:var(--shell-dim);font-size:13px;letter-spacing:.04em}
+  .hero-meta svg{width:17px;height:17px;flex:none;stroke:var(--gold);fill:none}
+
+  .hero-media{position:relative;overflow:hidden;min-height:340px;background:var(--plum)}
+  .hero-media img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,var(--aubergine) 0%,rgba(42,28,38,.25) 22%,rgba(42,28,38,0) 50%),
+               linear-gradient(0deg,rgba(42,28,38,.35),transparent 40%);
+  }
+  .hero-badge{
+    position:absolute;z-index:3;right:clamp(18px,2.4vw,30px);bottom:clamp(18px,2.4vw,30px);
+    background:rgba(247,241,236,.94);color:var(--aubergine);
+    padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,24px);border-radius:2px;
+    backdrop-filter:blur(4px);box-shadow:0 14px 36px rgba(42,28,38,.3);
+    max-width:230px;
+  }
+  .hero-badge .ht{font-family:var(--display);font-style:italic;font-size:clamp(17px,1.9vw,22px);line-height:1.15;font-weight:500}
+  .hero-badge .hs{font-size:12px;color:var(--txt-dim);letter-spacing:.06em;margin-top:.45em;line-height:1.45}
+
+  /* ---------- DUO STRIP ---------- */
+  .duo{background:var(--cream);border-bottom:1px solid var(--line-shell)}
+  .duo-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .duo .col{
+    padding:clamp(28px,4vw,52px) clamp(20px,3.4vw,48px);
+    display:flex;align-items:flex-start;gap:clamp(16px,2vw,24px);
+  }
+  .duo .col:first-child{border-right:1px solid var(--line-shell)}
+  .duo .ic{
+    width:clamp(48px,5vw,60px);height:clamp(48px,5vw,60px);flex:none;border-radius:50%;
+    border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-deep);
+  }
+  .duo .ic svg{width:24px;height:24px;stroke-width:1.4}
+  .duo h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.8vw,34px);line-height:1;color:var(--aubergine)}
+  .duo p{margin-top:.5em;color:var(--txt-dim);font-size:clamp(13.5px,1.1vw,15px);max-width:34ch}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(64px,9vw,124px);padding-bottom:clamp(64px,9vw,124px)}
+  .sec-head{margin-bottom:clamp(40px,5vw,68px);max-width:720px}
+  .sec-head h2{font-size:clamp(40px,6.4vw,82px);margin:.3em 0 0;letter-spacing:-.005em;font-weight:500;color:var(--aubergine)}
+  .sec-head h2 em{font-style:italic;color:var(--rose-deep)}
+  .sec-head p{margin-top:1.1rem;color:var(--txt-dim);font-size:clamp(15px,1.25vw,18px);max-width:56ch;font-weight:300}
+
+  /* ---------- DIENSTEN ---------- */
+  .services{background:var(--shell);border-top:1px solid var(--line-shell)}
+  .svc-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,4.4vw,72px);align-items:start}
+  .svc-block{position:relative}
+  .svc-block .blk-head{
+    display:flex;align-items:center;gap:1rem;margin-bottom:clamp(20px,2.6vw,30px);
+    padding-bottom:clamp(16px,2vw,22px);border-bottom:1px solid var(--line-shell);
+  }
+  .svc-block .blk-ic{
+    width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;
+  }
+  .svc-block.haar .blk-ic{background:var(--rose);color:var(--aubergine)}
+  .svc-block.beauty .blk-ic{background:var(--gold);color:var(--aubergine)}
+  .svc-block .blk-ic svg{width:23px;height:23px;stroke-width:1.5}
+  .svc-block .blk-t{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,46px);line-height:1;color:var(--aubergine)}
+  .svc-block .blk-t small{display:block;font-family:var(--body);font-weight:400;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-top:.5em}
+
+  .svc-photo{
+    aspect-ratio:16/10;width:100%;overflow:hidden;border-radius:3px;margin-bottom:clamp(22px,2.6vw,30px);
+    background:var(--shell-dim);position:relative;
+  }
+  .svc-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .svc-block:hover .svc-photo img{transform:scale(1.05)}
+
+  .svc-item{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:clamp(13px,1.5vw,17px) 0;border-bottom:1px solid var(--line-shell);
+  }
+  .svc-item:last-of-type{border-bottom:none}
+  .svc-item .si-main{flex:1;min-width:0}
+  .svc-item .si-name{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.9vw,24px);color:var(--aubergine);line-height:1.1}
+  .svc-item .si-desc{color:var(--txt-dim);font-size:clamp(13px,1vw,14px);margin-top:.2em}
+  .svc-item .si-price{font-family:var(--display);font-style:italic;font-size:clamp(15px,1.4vw,19px);color:var(--rose-deep);white-space:nowrap;flex:none}
+  .svc-note{
+    margin-top:clamp(30px,4vw,48px);text-align:center;color:var(--txt-dim);font-size:14px;
+    display:flex;gap:.6em;align-items:center;justify-content:center;font-weight:300;
+  }
+  .svc-note svg{width:18px;height:18px;flex:none;stroke:var(--gold-deep);stroke-width:1.6}
+
+  /* ---------- OVER ---------- */
+  .over{background:var(--aubergine);color:var(--cream)}
+  .over-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(36px,5vw,80px);align-items:center}
+  .over-media{position:relative}
+  .over-media .ph{
+    aspect-ratio:4/5;width:100%;overflow:hidden;border-radius:3px;background:var(--plum);
+  }
+  .over-media .ph img{width:100%;height:100%;object-fit:cover}
+  .over-media .accent{
+    position:absolute;left:clamp(-12px,-1.4vw,-18px);bottom:clamp(-14px,-1.6vw,-20px);
+    width:clamp(96px,13vw,150px);aspect-ratio:1;overflow:hidden;border-radius:3px;
+    border:5px solid var(--aubergine);box-shadow:0 16px 40px rgba(0,0,0,.4);
+  }
+  .over-media .accent img{width:100%;height:100%;object-fit:cover}
+  .over-media .est{
+    position:absolute;top:clamp(-14px,-1.6vw,-20px);right:clamp(-10px,-1.2vw,-16px);
+    width:clamp(80px,9vw,108px);height:clamp(80px,9vw,108px);border-radius:50%;
+    background:var(--gold);color:var(--aubergine);display:grid;place-items:center;text-align:center;
+    box-shadow:0 14px 34px rgba(0,0,0,.35);
+  }
+  .over-media .est span{font-family:var(--display);font-weight:600;line-height:1.05;font-size:clamp(13px,1.3vw,15px)}
+  .over-media .est strong{display:block;font-size:clamp(22px,2.4vw,30px);font-weight:600}
+  .over-body .eyebrow{margin-bottom:1.2rem;color:var(--gold)}
+  .over-body h2{font-size:clamp(38px,5.6vw,74px);letter-spacing:-.005em;font-weight:500}
+  .over-body h2 em{font-style:italic;color:var(--rose)}
+  .over-body p{margin-top:1.2rem;color:var(--shell-dim);font-size:clamp(15px,1.2vw,18px);font-weight:300}
+  .over-body p strong{color:var(--cream);font-weight:500}
+  .pillz{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(24px,3vw,32px)}
+  .pillz span{
+    border:1px solid var(--line);color:var(--shell-dim);
+    font-weight:400;font-size:12.5px;letter-spacing:.06em;
+    padding:.65em 1.1em;display:inline-flex;align-items:center;gap:.55em;border-radius:30px;
+  }
+  .pillz span svg{width:15px;height:15px;stroke:var(--rose);stroke-width:1.6}
+
+  /* ---------- INFO / CONTACT ---------- */
+  .info{background:var(--cream);border-top:1px solid var(--line-shell)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+  .panel{
+    border:1px solid var(--line-shell);background:var(--shell);
+    padding:clamp(28px,3.4vw,46px);border-radius:3px;
+  }
+  .panel h3{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1;margin-bottom:1.3rem;color:var(--aubergine)}
+  .panel h3 em{font-style:italic;color:var(--rose-deep)}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.85em 0;border-bottom:1px solid var(--line-shell);
+    font-size:clamp(14px,1.2vw,16px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:500;letter-spacing:.04em;font-size:clamp(13px,1.1vw,15px);color:var(--txt-dark)}
+  .hours .time{font-family:var(--display);font-size:clamp(17px,1.7vw,22px);letter-spacing:.02em;color:var(--aubergine);font-weight:600}
+  .hours li.today{
+    color:var(--cream);background:var(--aubergine);border-radius:3px;
+    margin:0 calc(-1*clamp(14px,1.6vw,20px));padding-left:clamp(14px,1.6vw,20px);padding-right:clamp(14px,1.6vw,20px);
+    border-bottom-color:transparent;
+  }
+  .hours li.today .day{color:var(--shell-dim)}
+  .hours li.today .time{color:var(--rose)}
+  .hours li.closed .time{color:var(--muted-2);font-weight:500;font-family:var(--body);font-size:clamp(13px,1.1vw,14px)}
+  .now-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.4rem;
+    font-weight:500;text-transform:uppercase;letter-spacing:.14em;font-size:11px;
+    padding:.5em .9em;border:1px solid var(--line-shell);border-radius:30px;color:var(--txt-dim);
+  }
+  .now-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--muted-2)}
+  .now-pill.open{border-color:var(--gold);color:var(--gold-deep)}
+  .now-pill.open .dot{background:var(--gold);box-shadow:0 0 0 0 rgba(201,154,78,.5);animation:pulse 2.2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(201,154,78,0)}100%{box-shadow:0 0 0 0 rgba(201,154,78,0)}}
+
+  .contact-list{display:flex;flex-direction:column;gap:0}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1.1em 0;border-bottom:1px solid var(--line-shell)}
+  .crow:last-of-type{border-bottom:none}
+  .crow .ico{
+    width:clamp(42px,5vw,50px);height:clamp(42px,5vw,50px);flex:none;border-radius:50%;
+    border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-deep);
+  }
+  .crow .ico svg{width:20px;height:20px;stroke-width:1.5}
+  .crow .k{font-weight:500;text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;color:var(--txt-dim)}
+  .crow .v{font-size:clamp(15px,1.3vw,18px);color:var(--aubergine);font-weight:500;line-height:1.45;margin-top:3px}
+  .crow .v a{transition:color .2s ease}
+  .crow .v a:hover{color:var(--rose-deep)}
+  .crow .v small{display:block;color:var(--txt-dim);font-weight:400;font-size:13px;margin-top:2px}
+  .phone-cta{margin-top:1.6rem}
+
+  /* map stand-in */
+  .map-standin{
+    margin-top:1.5rem;height:clamp(150px,18vw,190px);border:1px solid var(--line-shell);border-radius:3px;
+    position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(201,154,78,.05),transparent),
+      repeating-linear-gradient(0deg,#ede2d8 0 1px,transparent 1px 40px),
+      repeating-linear-gradient(90deg,#ede2d8 0 1px,transparent 1px 40px),
+      var(--shell);
+  }
+  .map-standin .road{position:absolute;background:#e1d3c7}
+  .map-standin .r1{left:0;right:0;top:52%;height:9px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:36%;width:7px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--rose-deep)}
+  .map-standin .pin svg{width:36px;height:36px;filter:drop-shadow(0 6px 10px rgba(42,28,38,.25))}
+  .map-standin .lbl{position:absolute;left:14px;bottom:11px;font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim)}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;background:var(--aubergine);color:var(--cream);text-align:center}
+  .finalcta::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(80% 70% at 50% 0%, rgba(217,167,160,.16), transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, rgba(201,154,78,.12), transparent 60%);
+  }
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(64px,10vw,140px);padding-bottom:clamp(64px,10vw,140px)}
+  .finalcta h2{font-size:clamp(44px,8.5vw,116px);letter-spacing:-.01em;font-weight:500}
+  .finalcta h2 em{font-style:italic;color:var(--rose)}
+  .finalcta p{margin:1.4rem auto 2.2rem;color:var(--shell-dim);max-width:48ch;font-size:clamp(16px,1.4vw,20px);font-weight:300}
+  .finalcta .hero-actions{justify-content:center;margin-top:0}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:var(--shell-dim);border-top:1px solid var(--line);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(96px,8vw,112px)}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--line)}
+  .foot-brand .name{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:.92;color:var(--cream)}
+  .foot-brand .name em{font-style:italic;color:var(--rose)}
+  .foot-brand p{margin-top:1rem;color:var(--muted);max-width:38ch;font-size:14px;font-weight:300}
+  .foot-col h4{font-family:var(--body);font-weight:500;text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--gold);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--shell-dim);font-size:14px;padding:.32em 0;line-height:1.5;font-weight:300}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--rose)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding-top:clamp(24px,3vw,32px);color:var(--muted);font-size:13px;font-weight:300}
+  .foot-bottom a{color:var(--cream);font-weight:400}
+  .foot-bottom a:hover{color:var(--rose)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(42,28,38,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--gold);align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0;color:var(--cream)}
+  .sticky-cta .sc-meta .t{font-family:var(--display);font-weight:600;font-size:18px;line-height:1;letter-spacing:.01em}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--rose);font-size:12px;margin-top:3px;letter-spacing:.04em}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;stroke:var(--rose);fill:none;stroke-width:2}
+  .sticky-cta .btn{flex:none;padding:.95em 1.35em}
+
+  /* ---------- REVEAL (JS-gated; content fully visible without JS) ---------- */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.09s}.js .reveal.d2{transition-delay:.18s}.js .reveal.d3{transition-delay:.27s}.js .reveal.d4{transition-delay:.36s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;min-height:0}
+    .hero-media{min-height:clamp(280px,52vw,460px);order:-1}
+    .hero-media::after{background:linear-gradient(0deg,var(--aubergine) 0%,rgba(42,28,38,.2) 38%,transparent 70%)}
+    .hero-copy{padding:clamp(40px,7vw,64px) var(--pad)}
+    .over-grid{grid-template-columns:1fr;gap:clamp(40px,7vw,56px)}
+    .over-media{max-width:440px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .duo-inner{grid-template-columns:1fr}
+    .duo .col:first-child{border-right:none;border-bottom:1px solid var(--line-shell)}
+    .svc-cols{grid-template-columns:1fr;gap:clamp(44px,8vw,56px)}
+    .info-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:96px}
+  }
+  @media(max-width:420px){
+    .hero h1{font-size:clamp(44px,13vw,60px)}
+    .svc-item{flex-wrap:wrap;gap:.2rem}
+    .svc-item .si-price{width:100%}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Magnifique Haar- en Schoonheidssalon home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18V7l3.5 6L12 7l3.5 6L19 7v11"/></svg>
+      </span>
+      <span class="name">Magnifique<small>Haar &amp; Beauty · Hengelo</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#over">Over ons</a>
+      <a class="lnk" href="#bezoek">Bezoek</a>
+      <a class="btn btn--gold nav-cta" href="tel:0742914771">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        074-2914771
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a href="#over"><span class="idx">02</span> Over ons</a>
+  <a href="#bezoek"><span class="idx">03</span> Bezoek</a>
+  <a href="tel:0742914771"><span class="idx">04</span> Bel ons</a>
+  <div class="ov-foot">
+    <strong>H. Leefsmastraat, Hengelo (Ov)</strong><br>
+    Wijk Hengelose Es<br>
+    Tel. <a href="tel:0742914771">074-2914771</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero on-dark">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Haar- &amp; Schoonheidssalon · Hengelo</span>
+      <h1 class="display reveal d1">
+        <span class="ln">Haar <span class="amp">&amp;</span> beauty,</span>
+        <span class="ln"><em>onder één dak.</em></span>
+      </h1>
+      <p class="hero-tag reveal d2">Magnifique — uw vaste adres in de Hengelose Es.</p>
+      <p class="hero-lede reveal d2">
+        Bij <strong>Magnifique</strong> hoeft u niet langer te kiezen tussen kapper en schoonheidssalon. Knippen, kleuren en styling én verzorgende gezichts- en wimperbehandelingen — alles met aandacht, in één vertrouwde salon.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn--gold" href="tel:0742914771">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a class="btn btn--ghost" href="#diensten">Bekijk diensten</a>
+      </div>
+      <div class="hero-meta reveal d3">
+        <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Hengelose Es, Hengelo (Ov)</div>
+        <div><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Op afspraak &amp; telefonisch</div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <!-- Verified Unsplash: licht, modern salon-interieur -->
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80"
+           alt="Licht en modern interieur van een haar- en schoonheidssalon met kappersstoelen en spiegels" loading="eager" width="1600" height="1067">
+      <div class="hero-badge">
+        <div class="ht">Twee specialismen, één team</div>
+        <div class="hs">Persoonlijke aandacht voor uw haar én uw huid.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DUO STRIP ============ -->
+<div class="duo" aria-label="Onze twee specialismen">
+  <div class="wrap">
+    <div class="duo-inner">
+      <div class="col">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></span>
+        <div>
+          <h3>Haar</h3>
+          <p>Knippen, kleuren en styling voor dames en heren — vakwerk dat past bij u.</p>
+        </div>
+      </div>
+      <div class="col">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 5.5-6 9a6 6 0 0 0 12 0c0-3.5-3-5-6-9z"/></svg></span>
+        <div>
+          <h3>Beauty</h3>
+          <p>Gezichtsbehandelingen, wimpers en verzorging — voor een verzorgde, stralende huid.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onze diensten</span>
+      <h2 class="display">Alles voor uw <em>look</em>.</h2>
+      <p>Van een frisse coupe tot een verzorgende gezichtsbehandeling — bij Magnifique vindt u haar en beauty op één adres, afgestemd op uw wensen.</p>
+    </div>
+
+    <div class="svc-cols">
+      <!-- HAAR -->
+      <div class="svc-block haar reveal">
+        <div class="svc-photo">
+          <!-- Verified Unsplash: wassen / haarbehandeling in salon -->
+          <img src="https://images.unsplash.com/photo-1556760544-74068565f05c?auto=format&fit=crop&w=1600&q=80"
+               alt="Kapster wast en verzorgt het haar van een klant bij de wasbak in de salon" loading="lazy" width="1600" height="1000">
+        </div>
+        <div class="blk-head">
+          <span class="blk-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></span>
+          <span class="blk-t">Haar<small>Knippen · Kleuren · Styling</small></span>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Knippen</div>
+            <div class="si-desc">Knipbeurt voor dames en heren, afgewerkt en gestyled naar wens.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Kleuren &amp; highlights</div>
+            <div class="si-desc">Van een warme basiskleur tot subtiele highlights of balayage.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Styling &amp; föhnen</div>
+            <div class="si-desc">Een strakke blow-dry of feestelijke opsteek voor elke gelegenheid.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Behandeling &amp; verzorging</div>
+            <div class="si-desc">Voedende kuren voor gezond, glanzend en verzorgd haar.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+      </div>
+
+      <!-- BEAUTY -->
+      <div class="svc-block beauty reveal d1">
+        <div class="svc-photo">
+          <!-- Verified Unsplash: gezichtsbehandeling / huidverzorging -->
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80"
+               alt="Schoonheidsspecialiste brengt een verzorgend gezichtsmasker aan tijdens een gezichtsbehandeling" loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="blk-head">
+          <span class="blk-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 5.5-6 9a6 6 0 0 0 12 0c0-3.5-3-5-6-9z"/></svg></span>
+          <span class="blk-t">Beauty<small>Gezicht · Wimpers · Verzorging</small></span>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Gezichtsbehandeling</div>
+            <div class="si-desc">Reinigen, verzorgen en ontspannen voor een stralende huid.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Wimpers &amp; wenkbrauwen</div>
+            <div class="si-desc">Wimperlift, verven en epileren voor een open, frisse blik.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Harsen &amp; ontharen</div>
+            <div class="si-desc">Zorgvuldig ontharen voor een gladde, verzorgde huid.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+        <div class="svc-item">
+          <div class="si-main">
+            <div class="si-name">Manicure &amp; verzorging</div>
+            <div class="si-desc">Verzorgde nagels en handen als finishing touch.</div>
+          </div>
+          <div class="si-price">op aanvraag</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="svc-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Tarieven vertellen we u graag persoonlijk — bel <a href="tel:0742914771" style="color:var(--gold-deep);text-decoration:underline;margin:0 .25em">074-2914771</a> en we stemmen alles op uw wensen af.
+    </p>
+  </div>
+</section>
+
+<!-- ============ OVER ============ -->
+<section class="over sec on-dark" id="over">
+  <div class="wrap over-grid">
+    <div class="over-media reveal">
+      <div class="ph">
+        <!-- Verified Unsplash: elegante salonstoelen + spiegel -->
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80"
+             alt="Stijlvolle salonstoelen voor een grote spiegel in een lichte, verzorgde salon" loading="lazy" width="1600" height="1067">
+      </div>
+      <div class="accent" aria-hidden="true">
+        <!-- Verified Unsplash: schoonheid / make-up detail -->
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" width="800" height="533">
+      </div>
+      <div class="est" aria-hidden="true"><span>Haar &amp;<strong>Beauty</strong>één dak</span></div>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over Magnifique</span>
+      <h2 class="display reveal d1">Eén salon, <em>twee passies.</em></h2>
+      <p class="reveal d2">
+        Magnifique is een gecombineerde haar- en schoonheidssalon in de wijk <strong>Hengelose Es</strong> in Hengelo. Bij ons vindt u alles onder één dak: terwijl de een uw haar verzorgt, kunt u bij de ander terecht voor een gezichts- of wimperbehandeling.
+      </p>
+      <p class="reveal d2">
+        Wij geloven in <strong>persoonlijke aandacht</strong> en de tijd nemen voor wat u wilt. Geen lopende band, maar een vertrouwd adres waar u zich op uw gemak voelt — en waar u na afloop verzorgd én ontspannen de deur uit loopt.
+      </p>
+
+      <div class="pillz reveal d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Haar én beauty</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>Persoonlijke aandacht</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>In de Hengelose Es</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK: HOURS + CONTACT ============ -->
+<section class="info sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kom langs</span>
+      <h2 class="display">Bezoek onze <em>salon</em>.</h2>
+      <p>U vindt Magnifique aan de H. Leefsmastraat in de wijk Hengelose Es. Bel gerust om een afspraak in te plannen — dan staan we op tijd voor u klaar.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="now-pill" id="nowPill"><span class="dot"></span><span id="nowText">Openingstijden</span></span>
+        <h3>Open<em>ingstijden</em></h3>
+        <ul class="hours" id="hoursList">
+          <li data-day="1"><span class="day">Maandag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 20:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">09:00 – 16:00</span></li>
+          <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+        <p style="margin-top:1.1rem;color:var(--txt-dim);font-size:13px;font-weight:300">Tijden indicatief — bel ons voor de actuele beschikbaarheid.</p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" aria-label="Contactgegevens en route">
+        <h3>Contact <em>&amp; route</em></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">H. Leefsmastraat<small>Wijk Hengelose Es · Hengelo (Ov)</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><div class="v"><a href="tel:0742914771">074-2914771</a><small>Bel ons tijdens openingstijden</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><div class="k">Afspraak</div><div class="v">Op afspraak &amp; telefonisch<small>Even bellen en we plannen u in</small></div></div>
+          </div>
+        </div>
+
+        <a class="btn btn--ghost-dark btn--block phone-cta" href="tel:0742914771">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel 074-2914771
+        </a>
+
+        <div class="map-standin" aria-label="Indicatieve locatie aan de H. Leefsmastraat in de Hengelose Es, Hengelo" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">H. Leefsmastraat · Hengelose Es</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta on-dark">
+  <div class="wrap finalcta-inner">
+    <h2 class="display reveal">Klaar voor <em>haar &amp; beauty?</em></h2>
+    <p class="reveal d1">Bel Magnifique en plan uw afspraak in de Hengelose Es. Wij maken graag tijd voor u — voor uw haar én uw huid.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn btn--gold" href="tel:0742914771">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 074-2914771
+      </a>
+      <a class="btn btn--ghost" href="#bezoek">Bekijk openingstijden</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Magni<em>fique</em></div>
+        <p>Haar- &amp; schoonheidssalon in de Hengelose Es. Haar en beauty onder één dak — knippen, kleuren, styling en verzorgende schoonheidsbehandelingen.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#diensten">Diensten</a>
+        <a href="#over">Over ons</a>
+        <a href="#bezoek">Bezoek &amp; openingstijden</a>
+        <a href="tel:0742914771">Bel voor afspraak</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>H. Leefsmastraat<br>Wijk Hengelose Es<br>Hengelo (Ov)</p>
+        <p style="margin-top:.6em">Tel. <a href="tel:0742914771">074-2914771</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Magnifique Haar- &amp; Schoonheidssalon — Hengelo</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" aria-hidden="false">
+  <div class="sc-meta">
+    <div class="t">Maak een afspraak</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Hengelose Es · Hengelo
+    </div>
+  </div>
+  <a class="btn btn--gold" href="tel:0742914771">Bel ons</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add('js');
+  document.body.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!overlay.classList.contains('open'));
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal (enhancement only; content visible without JS) ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Opening hours: highlight today + open/closed status ---- */
+  var openHours = {1:[9,18],2:[9,18],3:[9,18],4:[9,20],5:[9,18],6:[9,16],0:null};
+  var dayNames = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  try{
+    var now = new Date();
+    var d = now.getDay();
+    var h = now.getHours() + now.getMinutes()/60;
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+
+    var rng = openHours[d];
+    var isOpen = rng && h >= rng[0] && h < rng[1];
+    var pill = document.getElementById('nowPill');
+    var txt = document.getElementById('nowText');
+    if(isOpen){
+      pill.classList.add('open');
+      txt.textContent = 'Nu open · tot ' + rng[1] + ':00';
+    } else {
+      var msg = 'Nu gesloten';
+      if(rng && h < rng[0]){
+        msg = 'Vandaag open vanaf ' + rng[0] + ':00';
+      } else {
+        for(var i=1;i<=7;i++){
+          var nd = (d+i)%7;
+          if(openHours[nd]){ msg = 'Weer open ' + dayNames[nd] + ' ' + openHours[nd][0] + ':00'; break; }
+        }
+      }
+      txt.textContent = msg;
+    }
+  }catch(e){ /* fail silent — static hours still shown */ }
+})();
+</script>
+</body>
+</html>

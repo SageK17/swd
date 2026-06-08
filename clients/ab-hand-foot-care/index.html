@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.B. Hand &amp; Foot Care — Nagelstudio &amp; Medisch Pedicure in Enschede</title>
+<meta name="description" content="A.B. Hand &amp; Foot Care in Enschede: nagelstudio met CND-nagels en medisch pedicure. Specialist in schimmelnagels, gekloofde hielen en psoriasis met HFL-producten. Strikt op afspraak. Bel 06-11447733.">
+<meta name="theme-color" content="#2F4538">
+<meta name="author" content="A.B. Hand & Foot Care">
+<meta property="og:title" content="A.B. Hand &amp; Foot Care — Nagelstudio &amp; Medisch Pedicure in Enschede">
+<meta property="og:description" content="Rust, precisie en verzorgde voeten en nagels. CND-nagels en medisch pedicure bij Angelique in Enschede. Op afspraak — bel 06-11447733.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="A.B. Hand & Foot Care">
+<!-- Custom inline SVG favicon: leaf + nail/foot-care mark on deep eucalyptus -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F4538'/%3E%3Cpath d='M32 14c8 6 12 13 12 21a12 12 0 0 1-24 0c0-8 4-15 12-21z' fill='none' stroke='%23E7CBB0' stroke-width='3.4' stroke-linejoin='round'/%3E%3Cpath d='M32 24v18' stroke='%23E7CBB0' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2F4538;      /* deep eucalyptus */
+    --forest-deep:#243629;
+    --moss:#5C7367;        /* muted sage */
+    --ivory:#F6F2EA;       /* warm ivory */
+    --ivory-soft:#EFE9DD;
+    --sand:#E7CBB0;        /* soft clay/blush */
+    --clay:#C2724E;        /* terracotta accent */
+    --clay-deep:#A85C3B;
+    --ink:#26302A;         /* near-black green ink */
+    --ink-soft:#4A574F;
+    --muted:#7C887F;
+    --line:#DED6C7;
+    --line-soft:#E8E1D4;
+    --line-dark:rgba(246,242,234,.16);
+    --maxw:1200px;
+    --pad:clamp(20px,5vw,68px);
+    --display:'Fraunces',Georgia,'Times New Roman',serif;
+    --body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --radius:18px;
+    --shadow:0 24px 60px -28px rgba(36,54,41,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:clamp(15px,1.02vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--sand);color:var(--forest-deep)}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:400;
+    line-height:1.04;
+    letter-spacing:-.012em;
+    font-optical-sizing:auto;
+  }
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.24em;
+    font-size:clamp(11px,1vw,12.5px);
+    color:var(--clay-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:.8em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(20px,3.4vw,34px);
+    height:1.5px;
+    background:var(--clay);
+    display:inline-block;
+  }
+  .eyebrow.on-dark{color:var(--sand)}
+  .eyebrow.on-dark::before{background:var(--sand)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--clay);color:var(--ivory);
+    font-family:var(--body);font-weight:600;
+    letter-spacing:.01em;
+    font-size:clamp(14px,1.05vw,15.5px);
+    padding:1em 1.6em;
+    border:1.5px solid var(--clay);
+    border-radius:999px;
+    cursor:pointer;
+    transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease,border-color .22s ease;
+    line-height:1;
+    box-shadow:0 10px 26px -14px rgba(194,114,78,.8);
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:hover{transform:translateY(-2px);background:var(--clay-deep);border-color:var(--clay-deep);box-shadow:0 16px 32px -14px rgba(168,92,59,.85)}
+  .btn:focus-visible{outline:3px solid var(--forest);outline-offset:3px}
+  .btn--ghost{
+    background:transparent;color:var(--forest);
+    border-color:var(--forest);box-shadow:none;
+  }
+  .btn--ghost:hover{background:var(--forest);color:var(--ivory);border-color:var(--forest)}
+  .btn--light{background:var(--ivory);color:var(--forest-deep);border-color:var(--ivory)}
+  .btn--light:hover{background:var(--sand);border-color:var(--sand);color:var(--forest-deep)}
+  .btn--block{width:100%;justify-content:center}
+
+  a:focus-visible,button:focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:6px}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(246,242,234,.82);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease,background .3s ease,box-shadow .3s ease;
+  }
+  header.scrolled{background:rgba(246,242,234,.96);border-bottom-color:var(--line);box-shadow:0 8px 30px -22px rgba(36,54,41,.5)}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:clamp(66px,8.5vw,86px);
+  }
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:42px;height:42px;flex:none;
+    border-radius:12px;
+    display:grid;place-items:center;
+    color:var(--sand);
+    background:var(--forest);
+  }
+  .brand .mark svg{width:24px;height:24px}
+  .brand .name{
+    font-family:var(--display);
+    font-size:clamp(18px,2.3vw,22px);line-height:1;letter-spacing:-.01em;
+    color:var(--forest-deep);font-weight:600;
+  }
+  .brand .name small{display:block;font-family:var(--body);font-weight:600;font-size:9.5px;letter-spacing:.26em;color:var(--moss);margin-top:4px;text-transform:uppercase}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+  .nav-links a.lnk{
+    font-weight:500;font-size:15px;letter-spacing:.01em;
+    color:var(--ink-soft);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{
+    content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--clay);transition:width .28s ease;
+  }
+  .nav-links a.lnk:hover{color:var(--forest-deep)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:46px;height:46px;
+    border:1.5px solid var(--line);background:transparent;
+    cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;border-radius:12px;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--forest);border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;
+    background:var(--forest);color:var(--ivory);
+    transform:translateX(100%);
+    transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:var(--pad);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{
+    font-family:var(--display);
+    font-size:clamp(30px,8vw,46px);line-height:1.1;letter-spacing:-.01em;
+    color:var(--ivory);padding:.18em 0;
+    display:flex;align-items:baseline;gap:.5em;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .overlay a .idx{font-family:var(--body);font-size:13px;font-weight:600;color:var(--sand);letter-spacing:.1em}
+  .overlay a:last-of-type{border-bottom:none}
+  .overlay .ov-foot{margin-top:clamp(26px,5vw,42px);color:var(--ivory-soft);font-size:15px;line-height:1.9}
+  .overlay .ov-foot strong{color:var(--sand);font-weight:600}
+  .overlay .ov-foot a{display:inline;font-family:var(--body);font-size:inherit;border:none;padding:0;color:var(--ivory)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden}
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(110% 80% at 88% 6%, rgba(231,203,176,.5), transparent 52%),
+      radial-gradient(80% 70% at 4% 96%, rgba(92,115,103,.16), transparent 60%),
+      linear-gradient(180deg,#F8F4EC 0%, #F2ECE0 100%);
+  }
+  .hero-inner{position:relative;z-index:2;padding-top:clamp(48px,7vw,92px);padding-bottom:clamp(48px,7vw,96px)}
+  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .hero .eyebrow{margin-bottom:clamp(20px,2.6vw,28px)}
+  .hero h1{
+    font-size:clamp(44px,7vw,96px);
+    margin:0;color:var(--forest-deep);font-weight:500;
+  }
+  .hero h1 em{font-style:italic;color:var(--clay);font-weight:400}
+  .hero-lede{max-width:48ch;color:var(--ink-soft);font-size:clamp(16px,1.35vw,19px);margin-top:clamp(20px,2.8vw,30px)}
+  .hero-lede strong{color:var(--forest-deep);font-weight:600}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(26px,3.4vw,38px)}
+  .hero-trust{
+    display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,34px);margin-top:clamp(28px,3.6vw,40px);
+    padding-top:clamp(22px,3vw,30px);border-top:1px solid var(--line);
+  }
+  .hero-trust .ht{display:flex;align-items:center;gap:.65em;font-size:14px;color:var(--ink-soft);font-weight:500}
+  .hero-trust .ht svg{width:20px;height:20px;flex:none;stroke:var(--moss)}
+
+  .hero-media{position:relative}
+  .hero-photo{
+    position:relative;aspect-ratio:4/5;width:100%;
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow);
+    background:linear-gradient(155deg,#E7CBB0 0%,#cdb59c 100%);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-badge{
+    position:absolute;left:clamp(-8px,-1vw,-18px);bottom:clamp(18px,3vw,30px);
+    background:var(--forest);color:var(--ivory);
+    border-radius:14px;padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,24px);
+    box-shadow:var(--shadow);max-width:78%;
+    display:flex;gap:.85em;align-items:center;
+  }
+  .hero-badge .hb-ic{width:40px;height:40px;flex:none;border-radius:10px;background:rgba(231,203,176,.16);display:grid;place-items:center;color:var(--sand)}
+  .hero-badge .hb-ic svg{width:22px;height:22px}
+  .hero-badge .hb-t{font-family:var(--display);font-size:clamp(16px,1.6vw,19px);line-height:1.15;color:var(--ivory)}
+  .hero-badge .hb-s{font-size:12.5px;color:var(--ivory-soft);margin-top:2px}
+
+  /* ---------- MARQUEE / VALUES STRIP ---------- */
+  .strip{background:var(--forest);color:var(--ivory);overflow:hidden;white-space:nowrap}
+  .strip-track{display:inline-flex;animation:marq 30s linear infinite;will-change:transform}
+  .strip-track span{
+    font-family:var(--display);font-style:italic;
+    font-size:clamp(16px,2vw,24px);
+    padding:.62em 0;display:inline-flex;align-items:center;color:var(--ivory)
+  }
+  .strip-track span::after{content:"";width:7px;height:7px;background:var(--sand);border-radius:50%;margin:0 clamp(18px,3vw,40px);display:inline-block}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(60px,8vw,118px);padding-bottom:clamp(60px,8vw,118px)}
+  .sec-head{margin-bottom:clamp(34px,4.6vw,60px);max-width:760px}
+  .sec-head h2{
+    font-size:clamp(34px,5.2vw,64px);margin:.34em 0 0;color:var(--forest-deep);font-weight:500;
+  }
+  .sec-head h2 em{font-style:italic;color:var(--clay);font-weight:400}
+  .sec-head p{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(16px,1.3vw,18px);max-width:60ch}
+
+  /* ---------- DIENSTEN ---------- */
+  .services{background:var(--ivory)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,28px)}
+  .svc{
+    background:#FBF8F2;border:1px solid var(--line-soft);
+    border-radius:var(--radius);padding:clamp(26px,2.8vw,36px);
+    display:flex;flex-direction:column;
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+    position:relative;overflow:hidden;
+  }
+  .svc::after{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:linear-gradient(90deg,var(--clay),var(--sand));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .svc:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--sand)}
+  .svc:hover::after{transform:scaleX(1)}
+  .svc-ic{
+    width:54px;height:54px;border-radius:14px;flex:none;
+    background:var(--forest);color:var(--sand);
+    display:grid;place-items:center;margin-bottom:1.3rem;
+  }
+  .svc-ic svg{width:27px;height:27px}
+  .svc h3{font-family:var(--display);font-size:clamp(21px,2.2vw,26px);color:var(--forest-deep);font-weight:600;line-height:1.18}
+  .svc p{color:var(--ink-soft);font-size:15px;margin-top:.7rem}
+  .svc ul{list-style:none;margin-top:1.1rem;display:flex;flex-direction:column;gap:.55rem}
+  .svc ul li{display:flex;gap:.6em;align-items:flex-start;font-size:14px;color:var(--ink-soft)}
+  .svc ul li svg{width:17px;height:17px;flex:none;stroke:var(--clay);margin-top:3px}
+  .svc-note{
+    margin-top:clamp(26px,3vw,38px);display:flex;gap:.8em;align-items:flex-start;
+    color:var(--ink-soft);font-size:14.5px;background:var(--ivory-soft);
+    border:1px solid var(--line-soft);border-radius:14px;padding:1.05em 1.3em;max-width:760px;
+  }
+  .svc-note svg{width:20px;height:20px;flex:none;stroke:var(--clay-deep);margin-top:2px}
+
+  /* ---------- BEHANDELING BAND (HFL) ---------- */
+  .care{background:var(--forest);color:var(--ivory);position:relative;overflow:hidden}
+  .care::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:
+      radial-gradient(60% 60% at 88% 12%, rgba(231,203,176,.16), transparent 60%),
+      radial-gradient(50% 60% at 6% 96%, rgba(194,114,78,.16), transparent 60%);
+  }
+  .care .wrap{position:relative;z-index:2}
+  .care .sec-head h2{color:var(--ivory)}
+  .care .sec-head h2 em{color:var(--sand)}
+  .care .sec-head p{color:var(--ivory-soft)}
+  .care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
+  .care-card{
+    background:rgba(246,242,234,.06);border:1px solid var(--line-dark);
+    border-radius:var(--radius);padding:clamp(24px,2.6vw,32px);
+  }
+  .care-card .cc-ic{width:46px;height:46px;border-radius:12px;background:rgba(231,203,176,.14);color:var(--sand);display:grid;place-items:center;margin-bottom:1.1rem}
+  .care-card .cc-ic svg{width:24px;height:24px}
+  .care-card h3{font-family:var(--display);font-size:clamp(19px,2vw,23px);color:var(--ivory);font-weight:600}
+  .care-card p{color:var(--ivory-soft);font-size:14.5px;margin-top:.6rem}
+  .hfl-line{
+    margin-top:clamp(26px,3vw,38px);display:flex;gap:.85em;align-items:center;flex-wrap:wrap;
+    color:var(--ivory-soft);font-size:14.5px;
+  }
+  .hfl-line .hfl-tag{
+    display:inline-flex;align-items:center;gap:.55em;
+    background:var(--sand);color:var(--forest-deep);
+    font-weight:600;font-size:13px;letter-spacing:.04em;
+    padding:.5em .95em;border-radius:999px;
+  }
+  .hfl-line .hfl-tag svg{width:16px;height:16px;stroke:var(--forest-deep)}
+
+  /* ---------- OVER ANGELIQUE ---------- */
+  .over{background:var(--ivory-soft);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .over-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(36px,5vw,76px);align-items:center}
+  .over-media{position:relative}
+  .over-photo{
+    position:relative;aspect-ratio:4/5;width:100%;max-width:480px;
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+    background:linear-gradient(155deg,#5C7367,#2F4538);
+  }
+  .over-photo img{width:100%;height:100%;object-fit:cover}
+  .over-quote{
+    position:absolute;right:clamp(-6px,-1vw,-20px);bottom:clamp(22px,3vw,34px);
+    background:var(--ivory);border:1px solid var(--line);
+    border-radius:14px;padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,22px);
+    box-shadow:var(--shadow);max-width:74%;
+    font-family:var(--display);font-style:italic;font-size:clamp(15px,1.5vw,18px);
+    color:var(--forest-deep);line-height:1.4;
+  }
+  .over-body .eyebrow{margin-bottom:1.1rem}
+  .over-body h2{font-size:clamp(34px,5.4vw,62px);color:var(--forest-deep);font-weight:500}
+  .over-body h2 em{font-style:italic;color:var(--clay);font-weight:400}
+  .over-body p{margin-top:1.2rem;color:var(--ink-soft);font-size:clamp(15px,1.25vw,17.5px)}
+  .over-body p strong{color:var(--forest-deep);font-weight:600}
+  .pillz{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,30px)}
+  .pillz span{
+    border:1px solid var(--line);background:#FBF8F2;color:var(--ink-soft);
+    font-weight:500;font-size:13px;letter-spacing:.01em;
+    padding:.6em 1em;border-radius:999px;display:inline-flex;align-items:center;gap:.5em;
+  }
+  .pillz span svg{width:16px;height:16px;stroke:var(--clay)}
+  .signoff{
+    margin-top:clamp(24px,3vw,34px);display:flex;align-items:center;gap:1rem;
+    border-top:1px solid var(--line);padding-top:clamp(20px,2.6vw,28px);
+  }
+  .signoff .mono{
+    width:54px;height:54px;flex:none;border-radius:50%;
+    background:var(--forest);color:var(--sand);display:grid;place-items:center;
+    font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:.02em;
+  }
+  .signoff .who{font-family:var(--display);font-size:clamp(19px,2vw,24px);color:var(--forest-deep);font-weight:600;line-height:1.1}
+  .signoff .who small{display:block;font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.04em;color:var(--clay-deep);margin-top:.35em}
+
+  /* ---------- CONTACT ---------- */
+  .info{background:var(--ivory)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.4vw,44px);align-items:stretch}
+  .panel{
+    border:1px solid var(--line-soft);background:#FBF8F2;
+    border-radius:var(--radius);padding:clamp(28px,3.2vw,44px);
+  }
+  .panel h3{
+    font-family:var(--display);font-size:clamp(24px,2.8vw,34px);color:var(--forest-deep);font-weight:600;
+    line-height:1.1;margin-bottom:1.3rem;
+  }
+  .panel h3 em{font-style:italic;color:var(--clay)}
+  .appt-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.3rem;
+    font-weight:600;letter-spacing:.02em;font-size:13px;color:var(--forest);
+    padding:.5em .95em;border:1px solid var(--sand);background:rgba(231,203,176,.28);border-radius:999px;
+  }
+  .appt-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--clay)}
+
+  .contact-list{display:flex;flex-direction:column;gap:0}
+  .crow{
+    display:flex;gap:1rem;align-items:flex-start;
+    padding:1.1em 0;border-bottom:1px solid var(--line-soft);
+  }
+  .crow:last-child{border-bottom:none}
+  .crow .ico{
+    width:48px;height:48px;flex:none;border-radius:12px;
+    background:var(--forest);display:grid;place-items:center;color:var(--sand);
+  }
+  .crow .ico svg{width:21px;height:21px}
+  .crow .k{font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted)}
+  .crow .v{font-size:clamp(16px,1.4vw,19px);color:var(--forest-deep);font-weight:600;line-height:1.45;margin-top:3px}
+  .crow .v a{transition:color .2s ease}
+  .crow .v a:hover{color:var(--clay)}
+  .crow .v small{display:block;color:var(--ink-soft);font-weight:400;font-size:13.5px;margin-top:3px}
+
+  .appt-points{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.9rem}
+  .appt-points li{display:flex;gap:.7em;align-items:flex-start;font-size:15px;color:var(--ink-soft)}
+  .appt-points li svg{width:20px;height:20px;flex:none;stroke:var(--clay);margin-top:2px}
+  .appt-points li strong{color:var(--forest-deep);font-weight:600}
+  .panel .btn{margin-top:1.6rem}
+
+  .cancel-note{
+    margin-top:1.4rem;display:flex;gap:.7em;align-items:flex-start;
+    font-size:13.5px;color:var(--ink-soft);background:var(--ivory-soft);
+    border:1px solid var(--line-soft);border-radius:12px;padding:.95em 1.15em;
+  }
+  .cancel-note svg{width:18px;height:18px;flex:none;stroke:var(--clay-deep);margin-top:2px}
+
+  /* map stand-in */
+  .map-standin{
+    margin-top:1.4rem;height:clamp(150px,18vw,190px);border-radius:14px;border:1px solid var(--line-soft);
+    position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(92,115,103,.06),transparent),
+      repeating-linear-gradient(0deg,#ECE5D7 0 1px,transparent 1px 40px),
+      repeating-linear-gradient(90deg,#ECE5D7 0 1px,transparent 1px 40px),
+      #F4EEE2;
+  }
+  .map-standin .road{position:absolute;background:#E0D8C8}
+  .map-standin .r1{left:0;right:0;top:54%;height:9px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:36%;width:7px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--clay)}
+  .map-standin .pin svg{width:36px;height:36px;filter:drop-shadow(0 6px 10px rgba(36,54,41,.3))}
+  .map-standin .lbl{position:absolute;left:14px;bottom:12px;font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--moss)}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;background:var(--forest);color:var(--ivory);text-align:center}
+  .finalcta::before{
+    content:"";position:absolute;inset:0;opacity:.7;
+    background:
+      radial-gradient(60% 70% at 50% 0%, rgba(231,203,176,.18), transparent 60%),
+      radial-gradient(50% 60% at 90% 100%, rgba(194,114,78,.18), transparent 60%);
+  }
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(60px,9vw,128px);padding-bottom:clamp(64px,9vw,132px)}
+  .finalcta .eyebrow{justify-content:center}
+  .finalcta h2{font-size:clamp(38px,6.6vw,86px);color:var(--ivory);font-weight:500;margin-top:1rem}
+  .finalcta h2 em{font-style:italic;color:var(--sand);font-weight:400}
+  .finalcta p{margin:1.4rem auto 2.1rem;color:var(--ivory-soft);max-width:50ch;font-size:clamp(16px,1.4vw,19px)}
+  .finalcta .hero-actions{justify-content:center;margin-top:0}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--forest-deep);color:var(--ivory-soft);padding-top:clamp(48px,6vw,80px);padding-bottom:120px}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(34px,4.6vw,52px);border-bottom:1px solid var(--line-dark)}
+  .foot-brand .name{font-family:var(--display);font-size:clamp(26px,3.4vw,38px);color:var(--ivory);font-weight:600;line-height:1.05}
+  .foot-brand .name span{color:var(--sand)}
+  .foot-brand p{margin-top:1rem;color:var(--ivory-soft);max-width:40ch;font-size:14.5px;opacity:.85}
+  .foot-col h4{font-family:var(--body);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--sand);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--ivory-soft);font-size:14.5px;padding:.34em 0;line-height:1.5;opacity:.9}
+  .foot-col a{transition:color .2s ease,opacity .2s ease}
+  .foot-col a:hover{color:var(--sand);opacity:1}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding-top:clamp(24px,3vw,32px);color:var(--ivory-soft);font-size:13px;opacity:.85}
+  .foot-bottom a{color:var(--sand);font-weight:600}
+  .foot-bottom a:hover{text-decoration:underline}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(36,54,41,.96);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--line-dark);
+    align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--display);font-size:16px;line-height:1.05;color:var(--ivory)}
+  .sticky-cta .sc-meta .s{color:var(--sand);font-weight:500;font-size:12px;margin-top:2px}
+  .sticky-cta .btn{flex:none;padding:.85em 1.2em}
+
+  /* ---------- REVEAL (JS-gated; default fully visible) ---------- */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.08s}
+  .js .reveal.d2{transition-delay:.16s}
+  .js .reveal.d3{transition-delay:.24s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:clamp(34px,6vw,48px)}
+    .hero-media{max-width:480px;margin:0 auto;width:100%}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .care-grid{grid-template-columns:1fr}
+    .over-grid{grid-template-columns:1fr;gap:clamp(30px,6vw,44px)}
+    .over-photo{margin:0 auto}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .info-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:96px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="A.B. Hand &amp; Foot Care home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 5c4.5 3.5 7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 2.5-8.5 7-12z"/><path d="M16 12v11"/></svg>
+      </span>
+      <span class="name">A.B. Hand &amp; Foot Care<small>Nagelstudio &amp; Medisch Pedicure · Enschede</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#behandelingen">Behandelingen</a>
+      <a class="lnk" href="#over">Over Angelique</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn nav-cta" href="tel:0611447733">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel voor een afspraak
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a href="#behandelingen"><span class="idx">02</span> Behandelingen</a>
+  <a href="#over"><span class="idx">03</span> Over Angelique</a>
+  <a href="#contact"><span class="idx">04</span> Contact</a>
+  <div class="ov-foot">
+    <strong>Enschede</strong> · Uitsluitend op afspraak<br>
+    Tel. <a href="tel:0611447733">06-11447733</a><br>
+    CND-nagels · Medisch pedicure · HFL-behandelingen
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow reveal">Nagelstudio &amp; Medisch Pedicure · Enschede</span>
+        <h1 class="display reveal d1">Verzorgde nagels en <em>gezonde voeten</em>, met rust en precisie.</h1>
+        <p class="hero-lede reveal d2">
+          Welkom bij <strong>A.B. Hand &amp; Foot Care</strong>. Bij Angelique combineren we de schoonheid van <strong>CND-nagels</strong> met de zorg van een <strong>medisch pedicure</strong> — in alle rust, met persoonlijke aandacht en uitsluitend op afspraak.
+        </p>
+        <div class="hero-actions reveal d2">
+          <a class="btn" href="tel:0611447733">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+            Bel 06-11447733
+          </a>
+          <a class="btn btn--ghost" href="#diensten">Bekijk behandelingen</a>
+        </div>
+        <div class="hero-trust reveal d3">
+          <span class="ht"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Uitsluitend op afspraak</span>
+          <span class="ht"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 20.5 7.1 17.2l.9-5.5-4-3.9L9.5 7z"/></svg>CND &amp; HFL specialist</span>
+          <span class="ht"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>Persoonlijk &amp; aan huis</span>
+        </div>
+      </div>
+
+      <div class="hero-media reveal d1">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1600&q=80"
+               alt="Verzorgde handen met fraai gelakte, natuurlijke nagels tijdens een nagelbehandeling"
+               width="1600" height="2000" loading="eager" decoding="async">
+        </div>
+        <div class="hero-badge" aria-hidden="false">
+          <span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg></span>
+          <div>
+            <div class="hb-t">Vakwerk met aandacht</div>
+            <div class="hb-s">Voor uw nagels én uw voetgezondheid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES STRIP ============ -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>CND-nagels</span><span>Medisch pedicure</span><span>Schimmelnagels</span><span>Gekloofde hielen</span><span>Psoriasis</span><span>HFL-producten</span><span>Op afspraak</span>
+    <span>CND-nagels</span><span>Medisch pedicure</span><span>Schimmelnagels</span><span>Gekloofde hielen</span><span>Psoriasis</span><span>HFL-producten</span><span>Op afspraak</span>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onze behandelingen</span>
+      <h2 class="display">Schoonheid en zorg, <em>vakkundig verzorgd.</em></h2>
+      <p>Of u nu komt voor stralende nagels of voor de gezondheid van uw voeten — bij A.B. Hand &amp; Foot Care krijgt u de tijd, de aandacht en het vakwerk dat u verdient.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <span class="svc-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c-1.5 2-2 4-2 7v8a3 3 0 0 0 6 0v-8c0-3-.5-5-2-7"/><path d="M8 8h4"/><path d="M14 6c2 .5 4 2 4 5s-1.5 5-4 6"/></svg>
+        </span>
+        <h3>CND-nagels</h3>
+        <p>Verzorgde, natuurlijke nagels met professionele CND-producten — van een fraaie manicure tot een duurzame, strak afgewerkte gellak.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Manicure &amp; nagelverzorging</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>CND Shellac gellak</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Natuurlijke, verzorgde finish</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal d1">
+        <span class="svc-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13c-.5-3 0-6 2-8 1.5-1.5 3.5-1 4 1 .5 2-.5 4-2 5"/><path d="M6 13c-1 2-1 4 0 5 2 2 6 2 9 .5 2-1 3-3 2.5-5"/><circle cx="9" cy="6.5" r="1"/><circle cx="12" cy="5.5" r="1"/><circle cx="15" cy="6.5" r="1"/></svg>
+        </span>
+        <h3>Medisch pedicure</h3>
+        <p>Een grondige, hygiënische voetbehandeling door een geschoolde specialist. Uw voeten worden vakkundig verzorgd en u krijgt eerlijk advies.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Volledige voetverzorging</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Eelt, likdoorns &amp; nagels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Persoonlijk verzorgingsadvies</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal d2">
+        <span class="svc-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 9 6 13a6 6 0 0 0 12 0c0-4-2-7-6-11z"/><path d="M12 22v-3"/></svg>
+        </span>
+        <h3>Probleembehandeling</h3>
+        <p>Gerichte behandeling van schimmelnagels, gekloofde hielen en huidklachten zoals psoriasis — met de juiste producten en kennis van zaken.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Schimmelnagels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Gekloofde, droge hielen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Psoriasis &amp; droge huid</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="svc-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Elke behandeling is maatwerk. Bel gerust voor de mogelijkheden en prijzen — Angelique denkt graag met u mee over wat uw nagels en voeten nodig hebben.
+    </p>
+  </div>
+</section>
+
+<!-- ============ BEHANDELINGEN / HFL ============ -->
+<section class="care sec" id="behandelingen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow on-dark">Specialistische zorg</span>
+      <h2 class="display">Voor voeten en nagels die <em>extra aandacht</em> vragen.</h2>
+      <p>Schimmelnagels, gekloofde hielen of een huidaandoening zoals psoriasis vragen om méér dan een gewone behandeling. Daarom werkt A.B. Hand &amp; Foot Care met professionele HFL-producten, gericht op herstel en blijvende verzorging.</p>
+    </div>
+
+    <div class="care-grid">
+      <article class="care-card reveal">
+        <span class="cc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 9 6 13a6 6 0 0 0 12 0c0-4-2-7-6-11z"/><path d="M9 13a3 3 0 0 0 6 0"/></svg></span>
+        <h3>Schimmelnagels</h3>
+        <p>Gerichte, hygiënische behandeling van schimmelnagels met HFL-producten, zodat de nagel weer gezond kan groeien.</p>
+      </article>
+      <article class="care-card reveal d1">
+        <span class="cc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c0-4 3-7 8-7s8 3 8 7"/><path d="M4 14c0 3 2 5 5 5"/><path d="M8 11v3M11 10v4M14 11v3"/></svg></span>
+        <h3>Gekloofde hielen</h3>
+        <p>Verzorging van droge, gekloofde hielen — gladmaken, voeden en herstellen, met advies voor thuis zodat het resultaat blijft.</p>
+      </article>
+      <article class="care-card reveal d2">
+        <span class="cc-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg></span>
+        <h3>Psoriasis &amp; droge huid</h3>
+        <p>Milde, deskundige verzorging van een gevoelige of door psoriasis aangedane huid, met producten die rust brengen.</p>
+      </article>
+    </div>
+
+    <div class="hfl-line reveal">
+      <span class="hfl-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>HFL-producten</span>
+      Professionele verzorgingslijn voor huid- en nagelproblemen — voor een zichtbaar en blijvend resultaat.
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVER ANGELIQUE ============ -->
+<section class="over sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-media reveal">
+      <div class="over-photo">
+        <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1600&q=80"
+             alt="Specialist verzorgt zorgvuldig de voeten van een cliënt tijdens een medische pedicurebehandeling"
+             width="1600" height="2000" loading="lazy" decoding="async">
+      </div>
+      <p class="over-quote">&ldquo;Ik neem de tijd voor elke cliënt — rust en aandacht horen er voor mij bij.&rdquo;</p>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over Angelique</span>
+      <h2 class="display reveal d1">Persoonlijke zorg, <em>geheel op afspraak.</em></h2>
+      <p class="reveal d2">
+        Achter A.B. Hand &amp; Foot Care staat <strong>Angelique</strong>. Vanuit haar studio in Enschede behandelt zij haar cliënten één voor één, in alle rust en met volle aandacht. Geen haast, geen wachtkamer vol — alleen tijd voor u en uw voeten en nagels.
+      </p>
+      <p class="reveal d2">
+        Angelique combineert het oog van een nagelstyliste met de kennis van een medisch pedicure. Of het nu gaat om een verzorgde set <strong>CND-nagels</strong> of om de behandeling van een hardnekkige schimmelnagel: u krijgt een eerlijk advies en vakwerk waar u op kunt bouwen.
+      </p>
+
+      <div class="pillz reveal d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Strikt op afspraak</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>Persoonlijke aandacht</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Alle tijd voor u</span>
+      </div>
+
+      <div class="signoff reveal d3">
+        <span class="mono" aria-hidden="true">A</span>
+        <span class="who">Angelique<small>Nagelstyliste &amp; medisch pedicure</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="info sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Een afspraak maken</span>
+      <h2 class="display">Bel voor een afspraak <em>op uw moment.</em></h2>
+      <p>A.B. Hand &amp; Foot Care werkt uitsluitend op afspraak, zodat u altijd zeker bent van de volle aandacht. Bellen is de snelste manier — Angelique helpt u graag persoonlijk verder.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- CONTACT / AFSPRAAK -->
+      <div class="panel reveal" aria-label="Contact en afspraak">
+        <span class="appt-pill"><span class="dot"></span>Uitsluitend op afspraak</span>
+        <h3>Maak een <em>afspraak</em></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><div class="v"><a href="tel:0611447733">06-11447733</a><small>Bel om uw afspraak in te plannen</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Locatie</div><div class="v">Enschede<small>Aan huis · adres bij het maken van de afspraak</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <div><div class="k">Beschikbaarheid</div><div class="v">Op afspraak<small>Samen vinden we een moment dat u uitkomt</small></div></div>
+          </div>
+        </div>
+
+        <a class="btn btn--block" href="tel:0611447733">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel 06-11447733
+        </a>
+
+        <div class="cancel-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
+          <span>Verhinderd? Geef het minimaal <strong>24 uur</strong> van tevoren door, dan kan een ander uw plek innemen. Hartelijk dank voor uw begrip.</span>
+        </div>
+      </div>
+
+      <!-- WAT U KUNT VERWACHTEN + MAP -->
+      <div class="panel reveal d1" aria-label="Wat u kunt verwachten">
+        <h3>Wat u kunt <em>verwachten</em></h3>
+        <ul class="appt-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Rust en privacy.</strong> Eén cliënt tegelijk, geen volle wachtruimte — u heeft de volle aandacht.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Hygiënisch werken.</strong> Schone instrumenten en een verzorgde, veilige behandeling, elke keer.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Eerlijk advies.</strong> U hoort precies wat uw nagels of voeten nodig hebben — zonder verkooppraatjes.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Vakwerk in Enschede.</strong> CND-nagels, medisch pedicure en gerichte HFL-behandelingen onder één dak.</span></li>
+        </ul>
+
+        <div class="map-standin" aria-label="Indicatieve locatie in Enschede" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Enschede · Op afspraak</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="wrap finalcta-inner">
+    <span class="eyebrow on-dark reveal">Klaar voor verzorgde voeten en nagels?</span>
+    <h2 class="display reveal d1">Bel Angelique en plan uw <em>afspraak.</em></h2>
+    <p class="reveal d2">Of het nu gaat om mooie CND-nagels of om de zorg voor uw voeten — A.B. Hand &amp; Foot Care staat voor u klaar, in alle rust en met volle aandacht.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn btn--light" href="tel:0611447733">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 06-11447733
+      </a>
+      <a class="btn btn--ghost" href="#diensten" style="color:var(--ivory);border-color:var(--sand)">Bekijk behandelingen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">A.B. Hand <span>&amp;</span> Foot Care</div>
+        <p>Nagelstudio en medisch pedicure in Enschede. CND-nagels, medisch pedicure en gerichte behandeling van schimmelnagels, gekloofde hielen en psoriasis met HFL-producten. Rust, precisie en persoonlijke aandacht — geheel op afspraak.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Behandelingen</h4>
+        <a href="#diensten">CND-nagels</a>
+        <a href="#diensten">Medisch pedicure</a>
+        <a href="#behandelingen">Schimmel &amp; hielen</a>
+        <a href="#behandelingen">Psoriasis &amp; HFL</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Enschede</p>
+        <p>Uitsluitend op afspraak</p>
+        <a href="tel:0611447733">Tel. 06-11447733</a>
+        <p style="opacity:.7;font-size:13px;margin-top:.4em">24-uurs annuleringsbeleid</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 A.B. Hand &amp; Foot Care — Enschede · Nagelstudio &amp; medisch pedicure</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <div class="sc-meta">
+    <div class="t">A.B. Hand &amp; Foot Care</div>
+    <div class="s">Op afspraak · Enschede</div>
+  </div>
+  <a class="btn" href="tel:0611447733">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+    Bel
+  </a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!overlay.classList.contains('open'));
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal (enhancement only; content visible by default) ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

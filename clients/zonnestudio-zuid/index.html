@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zonnestudio Zuid — Premium Ergoline zonnestudio in Enschede</title>
+<meta name="description" content="Zonnestudio Zuid in Enschede (Winkelcentrum Zuid, Wesselerbrink): bruin worden op professionele Ergoline-zonnebanken incl. Beauty Light Complete. Tarieven vanaf €10,50. Bel 053-4781877.">
+<meta name="theme-color" content="#1C140C">
+<meta property="og:title" content="Zonnestudio Zuid — Premium Ergoline zonnestudio in Enschede">
+<meta property="og:description" content="Een warme, gelijkmatige kleur op top-merk Ergoline-banken incl. Beauty Light Complete. Wesselerbrink, Winkelcentrum Zuid. Tarieven €10,50–€17.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<!-- Custom SVG data-URI favicon: warm sun mark on deep amber -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C140C'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23F0A93B'/%3E%3Cg stroke='%23F0A93B' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M32 8v7'/%3E%3Cpath d='M32 49v7'/%3E%3Cpath d='M8 32h7'/%3E%3Cpath d='M49 32h7'/%3E%3Cpath d='M15 15l5 5'/%3E%3Cpath d='M44 44l5 5'/%3E%3Cpath d='M49 15l-5 5'/%3E%3Cpath d='M20 44l-5 5'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* golden-hour, warm, premium — not neon */
+    --espresso:#1C140C;     /* deep warm near-black */
+    --espresso-2:#241A10;
+    --cocoa:#3A2A1B;
+    --sand:#F6EFE4;         /* warm cream */
+    --sand-dim:#E4D8C5;
+    --bronze:#B98A4E;       /* muted bronze */
+    --bronze-deep:#8A6234;
+    --gold:#F0A93B;         /* glowing amber-gold (accent) */
+    --gold-soft:#F6C977;
+    --ink:#2A1F14;          /* text on cream */
+    --ink-soft:#6B5B47;     /* muted text on cream */
+    --line-dark:#39291A;
+    --line-cream:#E0D2BD;
+    --maxw:1240px;
+    --pad:clamp(20px,5vw,64px);
+    --display:'Fraunces',Georgia,'Times New Roman',serif;
+    --body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:clamp(15px,1.05vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:var(--espresso)}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:500;
+    line-height:1.02;
+    letter-spacing:-.018em;
+    font-optical-sizing:auto;
+  }
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.26em;
+    font-size:clamp(11px,1.1vw,13px);
+    color:var(--bronze-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:.8em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(20px,4vw,38px);
+    height:1px;
+    background:var(--bronze);
+    display:inline-block;
+  }
+  .eyebrow.on-dark{color:var(--gold-soft)}
+  .eyebrow.on-dark::before{background:var(--gold)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--gold);--fg:var(--espresso);--bd:var(--gold);
+    display:inline-flex;align-items:center;gap:.65em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--body);font-weight:700;
+    letter-spacing:.01em;
+    font-size:clamp(14px,1.1vw,16px);
+    padding:1.05em 1.7em;
+    border:1.5px solid var(--bd);
+    border-radius:999px;
+    cursor:pointer;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
+    line-height:1;
+  }
+  .btn svg{width:1.1em;height:1.1em;flex:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(240,169,59,.6)}
+  .btn--ghost{
+    --bg:transparent;--fg:var(--sand);--bd:rgba(246,239,228,.4);
+  }
+  .btn--ghost:hover{--bg:rgba(246,239,228,.08);--bd:var(--gold-soft);box-shadow:none}
+  .btn--ghost-dark{--bg:transparent;--fg:var(--ink);--bd:var(--line-cream)}
+  .btn--ghost-dark:hover{--bg:var(--ink);--fg:var(--sand);--bd:var(--ink);box-shadow:none}
+  .btn--block{width:100%;justify-content:center}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(28,20,12,.78);
+    backdrop-filter:saturate(150%) blur(14px);
+    -webkit-backdrop-filter:saturate(150%) blur(14px);
+    border-bottom:1px solid rgba(185,138,78,.22);
+    transition:background .3s ease,border-color .3s ease;
+  }
+  header.scrolled{background:rgba(28,20,12,.94);border-bottom-color:rgba(240,169,59,.45)}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:clamp(64px,9vw,84px);
+  }
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none;color:var(--sand)}
+  .brand .mark{
+    width:40px;height:40px;flex:none;border-radius:50%;
+    display:grid;place-items:center;
+    background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--gold) 55%,var(--bronze-deep));
+    box-shadow:0 0 0 1px rgba(240,169,59,.35),0 8px 22px -10px rgba(240,169,59,.7);
+  }
+  .brand .mark svg{width:22px;height:22px;color:var(--espresso)}
+  .brand .name{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(18px,2.4vw,22px);line-height:1;letter-spacing:-.01em;
+  }
+  .brand .name span{color:var(--gold-soft)}
+  .brand .name small{display:block;font-family:var(--body);font-weight:600;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--bronze);margin-top:4px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+  .nav-links a.lnk{
+    font-weight:600;font-size:14.5px;letter-spacing:.01em;
+    color:var(--sand-dim);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{
+    content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--gold);transition:width .25s ease;
+  }
+  .nav-links a.lnk:hover{color:var(--sand)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:46px;height:46px;border-radius:12px;
+    border:1px solid rgba(185,138,78,.4);background:transparent;
+    cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--sand);border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;
+    background:linear-gradient(160deg,var(--espresso-2),var(--espresso));
+    transform:translateX(100%);
+    transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:var(--pad);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(32px,9vw,52px);line-height:1.12;letter-spacing:-.01em;
+    color:var(--sand);padding:.14em 0;
+    display:flex;align-items:baseline;gap:.5em;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .overlay a .idx{font-family:var(--body);font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.1em}
+  .overlay a:last-of-type{border-bottom:none}
+  .overlay a:active{color:var(--gold-soft)}
+  .overlay .ov-foot{margin-top:clamp(24px,5vw,40px);color:var(--bronze);font-size:14px;line-height:1.9}
+  .overlay .ov-foot strong{color:var(--sand);font-weight:600}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--espresso);color:var(--sand)}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-photo{
+    position:absolute;inset:0;
+    background-image:url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;background-position:center;
+    /* verified Unsplash: warm golden-glow huid in zonlicht */
+  }
+  .hero-bg::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(95% 80% at 78% 12%, rgba(240,169,59,.34), transparent 58%),
+      linear-gradient(115deg, var(--espresso) 8%, rgba(28,20,12,.86) 42%, rgba(28,20,12,.55) 100%);
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(130% 120% at 50% 100%,transparent 45%,rgba(15,10,6,.7) 100%);
+  }
+  /* soft warm glow orb */
+  .glow{
+    position:absolute;z-index:1;top:-12%;right:-6%;
+    width:min(46vw,560px);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(246,201,119,.5),rgba(240,169,59,.14) 45%,transparent 70%);
+    filter:blur(8px);pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;padding-top:clamp(52px,8vw,104px);padding-bottom:clamp(48px,7vw,88px)}
+  .hero .eyebrow{margin-bottom:clamp(22px,3vw,32px)}
+  .hero h1{
+    font-size:clamp(46px,8.2vw,108px);
+    font-weight:500;
+    max-width:15ch;
+    margin:0;
+  }
+  .hero h1 .glowword{
+    color:var(--gold);font-style:italic;font-weight:500;
+    text-shadow:0 0 38px rgba(240,169,59,.45);
+  }
+  .hero-lede{
+    max-width:50ch;color:var(--sand-dim);
+    font-size:clamp(16px,1.5vw,20px);font-weight:400;
+    margin-top:clamp(22px,3vw,32px);
+  }
+  .hero-lede strong{color:var(--sand);font-weight:600}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,3.6vw,40px)}
+  .hero-trust{
+    display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,44px);
+    margin-top:clamp(34px,4.6vw,56px);
+    padding-top:clamp(26px,3.4vw,34px);
+    border-top:1px solid rgba(185,138,78,.26);
+  }
+  .hero-trust .ht{display:flex;flex-direction:column;gap:.3em}
+  .hero-trust .ht b{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,34px);line-height:1;color:var(--gold-soft)}
+  .hero-trust .ht span{font-size:12.5px;color:var(--bronze);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{background:var(--gold);color:var(--espresso);overflow:hidden;white-space:nowrap;border-top:1px solid rgba(28,20,12,.18)}
+  .marquee-track{display:inline-flex;animation:marq 30s linear infinite;will-change:transform}
+  .marquee-track span{
+    font-family:var(--display);font-weight:600;font-style:italic;
+    font-size:clamp(16px,2.2vw,26px);
+    padding:.6em 0;display:inline-flex;align-items:center;
+  }
+  .marquee-track span::after{content:"";width:7px;height:7px;background:var(--espresso);border-radius:50%;margin:0 clamp(16px,3vw,38px);display:inline-block;opacity:.7}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(64px,9vw,124px);padding-bottom:clamp(64px,9vw,124px)}
+  .sec-head{margin-bottom:clamp(38px,5vw,64px);max-width:780px}
+  .sec-head h2{
+    font-size:clamp(34px,6vw,68px);margin:.4em 0 0;font-weight:500;
+  }
+  .sec-head h2 em{color:var(--bronze-deep);font-style:italic}
+  .sec-head p{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(16px,1.4vw,19px);max-width:62ch}
+
+  /* ---------- BANKEN / DIENSTEN ---------- */
+  .banken{background:var(--sand)}
+  .bank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,30px)}
+  .bank{
+    position:relative;
+    border:1px solid var(--line-cream);
+    border-radius:18px;
+    background:#fffdf9;
+    padding:clamp(26px,3vw,38px);
+    display:flex;flex-direction:column;
+    overflow:hidden;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .bank::before{
+    content:"";position:absolute;left:0;top:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+    transform:scaleX(0);transform-origin:left;transition:transform .35s ease;
+  }
+  .bank:hover{transform:translateY(-5px);box-shadow:0 26px 50px -28px rgba(138,98,52,.55);border-color:var(--gold-soft)}
+  .bank:hover::before{transform:scaleX(1)}
+  .bank.feature{background:linear-gradient(165deg,#FFF6E7,#FBEAD0);border-color:var(--gold-soft)}
+  .bank.feature::before{transform:scaleX(1)}
+  .bank-tag{
+    align-self:flex-start;
+    font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--bronze-deep);background:rgba(185,138,78,.14);
+    padding:.5em .9em;border-radius:999px;margin-bottom:1.3rem;
+  }
+  .bank.feature .bank-tag{color:var(--espresso);background:rgba(240,169,59,.32)}
+  .bank-ico{
+    width:clamp(48px,5vw,58px);height:clamp(48px,5vw,58px);border-radius:14px;
+    display:grid;place-items:center;margin-bottom:1.2rem;
+    background:var(--espresso);color:var(--gold);
+  }
+  .bank.feature .bank-ico{background:var(--gold);color:var(--espresso)}
+  .bank-ico svg{width:26px;height:26px}
+  .bank h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.6vw,29px);line-height:1.08;letter-spacing:-.01em}
+  .bank h3 .sub{display:block;font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.04em;color:var(--bronze-deep);margin-top:.5em;text-transform:uppercase}
+  .bank p{color:var(--ink-soft);font-size:clamp(14px,1.2vw,15.5px);margin-top:.9rem;flex:1}
+  .bank-price{
+    margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--line-cream);
+    display:flex;align-items:baseline;gap:.5em;
+  }
+  .bank-price .amt{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.2vw,38px);color:var(--ink);line-height:1}
+  .bank-price .per{font-size:13px;color:var(--ink-soft);font-weight:500}
+  .bank-note{
+    margin-top:clamp(24px,3vw,34px);
+    display:flex;gap:.75em;align-items:flex-start;
+    color:var(--ink-soft);font-size:14px;
+    background:#fffdf9;border:1px solid var(--line-cream);border-radius:14px;
+    padding:1em 1.2em;
+  }
+  .bank-note svg{width:19px;height:19px;flex:none;stroke:var(--gold);margin-top:2px}
+
+  /* ---------- PRIJSSTAFFEL BAND ---------- */
+  .pricing{background:var(--espresso);color:var(--sand);overflow:hidden;position:relative}
+  .pricing::before{
+    content:"";position:absolute;inset:0;opacity:.9;pointer-events:none;
+    background:radial-gradient(80% 100% at 100% 0%,rgba(240,169,59,.2),transparent 55%);
+  }
+  .price-grid{position:relative;z-index:2;display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .price-left h2{font-size:clamp(34px,5.6vw,64px);font-weight:500}
+  .price-left h2 em{color:var(--gold);font-style:italic}
+  .price-left p{margin-top:1.2rem;color:var(--sand-dim);font-size:clamp(15px,1.3vw,18px);max-width:44ch}
+  .price-left .price-points{margin-top:clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:.9rem}
+  .price-left .price-points li{display:flex;gap:.8em;align-items:flex-start;color:var(--sand-dim);font-size:clamp(14px,1.2vw,16px)}
+  .price-left .price-points svg{width:21px;height:21px;flex:none;stroke:var(--gold);margin-top:1px}
+
+  .price-card{
+    background:linear-gradient(165deg,rgba(58,42,27,.7),rgba(36,26,16,.85));
+    border:1px solid rgba(185,138,78,.32);border-radius:20px;
+    padding:clamp(8px,1vw,14px) clamp(20px,2.6vw,34px) clamp(18px,2.4vw,28px);
+    box-shadow:0 30px 70px -40px rgba(0,0,0,.8);
+  }
+  .price-card .pc-head{
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:1.2em 0;border-bottom:1px solid rgba(185,138,78,.3);
+  }
+  .price-card .pc-head b{font-family:var(--display);font-weight:600;font-size:clamp(18px,2vw,23px)}
+  .price-card .pc-head span{font-size:12px;color:var(--bronze);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .price-row{
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+    padding:1.05em 0;border-bottom:1px solid rgba(185,138,78,.18);
+  }
+  .price-row:last-child{border-bottom:none}
+  .price-row .pr-name{font-weight:600;font-size:clamp(14.5px,1.3vw,16.5px);color:var(--sand)}
+  .price-row .pr-name small{display:block;font-weight:400;color:var(--bronze);font-size:12.5px;margin-top:2px;letter-spacing:.02em}
+  .price-row .pr-amt{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.4vw,28px);color:var(--gold-soft);white-space:nowrap}
+  .price-row.top{position:relative}
+  .price-row.top .pr-amt{color:var(--gold)}
+  .price-foot{margin-top:1.4rem;color:var(--bronze);font-size:13px;line-height:1.6}
+
+  /* ---------- OVER ---------- */
+  .over{background:var(--sand);border-top:1px solid var(--line-cream)}
+  .over-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(36px,5vw,80px);align-items:center}
+  .over-media{
+    position:relative;aspect-ratio:4/5;width:100%;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line-cream);
+    background:
+      url("https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat,
+      linear-gradient(160deg,#F3E6D0,#E8D2AE);
+    /* verified Unsplash: warm golden-hour licht (sfeer/glow) */
+    box-shadow:0 30px 60px -34px rgba(138,98,52,.6);
+  }
+  .over-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(28,20,12,0) 40%,rgba(28,20,12,.5) 100%);
+  }
+  .over-media .badge{
+    position:absolute;left:clamp(16px,2vw,24px);bottom:clamp(16px,2vw,24px);z-index:2;
+    background:rgba(28,20,12,.78);backdrop-filter:blur(6px);
+    border:1px solid rgba(240,169,59,.4);border-radius:14px;
+    padding:.85em 1.1em;color:var(--sand);
+    display:flex;align-items:center;gap:.7em;
+  }
+  .over-media .badge svg{width:24px;height:24px;color:var(--gold);flex:none}
+  .over-media .badge .bt{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.1}
+  .over-media .badge .bs{font-size:11px;color:var(--bronze);letter-spacing:.06em;text-transform:uppercase}
+  .over-body .eyebrow{margin-bottom:1.2rem}
+  .over-body h2{font-size:clamp(32px,5.4vw,62px);font-weight:500}
+  .over-body h2 em{color:var(--bronze-deep);font-style:italic}
+  .over-body p{margin-top:1.2rem;color:var(--ink-soft);font-size:clamp(15px,1.3vw,18px)}
+  .over-body p strong{color:var(--ink);font-weight:600}
+  .pillz{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(24px,3vw,32px)}
+  .pillz span{
+    border:1px solid var(--line-cream);background:#fffdf9;color:var(--ink);border-radius:999px;
+    font-weight:600;font-size:13px;letter-spacing:.01em;
+    padding:.6em 1.05em;display:inline-flex;align-items:center;gap:.5em;
+  }
+  .pillz span svg{width:16px;height:16px;stroke:var(--gold);flex:none}
+
+  /* ---------- INFO: HOURS + CONTACT ---------- */
+  .info{background:var(--espresso-2);color:var(--sand);border-top:1px solid var(--line-dark)}
+  .info .sec-head h2 em{color:var(--gold);font-style:italic}
+  .info .sec-head p{color:var(--sand-dim)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);align-items:start}
+  .panel{
+    border:1px solid var(--line-dark);background:rgba(58,42,27,.28);border-radius:20px;
+    padding:clamp(26px,3.2vw,42px);
+  }
+  .panel h3{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(24px,3vw,34px);line-height:1.05;margin-bottom:1.3rem;
+  }
+  .panel h3 em{color:var(--gold);font-style:italic}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.85em 0;border-bottom:1px solid var(--line-dark);
+    font-size:clamp(15px,1.3vw,17px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:600;color:var(--sand-dim)}
+  .hours .time{font-family:var(--display);font-weight:500;font-size:clamp(16px,1.6vw,20px);color:var(--sand)}
+  .hours li.today{
+    color:var(--espresso);background:var(--gold);border-radius:12px;
+    margin:0 calc(-1*clamp(14px,1.6vw,20px));padding-left:clamp(14px,1.6vw,20px);padding-right:clamp(14px,1.6vw,20px);
+    border-bottom-color:transparent;
+  }
+  .hours li.today .day,.hours li.today .time{color:var(--espresso)}
+  .hours li.closed .time{color:var(--bronze)}
+  .now-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.4rem;
+    font-weight:700;letter-spacing:.08em;font-size:12px;text-transform:uppercase;
+    padding:.5em .9em;border:1px solid var(--line-dark);border-radius:999px;color:var(--sand-dim);
+  }
+  .now-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--bronze)}
+  .now-pill.open{border-color:var(--gold);color:var(--gold)}
+  .now-pill.open .dot{background:var(--gold);box-shadow:0 0 0 0 rgba(240,169,59,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(240,169,59,0)}100%{box-shadow:0 0 0 0 rgba(240,169,59,0)}}
+
+  .contact-list{display:flex;flex-direction:column}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1.05em 0;border-bottom:1px solid var(--line-dark)}
+  .crow:last-child{border-bottom:none}
+  .crow .ico{
+    width:clamp(42px,5vw,50px);height:clamp(42px,5vw,50px);flex:none;border-radius:12px;
+    border:1px solid rgba(240,169,59,.4);display:grid;place-items:center;color:var(--gold);
+  }
+  .crow .ico svg{width:20px;height:20px}
+  .crow .k{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--bronze)}
+  .crow .v{font-size:clamp(15px,1.4vw,18px);color:var(--sand);font-weight:600;line-height:1.5;margin-top:3px}
+  .crow .v a:hover{color:var(--gold)}
+  .crow .v small{display:block;color:var(--bronze);font-weight:400;font-size:13px;margin-top:2px}
+  .crow .v .callbtn{
+    display:inline-flex;align-items:center;gap:.5em;margin-top:.7em;
+    font-weight:700;color:var(--gold);font-size:14px;
+  }
+  .crow .v .callbtn svg{width:15px;height:15px}
+
+  /* map stand-in */
+  .map-standin{
+    margin-top:1.4rem;height:clamp(150px,18vw,180px);border-radius:14px;border:1px solid var(--line-dark);position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(240,169,59,.06),transparent),
+      repeating-linear-gradient(0deg,rgba(185,138,78,.12) 0 1px,transparent 1px 40px),
+      repeating-linear-gradient(90deg,rgba(185,138,78,.12) 0 1px,transparent 1px 40px),
+      #221910;
+  }
+  .map-standin .road{position:absolute;background:rgba(185,138,78,.22)}
+  .map-standin .r1{left:0;right:0;top:52%;height:9px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:38%;width:7px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--gold)}
+  .map-standin .pin svg{width:34px;height:34px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+  .map-standin .lbl{position:absolute;left:14px;bottom:12px;font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bronze)}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;background:var(--espresso);color:var(--sand);text-align:center}
+  .finalcta::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(70% 80% at 50% 0%,rgba(240,169,59,.28),transparent 60%),
+      radial-gradient(60% 60% at 50% 120%,rgba(246,201,119,.16),transparent 60%);
+  }
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(64px,10vw,134px);padding-bottom:clamp(72px,11vw,140px)}
+  .finalcta h2{font-size:clamp(40px,8vw,104px);font-weight:500;max-width:16ch;margin:0 auto}
+  .finalcta h2 em{color:var(--gold);font-style:italic;text-shadow:0 0 40px rgba(240,169,59,.4)}
+  .finalcta p{margin:1.4rem auto 2rem;color:var(--sand-dim);max-width:50ch;font-size:clamp(16px,1.5vw,20px)}
+  .finalcta .hero-actions{justify-content:center;margin-top:0}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--espresso-2);color:var(--sand);border-top:1px solid var(--line-dark);padding-top:clamp(48px,6vw,80px);padding-bottom:120px}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,5vw,56px);border-bottom:1px solid var(--line-dark)}
+  .foot-brand .fb-name{display:flex;align-items:center;gap:.7rem}
+  .foot-brand .fb-name .mark{
+    width:38px;height:38px;flex:none;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--gold-soft),var(--gold) 55%,var(--bronze-deep));
+    display:grid;place-items:center;
+  }
+  .foot-brand .fb-name .mark svg{width:20px;height:20px;color:var(--espresso)}
+  .foot-brand .fb-name span{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,30px)}
+  .foot-brand p{margin-top:1rem;color:var(--bronze);max-width:40ch;font-size:14px;line-height:1.7}
+  .foot-col h4{font-family:var(--body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--gold);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--sand-dim);font-size:14px;padding:.32em 0;line-height:1.6}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--gold)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;padding-top:clamp(24px,3vw,32px);color:var(--bronze);font-size:13px}
+  .foot-bottom a{color:var(--sand);font-weight:600}
+  .foot-bottom a:hover{color:var(--gold)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(28,20,12,.95);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1.5px solid var(--gold);
+    align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0;color:var(--sand)}
+  .sticky-cta .sc-meta .t{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.05}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--gold);font-weight:600;font-size:12px;margin-top:3px}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;flex:none}
+  .sticky-cta .btn{flex:none;padding:.9em 1.3em}
+
+  /* ---------- REVEAL (JS-gated only) ---------- */
+  .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}
+
+  /* ---------- FOCUS ---------- */
+  a:focus-visible,button:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+  .hours li.today a:focus-visible{outline-color:var(--espresso)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1024px){
+    .bank-grid{grid-template-columns:1fr 1fr}
+    .bank.feature{grid-column:1/-1}
+    .price-grid{grid-template-columns:1fr;gap:clamp(28px,5vw,44px)}
+    .over-grid{grid-template-columns:1fr;gap:clamp(28px,5vw,44px)}
+    .over-media{max-width:460px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .bank-grid{grid-template-columns:1fr}
+    .bank.feature{grid-column:auto}
+    .info-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:96px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .js .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Zonnestudio Zuid home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+      </span>
+      <span class="name">Zonnestudio <span>Zuid</span><small>Ergoline · Enschede</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#banken">Banken</a>
+      <a class="lnk" href="#tarieven">Tarieven</a>
+      <a class="lnk" href="#over">Over ons</a>
+      <a class="lnk" href="#bezoek">Bezoek</a>
+      <a class="btn nav-cta" href="tel:0534781877">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        053-4781877
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#banken"><span class="idx">01</span> Banken</a>
+  <a href="#tarieven"><span class="idx">02</span> Tarieven</a>
+  <a href="#over"><span class="idx">03</span> Over ons</a>
+  <a href="#bezoek"><span class="idx">04</span> Bezoek</a>
+  <div class="ov-foot">
+    <strong>Winkelcentrum Zuid · Wesselerbrink, Enschede</strong><br>
+    Tel. <a href="tel:0534781877" style="color:var(--gold-soft)">053-4781877</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <!-- FOTO: vervang door echte studiofoto / Ergoline-bank. Nu: geverifieerde Unsplash golden-glow huidfoto -->
+  <div class="hero-bg" aria-hidden="true"><div class="hero-photo"></div></div>
+  <span class="glow" aria-hidden="true"></span>
+  <div class="wrap hero-inner">
+    <span class="eyebrow on-dark reveal">Premium zonnestudio · Enschede Zuid</span>
+    <h1 class="display reveal d1">
+      Een warme, gelijkmatige <span class="glowword">gloed</span> — op echte Ergoline-banken.
+    </h1>
+    <p class="hero-lede reveal d2">
+      Bij <strong>Zonnestudio Zuid</strong> kies je niet voor de goedkoopste bank, maar voor de beste. Wij werken uitsluitend met top-merk <strong>Ergoline-zonnebanken</strong>, inclusief de <strong>Beauty Light Complete</strong> — voor een natuurlijke kleur, een verzorgde huid en dat échte zomergevoel.
+    </p>
+    <div class="hero-actions reveal d3">
+      <a class="btn" href="tel:0534781877">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 053-4781877
+      </a>
+      <a class="btn btn--ghost" href="#banken">Bekijk de banken</a>
+    </div>
+    <div class="hero-trust reveal d3">
+      <div class="ht"><b>Ergoline</b><span>Top-merk banken</span></div>
+      <div class="ht"><b>€10,50</b><span>Tarief vanaf</span></div>
+      <div class="ht"><b>Zuid</b><span>Winkelcentrum Wesselerbrink</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Ergoline-banken</span><span>Beauty Light Complete</span><span>Natuurlijke kleur</span><span>Verzorgde huid</span><span>Professioneel advies</span><span>Winkelcentrum Zuid</span>
+    <span>Ergoline-banken</span><span>Beauty Light Complete</span><span>Natuurlijke kleur</span><span>Verzorgde huid</span><span>Professioneel advies</span><span>Winkelcentrum Zuid</span>
+  </div>
+</div>
+
+<!-- ============ BANKEN / DIENSTEN ============ -->
+<section class="banken sec" id="banken">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onze banken</span>
+      <h2 class="display">Kwaliteit waar je <em>verschil</em> in voelt.</h2>
+      <p>Niet elke zonnebank is gelijk. Wij investeren bewust in Ergoline — het premium-merk dat staat voor een gelijkmatige, comfortabele en huidvriendelijke bruining. Kies de bank die bij jouw huid en wens past.</p>
+    </div>
+
+    <div class="bank-grid">
+      <!-- Feature: Beauty Light Complete -->
+      <article class="bank feature reveal">
+        <span class="bank-tag">Onze topbank</span>
+        <span class="bank-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg>
+        </span>
+        <h3>Ergoline Beauty Light Complete<span class="sub">Bruinen &amp; huidverzorging in één</span></h3>
+        <p>De complete beleving: een diepe, natuurlijke kleur gecombineerd met collageen- en beautylicht dat je huid verzorgt en verfrist. Voor wie het allerbeste wil.</p>
+        <div class="bank-price"><span class="amt">€17</span><span class="per">per sessie</span></div>
+      </article>
+
+      <article class="bank reveal d1">
+        <span class="bank-tag">Snel &amp; comfortabel</span>
+        <span class="bank-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </span>
+        <h3>Ergoline Comfort-banken<span class="sub">Krachtig &amp; gelijkmatig</span></h3>
+        <p>Snel een mooie basiskleur opbouwen op een betrouwbare Ergoline-bank. Comfortabel ligbed, sterke en egale bruining — ideaal voor de regelmatige bezoeker.</p>
+        <div class="bank-price"><span class="amt">€10,50</span><span class="per">vanaf, per sessie</span></div>
+      </article>
+
+      <article class="bank reveal d2">
+        <span class="bank-tag">Persoonlijk advies</span>
+        <span class="bank-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 4-2.5 6h-9C7 13 5 12 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6M10 18h4"/></svg>
+        </span>
+        <h3>Advies op maat<span class="sub">Welke bank past bij jou?</span></h3>
+        <p>Twijfel je over het juiste type of de juiste tijd voor jouw huid? Wij denken graag met je mee voor een veilig en verantwoord resultaat — zonder verkooppraat.</p>
+        <div class="bank-price"><span class="amt">Gratis</span><span class="per">bij je bezoek</span></div>
+      </article>
+    </div>
+
+    <p class="bank-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Onze tarieven lopen van <strong>€10,50 tot €17</strong> per sessie, afhankelijk van de gekozen bank. Bekijk de volledige prijsstaffel hieronder — of vraag het ons gerust persoonlijk.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PRIJSSTAFFEL ============ -->
+<section class="pricing sec" id="tarieven">
+  <div class="wrap price-grid">
+    <div class="price-left">
+      <span class="eyebrow on-dark reveal">Tarieven</span>
+      <h2 class="display reveal d1">Eerlijke prijzen voor <em>premium</em> kwaliteit.</h2>
+      <p class="reveal d2">Transparant en zonder verrassingen. Je betaalt voor de bank die je kiest — van een vlotte basisbeurt tot de complete Beauty Light-beleving.</p>
+      <ul class="price-points reveal d3">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Uitsluitend professionele Ergoline-banken.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Persoonlijk advies over tijd en opbouw inbegrepen.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vraag naar onze kuren en vaste-klant-voordelen.</li>
+      </ul>
+    </div>
+
+    <div class="price-card reveal d2">
+      <div class="pc-head">
+        <b>Prijslijst per sessie</b>
+        <span>Zonnestudio Zuid</span>
+      </div>
+      <div class="price-row">
+        <div class="pr-name">Ergoline Comfort-bank<small>Snelle, egale basiskleur</small></div>
+        <div class="pr-amt">€10,50</div>
+      </div>
+      <div class="price-row">
+        <div class="pr-name">Ergoline Plus-bank<small>Krachtiger, intensere bruining</small></div>
+        <div class="pr-amt">€13,50</div>
+      </div>
+      <div class="price-row top">
+        <div class="pr-name">Beauty Light Complete<small>Bruinen + huidverzorgend beautylicht</small></div>
+        <div class="pr-amt">€17</div>
+      </div>
+      <p class="price-foot">Tarieven vanaf €10,50 tot €17 per sessie. De exacte indeling en eventuele kuurprijzen lichten we graag persoonlijk toe in de studio of telefonisch via 053-4781877.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVER ============ -->
+<section class="over sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-media reveal" role="img" aria-label="Warme, gouden sfeer die past bij een natuurlijke, verzorgde bruining">
+      <!-- FOTO: vervang door echte studiofoto. Nu: geverifieerde Unsplash golden-hour sfeerbeeld -->
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg>
+        <span><span class="bt">Ergoline</span><span class="bs">Professioneel · verzorgd</span></span>
+      </span>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over Zonnestudio Zuid</span>
+      <h2 class="display reveal d1">Een vertrouwd adres met <em>professionele</em> standaard.</h2>
+      <p class="reveal d2">
+        Zonnestudio Zuid vind je in <strong>Winkelcentrum Zuid</strong>, midden in de wijk Wesselerbrink in Enschede. Een laagdrempelige, verzorgde studio waar je terechtkomt voor een mooie kleur — het hele jaar door, zonder gedoe.
+      </p>
+      <p class="reveal d2">
+        Wij zijn bewust <strong>geen budget-zonnebank</strong>. Door alleen met top-merk Ergoline-banken te werken en je goed te adviseren over tijd en opbouw, kies je hier voor een resultaat dat er natuurlijk uitziet én dat je huid respecteert. Dat is het verschil dat onze vaste klanten waarderen.
+      </p>
+
+      <div class="pillz reveal d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Top-merk Ergoline</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg>Verantwoord &amp; verzorgd</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Centraal in WC Zuid</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK: HOURS + CONTACT ============ -->
+<section class="info sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow on-dark">Kom langs</span>
+      <h2 class="display">Bezoek de <em>studio</em>.</h2>
+      <p>Je vindt ons in Winkelcentrum Zuid in de Wesselerbrink, Enschede. Loop binnen tijdens openingstijden of bel ons even — we helpen je graag verder.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="now-pill" id="nowPill"><span class="dot"></span><span id="nowText">Openingstijden</span></span>
+        <h3>Open<em>ingstijden</em></h3>
+        <ul class="hours" id="hoursList">
+          <li data-day="1"><span class="day">Maandag</span><span class="time">11:00 – 21:00</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">11:00 – 21:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">11:00 – 21:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">11:00 – 21:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">11:00 – 21:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">10:00 – 17:00</span></li>
+          <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+        <p style="margin-top:1.2rem;color:var(--bronze);font-size:13px">Tijden onder voorbehoud — bel gerust even voor je komt.</p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" aria-label="Contactgegevens en route">
+        <h3>Contact <em>&amp; route</em></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">Winkelcentrum Zuid<small>Wesselerbrink, Enschede</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div>
+              <div class="k">Telefoon</div>
+              <div class="v">053-4781877<small>Bel ons tijdens openingstijden</small>
+                <a class="callbtn" href="tel:0534781877">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  Direct bellen
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOTO: vervang door echte (statische) kaart-screenshot of Maps-embed van Winkelcentrum Zuid -->
+        <div class="map-standin" aria-label="Indicatieve locatie: Winkelcentrum Zuid, Wesselerbrink, Enschede" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Winkelcentrum Zuid · Wesselerbrink</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="wrap finalcta-inner">
+    <h2 class="display reveal">Klaar voor jouw <em>gloed</em>?</h2>
+    <p class="reveal d1">Loop binnen in Winkelcentrum Zuid of bel ons — we vertellen je graag welke Ergoline-bank het beste bij jou past.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn" href="tel:0534781877">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 053-4781877
+      </a>
+      <a class="btn btn--ghost" href="#tarieven">Bekijk tarieven</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="fb-name">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
+          <span>Zonnestudio Zuid</span>
+        </div>
+        <p>Premium zonnestudio in Winkelcentrum Zuid, Wesselerbrink Enschede. Top-merk Ergoline-banken, inclusief Beauty Light Complete, voor een natuurlijke en verzorgde kleur.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#banken">Onze banken</a>
+        <a href="#tarieven">Tarieven</a>
+        <a href="#over">Over ons</a>
+        <a href="#bezoek">Bezoek &amp; openingstijden</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Winkelcentrum Zuid<br>Wesselerbrink, Enschede</p>
+        <p><a href="tel:0534781877">Tel. 053-4781877</a></p>
+        <p style="margin-top:.4em;color:var(--bronze)">Ma–Vr 11:00–21:00<br>Za 10:00–17:00 · Zo gesloten</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Zonnestudio Zuid — Enschede</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <div class="sc-meta">
+    <div class="t">Zonnestudio Zuid</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg>
+      Ergoline · vanaf €10,50
+    </div>
+  </div>
+  <a class="btn" href="tel:0534781877">Bel ons</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!overlay.classList.contains('open'));
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Opening hours: highlight today + open/closed status ---- */
+  var openHours = {1:[11,21],2:[11,21],3:[11,21],4:[11,21],5:[11,21],6:[10,17],0:null};
+  var dayNames = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  try{
+    var now = new Date();
+    var d = now.getDay();
+    var h = now.getHours() + now.getMinutes()/60;
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+
+    var rng = openHours[d];
+    var isOpen = rng && h >= rng[0] && h < rng[1];
+    var pill = document.getElementById('nowPill');
+    var txt = document.getElementById('nowText');
+    if(isOpen){
+      pill.classList.add('open');
+      txt.textContent = 'Nu open · tot ' + rng[1] + ':00';
+    } else {
+      var msg = 'Nu gesloten';
+      if(rng && h < rng[0]){
+        msg = 'Vandaag open vanaf ' + rng[0] + ':00';
+      } else {
+        for(var i=1;i<=7;i++){
+          var nd = (d+i)%7;
+          if(openHours[nd]){ msg = 'Weer open ' + dayNames[nd] + ' ' + openHours[nd][0] + ':00'; break; }
+        }
+      }
+      txt.textContent = msg;
+    }
+  }catch(e){ /* fail silent — static hours still shown */ }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyce Nagelstudio — CND Master Nail Technician in Boekelo (Enschede)</title>
+<meta name="description" content="Joyce Nagelstudio in Boekelo, gemeente Enschede. CND-gecertificeerd Master Nail Technician sinds 1996. Manicure, Shellac, gel en nail art met 7 dagen garantie. Bel 06-14558087.">
+<meta name="theme-color" content="#2E1F2C">
+<meta name="author" content="Joyce Nagelstudio">
+<meta property="og:title" content="Joyce Nagelstudio — Master Nail Technician sinds 1996">
+<meta property="og:description" content="CND-gecertificeerd vakmanschap in Boekelo (Enschede). Manicure, Shellac, gel en nail art met 7 dagen garantie. Bel 06-14558087.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Joyce Nagelstudio">
+<!-- Custom SVG data-URI favicon: gilded nail-polish drop monogram on aubergine -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E1F2C'/%3E%3Cpath d='M32 13c-7 9-12 15-12 21a12 12 0 0 0 24 0c0-6-5-12-12-21z' fill='none' stroke='%23C9A36A' stroke-width='3.4' stroke-linejoin='round'/%3E%3Cpath d='M26 33a6 6 0 0 1 6-5' fill='none' stroke='%23E8D3C0' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2E1F2C;          /* deep aubergine */
+    --ink-soft:#473344;
+    --plum:#6E4B63;
+    --ivory:#FBF6F0;        /* warm ivory */
+    --ivory-2:#F3E9E0;
+    --blush:#EBD7D1;
+    --blush-deep:#D9B8B2;
+    --gold:#B98A4B;         /* champagne gold, AA on ivory */
+    --gold-bright:#C9A36A;
+    --gold-soft:#E8D3C0;
+    --muted:#8A7682;
+    --muted-ink:#A9929F;
+    --line:#E3D5CB;
+    --line-ink:rgba(233,211,192,.16);
+    --cream-on-ink:#F4E9DF;
+    --maxw:1220px;
+    --pad:clamp(20px,5vw,68px);
+    --display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --body:'Jost',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --r:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--ivory);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:clamp(15px,1.02vw,16.5px);
+    font-weight:400;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:var(--ivory)}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:500;
+    line-height:1.02;
+    letter-spacing:.004em;
+  }
+  .script{font-style:italic;font-weight:500}
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.34em;
+    font-size:clamp(10.5px,1vw,12px);
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:.85em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(24px,4vw,42px);
+    height:1px;
+    background:var(--gold-bright);
+    display:inline-block;
+  }
+  .eyebrow.center{justify-content:center}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.7em;
+    background:var(--ink);color:var(--cream-on-ink);
+    font-family:var(--body);font-weight:500;
+    letter-spacing:.06em;
+    font-size:clamp(13px,1.05vw,14.5px);
+    padding:1.02em 1.8em;
+    border:1px solid var(--ink);
+    border-radius:40px;
+    cursor:pointer;
+    transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease,border-color .25s ease;
+    line-height:1;
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:hover{transform:translateY(-2px);background:var(--plum);border-color:var(--plum);box-shadow:0 12px 26px rgba(46,31,44,.22)}
+  .btn--gold{background:var(--gold);border-color:var(--gold);color:var(--ivory)}
+  .btn--gold:hover{background:var(--gold-bright);border-color:var(--gold-bright);box-shadow:0 12px 26px rgba(185,138,75,.32)}
+  .btn--ghost{background:transparent;color:var(--ink);border-color:var(--blush-deep)}
+  .btn--ghost:hover{background:var(--ink);color:var(--cream-on-ink);border-color:var(--ink)}
+  .btn--light{background:var(--ivory);border-color:var(--ivory);color:var(--ink)}
+  .btn--light:hover{background:var(--gold-soft);border-color:var(--gold-soft);color:var(--ink)}
+  .btn--block{width:100%;justify-content:center}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(251,246,240,.78);
+    backdrop-filter:saturate(150%) blur(14px);
+    -webkit-backdrop-filter:saturate(150%) blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .35s ease,background .35s ease,box-shadow .35s ease;
+  }
+  header.scrolled{background:rgba(251,246,240,.94);border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(46,31,44,.05)}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:clamp(66px,8.5vw,88px);gap:1rem;
+  }
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:42px;height:42px;flex:none;
+    border:1px solid var(--gold);border-radius:50%;
+    display:grid;place-items:center;
+    color:var(--gold);
+    background:var(--ivory);
+  }
+  .brand .mark svg{width:23px;height:23px}
+  .brand .name{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(21px,2.6vw,27px);line-height:.95;letter-spacing:.01em;color:var(--ink);
+  }
+  .brand .name small{display:block;font-family:var(--body);font-weight:500;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(20px,2.6vw,40px)}
+  .nav-links a.lnk{
+    font-weight:500;font-size:14px;letter-spacing:.04em;
+    color:var(--ink-soft);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{
+    content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--gold);transition:width .3s ease;
+  }
+  .nav-links a.lnk:hover{color:var(--ink)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:48px;height:48px;
+    border:1px solid var(--line);background:var(--ivory);border-radius:50%;
+    cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;
+  }
+  .hamburger span{display:block;width:19px;height:1.8px;background:var(--ink);border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.8px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.8px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;
+    background:var(--ink);color:var(--cream-on-ink);
+    transform:translateX(100%);
+    transition:transform .45s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:var(--pad);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a.ov-lnk{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(36px,10vw,56px);line-height:1.18;letter-spacing:.01em;
+    color:var(--cream-on-ink);padding:.1em 0;
+    display:flex;align-items:baseline;gap:.55em;
+    border-bottom:1px solid var(--line-ink);
+  }
+  .overlay a.ov-lnk .idx{font-family:var(--body);font-size:13px;font-weight:600;color:var(--gold-bright);letter-spacing:.1em}
+  .overlay a.ov-lnk:last-of-type{border-bottom:none}
+  .overlay .ov-foot{margin-top:clamp(26px,5vw,42px);color:var(--muted-ink);font-size:14.5px;line-height:1.9}
+  .overlay .ov-foot strong{color:var(--cream-on-ink);font-weight:500}
+  .overlay .ov-foot a{color:var(--gold-bright);font-weight:600}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--ivory)}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 88% 12%, rgba(201,163,106,.16), transparent 60%),
+      radial-gradient(50% 45% at 4% 90%, rgba(217,184,178,.28), transparent 60%);
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.06fr .94fr;
+    gap:clamp(30px,5vw,72px);align-items:center;
+    padding-top:clamp(40px,6vw,78px);padding-bottom:clamp(48px,7vw,96px);
+  }
+  .hero-copy .eyebrow{margin-bottom:clamp(18px,2.6vw,26px)}
+  .hero h1{
+    font-size:clamp(50px,8.4vw,104px);
+    margin:0;color:var(--ink);font-weight:500;
+    letter-spacing:.002em;
+  }
+  .hero h1 .ln{display:block}
+  .hero h1 .gold{color:var(--gold);font-style:italic;font-weight:500}
+  .hero-since{
+    display:inline-flex;align-items:center;gap:.7em;margin-top:clamp(20px,2.8vw,30px);
+    font-family:var(--body);font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    font-size:clamp(11px,1.1vw,13px);color:var(--plum);
+  }
+  .hero-since .yr{
+    font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(20px,2.2vw,26px);
+    letter-spacing:.01em;color:var(--gold);text-transform:none;
+  }
+  .hero-since .bar{width:34px;height:1px;background:var(--blush-deep)}
+  .hero-lede{margin-top:clamp(20px,2.6vw,28px);max-width:46ch;color:var(--ink-soft);font-size:clamp(15.5px,1.35vw,18px)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(26px,3.4vw,38px)}
+  .hero-trust{
+    display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,3vw,30px);
+    margin-top:clamp(28px,3.6vw,40px);padding-top:clamp(22px,2.8vw,28px);
+    border-top:1px solid var(--line);
+  }
+  .hero-trust .t-item{display:flex;align-items:center;gap:.6em;font-size:13.5px;color:var(--ink-soft);font-weight:500}
+  .hero-trust .t-item svg{width:19px;height:19px;flex:none;stroke:var(--gold);fill:none}
+
+  /* hero image stack */
+  .hero-art{position:relative;justify-self:center;width:100%;max-width:520px}
+  .hero-photo{
+    position:relative;border-radius:var(--r);overflow:hidden;
+    aspect-ratio:4/5;background:var(--blush);
+    box-shadow:0 30px 60px -24px rgba(46,31,44,.5);
+    border:1px solid rgba(255,255,255,.4);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-frame{
+    position:absolute;inset:14px;border:1px solid rgba(251,246,240,.6);border-radius:calc(var(--r) - 6px);z-index:2;pointer-events:none;
+  }
+  .hero-badge{
+    position:absolute;z-index:4;left:-22px;bottom:34px;
+    background:var(--ivory);border:1px solid var(--line);border-radius:16px;
+    padding:.95em 1.2em;display:flex;align-items:center;gap:.8em;
+    box-shadow:0 18px 40px -16px rgba(46,31,44,.4);
+  }
+  .hero-badge .seal{
+    width:46px;height:46px;flex:none;border-radius:50%;background:var(--ink);
+    display:grid;place-items:center;color:var(--gold-bright);
+  }
+  .hero-badge .seal svg{width:24px;height:24px}
+  .hero-badge .bt{font-family:var(--display);font-weight:600;font-size:19px;line-height:1;color:var(--ink)}
+  .hero-badge .bs{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;font-weight:500}
+  .hero-deco{
+    position:absolute;z-index:1;top:-26px;right:-26px;width:120px;height:120px;
+    border:1px solid var(--gold-bright);border-radius:50%;opacity:.6;
+  }
+
+  /* ---------- ACTIE BAND ---------- */
+  .actie{background:var(--ink);color:var(--cream-on-ink)}
+  .actie-inner{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(14px,3vw,32px);
+    padding-top:clamp(20px,2.6vw,26px);padding-bottom:clamp(20px,2.6vw,26px);text-align:center;
+  }
+  .actie .pin{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:11.5px;color:var(--gold-bright);
+  }
+  .actie .pin svg{width:15px;height:15px;stroke:var(--gold-bright);fill:none}
+  .actie .msg{font-family:var(--display);font-size:clamp(20px,2.6vw,30px);font-weight:500;line-height:1.15}
+  .actie .msg b{color:var(--gold-bright);font-weight:600;font-style:italic}
+  .actie .sub{font-size:13px;color:var(--muted-ink);letter-spacing:.02em}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(64px,8.5vw,120px);padding-bottom:clamp(64px,8.5vw,120px)}
+  .sec-head{margin-bottom:clamp(40px,5vw,64px);max-width:760px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{
+    font-size:clamp(38px,6vw,72px);margin:.28em 0 0;letter-spacing:.004em;font-weight:500;color:var(--ink);
+  }
+  .sec-head h2 .gold{color:var(--gold);font-style:italic}
+  .sec-head p{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(15.5px,1.3vw,18px);max-width:58ch}
+  .sec-head.center p{margin-left:auto;margin-right:auto}
+
+  /* ---------- DIENSTEN ---------- */
+  .diensten{background:linear-gradient(180deg,var(--ivory) 0%,var(--ivory-2) 100%);border-top:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,28px)}
+  .card{
+    position:relative;background:var(--ivory);border:1px solid var(--line);border-radius:var(--r);
+    padding:clamp(26px,3vw,40px);
+    display:flex;flex-direction:column;gap:.7rem;
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+    overflow:hidden;
+  }
+  .card::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),var(--blush-deep));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(46,31,44,.4);border-color:var(--blush-deep)}
+  .card:hover::after{transform:scaleX(1)}
+  .card .c-ico{
+    width:54px;height:54px;border-radius:14px;flex:none;
+    background:var(--blush);color:var(--ink);
+    display:grid;place-items:center;margin-bottom:.4rem;
+  }
+  .card .c-ico svg{width:26px;height:26px;stroke:var(--ink);fill:none}
+  .card h3{font-family:var(--display);font-weight:600;font-size:clamp(25px,2.8vw,32px);line-height:1.04;color:var(--ink)}
+  .card p{color:var(--ink-soft);font-size:14.5px;line-height:1.65}
+  .card .c-foot{
+    margin-top:auto;padding-top:1rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+    border-top:1px solid var(--line);
+  }
+  .card .c-price{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.2vw,26px);color:var(--ink)}
+  .card .c-price small{font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;display:block;margin-top:2px}
+  .card .c-tag{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+    color:var(--gold);
+  }
+  .card.actie-card{background:var(--ink);border-color:var(--ink)}
+  .card.actie-card h3,.card.actie-card .c-price{color:var(--ivory)}
+  .card.actie-card p{color:var(--muted-ink)}
+  .card.actie-card .c-ico{background:rgba(201,163,106,.16);color:var(--gold-bright)}
+  .card.actie-card .c-ico svg{stroke:var(--gold-bright)}
+  .card.actie-card .c-foot{border-top-color:var(--line-ink)}
+  .card.actie-card .c-tag{color:var(--gold-bright)}
+  .card.actie-card .c-price small{color:var(--muted-ink)}
+  .card.actie-card::after{transform:scaleX(1);background:linear-gradient(90deg,var(--gold-bright),var(--plum))}
+  .card .ribbon{
+    position:absolute;top:18px;right:-34px;transform:rotate(38deg);
+    background:var(--gold);color:var(--ivory);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:600;padding:.4em 3em;box-shadow:0 6px 14px rgba(46,31,44,.3);
+  }
+
+  .usp-row{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,26px);
+    margin-top:clamp(28px,3.4vw,40px);
+  }
+  .usp{
+    display:flex;gap:.9rem;align-items:flex-start;
+    background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2vw,24px);
+  }
+  .usp .u-ico{width:42px;height:42px;flex:none;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold)}
+  .usp .u-ico svg{width:20px;height:20px;stroke:var(--gold);fill:none}
+  .usp h4{font-family:var(--body);font-weight:600;font-size:14.5px;letter-spacing:.01em;color:var(--ink);margin-bottom:.2em}
+  .usp p{font-size:13px;color:var(--ink-soft);line-height:1.55}
+
+  /* ---------- GALLERY STRIP ---------- */
+  .gallery{background:var(--ivory-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(16px,2vw,22px) 0}
+  .gallery-track{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+  .gallery-track figure{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1/1;background:var(--blush)}
+  .gallery-track img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .gallery-track figure:hover img{transform:scale(1.06)}
+  .gallery-track figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    background:linear-gradient(0deg,rgba(46,31,44,.78),transparent);
+    color:var(--ivory);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+    padding:1.6em .9em .8em;
+  }
+
+  /* ---------- OVER JOYCE ---------- */
+  .over{background:var(--ink);color:var(--cream-on-ink);overflow:hidden}
+  .over-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(36px,5vw,80px);align-items:center}
+  .over-portrait{
+    position:relative;width:100%;max-width:480px;justify-self:center;
+    border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--ink-soft);
+    box-shadow:0 30px 60px -26px rgba(0,0,0,.6);
+  }
+  .over-portrait img{width:100%;height:100%;object-fit:cover}
+  .over-portrait .pf{position:absolute;inset:14px;border:1px solid rgba(201,163,106,.5);border-radius:calc(var(--r) - 6px);z-index:2;pointer-events:none}
+  .over-portrait .tag{
+    position:absolute;z-index:3;left:0;bottom:0;
+    background:var(--gold);color:var(--ivory);
+    font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(16px,1.8vw,20px);
+    padding:.5em .95em;border-top-right-radius:14px;
+  }
+  .over-body .eyebrow{margin-bottom:1.2rem}
+  .over-body h2{font-family:var(--display);font-weight:500;font-size:clamp(38px,5.6vw,68px);line-height:1.04;color:var(--ivory)}
+  .over-body h2 .gold{color:var(--gold-bright);font-style:italic}
+  .over-body p{margin-top:1.2rem;color:var(--muted-ink);font-size:clamp(15px,1.3vw,17.5px)}
+  .over-body p strong{color:var(--cream-on-ink);font-weight:500}
+  .over-stats{display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);margin-top:clamp(28px,3.4vw,40px);padding-top:clamp(24px,3vw,32px);border-top:1px solid var(--line-ink)}
+  .over-stats .st .n{font-family:var(--display);font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1;color:var(--gold-bright)}
+  .over-stats .st .l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-ink);margin-top:.4em;font-weight:500}
+  .signoff{margin-top:clamp(26px,3vw,34px);display:flex;align-items:center;gap:1rem}
+  .signoff .sig{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(28px,3.4vw,40px);color:var(--cream-on-ink);line-height:1}
+  .signoff .sig small{display:block;font-family:var(--body);font-style:normal;font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-top:.5em}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ivory);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,4vw,60px);align-items:stretch}
+  .contact-card{
+    background:var(--ivory-2);border:1px solid var(--line);border-radius:var(--r);
+    padding:clamp(28px,3.6vw,48px);
+  }
+  .contact-card h3{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.02;color:var(--ink);margin-bottom:.4rem}
+  .contact-card h3 .gold{color:var(--gold);font-style:italic}
+  .contact-card .lead{color:var(--ink-soft);font-size:15.5px;max-width:42ch;margin-bottom:1.6rem}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1.05em 0;border-bottom:1px solid var(--line)}
+  .crow:first-of-type{border-top:1px solid var(--line)}
+  .crow .ico{
+    width:46px;height:46px;flex:none;border-radius:50%;
+    border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);
+  }
+  .crow .ico svg{width:20px;height:20px;stroke:var(--gold);fill:none}
+  .crow .k{font-weight:600;letter-spacing:.14em;font-size:10.5px;text-transform:uppercase;color:var(--muted)}
+  .crow .v{font-size:clamp(15.5px,1.4vw,18px);color:var(--ink);font-weight:500;line-height:1.5;margin-top:3px}
+  .crow .v a:hover{color:var(--gold)}
+  .crow .v small{display:block;color:var(--muted);font-weight:400;font-size:13px;margin-top:2px}
+  .phone-cta{margin-top:1.8rem}
+
+  /* aside: hours + map */
+  .contact-aside{display:flex;flex-direction:column;gap:clamp(20px,2.6vw,28px)}
+  .panel{background:var(--ivory);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,36px)}
+  .panel h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.8vw,32px);color:var(--ink);margin-bottom:1rem}
+  .panel h3 .gold{color:var(--gold);font-style:italic}
+  .now-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.1rem;
+    font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:11px;
+    padding:.5em .9em;border:1px solid var(--line);border-radius:30px;color:var(--muted);
+  }
+  .now-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+  .now-pill.open{border-color:var(--gold);color:var(--gold)}
+  .now-pill.open .dot{background:var(--gold);box-shadow:0 0 0 0 rgba(185,138,75,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 7px rgba(185,138,75,0)}100%{box-shadow:0 0 0 0 rgba(185,138,75,0)}}
+  .hours{list-style:none}
+  .hours li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.7em 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:500;color:var(--ink-soft)}
+  .hours .time{font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink)}
+  .hours li.today{color:var(--ink)}
+  .hours li.today .day{color:var(--ink);font-weight:600}
+  .hours li.today .time{color:var(--gold)}
+  .hours li.closed .time{color:var(--muted);font-family:var(--body);font-size:14px;font-weight:500}
+  .hours-note{margin-top:1rem;font-size:12.5px;color:var(--muted);line-height:1.5}
+
+  /* map stand-in (CSS, no external map) */
+  .map-standin{
+    height:clamp(150px,18vw,190px);border-radius:14px;border:1px solid var(--line);position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 50% 0%,rgba(201,163,106,.06),transparent),
+      repeating-linear-gradient(0deg,#efe2d6 0 1px,transparent 1px 34px),
+      repeating-linear-gradient(90deg,#efe2d6 0 1px,transparent 1px 34px),
+      var(--ivory-2);
+  }
+  .map-standin .road{position:absolute;background:var(--blush-deep);opacity:.7}
+  .map-standin .r1{left:-5%;right:-5%;top:52%;height:7px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:36%;width:5px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--gold)}
+  .map-standin .pin svg{width:36px;height:36px;filter:drop-shadow(0 6px 8px rgba(46,31,44,.3))}
+  .map-standin .lbl{position:absolute;left:12px;bottom:10px;font-weight:600;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--plum)}
+  .socials{display:flex;gap:10px;margin-top:1.4rem}
+  .socials a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--ink-soft);transition:all .25s ease}
+  .socials a:hover{background:var(--ink);color:var(--gold-bright);border-color:var(--ink);transform:translateY(-3px)}
+  .socials a svg{width:19px;height:19px}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;background:var(--blush);text-align:center}
+  .finalcta::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 0%,rgba(201,163,106,.18),transparent 70%)}
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(64px,9vw,128px)}
+  .finalcta h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,7.5vw,96px);line-height:1.02;color:var(--ink)}
+  .finalcta h2 .gold{color:var(--gold);font-style:italic}
+  .finalcta p{margin:1.3rem auto 2.2rem;color:var(--ink-soft);max-width:46ch;font-size:clamp(16px,1.4vw,19px)}
+  .finalcta .hero-actions{justify-content:center;margin-top:0}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:var(--cream-on-ink);padding-top:clamp(52px,6vw,84px);padding-bottom:110px}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(36px,4.4vw,52px);border-bottom:1px solid var(--line-ink)}
+  .foot-brand .name{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1;color:var(--ivory)}
+  .foot-brand .name span{color:var(--gold-bright);font-style:italic}
+  .foot-brand p{margin-top:1rem;color:var(--muted-ink);max-width:36ch;font-size:14px;line-height:1.7}
+  .foot-col h4{font-family:var(--body);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--gold-bright);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--muted-ink);font-size:14px;padding:.3em 0;line-height:1.5}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--gold-bright)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-top:clamp(24px,3vw,32px);color:var(--muted-ink);font-size:13px}
+  .foot-bottom a{color:var(--cream-on-ink);font-weight:500}
+  .foot-bottom a:hover{color:var(--gold-bright)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(46,31,44,.96);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--gold);align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0;color:var(--cream-on-ink)}
+  .sticky-cta .sc-meta .t{font-family:var(--display);font-weight:600;font-size:18px;line-height:1}
+  .sticky-cta .sc-meta .s{font-size:11.5px;color:var(--gold-bright);letter-spacing:.06em;margin-top:3px}
+  .sticky-cta .btn{flex:none;padding:.9em 1.3em}
+
+  /* ---------- REVEAL (JS-gated; visible without JS) ---------- */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;gap:clamp(36px,6vw,48px)}
+    .hero-art{order:-1;max-width:440px}
+    .over-grid{grid-template-columns:1fr;gap:clamp(30px,5vw,44px)}
+    .over-portrait{max-width:420px}
+    .contact-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .svc-grid{grid-template-columns:1fr}
+    .usp-row{grid-template-columns:1fr}
+    .gallery-track{grid-template-columns:1fr 1fr}
+    .gallery-track figure:last-child{display:none}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:92px}
+    .actie-inner{flex-direction:column;gap:.5rem}
+  }
+  @media(max-width:440px){
+    .hero-badge{left:8px}
+    .over-stats{gap:24px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .js .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Joyce Nagelstudio home">
+      <span class="mark" aria-hidden="true">
+        <!-- polish-drop monogram mark -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3c-3 3.6-5 6.2-5 8.6a5 5 0 0 0 10 0C17 9.2 15 6.6 12 3z"/><path d="M9.5 12.4A2.6 2.6 0 0 1 12 9.9" stroke-linecap="round"/></svg>
+      </span>
+      <span class="name">Joyce<small>Nagelstudio · Boekelo</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#over">Over Joyce</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn nav-cta" href="tel:0614558087" aria-label="Bel Joyce Nagelstudio op 06-14558087">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel direct
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a class="ov-lnk" href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a class="ov-lnk" href="#over"><span class="idx">02</span> Over Joyce</a>
+  <a class="ov-lnk" href="#contact"><span class="idx">03</span> Contact</a>
+  <div class="ov-foot">
+    <strong>Boekelo · gemeente Enschede</strong><br>
+    Tel. <a href="tel:0614558087">06-14558087</a><br>
+    CND Master Nail Technician sinds 1996
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Nagelstudio · Boekelo, Enschede</span>
+      <h1 class="display reveal d1">
+        <span class="ln">Verzorgde nagels,</span>
+        <span class="ln gold">met vakmanschap.</span>
+      </h1>
+      <div class="hero-since reveal d2">
+        <span>Master Nail Technician sinds</span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="yr">1996</span>
+      </div>
+      <p class="hero-lede reveal d2">
+        Welkom bij <strong>Joyce Nagelstudio</strong>. Al meer dan 25 jaar verzorg ik handen en voeten met de aandacht en precisie die u verdient — CND-gecertificeerd, persoonlijk en met oog voor detail.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn--gold" href="tel:0614558087">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel 06-14558087
+        </a>
+        <a class="btn btn--ghost" href="#diensten">Bekijk behandelingen</a>
+      </div>
+      <div class="hero-trust reveal d3">
+        <span class="t-item"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>CND-gecertificeerd</span>
+        <span class="t-item"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>7 dagen garantie</span>
+        <span class="t-item"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Sinds 1996</span>
+      </div>
+    </div>
+
+    <div class="hero-art reveal d2">
+      <span class="hero-deco" aria-hidden="true"></span>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80"
+             alt="Strak gelakte nagels in elegante donkere tinten, voorbeeld van het vakmanschap bij Joyce Nagelstudio" loading="eager" width="1200" height="1500">
+        <span class="hero-frame" aria-hidden="true"></span>
+      </div>
+      <div class="hero-badge">
+        <span class="seal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg>
+        </span>
+        <span>
+          <span class="bt">CND Master</span>
+          <span class="bs">Nail Technician</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIE BAND ============ -->
+<section class="actie" aria-label="Actie van de maand">
+  <div class="wrap actie-inner">
+    <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg>Actie van de maand</span>
+    <span class="msg">Shellac teennagels nu voor <b>€22,50</b></span>
+    <span class="sub">Maandelijks wisselende acties — vraag ernaar bij uw afspraak.</span>
+  </div>
+</section>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="diensten sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Behandelingen</span>
+      <h2 class="display">Verzorging tot in <span class="gold">de details.</span></h2>
+      <p>Van een klassieke manicure tot fijn afgewerkte nail art — elke behandeling met de hand, met aandacht, en met materialen waar ik na 25 jaar volledig achter sta.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="card reveal">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21c-2.5-1-4-3.5-4-7 0-3 1-5 1-8a3 3 0 0 1 6 0c0 2 0 3 0 3"/><path d="M11 13c0-2 .5-4 2.5-4S16 11 16 13s1 3 2.5 3"/><path d="M8 21h9a3 3 0 0 0 3-3"/></svg></span>
+        <h3>Manicure</h3>
+        <p>Een complete verzorging van nagelriemen, nagelvorm en huid. Uw handen weer verzorgd, gezond en gladgewerkt.</p>
+        <div class="c-foot">
+          <span class="c-price">Vanaf €27,50<small>Klassiek &amp; verzorgend</small></span>
+          <span class="c-tag">Populair</span>
+        </div>
+      </article>
+
+      <article class="card actie-card reveal d1">
+        <span class="ribbon" aria-hidden="true">Actie</span>
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 3.6-5 6.2-5 8.6a5 5 0 0 0 10 0C17 9.2 15 6.6 12 3z"/><path d="M9.5 12.4A2.6 2.6 0 0 1 12 9.9"/></svg></span>
+        <h3>Shellac</h3>
+        <p>Langhoudende gellak met een spiegelende glans, tot wel twee weken mooi. Dé keuze voor moeiteloos verzorgde nagels.</p>
+        <div class="c-foot">
+          <span class="c-price">€22,50<small>Teennagels — actie deze maand</small></span>
+          <span class="c-tag">Tot 14 dagen</span>
+        </div>
+      </article>
+
+      <article class="card reveal d2">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l-1 6 4 1-7 11 1-7-4-1 7-11z"/></svg></span>
+        <h3>Gellak &amp; Gel</h3>
+        <p>Stevige, natuurlijk ogende verlenging of versteviging. Perfect voor wie houdbaarheid en een verzorgde lengte wenst.</p>
+        <div class="c-foot">
+          <span class="c-price">Vanaf €35,00<small>Verstevigen &amp; verlengen</small></span>
+          <span class="c-tag">Sterk &amp; mooi</span>
+        </div>
+      </article>
+
+      <article class="card reveal d3">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.2L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.8z"/></svg></span>
+        <h3>Nail Art</h3>
+        <p>Van een subtiel detail tot een volledig handgeschilderd ontwerp. Samen bepalen we een look die helemaal bij u past.</p>
+        <div class="c-foot">
+          <span class="c-price">Op maat<small>In overleg samengesteld</small></span>
+          <span class="c-tag">Handwerk</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="usp-row reveal">
+      <div class="usp">
+        <span class="u-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <div><h4>7 dagen garantie</h4><p>Niet helemaal naar wens? Binnen 7 dagen werk ik het kosteloos bij. Zo hoort het.</p></div>
+      </div>
+      <div class="usp">
+        <span class="u-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span>
+        <div><h4>CND-gecertificeerd</h4><p>Werkend met originele CND-producten en -techniek. Master-niveau, gegarandeerd.</p></div>
+      </div>
+      <div class="usp">
+        <span class="u-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+        <div><h4>Persoonlijke aandacht</h4><p>Geen lopende band, maar de tijd en rust voor u en uw nagels. Eén op één.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" aria-label="Voorbeelden van het werk">
+  <div class="wrap">
+    <div class="gallery-track">
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=900&q=80"
+             alt="Natuurlijke, zacht gelakte nagels na een verzorgende manicure" loading="lazy" width="900" height="900">
+        <figcaption>Manicure</figcaption>
+      </figure>
+      <figure class="reveal d1">
+        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80"
+             alt="Rode amandelvormige nagels met handgeschilderde nail art" loading="lazy" width="900" height="900">
+        <figcaption>Nail art</figcaption>
+      </figure>
+      <figure class="reveal d2">
+        <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=900&q=80"
+             alt="Pastelkleurige nagels met grijs, wit en glittertinten" loading="lazy" width="900" height="900">
+        <figcaption>Shellac &amp; gel</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVER JOYCE ============ -->
+<section class="over sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-portrait reveal" role="img" aria-label="Joyce aan het werk in haar nagelstudio in Boekelo">
+      <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1000&q=80"
+           alt="Master Nail Technician aan het werk: een nagelbehandeling met precisie en aandacht" loading="lazy" width="1000" height="1250">
+      <span class="pf" aria-hidden="true"></span>
+      <span class="tag">Sinds 1996</span>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over Joyce</span>
+      <h2 class="display reveal d1">25 jaar <span class="gold">vakmanschap.</span></h2>
+      <p class="reveal d2">
+        Mijn naam is <strong>Joyce</strong> en sinds 1996 ben ik <strong>CND-gecertificeerd Master Nail Technician</strong>. In al die jaren is mijn passie nooit veranderd: handen en voeten verzorgen met de aandacht, rust en precisie die ze verdienen.
+      </p>
+      <p class="reveal d2">
+        Vanuit mijn studio in <strong>Boekelo, gemeente Enschede</strong>, werk ik één op één — geen haast, geen lopende band. Ik neem de tijd voor uw nagels en sta achter mijn werk: daarom geef ik <strong>7 dagen garantie</strong> op elke behandeling.
+      </p>
+
+      <div class="over-stats reveal d3">
+        <div class="st"><span class="n">25+</span><span class="l">Jaar ervaring</span></div>
+        <div class="st"><span class="n">1996</span><span class="l">CND-gecertificeerd</span></div>
+        <div class="st"><span class="n">7</span><span class="l">Dagen garantie</span></div>
+      </div>
+
+      <div class="signoff reveal d3">
+        <span class="sig">Joyce<small>Master Nail Technician</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Maak een afspraak</span>
+      <h2 class="display">Tot ziens in <span class="gold">de studio.</span></h2>
+      <p>Een afspraak maakt u het makkelijkst telefonisch — dan bespreken we meteen wat u wenst en wanneer het u uitkomt.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>Bel <span class="gold">Joyce</span></h3>
+        <p class="lead">Persoonlijk contact, geen wachtrij. Bel gerust voor een afspraak, een vraag over een behandeling of de actie van de maand.</p>
+
+        <div class="crow">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><div class="k">Telefoon</div><div class="v"><a href="tel:0614558087">06-14558087</a><small>Bel of WhatsApp voor een afspraak</small></div></div>
+        </div>
+        <div class="crow">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="k">Locatie</div><div class="v">Boekelo<small>Gemeente Enschede</small></div></div>
+        </div>
+        <div class="crow">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></span>
+          <div><div class="k">Kwaliteit</div><div class="v">CND Master Nail Technician<small>Gecertificeerd sinds 1996 · 7 dagen garantie</small></div></div>
+        </div>
+
+        <a class="btn btn--gold phone-cta" href="tel:0614558087">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel nu 06-14558087
+        </a>
+
+        <div class="socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Volg Joyce Nagelstudio op Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Bekijk Joyce Nagelstudio op Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <aside class="contact-aside">
+        <div class="panel reveal d1" aria-label="Openingstijden">
+          <span class="now-pill" id="nowPill"><span class="dot"></span><span id="nowText">Op afspraak</span></span>
+          <h3>Openings<span class="gold">tijden</span></h3>
+          <ul class="hours" id="hoursList">
+            <li data-day="1"><span class="day">Maandag</span><span class="time">Op afspraak</span></li>
+            <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 17:00</span></li>
+            <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 17:00</span></li>
+            <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 17:00</span></li>
+            <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 17:00</span></li>
+            <li data-day="6"><span class="day">Zaterdag</span><span class="time">Op afspraak</span></li>
+            <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+          </ul>
+          <p class="hours-note">Werkdagen uitsluitend op afspraak. Bel gerust om een moment te plannen dat u uitkomt.</p>
+        </div>
+
+        <div class="panel reveal d2" aria-label="Locatie">
+          <h3>In <span class="gold">Boekelo</span></h3>
+          <div class="map-standin" role="img" aria-label="Indicatieve locatie van de studio in Boekelo, gemeente Enschede">
+            <span class="road r1"></span><span class="road r2"></span>
+            <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+            <span class="lbl">Boekelo · Enschede</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="wrap finalcta-inner">
+    <h2 class="display reveal">Klaar voor <span class="gold">verzorgde</span> nagels?</h2>
+    <p class="reveal d1">25 jaar vakmanschap, persoonlijke aandacht en 7 dagen garantie. Bel Joyce en plan uw afspraak in Boekelo.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn" href="tel:0614558087">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 06-14558087
+      </a>
+      <a class="btn btn--ghost" href="#diensten">Bekijk behandelingen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Joyce <span>Nagelstudio</span></div>
+        <p>CND-gecertificeerd Master Nail Technician sinds 1996. Manicure, Shellac, gel en nail art met persoonlijke aandacht en 7 dagen garantie — in Boekelo, gemeente Enschede.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#diensten">Behandelingen</a>
+        <a href="#over">Over Joyce</a>
+        <a href="#contact">Contact &amp; openingstijden</a>
+        <a href="tel:0614558087">Bel voor een afspraak</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Boekelo<br>Gemeente Enschede</p>
+        <p>Tel. <a href="tel:0614558087">06-14558087</a></p>
+        <p style="margin-top:.6em">CND Master Nail Technician<br>Sinds 1996 · 7 dagen garantie</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Joyce Nagelstudio — Boekelo, Enschede</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <div class="sc-meta">
+    <div class="t">Joyce Nagelstudio</div>
+    <div class="s">CND Master · 7 dagen garantie</div>
+  </div>
+  <a class="btn btn--gold" href="tel:0614558087" aria-label="Bel 06-14558087">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+    Bel
+  </a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  /* Mark JS active so reveal animations only apply when JS can un-hide them */
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!overlay.classList.contains('open')); });
+  overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false); });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 12); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Opening hours: highlight today + open/closed status ---- */
+  var openHours = {1:'afspraak',2:[9,17],3:[9,17],4:[9,17],5:[9,17],6:'afspraak',0:null};
+  var dayNames = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  try{
+    var now = new Date();
+    var d = now.getDay();
+    var h = now.getHours() + now.getMinutes()/60;
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+
+    var rng = openHours[d];
+    var pill = document.getElementById('nowPill');
+    var txt = document.getElementById('nowText');
+    if(Array.isArray(rng) && h >= rng[0] && h < rng[1]){
+      pill.classList.add('open');
+      txt.textContent = 'Nu open · tot ' + rng[1] + ':00';
+    } else if(rng === 'afspraak'){
+      txt.textContent = 'Vandaag op afspraak';
+    } else {
+      var msg = 'Nu gesloten';
+      if(Array.isArray(rng) && h < rng[0]){ msg = 'Vandaag open vanaf ' + rng[0] + ':00'; }
+      else {
+        for(var i=1;i<=7;i++){
+          var nd = (d+i)%7, nr = openHours[nd];
+          if(nr){ msg = Array.isArray(nr) ? ('Weer open ' + dayNames[nd] + ' ' + nr[0] + ':00') : ('Weer geopend op afspraak ' + dayNames[nd]); break; }
+        }
+      }
+      txt.textContent = msg;
+    }
+  }catch(e){ /* fail silent — static hours still shown */ }
+})();
+</script>
+</body>
+</html>

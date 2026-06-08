@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedicure Enschede — Medisch Pedicure | Complete Voetverzorging</title>
+<meta name="description" content="Pedicure Enschede: medisch pedicure voor complete voetverzorging in een prettige, rustige omgeving. Eelt, likdoorns, nagels en de diabetische voet — op afspraak bij Jeannette aan de Johan van Reesstraat. Bel 06-17004821.">
+<meta name="theme-color" content="#1f5e57">
+<meta property="og:title" content="Pedicure Enschede — Medisch Pedicure">
+<meta property="og:description" content="Complete voetverzorging in een prettige omgeving. Medisch pedicure bij Jeannette aan de Johan van Reesstraat, Enschede. Op afspraak — bel 06-17004821.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<!-- Custom inline SVG favicon: soft footprint mark on calm green -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5e57'/%3E%3Cpath d='M32 16c5.5 0 9 4.6 9 11 0 5.4-2.4 9.3-2.4 14.2 0 3.6-2.6 6.3-6.6 6.3s-6.6-2.7-6.6-6.3c0-4.9-2.4-8.8-2.4-14.2 0-6.4 3.5-11 9-11z' fill='%23eaf4f1'/%3E%3Ccircle cx='20.5' cy='25' r='3.1' fill='%23eaf4f1'/%3E%3Ccircle cx='43.5' cy='25' r='3.1' fill='%23eaf4f1'/%3E%3Ccircle cx='22' cy='34' r='2.6' fill='%23eaf4f1'/%3E%3Ccircle cx='42' cy='34' r='2.6' fill='%23eaf4f1'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#1f5e57;       /* deep medical-warm green */
+    --teal-deep:#164842;
+    --teal-soft:#2f7a70;
+    --sage:#6fa79c;
+    --mist:#eaf4f1;       /* very soft mint background */
+    --mist-2:#dcebe6;
+    --cream:#fbfaf6;      /* warm paper */
+    --ink:#22302d;        /* near-black warm green ink */
+    --ink-soft:#4a5a56;
+    --muted:#6e7c78;
+    --gold:#c79a52;       /* warm reassuring accent */
+    --gold-deep:#a87f38;
+    --line:#dce6e2;
+    --line-warm:#e7e0d4;
+    --white:#ffffff;
+    --maxw:1180px;
+    --pad:clamp(20px,5vw,60px);
+    --display:'Fraunces',Georgia,'Times New Roman',serif;
+    --body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    font-size:clamp(15px,1.04vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--teal);color:var(--mist)}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:500;
+    line-height:1.04;
+    letter-spacing:-.01em;
+    font-optical-sizing:auto;
+  }
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:clamp(11px,1vw,12.5px);
+    color:var(--teal-soft);
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(20px,3.4vw,34px);
+    height:2px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--teal);--fg:var(--cream);
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--body);font-weight:600;
+    letter-spacing:.01em;
+    font-size:clamp(14px,1.05vw,15.5px);
+    padding:1em 1.6em;
+    border:2px solid var(--teal);
+    border-radius:999px;
+    cursor:pointer;
+    transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease,border-color .2s ease;
+    line-height:1;
+  }
+  .btn svg{width:1.1em;height:1.1em;flex:none}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(31,94,87,.22)}
+  .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .btn--ghost{
+    --bg:transparent;--fg:var(--teal);
+    border-color:var(--sage);
+  }
+  .btn--ghost:hover{--bg:var(--mist);--fg:var(--teal-deep);border-color:var(--teal-soft);box-shadow:0 10px 22px rgba(31,94,87,.12)}
+  .btn--gold{--bg:var(--gold);--fg:#2a2113;border-color:var(--gold)}
+  .btn--gold:hover{box-shadow:0 12px 26px rgba(199,154,82,.3)}
+  .btn--block{width:100%;justify-content:center}
+
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(251,250,246,.86);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid var(--line);
+    transition:border-color .3s ease,box-shadow .3s ease;
+  }
+  header.scrolled{box-shadow:0 6px 24px rgba(31,94,87,.07);border-bottom-color:var(--mist-2)}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    height:clamp(62px,8vw,78px);
+  }
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:42px;height:42px;flex:none;
+    border-radius:50%;
+    background:var(--teal);
+    display:grid;place-items:center;
+    color:var(--mist);
+  }
+  .brand .mark svg{width:24px;height:24px}
+  .brand .name{
+    font-family:var(--display);
+    font-size:clamp(18px,2.2vw,22px);line-height:1;letter-spacing:-.01em;font-weight:600;
+    color:var(--ink);
+  }
+  .brand .name span{color:var(--teal-soft)}
+  .brand .name small{display:block;font-family:var(--body);font-weight:600;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,32px)}
+  .nav-links a.lnk{
+    font-weight:500;font-size:14.5px;letter-spacing:.01em;
+    color:var(--ink-soft);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .25s ease;
+  }
+  .nav-links a.lnk:hover{color:var(--teal-deep)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:46px;height:46px;
+    border:1px solid var(--line);background:var(--white);border-radius:12px;
+    cursor:pointer;align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--teal);border-radius:2px;transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;
+    background:var(--mist);
+    transform:translateX(100%);
+    transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;
+    padding:var(--pad);
+    visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(30px,8vw,46px);line-height:1.1;letter-spacing:-.01em;
+    color:var(--ink);padding:.16em 0;
+    display:flex;align-items:baseline;gap:.5em;
+    border-bottom:1px solid var(--line);
+  }
+  .overlay a .idx{font-family:var(--body);font-size:13px;font-weight:700;color:var(--gold-deep);letter-spacing:.06em}
+  .overlay a:last-of-type{border-bottom:none}
+  .overlay a:active{color:var(--teal)}
+  .overlay .ov-foot{margin-top:clamp(24px,5vw,40px);color:var(--ink-soft);font-size:14.5px;line-height:1.85}
+  .overlay .ov-foot strong{color:var(--ink);font-weight:700}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--mist);border-bottom:1px solid var(--line)}
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(80% 70% at 88% 12%, rgba(111,167,156,.28), transparent 60%),
+      radial-gradient(70% 60% at 4% 96%, rgba(199,154,82,.10), transparent 60%),
+      linear-gradient(180deg,#eef6f3 0%, var(--mist) 55%, #e6f1ec 100%);
+  }
+  /* soft contour-line texture, calm/clinical */
+  .hero-bg::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(circle at 82% 22%, transparent 0 60px, rgba(31,94,87,.05) 60px 61px, transparent 61px 120px, rgba(31,94,87,.045) 120px 121px, transparent 121px);
+  }
+  .hero-inner{position:relative;z-index:2;padding-top:clamp(48px,7vw,92px);padding-bottom:clamp(44px,6vw,80px)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:center}
+  .hero .eyebrow{margin-bottom:clamp(18px,2.6vw,26px)}
+  .hero h1{
+    font-size:clamp(40px,6.4vw,76px);
+    margin:0;color:var(--ink);font-weight:500;
+  }
+  .hero h1 .accent{color:var(--teal);font-style:italic}
+  .hero-lede{margin-top:clamp(20px,2.6vw,28px);max-width:50ch;color:var(--ink-soft);font-size:clamp(16px,1.35vw,19px)}
+  .hero-lede strong{color:var(--ink);font-weight:600}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(26px,3.4vw,36px)}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,28px);margin-top:clamp(26px,3.4vw,34px)}
+  .hero-trust .ti{display:flex;align-items:center;gap:.55em;font-size:14px;font-weight:500;color:var(--ink-soft)}
+  .hero-trust .ti svg{width:18px;height:18px;flex:none;stroke:var(--teal-soft)}
+
+  /* hero visual card (typographic / CSS, no external image) */
+  .hero-card{
+    position:relative;border-radius:26px;overflow:hidden;
+    background:linear-gradient(165deg,#ffffff 0%, #f3f9f6 55%, #e9f3ee 100%);
+    border:1px solid var(--line);
+    box-shadow:0 30px 60px -28px rgba(22,72,66,.4);
+    padding:clamp(26px,3.4vw,40px);
+    aspect-ratio:4/4.4;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .hero-card::after{
+    content:"";position:absolute;right:-60px;bottom:-60px;width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(111,167,156,.3),transparent 70%);
+  }
+  .hero-card .hc-mark{
+    width:clamp(72px,9vw,96px);height:clamp(72px,9vw,96px);border-radius:50%;
+    background:var(--teal);color:var(--mist);display:grid;place-items:center;position:relative;z-index:2;
+  }
+  .hero-card .hc-mark svg{width:54%;height:54%}
+  .hero-card .hc-quote{position:relative;z-index:2;font-family:var(--display);font-size:clamp(20px,2.4vw,28px);line-height:1.3;color:var(--teal-deep);font-weight:500}
+  .hero-card .hc-meta{position:relative;z-index:2;display:flex;align-items:center;gap:.7em;color:var(--ink-soft);font-size:14px}
+  .hero-card .hc-meta .dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  .hero-card .hc-meta strong{color:var(--ink);font-weight:600}
+
+  /* ---------- INFO BAND ---------- */
+  .band{background:var(--teal);color:var(--mist)}
+  .band-inner{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat{
+    padding:clamp(26px,3.2vw,40px) clamp(18px,2.4vw,32px);
+    border-right:1px solid rgba(234,244,241,.16);
+    display:flex;flex-direction:column;gap:.35rem;
+  }
+  .stat:last-child{border-right:none}
+  .stat .big{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.6vw,42px);line-height:1;display:flex;align-items:center;gap:.4em}
+  .stat .big svg{width:clamp(24px,3vw,32px);height:clamp(24px,3vw,32px);stroke:var(--gold);flex:none}
+  .stat .lbl{font-weight:600;font-size:clamp(13px,1.15vw,15px);color:#fff}
+  .stat .sub{font-size:clamp(12.5px,1.1vw,14px);color:rgba(234,244,241,.82);line-height:1.5}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(58px,8vw,112px);padding-bottom:clamp(58px,8vw,112px)}
+  .sec-head{margin-bottom:clamp(34px,4.6vw,58px);max-width:760px}
+  .sec-head h2{font-size:clamp(32px,5.4vw,60px);margin:.32em 0 0;color:var(--ink);font-weight:500}
+  .sec-head h2 .accent{color:var(--teal);font-style:italic}
+  .sec-head p{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(15px,1.3vw,18px);max-width:58ch}
+
+  /* ---------- DIENSTEN ---------- */
+  .services{background:var(--white);border-top:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,28px)}
+  .svc{
+    background:var(--cream);border:1px solid var(--line);border-radius:20px;
+    padding:clamp(24px,2.8vw,34px);
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    display:flex;flex-direction:column;
+  }
+  .svc:hover{transform:translateY(-5px);box-shadow:0 20px 40px -24px rgba(22,72,66,.4);border-color:var(--mist-2)}
+  .svc .ico{
+    width:clamp(50px,5.2vw,58px);height:clamp(50px,5.2vw,58px);border-radius:14px;
+    background:var(--mist);color:var(--teal);display:grid;place-items:center;margin-bottom:1.2rem;
+  }
+  .svc .ico svg{width:50%;height:50%;stroke:var(--teal)}
+  .svc h3{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.9vw,24px);line-height:1.2;color:var(--ink)}
+  .svc p{margin-top:.7rem;color:var(--ink-soft);font-size:clamp(14px,1.15vw,15.5px)}
+  .svc-note{margin-top:clamp(26px,3.2vw,38px);color:var(--muted);font-size:14px;display:flex;gap:.7em;align-items:flex-start;max-width:70ch}
+  .svc-note svg{width:19px;height:19px;flex:none;stroke:var(--gold-deep);margin-top:3px}
+
+  /* ---------- OVER JEANNETTE ---------- */
+  .over{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .over-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,5vw,72px);align-items:center}
+  .over-portrait{
+    position:relative;aspect-ratio:4/5;width:100%;border-radius:24px;overflow:hidden;
+    border:1px solid var(--line);
+    background:linear-gradient(160deg,#ffffff 0%, #eef6f3 55%, #def0e9 100%);
+    box-shadow:0 30px 60px -30px rgba(22,72,66,.45);
+    display:grid;place-items:center;
+  }
+  .over-portrait .pmark{
+    width:clamp(120px,20vw,200px);height:clamp(120px,20vw,200px);border-radius:50%;
+    background:var(--white);border:2px solid var(--line);display:grid;place-items:center;color:var(--teal);
+    box-shadow:0 16px 40px -20px rgba(22,72,66,.5);
+  }
+  .over-portrait .pmark svg{width:52%;height:52%}
+  .over-portrait .tag{
+    position:absolute;left:18px;bottom:18px;background:var(--white);color:var(--teal-deep);
+    border:1px solid var(--line);border-radius:12px;
+    font-weight:600;font-size:clamp(13px,1.3vw,15px);
+    padding:.6em .95em;display:flex;align-items:center;gap:.55em;
+    box-shadow:0 10px 24px -14px rgba(22,72,66,.4);
+  }
+  .over-portrait .tag svg{width:18px;height:18px;stroke:var(--gold-deep)}
+  .over-body .eyebrow{margin-bottom:1.1rem}
+  .over-body h2{font-size:clamp(30px,4.8vw,58px);color:var(--ink);font-weight:500}
+  .over-body h2 .accent{color:var(--teal);font-style:italic}
+  .over-body p{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(15px,1.25vw,17.5px)}
+  .over-body p strong{color:var(--ink);font-weight:600}
+  .pillz{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,30px)}
+  .pillz span{
+    background:var(--white);border:1px solid var(--line);color:var(--ink-soft);border-radius:999px;
+    font-weight:500;font-size:13.5px;
+    padding:.55em 1em;display:inline-flex;align-items:center;gap:.5em;
+  }
+  .pillz span svg{width:16px;height:16px;stroke:var(--teal-soft)}
+  .signoff{
+    margin-top:clamp(24px,3vw,32px);display:flex;align-items:center;gap:1rem;
+    border-top:1px solid var(--line);padding-top:clamp(20px,2.6vw,26px);
+  }
+  .signoff .who{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.2vw,24px);line-height:1.1;color:var(--ink)}
+  .signoff .who small{display:block;font-family:var(--body);font-weight:600;font-size:12.5px;letter-spacing:.04em;color:var(--teal-soft);margin-top:.4em}
+
+  /* ---------- HOURS + CONTACT ---------- */
+  .info{background:var(--white);border-top:1px solid var(--line)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3.6vw,48px);align-items:start}
+  .panel{
+    border:1px solid var(--line);background:var(--cream);border-radius:22px;
+    padding:clamp(26px,3.2vw,40px);
+  }
+  .panel h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.8vw,32px);line-height:1.1;margin-bottom:1.2rem;color:var(--ink)}
+  .panel h3 .accent{color:var(--teal)}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.8em 0;border-bottom:1px solid var(--line);
+    font-size:clamp(14.5px,1.25vw,16.5px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:600;color:var(--ink)}
+  .hours .time{font-family:var(--display);font-weight:500;font-size:clamp(15px,1.4vw,18px);color:var(--teal-deep)}
+  .hours li.today{
+    color:var(--mist);background:var(--teal);border-radius:12px;
+    margin:0 calc(-1*clamp(14px,1.6vw,20px));padding-left:clamp(14px,1.6vw,20px);padding-right:clamp(14px,1.6vw,20px);
+    border-bottom-color:transparent;
+  }
+  .hours li.today .day,.hours li.today .time{color:var(--mist)}
+  .hours li.closed .time{color:var(--muted)}
+  .hours-note{margin-top:1rem;font-size:12.5px;color:var(--muted);display:flex;gap:.55em;align-items:flex-start}
+  .hours-note svg{width:15px;height:15px;flex:none;stroke:var(--muted);margin-top:2px}
+  .now-pill{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.3rem;
+    font-weight:600;font-size:12.5px;letter-spacing:.02em;
+    padding:.5em .85em;border:1px solid var(--line);border-radius:999px;background:var(--white);color:var(--ink-soft);
+  }
+  .now-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+  .now-pill.open{border-color:var(--teal-soft);color:var(--teal-deep)}
+  .now-pill.open .dot{background:var(--teal-soft);box-shadow:0 0 0 0 rgba(47,122,112,.5);animation:pulse 2s infinite}
+  .now-pill.closed{border-color:var(--line-warm);color:var(--gold-deep)}
+  .now-pill.closed .dot{background:var(--gold)}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(47,122,112,0)}100%{box-shadow:0 0 0 0 rgba(47,122,112,0)}}
+
+  .contact-list{display:flex;flex-direction:column;gap:0}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1em 0;border-bottom:1px solid var(--line)}
+  .crow:last-child{border-bottom:none}
+  .crow .ico{
+    width:clamp(42px,5vw,50px);height:clamp(42px,5vw,50px);flex:none;border-radius:12px;
+    background:var(--mist);display:grid;place-items:center;color:var(--teal);
+  }
+  .crow .ico svg{width:20px;height:20px;stroke:var(--teal)}
+  .crow .k{font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--muted)}
+  .crow .v{font-size:clamp(15px,1.35vw,18px);color:var(--ink);font-weight:600;line-height:1.45;margin-top:3px}
+  .crow .v a:hover{color:var(--teal)}
+  .crow .v small{display:block;color:var(--muted);font-weight:500;font-size:13px;margin-top:2px}
+  .panel .btn{margin-top:1.4rem}
+
+  /* map stand-in (CSS, indicatief) */
+  .map-standin{
+    margin-top:1.4rem;height:clamp(150px,18vw,180px);border:1px solid var(--line);border-radius:14px;position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(31,94,87,.05),transparent),
+      repeating-linear-gradient(0deg,#e4efeb 0 1px,transparent 1px 40px),
+      repeating-linear-gradient(90deg,#e4efeb 0 1px,transparent 1px 40px),
+      #f2f8f5;
+  }
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--teal)}
+  .map-standin .pin svg{width:34px;height:34px;filter:drop-shadow(0 6px 10px rgba(22,72,66,.3))}
+  .map-standin .road{position:absolute;background:#cfe1da}
+  .map-standin .r1{left:0;right:0;top:56%;height:9px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:36%;width:7px}
+  .map-standin .lbl{position:absolute;left:12px;bottom:10px;font-weight:600;font-size:11.5px;letter-spacing:.04em;color:var(--ink-soft);background:rgba(251,250,246,.85);padding:.3em .6em;border-radius:8px}
+
+  /* ---------- AFSPRAAK CTA ---------- */
+  .cta{position:relative;overflow:hidden;background:var(--teal);color:var(--mist);text-align:center}
+  .cta::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(70% 80% at 85% 10%,rgba(111,167,156,.4),transparent 60%),radial-gradient(60% 70% at 8% 100%,rgba(199,154,82,.18),transparent 60%);
+  }
+  .cta-inner{position:relative;z-index:2;padding-top:clamp(58px,8vw,120px);padding-bottom:clamp(64px,9vw,128px)}
+  .cta h2{font-size:clamp(34px,6vw,72px);font-weight:500}
+  .cta h2 .accent{font-style:italic;color:var(--mist)}
+  .cta p{margin:1.2rem auto 0;color:rgba(234,244,241,.9);max-width:50ch;font-size:clamp(16px,1.4vw,19px)}
+  .cta .phone-big{
+    display:inline-flex;align-items:center;gap:.5em;margin:clamp(24px,3vw,34px) 0 0;
+    font-family:var(--display);font-weight:600;font-size:clamp(26px,4vw,44px);color:#fff;
+  }
+  .cta .phone-big svg{width:.85em;height:.85em;stroke:var(--gold);flex:none}
+  .cta .hero-actions{justify-content:center;margin-top:clamp(24px,3vw,32px)}
+  .cta .sub{margin-top:clamp(20px,2.6vw,26px);font-size:14px;color:rgba(234,244,241,.78)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#cdd8d4;padding-top:clamp(46px,6vw,76px);padding-bottom:104px}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,52px);padding-bottom:clamp(34px,4.6vw,52px);border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand .name{font-family:var(--display);font-weight:600;font-size:clamp(24px,3.2vw,34px);line-height:1.05;color:#fff}
+  .foot-brand .name span{color:var(--sage)}
+  .foot-brand p{margin-top:.9rem;color:#9fb0ab;max-width:40ch;font-size:14px}
+  .foot-col h4{font-family:var(--body);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--sage);margin-bottom:1rem}
+  .foot-col a,.foot-col p{display:block;color:#bccac6;font-size:14px;padding:.28em 0;line-height:1.5}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding-top:clamp(22px,3vw,30px);color:#8fa19c;font-size:13px}
+  .foot-bottom a{color:#fff;font-weight:600}
+  .foot-bottom a:hover{color:var(--sage)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(251,250,246,.96);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(22,72,66,.08);
+    align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.05;color:var(--ink)}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--teal-soft);font-weight:600;font-size:12.5px;margin-top:2px}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;stroke:var(--teal-soft)}
+  .sticky-cta .btn{flex:none;padding:.85em 1.2em}
+
+  /* ---------- REVEAL (JS-gated: only hides when .js present) ---------- */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1024px){
+    .hero-grid{grid-template-columns:1fr;gap:clamp(30px,5vw,44px)}
+    .hero-card{max-width:460px;aspect-ratio:4/3.4}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .over-grid{grid-template-columns:1fr;gap:clamp(28px,5vw,40px)}
+    .over-portrait{max-width:440px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .info-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:92px}
+    .band-inner{grid-template-columns:1fr}
+    .stat{border-right:none;border-bottom:1px solid rgba(234,244,241,.16)}
+    .stat:last-child{border-bottom:none}
+    .svc-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:420px){
+    .hero h1{font-size:clamp(34px,9vw,44px)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Pedicure Enschede home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 0 4.7 2.5 4.7 5.8 0 2.9-1.3 5-1.3 7.6 0 1.9-1.4 3.3-3.4 3.3s-3.4-1.4-3.4-3.3c0-2.6-1.3-4.7-1.3-7.6C7.3 5.5 9 3 12 3Z"/><circle cx="6.4" cy="8.4" r="1.4"/><circle cx="17.6" cy="8.4" r="1.4"/></svg>
+      </span>
+      <span class="name">Pedicure <span>Enschede</span><small>Medisch · Voetverzorging</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Behandelingen</a>
+      <a class="lnk" href="#over">Over Jeannette</a>
+      <a class="lnk" href="#bezoek">Openingstijden</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn nav-cta" href="tel:0617004821">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        06-17004821
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#diensten"><span class="idx">01</span> Behandelingen</a>
+  <a href="#over"><span class="idx">02</span> Over Jeannette</a>
+  <a href="#bezoek"><span class="idx">03</span> Openingstijden</a>
+  <a href="#contact"><span class="idx">04</span> Contact</a>
+  <div class="ov-foot">
+    <strong>Johan van Reesstraat, Enschede</strong><br>
+    Tel. 06-17004821 · op afspraak<br>
+    Ma t/m do geopend · vr t/m zo gesloten
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow reveal">Medisch pedicure · Enschede</span>
+        <h1 class="display reveal d1">Gezonde voeten in een <span class="accent">prettige</span> omgeving.</h1>
+        <p class="hero-lede reveal d2">
+          Bij <strong>Pedicure Enschede</strong> staat complete voetverzorging centraal — vakkundig, rustig en op afspraak. Van eelt, likdoorns en nagels tot de zorg voor de gevoelige of diabetische voet. U loopt straks weer comfortabel de deur uit.
+        </p>
+        <div class="hero-actions reveal d3">
+          <a class="btn" href="tel:0617004821">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+            Bel voor een afspraak
+          </a>
+          <a class="btn btn--ghost" href="#diensten">Bekijk behandelingen</a>
+        </div>
+        <div class="hero-trust reveal d3">
+          <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Medisch pedicure</span>
+          <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5.2 5.2 0 0 1 9-3 5.2 5.2 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>Persoonlijke aandacht</span>
+          <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Altijd op afspraak</span>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal d2" aria-label="In het kort">
+        <span class="hc-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 0 4.7 2.5 4.7 5.8 0 2.9-1.3 5-1.3 7.6 0 1.9-1.4 3.3-3.4 3.3s-3.4-1.4-3.4-3.3c0-2.6-1.3-4.7-1.3-7.6C7.3 5.5 9 3 12 3Z"/><circle cx="6.4" cy="8.4" r="1.4"/><circle cx="17.6" cy="8.4" r="1.4"/></svg>
+        </span>
+        <p class="hc-quote">"Rust, hygiëne en deskundige zorg voor uw voeten — zonder haast."</p>
+        <div class="hc-meta"><span class="dot" aria-hidden="true"></span><span><strong>Jeannette</strong> · medisch pedicure, Enschede</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFO BAND ============ -->
+<section class="band" aria-label="Praktijk in het kort">
+  <div class="band-inner">
+    <div class="stat">
+      <span class="big"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Enschede</span>
+      <span class="lbl">Johan van Reesstraat</span>
+      <span class="sub">Goed bereikbaar, in een rustige omgeving.</span>
+    </div>
+    <div class="stat">
+      <span class="big"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Ma – Do</span>
+      <span class="lbl">Geopend op afspraak</span>
+      <span class="sub">Vrijdag t/m zondag gesloten.</span>
+    </div>
+    <div class="stat">
+      <span class="big"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Compleet</span>
+      <span class="lbl">Complete voetverzorging</span>
+      <span class="sub">Van eelt en nagels tot de diabetische voet.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Behandelingen</span>
+      <h2 class="display">Complete zorg voor <span class="accent">uw voeten.</span></h2>
+      <p>Elke behandeling begint met aandacht en een rustig onderzoek van uw voeten. Zo krijgt u precies de verzorging die past bij uw situatie.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5.2 5.2 0 0 1 9-3 5.2 5.2 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg></span>
+        <h3>Medische voetverzorging</h3>
+        <p>Een complete, vakkundige behandeling van uw voeten en nagels — afgestemd op uw huid, klachten en wensen.</p>
+      </article>
+
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+        <h3>Eelt &amp; likdoorns</h3>
+        <p>Het zorgvuldig verwijderen van eelt en likdoorns, zodat lopen weer comfortabel en pijnvrij voelt.</p>
+      </article>
+
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 0 4.7 2.5 4.7 5.8 0 2.9-1.3 5-1.3 7.6 0 1.9-1.4 3.3-3.4 3.3s-3.4-1.4-3.4-3.3c0-2.6-1.3-4.7-1.3-7.6C7.3 5.5 9 3 12 3Z"/></svg></span>
+        <h3>Nagelverzorging</h3>
+        <p>Knippen, vijlen en verzorgen van de teennagels, met aandacht voor ingegroeide of verdikte nagels.</p>
+      </article>
+
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0"/><path d="M12 12l3-3"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+        <h3>Diabetische voet</h3>
+        <p>Extra zorgvuldige verzorging voor de gevoelige of diabetische voet, met oog voor risico's en preventie.</p>
+      </article>
+
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5.2 5.2 0 0 1 9-3 5.2 5.2 0 0 1 9 3c-2 4.5-9 9-9 9z"/><path d="M9.5 11.5l1.7 1.7 3.3-3.3"/></svg></span>
+        <h3>Gevoelige &amp; droge huid</h3>
+        <p>Verzorging van een droge, schrale of gevoelige huid rond de voeten, voor blijvend comfort.</p>
+      </article>
+
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span>
+        <h3>Onderhoud &amp; advies</h3>
+        <p>Periodiek onderhoud en persoonlijk advies om uw voeten thuis gezond te houden tussen behandelingen door.</p>
+      </article>
+    </div>
+
+    <p class="svc-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Niet zeker welke behandeling u nodig heeft? Bel gerust — Jeannette denkt met u mee en kijkt samen met u wat het beste past.
+    </p>
+  </div>
+</section>
+
+<!-- ============ OVER JEANNETTE ============ -->
+<section class="over sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-portrait reveal" role="img" aria-label="Sfeerbeeld van de pedicurepraktijk van Jeannette in Enschede">
+      <span class="pmark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 0 4.7 2.5 4.7 5.8 0 2.9-1.3 5-1.3 7.6 0 1.9-1.4 3.3-3.4 3.3s-3.4-1.4-3.4-3.3c0-2.6-1.3-4.7-1.3-7.6C7.3 5.5 9 3 12 3Z"/><circle cx="6.4" cy="8.4" r="1.4"/><circle cx="17.6" cy="8.4" r="1.4"/><circle cx="7.4" cy="12.6" r="1.1"/><circle cx="16.6" cy="12.6" r="1.1"/></svg>
+      </span>
+      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5 5.5.6-4 3.8 1 5.4L12 19.7 7.1 16.8l1-5.4-4-3.8 5.5-.6z"/></svg>Persoonlijk &amp; vertrouwd</span>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over de praktijk</span>
+      <h2 class="display reveal d1">Welkom bij <span class="accent">Jeannette.</span></h2>
+      <p class="reveal d2">
+        Achter Pedicure Enschede staat <strong>Jeannette</strong>. Zij verzorgt uw voeten met de rust en deskundigheid die een medisch pedicure vraagt. Geen lopende band, maar tijd en aandacht voor u en uw voeten.
+      </p>
+      <p class="reveal d2">
+        De praktijk aan de <strong>Johan van Reesstraat</strong> in Enschede is bewust klein en prettig gehouden: een schone, rustige omgeving waar u zich op uw gemak voelt. Behandelingen vinden plaats <strong>op afspraak</strong>, zodat u alle tijd krijgt en nooit hoeft te wachten.
+      </p>
+
+      <div class="pillz reveal d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Prettige, rustige omgeving</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Hygiënisch werken</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tijd &amp; persoonlijke aandacht</span>
+      </div>
+
+      <div class="signoff reveal d3">
+        <span class="who">Jeannette<small>Medisch pedicure · Pedicure Enschede</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK: HOURS + CONTACT ============ -->
+<section class="info sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Openingstijden &amp; bezoek</span>
+      <h2 class="display">Plan uw <span class="accent">afspraak.</span></h2>
+      <p>De praktijk is geopend van maandag tot en met donderdag en werkt uitsluitend op afspraak. Bel even, dan plannen we samen een moment dat u uitkomt.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="now-pill" id="nowPill"><span class="dot"></span><span id="nowText">Op afspraak · ma t/m do</span></span>
+        <h3>Open<span class="accent">ingstijden</span></h3>
+        <ul class="hours" id="hoursList">
+          <li data-day="1"><span class="day">Maandag</span><span class="time">Op afspraak</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">Op afspraak</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">Op afspraak</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">Op afspraak</span></li>
+          <li data-day="5" class="closed"><span class="day">Vrijdag</span><span class="time">Gesloten</span></li>
+          <li data-day="6" class="closed"><span class="day">Zaterdag</span><span class="time">Gesloten</span></li>
+          <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+        <p class="hours-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Tijden zijn indicatief — behandelingen gaan altijd op afspraak. Bel voor de exacte beschikbaarheid op uw gewenste dag.
+        </p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" id="contact" aria-label="Contactgegevens">
+        <h3>Contact <span class="accent">&amp; route</span></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><div class="v"><a href="tel:0617004821">06-17004821</a><small>Bel voor het maken van een afspraak</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">Johan van Reesstraat<small>Enschede</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <div><div class="k">Geopend</div><div class="v">Maandag t/m donderdag<small>Vrijdag t/m zondag gesloten · op afspraak</small></div></div>
+          </div>
+        </div>
+
+        <a class="btn btn--block" href="tel:0617004821">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel 06-17004821
+        </a>
+
+        <div class="map-standin" role="img" aria-label="Indicatieve locatie aan de Johan van Reesstraat in Enschede">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Johan van Reesstraat · Enschede</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFSPRAAK CTA ============ -->
+<section class="cta" id="afspraak">
+  <div class="wrap cta-inner">
+    <h2 class="display reveal">Klaar voor <span class="accent">comfortabele</span> voeten?</h2>
+    <p class="reveal d1">Een afspraak maken is zo gedaan: bel even, dan kijken we samen wanneer het u uitkomt. Ma t/m do geopend, op afspraak.</p>
+    <a class="phone-big reveal d1" href="tel:0617004821" aria-label="Bel 06 17004821">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+      06-17004821
+    </a>
+    <div class="hero-actions reveal d2">
+      <a class="btn btn--gold" href="tel:0617004821">Bel voor een afspraak</a>
+      <a class="btn btn--ghost" style="--fg:var(--mist);border-color:rgba(234,244,241,.45)" href="#diensten">Bekijk behandelingen</a>
+    </div>
+    <p class="sub reveal d2">Pedicure Enschede · Johan van Reesstraat, Enschede · op afspraak</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Pedicure <span>Enschede</span></div>
+        <p>Medisch pedicure voor complete voetverzorging in een prettige, rustige omgeving. Op afspraak bij Jeannette aan de Johan van Reesstraat in Enschede.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#diensten">Behandelingen</a>
+        <a href="#over">Over Jeannette</a>
+        <a href="#bezoek">Openingstijden</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Johan van Reesstraat<br>Enschede</p>
+        <p><a href="tel:0617004821">Tel. 06-17004821</a></p>
+        <p>Ma t/m do · op afspraak</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pedicure Enschede — medisch pedicure, Enschede</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" aria-hidden="false">
+  <div class="sc-meta">
+    <div class="t">Maak een afspraak</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      Ma–do · op afspraak
+    </div>
+  </div>
+  <a class="btn" href="tel:0617004821" aria-label="Bel 06 17004821">Bel nu</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  /* Mark JS-on so reveal animations apply only when JS can un-hide them. */
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  if(burger && overlay){
+    burger.addEventListener('click', function(){
+      setMenu(!overlay.classList.contains('open'));
+    });
+    overlay.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ setMenu(false); });
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+    });
+  }
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Opening status: highlight today + open/closed (ma-do op afspraak) ---- */
+  var openDays = {1:true,2:true,3:true,4:true,5:false,6:false,0:false};
+  var dayNames = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+  try{
+    var now = new Date();
+    var d = now.getDay();
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+
+    var pill = document.getElementById('nowPill');
+    var txt = document.getElementById('nowText');
+    if(openDays[d]){
+      pill.classList.add('open');
+      txt.textContent = 'Vandaag geopend · op afspraak';
+    } else {
+      pill.classList.add('closed');
+      var next = '';
+      for(var i=1;i<=7;i++){
+        var nd = (d+i)%7;
+        if(openDays[nd]){ next = dayNames[nd]; break; }
+      }
+      txt.textContent = next ? ('Gesloten · weer open ' + next) : 'Gesloten';
+    }
+  }catch(e){ /* fail silent — static tijden blijven zichtbaar */ }
+})();
+</script>
+</body>
+</html>
