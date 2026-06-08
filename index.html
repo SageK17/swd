@@ -11,7 +11,7 @@
      ============================================================ -->
 
 <title>Sage Website Design — Studio voor moderne websites · Enschede</title>
-<meta name="description" content="Sage Website Design is een onafhankelijke webdesignstudio in Enschede. Snelle, opvallende websites voor lokale ondernemers. Gratis voorbeeld vooraf — je betaalt pas als je tevreden bent." />
+<meta name="description" content="Sage Website Design is een onafhankelijke webdesignstudio in Enschede. Snelle, opvallende websites voor lokale ondernemers. Gratis voorbeeld vooraf. Je betaalt pas als je tevreden bent." />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="apple-touch-icon" href="assets/swd-icon-180.png" />
@@ -135,7 +135,8 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:50px 24px}
 @media(max-width:720px){.stats .wrap{grid-template-columns:1fr 1fr;gap:36px 20px}}
-.stat .n{font-family:"Sora";font-weight:800;font-size:clamp(2.4rem,5vw,3.4rem);background:linear-gradient(120deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.stat .n{font-family:"Sora";font-weight:800;font-size:clamp(2.1rem,4.4vw,3rem);color:#fff;line-height:1}
+.stat .n .u{color:var(--accent)}
 .stat .l{color:var(--muted);font-weight:600;margin-top:.55rem;font-size:.95rem}
 
 /* marquee */
@@ -185,6 +186,11 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,12,.9)
 .svc .ic svg{width:27px;height:27px}
 .svc h3{font-size:1.32rem;margin-bottom:.5rem}
 .svc p{color:var(--muted);font-size:.97rem;position:relative}
+/* plain pillar variant: distinct from boxed service cards */
+.svc.plain{background:none;border:0;padding:6px 6px 6px 0}
+.svc.plain:hover{transform:none}
+.svc.plain::before{display:none}
+.svc.plain .ic{width:44px;height:44px;border-radius:12px;margin-bottom:1rem}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
@@ -275,11 +281,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
       <img src="assets/swd-logo.svg" alt="Sage Website Design" class="brand-logo" width="89" height="32" />
     </a>
     <nav class="navlinks">
-      <a href="#werk"><span class="i">01</span>Werk</a>
-      <a href="#diensten"><span class="i">02</span>Diensten</a>
-      <a href="#aanpak"><span class="i">03</span>Aanpak</a>
-      <a href="#tarieven"><span class="i">04</span>Tarieven</a>
-      <a href="#contact"><span class="i">05</span>Contact</a>
+      <a href="#werk">Werk</a>
+      <a href="#diensten">Diensten</a>
+      <a href="#aanpak">Aanpak</a>
+      <a href="#tarieven">Tarieven</a>
+      <a href="#contact">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:1rem">
       <a href="#contact" class="btn btn-primary magnetic">Gratis voorbeeld</a>
@@ -307,7 +313,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
       <span class="line"><span><span class="rot" id="rot">klanten</span></span></span>
       <span class="line"><span>opleveren.</span></span>
     </h1>
-    <p class="lead up d3">Sage Website Design ontwerpt snelle, opvallende websites voor lokale ondernemers — strak op mobiel, vindbaar in Google, en betaalbaar. <b>Je krijgt eerst een gratis voorbeeld. Pas tevreden? Dan gaan we live.</b></p>
+    <p class="lead up d3">Sage Website Design ontwerpt snelle, opvallende websites voor lokale ondernemers: strak op mobiel, vindbaar in Google, en betaalbaar. <b>Je krijgt eerst een gratis voorbeeld. Pas tevreden? Dan gaan we live.</b></p>
     <div class="hero-actions up d4">
       <a href="#contact" class="btn btn-primary btn-lg magnetic">Vraag je gratis voorbeeld aan
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -351,7 +357,6 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 <section class="section" id="werk">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Geselecteerd werk</span>
       <h2>Echt werk, in je browser.</h2>
       <p class="lead">Een greep uit projecten die we hebben ontworpen en gebouwd, van een internationaal B2B-merk tot lokale ondernemers.</p>
     </div>
@@ -365,12 +370,12 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
       <div class="work tilt reveal" data-cursor="In ontwikkeling">
         <div class="thumb"><div class="bar"><i></i><i></i><i></i><span class="url">ghanahouse.nl</span></div><span class="tag2 dev">In ontwikkeling</span>
           <div class="soon"><span class="soon-name">Ghana House</span><span class="soon-label">Binnenkort live</span></div></div>
-        <div class="work-body"><div><h3>Ghana House</h3><p>Extensions &amp; Barber Shop — diensten, branding &amp; boekingen</p></div></div>
+        <div class="work-body"><div><h3>Ghana House</h3><p>Extensions &amp; Barber Shop: diensten, branding &amp; boekingen</p></div></div>
       </div>
       <div class="work tilt reveal" data-cursor="In ontwikkeling">
         <div class="thumb"><div class="bar"><i></i><i></i><i></i><span class="url">shopspecta.com</span></div><span class="tag2 dev">In ontwikkeling</span>
           <iframe src="work/specta/" loading="lazy" title="Specta" scrolling="no"></iframe></div>
-        <div class="work-body"><div><h3>Specta</h3><p>Merk &amp; webshop — "Simply Spectacular", strak en eigentijds</p></div></div>
+        <div class="work-body"><div><h3>Specta</h3><p>Merk &amp; webshop: "Simply Spectacular", strak en eigentijds</p></div></div>
       </div>
     </div>
   </div>
@@ -379,11 +384,11 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 <!-- DIENSTEN -->
 <section class="section" id="diensten">
   <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">Wat we doen</span><h2>Alles voor een site die werkt</h2></div>
+    <div class="sec-head center reveal"><h2>Alles voor een site die werkt</h2></div>
     <div class="svc-grid">
-      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Nieuwe website</h3><p>Een complete, professionele website voor jouw bedrijf — van één strakke pagina tot meerdere. Klaar voor klanten.</p></article>
+      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Nieuwe website</h3><p>Een complete, professionele website voor jouw bedrijf, van één strakke pagina tot meerdere. Klaar voor klanten.</p></article>
       <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M3 20l1-5 11-11a2.8 2.8 0 0 1 4 4L8 19l-5 1Z"/></svg></div><h3>Redesign</h3><p>Verouderde of trage site? We geven 'm een moderne make-over die wél goed werkt op de telefoon.</p></article>
-      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Vindbaar in Google</h3><p>Lokale SEO zodat klanten in de buurt jóu vinden — juiste teksten, Google-profiel en snelle laadtijd.</p></article>
+      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Vindbaar in Google</h3><p>Lokale SEO zodat klanten in de buurt jóu vinden: juiste teksten, Google-profiel en snelle laadtijd.</p></article>
       <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M5 8h14l-1 12H6L5 8ZM9 12v4M15 12v4"/></svg></div><h3>Onderhoud</h3><p>Geen technisch gedoe. We houden je site online, veilig en up-to-date voor een klein bedrag per maand.</p></article>
     </div>
   </div>
@@ -392,9 +397,9 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 <!-- AANPAK -->
 <section class="section" id="aanpak">
   <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">Zo werkt het</span><h2>Geen risico, geen verrassingen</h2></div>
+    <div class="sec-head center reveal"><h2>Geen risico, geen verrassingen</h2></div>
     <div class="steps">
-      <div class="step reveal"><div class="n"></div><h3>Gratis voorbeeld</h3><p>We maken vooraf een gratis voorbeeld van jouw nieuwe website. Je ziet meteen wat mogelijk is — zonder iets te betalen.</p></div>
+      <div class="step reveal"><div class="n"></div><h3>Gratis voorbeeld</h3><p>We maken vooraf een gratis voorbeeld van jouw nieuwe website. Je ziet meteen wat mogelijk is, zonder iets te betalen.</p></div>
       <div class="step reveal"><div class="n"></div><h3>Jij beslist</h3><p>Mooi? Dan stemmen we de details af en spreken we een vaste prijs af. Niet tevreden? Dan stopt het hier.</p></div>
       <div class="step reveal"><div class="n"></div><h3>Live in ± een week</h3><p>We zetten je site live op je eigen webadres, zorgen dat alles werkt en leggen uit hoe je 'm gebruikt.</p></div>
     </div>
@@ -404,7 +409,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 <!-- TARIEVEN -->
 <section class="section" id="tarieven">
   <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">Tarieven</span><h2>Vooraf duidelijk</h2><p class="lead">Eén heldere prijs — en pas betalen als je tevreden bent.</p></div>
+    <div class="sec-head center reveal"><h2>Vooraf duidelijk</h2><p class="lead">Eén heldere prijs, en pas betalen als je tevreden bent.</p></div>
     <div class="price-grid">
       <div class="tier reveal">
         <h3>Starter</h3><div class="amt">€300<small>+</small></div>
@@ -440,7 +445,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
     </div>
     <p class="center reveal" style="margin-top:1.8rem;color:var(--muted);font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:.5rem">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--accent)"><path d="M3 12a9 9 0 0 1 15-6.7L21 7M21 3v4h-4M21 12a9 9 0 0 1-15 6.7L3 17M3 21v-4h4"/></svg>
-      Onderhoud &amp; hosting vanaf <b style="color:#fff">€25 / maand</b> — altijd online, veilig en up-to-date.
+      Onderhoud &amp; hosting vanaf <b style="color:#fff">€25 / maand</b>. Altijd online, veilig en up-to-date.
     </p>
   </div>
 </section>
@@ -449,14 +454,13 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 <section class="section" id="studio">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="eyebrow">De studio</span>
       <h2>Een studio die levert</h2>
-      <p class="lead">Sage Website Design is een onafhankelijke webdesignstudio uit Enschede. We bouwen snelle, moderne websites die lokale ondernemers helpen groeien — eerlijk geprijsd, en altijd met een gratis voorbeeld vooraf.</p>
+      <p class="lead">Sage Website Design is een onafhankelijke webdesignstudio uit Enschede. We bouwen snelle, moderne websites die lokale ondernemers helpen groeien, eerlijk geprijsd, en altijd met een gratis voorbeeld vooraf.</p>
     </div>
     <div class="svc-grid cols-3">
-      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Eerlijke prijzen</h3><p>Een vaste prijs die je vooraf kent. Geen verrassingen achteraf, geen vage offertes.</p></article>
-      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Snel live</h3><p>Meestal binnen een week online — klaar om nieuwe klanten te ontvangen.</p></article>
-      <article class="svc glow reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Mobiel &amp; vindbaar</h3><p>Gebouwd om snel te laden, goed te scoren in Google en bezoekers om te zetten in klanten.</p></article>
+      <article class="svc plain reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Eerlijke prijzen</h3><p>Een vaste prijs die je vooraf kent. Geen verrassingen achteraf, geen vage offertes.</p></article>
+      <article class="svc plain reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Snel live</h3><p>Meestal binnen een week online, klaar om nieuwe klanten te ontvangen.</p></article>
+      <article class="svc plain reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Mobiel &amp; vindbaar</h3><p>Gebouwd om snel te laden, goed te scoren in Google en bezoekers om te zetten in klanten.</p></article>
     </div>
   </div>
 </section>
@@ -466,7 +470,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
   <div class="wrap">
     <div class="cta reveal">
       <h2>Klaar voor een website<br>die wél werkt?</h2>
-      <p>Vraag je gratis voorbeeld aan. Binnen een paar dagen zie je hoe jouw nieuwe website eruit kan zien — vrijblijvend.</p>
+      <p>Vraag je gratis voorbeeld aan. Binnen een paar dagen zie je hoe jouw nieuwe website eruit kan zien, helemaal vrijblijvend.</p>
       <a href="#contact" class="btn btn-dark btn-lg magnetic">Start met een gratis voorbeeld →</a>
     </div>
   </div>
@@ -476,8 +480,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
 <section class="section" id="contact" style="padding-top:0">
   <div class="wrap contact-grid">
     <div class="reveal">
-      <span class="eyebrow">Contact</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:.9rem 0 1.4rem">Laten we kennismaken</h2>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);margin:0 0 1.4rem">Laten we kennismaken</h2>
       <p class="lead" style="margin-bottom:2rem">Stuur een bericht via het formulier of mail ons rechtstreeks. We denken graag vrijblijvend met je mee over wat een website voor jouw bedrijf kan doen.</p>
       <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><small>E-mail</small><strong>swd.enschede@gmail.com</strong></div></div>
       <div class="ci"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><small>Werkgebied</small><strong>Enschede &amp; heel Nederland</strong></div></div>
@@ -492,7 +495,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
       <div class="field"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Naam van je bedrijf" /></div>
       <div class="field"><label>E-mailadres</label><input type="email" name="email" placeholder="jij@bedrijf.nl" required /></div>
       <div class="field"><label>Waar kunnen we mee helpen?</label><textarea name="bericht" placeholder="Bijv. ik heb nog geen website / mijn site is verouderd…"></textarea></div>
-      <button type="submit" class="btn btn-primary btn-lg magnetic" style="width:100%;justify-content:center">Verstuur — we reageren snel →</button>
+      <button type="submit" class="btn btn-primary btn-lg magnetic" style="width:100%;justify-content:center">Verstuur, we reageren snel →</button>
       <p id="swdFormMsg" role="status" style="display:none;margin-top:14px;font-weight:600"></p>
     </form>
   </div>
@@ -506,7 +509,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;ov
     </div>
     <div class="foot-word">swd</div>
     <div class="foot-bottom">
-      <span>© 2026 Sage Website Design — Enschede, NL</span>
+      <span>© 2026 Sage Website Design · Enschede, NL</span>
       <span><a href="#werk">Werk</a> · <a href="#tarieven">Tarieven</a> · <a href="#contact">Contact</a></span>
     </div>
   </div>
@@ -602,7 +605,7 @@ if(matchMedia('(pointer:fine)').matches){
     if(btn){btn.disabled=true;btn.textContent='Versturen…';}
     fetch('https://formsubmit.co/ajax/swd.enschede@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
       .then(function(r){return r.json();})
-      .then(function(){f.reset();if(msg){msg.style.display='block';msg.style.color='var(--accent)';msg.textContent='Bedankt! Je aanvraag is verzonden — we reageren snel.';}})
+      .then(function(){f.reset();if(msg){msg.style.display='block';msg.style.color='var(--accent)';msg.textContent='Bedankt! Je aanvraag is verzonden, we reageren snel.';}})
       .catch(function(){if(msg){msg.style.display='block';msg.style.color='#ff6b6b';msg.textContent='Er ging iets mis. Mail ons gerust direct op swd.enschede@gmail.com.';}})
       .then(function(){if(btn){btn.disabled=false;btn.textContent=label;}});
   });
