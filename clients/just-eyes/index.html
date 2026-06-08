@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just Eyes — Permanente wenkbrauwen &amp; eyeliner, wimperextensions in Hengelo</title>
+<meta name="description" content="Just Eyes in Hengelo (Ov): specialist in permanente wenkbrauwen, permanente eyeliner en wimperextensions. Verzorgd door Daphne — gratis touch-up, beoordeeld met 4,8/5. Bel of app voor een afspraak.">
+<meta name="theme-color" content="#2A1F23">
+<meta property="og:title" content="Just Eyes — Permanente make-up &amp; wimperextensions in Hengelo">
+<meta property="og:description" content="Permanente wenkbrauwen, eyeliner en wimperextensions door specialist Daphne. Gratis touch-up · 4,8/5. Hengelo (Ov).">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Just Eyes">
+<!-- Custom SVG data-URI favicon: gold eye/lash mark on espresso -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232A1F23'/%3E%3Cpath d='M10 34c7-9 15-13 22-13s15 4 22 13' fill='none' stroke='%23C9A66B' stroke-width='3.4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='33' r='6.4' fill='none' stroke='%23C9A66B' stroke-width='3.4'/%3E%3Cpath d='M14 41l-3 5M23 45l-1.5 5.5M32 47v6M41 45l1.5 5.5M50 41l3 5' stroke='%23C9A66B' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#2A1F23;     /* deep warm brown-plum ink */
+    --espresso-2:#3A2C31;
+    --ivory:#F7F1EA;        /* warm ivory page */
+    --ivory-2:#F1E7DC;      /* slightly deeper cream */
+    --sand:#E9DCCD;
+    --mauve:#B98A93;        /* soft rosé-mauve accent */
+    --mauve-deep:#9C6A74;
+    --gold:#C9A66B;         /* muted antique gold */
+    --gold-deep:#A6843F;
+    --rose:#D9B7BC;
+    --ink-soft:#6E5C5F;     /* muted body text on ivory */
+    --ink-mute:#8C7A7C;
+    --line:#E0D2C3;
+    --line-dk:#4A3A3F;
+    --cream-on-dk:#EFE4DA;
+    --mute-on-dk:#B7A7A4;
+    --maxw:1230px;
+    --pad:clamp(20px,5vw,68px);
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+    --sans:'Jost',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    background:var(--ivory);
+    color:var(--espresso);
+    line-height:1.7;
+    font-size:clamp(15px,1.02vw,16.5px);
+    font-weight:300;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--mauve);color:#fff}
+
+  /* ---------- TYPE ---------- */
+  .serif{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:.005em}
+  .it{font-style:italic;font-weight:400}
+  .eyebrow{
+    font-family:var(--sans);font-weight:500;
+    text-transform:uppercase;letter-spacing:.34em;
+    font-size:clamp(10.5px,1vw,12px);
+    color:var(--mauve-deep);
+    display:inline-flex;align-items:center;gap:.9em;
+  }
+  .eyebrow::before{content:"";width:clamp(20px,3.4vw,38px);height:1px;background:var(--gold);display:inline-block}
+  .eyebrow.on-dk{color:var(--gold)}
+  .eyebrow.on-dk::before{background:var(--gold)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.65em;
+    background:var(--espresso);color:var(--ivory);
+    font-family:var(--sans);font-weight:500;
+    text-transform:uppercase;letter-spacing:.16em;
+    font-size:clamp(11.5px,1vw,13px);
+    padding:1.15em 1.9em;
+    border:1px solid var(--espresso);
+    border-radius:40px;
+    cursor:pointer;line-height:1;position:relative;
+    transition:background .25s ease,color .25s ease,transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .btn svg{width:1.2em;height:1.2em;flex:none}
+  .btn:hover{background:var(--mauve-deep);border-color:var(--mauve-deep);transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(156,106,116,.6)}
+  .btn--ghost{background:transparent;color:var(--espresso);border-color:var(--gold)}
+  .btn--ghost:hover{background:var(--espresso);color:var(--ivory);border-color:var(--espresso);box-shadow:0 14px 30px -14px rgba(42,31,35,.5)}
+  .btn--light{background:var(--ivory);color:var(--espresso);border-color:var(--ivory)}
+  .btn--light:hover{background:var(--gold);color:var(--espresso);border-color:var(--gold)}
+  .btn--lg{padding:1.25em 2.2em}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(247,241,234,.82);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease,background .3s ease,box-shadow .3s ease;
+  }
+  header.scrolled{background:rgba(247,241,234,.97);border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(42,31,35,.5)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:clamp(66px,8.5vw,88px)}
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:42px;height:42px;flex:none;border-radius:50%;
+    border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-deep);background:transparent;
+  }
+  .brand .mark svg{width:24px;height:24px}
+  .brand .name{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.6vw,27px);line-height:.95;letter-spacing:.01em}
+  .brand .name em{font-style:italic;color:var(--mauve-deep);font-weight:500}
+  .brand .name small{display:block;font-family:var(--sans);font-weight:400;font-size:9px;letter-spacing:.32em;color:var(--ink-mute);text-transform:uppercase;margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(20px,2.6vw,40px)}
+  .nav-links a.lnk{
+    font-family:var(--sans);font-weight:400;font-size:13.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-soft);position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .28s ease}
+  .nav-links a.lnk:hover{color:var(--espresso)}
+  .nav-links a.lnk:hover::after{width:100%}
+
+  .hamburger{
+    display:none;width:46px;height:46px;border:1px solid var(--line);background:transparent;
+    cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;border-radius:50%;
+  }
+  .hamburger span{display:block;width:18px;height:1.5px;background:var(--espresso);transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;background:var(--espresso);color:var(--cream-on-dk);
+    transform:translateX(100%);transition:transform .44s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;padding:var(--pad);visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a.ov-lnk{
+    font-family:var(--serif);font-size:clamp(36px,9vw,56px);line-height:1.12;
+    color:var(--ivory);padding:.16em 0;display:flex;align-items:baseline;gap:.5em;border-bottom:1px solid var(--line-dk);
+  }
+  .overlay a.ov-lnk .idx{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--gold);letter-spacing:.1em}
+  .overlay a.ov-lnk:last-of-type{border-bottom:none}
+  .overlay .ov-foot{margin-top:clamp(26px,5vw,42px);color:var(--mute-on-dk);font-size:14px;line-height:1.9}
+  .overlay .ov-foot strong{color:var(--ivory);font-weight:500}
+  .overlay .ov-foot a{color:var(--gold)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:var(--ivory);border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,4.4vw,72px);align-items:center;
+    padding-top:clamp(40px,6vw,84px);padding-bottom:clamp(48px,6.4vw,96px)}
+  .hero-copy .eyebrow{margin-bottom:clamp(20px,3vw,30px)}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,8.2vw,104px);line-height:.98;letter-spacing:-.005em;color:var(--espresso)}
+  .hero h1 .it{color:var(--mauve-deep)}
+  .hero h1 .small{display:block;font-size:.42em;font-weight:500;letter-spacing:.005em;color:var(--espresso);margin-top:.32em;line-height:1.12}
+  .hero-lede{margin-top:clamp(22px,3vw,32px);max-width:46ch;color:var(--ink-soft);font-size:clamp(16px,1.4vw,19px);line-height:1.75}
+  .hero-lede strong{color:var(--espresso);font-weight:500}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(26px,3.4vw,38px)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,34px);margin-top:clamp(28px,3.6vw,42px);padding-top:clamp(22px,3vw,30px);border-top:1px solid var(--line)}
+  .hero-meta .hm{display:flex;flex-direction:column;gap:2px}
+  .hero-meta .hm .n{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,38px);line-height:1;color:var(--espresso);display:flex;align-items:center;gap:.18em}
+  .hero-meta .hm .n svg{width:.7em;height:.7em;fill:var(--gold)}
+  .hero-meta .hm .l{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);font-weight:400}
+
+  .hero-figure{position:relative}
+  .hero-img{
+    position:relative;aspect-ratio:4/5;width:100%;border-radius:200px 200px 14px 14px;overflow:hidden;
+    background:linear-gradient(160deg,var(--sand),var(--ivory-2));
+    box-shadow:0 40px 80px -50px rgba(42,31,35,.7);
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+  .hero-figure .badge{
+    position:absolute;left:-6px;bottom:clamp(18px,4vw,38px);z-index:3;
+    background:var(--ivory);border:1px solid var(--line);border-radius:16px;
+    padding:.85em 1.1em;display:flex;align-items:center;gap:.7em;
+    box-shadow:0 22px 50px -28px rgba(42,31,35,.6);
+  }
+  .hero-figure .badge .stars{display:flex;gap:1px}
+  .hero-figure .badge .stars svg{width:15px;height:15px;fill:var(--gold)}
+  .hero-figure .badge .bt{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1;color:var(--espresso)}
+  .hero-figure .badge .bs{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);margin-top:2px}
+  .hero-figure .ring{
+    position:absolute;top:clamp(-14px,-1.4vw,-22px);right:clamp(8px,3vw,30px);z-index:2;
+    width:clamp(78px,12vw,118px);height:clamp(78px,12vw,118px);
+  }
+  .hero-figure .ring svg{width:100%;height:100%;animation:spin 26s linear infinite}
+  .hero-figure .ring .core{position:absolute;inset:0;display:grid;place-items:center;color:var(--gold-deep)}
+  .hero-figure .ring .core svg{width:38%;height:38%;animation:none}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{background:var(--espresso);color:var(--cream-on-dk);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line-dk)}
+  .marquee-track{display:inline-flex;animation:marq 32s linear infinite;will-change:transform}
+  .marquee-track span{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(19px,2.4vw,30px);padding:.62em 0;display:inline-flex;align-items:center;color:var(--cream-on-dk);
+  }
+  .marquee-track span::after{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%;margin:0 clamp(20px,3.2vw,42px);display:inline-block}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(62px,8.4vw,124px);padding-bottom:clamp(62px,8.4vw,124px)}
+  .sec-head{margin-bottom:clamp(40px,5vw,68px);max-width:760px}
+  .sec-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6.4vw,82px);line-height:1;margin-top:.28em;letter-spacing:-.005em}
+  .sec-head h2 .it{color:var(--mauve-deep)}
+  .sec-head p{margin-top:1.2rem;color:var(--ink-soft);font-size:clamp(16px,1.35vw,18.5px);max-width:58ch;line-height:1.75}
+
+  /* ---------- DIENSTEN ---------- */
+  .services{background:var(--ivory)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,30px)}
+  .svc{
+    position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:1rem;
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;overflow:hidden;
+  }
+  .svc::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--mauve));transition:width .4s ease}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -38px rgba(42,31,35,.5);border-color:var(--sand)}
+  .svc:hover::after{width:100%}
+  .svc .no{font-family:var(--serif);font-style:italic;font-size:clamp(15px,1.4vw,18px);color:var(--mauve)}
+  .svc .ico{width:54px;height:54px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);background:var(--ivory)}
+  .svc .ico svg{width:26px;height:26px}
+  .svc h3{font-family:var(--serif);font-weight:600;font-size:clamp(25px,2.6vw,32px);line-height:1.04;color:var(--espresso)}
+  .svc p{color:var(--ink-soft);font-size:clamp(14px,1.1vw,15.5px);line-height:1.7;flex:1}
+  .svc .feats{display:flex;flex-direction:column;gap:.55em;margin-top:.2rem}
+  .svc .feats li{display:flex;gap:.6em;align-items:flex-start;font-size:13.5px;color:var(--ink-soft)}
+  .svc .feats svg{width:16px;height:16px;flex:none;stroke:var(--mauve-deep);margin-top:2px}
+
+  /* USP touch-up banner */
+  .usp{
+    margin-top:clamp(26px,3.4vw,40px);
+    display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2.4vw,28px);justify-content:space-between;
+    background:linear-gradient(135deg,var(--espresso),var(--espresso-2));color:var(--cream-on-dk);
+    border-radius:20px;padding:clamp(24px,3vw,38px) clamp(26px,3.4vw,44px);position:relative;overflow:hidden;
+  }
+  .usp::before{content:"";position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(201,166,107,.22),transparent 70%)}
+  .usp .ut{display:flex;align-items:center;gap:1.1em;position:relative;z-index:1}
+  .usp .ut .gift{width:clamp(48px,5.4vw,64px);height:clamp(48px,5.4vw,64px);flex:none;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold)}
+  .usp .ut .gift svg{width:50%;height:50%}
+  .usp .ut h4{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3vw,36px);line-height:1.05;color:var(--ivory)}
+  .usp .ut p{font-size:14px;color:var(--mute-on-dk);margin-top:.2em;max-width:46ch}
+  .usp .btn{position:relative;z-index:1;flex:none}
+
+  /* ---------- TRUST ---------- */
+  .trust{background:var(--espresso);color:var(--cream-on-dk);position:relative;overflow:hidden}
+  .trust::before{content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(120% 90% at 90% 0%,rgba(185,138,147,.16),transparent 55%),radial-gradient(80% 70% at 0% 100%,rgba(201,166,107,.1),transparent 60%)}
+  .trust .wrap{position:relative;z-index:1}
+  .trust-top{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center;
+    padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid var(--line-dk)}
+  .rating-block{text-align:center;flex:none}
+  .rating-block .rn{font-family:var(--serif);font-weight:600;font-size:clamp(76px,12vw,150px);line-height:.82;color:var(--ivory)}
+  .rating-block .rn span{font-size:.42em;color:var(--gold)}
+  .rating-block .stars{display:flex;gap:4px;justify-content:center;margin-top:.5rem}
+  .rating-block .stars svg{width:clamp(20px,2.4vw,26px);height:clamp(20px,2.4vw,26px);fill:var(--gold)}
+  .rating-block .rl{margin-top:.8rem;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute-on-dk)}
+  .trust-lead .eyebrow{margin-bottom:1.1rem}
+  .trust-lead h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,56px);line-height:1.05;color:var(--ivory)}
+  .trust-lead h2 .it{color:var(--gold)}
+  .trust-lead p{margin-top:1.1rem;color:var(--mute-on-dk);font-size:clamp(15px,1.3vw,17.5px);max-width:52ch;line-height:1.75}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px);margin-top:clamp(40px,5vw,64px)}
+  .quote{border:1px solid var(--line-dk);border-radius:16px;padding:clamp(22px,2.6vw,32px);background:rgba(255,255,255,.02)}
+  .quote .qm{color:var(--gold);font-family:var(--serif);font-size:48px;line-height:.6;height:.5em;display:block}
+  .quote p{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.6vw,21px);line-height:1.45;color:var(--cream-on-dk);margin-top:.4rem}
+  .quote .qa{margin-top:1.1rem;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:400}
+  .quote .qstars{display:flex;gap:2px;margin-top:.7rem}
+  .quote .qstars svg{width:14px;height:14px;fill:var(--gold)}
+
+  /* ---------- OVER DAPHNE ---------- */
+  .over{background:var(--ivory-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .over-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,5vw,80px);align-items:center}
+  .over-figure{position:relative}
+  .over-img{position:relative;aspect-ratio:4/5;width:100%;border-radius:14px 14px 160px 160px;overflow:hidden;
+    background:linear-gradient(160deg,var(--sand),var(--ivory));box-shadow:0 40px 80px -52px rgba(42,31,35,.65)}
+  .over-img img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .over-figure .tag{
+    position:absolute;right:clamp(-8px,-.6vw,-14px);top:clamp(20px,4vw,40px);
+    background:var(--espresso);color:var(--ivory);font-family:var(--serif);font-style:italic;
+    font-size:clamp(16px,1.8vw,21px);padding:.5em 1em;border-radius:30px;box-shadow:0 18px 40px -24px rgba(42,31,35,.7)}
+  .over-body .eyebrow{margin-bottom:1.1rem}
+  .over-body h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.6vw,68px);line-height:1.02;letter-spacing:-.005em}
+  .over-body h2 .it{color:var(--mauve-deep)}
+  .over-body p{margin-top:1.2rem;color:var(--ink-soft);font-size:clamp(15px,1.3vw,17.5px);line-height:1.78}
+  .over-body p strong{color:var(--espresso);font-weight:500}
+  .pillz{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,32px)}
+  .pillz span{border:1px solid var(--line);background:#fff;color:var(--ink-soft);font-weight:400;font-size:12.5px;
+    letter-spacing:.04em;padding:.65em 1.05em;border-radius:30px;display:inline-flex;align-items:center;gap:.55em}
+  .pillz span svg{width:15px;height:15px;stroke:var(--mauve-deep)}
+  .signoff{margin-top:clamp(26px,3vw,36px);display:flex;align-items:center;gap:1.1rem;border-top:1px solid var(--line);padding-top:clamp(20px,2.6vw,28px)}
+  .signoff .sig{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,38px);color:var(--mauve-deep);line-height:1}
+  .signoff .who{font-size:13px}
+  .signoff .who b{display:block;font-family:var(--sans);font-weight:500;letter-spacing:.04em;color:var(--espresso);text-transform:uppercase;font-size:12.5px}
+  .signoff .who small{color:var(--ink-mute);letter-spacing:.06em}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ivory)}
+  .contact-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(28px,4vw,56px);align-items:stretch}
+  .panel{border:1px solid var(--line);background:#fff;border-radius:20px;padding:clamp(28px,3.4vw,48px)}
+  .panel h3{font-family:var(--serif);font-weight:600;font-size:clamp(27px,3.2vw,40px);line-height:1.04;margin-bottom:1.4rem}
+  .panel h3 .it{color:var(--mauve-deep)}
+  .contact-cta{
+    background:linear-gradient(150deg,var(--espresso),var(--espresso-2));color:var(--cream-on-dk);
+    display:flex;flex-direction:column;justify-content:center;border-color:var(--espresso);position:relative;overflow:hidden;
+  }
+  .contact-cta::before{content:"";position:absolute;right:-50px;bottom:-50px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(185,138,147,.2),transparent 70%)}
+  .contact-cta .ic{position:relative;z-index:1}
+  .contact-cta h3{color:var(--ivory)}
+  .contact-cta .lede{color:var(--mute-on-dk);font-size:clamp(15px,1.3vw,17px);margin-bottom:1.8rem;max-width:40ch;line-height:1.7}
+  .phone-big{display:inline-flex;align-items:center;gap:.6em;font-family:var(--serif);font-weight:600;
+    font-size:clamp(30px,4.4vw,52px);color:var(--ivory);line-height:1;letter-spacing:.01em}
+  .phone-big svg{width:.62em;height:.62em;stroke:var(--gold);flex:none}
+  .phone-sub{margin-top:.7rem;color:var(--mute-on-dk);font-size:14px;letter-spacing:.02em}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,34px)}
+
+  .crow{display:flex;gap:1.1rem;align-items:flex-start;padding:1.15em 0;border-bottom:1px solid var(--line)}
+  .crow:first-of-type{padding-top:0}
+  .crow:last-child{border-bottom:none;padding-bottom:0}
+  .crow .cic{width:clamp(44px,5vw,52px);height:clamp(44px,5vw,52px);flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold-deep);background:var(--ivory)}
+  .crow .cic svg{width:21px;height:21px}
+  .crow .k{font-weight:500;text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;color:var(--ink-mute)}
+  .crow .v{font-size:clamp(16px,1.4vw,19px);color:var(--espresso);font-weight:400;line-height:1.45;margin-top:3px}
+  .crow .v a:hover{color:var(--mauve-deep)}
+  .crow .v small{display:block;color:var(--ink-mute);font-size:13px;margin-top:2px}
+
+  .map-standin{margin-top:1.6rem;height:clamp(150px,18vw,184px);border-radius:14px;border:1px solid var(--line);position:relative;overflow:hidden;
+    background:linear-gradient(0deg,rgba(185,138,147,.06),transparent),
+      repeating-linear-gradient(0deg,var(--ivory-2) 0 1px,transparent 1px 40px),
+      repeating-linear-gradient(90deg,var(--ivory-2) 0 1px,transparent 1px 40px),#fff}
+  .map-standin .road{position:absolute;background:var(--sand)}
+  .map-standin .r1{left:0;right:0;top:52%;height:7px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:36%;width:6px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--mauve-deep)}
+  .map-standin .pin svg{width:34px;height:34px;filter:drop-shadow(0 7px 10px rgba(42,31,35,.35))}
+  .map-standin .lbl{position:absolute;left:14px;bottom:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);font-weight:400}
+  .socials{display:flex;gap:12px;margin-top:1.6rem}
+  .socials a{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-soft);background:var(--ivory);transition:all .25s ease}
+  .socials a:hover{background:var(--mauve-deep);color:#fff;border-color:var(--mauve-deep);transform:translateY(-3px)}
+  .socials a svg{width:20px;height:20px}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{background:var(--espresso);color:var(--cream-on-dk);text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--line-dk)}
+  .finalcta::before{content:"";position:absolute;inset:0;opacity:.6;
+    background:radial-gradient(90% 80% at 50% 0%,rgba(185,138,147,.16),transparent 55%),radial-gradient(70% 60% at 50% 100%,rgba(201,166,107,.12),transparent 60%)}
+  .finalcta .wrap{position:relative;z-index:1;padding-top:clamp(64px,9vw,128px);padding-bottom:clamp(70px,9.4vw,136px)}
+  .finalcta .eyebrow{justify-content:center;margin-bottom:1.4rem}
+  .finalcta h2{font-family:var(--serif);font-weight:500;font-size:clamp(42px,8vw,108px);line-height:1;color:var(--ivory);letter-spacing:-.01em}
+  .finalcta h2 .it{color:var(--gold)}
+  .finalcta p{margin:1.5rem auto 0;max-width:48ch;color:var(--mute-on-dk);font-size:clamp(16px,1.4vw,19px);line-height:1.7}
+  .finalcta .hero-actions{justify-content:center;margin-top:clamp(30px,3.6vw,42px)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--espresso-2);color:var(--mute-on-dk);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(90px,7vw,80px);border-top:1px solid var(--line-dk)}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,4vw,56px);padding-bottom:clamp(34px,4.4vw,52px);border-bottom:1px solid var(--line-dk)}
+  .foot-brand .name{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:.95;color:var(--ivory)}
+  .foot-brand .name em{font-style:italic;color:var(--gold);font-weight:500}
+  .foot-brand p{margin-top:1rem;max-width:36ch;font-size:14px;line-height:1.7}
+  .foot-col h4{font-family:var(--sans);font-weight:500;text-transform:uppercase;letter-spacing:.18em;font-size:11.5px;color:var(--gold);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--mute-on-dk);font-size:14px;padding:.32em 0;line-height:1.5}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--ivory)}
+  .foot-bottom{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;align-items:center;padding-top:clamp(24px,3vw,32px);font-size:12.5px;color:var(--ink-mute);line-height:1.6}
+  .foot-bottom a{color:var(--cream-on-dk)}
+  .foot-bottom a:hover{color:var(--gold)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(42,31,35,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--gold);align-items:center;gap:12px}
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--serif);font-weight:600;font-size:18px;line-height:1;color:var(--ivory)}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--gold);font-size:11.5px;margin-top:3px;letter-spacing:.04em}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;fill:var(--gold)}
+  .sticky-cta .btn{flex:none;padding:.95em 1.4em}
+
+  /* ---------- REVEAL (enhances already-visible content) ---------- */
+  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:clamp(34px,6vw,48px)}
+    .hero-figure{max-width:460px;margin:0 auto;width:100%}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .quotes{grid-template-columns:1fr}
+    .trust-top{grid-template-columns:1fr;gap:clamp(26px,5vw,40px);text-align:center}
+    .rating-block{margin:0 auto}
+    .over-grid{grid-template-columns:1fr;gap:clamp(30px,5vw,44px)}
+    .over-figure{max-width:430px}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .svc-grid{grid-template-columns:1fr}
+    .usp{flex-direction:column;align-items:flex-start;text-align:left}
+    .usp .btn{width:100%;justify-content:center}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:96px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:440px){
+    .foot-top{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Just Eyes — home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M10 34c7-9 15-13 22-13s15 4 22 13" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><circle cx="32" cy="33" r="6.4" stroke="currentColor" stroke-width="3.4"/><path d="M14 41l-3 5M23 45l-1.5 5.5M32 47v6M41 45l1.5 5.5M50 41l3 5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      </span>
+      <span class="name">Just <em>Eyes</em><small>Permanente make-up · Hengelo</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Behandelingen</a>
+      <a class="lnk" href="#ervaringen">Ervaringen</a>
+      <a class="lnk" href="#over">Over Daphne</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn" href="tel:0634936576">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Afspraak
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a class="ov-lnk" href="#diensten"><span class="idx">01</span> Behandelingen</a>
+  <a class="ov-lnk" href="#ervaringen"><span class="idx">02</span> Ervaringen</a>
+  <a class="ov-lnk" href="#over"><span class="idx">03</span> Over Daphne</a>
+  <a class="ov-lnk" href="#contact"><span class="idx">04</span> Contact</a>
+  <div class="ov-foot">
+    <strong>Just Eyes — Hengelo (Ov)</strong><br>
+    Bel of app <a href="tel:0634936576">06&nbsp;34&nbsp;93&nbsp;65&nbsp;76</a><br>
+    Gratis touch-up · 4,8/5 beoordeeld
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Permanente make-up &amp; wimpers · Hengelo</span>
+      <h1 class="reveal d1">
+        Permanente <span class="it">wenkbrauwen</span> &amp; eyeliner
+        <span class="small">en wimperextensions die elke ochtend gewoon goed zitten.</span>
+      </h1>
+      <p class="hero-lede reveal d2">
+        Bij <strong>Just Eyes</strong> in Hengelo zet specialist Daphne jouw blik perfect neer — natuurlijk, precies en duurzaam. Wakker worden met wenkbrauwen, eyeliner en wimpers die áf zijn. <strong>Inclusief gratis touch-up.</strong>
+      </p>
+      <div class="hero-actions reveal d2">
+        <a class="btn btn--lg" href="tel:0634936576">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel of app voor een afspraak
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#diensten">Bekijk behandelingen</a>
+      </div>
+      <div class="hero-meta reveal d3">
+        <div class="hm">
+          <span class="n">4,8<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg></span>
+          <span class="l">Beoordeeld door klanten</span>
+        </div>
+        <div class="hm">
+          <span class="n">Gratis</span>
+          <span class="l">Touch-up inbegrepen</span>
+        </div>
+        <div class="hm">
+          <span class="n">3</span>
+          <span class="l">Specialismen</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-figure reveal d2">
+      <div class="hero-img">
+        <!-- Verified Unsplash: close-up van vrouwengezicht met eyeliner & wimpers -->
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1100&q=80"
+             alt="Close-up van een gezicht met strak gezette eyeliner en volle wimpers, het werk van Just Eyes"
+             width="1100" height="1375" loading="eager" fetchpriority="high">
+      </div>
+      <span class="ring" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circlePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text fill="#9C6A74" font-family="Jost,sans-serif" font-size="10.5" letter-spacing="3.4"><textPath href="#circlePath" startoffset="0">JUST EYES · HENGELO · PMU · LASHES · </textPath></text></svg>
+        <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      </span>
+      <div class="badge" aria-label="Beoordeling 4,8 uit 5">
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        </div>
+        <div><span class="bt">4,8 / 5</span><span class="bs">Echte klantbeoordeling</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Permanente wenkbrauwen</span><span>Permanente eyeliner</span><span>Wimperextensions</span><span>Gratis touch-up</span><span>Natuurlijk resultaat</span><span>Specialist in Hengelo</span>
+    <span>Permanente wenkbrauwen</span><span>Permanente eyeliner</span><span>Wimperextensions</span><span>Gratis touch-up</span><span>Natuurlijk resultaat</span><span>Specialist in Hengelo</span>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Behandelingen</span>
+      <h2 class="serif">Drie specialismen, <span class="it">één perfecte blik.</span></h2>
+      <p>Of je nu vollere wenkbrauwen wil, een subtiele eyeliner die nooit uitloopt, of wimpers met meer lengte — bij Just Eyes wordt elke behandeling op maat en met oog voor detail uitgevoerd.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c3-4 6-6 9-6s6 2 9 6"/><path d="M5 13.2c2-1 4-1.5 7-1.5s5 .5 7 1.5"/></svg></span>
+        <span class="no">01 — Permanente make-up</span>
+        <h3>Permanente wenkbrauwen</h3>
+        <p>Vollere, perfect gevormde wenkbrauwen met een natuurlijke uitstraling. Met haartjestechniek of soft powder, helemaal afgestemd op jouw gezicht en kleur.</p>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Natuurlijk &amp; symmetrisch resultaat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Inclusief gratis touch-up</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal d1">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <span class="no">02 — Permanente make-up</span>
+        <h3>Permanente eyeliner</h3>
+        <p>Een strakke, definiërende lijn die jouw ogen laat spreken — subtiel of expressief. Geen uitlopende make-up meer, dag in dag uit een perfecte blik.</p>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Subtiel tot expressief op maat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Inclusief gratis touch-up</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal d2">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c4-3 12-3 16 0"/><path d="M6 14l-1.5 4M10 13l-.8 4.6M14 13l.8 4.6M18 14l1.5 4"/></svg></span>
+        <span class="no">03 — Wimpers</span>
+        <h3>Wimperextensions</h3>
+        <p>Lange, volle wimpers zonder mascara. Van een natuurlijke verfraaiing tot een vol en glamoureus effect — comfortabel, licht en netjes afgewerkt.</p>
+        <ul class="feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Natuurlijk of vol &amp; glamoureus</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Zorgvuldig &amp; comfortabel aangebracht</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="usp reveal">
+      <div class="ut">
+        <span class="gift" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5"/><path d="M12 8v13M3 12h18M12 8S9.5 3 7.5 4.5 9.5 8 12 8zM12 8s2.5-5 4.5-3.5S14.5 8 12 8z"/></svg></span>
+        <div>
+          <h4>Gratis touch-up bij elke PMU-behandeling</h4>
+          <p>Bij permanente wenkbrauwen en eyeliner hoort een gratis nabehandeling — zo wordt het resultaat precies zoals jij het wil.</p>
+        </div>
+      </div>
+      <a class="btn btn--light" href="tel:0634936576">Plan je afspraak</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST / ERVARINGEN ============ -->
+<section class="trust sec" id="ervaringen">
+  <div class="wrap">
+    <div class="trust-top">
+      <div class="rating-block reveal">
+        <div class="rn">4,8<span>/5</span></div>
+        <div class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        </div>
+        <div class="rl">Gemiddelde klantbeoordeling</div>
+      </div>
+      <div class="trust-lead">
+        <span class="eyebrow on-dk reveal">Ervaringen</span>
+        <h2 class="serif reveal d1">Klanten komen voor het <span class="it">resultaat</span> én blijven voor de zorg.</h2>
+        <p class="reveal d2">Een mooie blik begint met vertrouwen. Met een beoordeling van 4,8 uit 5 weet je dat je in goede handen bent — precies werk, een rustige behandeling en een resultaat dat klopt.</p>
+      </div>
+    </div>
+
+    <div class="quotes">
+      <figure class="quote reveal">
+        <span class="qm" aria-hidden="true">&ldquo;</span>
+        <p>Mijn wenkbrauwen zien er zo natuurlijk uit dat niemand doorheeft dat het PMU is. Eindelijk geen potlood meer nodig.</p>
+        <div class="qstars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        </div>
+        <figcaption class="qa">Tevreden klant · Permanente wenkbrauwen</figcaption>
+      </figure>
+      <figure class="quote reveal d1">
+        <span class="qm" aria-hidden="true">&ldquo;</span>
+        <p>Daphne neemt echt de tijd en denkt mee. De eyeliner is precies subtiel zoals ik wilde. Heel netjes en rustig werk.</p>
+        <div class="qstars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        </div>
+        <figcaption class="qa">Tevreden klant · Permanente eyeliner</figcaption>
+      </figure>
+      <figure class="quote reveal d2">
+        <span class="qm" aria-hidden="true">&ldquo;</span>
+        <p>Mijn wimpers zijn vol en toch licht — 's ochtends scheelt het me zoveel tijd. Aanrader voor iedereen in Hengelo.</p>
+        <div class="qstars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        </div>
+        <figcaption class="qa">Tevreden klant · Wimperextensions</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVER DAPHNE ============ -->
+<section class="over sec" id="over">
+  <div class="wrap over-grid">
+    <div class="over-figure reveal">
+      <div class="over-img">
+        <!-- Verified Unsplash: specialiste aan het werk, precieze behandeling rond de ogen -->
+        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=80"
+             alt="Specialiste voert een precieze behandeling uit rond de ogen van een klant in de salon"
+             width="1000" height="1250" loading="lazy">
+      </div>
+      <span class="tag">Specialist in PMU</span>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Over Just Eyes</span>
+      <h2 class="serif reveal d1">Daphne, jouw <span class="it">specialist</span> in Hengelo.</h2>
+      <p class="reveal d2">
+        Achter Just Eyes staat <strong>Daphne</strong> — gespecialiseerd in permanente wenkbrauwen en eyeliner, en in wimperextensions. Voor haar draait alles om precisie en een natuurlijk resultaat dat bij jóu past.
+      </p>
+      <p class="reveal d2">
+        Geen haastwerk, maar een rustige behandeling waarin er goed geluisterd wordt naar wat je wil. Vorm, kleur en techniek worden zorgvuldig afgestemd, zodat je elke ochtend wakker wordt met een blik die af is — zónder moeite.
+      </p>
+
+      <div class="pillz reveal d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Specialist PMU &amp; lashes</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Rustige, precieze behandeling</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Hengelo (Ov)</span>
+      </div>
+
+      <div class="signoff reveal d3">
+        <span class="sig" aria-hidden="true">Daphne</span>
+        <span class="who"><b>Daphne</b><small>Eigenaar &amp; PMU-specialist · Just Eyes</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Contact &amp; afspraak</span>
+      <h2 class="serif">Klaar voor een <span class="it">perfecte blik?</span></h2>
+      <p>Een afspraak maken is zo gebeurd: bel of app Daphne even. Je krijgt persoonlijk antwoord en samen kijken we naar de behandeling die bij jou past.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- DETAILS -->
+      <div class="panel reveal" aria-label="Contactgegevens">
+        <h3>Contact<span class="it"> &amp; route</span></h3>
+        <div class="crow">
+          <span class="cic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><div class="k">Telefoon &amp; WhatsApp</div><div class="v"><a href="tel:0634936576">06 34 93 65 76</a><small>Bel of app voor een afspraak</small></div></div>
+        </div>
+        <div class="crow">
+          <span class="cic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="k">Locatie</div><div class="v">Just Eyes — Hengelo (Ov)<small>Adres &amp; routebeschrijving op aanvraag</small></div></div>
+        </div>
+        <div class="crow">
+          <span class="cic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="k">Afspraak</div><div class="v">Op afspraak<small>Plan eenvoudig telefonisch een moment dat jou uitkomt</small></div></div>
+        </div>
+
+        <div class="map-standin" role="img" aria-label="Indicatieve locatie in Hengelo (Ov)">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Hengelo · Overijssel</span>
+        </div>
+
+        <div class="socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Volg Just Eyes op Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Bekijk Just Eyes op Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA CARD -->
+      <div class="panel contact-cta reveal d1">
+        <div class="ic">
+          <h3>Bel of app<span class="it"> voor je afspraak</span></h3>
+          <p class="lede">Direct contact met Daphne — geen wachtlijst, gewoon even bellen of appen. We plannen samen een moment in.</p>
+          <a class="phone-big" href="tel:0634936576">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+            06 34 93 65 76
+          </a>
+          <div class="phone-sub">Bereikbaar voor afspraken en al je vragen.</div>
+          <div class="cta-actions">
+            <a class="btn btn--light" href="tel:0634936576">Bel nu</a>
+            <a class="btn" style="background:transparent;border-color:var(--gold);color:var(--ivory)" href="#diensten">Behandelingen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="wrap">
+    <span class="eyebrow on-dk reveal">Just Eyes · Hengelo</span>
+    <h2 class="serif reveal d1">Jouw blik, <span class="it">perfect</span> gezet.</h2>
+    <p class="reveal d2">Permanente wenkbrauwen, eyeliner of wimperextensions — met gratis touch-up en een resultaat dat klopt. Bel of app Daphne en plan je afspraak.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn btn--light btn--lg" href="tel:0634936576">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel of app: 06 34 93 65 76
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Just <em>Eyes</em></div>
+        <p>Specialist in permanente wenkbrauwen, permanente eyeliner en wimperextensions in Hengelo (Ov). Natuurlijk resultaat, gratis touch-up.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Behandelingen</h4>
+        <a href="#diensten">Permanente wenkbrauwen</a>
+        <a href="#diensten">Permanente eyeliner</a>
+        <a href="#diensten">Wimperextensions</a>
+        <a href="#ervaringen">Ervaringen</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Just Eyes — Hengelo (Ov)</p>
+        <p><a href="tel:0634936576">06 34 93 65 76</a></p>
+        <p>Bel of app voor een afspraak</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Just Eyes — Hengelo · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" aria-hidden="false">
+  <div class="sc-meta">
+    <div class="t">Just Eyes · Hengelo</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+      4,8/5 · gratis touch-up
+    </div>
+  </div>
+  <a class="btn" href="tel:0634936576">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+    Bel
+  </a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ setMenu(!overlay.classList.contains('open')); });
+  overlay.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal (enhances already-visible content) ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

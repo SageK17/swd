@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbershop Glanerbrug — Heren-inloopkapsalon in centrum Glanerbrug</title>
+<meta name="description" content="Barbershop Glanerbrug: dé heren-inloopkapsalon aan de Gronausestraat 1150 in centrum Glanerbrug (Enschede). Knippen vanaf €17,50, fades, baard trimmen en scheren. Geen afspraak nodig — loop gewoon binnen. 4,6 sterren op Google.">
+<meta name="theme-color" content="#0F1B22">
+<meta property="og:title" content="Barbershop Glanerbrug — Heren-inloopkapsalon">
+<meta property="og:description" content="Loop binnen, geen afspraak nodig. Knippen vanaf €17,50, scherpe fades en baardwerk in centrum Glanerbrug. 4,6 sterren op Google.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Barbershop Glanerbrug">
+<!-- Custom SVG data-URI favicon: teal barber scissors on deep petrol -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1B22'/%3E%3Cg fill='none' stroke='%235CC7C0' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='20' cy='42' r='6'/%3E%3Ccircle cx='44' cy='42' r='6'/%3E%3Cpath d='M24 38 50 14M40 38 36 32M14 14l16 18'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --petrol:#0F1B22;        /* deep petrol/teal-black */
+    --petrol-2:#13242D;
+    --panel:#172E38;
+    --panel-2:#1d3742;
+    --paper:#F4F1EA;         /* warm off-white */
+    --paper-dim:#cfd6d4;
+    --muted:#8aa0a2;
+    --teal:#54CBC0;          /* bright teal accent */
+    --teal-deep:#2f9f95;
+    --copper:#D98E4E;        /* warm secondary accent */
+    --line:#244049;
+    --line-paper:#dad5c9;
+    --maxw:1200px;
+    --pad:clamp(20px,5vw,60px);
+    --display:'Oswald',Impact,'Arial Narrow',sans-serif;
+    --body:'Work Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--petrol);
+    color:var(--paper);
+    line-height:1.65;
+    font-size:clamp(15px,1.05vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--teal);color:var(--petrol)}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:600;
+    text-transform:uppercase;
+    line-height:.95;
+    letter-spacing:.005em;
+  }
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.26em;
+    font-size:clamp(11px,1.1vw,13px);
+    color:var(--teal);
+    display:inline-flex;
+    align-items:center;
+    gap:.7em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:clamp(20px,4vw,38px);
+    height:2px;
+    background:var(--teal);
+    display:inline-block;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--teal);--fg:var(--petrol);
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--body);font-weight:700;
+    text-transform:uppercase;letter-spacing:.06em;
+    font-size:clamp(13px,1.1vw,15px);
+    padding:1.02em 1.6em;
+    border:2px solid var(--teal);
+    border-radius:999px;
+    cursor:pointer;
+    transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease;
+    line-height:1;
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(84,203,192,.28)}
+  .btn--ghost{
+    --bg:transparent;--fg:var(--paper);
+    border-color:rgba(244,241,234,.45);
+  }
+  .btn--ghost:hover{--bg:rgba(244,241,234,.07);--fg:var(--paper);border-color:var(--paper);box-shadow:none}
+  .btn--block{width:100%;justify-content:center}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(15,27,34,.82);
+    backdrop-filter:saturate(150%) blur(12px);
+    -webkit-backdrop-filter:saturate(150%) blur(12px);
+    border-bottom:1px solid var(--line);
+    transition:border-color .3s ease,background .3s ease;
+  }
+  header.scrolled{background:rgba(15,27,34,.97);border-bottom-color:rgba(84,203,192,.5)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:clamp(62px,8vw,80px)}
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:40px;height:40px;flex:none;
+    border-radius:50%;
+    border:2px solid var(--teal);
+    display:grid;place-items:center;
+    color:var(--teal);
+    background:var(--petrol-2);
+  }
+  .brand .mark svg{width:22px;height:22px}
+  .brand .name{
+    font-family:var(--display);text-transform:uppercase;font-weight:600;
+    font-size:clamp(17px,2.2vw,21px);line-height:.95;letter-spacing:.03em;
+  }
+  .brand .name span{color:var(--teal)}
+  .brand .name small{display:block;font-family:var(--body);font-weight:600;font-size:9px;letter-spacing:.3em;color:var(--muted);margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+  .nav-links a.lnk{
+    font-weight:600;font-size:14px;letter-spacing:.03em;
+    text-transform:uppercase;color:var(--paper-dim);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--teal);transition:width .25s ease}
+  .nav-links a.lnk:hover{color:var(--paper)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex}
+
+  .hamburger{
+    display:none;width:46px;height:46px;
+    border:2px solid var(--line);background:transparent;border-radius:12px;
+    cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--paper);transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;background:var(--petrol);
+    transform:translateX(100%);
+    transition:transform .42s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;padding:var(--pad);visibility:hidden;
+  }
+  .overlay.open{transform:translateX(0);visibility:visible}
+  .overlay a{
+    font-family:var(--display);text-transform:uppercase;font-weight:600;
+    font-size:clamp(30px,8vw,48px);line-height:1.1;letter-spacing:.01em;
+    color:var(--paper);padding:.14em 0;display:flex;align-items:baseline;gap:.4em;
+    border-bottom:1px solid var(--line);
+  }
+  .overlay a .idx{font-family:var(--body);font-size:14px;font-weight:700;color:var(--teal);letter-spacing:.1em}
+  .overlay a:last-of-type{border-bottom:none}
+  .overlay a:active{color:var(--teal)}
+  .overlay .ov-foot{margin-top:clamp(24px,5vw,40px);color:var(--muted);font-size:14px;line-height:1.8}
+  .overlay .ov-foot strong{color:var(--paper);font-weight:700}
+  .overlay .ov-foot a{color:var(--teal);font-weight:700}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-photo{position:absolute;inset:0;z-index:0}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.9) contrast(1.02)}
+  .hero-photo::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(180deg,rgba(15,27,34,.72) 0%,rgba(15,27,34,.82) 55%,rgba(15,27,34,.96) 100%),
+      linear-gradient(90deg,rgba(15,27,34,.9) 0%,rgba(15,27,34,.35) 65%,transparent 100%);
+  }
+  .hero-inner{position:relative;z-index:2;padding-top:clamp(46px,7vw,90px);padding-bottom:clamp(44px,6vw,80px)}
+  .hero .eyebrow{margin-bottom:clamp(18px,3vw,26px)}
+  .hero h1{font-size:clamp(48px,11vw,128px);margin:0;letter-spacing:-.005em;font-weight:700}
+  .hero h1 .ln{display:block}
+  .hero h1 .teal{color:var(--teal)}
+  .hero h1 .thin{font-weight:500;color:var(--paper-dim)}
+  .hero-lede{max-width:50ch;color:var(--paper-dim);font-size:clamp(16px,1.5vw,20px);margin-top:clamp(20px,3vw,30px)}
+  .hero-lede strong{color:var(--paper);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(24px,3.4vw,36px)}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,3vw,30px)}
+  .chip{
+    display:inline-flex;align-items:center;gap:.5em;
+    border:1px solid var(--line);background:rgba(23,46,56,.6);
+    color:var(--paper-dim);font-weight:600;font-size:13px;letter-spacing:.02em;
+    padding:.55em .95em;border-radius:999px;
+  }
+  .chip svg{width:15px;height:15px;flex:none;stroke:var(--teal)}
+  .chip .stars{display:inline-flex;gap:1px}
+  .chip .stars svg{width:14px;height:14px;fill:var(--copper);stroke:none}
+
+  /* walk-in ribbon */
+  .ribbon{
+    background:var(--teal);color:var(--petrol);
+    font-family:var(--display);text-transform:uppercase;font-weight:600;letter-spacing:.04em;
+    overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--teal-deep);
+  }
+  .ribbon-track{display:inline-flex;animation:marq 28s linear infinite;will-change:transform}
+  .ribbon-track span{font-size:clamp(15px,2vw,22px);padding:.55em 0;display:inline-flex;align-items:center}
+  .ribbon-track span::after{content:"";width:7px;height:7px;background:var(--petrol);border-radius:50%;margin:0 clamp(16px,3vw,34px);display:inline-block}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(58px,8vw,116px);padding-bottom:clamp(58px,8vw,116px)}
+  .sec-head{margin-bottom:clamp(34px,5vw,60px);max-width:860px}
+  .sec-head h2{font-size:clamp(36px,6.5vw,80px);margin:.3em 0 0;letter-spacing:-.005em;font-weight:700}
+  .sec-head h2 .teal{color:var(--teal)}
+  .sec-head p{margin-top:1.1rem;color:var(--paper-dim);font-size:clamp(16px,1.4vw,19px);max-width:58ch}
+
+  /* ---------- DIENSTEN ---------- */
+  .services{border-top:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.8vw,22px)}
+  .svc{
+    border:1px solid var(--line);background:var(--panel);
+    border-radius:18px;padding:clamp(22px,3vw,34px);
+    display:flex;flex-direction:column;gap:.8rem;position:relative;overflow:hidden;
+    transition:transform .25s ease,border-color .25s ease,background .25s ease;
+  }
+  .svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+  .svc:hover{transform:translateY(-4px);border-color:rgba(84,203,192,.5);background:var(--panel-2)}
+  .svc:hover::before{transform:scaleY(1)}
+  .svc-top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .svc-ico{
+    width:clamp(46px,5vw,56px);height:clamp(46px,5vw,56px);flex:none;border-radius:14px;
+    background:rgba(84,203,192,.12);border:1px solid rgba(84,203,192,.3);
+    display:grid;place-items:center;color:var(--teal);
+  }
+  .svc-ico svg{width:26px;height:26px}
+  .svc-price{
+    font-family:var(--display);text-transform:uppercase;font-weight:600;
+    font-size:clamp(20px,2.4vw,28px);color:var(--paper);line-height:1;text-align:right;white-space:nowrap;
+  }
+  .svc-price small{display:block;font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.18em;color:var(--teal);margin-top:.45em}
+  .svc h3{font-family:var(--display);text-transform:uppercase;font-weight:600;font-size:clamp(22px,2.6vw,30px);line-height:1;letter-spacing:.01em}
+  .svc p{color:var(--muted);font-size:clamp(13px,1.15vw,15px);margin:0}
+  .svc-note{margin-top:clamp(24px,3vw,34px);color:var(--muted);font-size:14px;display:flex;gap:.7em;align-items:flex-start}
+  .svc-note svg{width:18px;height:18px;flex:none;stroke:var(--teal);margin-top:2px}
+
+  /* ---------- WAAROM / OVER ---------- */
+  .over{background:var(--petrol-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .over-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(34px,5vw,72px);align-items:center}
+  .over-media{position:relative}
+  .over-media .photo{
+    border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;
+  }
+  .over-media .photo img{width:100%;height:100%;object-fit:cover}
+  .over-media .badge{
+    position:absolute;right:clamp(-8px,1vw,16px);bottom:clamp(-14px,-1vw,-14px);
+    background:var(--teal);color:var(--petrol);border-radius:16px;
+    padding:clamp(14px,1.8vw,18px) clamp(16px,2vw,22px);
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+    display:flex;flex-direction:column;gap:.1em;min-width:130px;
+  }
+  .over-media .badge .num{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,42px);line-height:.9;display:flex;align-items:center;gap:.18em}
+  .over-media .badge .num svg{width:.7em;height:.7em;fill:var(--petrol)}
+  .over-media .badge .cap{font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+  .over-body .eyebrow{margin-bottom:1.1rem}
+  .over-body h2{font-size:clamp(34px,5.6vw,68px);letter-spacing:-.005em;font-weight:700}
+  .over-body h2 .teal{color:var(--teal)}
+  .over-body p{margin-top:1.1rem;color:var(--paper-dim);font-size:clamp(15px,1.3vw,18px)}
+  .over-body p strong{color:var(--paper);font-weight:700}
+  .why-list{margin-top:clamp(22px,3vw,30px);display:grid;gap:1rem}
+  .why-list li{display:flex;gap:.9em;align-items:flex-start}
+  .why-list .wi{
+    width:38px;height:38px;flex:none;border-radius:11px;
+    background:rgba(84,203,192,.12);border:1px solid rgba(84,203,192,.3);
+    display:grid;place-items:center;color:var(--teal);
+  }
+  .why-list .wi svg{width:19px;height:19px}
+  .why-list .wt{font-weight:700;color:var(--paper);font-size:clamp(15px,1.3vw,17px);line-height:1.3}
+  .why-list .wt small{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:2px;line-height:1.5}
+
+  /* ---------- HOURS + CONTACT ---------- */
+  .info{border-top:1px solid var(--line)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+  .panel{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:clamp(26px,3.4vw,42px)}
+  .panel h3{font-family:var(--display);text-transform:uppercase;font-weight:600;font-size:clamp(24px,3.2vw,38px);line-height:1;margin-bottom:1.2rem;letter-spacing:.01em}
+  .panel h3 .teal{color:var(--teal)}
+  .indic{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.3rem;
+    font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--copper);
+    border:1px solid rgba(217,142,78,.4);border-radius:999px;padding:.45em .85em;background:rgba(217,142,78,.08);
+  }
+  .indic svg{width:14px;height:14px;stroke:var(--copper)}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.8em 0;border-bottom:1px solid var(--line);font-size:clamp(15px,1.3vw,17px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(13px,1.2vw,15px)}
+  .hours .time{font-family:var(--display);font-weight:600;font-size:clamp(16px,1.6vw,21px);letter-spacing:.02em;color:var(--paper)}
+  .hours li.today{color:var(--petrol);background:var(--teal);margin:0 calc(-1*clamp(26px,3.4vw,42px));padding-left:clamp(26px,3.4vw,42px);padding-right:clamp(26px,3.4vw,42px);border-bottom-color:transparent;border-radius:8px}
+  .hours li.today .day,.hours li.today .time{color:var(--petrol)}
+  .hours li.closed .time{color:var(--muted)}
+
+  .contact-list{display:flex;flex-direction:column}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1.05em 0;border-bottom:1px solid var(--line)}
+  .crow:last-child{border-bottom:none}
+  .crow .ico{width:clamp(42px,5vw,50px);height:clamp(42px,5vw,50px);flex:none;border-radius:13px;border:1px solid rgba(84,203,192,.35);display:grid;place-items:center;color:var(--teal);background:rgba(84,203,192,.08)}
+  .crow .ico svg{width:20px;height:20px}
+  .crow .k{font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:11px;color:var(--muted)}
+  .crow .v{font-size:clamp(15px,1.4vw,18px);color:var(--paper);font-weight:600;line-height:1.45;margin-top:2px}
+  .crow .v small{display:block;color:var(--muted);font-weight:500;font-size:13px;margin-top:2px}
+  .crow a.v:hover{color:var(--teal)}
+  .socials{display:flex;gap:12px;margin-top:1.4rem}
+  .socials a{width:46px;height:46px;border-radius:13px;border:1px solid var(--line);display:grid;place-items:center;color:var(--paper-dim);transition:all .2s ease}
+  .socials a:hover{background:var(--teal);color:var(--petrol);border-color:var(--teal);transform:translateY(-3px)}
+  .socials a svg{width:20px;height:20px}
+
+  .map-standin{
+    margin-top:1.4rem;height:clamp(140px,18vw,180px);border-radius:14px;border:1px solid var(--line);position:relative;overflow:hidden;
+    background:
+      linear-gradient(0deg,rgba(84,203,192,.06),transparent),
+      repeating-linear-gradient(0deg,#1c343e 0 1px,transparent 1px 38px),
+      repeating-linear-gradient(90deg,#1c343e 0 1px,transparent 1px 38px),
+      #122530;
+  }
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--teal)}
+  .map-standin .pin svg{width:34px;height:34px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+  .map-standin .road{position:absolute;background:#23414c}
+  .map-standin .r1{left:0;right:0;top:52%;height:8px;transform:rotate(-6deg)}
+  .map-standin .r2{top:0;bottom:0;left:42%;width:6px}
+  .map-standin .lbl{position:absolute;left:12px;bottom:10px;font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- FINAL CTA ---------- */
+  .finalcta{position:relative;overflow:hidden;border-top:1px solid var(--line);text-align:center}
+  .finalcta-photo{position:absolute;inset:0;z-index:0}
+  .finalcta-photo img{width:100%;height:100%;object-fit:cover}
+  .finalcta-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,34,.86),rgba(15,27,34,.94))}
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(58px,9vw,128px);padding-bottom:clamp(64px,10vw,138px)}
+  .finalcta h2{font-size:clamp(40px,9vw,118px);letter-spacing:-.005em;font-weight:700}
+  .finalcta h2 .teal{color:var(--teal)}
+  .finalcta p{margin:1.3rem auto 2rem;color:var(--paper-dim);max-width:50ch;font-size:clamp(16px,1.5vw,20px)}
+  .finalcta .hero-actions{justify-content:center;margin-top:0}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--petrol);border-top:1px solid var(--line);padding-top:clamp(46px,6vw,76px);padding-bottom:120px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(26px,4vw,52px);padding-bottom:clamp(34px,5vw,52px);border-bottom:1px solid var(--line)}
+  .foot-brand .name{font-family:var(--display);text-transform:uppercase;font-weight:600;font-size:clamp(26px,4vw,44px);line-height:.95;letter-spacing:.02em}
+  .foot-brand .name span{color:var(--teal)}
+  .foot-brand p{margin-top:1rem;color:var(--muted);max-width:40ch;font-size:14px}
+  .foot-col h4{font-family:var(--body);font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:12px;color:var(--teal);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--paper-dim);font-size:14px;padding:.3em 0;line-height:1.5}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--teal)}
+  .foot-bottom{display:flex;flex-direction:column;gap:8px;padding-top:clamp(22px,3vw,30px);color:var(--muted);font-size:13px;line-height:1.6}
+  .foot-bottom a{color:var(--paper);font-weight:700}
+  .foot-bottom a:hover{color:var(--teal)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(15,27,34,.95);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:2px solid var(--teal);align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--display);text-transform:uppercase;font-weight:600;font-size:16px;line-height:1;letter-spacing:.02em}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.35em;color:var(--teal);font-weight:700;font-size:12px;margin-top:3px}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;fill:var(--copper)}
+  .sticky-cta .btn{flex:none;padding:.9em 1.25em}
+
+  /* ---------- REVEAL (enhances already-visible default) ---------- */
+  .reveal{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal{opacity:0;transform:translateY(28px)}
+  .js .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1000px){
+    .over-grid{grid-template-columns:1fr;gap:clamp(40px,6vw,56px)}
+    .over-media{max-width:440px}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .svc-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:96px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+  }
+  @media(max-width:440px){
+    .foot-top{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Barbershop Glanerbrug home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+      </span>
+      <span class="name">Barbershop <span>·</span> Glanerbrug<small>Heren-inloopkapsalon</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#waarom">Waarom wij</a>
+      <a class="lnk" href="#bezoek">Bezoek</a>
+      <a class="btn nav-cta" href="tel:0685828307">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel ons
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a href="#waarom"><span class="idx">02</span> Waarom wij</a>
+  <a href="#bezoek"><span class="idx">03</span> Bezoek</a>
+  <a href="tel:0685828307"><span class="idx">04</span> Bel ons</a>
+  <div class="ov-foot">
+    <strong>Gronausestraat 1150, Glanerbrug</strong><br>
+    Tel. <a href="tel:0685828307">06-85828307</a><br>
+    Heren-inloopkapsalon · geen afspraak nodig
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-photo" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1600&q=80"
+         alt="" loading="eager" fetchpriority="high" width="1600" height="1067">
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Herenkapper · Centrum Glanerbrug</span>
+    <h1 class="display reveal d1">
+      <span class="ln">Loop binnen.</span>
+      <span class="ln teal">Strak geknipt</span>
+      <span class="ln thin">de deur uit.</span>
+    </h1>
+    <p class="hero-lede reveal d2">
+      Welkom bij <strong>Barbershop Glanerbrug</strong>, dé heren-inloopkapsalon in het centrum. <strong>Geen afspraak nodig</strong> — loop gewoon binnen voor een scherpe knipbeurt, fade of baardtrim. Knippen al vanaf <strong>€17,50</strong>.
+    </p>
+    <div class="hero-actions reveal d3">
+      <a class="btn" href="tel:0685828307">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 06-85828307
+      </a>
+      <a class="btn btn--ghost" href="#diensten">Bekijk diensten &amp; prijzen</a>
+    </div>
+    <div class="hero-chips reveal d4">
+      <span class="chip">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+        </span>
+        4,6 sterren op Google
+      </span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Geen afspraak nodig</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Centrum Glanerbrug</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WALK-IN RIBBON ============ -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span>Inloop welkom</span><span>Knippen vanaf €17,50</span><span>Skin fades</span><span>Baard trimmen</span><span>Scheren</span><span>Kids knippen</span><span>4,6 op Google</span>
+    <span>Inloop welkom</span><span>Knippen vanaf €17,50</span><span>Skin fades</span><span>Baard trimmen</span><span>Scheren</span><span>Kids knippen</span><span>4,6 op Google</span>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="services sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Diensten &amp; prijzen</span>
+      <h2 class="display">Strak werk, <span class="teal">eerlijke prijs.</span></h2>
+      <p>Van een clean fade tot een verzorgde baard — bij Barbershop Glanerbrug zit je goed. Loop binnen, geen afspraak nodig. Onderstaande prijzen zijn indicatief; de exacte prijs hoor je in de zaak.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></span>
+          <span class="svc-price">vanaf €17,50<small>Knippen</small></span>
+        </div>
+        <h3>Heren knippen</h3>
+        <p>Een knipbeurt op maat van jouw kop en stijl, netjes afgewerkt en gestyled zoals jij 'm wil dragen.</p>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20s2-6 8-6 8 6 8 6"/><path d="M4 14h16M4 10h16M5 6h14"/></svg></span>
+          <span class="svc-price">indicatief<small>Fade</small></span>
+        </div>
+        <h3>Fade &amp; skin fade</h3>
+        <p>Low, mid of high fade — strak verlopen en haarscherp afgewerkt. Het handelsmerk van de shop.</p>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18M7 4v6a5 5 0 0 0 10 0V4"/><path d="M9 15c-1 3-2 5-2 5M15 15c1 3 2 5 2 5"/></svg></span>
+          <span class="svc-price">indicatief<small>Baard</small></span>
+        </div>
+        <h3>Baard trimmen &amp; scheren</h3>
+        <p>Baard in model gezet, scherpe lijnen en een gladde scheerbeurt. Afgewerkt zoals het hoort.</p>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="svc-top">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg></span>
+          <span class="svc-price">vriendelijk<small>Kids</small></span>
+        </div>
+        <h3>Kinderen knippen</h3>
+        <p>Geduldig en op z'n gemak — ook de jongste klanten gaan strak en blij weer naar buiten.</p>
+      </article>
+    </div>
+
+    <p class="svc-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Prijzen zijn indicatief en kunnen per behandeling verschillen. Twijfel je? Loop gerust binnen of bel 06-85828307 — we vertellen je vooraf precies waar je aan toe bent.
+    </p>
+  </div>
+</section>
+
+<!-- ============ WAAROM / OVER ============ -->
+<section class="over sec" id="waarom">
+  <div class="wrap over-grid">
+    <div class="over-media reveal">
+      <div class="photo">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80"
+             alt="Interieur van een sfeervolle herenbarbershop met klassieke kappersstoelen" loading="lazy" width="1200" height="1500">
+      </div>
+      <div class="badge" aria-hidden="true">
+        <span class="num">4,6 <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg></span>
+        <span class="cap">op Google</span>
+      </div>
+    </div>
+
+    <div class="over-body">
+      <span class="eyebrow reveal">Waarom Barbershop Glanerbrug</span>
+      <h2 class="display reveal d1">Jouw kapper <span class="teal">in de buurt.</span></h2>
+      <p class="reveal d2">
+        Barbershop Glanerbrug is een echte <strong>heren-inloopkapsalon</strong> midden in het centrum van Glanerbrug. Geen ingewikkeld afsprakensysteem, geen lang wachten thuis — je <strong>loopt gewoon binnen</strong> en wij zorgen voor een strakke knipbeurt.
+      </p>
+      <ul class="why-list reveal d3">
+        <li>
+          <span class="wi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+          <span class="wt">Inloop, geen afspraak<small>Even tijd over? Loop binnen wanneer het jou uitkomt.</small></span>
+        </li>
+        <li>
+          <span class="wi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span class="wt">Centraal in Glanerbrug<small>Aan de Gronausestraat 1150, makkelijk te vinden in het centrum.</small></span>
+        </li>
+        <li>
+          <span class="wi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg></span>
+          <span class="wt">4,6 sterren op Google<small>Een buurtbarbershop waar klanten blijven terugkomen.</small></span>
+        </li>
+        <li>
+          <span class="wi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2 7 4-16 2 9h6"/></svg></span>
+          <span class="wt">Scherpe prijzen<small>Knippen al vanaf €17,50 — vakwerk dat betaalbaar blijft.</small></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK: HOURS + CONTACT ============ -->
+<section class="info sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kom langs</span>
+      <h2 class="display">Bezoek de <span class="teal">shop.</span></h2>
+      <p>Je vindt ons aan de Gronausestraat 1150 in het centrum van Glanerbrug. Loop binnen of bel even vooraf als je iets wil overleggen.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="indic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Indicatief — bel om zeker te zijn</span>
+        <h3>Opening<span class="teal">stijden</span></h3>
+        <ul class="hours" id="hoursList">
+          <li data-day="1"><span class="day">Maandag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">09:00 – 17:00</span></li>
+          <li data-day="0" class="closed"><span class="day">Zondag</span><span class="time">Gesloten</span></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" aria-label="Contactgegevens">
+        <h3>Contact <span class="teal">&amp; route</span></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">Gronausestraat 1150<small>Centrum Glanerbrug (Enschede)</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><a class="v" href="tel:0685828307">06-85828307<small>Bel voor een afspraak of loop binnen</small></a></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <div><div class="k">Inloop</div><div class="v">Geen afspraak nodig<small>Heren-inloopkapsalon — gewoon binnenlopen</small></div></div>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Bekijk Barbershop Glanerbrug op Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="tel:0685828307" aria-label="Bel Barbershop Glanerbrug">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+
+        <div class="map-standin" aria-label="Indicatieve locatie aan de Gronausestraat 1150, centrum Glanerbrug" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Gronausestraat · Glanerbrug</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta">
+  <div class="finalcta-photo" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1600&q=80"
+         alt="" loading="lazy" width="1600" height="1067">
+  </div>
+  <div class="wrap finalcta-inner">
+    <h2 class="display reveal">Tijd voor een <span class="teal">verse coupe?</span></h2>
+    <p class="reveal d1">Loop binnen aan de Gronausestraat 1150 of bel even — geen afspraak nodig. Tot in de shop.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn" href="tel:0685828307">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 06-85828307
+      </a>
+      <a class="btn btn--ghost" href="#bezoek">Bekijk openingstijden</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Barbershop<span>.</span> Glanerbrug</div>
+        <p>Dé heren-inloopkapsalon in centrum Glanerbrug. Scherpe fades, knipbeurten en strak baardwerk — geen afspraak nodig.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#diensten">Diensten &amp; prijzen</a>
+        <a href="#waarom">Waarom wij</a>
+        <a href="#bezoek">Bezoek &amp; openingstijden</a>
+        <a href="tel:0685828307">Bel ons</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Gronausestraat 1150<br>Centrum Glanerbrug (Enschede)</p>
+        <p><a href="tel:0685828307">06-85828307</a></p>
+        <p>Heren-inloopkapsalon<br>Geen afspraak nodig</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Barbershop Glanerbrug — Enschede · Website door <a href="https://sagek17.github.io/swd" target="_blank" rel="noopener">Sage Website Design</a></span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta" aria-hidden="false">
+  <div class="sc-meta">
+    <div class="t">Geen afspraak nodig</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+      4,6 · knippen vanaf €17,50
+    </div>
+  </div>
+  <a class="btn" href="tel:0685828307">Bel ons</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!overlay.classList.contains('open'));
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal (enhances already-visible content) ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Opening hours: highlight today (times indicative) ---- */
+  try{
+    var now = new Date();
+    var d = now.getDay();
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+  }catch(e){ /* fail silent — static hours still shown */ }
+})();
+</script>
+</body>
+</html>
