@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWD — e-mail in huisstijl (preview)</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0a0c;--panel:#131319;--text:#f5f3ee;--soft:#d7d3ca;--muted:#a6a299;--accent:#ff5a2c;--accent2:#ff2e7e;--line:rgba(255,255,255,.1)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--soft);line-height:1.6;padding:clamp(20px,5vw,56px) 18px 80px}
+  .wrap{max-width:680px;margin:0 auto}
+  h1{font-family:"Sora",sans-serif;font-weight:800;color:#fff;font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:-.02em;line-height:1.05}
+  .lead{color:var(--muted);margin:14px 0 8px;max-width:60ch}
+  .note{display:flex;gap:.6rem;align-items:flex-start;background:rgba(255,90,44,.08);border:1px solid rgba(255,90,44,.25);border-radius:12px;padding:14px 16px;margin:22px 0 40px;font-size:.92rem;color:var(--soft)}
+  .note b{color:#fff}
+  .seclabel{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  .block{margin-bottom:52px}
+  /* email client mock */
+  .mail{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.7);color:#15141a}
+  .mhead{padding:14px 18px;border-bottom:1px solid #ececee;background:#faf9f7;font-family:Arial,Helvetica,sans-serif}
+  .mhead .subj{font-weight:700;font-size:14px;color:#15141a}
+  .mhead .meta{font-size:12px;color:#85838b;margin-top:3px}
+  .mbody{padding:22px 22px 8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#2b2a30;line-height:1.65}
+  .mbody p{margin:0 0 13px}
+  /* branded proposal header */
+  .brandbar{background:linear-gradient(120deg,#ff6a30,#ff2e7e);padding:18px 22px;display:flex;align-items:center;gap:11px}
+  .brandbar img{width:38px;height:38px;border-radius:10px;display:block}
+  .brandbar .nm{font-family:Arial,Helvetica,sans-serif;color:#fff}
+  .brandbar .nm b{display:block;font-size:15px;letter-spacing:.01em}
+  .brandbar .nm span{font-size:11px;opacity:.9}
+  .pkg{border:1px solid #ececee;border-radius:12px;padding:16px 18px;margin:4px 0 18px;background:#fbfaf8}
+  .pkg .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .pkg .top b{font-size:15px;color:#15141a}
+  .pkg .top .amt{font-weight:800;font-size:18px;color:#15141a}
+  .pkg ul{list-style:none;margin:0;padding:0}
+  .pkg li{font-size:13px;color:#3b3a41;padding:3px 0 3px 24px;position:relative}
+  .pkg li::before{content:"";position:absolute;left:0;top:6px;width:13px;height:13px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5' fill='none' stroke='black' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5' fill='none' stroke='black' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat}
+  .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:14px;padding:12px 22px;border-radius:8px}
+  .fine{font-size:12px;color:#85838b;margin:14px 0 4px}
+  .sig{margin:18px 0 4px;padding-top:16px;border-top:1px solid #ececee}
+  /* signature (matches Gmail HTML signature) */
+  .sigtbl{font-family:Arial,Helvetica,sans-serif;color:#0a0a0c;font-size:13px;line-height:1.5;border-collapse:collapse}
+  .sigtbl td{vertical-align:middle}
+  .sigtbl .logo{padding-right:12px}
+  .sigtbl .logo img{width:42px;height:42px;display:block;border-radius:10px}
+  .sigtbl .info{border-left:2px solid var(--accent);padding-left:12px}
+  .sigtbl a{color:var(--accent2);text-decoration:none}
+  .foot{color:var(--muted);font-size:.86rem;text-align:center;margin-top:30px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Je e-mail, in jouw huisstijl</h1>
+  <p class="lead">Zo ziet het eruit waar het mag. Twee voorbeelden: de subtiele merk-handtekening onder een warme reply, en een volledig gebrande voorstel/go-live-mail.</p>
+  <div class="note"><span>⚠️</span><div><b>Let op:</b> je <b>cold-mails blijven platte tekst</b> (dat houdt ze uit spam en oogt persoonlijk). Onderstaande stijl gebruik je pas als een gesprek warm is: bij een voorstel, of als de site live gaat.</div></div>
+
+  <!-- 1. SIGNATURE -->
+  <div class="block">
+    <p class="seclabel">1 · Merk-handtekening (onder warme replies)</p>
+    <div class="mail">
+      <div class="mhead">
+        <div class="subj">Re: Een nieuwe website voor Salon Elegance</div>
+        <div class="meta">Sage — Sage Website Design &lt;swd.enschede@gmail.com&gt;</div>
+      </div>
+      <div class="mbody">
+        <p>Hoi Eugeniek,</p>
+        <p>Fijn dat je 'm leuk vindt. Ik kan de site deze week voor je live zetten op je eigen domein. Zal ik je een kort voorstel sturen met de details?</p>
+        <div class="sig">
+          <table class="sigtbl"><tr>
+            <td class="logo"><img src="../assets/swd-icon-180.png" alt="Sage Website Design"></td>
+            <td class="info"><strong style="font-size:14px">Sage</strong> · Sage Website Design<br>
+              <span style="color:#74706a">Webdesignstudio Enschede &amp; Twente</span><br>
+              <a href="mailto:swd.enschede@gmail.com">swd.enschede@gmail.com</a> &nbsp;·&nbsp;
+              <a href="https://sagek17.github.io/swd/">sagewebsitedesign</a>
+            </td>
+          </tr></table>
+        </div>
+      </div>
+      <div style="height:14px"></div>
+    </div>
+  </div>
+
+  <!-- 2. PROPOSAL / GO-LIVE -->
+  <div class="block">
+    <p class="seclabel">2 · Voorstel / go-live-mail (warme lead)</p>
+    <div class="mail">
+      <div class="mhead">
+        <div class="subj">Je nieuwe website voor Salon Elegance — voorstel</div>
+        <div class="meta">Sage — Sage Website Design &lt;swd.enschede@gmail.com&gt;</div>
+      </div>
+      <div class="brandbar">
+        <img src="../assets/swd-icon-180.png" alt="">
+        <div class="nm"><b>Sage Website Design</b><span>Webdesignstudio · Enschede</span></div>
+      </div>
+      <div class="mbody">
+        <p>Hoi Eugeniek,</p>
+        <p>Wat leuk dat je verder wilt met je nieuwe website. Hier is mijn voorstel, kort en duidelijk:</p>
+        <div class="pkg">
+          <div class="top"><b>Standaard-pakket</b><span class="amt">€500</span></div>
+          <ul>
+            <li>Complete site met je eigen foto's en teksten</li>
+            <li>Lokale SEO + je Google-profiel</li>
+            <li>Eigen domeinnaam geregeld</li>
+            <li>Live binnen ongeveer een week</li>
+          </ul>
+        </div>
+        <p><a href="https://sagek17.github.io/swd/clients/salon-elegance/" class="cta">Top, we gaan starten →</a></p>
+        <p class="fine">Je betaalt pas als je tevreden bent. Vragen of liever iets anders? Bel of mail me gerust.</p>
+        <div class="sig">
+          <table class="sigtbl"><tr>
+            <td class="logo"><img src="../assets/swd-icon-180.png" alt="Sage Website Design"></td>
+            <td class="info"><strong style="font-size:14px">Sage</strong> · Sage Website Design<br>
+              <span style="color:#74706a">Webdesignstudio Enschede &amp; Twente</span><br>
+              <a href="mailto:swd.enschede@gmail.com">swd.enschede@gmail.com</a> &nbsp;·&nbsp;
+              <a href="https://sagek17.github.io/swd/">sagewebsitedesign</a>
+            </td>
+          </tr></table>
+        </div>
+      </div>
+      <div style="height:14px"></div>
+    </div>
+  </div>
+
+  <p class="foot">Preview · Sage Website Design. Cold-mail = plat, warme mail = deze stijl.</p>
+</div>
+</body>
+</html>
