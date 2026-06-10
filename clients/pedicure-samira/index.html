@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedicurepraktijk Samira — Medisch pedicure in Arnhem-Zuid</title>
+<meta name="description" content="Pedicurepraktijk Samira in Arnhem-Zuid: complete pedicurebehandeling en medische voetzorg bij reuma en diabetes. Orthese-, antidruk- en nagelbeugeltechnieken. Bel of app 06-41975069.">
+<meta name="theme-color" content="#9C4A36">
+<meta property="og:title" content="Pedicurepraktijk Samira — Medisch pedicure in Arnhem-Zuid">
+<meta property="og:description" content="Deskundige voetzorg aan de Schepen van Hemerthstraat 39 in Arnhem-Zuid. Regulier én medisch pedicure, aangesloten bij ProVoet en ProCert. Afspraak? Bel of app 06-41975069.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://images.unsplash.com/photo-1577117633143-a2437fb9bdda?auto=format&fit=crop&w=1200&q=80">
+<!-- Custom SVG favicon: voetboog onder een boog, in terracotta -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%239C4A36'/%3E%3Cpath d='M8 26v-8a8 8 0 0 1 16 0v8' fill='none' stroke='%23F6E7DA' stroke-width='2' stroke-linecap='round'/%3E%3Cellipse cx='16' cy='21.5' rx='3.4' ry='4.6' fill='%23F6E7DA'/%3E%3Ccircle cx='12.2' cy='13.6' r='1.15' fill='%23F6E7DA'/%3E%3Ccircle cx='16' cy='12.6' r='1.3' fill='%23F6E7DA'/%3E%3Ccircle cx='19.8' cy='13.6' r='1.15' fill='%23F6E7DA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay:#9C4A36;          /* terracotta — hoofdkleur */
+    --clay-deep:#7C3826;     /* donker terracotta voor hover/tekst op licht */
+    --clay-soft:#B96B53;     /* zachter terracotta, decoratief */
+    --rose:#E3B7A0;          /* poederrose accent, decoratief */
+    --blush:#F6E7DA;         /* warm blush vlak */
+    --linen:#FBF5EE;         /* linnen pagina-achtergrond */
+    --white:#FFFFFF;
+    --plum:#3B2026;          /* aubergine inkt */
+    --plum-soft:#64474C;     /* zachte aubergine voor lopende tekst */
+    --line:#E8D6C6;          /* warme hairline */
+    --ok:#5E7E5A;            /* groen voor vinkjes */
+    --maxw:1160px;
+    --pad:clamp(1.25rem,5vw,3.75rem);
+    --arch:clamp(140px,22vw,260px);
+    --ease:cubic-bezier(.25,.7,.3,1);
+    --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+    --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:var(--sans);
+    color:var(--plum);
+    background:var(--linen);
+    font-size:clamp(1rem,.95rem + .3vw,1.1rem);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;color:var(--plum);letter-spacing:.005em}
+  p{color:var(--plum-soft)}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  strong{color:var(--plum)}
+  ::selection{background:var(--clay);color:var(--linen)}
+  :focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:4px}
+
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+  .kicker{
+    display:inline-flex;align-items:center;gap:.65rem;
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--clay-deep);
+  }
+  .kicker::before{content:"";width:2.2rem;height:1px;background:var(--clay-soft);flex:none}
+
+  .skiplink{
+    position:absolute;left:-999px;top:auto;z-index:100;
+    background:var(--plum);color:var(--linen);padding:.7rem 1.2rem;border-radius:0 0 12px 0;
+    font-weight:600;
+  }
+  .skiplink:focus{left:0;top:0}
+
+  /* ---------- knoppen ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-weight:700;font-size:1rem;line-height:1;
+    padding:1rem 1.5rem;border-radius:14px;border:1.5px solid transparent;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+    cursor:pointer;
+  }
+  .btn svg{flex:none}
+  .btn-clay{background:var(--clay);color:#FFF8F2;border-color:var(--clay)}
+  .btn-clay:hover{background:var(--clay-deep);border-color:var(--clay-deep);transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(124,56,38,.55)}
+  .btn-line{background:transparent;color:var(--clay-deep);border-color:var(--clay-soft)}
+  .btn-line:hover{background:var(--blush);transform:translateY(-2px)}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,245,238,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand{display:flex;align-items:center;gap:.75rem}
+  .brand-mark{width:42px;height:42px;flex:none}
+  .brand-name{font-family:var(--serif);font-size:1.25rem;line-height:1.05;color:var(--plum)}
+  .brand-name small{display:block;font-family:var(--sans);font-size:.6rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--clay-deep);margin-top:.2rem}
+  .topnav{display:flex;align-items:center;gap:clamp(1rem,2.5vw,2rem)}
+  .topnav a.nl{font-weight:600;font-size:.95rem;color:var(--plum-soft);padding-block:.35rem;position:relative}
+  .topnav a.nl::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--clay);transition:width .3s var(--ease)}
+  .topnav a.nl:hover{color:var(--plum)}
+  .topnav a.nl:hover::after{width:100%}
+  .topnav .btn{padding:.7rem 1.1rem;font-size:.92rem}
+  @media (max-width:840px){.topnav a.nl{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0 0 0 auto;width:min(46vw,560px);
+    background:var(--blush);border-radius:0 0 0 var(--arch);z-index:0;
+  }
+  .hero-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.85fr);
+    gap:clamp(2rem,5vw,4.5rem);align-items:center;
+    padding-block:clamp(3rem,7vw,5.5rem);
+  }
+  .hero h1{font-size:clamp(2.5rem,5.6vw,4.2rem);margin:1.1rem 0 1.3rem}
+  .hero h1 em{font-style:italic;color:var(--clay)}
+  .hero .lede{font-size:clamp(1.05rem,1.1vw + .9rem,1.25rem);max-width:34em}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+  .hero-note{margin-top:1.1rem;font-size:.92rem;color:var(--plum-soft)}
+  .hero-note strong{color:var(--clay-deep)}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:1.4rem 2.2rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+  .fact b{display:block;font-family:var(--serif);font-size:1.35rem;color:var(--plum)}
+  .fact span{font-size:.85rem;font-weight:600;letter-spacing:.04em;color:var(--plum-soft)}
+
+  .hero-figure{position:relative}
+  .hero-figure .arch{
+    border-radius:var(--arch) var(--arch) 18px 18px;
+    overflow:hidden;border:6px solid var(--white);
+    box-shadow:0 30px 60px -30px rgba(59,32,38,.45);
+  }
+  .hero-figure img{width:100%;height:clamp(380px,46vw,540px);object-fit:cover}
+  .hero-chip{
+    position:absolute;left:-1.2rem;bottom:1.8rem;
+    display:flex;align-items:center;gap:.7rem;
+    background:var(--white);border:1px solid var(--line);border-radius:999px;
+    padding:.65rem 1.1rem .65rem .7rem;box-shadow:0 16px 32px -18px rgba(59,32,38,.4);
+  }
+  .hero-chip .dot{width:34px;height:34px;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--clay-deep)}
+  .hero-chip b{display:block;font-size:.88rem;line-height:1.25;color:var(--plum)}
+  .hero-chip small{font-size:.78rem;color:var(--plum-soft)}
+  @media (max-width:840px){
+    .hero::before{inset:auto 0 0 0;width:auto;height:42%;border-radius:var(--arch) var(--arch) 0 0}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-figure{max-width:480px}
+    .hero-chip{left:.8rem}
+  }
+
+  /* ---------- keurmerk-strook ---------- */
+  .trust{background:var(--plum);color:#F2E4DC}
+  .trust .row{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2.5rem;
+    padding-block:1.15rem;
+  }
+  .trust .item{display:flex;align-items:center;gap:.65rem;font-size:.92rem;font-weight:600;letter-spacing:.03em}
+  .trust .item svg{color:var(--rose);flex:none}
+
+  /* ---------- secties algemeen ---------- */
+  section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+  .sec-head{max-width:46em;margin-bottom:clamp(2rem,4vw,3.2rem)}
+  .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem);margin-top:1rem}
+  .sec-head p{margin-top:1rem}
+
+  /* ---------- behandelingen ---------- */
+  .care{counter-reset:beh}
+  .care-list{display:grid;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+  .care-item{
+    counter-increment:beh;
+    display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem 1.6rem;align-items:baseline;
+    background:var(--linen);padding:1.6rem 0;
+    transition:background .3s var(--ease);
+  }
+  .care-item:hover{background:var(--blush)}
+  .care-item::before{
+    content:counter(beh,decimal-leading-zero);
+    font-family:var(--serif);font-size:1.1rem;color:var(--clay);min-width:2.4rem;
+  }
+  .care-item h3{font-size:clamp(1.25rem,2vw,1.6rem)}
+  .care-item p{margin-top:.45rem;max-width:46em;font-size:.98rem}
+  .care-item .tag{
+    justify-self:end;align-self:start;
+    font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--clay-deep);background:var(--blush);border:1px solid var(--rose);
+    padding:.3rem .7rem;border-radius:999px;white-space:nowrap;
+  }
+  .care-item .tag.med{color:#4E6149;background:#EAF0E6;border-color:#C4D4BC}
+  @media (max-width:640px){
+    .care-item{grid-template-columns:auto minmax(0,1fr)}
+    .care-item .tag{grid-column:2;justify-self:start;margin-top:.4rem}
+  }
+  .care-foot{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2rem;font-size:.95rem;color:var(--plum-soft)}
+
+  /* ---------- tarieven ---------- */
+  .prices{background:var(--blush);border-radius:clamp(24px,4vw,48px)}
+  .prices-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+  .price-card{
+    background:var(--white);border:1px solid var(--line);border-radius:22px;
+    padding:clamp(1.4rem,3vw,2.2rem);box-shadow:0 24px 48px -28px rgba(59,32,38,.35);
+  }
+  .price-card h3{font-size:1.4rem;padding-bottom:1rem;border-bottom:1px dashed var(--rose)}
+  .price-card ul{list-style:none}
+  .price-card li{
+    display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;
+    padding:.85rem 0;border-bottom:1px dashed var(--line);font-size:.98rem;
+  }
+  .price-card li:last-child{border-bottom:none}
+  .price-card li .p{font-family:var(--serif);font-size:1.12rem;color:var(--clay-deep);white-space:nowrap}
+  .price-card .note{margin-top:1rem;font-size:.85rem;color:var(--plum-soft)}
+  .refund h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-top:1rem}
+  .refund p{margin-top:1rem}
+  .refund ul{list-style:none;margin-top:1.4rem;display:grid;gap:.85rem}
+  .refund li{display:flex;gap:.8rem;align-items:flex-start;color:var(--plum-soft)}
+  .refund li svg{flex:none;margin-top:.3rem;color:var(--ok)}
+  @media (max-width:840px){.prices-grid{grid-template-columns:1fr}}
+
+  /* ---------- over Samira ---------- */
+  .about-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2.5rem,6vw,5rem);align-items:center}
+  .about-figure{position:relative}
+  .about-figure .arch{
+    border-radius:var(--arch) var(--arch) 18px 18px;overflow:hidden;
+    border:6px solid var(--white);box-shadow:0 30px 60px -30px rgba(59,32,38,.45);
+  }
+  .about-figure img{width:100%;height:clamp(340px,40vw,480px);object-fit:cover}
+  .about-figure::after{
+    content:"";position:absolute;inset:1.4rem -1.4rem -1.4rem 1.4rem;z-index:-1;
+    border:1.5px solid var(--rose);border-radius:var(--arch) var(--arch) 22px 22px;
+  }
+  .about h2{font-size:clamp(1.9rem,3.6vw,2.9rem);margin-top:1rem}
+  .about p{margin-top:1.1rem;max-width:38em}
+  .about .sig{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--clay-deep)}
+  .about .sig small{display:block;font-family:var(--sans);font-style:normal;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--plum-soft);margin-top:.3rem}
+  @media (max-width:840px){
+    .about-grid{grid-template-columns:1fr}
+    .about-figure{max-width:420px;margin-inline:0 auto}
+  }
+
+  /* ---------- recensies ---------- */
+  .reviews{background:var(--plum)}
+  .reviews .kicker{color:var(--rose)}
+  .reviews .kicker::before{background:var(--rose)}
+  .reviews h2{color:#FBF1EA;font-size:clamp(1.9rem,3.6vw,2.9rem);margin-top:1rem}
+  .reviews .sec-head p{color:#D9BFB4}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+  .rev{
+    background:rgba(251,245,238,.06);border:1px solid rgba(227,183,160,.28);border-radius:20px;
+    padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem;
+  }
+  .rev .stars{display:flex;gap:.25rem;color:var(--rose)}
+  .rev blockquote{font-family:var(--serif);font-size:1.12rem;line-height:1.5;color:#F4E6DE;font-style:italic;flex:1}
+  .rev cite{font-style:normal;font-size:.88rem;font-weight:700;letter-spacing:.06em;color:var(--rose)}
+  .rev-src{margin-top:1.6rem;font-size:.85rem;color:#C7A99C;text-align:center}
+  @media (max-width:840px){.rev-grid{grid-template-columns:1fr;max-width:540px}}
+
+  /* ---------- praktisch / contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+  .c-block{padding:1.5rem 0;border-top:1px solid var(--line)}
+  .c-block:first-of-type{border-top:none;padding-top:0}
+  .c-block h3{font-size:1.3rem;display:flex;align-items:center;gap:.7rem}
+  .c-block h3 svg{color:var(--clay);flex:none}
+  .c-block p{margin-top:.5rem}
+  .c-block a.cl{font-weight:700;color:var(--clay-deep);border-bottom:1.5px solid var(--rose);transition:border-color .25s var(--ease)}
+  .c-block a.cl:hover{border-color:var(--clay-deep)}
+  .hours{list-style:none;margin-top:.7rem;max-width:26rem}
+  .hours li{display:flex;justify-content:space-between;gap:1.5rem;padding:.5rem 0;border-bottom:1px dashed var(--line);font-size:.97rem;color:var(--plum-soft)}
+  .hours li b{font-weight:600;color:var(--plum)}
+  .hours li .t{font-family:var(--serif);color:var(--clay-deep)}
+  .call-card{
+    position:sticky;top:96px;
+    background:var(--blush);border:1px solid var(--rose);border-radius:26px;
+    padding:clamp(1.6rem,3.5vw,2.4rem);text-align:center;
+  }
+  .call-card .dot{width:60px;height:60px;border-radius:50%;background:var(--clay);color:#FFF4EC;display:grid;place-items:center;margin:0 auto 1.1rem}
+  .call-card h3{font-size:1.55rem}
+  .call-card p{margin-top:.6rem;font-size:.96rem}
+  .call-card .tel{
+    display:block;font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.2rem);color:var(--clay-deep);
+    margin-top:1.2rem;letter-spacing:.02em;
+  }
+  .call-card .tel:hover{color:var(--clay)}
+  .call-card .btn{margin-top:1.2rem;width:100%;justify-content:center}
+  .call-card small{display:block;margin-top:1rem;font-size:.82rem;color:var(--plum-soft)}
+  @media (max-width:840px){.contact-grid{grid-template-columns:1fr}.call-card{position:static}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--plum);color:#D9BFB4;padding-block:3rem 2rem}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(227,183,160,.22)}
+  .foot-brand{display:flex;align-items:center;gap:.75rem;color:#FBF1EA}
+  .foot-brand .brand-name{color:#FBF1EA}
+  .foot-brand .brand-name small{color:var(--rose)}
+  .foot-meta{font-size:.85rem;line-height:1.9}
+  .foot-meta b{color:#F4E6DE;font-weight:600}
+  .foot-soc{display:flex;gap:.8rem}
+  .foot-soc a{
+    width:42px;height:42px;border-radius:50%;border:1px solid rgba(227,183,160,.4);
+    display:grid;place-items:center;color:var(--rose);
+    transition:background .25s var(--ease),color .25s var(--ease);
+  }
+  .foot-soc a:hover{background:var(--rose);color:var(--plum)}
+  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding-top:1.6rem;font-size:.85rem}
+  .foot-bottom a{color:var(--rose);font-weight:600;border-bottom:1px solid rgba(227,183,160,.4)}
+  .foot-bottom a:hover{color:#FBF1EA;border-color:#FBF1EA}
+
+  /* ---------- reveals: alleen actief mét JS ---------- */
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html.js .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+<a class="skiplink" href="#main">Direct naar de inhoud</a>
+
+<header>
+  <div class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Pedicurepraktijk Samira — naar boven">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <rect width="32" height="32" rx="8" fill="#9C4A36"/>
+        <path d="M8 26v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#F6E7DA" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="16" cy="21.5" rx="3.4" ry="4.6" fill="#F6E7DA"/>
+        <circle cx="12.2" cy="13.6" r="1.15" fill="#F6E7DA"/><circle cx="16" cy="12.6" r="1.3" fill="#F6E7DA"/><circle cx="19.8" cy="13.6" r="1.15" fill="#F6E7DA"/>
+      </svg>
+      <span class="brand-name">Samira<small>Pedicurepraktijk</small></span>
+    </a>
+    <nav class="topnav" aria-label="Hoofdmenu">
+      <a class="nl" href="#behandelingen">Behandelingen</a>
+      <a class="nl" href="#tarieven">Tarieven</a>
+      <a class="nl" href="#over">Over Samira</a>
+      <a class="nl" href="#contact">Contact</a>
+      <a class="btn btn-clay" href="tel:0641975069">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        06-41975069
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Medisch pedicure · Arnhem-Zuid</span>
+        <h1 id="hero-h">Uw voeten verdienen <em>deskundige</em> verzorging</h1>
+        <p class="lede">Bij Pedicurepraktijk Samira kunt u terecht voor een complete pedicurebehandeling — van het verwijderen van eelt en likdoorns tot specialistische medische voetzorg bij reuma en diabetes. Persoonlijk, vakkundig en bij u in de buurt.</p>
+        <div class="hero-cta">
+          <a class="btn btn-clay" href="tel:0641975069">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Bel voor een afspraak
+          </a>
+          <a class="btn btn-line" href="https://api.whatsapp.com/send?phone=31641975069" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+            Stuur een appje
+          </a>
+        </div>
+        <p class="hero-note">Bellen of appen kan naar <strong>06-41975069</strong>. Ben ik aan het behandelen? Dan belt Samira u zo snel mogelijk terug.</p>
+        <div class="hero-facts">
+          <div class="fact"><b>ProVoet</b><span>&amp; ProCert geregistreerd</span></div>
+          <div class="fact"><b>Medisch</b><span>pedicure, reuma &amp; diabetes</span></div>
+          <div class="fact"><b>Arnhem-Zuid</b><span>parkeren naast de praktijk</span></div>
+        </div>
+      </div>
+      <figure class="hero-figure reveal">
+        <div class="arch">
+          <img src="https://images.unsplash.com/photo-1577117633143-a2437fb9bdda?auto=format&fit=crop&w=1600&q=80" alt="Warm voetenbad met zachte handdoeken en een witte bloem, klaar voor een pedicurebehandeling" width="800" height="1060" loading="eager" fetchpriority="high">
+        </div>
+        <figcaption class="hero-chip">
+          <span class="dot" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span><b>Ook ’s avonds open</b><small>maandag tot 20:00 uur</small></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ KEURMERKEN ============ -->
+  <div class="trust" role="note" aria-label="Kwaliteit en registraties">
+    <div class="wrap row">
+      <span class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Lid ProVoet &amp; ProCert</span>
+      <span class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Gediplomeerd medisch pedicure</span>
+      <span class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Reumatische &amp; diabetische voet</span>
+      <span class="item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Vergoeding via zorgverzekeraar mogelijk</span>
+    </div>
+  </div>
+
+  <!-- ============ BEHANDELINGEN ============ -->
+  <section class="care" id="behandelingen" aria-labelledby="beh-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Behandelingen</span>
+        <h2 id="beh-h">Van complete pedicure tot specialistische voetzorg</h2>
+        <p>Naast de reguliere behandelingen is Samira als medisch pedicure gespecialiseerd in aanvullende technieken — voor ingegroeide nagels, drukplekken, beschadigde nagels en kwetsbare voeten door reuma of diabetes.</p>
+      </div>
+      <div class="care-list">
+        <article class="care-item reveal">
+          <div>
+            <h3>Complete pedicurebehandeling</h3>
+            <p>Na het beoordelen van uw voeten worden de nagels geknipt en gefreesd, en worden eelt en likdoorns vakkundig verwijderd. De behandeling eindigt altijd met het incrèmen van de voeten en een korte massage.</p>
+          </div>
+          <span class="tag">Regulier</span>
+        </article>
+        <article class="care-item reveal">
+          <div>
+            <h3>Medische behandeling bij reuma &amp; diabetes</h3>
+            <p>Kwetsbare voeten door een onderliggende aandoening vragen om extra zorg. Als gekwalificeerd medisch pedicure behandelt Samira cliënten met reuma en diabetes — vaak met (gedeeltelijke) vergoeding via de zorgverzekeraar.</p>
+          </div>
+          <span class="tag med">Medisch</span>
+        </article>
+        <article class="care-item reveal">
+          <div>
+            <h3>Orthesetechniek</h3>
+            <p>Een op maat gemaakte orthese ontlast drukplekken aan en tussen de tenen of reguleert een verkeerde teenstand — bijvoorbeeld bij een weke likdoorn, hamer- of klauwteen.</p>
+          </div>
+          <span class="tag med">Medisch</span>
+        </article>
+        <article class="care-item reveal">
+          <div>
+            <h3>Antidruktechniek &amp; vilttherapie</h3>
+            <p>Moeten drukplekken direct ontlast worden? Vilttherapie wordt op maat gemaakt en biedt een tijdelijke oplossing, bijvoorbeeld als voorbereiding op een orthese of overbrugging naar een steunzool.</p>
+          </div>
+          <span class="tag med">Medisch</span>
+        </article>
+        <article class="care-item reveal">
+          <div>
+            <h3>Nagelbeugeltechniek</h3>
+            <p>Bij ingroeiende of bolle nagels reguleert een nagelbeugel de groei van de nagel, vermindert de druk en verlicht eventuele pijn.</p>
+          </div>
+          <span class="tag med">Medisch</span>
+        </article>
+        <article class="care-item reveal">
+          <div>
+            <h3>Nagelreparatie</h3>
+            <p>Een beschadigde teennagel kan gedeeltelijk of zelfs helemaal worden gerepareerd, zodat hij er weer mooi en verzorgd uitziet.</p>
+          </div>
+          <span class="tag">Regulier</span>
+        </article>
+      </div>
+      <div class="care-foot reveal">
+        <p><strong>Tip van Samira:</strong> houd uw voeten in topconditie met een vervolgafspraak iedere 6 tot 8 weken.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TARIEVEN & VERGOEDING ============ -->
+  <section id="tarieven" aria-labelledby="tar-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="prices" style="padding:clamp(2.5rem,6vw,4.5rem) var(--pad)">
+        <div class="prices-grid">
+          <div class="reveal">
+            <span class="kicker">Tarieven</span>
+            <div class="refund">
+              <h3 id="tar-h">Heldere prijzen, mogelijk vergoed</h3>
+              <p>Voor een medische behandeling komt u mogelijk in aanmerking voor vergoeding door uw zorgverzekeraar. Hiervoor is een doorverwijzing van de huisarts of medisch specialist noodzakelijk.</p>
+              <ul>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Aangesloten bij brancheorganisaties <strong>ProVoet</strong> en <strong>ProCert</strong></span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Gekwalificeerd voor de <strong>reumatische en diabetische voet</strong></span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Betaling contant of via een <strong>betaalverzoek</strong> (geen pinapparaat aanwezig)</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="price-card reveal" role="table" aria-label="Behandeltarieven">
+            <h3>Behandeltarieven</h3>
+            <ul>
+              <li><span>Pedicurebehandeling volledig</span><span class="p">€ 40,-</span></li>
+              <li><span>Nagelreparatie, nagel grote teen</span><span class="p">€ 25,-</span></li>
+              <li><span>Nagelreparatie, per nagel overige tenen</span><span class="p">€ 15,-</span></li>
+              <li><span>Nagelbeugel</span><span class="p">€ 30,-</span></li>
+              <li><span>Nagellak verwijderen, elders gezet</span><span class="p">€ 5,-</span></li>
+              <li><span>Gellak verwijderen, elders gezet</span><span class="p">€ 15,-</span></li>
+            </ul>
+            <p class="note">Tarieven volgens de huidige prijslijst van de praktijk. Afspraken die korter dan 24 uur van tevoren worden geannuleerd, kunnen in rekening worden gebracht.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OVER SAMIRA ============ -->
+  <section class="about" id="over" aria-labelledby="over-h" style="padding-top:0">
+    <div class="wrap about-grid">
+      <figure class="about-figure reveal">
+        <div class="arch">
+          <img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=1600&q=80" alt="Verzorgde voeten in een ontspannend voetenbad met verse bloemen" width="800" height="1000" loading="lazy">
+        </div>
+      </figure>
+      <div class="reveal">
+        <span class="kicker">Over Samira</span>
+        <h2 id="over-h">Met hart voor mensen — en hun voeten</h2>
+        <p>Mijn naam is <strong>Samira van der Mee</strong>. Ik ben getrouwd, heb een dochter en een zoon, en woon in Arnhem-Zuid — waar ook mijn praktijk is gevestigd.</p>
+        <p>Na ruim twintig jaar bij een zorgverzekeraar te hebben gewerkt, koos ik bewust voor een nieuw pad: werken mét mensen. De opleidingen pedicure en medisch pedicure rondde ik met succes af, en daar ben ik trots op. Inmiddels werk ik al enige tijd met veel passie als medisch pedicure.</p>
+        <p>In mijn praktijk neem ik de tijd voor u. Geen lopende band, maar persoonlijke aandacht, hygiënisch werken en eerlijk advies — zodat u de deur uitloopt op voeten die weer gezond en verzorgd aanvoelen.</p>
+        <p class="sig">— Samira<small>Medisch pedicure, Pedicurepraktijk Samira</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECENSIES ============ -->
+  <section class="reviews" aria-labelledby="rev-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Recensies</span>
+        <h2 id="rev-h">Wat cliënten zeggen</h2>
+        <p>Een greep uit de recensies die cliënten op de website van de praktijk achterlieten.</p>
+      </div>
+      <div class="rev-grid">
+        <article class="rev reveal">
+          <div class="stars" aria-label="Vijf sterren">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <blockquote>“Professioneel, vakkundig, enorm aardig, meedenkend en behulpzaam. Mijn voeten hebben een metamorfose ondergaan.”</blockquote>
+          <cite>Peggy</cite>
+        </article>
+        <article class="rev reveal">
+          <div class="stars" aria-label="Vijf sterren">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <blockquote>“Ze neemt de tijd en heeft volledige aandacht voor de voeten en nagels. Pijnvrij, zonder klachten, na een heerlijke behandeling.”</blockquote>
+          <cite>Odette</cite>
+        </article>
+        <article class="rev reveal">
+          <div class="stars" aria-label="Vijf sterren">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <blockquote>“Zeer kundig en professioneel behandeld, met een hoge mate van hygiëne én klantvriendelijkheid. Een échte aanrader.”</blockquote>
+          <cite>Henk</cite>
+        </article>
+      </div>
+      <p class="rev-src reveal">Recensies afkomstig van pedicurepraktijksamira.nl</p>
+    </div>
+  </section>
+
+  <!-- ============ PRAKTISCH & CONTACT ============ -->
+  <section id="contact" aria-labelledby="con-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Praktisch</span>
+        <h2 id="con-h">Afspraak maken &amp; bereikbaarheid</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="c-block reveal">
+            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Adres</h3>
+            <p>Schepen van Hemerthstraat 39<br>Arnhem-Zuid</p>
+            <p>Parkeren kan direct naast de praktijk.</p>
+          </div>
+          <div class="c-block reveal">
+            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Openingstijden</h3>
+            <ul class="hours">
+              <li><b>Maandag</b><span class="t">09:00 – 20:00</span></li>
+              <li><b>Dinsdag t/m donderdag</b><span class="t">09:00 – 18:00</span></li>
+              <li><b>Vrijdag t/m zondag</b><span class="t">Gesloten</span></li>
+            </ul>
+          </div>
+          <div class="c-block reveal">
+            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> E-mail</h3>
+            <p>Liever mailen? Dat kan naar <a class="cl" href="mailto:pedicuresamira@hotmail.com">pedicuresamira@hotmail.com</a></p>
+          </div>
+          <div class="c-block reveal">
+            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Betalen</h3>
+            <p>In de praktijk is geen pinapparaat aanwezig. Betalen kan contant of via een betaalverzoek dat Samira u toestuurt.</p>
+          </div>
+        </div>
+        <aside class="call-card reveal" aria-label="Afspraak maken per telefoon">
+          <span class="dot" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <h3>Een afspraak is zo gemaakt</h3>
+          <p>Bel of stuur een appje — Samira plant graag een moment met u in.</p>
+          <a class="tel" href="tel:0641975069">06 - 41 97 50 69</a>
+          <a class="btn btn-clay" href="tel:0641975069">Nu bellen</a>
+          <small>Aan het behandelen? Dan wordt u zo spoedig mogelijk teruggebeld.</small>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="8" fill="#E3B7A0"/>
+          <path d="M8 26v-8a8 8 0 0 1 16 0v8" fill="none" stroke="#3B2026" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="16" cy="21.5" rx="3.4" ry="4.6" fill="#3B2026"/>
+          <circle cx="12.2" cy="13.6" r="1.15" fill="#3B2026"/><circle cx="16" cy="12.6" r="1.3" fill="#3B2026"/><circle cx="19.8" cy="13.6" r="1.15" fill="#3B2026"/>
+        </svg>
+        <span class="brand-name">Samira<small>Pedicurepraktijk</small></span>
+      </div>
+      <div class="foot-meta">
+        <b>Pedicurepraktijk Samira</b><br>
+        Schepen van Hemerthstraat 39, Arnhem-Zuid<br>
+        <a href="tel:0641975069" style="color:#E3B7A0;font-weight:600">06-41975069</a> · <a href="mailto:pedicuresamira@hotmail.com" style="color:#E3B7A0;font-weight:600">pedicuresamira@hotmail.com</a>
+      </div>
+      <div class="foot-meta">
+        <b>Registraties</b><br>
+        ProVoet lidnr. 317972 · KRP nr. 17235<br>
+        KvK 82212333
+      </div>
+      <div class="foot-soc">
+        <a href="https://facebook.com/pedicurepraktijksamira" target="_blank" rel="noopener" aria-label="Pedicurepraktijk Samira op Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/pedicuresamira" target="_blank" rel="noopener" aria-label="Pedicurepraktijk Samira op Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pedicurepraktijk Samira — Arnhem-Zuid</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Progressieve verbetering: zonder JS is alle content gewoon zichtbaar.
+  document.documentElement.classList.add("js");
+  (function(){
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      els.forEach(function(el){ el.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    },{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>

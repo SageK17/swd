@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sherwany Studio — Barbershop in centrum Deventer | Grote Overstraat 56</title>
+<meta name="description" content="Sherwany Studio: barbershop in het centrum van Deventer. Model knippen, fades, baard &amp; contouren en VIP-verzorging aan de Grote Overstraat 56. Volg het werk van 7.500+ mensen op Instagram @sherwanybarbershop. Bel 06 30120257.">
+<meta name="theme-color" content="#F1ECE3">
+<meta property="og:title" content="Sherwany Studio — Barbershop in centrum Deventer">
+<meta property="og:description" content="Knippen, fades en baardwerk met oog voor stijl en detail. Grote Overstraat 56, Deventer. 7.500+ volgers op Instagram — kom kijken waarom.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Sherwany Studio">
+<meta property="og:image" content="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80">
+<!-- Custom SVG data-URI favicon: crimson S-monogram met schaar-snede op bone -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F1ECE3'/%3E%3Cpath d='M44 20c0-5-5-8-12-8s-12 3-12 8c0 11 24 7 24 18 0 5-5 8-12 8s-12-3-12-8' fill='none' stroke='%23181512' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='14' r='5' fill='%23C8331F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F1ECE3;          /* warm ivory ground */
+    --bone-2:#E9E2D5;        /* deeper ivory panel */
+    --ink:#181512;           /* espresso black */
+    --ink-2:#221E19;         /* dark section panel */
+    --ink-soft:#4d463e;      /* secondary text on bone */
+    --faded:#7a7166;         /* muted on bone */
+    --red:#C8331F;           /* crimson accent — large type & graphics */
+    --red-deep:#9E2114;      /* crimson for small text / links (AA on bone) */
+    --bone-dim:#cdc6ba;      /* secondary text on ink */
+    --line:#d8d0c1;          /* hairline on bone */
+    --line-dark:#37322b;     /* hairline on ink */
+    --maxw:1220px;
+    --pad:clamp(20px,5vw,60px);
+    --display:'Bricolage Grotesque','Arial Black',Arial,sans-serif;
+    --body:'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+  body{
+    font-family:var(--body);
+    background:var(--bone);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:clamp(15px,1.05vw,17px);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--ink);color:var(--bone)}
+  :focus-visible{outline:3px solid var(--red-deep);outline-offset:3px;border-radius:2px}
+
+  /* ---------- TYPE ---------- */
+  .display{
+    font-family:var(--display);
+    font-weight:800;
+    line-height:.96;
+    letter-spacing:-.025em;
+  }
+  .kicker{
+    font-family:var(--body);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.24em;
+    font-size:clamp(11px,1.05vw,12px);
+    color:var(--red-deep);
+    display:inline-flex;align-items:center;gap:.7em;
+  }
+  .kicker::before{content:"";width:9px;height:9px;background:var(--red);border-radius:50%;flex:none}
+  .dark .kicker{color:var(--bone)}
+  .dark .kicker::before{background:var(--red)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    --bg:var(--ink);--fg:var(--bone);
+    display:inline-flex;align-items:center;gap:.6em;
+    background:var(--bg);color:var(--fg);
+    font-family:var(--body);font-weight:700;
+    letter-spacing:.02em;
+    font-size:clamp(14px,1.15vw,16px);
+    padding:1em 1.6em;
+    border:2px solid var(--ink);
+    border-radius:14px;
+    cursor:pointer;line-height:1;
+    transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease;
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(24,21,18,.22)}
+  .btn--red{--bg:var(--red);--fg:#fff;border-color:var(--red)}
+  .btn--red:hover{box-shadow:0 14px 28px rgba(200,51,31,.3)}
+  .btn--line{--bg:transparent;--fg:var(--ink);border-color:var(--ink)}
+  .btn--line:hover{--bg:var(--ink);--fg:var(--bone);box-shadow:none}
+  .dark .btn--line{--fg:var(--bone);border-color:var(--bone)}
+  .dark .btn--line:hover{--bg:var(--bone);--fg:var(--ink)}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:90;
+    background:rgba(241,236,227,.88);
+    backdrop-filter:saturate(150%) blur(12px);
+    -webkit-backdrop-filter:saturate(150%) blur(12px);
+    border-bottom:1px solid var(--line);
+    transition:background .3s ease,border-color .3s ease;
+  }
+  header.scrolled{background:rgba(241,236,227,.97);border-bottom-color:var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:clamp(64px,8.4vw,82px)}
+  .brand{display:flex;align-items:center;gap:.7rem;flex:none}
+  .brand .mark{
+    width:40px;height:40px;flex:none;border-radius:12px;
+    background:var(--ink);color:var(--bone);
+    display:grid;place-items:center;position:relative;
+  }
+  .brand .mark::after{content:"";position:absolute;top:-4px;right:-4px;width:11px;height:11px;border-radius:50%;background:var(--red);border:2px solid var(--bone)}
+  .brand .mark svg{width:22px;height:22px}
+  .brand .name{
+    font-family:var(--display);font-weight:800;letter-spacing:-.02em;
+    font-size:clamp(18px,2.3vw,22px);line-height:.95;
+  }
+  .brand .name em{font-style:normal;color:var(--red-deep)}
+  .brand .name small{display:block;font-family:var(--body);font-weight:600;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--faded);margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+  .nav-links a.lnk{
+    font-weight:600;font-size:14.5px;color:var(--ink-soft);
+    position:relative;padding:6px 0;transition:color .2s ease;
+  }
+  .nav-links a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);transition:width .25s ease}
+  .nav-links a.lnk:hover{color:var(--ink)}
+  .nav-links a.lnk:hover::after{width:100%}
+  .nav-cta{display:inline-flex;padding:.85em 1.3em}
+
+  .hamburger{
+    display:none;width:46px;height:46px;border-radius:12px;
+    border:2px solid var(--ink);background:transparent;
+    cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;
+  }
+  .hamburger span{display:block;width:20px;height:2px;background:var(--ink);transition:transform .3s ease,opacity .2s ease}
+  .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- MOBILE OVERLAY ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:80;background:var(--bone);
+    transform:translateY(-100%);
+    transition:transform .45s cubic-bezier(.7,0,.2,1);
+    display:flex;flex-direction:column;justify-content:center;padding:var(--pad);visibility:hidden;
+  }
+  .overlay.open{transform:translateY(0);visibility:visible}
+  .overlay a.ov-lnk{
+    font-family:var(--display);font-weight:800;letter-spacing:-.02em;
+    font-size:clamp(32px,9vw,52px);line-height:1.12;
+    color:var(--ink);padding:.14em 0;display:flex;align-items:baseline;gap:.45em;
+    border-bottom:1px solid var(--line);
+  }
+  .overlay a.ov-lnk .idx{font-family:var(--body);font-size:13px;font-weight:700;color:var(--red-deep);letter-spacing:.12em}
+  .overlay a.ov-lnk:last-of-type{border-bottom:none}
+  .overlay a.ov-lnk:active{color:var(--red-deep)}
+  .overlay .ov-foot{margin-top:clamp(24px,5vw,40px);color:var(--ink-soft);font-size:14px;line-height:1.85}
+  .overlay .ov-foot strong{color:var(--ink);font-weight:700}
+  .overlay .ov-foot a{color:var(--red-deep);font-weight:700}
+
+  /* ---------- HERO ---------- */
+  .hero{border-bottom:2px solid var(--ink);overflow:hidden}
+  .hero-grid{
+    display:grid;grid-template-columns:1.12fr .88fr;
+    gap:clamp(30px,4.5vw,64px);align-items:center;
+    padding-top:clamp(40px,6vw,84px);padding-bottom:clamp(44px,6.5vw,90px);
+  }
+  .hero h1{
+    font-size:clamp(44px,8.6vw,104px);
+    margin:clamp(16px,2.4vw,26px) 0 0;
+  }
+  .hero h1 .ln{display:block}
+  .hero h1 .red{color:var(--red)}
+  .hero h1 .lite{font-weight:500;color:var(--ink-soft);letter-spacing:-.02em}
+  .hero-lede{
+    margin-top:clamp(18px,2.6vw,28px);max-width:50ch;
+    color:var(--ink-soft);font-size:clamp(16px,1.45vw,19px);
+  }
+  .hero-lede strong{color:var(--ink);font-weight:700}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(24px,3.2vw,36px)}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,28px);
+    margin-top:clamp(26px,3.6vw,40px);padding-top:clamp(18px,2.4vw,24px);
+    border-top:1px solid var(--line);
+  }
+  .hm{display:flex;flex-direction:column;gap:2px}
+  .hm .n{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.4vw,28px);line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:.3em}
+  .hm .n svg{width:.8em;height:.8em;flex:none;color:var(--red)}
+  .hm .l{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--faded)}
+
+  .hero-visual{position:relative}
+  .hero-photo{
+    position:relative;border-radius:22px;overflow:hidden;
+    border:2px solid var(--ink);aspect-ratio:4/5;
+    box-shadow:10px 10px 0 var(--red);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-handle{
+    position:absolute;left:clamp(-14px,-1vw,-10px);bottom:clamp(20px,3vw,34px);
+    background:var(--ink);color:var(--bone);
+    display:inline-flex;align-items:center;gap:.55em;
+    font-weight:700;font-size:clamp(12px,1.2vw,14px);letter-spacing:.02em;
+    padding:.75em 1.05em;border-radius:12px;
+    transform:rotate(-3deg);
+    box-shadow:0 14px 30px rgba(24,21,18,.3);
+    transition:transform .2s ease;
+  }
+  .hero-handle:hover{transform:rotate(0deg) translateY(-2px)}
+  .hero-handle svg{width:16px;height:16px;flex:none;color:#ff8d7d}
+  .hero-handle b{color:#ff8d7d;font-weight:700}
+
+  /* ---------- TICKER ---------- */
+  .ticker{background:var(--ink);color:var(--bone);overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--ink)}
+  .ticker-track{display:inline-flex;animation:tick 30s linear infinite;will-change:transform}
+  .ticker-track span{
+    font-family:var(--display);font-weight:700;letter-spacing:.01em;
+    font-size:clamp(15px,1.9vw,21px);padding:.62em 0;display:inline-flex;align-items:center;
+  }
+  .ticker-track span::after{
+    content:"";width:8px;height:8px;background:var(--red);border-radius:50%;
+    margin:0 clamp(16px,3vw,36px);display:inline-block;
+  }
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{position:relative}
+  .sec{padding-top:clamp(60px,8.5vw,120px);padding-bottom:clamp(60px,8.5vw,120px)}
+  .sec-head{margin-bottom:clamp(34px,5vw,58px);max-width:880px}
+  .sec-head h2{font-size:clamp(36px,6.4vw,78px);margin:.32em 0 0}
+  .sec-head h2 .red{color:var(--red)}
+  .sec-head p{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(16px,1.4vw,19px);max-width:58ch}
+  .dark .sec-head p{color:var(--bone-dim)}
+
+  /* ---------- DIENSTEN ---------- */
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);align-items:start}
+  .menu-col{
+    background:#fff;border:2px solid var(--ink);border-radius:20px;
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .menu-col:hover{transform:translateY(-5px);box-shadow:8px 10px 0 var(--bone-2)}
+  .menu-col.feat{background:var(--ink);color:var(--bone);box-shadow:8px 8px 0 var(--red)}
+  .menu-col.feat:hover{box-shadow:8px 12px 0 var(--red)}
+  .menu-top{
+    padding:clamp(20px,2.6vw,30px) clamp(20px,2.6vw,30px) clamp(14px,2vw,20px);
+    border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .menu-col.feat .menu-top{border-bottom-color:var(--line-dark)}
+  .menu-top h3{font-family:var(--display);font-weight:800;font-size:clamp(21px,2.3vw,27px);line-height:1.02;letter-spacing:-.02em}
+  .menu-ico{
+    width:clamp(42px,4.6vw,50px);height:clamp(42px,4.6vw,50px);flex:none;border-radius:13px;
+    background:var(--bone);border:2px solid var(--ink);
+    display:grid;place-items:center;color:var(--ink);
+  }
+  .menu-col.feat .menu-ico{background:var(--red);border-color:var(--red);color:#fff}
+  .menu-ico svg{width:22px;height:22px}
+  .menu-items{padding:clamp(8px,1.2vw,12px) clamp(20px,2.6vw,30px) clamp(20px,2.6vw,28px);display:flex;flex-direction:column}
+  .mi-row{padding:.95em 0;border-bottom:1px dashed var(--line)}
+  .menu-col.feat .mi-row{border-bottom-color:var(--line-dark)}
+  .mi-row:last-child{border-bottom:none}
+  .mi-row .t{font-weight:700;font-size:clamp(14.5px,1.25vw,16px);line-height:1.35}
+  .mi-row .d{color:var(--faded);font-size:13.5px;line-height:1.55;margin-top:3px}
+  .menu-col.feat .mi-row .d{color:var(--bone-dim)}
+  .feat-pill{
+    display:inline-flex;align-items:center;gap:.45em;
+    background:var(--red);color:#fff;font-weight:700;font-size:11px;
+    text-transform:uppercase;letter-spacing:.14em;
+    padding:.5em .9em;border-radius:999px;margin-bottom:.7em;
+  }
+  .feat-pill svg{width:13px;height:13px}
+  .menu-note{
+    margin-top:clamp(24px,3vw,34px);color:var(--ink-soft);font-size:14px;
+    display:flex;gap:.7em;align-items:flex-start;max-width:72ch;
+  }
+  .menu-note svg{width:18px;height:18px;flex:none;stroke:var(--red-deep);margin-top:2px}
+  .menu-note a{color:var(--red-deep);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+  /* ---------- MERK / OVER (dark) ---------- */
+  .merk{background:var(--ink);color:var(--bone);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+  .merk-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(34px,5vw,76px);align-items:center}
+  .merk-media{position:relative}
+  .merk-media .photo{
+    border-radius:22px;overflow:hidden;border:2px solid var(--bone);aspect-ratio:4/5;
+  }
+  .merk-media .photo img{width:100%;height:100%;object-fit:cover}
+  .merk-media .stamp{
+    position:absolute;right:clamp(-10px,-.6vw,-6px);top:clamp(-14px,-1vw,-10px);
+    width:clamp(92px,11vw,128px);height:clamp(92px,11vw,128px);
+    color:var(--red);
+    animation:spin 22s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .merk-media .stamp svg{width:100%;height:100%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}
+  .merk-body h2{font-size:clamp(34px,5.8vw,70px)}
+  .merk-body h2 .red{color:var(--red)}
+  .merk-body p{margin-top:1.15rem;color:var(--bone-dim);font-size:clamp(15px,1.3vw,18px)}
+  .merk-body p strong{color:var(--bone);font-weight:700}
+  .merk-points{margin-top:clamp(22px,3vw,32px);display:grid;gap:1rem;list-style:none}
+  .merk-points li{display:flex;gap:.9em;align-items:flex-start}
+  .merk-points .pi{
+    width:38px;height:38px;flex:none;border-radius:11px;
+    background:rgba(200,51,31,.16);border:1px solid rgba(200,51,31,.55);
+    display:grid;place-items:center;color:#ff8d7d;
+  }
+  .merk-points .pi svg{width:19px;height:19px}
+  .merk-points .pt{font-weight:700;color:var(--bone);font-size:clamp(15px,1.3vw,17px);line-height:1.3}
+  .merk-points .pt small{display:block;font-weight:400;color:var(--bone-dim);font-size:13.5px;margin-top:2px;line-height:1.55}
+
+  /* ---------- SOCIAL PROOF ---------- */
+  .social-sec{background:var(--bone-2);border-bottom:2px solid var(--ink)}
+  .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px)}
+  .ig-card{
+    position:relative;border-radius:18px;overflow:hidden;
+    border:2px solid var(--ink);aspect-ratio:4/5;display:block;
+  }
+  .ig-card img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+  .ig-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 55%,rgba(24,21,18,.55) 100%);
+    opacity:0;transition:opacity .3s ease;
+  }
+  .ig-card .tag{
+    position:absolute;left:12px;bottom:12px;z-index:2;
+    display:inline-flex;align-items:center;gap:.45em;
+    background:var(--bone);color:var(--ink);
+    font-weight:700;font-size:12px;padding:.5em .8em;border-radius:10px;
+    opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease;
+  }
+  .ig-card .tag svg{width:14px;height:14px;color:var(--red-deep)}
+  .ig-card:hover img{transform:scale(1.05)}
+  .ig-card:hover::after,.ig-card:focus-visible::after{opacity:1}
+  .ig-card:hover .tag,.ig-card:focus-visible .tag{opacity:1;transform:none}
+  .social-cta{
+    margin-top:clamp(26px,3.6vw,40px);
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(16px,2.4vw,28px);
+    background:#fff;border:2px solid var(--ink);border-radius:20px;
+    padding:clamp(20px,3vw,32px) clamp(20px,3vw,36px);
+    box-shadow:8px 8px 0 var(--red);
+  }
+  .social-cta .sc-txt{max-width:52ch}
+  .social-cta .sc-txt .t{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.4vw,28px);line-height:1.06;letter-spacing:-.02em}
+  .social-cta .sc-txt .s{color:var(--ink-soft);font-size:14.5px;margin-top:.5em}
+  .social-cta .sc-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .yt-note{
+    display:inline-flex;align-items:center;gap:.5em;margin-top:.6em;
+    color:var(--ink-soft);font-weight:600;font-size:13.5px;
+  }
+  .yt-note svg{width:17px;height:17px;flex:none;color:var(--red-deep)}
+
+  /* ---------- BEZOEK ---------- */
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.4vw,44px);align-items:start}
+  .panel{background:#fff;border:2px solid var(--ink);border-radius:20px;padding:clamp(24px,3.2vw,40px)}
+  .panel h3{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,36px);line-height:1;letter-spacing:-.02em;margin-bottom:1.2rem}
+  .panel h3 .red{color:var(--red)}
+  .indic{
+    display:inline-flex;align-items:center;gap:.5em;margin-bottom:1.2rem;
+    font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--red-deep);
+    border:1px solid rgba(158,33,20,.4);border-radius:999px;padding:.45em .85em;background:rgba(200,51,31,.07);
+  }
+  .indic svg{width:14px;height:14px;stroke:var(--red-deep)}
+  .hours{list-style:none}
+  .hours li{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    padding:.78em 0;border-bottom:1px dashed var(--line);font-size:clamp(15px,1.3vw,17px);
+  }
+  .hours li:last-child{border-bottom:none}
+  .hours .day{font-weight:600;font-size:clamp(14px,1.2vw,15.5px)}
+  .hours .time{font-family:var(--display);font-weight:700;font-size:clamp(15px,1.5vw,19px);letter-spacing:-.01em}
+  .hours li.today{background:var(--ink);color:var(--bone);margin:0 calc(-1*clamp(24px,3.2vw,40px));padding-left:clamp(24px,3.2vw,40px);padding-right:clamp(24px,3.2vw,40px);border-bottom-color:transparent;border-radius:10px}
+  .hours li.closed .time{color:var(--faded)}
+  .hours li.today.closed .time{color:var(--bone-dim)}
+
+  .contact-list{display:flex;flex-direction:column}
+  .crow{display:flex;gap:1rem;align-items:flex-start;padding:1em 0;border-bottom:1px dashed var(--line)}
+  .crow:last-child{border-bottom:none}
+  .crow .ico{
+    width:clamp(42px,5vw,50px);height:clamp(42px,5vw,50px);flex:none;border-radius:13px;
+    border:2px solid var(--ink);background:var(--bone);
+    display:grid;place-items:center;color:var(--ink);
+  }
+  .crow .ico svg{width:20px;height:20px}
+  .crow .k{font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:11px;color:var(--faded)}
+  .crow .v{font-size:clamp(15px,1.4vw,17.5px);color:var(--ink);font-weight:600;line-height:1.45;margin-top:2px;display:block}
+  .crow .v small{display:block;color:var(--faded);font-weight:500;font-size:13px;margin-top:2px}
+  .crow a.v:hover{color:var(--red-deep)}
+  .socials{display:flex;gap:12px;margin-top:1.3rem}
+  .socials a{
+    width:46px;height:46px;border-radius:13px;border:2px solid var(--ink);
+    display:grid;place-items:center;color:var(--ink);background:var(--bone);
+    transition:all .2s ease;
+  }
+  .socials a:hover{background:var(--ink);color:var(--bone);transform:translateY(-3px)}
+  .socials a svg{width:20px;height:20px}
+
+  .map-standin{
+    margin-top:1.3rem;height:clamp(140px,18vw,180px);border-radius:14px;border:2px solid var(--ink);position:relative;overflow:hidden;
+    background:
+      repeating-linear-gradient(0deg,#e2dbcd 0 1px,transparent 1px 36px),
+      repeating-linear-gradient(90deg,#e2dbcd 0 1px,transparent 1px 36px),
+      var(--bone-2);
+  }
+  .map-standin .road{position:absolute;background:#d6cebd}
+  .map-standin .r1{left:0;right:0;top:50%;height:9px;transform:rotate(-5deg)}
+  .map-standin .r2{top:0;bottom:0;left:38%;width:7px}
+  .map-standin .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);color:var(--red)}
+  .map-standin .pin svg{width:36px;height:36px;filter:drop-shadow(0 6px 10px rgba(24,21,18,.25))}
+  .map-standin .lbl{position:absolute;left:12px;bottom:10px;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* ---------- FINAL CTA (dark) ---------- */
+  .finalcta{position:relative;overflow:hidden;background:var(--ink);color:var(--bone);text-align:center;border-top:2px solid var(--ink)}
+  .finalcta-photo{position:absolute;inset:0;z-index:0}
+  .finalcta-photo img{width:100%;height:100%;object-fit:cover}
+  .finalcta-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,21,18,.88),rgba(24,21,18,.94))}
+  .finalcta-inner{position:relative;z-index:2;padding-top:clamp(58px,9vw,124px);padding-bottom:clamp(64px,10vw,136px)}
+  .finalcta h2{font-size:clamp(38px,8.4vw,104px);letter-spacing:-.03em}
+  .finalcta h2 .red{color:var(--red)}
+  .finalcta p{margin:1.3rem auto 2rem;color:var(--bone-dim);max-width:52ch;font-size:clamp(16px,1.5vw,20px)}
+  .finalcta .hero-actions{justify-content:center;margin-top:0}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--bone);border-top:2px solid var(--ink);padding-top:clamp(44px,6vw,72px);padding-bottom:120px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(26px,4vw,52px);padding-bottom:clamp(32px,4.5vw,48px);border-bottom:1px solid var(--line)}
+  .foot-brand .name{font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,42px);line-height:.95;letter-spacing:-.02em}
+  .foot-brand .name em{font-style:normal;color:var(--red-deep)}
+  .foot-brand p{margin-top:1rem;color:var(--ink-soft);max-width:40ch;font-size:14px}
+  .foot-col h4{font-family:var(--body);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--red-deep);margin-bottom:1.1rem}
+  .foot-col a,.foot-col p{display:block;color:var(--ink-soft);font-size:14px;padding:.3em 0;line-height:1.55}
+  .foot-col a{transition:color .2s ease}
+  .foot-col a:hover{color:var(--red-deep)}
+  .foot-bottom{display:flex;flex-direction:column;gap:8px;padding-top:clamp(20px,3vw,28px);color:var(--faded);font-size:13px;line-height:1.6}
+  .foot-bottom a{color:var(--ink);font-weight:700}
+  .foot-bottom a:hover{color:var(--red-deep)}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+    padding:10px clamp(12px,4vw,16px) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(241,236,227,.96);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:2px solid var(--ink);align-items:center;gap:12px;
+  }
+  .sticky-cta .sc-meta{flex:1;min-width:0}
+  .sticky-cta .sc-meta .t{font-family:var(--display);font-weight:800;font-size:16px;line-height:1;letter-spacing:-.01em}
+  .sticky-cta .sc-meta .s{display:flex;align-items:center;gap:.4em;color:var(--red-deep);font-weight:700;font-size:12px;margin-top:3px}
+  .sticky-cta .sc-meta .s svg{width:13px;height:13px;flex:none}
+  .sticky-cta .btn{flex:none;padding:.9em 1.2em}
+
+  /* ---------- REVEAL (alleen verrijking — content zichtbaar zonder JS) ---------- */
+  .reveal{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal{opacity:0;transform:translateY(26px)}
+  .js .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:1040px){
+    .menu-grid{grid-template-columns:1fr 1fr}
+    .menu-col.feat{grid-column:1/-1}
+    .merk-grid{grid-template-columns:1fr;gap:clamp(40px,6vw,56px)}
+    .merk-media{max-width:440px}
+    .ig-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:clamp(34px,6vw,44px)}
+    .hero-visual{max-width:460px}
+  }
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .menu-grid{grid-template-columns:1fr}
+    .menu-col.feat{grid-column:auto}
+    .info-grid{grid-template-columns:1fr}
+    .sticky-cta{display:flex}
+    footer{padding-bottom:100px}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1/-1}
+    .social-cta{box-shadow:6px 6px 0 var(--red)}
+  }
+  @media(max-width:460px){
+    .ig-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr}
+    .hero-photo{box-shadow:7px 7px 0 var(--red)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Sherwany Studio home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M16.5 7.5C16.5 5.6 14.5 4.5 12 4.5S7.5 5.6 7.5 7.5c0 4 9 2.6 9 6.8 0 1.9-2 3.2-4.5 3.2s-4.5-1.3-4.5-3.2"/></svg>
+      </span>
+      <span class="name">Sherwany <em>Studio</em><small>Barbershop · Deventer</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Hoofdmenu">
+      <a class="lnk" href="#diensten">Diensten</a>
+      <a class="lnk" href="#merk">Het merk</a>
+      <a class="lnk" href="#werk">Het werk</a>
+      <a class="lnk" href="#bezoek">Bezoek</a>
+      <a class="btn btn--red nav-cta" href="tel:0630120257">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel de studio
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ MOBILE OVERLAY ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <a class="ov-lnk" href="#diensten"><span class="idx">01</span> Diensten</a>
+  <a class="ov-lnk" href="#merk"><span class="idx">02</span> Het merk</a>
+  <a class="ov-lnk" href="#werk"><span class="idx">03</span> Het werk</a>
+  <a class="ov-lnk" href="#bezoek"><span class="idx">04</span> Bezoek</a>
+  <a class="ov-lnk" href="tel:0630120257"><span class="idx">05</span> Bel ons</a>
+  <div class="ov-foot">
+    <strong>Grote Overstraat 56, 7411 JD Deventer</strong><br>
+    Tel. <a href="tel:0630120257">06 30120257</a><br>
+    Instagram <a href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">@sherwanybarbershop</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker reveal">Barbershop · Centrum Deventer</span>
+      <h1 class="display reveal d1">
+        <span class="ln">Het werk</span>
+        <span class="ln red">spreekt.</span>
+        <span class="ln lite">Elke dag opnieuw.</span>
+      </h1>
+      <p class="hero-lede reveal d2">
+        <strong>Sherwany Studio</strong> aan de Grote Overstraat — knippen en scheren met oog voor stijl en detail. Meer dan <strong>7.500 mensen</strong> volgen het werk dagelijks op Instagram. Kom langs en zie waarom.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn--red" href="tel:0630120257">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          Bel 06 30120257
+        </a>
+        <a class="btn btn--line" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Bekijk het werk
+        </a>
+      </div>
+      <div class="hero-meta reveal d4">
+        <div class="hm">
+          <span class="n">7.5K<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg></span>
+          <span class="l">Volgers op Instagram</span>
+        </div>
+        <div class="hm">
+          <span class="n">Centrum</span>
+          <span class="l">Grote Overstraat 56</span>
+        </div>
+        <div class="hm">
+          <span class="n">6 dagen</span>
+          <span class="l">Per week open</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80"
+             alt="Sfeervolle barbershop met klassieke kappersstoel en spiegels" loading="eager" fetchpriority="high" width="1600" height="2000">
+      </div>
+      <a class="hero-handle" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        @sherwanybarbershop · <b>7.5K volgers</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Model knippen</span><span>Skin fades</span><span>Baard &amp; contouren</span><span>Heren VIP</span><span>Permanenten</span><span>Dames knippen</span><span>Centrum Deventer</span>
+    <span>Model knippen</span><span>Skin fades</span><span>Baard &amp; contouren</span><span>Heren VIP</span><span>Permanenten</span><span>Dames knippen</span><span>Centrum Deventer</span>
+  </div>
+</div>
+
+<!-- ============ DIENSTEN ============ -->
+<section class="sec" id="diensten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Diensten</span>
+      <h2 class="display">Van klassiek tot <span class="red">strak modern.</span></h2>
+      <p>Hoogwaardige knip- en scheerdiensten met persoonlijke aandacht — van een scherpe fade tot een complete VIP-behandeling. Ook dames zijn welkom voor knippen en verven.</p>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-col reveal">
+        <div class="menu-top">
+          <h3>Knippen &amp; fades</h3>
+          <span class="menu-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg></span>
+        </div>
+        <div class="menu-items">
+          <div class="mi-row">
+            <div class="t">Model knippen</div>
+            <div class="d">Op maat van jouw stijl, strak afgewerkt — klassiek of modern.</div>
+          </div>
+          <div class="mi-row">
+            <div class="t">Fade &amp; skin fade</div>
+            <div class="d">Low, mid of high — haarscherp verlopen. Het visitekaartje van de studio.</div>
+          </div>
+          <div class="mi-row">
+            <div class="t">Heren permanenten</div>
+            <div class="d">Textuur en volume die blijven zitten, los of gecombineerd met knippen.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-col feat reveal d1">
+        <div class="menu-top">
+          <div>
+            <span class="feat-pill"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>Signature</span>
+            <h3>Heren VIP</h3>
+          </div>
+          <span class="menu-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M11 3 8 9l4 12 4-12-3-6"/><path d="M2 9h20"/></svg></span>
+        </div>
+        <div class="menu-items">
+          <div class="mi-row">
+            <div class="t">De complete behandeling</div>
+            <div class="d">Knippen, baard trimmen, gezichtsverzorging en waxen van wenkbrauwen en neus — in één luxe sessie.</div>
+          </div>
+          <div class="mi-row">
+            <div class="t">Knippen &amp; baard + wenkbrauwen &amp; oorharen</div>
+            <div class="d">Stijlvol knippen gecombineerd met nauwkeurig scheerwerk voor een frisse, verzorgde look.</div>
+          </div>
+          <div class="mi-row">
+            <div class="t">Inclusief olieparfum van de zaak</div>
+            <div class="d">Bij de VIP-behandeling stap je geurend de Grote Overstraat weer op.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-col reveal d2">
+        <div class="menu-top">
+          <h3>Baard &amp; dames</h3>
+          <span class="menu-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18M7 4v6a5 5 0 0 0 10 0V4"/><path d="M9 15c-1 3-2 5-2 5M15 15c1 3 2 5 2 5"/></svg></span>
+        </div>
+        <div class="menu-items">
+          <div class="mi-row">
+            <div class="t">Contouren &amp; baard in model</div>
+            <div class="d">Strakke lijnen en een perfect gevormde baard — fris en verzorgd.</div>
+          </div>
+          <div class="mi-row">
+            <div class="t">Dames: knippen, wassen &amp; föhnen</div>
+            <div class="d">Complete verzorging: wassen, precies knippen en professioneel föhnen.</div>
+          </div>
+          <div class="mi-row">
+            <div class="t">Verven</div>
+            <div class="d">Kleur die bij je past, aangebracht met vakkennis en zorg.</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="menu-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Actuele prijzen hoor je in de studio of telefonisch via <a href="tel:0630120257">06&nbsp;30120257</a> — we vertellen je vooraf precies waar je aan toe bent.
+    </p>
+  </div>
+</section>
+
+<!-- ============ HET MERK (dark) ============ -->
+<section class="merk sec dark" id="merk">
+  <div class="wrap merk-grid">
+    <div class="merk-media reveal">
+      <div class="photo">
+        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1200&q=80"
+             alt="Barbier werkt geconcentreerd aan een strakke herenkapsel" loading="lazy" width="1200" height="1500">
+      </div>
+      <span class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="56" fill="#181512" stroke="currentColor" stroke-width="2"/>
+          <path id="circ" d="M60 16a44 44 0 1 1 0 88 44 44 0 1 1 0-88" fill="none"/>
+          <text font-family="Space Grotesk,Arial,sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.6" fill="#F1ECE3">
+            <textPath href="#circ">SHERWANY STUDIO · DEVENTER · SINDS DE STOEL ·</textPath>
+          </text>
+          <path d="M52 50l16 20M68 50L52 70" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="49" cy="73" r="5" stroke="currentColor" stroke-width="3"/>
+          <circle cx="71" cy="73" r="5" stroke="currentColor" stroke-width="3"/>
+        </svg>
+      </span>
+    </div>
+
+    <div class="merk-body">
+      <span class="kicker reveal">Het merk</span>
+      <h2 class="display reveal d1">Geen kapsalon. <span class="red">Een studio.</span></h2>
+      <p class="reveal d2">
+        Bij <strong>Sherwany Studio</strong> draait alles om stijl en detail. Een team van ervaren kappers, een ontspannen sfeer en persoonlijke aandacht — zodat je er altijd op je best uitziet. Van klassiek tot modern: vakmanschap gecombineerd met de nieuwste technieken.
+      </p>
+      <p class="reveal d2">
+        En dat werk blijft niet binnen vier muren. Met <strong>7.500+ volgers op Instagram</strong> en een eigen YouTube-kanaal is Sherwany een naam die je in heel Deventer kent. Elke fade, elke transformatie — het staat online, voor iedereen om te zien.
+      </p>
+      <ul class="merk-points reveal d3">
+        <li>
+          <span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+          <span class="pt">7.500+ volgers kijken mee<small>Het portfolio groeit elke week — live op @sherwanybarbershop.</small></span>
+        </li>
+        <li>
+          <span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span class="pt">Midden in het centrum<small>Grote Overstraat 56 — op loopafstand van de Brink.</small></span>
+        </li>
+        <li>
+          <span class="pi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span class="pt">Oog voor stijl en detail<small>Persoonlijke aandacht, van eerste schets tot laatste contour.</small></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HET WERK / SOCIAL PROOF ============ -->
+<section class="social-sec sec" id="werk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Het werk</span>
+      <h2 class="display">Scroll niet langs. <span class="red">Kom zitten.</span></h2>
+      <p>Een indruk van het vak — het echte, dagelijkse werk van de studio zie je op Instagram. Vers van de stoel.</p>
+    </div>
+
+    <div class="ig-grid">
+      <a class="ig-card reveal" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener" aria-label="Bekijk fades op Instagram @sherwanybarbershop">
+        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=80"
+             alt="Strakke skin fade van opzij gefotografeerd" loading="lazy" width="1600" height="2000">
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Fades</span>
+      </a>
+      <a class="ig-card reveal d1" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener" aria-label="Bekijk knipwerk op Instagram @sherwanybarbershop">
+        <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=1600&q=80"
+             alt="Barbier werkt een modern herenkapsel af met tondeuse" loading="lazy" width="1600" height="2000">
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Knippen</span>
+      </a>
+      <a class="ig-card reveal d2" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener" aria-label="Bekijk baardwerk op Instagram @sherwanybarbershop">
+        <img src="https://images.unsplash.com/photo-1583195763986-0231686dcd43?auto=format&fit=crop&w=1600&q=80"
+             alt="Klassieke scheerbeurt met mes en scheerschuim" loading="lazy" width="1600" height="2000">
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Baard</span>
+      </a>
+      <a class="ig-card reveal d3" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener" aria-label="Bekijk de studio op Instagram @sherwanybarbershop">
+        <img src="https://images.unsplash.com/photo-1567894340315-735d7c361db0?auto=format&fit=crop&w=1600&q=80"
+             alt="Kappersgereedschap en barbierspullen netjes uitgestald" loading="lazy" width="1600" height="2000">
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>De studio</span>
+      </a>
+    </div>
+
+    <div class="social-cta reveal">
+      <div class="sc-txt">
+        <div class="t">7.500+ volgers zien het werk elke dag.</div>
+        <p class="s">Foto's hierboven zijn ter illustratie — het échte portfolio staat op Instagram, vers van de stoel.</p>
+        <span class="yt-note">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.5s-.22-1.6-.9-2.3c-.86-.92-1.82-.93-2.26-.98C16.7 4 12 4 12 4s-4.7 0-7.84.22c-.44.05-1.4.06-2.26.98C1.22 5.9 1 7.5 1 7.5S.78 9.38.78 11.25v1.5C.78 14.62 1 16.5 1 16.5s.22 1.6.9 2.3c.86.92 2 .89 2.5 1 1.82.17 7.6.22 7.6.22s4.7-.01 7.84-.23c.44-.05 1.4-.06 2.26-.98.68-.7.9-2.3.9-2.3s.22-1.88.22-3.75v-1.5C23.22 9.38 23 7.5 23 7.5zM9.75 14.85V8.4l6.25 3.23-6.25 3.22z"/></svg>
+          Ook te vinden op YouTube — transformaties van begin tot eind.
+        </span>
+      </div>
+      <div class="sc-actions">
+        <a class="btn btn--red" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Volg @sherwanybarbershop
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEZOEK ============ -->
+<section class="sec" id="bezoek">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Bezoek</span>
+      <h2 class="display">Grote Overstraat <span class="red">nummer 56.</span></h2>
+      <p>Midden in het centrum van Deventer, op een paar minuten lopen van de Brink. Bel even vooraf, dan zit je zo in de stoel.</p>
+    </div>
+
+    <div class="info-grid">
+      <!-- HOURS -->
+      <div class="panel reveal" aria-label="Openingstijden">
+        <span class="indic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Indicatief — bel om zeker te zijn</span>
+        <h3>Openings<span class="red">tijden</span></h3>
+        <ul class="hours" id="hoursList">
+          <li data-day="1" class="closed"><span class="day">Maandag</span><span class="time">Gesloten</span></li>
+          <li data-day="2"><span class="day">Dinsdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="3"><span class="day">Woensdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="4"><span class="day">Donderdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="5"><span class="day">Vrijdag</span><span class="time">09:00 – 20:00</span></li>
+          <li data-day="6"><span class="day">Zaterdag</span><span class="time">09:00 – 18:00</span></li>
+          <li data-day="0"><span class="day">Zondag</span><span class="time">11:00 – 17:00</span></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="panel reveal d1" aria-label="Contactgegevens">
+        <h3>Contact <span class="red">&amp; route</span></h3>
+        <div class="contact-list">
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adres</div><div class="v">Grote Overstraat 56<small>7411 JD Deventer — centrum</small></div></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Telefoon</div><a class="v" href="tel:0630120257">06 30120257<small>Bel voor je afspraak — zo zit je het snelst in de stoel</small></a></div>
+          </div>
+          <div class="crow">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+            <div><div class="k">Instagram</div><a class="v" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">@sherwanybarbershop<small>7.500+ volgers — DM voor vragen kan ook</small></a></div>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener" aria-label="Volg Sherwany Studio op Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="tel:0630120257" aria-label="Bel Sherwany Studio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+
+        <div class="map-standin" aria-label="Indicatieve locatie aan de Grote Overstraat 56 in het centrum van Deventer" role="img">
+          <span class="road r1"></span><span class="road r2"></span>
+          <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+          <span class="lbl">Grote Overstraat · Deventer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta dark">
+  <div class="finalcta-photo" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1600&q=80"
+         alt="" loading="lazy" width="1600" height="1067">
+  </div>
+  <div class="wrap finalcta-inner">
+    <h2 class="display reveal">Jouw beurt om <span class="red">het werk</span> te zijn.</h2>
+    <p class="reveal d1">Eén belletje en je zit in de stoel aan de Grote Overstraat. Of stuur een DM — we reageren snel.</p>
+    <div class="hero-actions reveal d2">
+      <a class="btn btn--red" href="tel:0630120257">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z"/></svg>
+        Bel 06 30120257
+      </a>
+      <a class="btn btn--line" href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Stuur een DM
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Sherwany <em>Studio</em></div>
+        <p>Barbershop in het centrum van Deventer. Knippen, fades, baardwerk en VIP-verzorging — met oog voor stijl en detail.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="#diensten">Diensten</a>
+        <a href="#merk">Het merk</a>
+        <a href="#werk">Het werk</a>
+        <a href="#bezoek">Bezoek &amp; openingstijden</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>Grote Overstraat 56<br>7411 JD Deventer</p>
+        <p><a href="tel:0630120257">06 30120257</a></p>
+        <a href="https://instagram.com/sherwanybarbershop" target="_blank" rel="noopener">Instagram @sherwanybarbershop</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sherwany Studio — Deventer. Foto's ter illustratie (Unsplash); het echte werk zie je op Instagram.</span>
+      <span>Voorbeeld &amp; design door <a href="https://sagek17.github.io/swd/" target="_blank" rel="noopener">Sage Website Design</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <div class="sc-meta">
+    <div class="t">Sherwany Studio</div>
+    <div class="s">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></svg>
+      7.5K volgers · centrum Deventer
+    </div>
+  </div>
+  <a class="btn btn--red" href="tel:0630120257">Bel nu</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  /* JS is puur verrijking — alle content is zichtbaar zonder JS */
+  document.documentElement.classList.add('js');
+
+  /* ---- Mobile menu ---- */
+  var burger = document.getElementById('hamburger');
+  var overlay = document.getElementById('overlay');
+  var body = document.body;
+
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    overlay.classList.toggle('open', open);
+    overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+    body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!overlay.classList.contains('open'));
+  });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---- Header on scroll ---- */
+  var header = document.getElementById('top');
+  var onScroll = function(){
+    if(window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- Scroll reveal (verrijkt reeds zichtbare content) ---- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- Openingstijden: markeer vandaag (tijden indicatief) ---- */
+  try{
+    var d = new Date().getDay();
+    var todayLi = document.querySelector('#hoursList li[data-day="'+d+'"]');
+    if(todayLi) todayLi.classList.add('today');
+  }catch(e){ /* stil falen — statische tijden blijven zichtbaar */ }
+})();
+</script>
+</body>
+</html>
